@@ -1,0 +1,5 @@
+label,k,expected_slope,fitted_slope
+internal k=1,1,1.0,0.9991711142559575
+blanket k=4,4,3.0,2.976479550843295
+blanket k=5,5,3.0,2.9838932012722528
+exterior k=6,6,5.0,4.982707466598846

@@ -1,0 +1,73 @@
+[cached] FA_phen_T0.5_rho1.0_lam0.0_k12: E=15.8473 maxL3=3.68e-06 feasible=False dense_feasible=True y(T)=-0.6068 cM(T)=-0.5312 t=44.5s
+[cached] FA_phen_T1_rho1.0_lam0.0_k12: E=29.6818 maxL3=9.42e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.4444 t=27.8s
+[cached] FA_phen_T2_rho1.0_lam0.0_k12: E=8.2094 maxL3=5.03e-06 feasible=False dense_feasible=True y(T)=0.9980 cM(T)=0.9993 t=24.4s
+[cached] FA_phen_T4_rho1.0_lam0.0_k12: E=2.2466 maxL3=1.84e-06 feasible=False dense_feasible=True y(T)=0.9990 cM(T)=0.9998 t=49.2s
+Dispatching 28 jobs across 10 worker processes...
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FA_coord_T1_rho1.0_lam0.0_k12: E=32.7851 maxL3=1.08e-05 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6482 t=13.5s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FB_coord_T1_rho1.0_lam0.0_k12: E=20.3531 maxL3=9.53e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6336 t=22.7s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FB_phen_T2_rho1.0_lam0.0_k12: E=8.2094 maxL3=5.03e-06 feasible=False dense_feasible=True y(T)=0.9980 cM(T)=0.9993 t=58.3s
+[computed] FB_phen_T1_rho1.0_lam0.0_k12: E=29.4041 maxL3=8.94e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6126 t=67.2s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FA_coord_T2_rho1.0_lam0.0_k12: E=8.5855 maxL3=5.29e-06 feasible=False dense_feasible=True y(T)=1.0002 cM(T)=1.0009 t=91.5s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:439: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  g = append(wrapped_grad(x), 0.0)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:493: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_eq = vstack([con['jac'](x, *con['args'])
+[computed] FA_coord_T0.5_rho1.0_lam0.0_k12: E=11.4912 maxL3=1.91e-09 feasible=False dense_feasible=True y(T)=0.5887 cM(T)=-0.4721 t=103.2s
+[computed] FB_phen_T0.5_rho1.0_lam0.0_k12: E=15.8473 maxL3=3.68e-06 feasible=False dense_feasible=True y(T)=-0.6068 cM(T)=-0.5312 t=117.7s
+[computed] FB_phen_T4_rho1.0_lam0.0_k12: E=2.2466 maxL3=1.84e-06 feasible=False dense_feasible=True y(T)=0.9990 cM(T)=0.9998 t=126.1s
+[computed] FC_phen_T1_rho1.0_lam0.0_k12: E=29.4041 maxL3=8.94e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6126 t=79.4s
+[computed] FA_coord_T4_rho1.0_lam0.0_k12: E=2.0790 maxL3=2.17e-06 feasible=False dense_feasible=True y(T)=1.0005 cM(T)=1.0003 t=152.5s
+[computed] FC_coord_T1_rho1.0_lam0.0_k12: E=20.3531 maxL3=9.53e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6336 t=26.0s
+[computed] FB_coord_T2_rho1.0_lam0.0_k12: E=8.5855 maxL3=5.29e-06 feasible=False dense_feasible=True y(T)=1.0002 cM(T)=1.0009 t=145.3s
+[computed] FC_phen_T2_rho1.0_lam0.0_k12: E=8.2094 maxL3=5.03e-06 feasible=False dense_feasible=True y(T)=0.9980 cM(T)=0.9993 t=68.0s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:439: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  g = append(wrapped_grad(x), 0.0)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:493: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_eq = vstack([con['jac'](x, *con['args'])
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:499: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_ieq = vstack([con['jac'](x, *con['args'])
+[computed] FD_phen_T0.5_rho1.0_lam0.0_k12: E=15.8473 maxL3=3.68e-06 feasible=False dense_feasible=True y(T)=-0.6068 cM(T)=-0.5312 t=27.6s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:439: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  g = append(wrapped_grad(x), 0.0)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:493: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_eq = vstack([con['jac'](x, *con['args'])
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:499: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_ieq = vstack([con['jac'](x, *con['args'])
+[computed] FC_phen_T0.5_rho1.0_lam0.0_k12: E=15.8473 maxL3=3.68e-06 feasible=False dense_feasible=True y(T)=-0.6068 cM(T)=-0.5312 t=146.6s
+[computed] FB_coord_T0.5_rho1.0_lam0.0_k12: E=11.4754 maxL3=1.61e-09 feasible=False dense_feasible=True y(T)=0.5842 cM(T)=-0.4735 t=207.6s
+[computed] FC_phen_T4_rho1.0_lam0.0_k12: E=2.2466 maxL3=1.84e-06 feasible=False dense_feasible=True y(T)=0.9990 cM(T)=0.9998 t=152.6s
+[computed] FD_phen_T2_rho1.0_lam0.0_k12: E=8.5309 maxL3=4.38e-06 feasible=False dense_feasible=True y(T)=1.0026 cM(T)=0.9950 t=104.1s
+[computed] FB_coord_T4_rho1.0_lam0.0_k12: E=2.0790 maxL3=2.17e-06 feasible=False dense_feasible=True y(T)=1.0005 cM(T)=1.0003 t=242.3s
+[computed] FC_coord_T2_rho1.0_lam0.0_k12: E=8.5855 maxL3=5.29e-06 feasible=False dense_feasible=True y(T)=1.0002 cM(T)=1.0009 t=162.2s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:439: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  g = append(wrapped_grad(x), 0.0)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:493: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_eq = vstack([con['jac'](x, *con['args'])
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:499: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_ieq = vstack([con['jac'](x, *con['args'])
+[computed] FC_coord_T0.5_rho1.0_lam0.0_k12: E=11.4754 maxL3=1.61e-09 feasible=False dense_feasible=True y(T)=0.5842 cM(T)=-0.4735 t=224.3s
+[computed] FD_phen_T1_rho1.0_lam0.0_k12: E=20.3609 maxL3=8.68e-06 feasible=False dense_feasible=True y(T)=1.3936 cM(T)=0.6512 t=212.5s
+[computed] FD_phen_T4_rho1.0_lam0.0_k12: E=2.1179 maxL3=1.44e-06 feasible=False dense_feasible=True y(T)=0.9987 cM(T)=0.9990 t=193.7s
+[computed] FC_coord_T4_rho1.0_lam0.0_k12: E=2.0790 maxL3=2.17e-06 feasible=False dense_feasible=True y(T)=1.0005 cM(T)=1.0003 t=241.3s
+[computed] FD_coord_T1_rho1.0_lam0.0_k12: E=30.5701 maxL3=1.73e-05 feasible=False dense_feasible=True y(T)=1.3193 cM(T)=0.6016 t=202.2s
+[computed] FD_coord_T0.5_rho1.0_lam0.0_k12: E=10.8554 maxL3=1.44e-09 feasible=False dense_feasible=True y(T)=0.3027 cM(T)=-0.5363 t=204.5s
+[computed] FD_coord_T2_rho1.0_lam0.0_k12: E=10.7203 maxL3=1.13e-05 feasible=False dense_feasible=True y(T)=1.0004 cM(T)=0.9973 t=160.5s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_coord_T4_rho1.0_lam0.0_k12: E=2.9061 maxL3=5.61e-06 feasible=False dense_feasible=True y(T)=1.0001 cM(T)=0.8096 t=267.1s
+
+Done. Index at /home/hridai/code/graded-mb/stage5/data/control_results.jsonl

@@ -1,0 +1,17 @@
+=== PART 12: ramp-shape robustness (linear / smoothstep / smootherstep), K=3 ===
+Grid (24 points, reduced from the primary 94-pt smoothstep grid for compute budget -- fixed before running, not chosen post hoc): [0.001, 0.001523, 0.00232, 0.003535, 0.005385, 0.008202, 0.012495, 0.019033, 0.028994, 0.044166, 0.067279, 0.102486, 0.156118, 0.237816, 0.362268, 0.551845, 0.840631, 1.28054, 1.950657, 2.971452, 4.526437, 6.89516, 10.503454, 16.0]
+Shape-robustness sweep done in 28.8s (72 runs).
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/shape_robustness_table.csv
+  shape=linear: max_t Lambda_3 full-event peak = 4.2226e-05 at T_ramp=0.005385; T_ramp->0 plateau value = 4.2187e-05; monotone-nonincreasing after the peak index: False
+  shape=smoothstep: max_t Lambda_3 full-event peak = 4.2227e-05 at T_ramp=0.005385; T_ramp->0 plateau value = 4.2187e-05; monotone-nonincreasing after the peak index: False
+  shape=smootherstep: max_t Lambda_3 full-event peak = 4.2227e-05 at T_ramp=0.005385; T_ramp->0 plateau value = 4.2187e-05; monotone-nonincreasing after the peak index: False
+
+=== PART 15: numerical convergence cross-check ===
+NOTE: an earlier version of this check (naive rtol/atol tightening with NO max_step cap) found a spurious 100% collapse at T_ramp=0.02/0.2/0.25 -- traced to RK45's adaptive step control occasionally ALIASING OVER the narrow forced transient entirely when unconstrained (fewer function evaluations at the 'tighter' tolerance than at baseline is the signature of this failure mode). Fixed by capping max_step at T_ramp/20 (baseline) and T_ramp/100 (refinement) -- see rate_induced_audit_core.run_extended and dynamics.integrate's new additive max_step parameter (default None, so ALL other Stage-5 code is unaffected).
+Traceback (most recent call last):
+  File "/home/hridai/code/graded-mb/stage5/rate_induced_audit_run2.py", line 185, in <module>
+    part15_convergence(log)
+  File "/home/hridai/code/graded-mb/stage5/rate_induced_audit_run2.py", line 78, in part15_convergence
+    baseline_res, _ = aud.run_extended(T_ramp, T_relax=T_RELAX_PRIMARY, shape="smoothstep",
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: run_extended() got an unexpected keyword argument 'max_step'

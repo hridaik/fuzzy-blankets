@@ -1,0 +1,46 @@
+=== Stage 5, Section 4: Lambda_K / K_delta sanity at endpoints and mid-interpolation ===
+
+--- z=-1.00 ---
+  Lambda_1 = 0.0422786940  argmin(s) = [(4,)]
+  Lambda_2 = 0.0000000000  argmin(s) = [(4, 5)]
+  Lambda_3 = 0.0000000000  argmin(s) = [(4, 5), (4, 5, 6), (4, 5, 7)]
+  K_delta(delta=0.005) = 2  achieving B: [(4, 5)]
+  K_delta(delta=0.01) = 2  achieving B: [(4, 5)]
+  K_delta(delta=0.02) = 2  achieving B: [(4, 5)]
+  K_delta(delta=0.05) = 1  achieving B: [(4,)]
+
+--- z=-0.50 ---
+  Lambda_1 = 0.0572699484  argmin(s) = [(4,)]
+  Lambda_2 = 0.0083038682  argmin(s) = [(4, 5)]
+  Lambda_3 = 0.0000000000  argmin(s) = [(4, 5, 6)]
+  K_delta(delta=0.005) = 3  achieving B: [(4, 5, 6)]
+  K_delta(delta=0.01) = 2  achieving B: [(4, 5)]
+  K_delta(delta=0.02) = 2  achieving B: [(4, 5)]
+  K_delta(delta=0.05) = 2  achieving B: [(4, 5), (4, 6)]
+
+--- z=+0.00 ---
+  Lambda_1 = 0.0836260008  argmin(s) = [(4,), (6,)]
+  Lambda_2 = 0.0298383976  argmin(s) = [(4, 5), (5, 6)]
+  Lambda_3 = 0.0000000000  argmin(s) = [(4, 5, 6)]
+  K_delta(delta=0.005) = 3  achieving B: [(4, 5, 6)]
+  K_delta(delta=0.01) = 3  achieving B: [(4, 5, 6)]
+  K_delta(delta=0.02) = 3  achieving B: [(4, 5, 6)]
+  K_delta(delta=0.05) = 2  achieving B: [(4, 5), (4, 6), (5, 6)]
+
+--- z=+0.50 ---
+  Lambda_1 = 0.0572699484  argmin(s) = [(6,)]
+  Lambda_2 = 0.0083038682  argmin(s) = [(5, 6)]
+  Lambda_3 = 0.0000000000  argmin(s) = [(4, 5, 6)]
+  K_delta(delta=0.005) = 3  achieving B: [(4, 5, 6)]
+  K_delta(delta=0.01) = 2  achieving B: [(5, 6)]
+  K_delta(delta=0.02) = 2  achieving B: [(5, 6)]
+  K_delta(delta=0.05) = 2  achieving B: [(4, 6), (5, 6)]
+
+--- z=+1.00 ---
+  Lambda_1 = 0.0422786940  argmin(s) = [(6,)]
+  Lambda_2 = 0.0000000000  argmin(s) = [(5, 6)]
+  Lambda_3 = 0.0000000000  argmin(s) = [(5, 6), (4, 5, 6), (5, 6, 7)]
+  K_delta(delta=0.005) = 2  achieving B: [(5, 6)]
+  K_delta(delta=0.01) = 2  achieving B: [(5, 6)]
+  K_delta(delta=0.02) = 2  achieving B: [(5, 6)]
+  K_delta(delta=0.05) = 1  achieving B: [(6,)]

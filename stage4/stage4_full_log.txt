@@ -1,0 +1,139 @@
+########## Part 1/2: organization manifold ##########
+=== Part 1: endogenous organization manifold ===
+s = 0.1981220657, expected 0.1981220657, diff=0.00e+00
+v vs expected:
+  v_1 = 1.0000000000  expected 1.0000000000  diff=0.00e+00
+  v_2 = 1.0000000000  expected 1.0000000000  diff=2.22e-16
+  v_3 = 1.0000000000  expected 1.0000000000  diff=2.22e-16
+  v_4 = 0.5687203791  expected 0.5687203791  diff=2.22e-16
+  v_5 = 0.4976303318  expected 0.4976303318  diff=5.55e-17
+  v_6 = 0.3270142180  expected 0.3270142180  diff=1.67e-16
+  v_7 = 0.3270142180  expected 0.3270142180  diff=5.55e-17
+  v_8 = 0.3270142180  expected 0.3270142180  diff=5.55e-17
+c^T v = 1.0000000000 (expected 1.0)
+
+Conditional-mean check E[X|Y=y] = v*y (Schur complement formula):
+  max|Schur cond-mean - v*y| = 0.00e+00
+
+=== Part 2: excess organizational distortion structure ===
+Q_perp eigenvalues: [6.45317133e-16 1.97348741e+00 4.32324750e+00 5.50000000e+00
+ 5.50000000e+00 5.50000000e+00 5.50000000e+00 8.02080064e+00]
+PSD check: min eig = 6.453e-16 (expect >= -tol)  rank = 7 (expect 7)  nullity = 1 (expect 1)
+max|Q_perp v| = 8.88e-16 (expect ~0)
+
+Random-vector decomposition checks (KL-style identity):
+  max|c^T r| over 200 random m = 7.77e-16 (expect ~0)
+  max|1/2 m'Om m - (y^2/2s + 1/2 r'Om r)| = 1.14e-13
+  max|r'Om r - m'Qperp m| = 4.55e-13
+
+All Part 1/2 identities verified exactly. Saved organization manifold data.
+
+########## Part 5 sanity ##########
+=== Part 5 sanity: single Riccati solve ===
+q=0,T=1,S=[4],lambda=0: E=211.857232  D=11.495531  y(T)=1.00000000 (target 1.0)
+OK.
+
+########## Part 6: Hamiltonian cross-check ##########
+=== Part 6: Riccati vs. Hamiltonian cross-check ===
+q=0.0   T=1.0  S=[4] lam=0.0     max|dm|=9.02e-10 max|du|=1.15e-08 |dE|=2.57e-08 |dD|=7.39e-10 |dy_T|=6.55e-11
+q=0.0   T=1.0  S=[4] lam=1.0     max|dm|=1.09e-09 max|du|=1.46e-08 |dE|=3.35e-08 |dD|=1.02e-09 |dy_T|=8.06e-11
+q=1.0   T=1.0  S=[6] lam=0.0     max|dm|=9.08e-10 max|du|=9.51e-09 |dE|=6.14e-09 |dD|=9.46e-10 |dy_T|=1.16e-11
+q=1.0   T=1.0  S=[6] lam=10.0    max|dm|=9.76e-10 max|du|=4.95e-08 |dE|=3.58e-08 |dD|=5.91e-11 |dy_T|=5.28e-11
+q=-1.0  T=0.5  S=[5] lam=100.0   max|dm|=2.25e-09 max|du|=1.05e-06 |dE|=7.16e-10 |dD|=2.07e-10 |dy_T|=1.52e-11
+q=0.0   T=3.0  S=[4, 6] lam=1.0     max|dm|=4.95e-06 max|du|=8.05e-05 |dE|=1.03e-04 |dD|=2.58e-06 |dy_T|=3.35e-07
+
+All Riccati/Hamiltonian cross-checks agree. Saved comparison table.
+
+########## Part 7: Stage-3 regression ##########
+=== Part 7: Stage-3 recovery at lambda=0 ===
+q=0.0   k=4 T=1.0  E_stage3=211.857232  E_stage4(lam=0)=211.857232  rel.err=1.05e-11  y(T)=1.00000000
+q=0.0   k=6 T=1.0  E_stage3=1400.119773  E_stage4(lam=0)=1400.119772  rel.err=3.71e-12  y(T)=1.00000000
+q=1.0   k=4 T=1.0  E_stage3=154.615624  E_stage4(lam=0)=154.615624  rel.err=8.51e-12  y(T)=1.00000000
+q=1.0   k=6 T=1.0  E_stage3=209.016262  E_stage4(lam=0)=209.016262  rel.err=1.00e-11  y(T)=1.00000000
+q=0.0   k=4 T=3.0  E_stage3=173.493471  E_stage4(lam=0)=173.493471  rel.err=8.88e-12  y(T)=1.00000000
+q=1.0   k=6 T=3.0  E_stage3=207.041165  E_stage4(lam=0)=207.041165  rel.err=1.01e-11  y(T)=1.00000000
+q=-1.0  k=5 T=0.5  E_stage3=728.148779  E_stage4(lam=0)=728.148779  rel.err=3.11e-12  y(T)=1.00000000
+q=2.0   k=4 T=2.0  E_stage3=127.362375  E_stage4(lam=0)=127.362375  rel.err=2.22e-12  y(T)=1.00000000
+
+Max relative energy error across all regression cases: 1.05e-11
+PASSED: Stage-4 lambda=0 solution reproduces Stage-3 minimum-energy control.
+
+########## Part 12a: lambda=0 additivity ##########
+=== Part 12 (lambda=0): multi-actuator Gramian additivity ===
+Max |W_S - sum W_k| over all tested subsets (|S|<=3): 4.16e-17
+Additivity verified exactly. Saved table.
+  {'S': '(4,)', 'eta_sum': 0.004720159840492554, 'eta_direct': 0.004720159840492554, 'disc_eta': 0.0, 'disc_W': np.float64(0.0), 'E_star': 211.85723233805763}
+  {'S': '(5,)', 'eta_sum': 0.002972162027884059, 'eta_direct': 0.002972162027884059, 'disc_eta': 0.0, 'disc_W': np.float64(0.0), 'E_star': 336.4554121270164}
+  {'S': '(6,)', 'eta_sum': 0.0007142246110927717, 'eta_direct': 0.0007142246110927717, 'disc_eta': 0.0, 'disc_W': np.float64(0.0), 'E_star': 1400.1197725040429}
+  {'S': '(7,)', 'eta_sum': 0.0007142246110927719, 'eta_direct': 0.0007142246110927719, 'disc_eta': 0.0, 'disc_W': np.float64(0.0), 'E_star': 1400.1197725040424}
+  {'S': '(8,)', 'eta_sum': 0.0007142246110927725, 'eta_direct': 0.0007142246110927725, 'disc_eta': 0.0, 'disc_W': np.float64(0.0), 'E_star': 1400.1197725040413}
+
+########## Part 8/9: single-actuator sweep (log from earlier run) ##########
+=== Part 8/9: single-actuator organization-aware sweep ===
+Grid: actuators=[1, 4, 5, 6, 7, 8], q=[-2, -1, 0, 1, 2], T=[0.1, 1, 3], lambda grid size=42
+Total solves: 3780
+
+Completed 3780 solves in 727.5s (0 unreachable/skipped)
+Monotonicity reversals flagged (tol=0.0001): 0
+Saved sweep table (3780 rows) to part9_single_actuator_sweep.csv
+No monotonicity reversals found beyond tolerance.
+
+########## Part 10/11: ranking + terminal diagnostic ##########
+=== Part 10: ranking comparison across lambda ===
+Fraction of (q,T,lambda) cells where organization-aware winner differs from pure-energy winner:
+  q=-2.0  T=0.1  lambda=0 winner=6  NEVER switches across tested lambda
+  q=-2.0  T=1.0  lambda=0 winner=6  NEVER switches across tested lambda
+  q=-2.0  T=3.0  lambda=0 winner=6  NEVER switches across tested lambda
+  q=-1.0  T=0.1  lambda=0 winner=6  NEVER switches across tested lambda
+  q=-1.0  T=1.0  lambda=0 winner=6  NEVER switches across tested lambda
+  q=-1.0  T=3.0  lambda=0 winner=6  NEVER switches across tested lambda
+  q=0.0   T=0.1  lambda=0 winner=4  NEVER switches across tested lambda
+  q=0.0   T=1.0  lambda=0 winner=4  NEVER switches across tested lambda
+  q=0.0   T=3.0  lambda=0 winner=4  NEVER switches across tested lambda
+  q=1.0   T=0.1  lambda=0 winner=6  NEVER switches across tested lambda
+  q=1.0   T=1.0  lambda=0 winner=4  NEVER switches across tested lambda
+  q=1.0   T=3.0  lambda=0 winner=4  NEVER switches across tested lambda
+  q=2.0   T=0.1  lambda=0 winner=6  NEVER switches across tested lambda
+  q=2.0   T=1.0  lambda=0 winner=4  switches at 26/42 lambda values, first switch at lambda=0.5623, new winner(s)=[6]
+  q=2.0   T=3.0  lambda=0 winner=4  switches at 23/42 lambda values, first switch at lambda=3.162, new winner(s)=[6]
+
+Specific node 4 vs 5 vs 6 comparison at q=1, T=1 across lambda:
+  lambda=0          best_E=4  best_J=4  full E-rank=4,6,5,8,7
+  lambda=0.001      best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=0.01778    best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=0.3162     best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=5.623      best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=100        best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=1778       best_E=4  best_J=4  full E-rank=4,6,5,8,7
+  lambda=3.162e+04  best_E=4  best_J=4  full E-rank=4,6,5,7,8
+  lambda=5.623e+05  best_E=4  best_J=4  full E-rank=4,6,5,7,8
+
+=== Part 11: terminal-distortion diagnostic ===
+Cases with lambda>1 and D_T/D_max > 0.8 (terminal distortion dominates the path max): 1172 / 3150
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 1.7782794100389228, 'D': 80.61633617090021, 'D_T': 1071.4359453092545, 'D_max': 1268.4310365257957, 'ratio_DT_over_Dmax': 0.8446938891087794}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 3.1622776601683795, 'D': 80.56629762479928, 'D_T': 1068.8646610232329, 'D_max': 1265.969747646191, 'ratio_DT_over_Dmax': 0.8443050578503678}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 5.623413251903491, 'D': 80.47861637673661, 'D_T': 1064.3584517356644, 'D_max': 1261.647800853146, 'ratio_DT_over_Dmax': 0.8436256544940106}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 10.0, 'D': 80.32668265296145, 'D_T': 1056.5486115157, 'D_max': 1254.135031526302, 'ratio_DT_over_Dmax': 0.842452036627877}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 17.78279410038923, 'D': 80.06844016937173, 'D_T': 1043.2717163277175, 'D_max': 1241.4229369915702, 'ratio_DT_over_Dmax': 0.840383792856247}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 31.622776601683793, 'D': 79.64354558450367, 'D_T': 1021.4296913702093, 'D_max': 1220.5022821667724, 'ratio_DT_over_Dmax': 0.836892897534655}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 56.23413251903491, 'D': 78.98037353059445, 'D_T': 987.3918192182765, 'D_max': 1187.9355783200187, 'ratio_DT_over_Dmax': 0.8311829675264447}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 100.0, 'D': 78.02519457345932, 'D_T': 938.6722780494501, 'D_max': 1141.2014306597273, 'ratio_DT_over_Dmax': 0.8225298819567767}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 177.82794100389228, 'D': 76.7937214636763, 'D_T': 877.0520318158082, 'D_max': 1081.3798212104136, 'ratio_DT_over_Dmax': 0.8110490085103524}
+  {'k': 4, 'q': -1.0, 'T': 0.1, 'lam': 10000.0, 'D': 69.91182728764181, 'D_T': 630.929615840425, 'D_max': 786.371440611314, 'ratio_DT_over_Dmax': 0.8023302770888389}
+Saved terminal-distortion diagnostic table.
+
+FLAG: some high-lambda solutions concentrate distortion near the terminal time.
+Per instructions, this is REPORTED as a finding, not addressed with a new terminal penalty.
+
+########## Part 12: multi-actuator sweep (log from earlier run) ##########
+=== Part 12: exhaustive 31-subset multi-actuator sweep ===
+Grid: 31 subsets x q=[-1, 0, 1] x T=[0.1, 1, 3] x 42 lambda values = 11718 solves
+Completed 11718 solves in 2889.8s (0 unreachable)
+Saved part12_multiactuator_sweep.csv
+
+Nondominated subsets per cardinality at q=0,T=1,lambda=0 (pure energy):
+  |S|=1: best E=211.8572 via S=(4,)
+  |S|=2: best E=129.9998 via S=(4, 5)
+  |S|=3: best E=118.9549 via S=(4, 5, 8)
+  |S|=4: best E=109.6399 via S=(4, 5, 6, 8)
+  |S|=5: best E=101.6777 via S=(4, 5, 6, 7, 8)

@@ -1,0 +1,35 @@
+Dispatching 20 jobs across 6 worker processes...
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_phen_T2.0_rho1.0_lam0.01_k12: E=8.5613 maxL3=4.35e-06 feasible=False dense_feasible=True y(T)=0.9996 cM(T)=0.9999 t=103.6s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_phen_T1.0_rho1.0_lam0.01_k12: E=20.4539 maxL3=8.77e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6593 t=108.7s
+[computed] FD_phen_T2.0_rho1.0_lam0.0_k12: E=8.5309 maxL3=4.38e-06 feasible=False dense_feasible=True y(T)=1.0026 cM(T)=0.9950 t=115.6s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_coord_T1.0_rho1.0_lam0.01_k12: E=32.5753 maxL3=1.67e-05 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6406 t=59.3s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_coord_T2.0_rho1.0_lam0.0_k12: E=10.7203 maxL3=1.13e-05 feasible=False dense_feasible=True y(T)=1.0004 cM(T)=0.9973 t=264.9s
+[computed] FD_phen_T2.0_rho1.0_lam0.1_k12: E=8.6319 maxL3=4.96e-06 feasible=False dense_feasible=True y(T)=0.9994 cM(T)=0.9992 t=121.8s
+[computed] FD_phen_T1.0_rho1.0_lam0.0_k12: E=20.3609 maxL3=8.68e-06 feasible=False dense_feasible=True y(T)=1.3936 cM(T)=0.6512 t=290.3s
+[computed] FD_coord_T1.0_rho1.0_lam0.0_k12: E=30.5701 maxL3=1.73e-05 feasible=False dense_feasible=True y(T)=1.3193 cM(T)=0.6016 t=309.4s
+[computed] FD_coord_T1.0_rho1.0_lam0.1_k12: E=32.7976 maxL3=1.09e-05 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6475 t=65.8s
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+[computed] FD_coord_T1.0_rho1.0_lam1.0_k12: E=32.8238 maxL3=1.28e-05 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6331 t=48.1s
+[computed] FD_phen_T1.0_rho1.0_lam0.1_k12: E=21.5951 maxL3=8.74e-06 feasible=False dense_feasible=True y(T)=1.1344 cM(T)=0.6305 t=268.6s
+[computed] FD_coord_T2.0_rho1.0_lam0.01_k12: E=8.1295 maxL3=4.20e-06 feasible=False dense_feasible=True y(T)=1.0025 cM(T)=0.9292 t=280.1s
+[computed] FD_phen_T2.0_rho1.0_lam1.0_k12: E=9.9604 maxL3=4.68e-06 feasible=False dense_feasible=True y(T)=1.0090 cM(T)=0.9995 t=115.2s
+[computed] FD_phen_T1.0_rho1.0_lam10.0_k12: E=20.7257 maxL3=8.31e-06 feasible=False dense_feasible=True y(T)=1.2862 cM(T)=0.6301 t=73.5s
+[computed] FD_coord_T2.0_rho1.0_lam0.1_k12: E=9.5139 maxL3=4.17e-06 feasible=False dense_feasible=True y(T)=0.9901 cM(T)=0.9974 t=206.1s
+[computed] FD_phen_T1.0_rho1.0_lam1.0_k12: E=25.2044 maxL3=9.00e-06 feasible=False dense_feasible=True y(T)=1.4476 cM(T)=0.5879 t=203.9s
+[computed] FD_phen_T2.0_rho1.0_lam10.0_k12: E=10.2753 maxL3=4.66e-06 feasible=False dense_feasible=True y(T)=1.0181 cM(T)=0.9815 t=112.5s
+[computed] FD_coord_T2.0_rho1.0_lam1.0_k12: E=8.5068 maxL3=1.19e-05 feasible=False dense_feasible=True y(T)=1.1766 cM(T)=0.9072 t=183.0s
+[computed] FD_coord_T1.0_rho1.0_lam10.0_k12: E=32.3715 maxL3=9.37e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=0.6672 t=199.6s
+[computed] FD_coord_T2.0_rho1.0_lam10.0_k12: E=12.4434 maxL3=5.84e-06 feasible=False dense_feasible=True y(T)=1.5000 cM(T)=1.0305 t=175.0s
+
+Done. Index at /home/hridai/code/graded-mb/stage5/data/control_results.jsonl

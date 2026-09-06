@@ -1,0 +1,25 @@
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+3a already computed, loading cached results.
+
+=== Part 3A summary table (tau_z sweep, T=2.0, formulation A) ===
+task-feasible column uses dense task_resid <= 0.01 (see TASK_FEASIBLE_TOL note in source), NOT the stricter optimizer-internal `feasible` flag used elsewhere in Stage 5 (which additionally requires SLSQP's own res.success).
+   tau_z  task_ok  task_resid         E      max_L3  t_argmax  A_org_ctrl
+  0.0625    False      0.0130    8.8278   3.310e-05     0.151      3.5601
+   0.125    False      0.0273    9.7581   4.129e-05     0.131      3.5368
+    0.25     True      0.0002   13.1526   4.000e-05     0.161      3.4906
+     0.5     True      0.0096    9.8156   1.096e-05     0.241      3.4912
+       1     True      0.0009    8.5855   5.300e-06     0.884      3.6239
+       2    False      0.5000    7.3771   2.403e-06     1.709      2.9037
+       4     True      0.0019    8.4036   1.337e-06     1.156      3.5808
+
+Anomaly: tau_z=[2] show large task_resid (>0.1) -- likely optimizer non-convergence rather than genuine task infeasibility (per spec: do not call a numerically failed optimizer 'infeasible' without multiple starts). Re-running with more starts and a different seed as a robustness check:
+  tau_z=2: original task_resid=0.5000 max_L3=2.403e-06  -> robustness rerun task_resid=0.5000 max_L3=2.403e-06
+
+No task-feasible tau_z in the primary grid violates delta=0.01 -- Part 3A does NOT activate the primary threshold. Proceeding to Part 3B (population-level constraint-logic unit test, NOT changing the physical model).
+3b_unit already computed.
+
+Neither unit-test threshold (1e-5, 1e-6) activates either -- Stage 5 does not furnish an active-constraint test even under these stringent unit thresholds. Reported as observed; NOT tuning further.
+
+Decision persisted to data/stress_test_decision.json: None
+Part 3 stress test complete.

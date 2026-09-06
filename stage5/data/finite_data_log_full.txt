@@ -1,0 +1,42 @@
+=== Stage 5, Section 15: finite-data trajectory simulation & timestep convergence ===
+  n_steps=50     dt=0.0400  max|mean_emp-mean_oracle|=0.0341  max|Sigma_emp-Sigma_oracle|=0.0700  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+  n_steps=100    dt=0.0200  max|mean_emp-mean_oracle|=0.0447  max|Sigma_emp-Sigma_oracle|=0.0381  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+  n_steps=200    dt=0.0100  max|mean_emp-mean_oracle|=0.0303  max|Sigma_emp-Sigma_oracle|=0.0434  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+  n_steps=400    dt=0.0050  max|mean_emp-mean_oracle|=0.0473  max|Sigma_emp-Sigma_oracle|=0.0387  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+  n_steps=800    dt=0.0025  max|mean_emp-mean_oracle|=0.0494  max|Sigma_emp-Sigma_oracle|=0.0253  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+  n_steps=1600   dt=0.0013  max|mean_emp-mean_oracle|=0.0300  max|Sigma_emp-Sigma_oracle|=0.0405  (MC noise ~ 1/sqrt(n_paths=500)~0.045)
+(At endpoint-A equilibrium the oracle trajectory is stationary; errors above are pure finite-n_paths Monte Carlo noise plus Euler-Maruyama discretization bias, both expected to shrink with finer dt / larger n_paths.)
+
+=== Section 16: finite-data initial system discovery (I unknown, node 8 anchor only) ===
+n_list=[50, 200, 1000], R=100 independent replicates per n (full scale).
+  n=50     R=100  exact I={1,2,3},B={4,5}: 0/100 (0%)  alt-partition: 100  none-certified: 0  [64.2s]
+    example alt/failure outcomes: [{'rep': 0, 'I': [1, 2, 3, 4, 6], 'B': [5], 'L_tilde': 0.007233224968216545}, {'rep': 1, 'I': [1, 2, 3, 4, 5], 'B': [7], 'L_tilde': -0.0024844941412969224}, {'rep': 2, 'I': [1, 2, 3, 5, 6], 'B': [4], 'L_tilde': 0.009370609739875801}]
+  n=200    R=100  exact I={1,2,3},B={4,5}: 10/100 (10%)  alt-partition: 90  none-certified: 0  [70.9s]
+    example alt/failure outcomes: [{'rep': 0, 'I': [1, 2, 3, 5], 'B': [4], 'L_tilde': -0.009956285240062535}, {'rep': 1, 'I': [1, 2, 3, 4, 5], 'B': [6, 7], 'L_tilde': 0.018291914192477776}, {'rep': 2, 'I': [1, 2, 3, 4, 5], 'B': [6], 'L_tilde': 0.015605166587125296}]
+  n=1000   R=100  exact I={1,2,3},B={4,5}: 24/100 (24%)  alt-partition: 76  none-certified: 0  [80.4s]
+    example alt/failure outcomes: [{'rep': 0, 'I': [1, 2, 3, 5], 'B': [4, 6], 'L_tilde': 0.01765690866396863}, {'rep': 1, 'I': [1, 2, 3, 5], 'B': [4, 6], 'L_tilde': 0.008391663168795915}, {'rep': 2, 'I': [1, 2, 3, 5], 'B': [4, 6], 'L_tilde': 0.014628819149090866}]
+
+=== Section 17: finite-data moving-boundary inference (I frozen, selection/validation split) ===
+Protocol: quasi-static-style z ramp -1->+1 (checkpoints at z=-1,-0.5,0,0.5,1); at each checkpoint draw an ensemble, split into selection/validation halves.
+  z=-1.00: selected B=(4, 5, 6) (ties: [(4, 5, 6)])  L_sel=-0.00071  L_val=-0.00070  L3_oracle=0.00000  |err|=0.00070  identity-matches-oracle-argmin=True
+  z=-0.50: selected B=(4, 5, 6) (ties: [(4, 5, 6)])  L_sel=0.00194  L_val=-0.00018  L3_oracle=0.00000  |err|=0.00018  identity-matches-oracle-argmin=True
+  z=+0.00: selected B=(4, 5, 6) (ties: [(4, 5, 6)])  L_sel=0.00148  L_val=-0.00178  L3_oracle=-0.00000  |err|=0.00178  identity-matches-oracle-argmin=True
+  z=+0.50: selected B=(4, 5, 6) (ties: [(4, 5, 6)])  L_sel=-0.00135  L_val=-0.00064  L3_oracle=0.00000  |err|=0.00064  identity-matches-oracle-argmin=True
+  z=+1.00: selected B=(5, 6, 7) (ties: [(5, 6, 7)])  L_sel=-0.00134  L_val=-0.00050  L3_oracle=0.00000  |err|=0.00050  identity-matches-oracle-argmin=True
+  Pointwise Lambda_3 validation-estimate RMSE across checkpoints: 0.00093
+
+=== Section 18: trajectory-level pathwise bootstrap certification ===
+Demonstration on the same z-checkpoint validation halves (treated as one 'trajectory set' sharing path index across checkpoints is emulated by construction: paths were NOT actually re-simulated across checkpoints in Section 17 in --scale demo mode -- this is flagged below as a documented simplification; the --scale full run performs genuine shared-path resampling via Section 15's Euler-Maruyama ensembles evaluated at all checkpoints from ONE set of paths.)
+  n_paths=1000 (selection 500 / validation 500), n_boot=2000
+  Simultaneous 95% upper band covers the ORACLE Lambda_3(t) trajectory at all 201 checkpoints on this single realization: True
+  max_t (U_band - L_hat) [band half-width proxy] = 0.04120
+
+  Repeated-ensemble calibration check: n_outer=40 independent realizations (full scale).
+  Empirical simultaneous coverage over 40 realizations: 40/40 = 1.00 (nominal target 0.95 -- Stage-3's bootstrap was known to have mild calibration imperfections; this is reported AS OBSERVED, not assumed exact).
+
+=== Section 19: finite-data success summary ===
+  Discovery n=50: exact-recovery rate = 0.00
+  Discovery n=200: exact-recovery rate = 0.10
+  Discovery n=1000: exact-recovery rate = 0.24
+  Moving-boundary Lambda_3 validation RMSE: 0.00093
+  Simultaneous-band single-realization coverage: True; repeated-ensemble empirical coverage: 1.00 vs nominal 0.95

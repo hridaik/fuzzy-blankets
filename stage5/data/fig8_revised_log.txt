@@ -1,0 +1,21 @@
+=== Figure 8 revision: genuine organization-aware control (D1=lambda_org=1, D2=lambda_org=100.0) at T=2, rho_z=1.0, coordinated ===
+Loaded A: E=8.5855 y(T)=1.0002 cM(T)=1.0009
+Loaded D1(lambda_org=1): E=8.5068 y(T)=1.1766 cM(T)=0.9072
+
+Running D2 (lambda_org=100.0), NOT previously computed -- same optimizer protocol as Stage 5 (n_knots=12, n_starts=3, maxiter=30, formulation D pathwise constraint delta=0.01):
+D2 done: E=3.0055 y(T)=1.0565 cM(T)=0.4742 feasible=False dense_feasible=True
+
+Revalidated all three at rtol=1e-08, atol=1e-09, n_eval=200 checkpoints (control phase); release phase re-integrated from the revalidated control-end state at the same tolerance/grid density.
+  A (lambda_org=0.0): E=8.5855  A_org_ctrl=3.62389  A_org_release=0.02628  max_Dorg=3.43434  max_L3=5.300e-06  y(T)=1.0004  cM(T)=1.0009  final_KL_to_pB=0.00001
+  D1 (lambda_org=1.0): E=8.5068  A_org_ctrl=3.13789  A_org_release=0.07294  max_Dorg=2.81907  max_L3=1.193e-05  y(T)=1.1771  cM(T)=0.9073  final_KL_to_pB=0.00000
+  D2 (lambda_org=100.0): E=3.0055  A_org_ctrl=1.82852  A_org_release=0.45260  max_Dorg=1.51799  max_L3=2.516e-06  y(T)=1.0569  cM(T)=0.4747  final_KL_to_pB=0.00016
+CAVEAT: protocol D1 did NOT satisfy the task constraints tightly (|y(T)-1|=0.1771, |cM(T)-1|=0.0927, tol=0.001) -- its energy/organization numbers are 'best found' for an INFEASIBLE task solve, not a like-for-like comparison against A/D1. This is reported, not hidden or re-tuned.
+CAVEAT: protocol D2 did NOT satisfy the task constraints tightly (|y(T)-1|=0.0569, |cM(T)-1|=0.5253, tol=0.001) -- its energy/organization numbers are 'best found' for an INFEASIBLE task solve, not a like-for-like comparison against A/D1. This is reported, not hidden or re-tuned.
+
+Does D1 reduce A_org_ctrl vs A (task-only)? True
+Does D2 reduce A_org_ctrl vs A (task-only)? True
+Does D2 reduce A_org_ctrl further than D1? True
+
+Saved summary table to /home/hridai/code/graded-mb/stage5/data/fig8_revised_summary.csv
+
+Saved /home/hridai/code/graded-mb/stage5/figures/fig8_revised.png/.pdf/.svg

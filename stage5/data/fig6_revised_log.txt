@@ -1,0 +1,15 @@
+=== Figure 6 revision: minimum-cardinality boundary family, delta=0.01, tie_tol=1e-06 ===
+Trajectory: formulation C (pathwise-integrity), T=2, coordinated control, same representative solution as the original Figure 6, plus its release period.
+No timepoints lacked a compact acceptable boundary (Kdelta well-defined throughout).
+
+Audit: boundary families at representative times
+  t=0.000 [control]  K_delta=2  families=[(4, 5)]
+  t=0.508 [control]  K_delta=2  families=[(4, 5)]
+  t=1.017 [control]  K_delta=3  families=[(4, 5, 6)]
+  t=1.525 [control]  K_delta=2  families=[(5, 6)]
+  t=2.000 [control-end]  K_delta=2  families=[(5, 6)]
+  t=6.000 [release-end]  K_delta=2  families=[(5, 6)]
+
+Reference note (not enforced): initial state family = [(4, 5)] (quasi-static endpoint-A reference is {(4,5)}); this trajectory starts at endpoint-A equilibrium so exact agreement is expected here. Final release-end family = [(5, 6)] (endpoint-B reference is {(5,6)}, expected only once the system has actually relaxed close to endpoint B -- not asserted a priori).
+
+Saved /home/hridai/code/graded-mb/stage5/figures/fig6_revised.png/.pdf/.svg

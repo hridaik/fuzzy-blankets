@@ -1,0 +1,33 @@
+Running 3160 pairs x 10 replicates = 31600 simulations
+  500/3160 pairs done, elapsed=53.3s
+  1000/3160 pairs done, elapsed=105.7s
+  1500/3160 pairs done, elapsed=187.4s
+  2000/3160 pairs done, elapsed=315.4s
+  2500/3160 pairs done, elapsed=394.5s
+  3000/3160 pairs done, elapsed=452.2s
+
+Done in 470.5s. R_ij: mean=0.0039 max=0.1600 (V1's best-shortlist-pair R was 0.149 for {67,57})
+S_ij (control-response synergy): mean=-0.0013 max=0.1040 min=-0.0510
+Top 10 pairs by R_ij:
+  (57,77): R_ij=0.160 S_ij=0.104 both_in_BD0=False dist=(1,2)
+  (57,67): R_ij=0.150 S_ij=0.060 both_in_BD0=True dist=(1,1)
+  (57,68): R_ij=0.150 S_ij=0.098 both_in_BD0=True dist=(1,1)
+  (57,87): R_ij=0.140 S_ij=0.102 both_in_BD0=False dist=(1,3)
+  (66,68): R_ij=0.125 S_ij=0.097 both_in_BD0=False dist=(2,1)
+  (57,69): R_ij=0.120 S_ij=0.086 both_in_BD0=True dist=(1,1)
+  (57,78): R_ij=0.120 S_ij=0.085 both_in_BD0=False dist=(1,2)
+  (57,86): R_ij=0.120 S_ij=0.064 both_in_BD0=False dist=(1,3)
+  (67,68): R_ij=0.120 S_ij=0.046 both_in_BD0=True dist=(1,1)
+  (66,77): R_ij=0.115 S_ij=0.083 both_in_BD0=False dist=(2,2)
+Top 10 pairs by synergy S_ij:
+  (57,77): R_ij=0.160 S_ij=0.104 both_in_BD0=False dist=(1,2)
+  (57,87): R_ij=0.140 S_ij=0.102 both_in_BD0=False dist=(1,3)
+  (57,68): R_ij=0.150 S_ij=0.098 both_in_BD0=True dist=(1,1)
+  (66,68): R_ij=0.125 S_ij=0.097 both_in_BD0=False dist=(2,1)
+  (66,87): R_ij=0.105 S_ij=0.091 both_in_BD0=False dist=(2,3)
+  (57,69): R_ij=0.120 S_ij=0.086 both_in_BD0=True dist=(1,1)
+  (57,78): R_ij=0.120 S_ij=0.085 both_in_BD0=False dist=(1,2)
+  (66,77): R_ij=0.115 S_ij=0.083 both_in_BD0=False dist=(2,2)
+  (75,77): R_ij=0.105 S_ij=0.083 both_in_BD0=False dist=(3,2)
+  (56,68): R_ij=0.085 S_ij=0.066 both_in_BD0=True dist=(1,1)
+Pairs meeting P(success)>=0.5 at n=10: 0 / 3160

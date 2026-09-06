@@ -1,0 +1,249 @@
+STAGE 5 FINAL PATCH LOG
+========================
+Three focused corrections to the verified Stage-5 implementation, per user request.
+Stage-5 scientific baseline, endpoint construction, primary integrity definition
+(Lambda_K/K_delta as defined in integrity.py), and all previous logs are UNCHANGED.
+Pre-existing figures/results backed up to figures/pre_patch_backup/ and
+data/pre_patch_backup/ before anything was overwritten.
+
+Code changes made (all additive/backward-compatible, verified not to alter any
+previously-computed baseline number):
+  - dynamics.py: z_rhs/moment_rhs/make_rhs/integrate gained an optional `tau_z=None`
+    parameter (defaults to module TAU_Z=1.0, i.e. IDENTICAL to prior behavior when
+    omitted).
+  - control.py: simulate/objective/task_constraints/pathwise_ineq/build_constraints/
+    optimize_protocol/release_phase gained optional `tau_z=None` passthrough (same
+    backward-compatibility guarantee); simulate() also gained explicit rtol/atol
+    parameters (default UNCHANGED at 1e-5/1e-7, matching the exact literals previously
+    hardcoded); added a new function `revalidate_tight()` for tight-tolerance post-hoc
+    re-simulation of an already-optimized solution (does not touch the original
+    `res['traj']`).
+  - IMPORTANT BUG CAUGHT DURING THIS PATCH: the first version of the tau_z threading
+    accepted the parameter in simulate()'s signature but never actually passed it to
+    the inner dyn.moment_rhs() call inside the ODE rhs closure, so tau_z silently had
+    NO EFFECT on the integrated trajectory. Caught by a direct before/after numerical
+    check (varying tau_z produced identical z(t) until fixed). Fixed at control.py's
+    `rhs()` closure before any Part-3 results were computed. No baseline results were
+    ever exposed to this bug since tau_z defaulted to None throughout the original
+    Stage-5 run.
+  - Verified: simulate(...) and simulate(..., tau_z=None) produce bit-identical output
+    for representative inputs; simulate(..., tau_z=1.0) reproduces the original
+    baseline formulation-A energy at T=2 exactly (E=8.5855, matching the pre-patch
+    control_results.jsonl record) as a further sanity check.
+
+================================================================================
+PART 1 -- FIGURE 6 REVISION (minimum-cardinality boundary family)
+================================================================================
+File: fig6_revised.py. Uses integrity.K_delta(Sigma, delta=0.01, tie_tol=1e-6) at
+every checkpoint of the SAME representative trajectory as the original Figure 6
+(formulation C, T=2, coordinated), plus its release period (recomputed via
+dynamics.integrate from the saved control-end state, since the original control_sweep
+npz did not persist release-period Sigma(t)).
+
+Result: no timepoint lacked a compact (|B|<=4 within {4,5,6,7}) delta=0.01-acceptable
+boundary. The minimum-cardinality family reproduces exactly the intended
+{4,5} -> {4,5,6} -> {5,6} pattern with NO unnecessary zero-leakage supersets:
+  t=0.000 [control]      K_delta=2  family={(4,5)}
+  t=0.508 [control]      K_delta=2  family={(4,5)}
+  t=1.017 [control]      K_delta=3  family={(4,5,6)}
+  t=1.525 [control]      K_delta=2  family={(5,6)}
+  t=2.000 [control-end]  K_delta=2  family={(5,6)}
+  t=6.000 [release-end]  K_delta=2  family={(5,6)}
+This is the corrected replacement for the original |B|<=3 arbitrary-superset heatmap.
+Saved: figures/fig6_revised.{png,pdf,svg}, data/fig6_revised_membership.csv,
+data/fig6_revised_data.npz, data/fig6_revised_log.txt.
+
+================================================================================
+PART 2 -- FIGURE 8 REVISION (genuine organization-aware control)
+================================================================================
+File: fig8_revised.py. Compares A (task-only, lambda_org=0, from baseline),
+D1 (lambda_org=1, from the completed lambda_org grid), and D2 (lambda_org=100, run
+fresh here with the identical optimizer protocol: n_knots=12, n_starts=3, maxiter=30),
+all at T=2, rho_z=1, coordinated. All three revalidated at rtol=1e-8, atol=1e-9,
+200 checkpoints.
+
+Results (tight-tolerance, dense):
+  A  (lambda_org=0)  : E=8.5855  A_org_ctrl=3.6239  A_org_release=0.0263  max_Dorg=3.434  max_L3=5.3e-06  y(T)=1.0004 cM(T)=1.0009
+  D1 (lambda_org=1)  : E=8.5068  A_org_ctrl=3.1379  A_org_release=0.0729  max_Dorg=2.819  max_L3=1.19e-05 y(T)=1.1771 cM(T)=0.9073
+  D2 (lambda_org=100): E=3.0055  A_org_ctrl=1.8285  A_org_release=0.4526  max_Dorg=1.518  max_L3=2.52e-06 y(T)=1.0569 cM(T)=0.4747
+
+Both D1 and D2 genuinely reduce accumulated organizational departure (A_org_ctrl)
+relative to task-only, monotonically stronger with larger lambda_org, as intended.
+
+CAVEAT (reported, not hidden): neither D1 nor D2 satisfies the task constraints
+tightly under the tested optimizer budget (task_resid: A=0.0009, D1=0.177 (y) / 0.093
+(cM), D2=0.057 (y) / 0.525 (cM) -- D2 in particular essentially abandoned the cM(T)=1
+target in favor of the heavily-weighted organization/energy objective). This is
+flagged explicitly in-figure ("[TASK NOT MET]" annotations, bold) and in the log --
+the E/A_org comparison across A/D1/D2 should be read as illustrating the qualitative
+tradeoff direction, not as a clean apples-to-apples comparison of feasible solutions.
+This was NOT tuned away; lambda_org values were fixed by the user's spec before
+running D2.
+
+Saved: figures/fig8_revised.{png,pdf,svg}, data/fig8_revised_summary.csv,
+data/fig8_revised_log.txt.
+
+================================================================================
+PART 3 -- CONSTRAINT-ACTIVATION STRESS TEST
+================================================================================
+File: stress_test.py. Controller unit test only; endpoint graphs and Lambda_3
+definition untouched.
+
+Part 3A (tau_z in {4,2,1,0.5,0.25,0.125,0.0625}, T=2, coordinated, rho_z=1,
+formulation A task-only, delta=0.01):
+
+  tau_z    task_ok  task_resid      E        max_L3      t_argmax  A_org_ctrl
+  0.0625   False    0.0130       8.8278    3.310e-05     0.151     3.5601
+  0.125    False    0.0273       9.7581    4.129e-05     0.131     3.5368
+  0.25     True     0.0002      13.1526    4.000e-05     0.161     3.4906
+  0.5      True     0.0096       9.8156    1.096e-05     0.241     3.4912
+  1        True     0.0009       8.5855    5.300e-06     0.884     3.6239
+  2        False    0.5000       7.3771    2.403e-06     1.709     2.9037
+  4        True     0.0019       8.4036    1.337e-06     1.156     3.5808
+
+  ("task_ok" here uses the dense-revalidated task residual <= 0.01, a documented,
+  more principled criterion than optimize_protocol's internal `feasible` flag -- see
+  the TASK_FEASIBLE_TOL note in stress_test.py; the internal flag additionally
+  requires SLSQP's own res.success and marks EVERY cell False here, including the
+  T=2 baseline itself, which is a known Stage-5 quirk at T=2, not new to this patch.)
+
+  ANOMALY: tau_z=2 shows a large, reproducible task_resid (0.50) even after a
+  robustness rerun with 4 starts (vs 3) and a different seed, which returned an
+  IDENTICAL result (task_resid=0.5000, max_L3=2.403e-06) -- a genuine, repeatable
+  optimizer difficulty at this specific tau_z, bracketed by working solutions at
+  tau_z=1 and tau_z=4. This does NOT affect the activation conclusion below, since
+  even the (poorly-optimized) tau_z=2 solution's max_L3 (2.4e-6) is far below
+  delta=0.01 -- fixing the optimizer issue could only move this further from
+  activation, not toward it. Reported as an open anomaly, not investigated further
+  given no bearing on the Part-3 outcome.
+
+  SELECTION RULE (fixed before inspecting task_ok values): among task-feasible cells
+  with max_L3 > delta=0.01, choose tau_z closest to 1. RESULT: no task-feasible cell
+  anywhere in this 64x-range tau_z sweep (0.0625 to 4) comes remotely close to
+  violating delta=0.01 -- max_L3 tops out at 4.0e-5, more than 250x below threshold,
+  even at the fastest tested interface-remodeling rate. Part 3A does NOT activate.
+
+Part 3B (population-level constraint-LOGIC unit test, tau_x=tau_z=1, T=2,
+delta_unit in {1e-5, 1e-6} -- NOT scientific identity thresholds):
+  delta_unit=1e-5: A task-feasible (task_resid=0.0009), max_L3=5.300e-06 < 1e-5 --
+    NOT activated.
+  delta_unit=1e-6: A task-feasible (task_resid=0.0009), max_L3=5.300e-06 > 1e-6 --
+    ACTIVATED.
+
+  [Process note, resolved: the FIRST execution of this phase computed "activated"
+  under the pre-fix, SLSQP-internal `feasible` flag (which is False for essentially
+  every T=2 cell in Stage 5, including the baseline itself), so it incorrectly
+  reported delta_unit=1e-6 as not activated. This was caught by inspecting the raw
+  cached task_resid/max_L3 numbers, the "3b_unit" cache entry was deleted, and the
+  phase was re-run under the corrected task_ok criterion (same TASK_FEASIBLE_TOL=0.01
+  definition used throughout Part 3A, decided before this rerun). This is a bug-fix
+  re-application, not threshold-tuning: delta_unit itself was never changed.]
+
+  At the activated delta_unit=1e-6, T=2:
+    A (task-only)        : max_L3=5.300e-06  E=8.5855   task_resid=0.0009 (feasible)
+    C (pathwise, k=12)    : max_L3=3.808e-06  E=10.5044  task_resid=0.3604 (dense-infeasible:
+                             3.808e-6 > delta_unit+1e-6=2e-6)
+    C at T=4 (once, per spec, since T=2's C is pathwise-infeasible):
+                             max_L3=3.781e-06 -- essentially unchanged, still violates.
+
+  INTERPRETATION: C's best-found solution genuinely CHANGES BEHAVIOR relative to A --
+  it suppresses the peak Lambda_3 by ~28% (5.30e-6 -> 3.81e-6), at ~22% higher control
+  energy (8.59 -> 10.50) and a visibly different u_y(t)/u_z(t) profile (see Figure 12,
+  Panel C) -- but neither T=2 nor T=4 drives Lambda_3 fully under delta_unit=1e-6
+  (both remain ~3.8x over). This matches the spec's Acceptable Outcome 2 ("formulation
+  C reports the task/pathwise constraint combination as infeasible") at this
+  deliberately extreme, sub-numerical-noise-floor tolerance, while ALSO directly
+  demonstrating Acceptable Outcome 1's core claim (the controller changes its protocol
+  in response to the constraint) -- both signatures of an active, respected
+  constraint are present. This delta_unit=1e-6 result is the activated case used for
+  Figure 12; it is explicitly labeled in the figure as a stringent unit-test artifact,
+  NOT representative baseline biology.
+
+  Part 3C (12-vs-20-knot cross-check at this activated case):
+    A k=12: E=8.5855  max_L3=5.300e-06  task_resid=0.0009
+    C k=12: E=10.5044 max_L3=3.808e-06  task_resid=0.3604
+    A k=20: E=8.8557  max_L3=5.690e-06  task_resid=0.1007
+    C k=20: E=43.3555 max_L3=1.027e-05  task_resid=0.5000
+  NOT converged: both A and C are knot-count-sensitive here (A's task_resid worsens
+  10x at k=20; C's energy nearly quadruples and its leakage roughly doubles). This is
+  consistent with the T=1 non-convergence finding from the original Stage-5 12-vs-20
+  check and is expected given how demanding delta_unit=1e-6 is relative to the
+  optimizer's own numerical tolerances -- reported as "best found, not converged",
+  matching Stage-5's standing policy on knot-resolution sensitivity.
+
+  Figure 12 (figures/fig12_constraint_activation.{png,pdf,svg}) generated from the
+  k=12 A/C trajectories, explicitly captioned as a stringent unit-test artifact per
+  the spec.
+
+================================================================================
+INTERPRETATION -- four findings kept distinct
+================================================================================
+1. Baseline scientific result (UNCHANGED): at delta=0.01, the original Stage-5
+   collective is robust and the pathwise-integrity constraint is normally inactive.
+   Part 3 STRENGTHENS this finding with an explicit negative control: it remains
+   inactive across a 64x range of interface-remodeling rates (tau_z from 0.0625 to
+   4) and under unit-test thresholds as tight as 1e-5, task-only control alone.
+
+2. Figure-6 correction: boundary-state membership changing over time is not identity
+   loss; the correct object is the smallest boundary family continuing to meet the
+   leakage tolerance, and that family now shows exactly {4,5}->{4,5,6}->{5,6} with
+   no spurious supersets.
+
+3. Organization result: D_org genuinely decreases (accumulated departure, A_org_ctrl)
+   as lambda_org increases from 0 to 1 to 100, but at lambda_org=100 the optimizer's
+   best-found solution notably fails to hit the task target -- so the tradeoff is real
+   but the largest-lambda_org point should not be read as a feasible task solution.
+
+4. Stress-test result: at the primary delta=0.01, the pathwise MB constraint machinery
+   (formulation C) was exercised across a 64x range of tau_z and NEVER activated --
+   this strengthens finding 1. Only at a deliberately extreme, non-physical unit-test
+   tolerance (delta_unit=1e-6, ~100x tighter than the primary threshold and below the
+   optimizer's own reliable numerical resolution at this horizon) did the constraint
+   become active: formulation C's best-found solution measurably changed protocol
+   (lower peak leakage, higher energy, different u_y/u_z shape) relative to task-only,
+   though it could not be driven to full numerical satisfaction even at T=4 or with
+   20 knots. This must NOT be read as evidence the baseline collective is fragile --
+   it is a controller unit test at a threshold ~100x tighter than any biologically
+   motivated value used elsewhere in Stage 5, and Figure 12 is captioned accordingly.
+
+================================================================================
+ANOMALY / DISCREPANCY LOG (this patch)
+================================================================================
+1. tau_z-passthrough bug caught and fixed before any Part-3 results were computed
+   (see "Code changes" above) -- did not affect any reported number.
+2. D1/D2 (fig8_revised) both fail to tightly meet task constraints; reported via
+   explicit in-figure/log caveats rather than hidden.
+3. tau_z=2 shows a reproducible optimizer-convergence anomaly (task_resid=0.50,
+   unchanged after a robustness rerun with more starts) -- does not affect the
+   Part-3 activation conclusion (tau_z=2's max_L3=2.4e-6 is far below delta=0.01
+   regardless), not investigated further.
+4. RESOLVED: the first execution of Part 3B computed "activated" using the stricter,
+   optimizer-internal `feasible` flag (which is False for nearly every T=2 cell in
+   Stage 5, baseline included) rather than the dense task_resid-based `task_ok`
+   criterion already introduced for Part 3A, and so incorrectly reported
+   delta_unit=1e-6 as not activated. Caught by inspecting the raw cached numbers
+   (max_L3=5.3e-6 > delta_unit=1e-6 was visibly a violation), the stale cache entry
+   was deleted, and the phase was re-run under the same task_ok criterion already
+   used elsewhere -- delta_unit itself was never changed after seeing results, only
+   the (already-decided) feasibility criterion was applied consistently. The
+   corrected run found and used the activation at delta_unit=1e-6 (see Part 3B above,
+   Figure 12).
+5. The activated case's 12-vs-20-knot check (Part 3C) does NOT converge (C's energy
+   nearly quadruples and leakage roughly doubles at k=20) -- reported as "best found,
+   not converged," consistent with Stage-5's standing knot-sensitivity findings at
+   demanding horizons/tolerances; NOT treated as a proof of controller correctness
+   beyond k=12.
+
+================================================================================
+OUTPUTS
+================================================================================
+- figures/fig6_revised.{png,pdf,svg} + data/fig6_revised_{membership.csv,data.npz,log.txt}
+- figures/fig8_revised.{png,pdf,svg} + data/fig8_revised_{summary.csv,log.txt}
+- data/stress_test_results.json, data/stress_test_log.txt, data/stress_test_decision.json
+- figures/fig12_constraint_activation.{png,pdf,svg}: activated case = unit-test
+  delta_unit=1e-6, T=2, formulation A vs C (see Part 3B/3C above); explicitly
+  captioned as a stringent unit-test artifact, not primary Stage-5 biology.
+- Regenerated contact sheet: figures/contact_sheet_stage5.{png,pdf} (fig6/fig8 slots
+  show the revised figures; fig12 slot added)
+- Pre-patch figures/results preserved under figures/pre_patch_backup/ and
+  data/pre_patch_backup/

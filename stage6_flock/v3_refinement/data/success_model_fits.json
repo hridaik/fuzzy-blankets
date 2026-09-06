@@ -1,0 +1,110 @@
+{
+ "n_rows": 10000,
+ "n_dev_flocks": 10,
+ "models": {
+  "f_A_only": {
+   "features": [
+    "f_A"
+   ],
+   "in_sample_mcfadden_r2": 0.42049690502826076,
+   "coef": [
+    7.563617228681986
+   ],
+   "intercept": -3.2297152511410916,
+   "loo_holdout_logloss": 0.4197901564628074,
+   "n_loo_folds": 10
+  },
+  "Gamma_only": {
+   "features": [
+    "Gamma"
+   ],
+   "in_sample_mcfadden_r2": 0.3790147740689467,
+   "coef": [
+    8.965452223102147
+   ],
+   "intercept": -4.677179123768345,
+   "loo_holdout_logloss": 0.4344699467315113,
+   "n_loo_folds": 10
+  },
+  "Gamma_plus_mean_m": {
+   "features": [
+    "Gamma",
+    "mean_m"
+   ],
+   "in_sample_mcfadden_r2": 0.6102335056318987,
+   "coef": [
+    -0.012663152685888801,
+    6.22830487098671
+   ],
+   "intercept": -6.234298740052043,
+   "loo_holdout_logloss": 0.28046438447901634,
+   "n_loo_folds": 10
+  },
+  "f_A_plus_concentration": {
+   "features": [
+    "f_A",
+    "max_component_fraction",
+    "sector_entropy"
+   ],
+   "in_sample_mcfadden_r2": 0.4539220730645749,
+   "coef": [
+    6.6206407894498405,
+    -1.4243370392665933,
+    2.4223642496039335
+   ],
+   "intercept": -3.677931487516007,
+   "loo_holdout_logloss": 0.42525782091467057,
+   "n_loo_folds": 10
+  },
+  "frac_m_ge1_only": {
+   "features": [
+    "frac_m_ge1"
+   ],
+   "in_sample_mcfadden_r2": 0.3790147740689467,
+   "coef": [
+    8.965452223102147
+   ],
+   "intercept": -4.677179123768345,
+   "loo_holdout_logloss": 0.4344699467315113,
+   "n_loo_folds": 10
+  },
+  "frac_m_ge2_only": {
+   "features": [
+    "frac_m_ge2"
+   ],
+   "in_sample_mcfadden_r2": 0.5759188383083558,
+   "coef": [
+    14.646438672208204
+   ],
+   "intercept": -3.9958231292802955,
+   "loo_holdout_logloss": 0.2938040524626887,
+   "n_loo_folds": 10
+  },
+  "frac_m_ge2_plus_mean_m": {
+   "features": [
+    "frac_m_ge2",
+    "mean_m"
+   ],
+   "in_sample_mcfadden_r2": 0.6176248586074387,
+   "coef": [
+    4.373240638007204,
+    4.757957483455051
+   ],
+   "intercept": -5.984221484884306,
+   "loo_holdout_logloss": 0.2709873478850574,
+   "n_loo_folds": 10
+  },
+  "mean_m_only": {
+   "features": [
+    "mean_m"
+   ],
+   "in_sample_mcfadden_r2": 0.6102171208275711,
+   "coef": [
+    6.21123638870638
+   ],
+   "intercept": -6.225012006228784,
+   "loo_holdout_logloss": 0.27415989890649145,
+   "n_loo_folds": 10
+  }
+ }
+}

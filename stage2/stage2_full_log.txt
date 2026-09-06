@@ -1,0 +1,130 @@
+########## PART B/C ##########
+=== Part B/C ===
+Covariance divisor convention: n (CMI value is invariant to this choice; see comment in source). Wishart dof used in bias formula: nu = n-1.
+Sanity: batched plug-in formula at population Sigma0 (B=empty) = 0.19801553794 vs core.L_cmi_cov_joint = 0.19801553794
+
+Large-n check: beta_pqr(n) vs leading order pq/(2(n-1))
+n         beta_exact      leading pq/2(n-1)   residual      residual*n^2  
+10        1.42351949e+00  5.00000000e-01      9.235e-01     92.3519       
+30        1.91866459e-01  1.55172414e-01      3.669e-02     33.0246       
+100       4.81343077e-02  4.54545455e-02      2.680e-03     26.7976       
+300       1.53323904e-02  1.50501672e-02      2.822e-04     25.4001       
+1000      4.52944634e-03  4.50450450e-03      2.494e-05     24.9418       
+3000      1.50325724e-03  1.50050017e-03      2.757e-06     24.8136       
+10000     4.50292695e-04  4.50045005e-04      2.477e-07     24.7691       
+30000     1.50032507e-04  1.50005000e-04      2.751e-08     24.7564       
+residual*n^2 should stabilize (not -> 0 and not -> infinity) if residual is truly O(n^-2).
+
+=== Monte Carlo bias check (Sigma0, I={1,2,3}) ===
+B       n      p,q,r     L_pop       beta        mean(Lhat-L)  mean(Ltil-L)  std(Ltil)   RMSE(Ltil)  n_singular
+()      30     3,5,0     0.198016    0.307365    0.307852      0.000487      0.154655    0.154502    0         
+()      50     3,5,0     0.198016    0.168746    0.163649      -0.005096     0.102114    0.102139    0         
+()      100    3,5,0     0.198016    0.079387    0.083087      0.003701      0.066458    0.066494    0         
+()      200    3,5,0     0.198016    0.038563    0.036875      -0.001688     0.043082    0.043072    0         
+()      500    3,5,0     0.198016    0.015167    0.017122      0.001955      0.026183    0.026230    0         
+()      1000   3,5,0     0.198016    0.007541    0.007338      -0.000203     0.018027    0.018010    0         
+()      5000   3,5,0     0.198016    0.001502    0.002128      0.000626      0.008245    0.008260    0         
+(4,)    30     3,4,1     0.042279    0.250728    0.249776      -0.000951     0.112623    0.112514    0         
+(4,)    50     3,4,1     0.042279    0.136481    0.137772      0.001290      0.071250    0.071190    0         
+(4,)    100    3,4,1     0.042279    0.063842    0.066857      0.003016      0.040883    0.040953    0         
+(4,)    200    3,4,1     0.042279    0.030929    0.030643      -0.000287     0.023215    0.023194    0         
+(4,)    500    3,4,1     0.042279    0.012146    0.012692      0.000546      0.013651    0.013648    0         
+(4,)    1000   3,4,1     0.042279    0.006036    0.006229      0.000192      0.009321    0.009313    0         
+(4,)    5000   3,4,1     0.042279    0.001201    0.001522      0.000320      0.004207    0.004215    0         
+(4, 5)  30     3,3,2     0.000000    0.191866    0.199098      0.007232      0.093086    0.093274    0         
+(4, 5)  50     3,3,2     0.000000    0.103508    0.099813      -0.003695     0.046286    0.046387    0         
+(4, 5)  100    3,3,2     0.000000    0.048134    0.048849      0.000714      0.023374    0.023362    0         
+(4, 5)  200    3,3,2     0.000000    0.023256    0.022438      -0.000818     0.010185    0.010208    0         
+(4, 5)  500    3,3,2     0.000000    0.009119    0.008853      -0.000266     0.004293    0.004297    0         
+(4, 5)  1000   3,3,2     0.000000    0.004529    0.004628      0.000099      0.002227    0.002227    0         
+(4, 5)  5000   3,3,2     0.000000    0.000901    0.000909      0.000007      0.000436    0.000436    0         
+
+Saved bias table to /home/hridai/code/graded-mb/stage2/data/part_c_bias_table.csv
+
+########## PART D ##########
+=== Part D: bootstrap CI + coverage ===
+Demo (n=200, B=(4,)): L_fit=0.05628, L_obs_raw=0.05628, L_obs_tilde=0.02535, 95% CI=[-0.03824, 0.07239], U_0.95=0.06391
+  Presentation (clipped at 0) CI: [0.00000, 0.07239]  (unclipped retained above)
+
+=== Coverage study (target 1-alpha=0.95) ===
+NOTE ON COMPUTE BUDGET: the task suggests M>=500 bootstrap replicates and enough outer
+datasets for credible coverage estimates. Coverage assessment requires a NESTED bootstrap
+(R_outer observed datasets, each with its own M-replicate bootstrap), which is far more
+expensive than Part C's unnested bias check. An initial run at R_outer=200, M_boot=500 was
+observed to be dominated by raw random-number generation volume at n=5000 (M*n*d draws per
+outer replicate) rather than by any avoidable inefficiency (a real einsum->matmul bottleneck
+was found and fixed in bootstrap_replicates_cov, but did not fully resolve the runtime). We
+therefore reduced to R_outer=100, M_boot=300 for tractability; R_outer=100 gives a binomial
+coverage SE of ~2.2% at the 95% target, adequate to detect miscalibration >~5-6%. This is a
+compute-budget reduction, not a tuning of results, and is reported per the instructions.
+B=()       n=50     L_pop=0.19802  2-sided cov=0.980  1-sided cov=0.960  mean width=0.48127  n_singular=0
+B=()       n=200    L_pop=0.19802  2-sided cov=0.970  1-sided cov=0.960  mean width=0.18082  n_singular=0
+B=()       n=1000   L_pop=0.19802  2-sided cov=0.930  1-sided cov=0.920  mean width=0.07251  n_singular=0
+B=()       n=5000   L_pop=0.19802  2-sided cov=0.890  1-sided cov=0.900  mean width=0.03118  n_singular=0
+B=(4,)     n=50     L_pop=0.04228  2-sided cov=0.940  1-sided cov=0.940  mean width=0.37449  n_singular=0
+B=(4,)     n=200    L_pop=0.04228  2-sided cov=0.930  1-sided cov=0.890  mean width=0.11033  n_singular=0
+B=(4,)     n=1000   L_pop=0.04228  2-sided cov=0.930  1-sided cov=0.940  mean width=0.03845  n_singular=0
+B=(4,)     n=5000   L_pop=0.04228  2-sided cov=0.950  1-sided cov=0.930  mean width=0.01588  n_singular=0
+B=(4, 5)   n=50     L_pop=0.00000  2-sided cov=1.000  1-sided cov=0.990  mean width=0.31226  n_singular=0
+B=(4, 5)   n=200    L_pop=0.00000  2-sided cov=0.990  1-sided cov=0.980  mean width=0.06978  n_singular=0
+B=(4, 5)   n=1000   L_pop=0.00000  2-sided cov=0.990  1-sided cov=0.980  mean width=0.01402  n_singular=0
+B=(4, 5)   n=5000   L_pop=0.00000  2-sided cov=0.990  1-sided cov=0.990  mean width=0.00284  n_singular=0
+
+Saved coverage table to /home/hridai/code/graded-mb/stage2/data/part_d_coverage_table.csv
+
+########## PART E/F ##########
+=== Part E: confidence-certified blankets ===
+Settings: n in [50, 200, 1000], R_outer=100 datasets/cell, M_boot=500 bootstrap reps/dataset, deltas=[0.01, 0.025, 0.05], eps in [0, 1]. (Reduced R_outer/n-grid vs Part D purely because this step requires computing U_0.95 for all 32 candidates per dataset instead of 3.)
+
+Population-optimal certified boundary (ground truth, no sampling):
+  eps=0, delta=0.01: min|B|=2, optimal set(s)=[(4, 5)]
+  eps=0, delta=0.025: min|B|=2, optimal set(s)=[(4, 5)]
+  eps=0, delta=0.05: min|B|=1, optimal set(s)=[(4,)]
+  eps=1, delta=0.01: min|B|=3, optimal set(s)=[(4, 5, 6)]
+  eps=1, delta=0.025: min|B|=2, optimal set(s)=[(4, 5)]
+  eps=1, delta=0.05: min|B|=2, optimal set(s)=[(4, 5), (4, 6)]
+
+Cross-check vs prompt's stated expectations:
+  eps=0, delta=0.01: expected [(4, 5)], got [(4, 5)], match=True
+  eps=0, delta=0.025: expected [(4, 5)], got [(4, 5)], match=True
+  eps=0, delta=0.05: expected [(4,)], got [(4,)], match=True
+  eps=1, delta=0.01: expected [(4, 5, 6)], got [(4, 5, 6)], match=True
+  eps=1, delta=0.025: expected [(4, 5)], got [(4, 5)], match=True
+  eps=1, delta=0.05: expected [(4, 5)], got [(4, 5), (4, 6)], match=False
+eps=0 n=50     delta=0.01: n_eff=100 none_certified=0, too_small=0, too_large=93, tied=1, population_optimal=4, correct_size_wrong_identity=2
+eps=0 n=50     delta=0.025: n_eff=100 none_certified=0, too_small=1, too_large=83, tied=8, population_optimal=7, correct_size_wrong_identity=1
+eps=0 n=50     delta=0.05: n_eff=100 none_certified=0, too_small=0, too_large=78, tied=15, population_optimal=7, correct_size_wrong_identity=0
+eps=0 n=200    delta=0.01: n_eff=100 none_certified=0, too_small=0, too_large=77, tied=9, population_optimal=13, correct_size_wrong_identity=1
+eps=0 n=200    delta=0.025: n_eff=100 none_certified=0, too_small=1, too_large=29, tied=23, population_optimal=45, correct_size_wrong_identity=2
+eps=0 n=200    delta=0.05: n_eff=100 none_certified=0, too_small=0, too_large=66, tied=20, population_optimal=14, correct_size_wrong_identity=0
+eps=0 n=1000   delta=0.01: n_eff=100 none_certified=0, too_small=0, too_large=0, tied=6, population_optimal=94, correct_size_wrong_identity=0
+eps=0 n=1000   delta=0.025: n_eff=100 none_certified=0, too_small=0, too_large=0, tied=0, population_optimal=100, correct_size_wrong_identity=0
+eps=0 n=1000   delta=0.05: n_eff=100 none_certified=0, too_small=0, too_large=73, tied=8, population_optimal=19, correct_size_wrong_identity=0
+eps=1 n=50     delta=0.01: n_eff=100 none_certified=0, too_small=2, too_large=90, tied=0, population_optimal=3, correct_size_wrong_identity=5
+eps=1 n=50     delta=0.025: n_eff=100 none_certified=0, too_small=0, too_large=93, tied=3, population_optimal=3, correct_size_wrong_identity=1
+eps=1 n=50     delta=0.05: n_eff=100 none_certified=0, too_small=2, too_large=74, tied=12, population_optimal=0, correct_size_wrong_identity=12
+eps=1 n=200    delta=0.01: n_eff=100 none_certified=0, too_small=1, too_large=68, tied=10, population_optimal=21, correct_size_wrong_identity=0
+eps=1 n=200    delta=0.025: n_eff=100 none_certified=0, too_small=0, too_large=71, tied=22, population_optimal=6, correct_size_wrong_identity=1
+eps=1 n=200    delta=0.05: n_eff=100 none_certified=0, too_small=2, too_large=23, tied=26, population_optimal=0, correct_size_wrong_identity=49
+eps=1 n=1000   delta=0.01: n_eff=100 none_certified=0, too_small=0, too_large=1, tied=3, population_optimal=96, correct_size_wrong_identity=0
+eps=1 n=1000   delta=0.025: n_eff=100 none_certified=0, too_small=0, too_large=67, tied=16, population_optimal=17, correct_size_wrong_identity=0
+eps=1 n=1000   delta=0.05: n_eff=100 none_certified=0, too_small=0, too_large=1, tied=43, population_optimal=0, correct_size_wrong_identity=56
+
+Saved Part E selection table to /home/hridai/code/graded-mb/stage2/data/part_e_selection_table.csv
+Saved Part F raw membership counts to /home/hridai/code/graded-mb/stage2/data/part_f_membership_raw.csv
+
+########## PART G ##########
+=== Part G: LR statistic vs chi-square(pq) diagnostic ===
+Exact blanket case: I={1,2,3}, B={4,5}, E={6,7,8}; p=3, q=3, dof=pq=9
+n=30     R_eff=2000   emp_mean=11.479 (theo 9)  emp_var=28.139 (theo 18.000)  KS_stat=0.2090 KS_p=0.0000  emp_reject@0.05=0.1520 (nominal 0.05)
+n=50     R_eff=2000   emp_mean=10.338 (theo 9)  emp_var=24.007 (theo 18.000)  KS_stat=0.1120 KS_p=0.0000  emp_reject@0.05=0.0980 (nominal 0.05)
+n=100    R_eff=2000   emp_mean=9.638 (theo 9)  emp_var=19.585 (theo 18.000)  KS_stat=0.0628 KS_p=0.0000  emp_reject@0.05=0.0625 (nominal 0.05)
+n=200    R_eff=2000   emp_mean=9.354 (theo 9)  emp_var=19.374 (theo 18.000)  KS_stat=0.0379 KS_p=0.0061  emp_reject@0.05=0.0585 (nominal 0.05)
+n=500    R_eff=2000   emp_mean=9.154 (theo 9)  emp_var=17.914 (theo 18.000)  KS_stat=0.0291 KS_p=0.0657  emp_reject@0.05=0.0510 (nominal 0.05)
+n=1000   R_eff=2000   emp_mean=9.053 (theo 9)  emp_var=18.641 (theo 18.000)  KS_stat=0.0105 KS_p=0.9780  emp_reject@0.05=0.0535 (nominal 0.05)
+
+Saved to /home/hridai/code/graded-mb/stage2/data/part_g_null_diagnostic.csv
+
+Interpretation: at small n the chi-square approximation typically over-rejects (LR stat
+skewed/inflated relative to chi2); it should improve monotonically (not necessarily strictly)
+as n grows. This is a diagnostic only -- Part E's delta/bootstrap rule remains the selection method.

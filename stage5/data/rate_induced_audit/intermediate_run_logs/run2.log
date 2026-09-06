@@ -1,0 +1,41 @@
+=== PART 12: ramp-shape robustness (linear / smoothstep / smootherstep), K=3 ===
+Grid (24 points, reduced from the primary 94-pt smoothstep grid for compute budget -- fixed before running, not chosen post hoc): [0.001, 0.001523, 0.00232, 0.003535, 0.005385, 0.008202, 0.012495, 0.019033, 0.028994, 0.044166, 0.067279, 0.102486, 0.156118, 0.237816, 0.362268, 0.551845, 0.840631, 1.28054, 1.950657, 2.971452, 4.526437, 6.89516, 10.503454, 16.0]
+Shape-robustness sweep done in 56.9s (72 runs).
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/shape_robustness_table.csv
+  shape=linear: max_t Lambda_3 full-event peak = 4.2222e-05 at T_ramp=0.008202; T_ramp->0 plateau value = 4.2134e-05; monotone-nonincreasing after the peak index: True
+  shape=smoothstep: max_t Lambda_3 full-event peak = 4.2225e-05 at T_ramp=0.008202; T_ramp->0 plateau value = 4.2134e-05; monotone-nonincreasing after the peak index: False
+  shape=smootherstep: max_t Lambda_3 full-event peak = 4.2226e-05 at T_ramp=0.008202; T_ramp->0 plateau value = 4.2134e-05; monotone-nonincreasing after the peak index: False
+
+=== PART 15: numerical convergence cross-check ===
+  T_ramp=0.02: baseline=4.220305e-05  tighter_tol(1e-10/1e-12)=1.776357e-15 (absdiff=4.22e-05, reldiff=1.00e+00)  denser_grid(4000pt)=4.220280e-05 (absdiff=2.45e-10, reldiff=5.81e-06)
+  T_ramp=0.2: baseline=3.828183e-05  tighter_tol(1e-10/1e-12)=1.776357e-15 (absdiff=3.83e-05, reldiff=1.00e+00)  denser_grid(4000pt)=3.830677e-05 (absdiff=2.49e-08, reldiff=6.52e-04)
+  T_ramp=0.25: baseline=3.569540e-05  tighter_tol(1e-10/1e-12)=8.881784e-16 (absdiff=3.57e-05, reldiff=1.00e+00)  denser_grid(4000pt)=3.569567e-05 (absdiff=2.68e-10, reldiff=7.51e-06)
+  T_ramp=1: baseline=1.300144e-05  tighter_tol(1e-10/1e-12)=1.300144e-05 (absdiff=1.81e-12, reldiff=1.39e-07)  denser_grid(4000pt)=1.300139e-05 (absdiff=4.41e-11, reldiff=3.39e-06)
+  T_ramp=8: baseline=4.383807e-07  tighter_tol(1e-10/1e-12)=4.383805e-07 (absdiff=1.31e-13, reldiff=3.00e-07)  denser_grid(4000pt)=4.383817e-07 (absdiff=1.08e-12, reldiff=2.46e-06)
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/numerical_convergence_table.csv
+
+=== PART 10: conditional-precision decomposition at the two-bump peaks (T_ramp=0.2) ===
+  primary (near ramp end): t=0.2092 z=+1.0000 Kdelta=3.0 L1=6.581e-02 L2=1.522e-02 L3=3.828e-05 L4=1.487e-05  minimizing B(K=3)=(4, 5, 6)
+    dominant |Delta K|_{I,E} entries (node_i, node_j, value), for E=[7, 8]:
+      (2,8): 1.0432e-02
+      (2,7): 1.0432e-02
+      (1,7): 1.0432e-02
+      (3,8): 1.0432e-02
+      (3,7): 1.0432e-02
+      (1,8): 1.0432e-02
+  secondary (post-ramp echo): t=0.5415 z=+1.0000 Kdelta=2.0 L1=4.341e-02 L2=9.950e-05 L3=4.339e-06 L4=1.688e-06  minimizing B(K=3)=(4, 5, 6)
+    dominant |Delta K|_{I,E} entries (node_i, node_j, value), for E=[7, 8]:
+      (1,8): -3.5760e-03
+      (1,7): -3.5760e-03
+      (2,8): -3.5760e-03
+      (2,7): -3.5760e-03
+      (3,7): -3.5760e-03
+      (3,8): -3.5760e-03
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/precision_lag_peak_table.csv
+
+=== PART 13: actual vs quasi-static Lambda_2/Lambda_3, representative T_ramp=0.5 ===
+  max_t Delta-Lambda_2 (actual - quasi-static) = 2.0510e-02
+  max_t Delta-Lambda_3 (actual - quasi-static) = 2.4147e-05 (quasi-static Lambda_3^*=0 along this path, so Delta_Lambda_3 = actual leakage exactly)
+Saved quasistatic_decomposition.npz
+
+rate_induced_audit_run2.py complete.

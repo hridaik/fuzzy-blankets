@@ -1,0 +1,41 @@
+
+
+########## rate_induced_audit_run.py --part 1_2_4_11 started ##########
+=== PART 1: reconstruct the existing Figure-3 / rate_induced.py calculation ===
+Exact ramp function z(t): z(t) = -1 + 2*smoothstep(t/T_ramp), smoothstep(r)=3r^2-2r^3, clipped to r in [0,1] (quasistatic.py:smoothstep). Forced open-loop via u_z chosen so z(t) tracks this EXACTLY regardless of the y-z coupling (quasistatic.slow_ramp_run).
+Initial state: y(0)=-1, z(0)=-1, m(0)=v(-1)*(-1) [=mu*(-1,-1)], Sigma(0)=Omega(-1)^-1 [=Sigma*(-1), the endpoint-A equilibrium].
+y is NOT held fixed: u_y=0 identically, so y evolves freely under y'=y-y^3+u_y=y-y^3 (coupled to z through mu*(y,z) inside the moment ODE, and through the u_z formula which subtracts (y-z) to force z's trajectory -- so y's free evolution DOES feed back into what u_z must be, but z(t) itself is still forced to the prescribed smoothstep exactly).
+ODE integrated for Sigma(t): dSigma/dt = -(Omega(z(t))@Sigma + Sigma@Omega(z(t)) - 2I)/tau_x, tau_x=1 (dynamics.moment_rhs), via dynamics.integrate -> scipy.solve_ivp RK45.
+Time interval simulated: EXACTLY [0, T_ramp] -- dyn.integrate(y0,z0,m0,Sigma0,T_ramp,...) in quasistatic.slow_ramp_run; there is NO post-ramp continuation in the original code.
+Time interval over which max_t Lambda_3(t) was computed in the original right panel: EXACTLY [0, T_ramp] as well -- rate_induced.run_ramp() calls slow_ramp_run(T_ramp, n_eval) and takes res['L3'].max() over that SAME [0,T_ramp] array. CONFIRMED: the old maximum was computed ONLY during the ramp, never after it. (Answers audit Q1: YES.)
+Number of output timepoints: n_eval=300 (rate_induced.run_ramp default) for the primary RAMP_DURATIONS set, n_eval=200 for the FINE_DURATIONS diagnostic sweep -- both far below this audit's 2000-point / refined-peak protocol.
+ODE tolerances: dynamics.integrate defaults rtol=1e-9, atol=1e-11 (already tight; unchanged here for the reproduction step).
+Candidate blankets: core5.enumerate_candidates() = all subsets of {4,5,6,7} (node 8 fixed external anchor, never a candidate), sizes 0..4; integrity.Lambda_K filters to |B|<=K.
+Ties: Lambda_K's RETURNED VALUE is the exact minimum over the filtered candidates (not affected by tie tolerance); the tie tolerance (1e-6) only affects which B are reported as 'winners' alongside that exact minimum. The PLOTTED Lambda_3(t) curve is this exact minimum.
+  T_ramp=0.25: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 3.569630e-05, saved = 3.569630e-05)
+  T_ramp=0.5: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 2.415126e-05, saved = 2.415126e-05)
+  T_ramp=1: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 1.300118e-05, saved = 1.300118e-05)
+  T_ramp=2: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 5.289950e-06, saved = 5.289950e-06)
+  T_ramp=4: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 1.650726e-06, saved = 1.650726e-06)
+  T_ramp=8: reproduced vs saved max|diff| = 0.000e+00 (reproduced max_t L3 = 4.383432e-07, saved = 4.383432e-07)
+Reproduction of the exact published Figure-3 curve: EXACT MATCH
+
+=== PARTS 2-4, 11: extended-ramp full-event sweep, shape=smoothstep, T_relax=8.0, n_eval=2000, rtol=1e-09, atol=1e-11 ===
+Grid (94 points): [0.001, 0.00113036, 0.00127771, 0.00144428, 0.00163255, 0.00184537, 0.002, 0.00208593, 0.00235785, 0.00266522, 0.00301266, 0.00340539, 0.00384932, 0.00435111, 0.00491832, 0.005, 0.00555948, 0.00628421, 0.00710342, 0.00802942, 0.00907613, 0.01, 0.01025929, 0.01159669, 0.01310844, 0.01481725, 0.01674882, 0.0189322, 0.02, 0.02140019, 0.02418992, 0.02734331, 0.03090778, 0.03493691, 0.03949128, 0.04463936, 0.05, 0.05045854, 0.05703631, 0.06447155, 0.07287605, 0.08237615, 0.09311469, 0.1, 0.10525311, 0.11897388, 0.1344833, 0.15, 0.15201451, 0.1718311, 0.19423097, 0.2, 0.21955088, 0.24817149, 0.25, 0.28052308, 0.31709202, 0.35842807, 0.40515269, 0.45796832, 0.5, 0.51766898, 0.58515221, 0.66143254, 0.74765676, 0.84512116, 0.95529099, 1.0, 1.07982255, 1.22058801, 1.37970364, 1.55956155, 1.7628657, 1.99267254, 2.0, 2.25243696, 2.54606422, 2.87796867, 3.25314012, 3.67721886, 4.0, 4.15658042, 4.69843146, 5.31091811, 6.0032484, 6.78583073, 7.67043035, 8.0, 8.67034621, 9.80061092, 11.07821672, 12.52237097, 14.1547849, 16.0]
+  progress: 10/94 (14.7s elapsed)
+  progress: 20/94 (27.8s elapsed)
+  progress: 30/94 (39.9s elapsed)
+  progress: 40/94 (55.1s elapsed)
+  progress: 50/94 (68.9s elapsed)
+  progress: 60/94 (86.1s elapsed)
+  progress: 70/94 (99.0s elapsed)
+  progress: 80/94 (110.7s elapsed)
+  progress: 90/94 (125.2s elapsed)
+  progress: 94/94 (131.9s elapsed)
+Sweep complete in 131.9s.
+SPD check: min sampled Sigma eigenvalue over ALL runs = 1.229e-01 (must be > 0)
+Nonnegativity check: min Lambda_3(t) over ALL runs/times = -2.665e-15 (must be >= -1e-9)
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/full_event_peak_table.csv
+Saved /home/hridai/code/graded-mb/stage5/data/rate_induced_audit/full_event_sweep_smoothstep.npz (full trajectories retained for T_ramp in [0.001, 0.00340539, 0.01159669, 0.02, 0.04463936, 0.05, 0.1, 0.15, 0.2, 0.25, 0.40515269, 0.5, 1.0, 1.37970364, 2.0, 4.0, 16.0])
+
+Parts 1,2,3,4,11 (primary smoothstep sweep) complete.

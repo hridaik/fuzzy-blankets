@@ -1,0 +1,38 @@
+seed 2: |I0|=20 |B^D_0|=12 |B^F_0|=2  (4.0s elapsed)
+  B^D_0 done (126.4s elapsed)
+  B^F_0 done (246.3s elapsed)
+    tau=1: excess_logloss B^D=-0.00778  B^F=0.01420
+    tau=2: excess_logloss B^D=0.02138  B^F=0.02027
+    tau=3: excess_logloss B^D=0.00875  B^F=0.04618
+    tau=4: excess_logloss B^D=0.03660  B^F=0.00696
+    tau=5: excess_logloss B^D=0.00196  B^F=0.03984
+    tau=6: excess_logloss B^D=0.01582  B^F=-0.01980
+seed 3: |I0|=19 |B^D_0|=14 |B^F_0|=1  (246.5s elapsed)
+  B^D_0 done (371.5s elapsed)
+  B^F_0 done (496.5s elapsed)
+    tau=1: excess_logloss B^D=0.01248  B^F=0.07781
+    tau=2: excess_logloss B^D=0.04557  B^F=0.09470
+    tau=3: excess_logloss B^D=0.07669  B^F=0.15918
+    tau=4: excess_logloss B^D=0.07424  B^F=0.12644
+    tau=5: excess_logloss B^D=0.11132  B^F=0.12894
+    tau=6: excess_logloss B^D=0.09628  B^F=0.10999
+seed 8: |I0|=20 |B^D_0|=13 |B^F_0|=9  (496.7s elapsed)
+  B^D_0 done (622.1s elapsed)
+  B^F_0 done (744.4s elapsed)
+    tau=1: excess_logloss B^D=-0.00279  B^F=0.03528
+    tau=2: excess_logloss B^D=0.02665  B^F=0.01405
+    tau=3: excess_logloss B^D=0.03887  B^F=0.02510
+    tau=4: excess_logloss B^D=0.03468  B^F=0.04399
+    tau=5: excess_logloss B^D=-0.00362  B^F=0.00632
+    tau=6: excess_logloss B^D=0.02593  B^F=-0.01189
+seed 13: |I0|=14 |B^D_0|=17 |B^F_0|=3  (744.5s elapsed)
+  B^D_0 done (868.6s elapsed)
+  B^F_0 done (1002.4s elapsed)
+    tau=1: excess_logloss B^D=0.00970  B^F=0.35340
+    tau=2: excess_logloss B^D=0.05538  B^F=0.09808
+    tau=3: excess_logloss B^D=0.07586  B^F=0.18540
+    tau=4: excess_logloss B^D=0.10420  B^F=0.14093
+    tau=5: excess_logloss B^D=0.14791  B^F=0.19130
+    tau=6: excess_logloss B^D=0.02533  B^F=0.13803
+
+Done in 1002.4s. Wrote data/predictive_permeability.json

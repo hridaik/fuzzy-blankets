@@ -1,0 +1,94 @@
+{
+ "shortlist": [
+  67,
+  57,
+  76,
+  77,
+  86,
+  68,
+  66,
+  87,
+  15,
+  46
+ ],
+ "T_u": 20,
+ "T_r": 20,
+ "n_replicates": 50,
+ "history": [
+  {
+   "k": 2,
+   "actuators": [
+    67,
+    57
+   ],
+   "mean_Hstar_end": 0.14900000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.017,
+   "mean_min_coherence": 0.627,
+   "mean_lineage_end": 0.5260000000000001
+  },
+  {
+   "k": 3,
+   "actuators": [
+    67,
+    57,
+    46
+   ],
+   "mean_Hstar_end": 0.19500000000000003,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.062,
+   "mean_min_coherence": 0.6859999999999999,
+   "mean_lineage_end": 0.634
+  },
+  {
+   "k": 4,
+   "actuators": [
+    67,
+    57,
+    46,
+    66
+   ],
+   "mean_Hstar_end": 0.254,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.114,
+   "mean_min_coherence": 0.619,
+   "mean_lineage_end": 0.49099999999999994
+  },
+  {
+   "k": 5,
+   "actuators": [
+    67,
+    57,
+    46,
+    66,
+    77
+   ],
+   "mean_Hstar_end": 0.27399999999999997,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.13799999999999998,
+   "mean_min_coherence": 0.596,
+   "mean_lineage_end": 0.47100000000000003
+  },
+  {
+   "k": 6,
+   "actuators": [
+    67,
+    57,
+    46,
+    66,
+    77,
+    68
+   ],
+   "mean_Hstar_end": 0.282,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.13299999999999998,
+   "mean_min_coherence": 0.586,
+   "mean_lineage_end": 0.47200000000000003
+  }
+ ]
+}

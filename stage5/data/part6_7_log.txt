@@ -1,0 +1,13 @@
+=== Stage 5, Section 6: equilibrium fixed-point + Gaussian-preservation check ===
+At endpoint-A equilibrium (y=-1,z=-1) with u=0:
+  |dy/dt| = 0.000e+00  (y - y^3 at y=-1 is exactly 0)
+  |dz/dt| = 0.000e+00  (y=z=-1)
+  max|dm/dt| = 0.000e+00  (m0=mu*(-1,-1) so Omega(m-mu*)=0)
+  max|dSigma/dt| = 8.882e-16  (Sigma0=Omega^-1 so Omega*Sigma+Sigma*Omega=2I)
+Fixed point confirmed: with u_y=u_z=0, endpoint-A equilibrium is stationary for (y,z,m,Sigma).
+
+Deterministic-protocol Gaussian preservation: by construction the moment ODEs are the exact mean/covariance equations of a linear (time-varying, via Omega(z_t)) Ornstein-Uhlenbeck-type SDE for FIXED deterministic y(t),z(t) protocols, so p_t stays Gaussian for all t (standard OU result: a Gaussian initial condition evolved under dX = -A(t)(X-b(t))dt + sigma dW remains Gaussian, with mean/cov obeying exactly these linear ODEs). We additionally verify D_org >= 0 numerically below as a nonnegativity sanity check on the exact Gaussian KL expression.
+
+=== Section 7: D_org diagnostic ===
+D_org at initial equilibrium = -2.776e-16 (expect ~0, sign(Omega*Sigma)=1.0)
+Min D_org over 500 random perturbed Gaussian states (z in [-1,1]) = 5.978e-02 (expect >= -tol)

@@ -1,0 +1,372 @@
+{
+ "section15_convergence": [
+  {
+   "n_steps": 50,
+   "dt": 0.04,
+   "mean_err": 0.03408071042202221,
+   "cov_err": 0.06998678861992841
+  },
+  {
+   "n_steps": 100,
+   "dt": 0.02,
+   "mean_err": 0.04470225629338409,
+   "cov_err": 0.038105617503253975
+  },
+  {
+   "n_steps": 200,
+   "dt": 0.01,
+   "mean_err": 0.03031177899399784,
+   "cov_err": 0.04336567764154703
+  },
+  {
+   "n_steps": 400,
+   "dt": 0.005,
+   "mean_err": 0.04729813270318406,
+   "cov_err": 0.03866056452253247
+  },
+  {
+   "n_steps": 800,
+   "dt": 0.0025,
+   "mean_err": 0.04942392335760126,
+   "cov_err": 0.025294147103584616
+  },
+  {
+   "n_steps": 1600,
+   "dt": 0.00125,
+   "mean_err": 0.029989758534062938,
+   "cov_err": 0.04051714822652293
+  }
+ ],
+ "section16_discovery": [
+  {
+   "n": 50,
+   "R": 100,
+   "n_exact": 0,
+   "n_partial": 100,
+   "n_none": 0,
+   "frac_exact": 0.0,
+   "examples": [
+    {
+     "rep": 0,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      6
+     ],
+     "B": [
+      5
+     ],
+     "L_tilde": 0.007233224968216545
+    },
+    {
+     "rep": 1,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "B": [
+      7
+     ],
+     "L_tilde": -0.0024844941412969224
+    },
+    {
+     "rep": 2,
+     "I": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "B": [
+      4
+     ],
+     "L_tilde": 0.009370609739875801
+    },
+    {
+     "rep": 3,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "B": [
+      7
+     ],
+     "L_tilde": -0.0069372112921695095
+    },
+    {
+     "rep": 4,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "B": [],
+     "L_tilde": 0.0103175684499075
+    }
+   ],
+   "wall_time": 64.2021586894989
+  },
+  {
+   "n": 200,
+   "R": 100,
+   "n_exact": 10,
+   "n_partial": 90,
+   "n_none": 0,
+   "frac_exact": 0.1,
+   "examples": [
+    {
+     "rep": 0,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4
+     ],
+     "L_tilde": -0.009956285240062535
+    },
+    {
+     "rep": 1,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "B": [
+      6,
+      7
+     ],
+     "L_tilde": 0.018291914192477776
+    },
+    {
+     "rep": 2,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "B": [
+      6
+     ],
+     "L_tilde": 0.015605166587125296
+    },
+    {
+     "rep": 4,
+     "I": [
+      1
+     ],
+     "B": [
+      3
+     ],
+     "L_tilde": 0.01842398282404112
+    },
+    {
+     "rep": 5,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4
+     ],
+     "L_tilde": 0.01416521658125891
+    }
+   ],
+   "wall_time": 70.89874243736267
+  },
+  {
+   "n": 1000,
+   "R": 100,
+   "n_exact": 24,
+   "n_partial": 76,
+   "n_none": 0,
+   "frac_exact": 0.24,
+   "examples": [
+    {
+     "rep": 0,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4,
+      6
+     ],
+     "L_tilde": 0.01765690866396863
+    },
+    {
+     "rep": 1,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4,
+      6
+     ],
+     "L_tilde": 0.008391663168795915
+    },
+    {
+     "rep": 2,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4,
+      6
+     ],
+     "L_tilde": 0.014628819149090866
+    },
+    {
+     "rep": 3,
+     "I": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "B": [
+      6,
+      7
+     ],
+     "L_tilde": 0.01971824498237318
+    },
+    {
+     "rep": 4,
+     "I": [
+      1,
+      2,
+      3,
+      5
+     ],
+     "B": [
+      4,
+      7
+     ],
+     "L_tilde": 0.014248254416337147
+    }
+   ],
+   "wall_time": 80.41382265090942
+  }
+ ],
+ "section17_moving_boundary": {
+  "rows": [
+   {
+    "z": -1.0,
+    "B_selected": [
+     4,
+     5,
+     6
+    ],
+    "n_ties_selection": 1,
+    "L_selection": -0.0007082336823200919,
+    "L_validation": -0.0007040155233690726,
+    "L3_oracle": 0.0,
+    "identity_matches_oracle_argmin": true,
+    "Kdelta_true": 2,
+    "Kdelta_hat": 3
+   },
+   {
+    "z": -0.5,
+    "B_selected": [
+     4,
+     5,
+     6
+    ],
+    "n_ties_selection": 1,
+    "L_selection": 0.0019402617485217988,
+    "L_validation": -0.00017993853237019408,
+    "L3_oracle": 0.0,
+    "identity_matches_oracle_argmin": true,
+    "Kdelta_true": 2,
+    "Kdelta_hat": 3
+   },
+   {
+    "z": 0.0,
+    "B_selected": [
+     4,
+     5,
+     6
+    ],
+    "n_ties_selection": 1,
+    "L_selection": 0.0014813315335580057,
+    "L_validation": -0.0017812696370924641,
+    "L3_oracle": -8.881784197001252e-16,
+    "identity_matches_oracle_argmin": true,
+    "Kdelta_true": 3,
+    "Kdelta_hat": 3
+   },
+   {
+    "z": 0.5,
+    "B_selected": [
+     4,
+     5,
+     6
+    ],
+    "n_ties_selection": 1,
+    "L_selection": -0.0013504978656069255,
+    "L_validation": -0.0006367094194343892,
+    "L3_oracle": 8.881784197001252e-16,
+    "identity_matches_oracle_argmin": true,
+    "Kdelta_true": 2,
+    "Kdelta_hat": 3
+   },
+   {
+    "z": 1.0,
+    "B_selected": [
+     5,
+     6,
+     7
+    ],
+    "n_ties_selection": 1,
+    "L_selection": -0.0013373837246142273,
+    "L_validation": -0.0005028698516724717,
+    "L3_oracle": 0.0,
+    "identity_matches_oracle_argmin": true,
+    "Kdelta_true": 2,
+    "Kdelta_hat": 3
+   }
+  ],
+  "L3_rmse": 0.0009337252513581524,
+  "n_ens": 2000
+ },
+ "section18_bootstrap": {
+  "n_paths": 1000,
+  "n_boot": 2000,
+  "n_check": 201,
+  "single_realization_covered": true,
+  "n_outer": 40,
+  "empirical_coverage": 1.0
+ },
+ "section19_summary_note": "See section15-18 blocks above; this run used --scale=full."
+}

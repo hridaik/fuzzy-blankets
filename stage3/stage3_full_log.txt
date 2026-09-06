@@ -1,0 +1,250 @@
+########## PART 1A: Wishart validation ##########
+=== Part 1A: Wishart-level sampling validation against raw-data Monte Carlo ===
+B=()       n=50    mean(Lhat) raw=0.365831 wish=0.367509  var raw=0.0106087 wish=0.0101217  U95(boot) raw=0.38834 wish=0.39072
+B=()       n=200   mean(Lhat) raw=0.236305 wish=0.235751  var raw=0.0017577 wish=0.0017772  U95(boot) raw=0.24715 wish=0.25469
+B=(4,)     n=50    mean(Lhat) raw=0.179970 wish=0.180002  var raw=0.0048610 wish=0.0048576  U95(boot) raw=0.23908 wish=0.23954
+B=(4,)     n=200   mean(Lhat) raw=0.072842 wish=0.073433  var raw=0.0005550 wish=0.0005721  U95(boot) raw=0.05472 wish=0.05434
+B=(4, 5)   n=50    mean(Lhat) raw=0.103565 wish=0.104392  var raw=0.0024691 wish=0.0023628  U95(boot) raw=0.08746 wish=0.08822
+B=(4, 5)   n=200   mean(Lhat) raw=0.023249 wish=0.023261  var raw=0.0001187 wish=0.0001223  U95(boot) raw=0.01054 wish=0.01068
+
+Saved to /home/hridai/code/graded-mb/stage3/data/part1a_wishart_validation.csv
+
+Agreement check (mean/var/quantiles should match within MC noise, MC SE on mean ~ sd/sqrt(R=3000)):
+  max |mean_raw - mean_wish| (bias-corrected) = 0.00168
+  max relative |var_raw - var_wish| = 0.0459
+
+########## PART 1B/C/D: high-precision coverage ##########
+=== Track 1, Parts 1B/1C/1D: high-precision coverage + oracle diagnostic ===
+Settings: R_outer=5000, M_boot=1000, M_oracle=20000, alpha=0.05 (all via Wishart-level sampling, validated in Part 1A).
+B=()         n=1000   L_pop=0.19802  n_eff=5000  (49.5s)  basic=0.9354 [0.9282,0.9419]  percentile=0.9774  bc=0.8860  oracle=0.9430 [0.9362,0.9491]
+B=()         n=5000   L_pop=0.19802  n_eff=5000  (50.9s)  basic=0.9418 [0.9350,0.9480]  percentile=0.9628  bc=0.9250  oracle=0.9518 [0.9455,0.9574]
+B=(4,)       n=200    L_pop=0.04228  n_eff=5000  (53.0s)  basic=0.9466 [0.9400,0.9525]  percentile=1.0000  bc=0.6596  oracle=0.9548 [0.9487,0.9602]
+B=(4,)       n=1000   L_pop=0.04228  n_eff=5000  (51.4s)  basic=0.9374 [0.9303,0.9438]  percentile=0.9902  bc=0.8328  oracle=0.9544 [0.9483,0.9598]
+B=(4,)       n=5000   L_pop=0.04228  n_eff=5000  (55.6s)  basic=0.9412 [0.9343,0.9474]  percentile=0.9724  bc=0.9122  oracle=0.9512 [0.9449,0.9568]
+B=(4, 5)     n=200    L_pop=0.00000  n_eff=5000  (59.6s)  basic=0.9908 [0.9878,0.9931]  percentile=1.0000  bc=0.5460  oracle=0.9518 [0.9455,0.9574]
+B=(4, 5)     n=1000   L_pop=0.00000  n_eff=5000  (62.6s)  basic=0.9914 [0.9884,0.9936]  percentile=1.0000  bc=0.5490  oracle=0.9560 [0.9500,0.9613]
+
+Total wall time: 383.9s
+Saved to /home/hridai/code/graded-mb/stage3/data/track1_highprec_coverage.csv
+
+=== Part 1D: method comparison verdict ===
+  basic        mean |coverage - 0.95| across cells = 0.0185, max = 0.0414
+  percentile   mean |coverage - 0.95| across cells = 0.0361, max = 0.0500
+  bc           mean |coverage - 0.95| across cells = 0.1913, max = 0.4040
+
+########## PART 1E: certification margin ##########
+=== Part 1E: certification margin M_delta(B) = delta - L_pop(B) ===
+B=()         n=200    L_pop=0.19802 (12.3s, n_eff=2000)
+B=()         n=1000   L_pop=0.19802 (11.4s, n_eff=2000)
+B=()         n=5000   L_pop=0.19802 (11.2s, n_eff=2000)
+B=(4,)       n=200    L_pop=0.04228 (13.4s, n_eff=2000)
+B=(4,)       n=1000   L_pop=0.04228 (12.1s, n_eff=2000)
+B=(4,)       n=5000   L_pop=0.04228 (13.2s, n_eff=2000)
+B=(5,)       n=200    L_pop=0.11590 (12.1s, n_eff=2000)
+B=(5,)       n=1000   L_pop=0.11590 (11.8s, n_eff=2000)
+B=(5,)       n=5000   L_pop=0.11590 (13.0s, n_eff=2000)
+B=(4, 5)     n=200    L_pop=0.00000 (12.4s, n_eff=2000)
+B=(4, 5)     n=1000   L_pop=0.00000 (12.4s, n_eff=2000)
+B=(4, 5)     n=5000   L_pop=0.00000 (13.3s, n_eff=2000)
+B=(4, 6)     n=200    L_pop=0.04048 (12.0s, n_eff=2000)
+B=(4, 6)     n=1000   L_pop=0.04048 (11.7s, n_eff=2000)
+B=(4, 6)     n=5000   L_pop=0.04048 (11.7s, n_eff=2000)
+B=(4, 5, 6)  n=200    L_pop=0.00000 (13.0s, n_eff=2000)
+B=(4, 5, 6)  n=1000   L_pop=0.00000 (13.4s, n_eff=2000)
+B=(4, 5, 6)  n=5000   L_pop=0.00000 (12.1s, n_eff=2000)
+
+Total wall time: 222.6s
+Saved to /home/hridai/code/graded-mb/stage3/data/track1_partE_margin.csv
+
+Illustrating: small positive margin -> hard to certify even with substantial data.
+  B=(4, 5) n=1000 delta=0.005 margin=0.0050 cert_prob=0.542
+  B=(4, 5) n=1000 delta=0.010 margin=0.0100 cert_prob=0.933
+  B=(4, 5) n=1000 delta=0.015 margin=0.0150 cert_prob=0.992
+  B=(4, 5) n=1000 delta=0.020 margin=0.0200 cert_prob=1.000
+  B=(4, 5) n=1000 delta=0.025 margin=0.0250 cert_prob=1.000
+  B=(4, 5) n=1000 delta=0.030 margin=0.0300 cert_prob=1.000
+
+########## PART 2A/B/C ##########
+=== Part 2A: controlled mean dynamics (structure check) ===
+Mean dynamics integrated OK; Y(T=3) under constant unit input at node 4, q=0.7: 0.108512
+(Individual stochastic realizations are NOT claimed to be driven exactly to target -- only the mean.)
+
+=== Part 2B: covariance/blanket invariance under deterministic control ===
+  q=-2    Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=-1    Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=-0.5  Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=0     Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=0.5   Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=1     Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+  q=2     Lyapunov residual (Aq Sigma0 + Sigma0 Aq^T - 2I) max|.|=8.882e-16   L(I;E|B)=8.882e-16
+Verified: Sigma0 is a fixed point of the Lyapunov ODE for all tested q (independent of u(t)),
+so the instantaneous Gaussian blanket I(X_1:3;X_6:8|X_4,5) stays exactly 0 while steering the mean.
+NOTE: this Sigma-invariance-under-control property is specific to this linear additive-control
+benchmark (u enters only the mean ODE, not the diffusion) and must not be generalized to nonlinear systems.
+
+Numerical ODE integration of Sigma(t) under u(t)=sin(2t)+0.5 forcing the MEAN only (q=1):
+  max|Sigma(T=2) - Sigma0| = 0.000e+00 (should be ~0 since u enters only the mean equation)
+
+=== Part 2C: full Delta-J audit ===
+  q=-2    max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=9.0000(exp 9.0000)  J63=-9.0000(exp -9.0000)  #nonzero entries in DeltaJ=10/64
+  q=-1    max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=4.5000(exp 4.5000)  J63=-4.5000(exp -4.5000)  #nonzero entries in DeltaJ=10/64
+  q=-0.5  max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=2.2500(exp 2.2500)  J63=-2.2500(exp -2.2500)  #nonzero entries in DeltaJ=10/64
+  q=0.5   max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=-2.2500(exp -2.2500)  J63=2.2500(exp 2.2500)  #nonzero entries in DeltaJ=10/64
+  q=1     max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=-4.5000(exp -4.5000)  J63=4.5000(exp 4.5000)  #nonzero entries in DeltaJ=10/64
+  q=2     max|DeltaJ - (-Qq Omega0)|=0.00e+00  J36=-9.0000(exp -9.0000)  J63=9.0000(exp 9.0000)  #nonzero entries in DeltaJ=10/64
+
+  At q=1, nonzero DeltaJ entries (1-indexed node pairs): [(3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5)]
+  CONFIRMS: DeltaJ is NOT confined to the (3,6)/(6,3) pair -- Q_q right-multiplies by the full
+  dense Omega0, so row 3 and row 6 of DeltaJ are both entirely reshaped (all their nonzero
+  Omega0 couplings get rotated by q), not just the single 3-6 entry.
+
+Saved Part 2B/2C data.
+
+########## PART 2D ##########
+=== Part 2D: impulse response h_k(t;q) ===
+Symmetry check: Q_q couples only nodes 3 and 6, so full {1,2,3}/{6,7,8} permutation
+symmetry is expected ONLY at q=0. For q!=0, node 3 is singled out within {1,2,3} and
+node 6 is singled out within {6,7,8}; the residual pairs {1,2} and {7,8} should stay symmetric.
+  q=0: max|h1-h2|=2.220e-16  max|h1-h3|=1.665e-16  max|h7-h8|=3.469e-17  max|h6-h7|=4.163e-17
+  q=1: max|h1-h2|=1.665e-16  max|h1-h3|=8.774e-02  max|h7-h8|=4.163e-17  max|h6-h7|=1.545e-01
+Confirmed: {1,2} and {7,8} stay exactly symmetric for all q; node 3 and node 6 (the pair
+directly coupled by Q_q) are the only nodes whose impulse response is q-dependent asymmetrically.
+
+Saved impulse-response grid (499 time points x 7 q values x 8 nodes) and summary.
+
+########## PART 2E ##########
+=== Part 2E: static gain g_k(q) ===
+q=0 exact-fraction check:
+  g_1(0) = 0.1981220657  expected 0.1981220657  diff=2.78e-17
+  g_2(0) = 0.1981220657  expected 0.1981220657  diff=2.78e-17
+  g_3(0) = 0.1981220657  expected 0.1981220657  diff=5.55e-17
+  g_4(0) = 0.1126760563  expected 0.1126760563  diff=1.39e-17
+  g_5(0) = 0.0985915493  expected 0.0985915493  diff=1.39e-17
+  g_6(0) = 0.0647887324  expected 0.0647887324  diff=2.78e-17
+  g_7(0) = 0.0647887324  expected 0.0647887324  diff=1.39e-17
+  g_8(0) = 0.0647887324  expected 0.0647887324  diff=1.39e-17
+
+q-invariance check for k in {1,2,4,5,7,8}:
+  q=-2    g3=0.01370892 (analytic 0.01370892, diff 5.20e-18)  g6=0.09220657 (analytic 0.09220657, diff 1.39e-17)
+  q=-1.5  g3=0.03105814 (analytic 0.03105814, diff 1.04e-17)  g6=0.11137595 (analytic 0.11137595, diff 2.78e-17)
+  q=-1    g3=0.06666667 (analytic 0.06666667, diff 0.00e+00)  g6=0.13145540 (analytic 0.13145540, diff 0.00e+00)
+  q=-0.5  g3=0.13258216 (analytic 0.13258216, diff 2.78e-17)  g6=0.13107981 (analytic 0.13107981, diff 2.78e-17)
+  q=0.5   g3=0.18441315 (analytic 0.18441315, diff 2.78e-17)  g6=-0.02741784 (analytic -0.02741784, diff 1.04e-17)
+  q=1     g3=0.13145540 (analytic 0.13145540, diff 5.55e-17)  g6=-0.06666667 (analytic -0.06666667, diff 2.78e-17)
+  q=1.5   g3=0.09086313 (analytic 0.09086313, diff 1.39e-17)  g6=-0.07150596 (analytic -0.07150596, diff 0.00e+00)
+  q=2     g3=0.06553991 (analytic 0.06553991, diff 1.39e-17)  g6=-0.06629108 (analytic -0.06629108, diff 1.39e-17)
+
+Spot checks:
+  g3(1) = 0.1314553991  expected 0.1314553991  diff=2.78e-17
+  g6(1) = -0.0666666667  expected -0.0666666667  diff=1.39e-17
+  g3(-1) = 0.0666666667  expected 0.0666666667  diff=1.39e-17
+  g6(-1) = 0.1314553991  expected 0.1314553991  diff=2.78e-17
+
+All Part 2E identities verified exactly. Saved dense g_k(q) grid (161 points).
+
+########## PART 2F ##########
+=== Part 2F: finite-horizon controllability Gramian cross-verification ===
+Max |eta_lyapunov - eta_quadrature(Simpson)| over all (q,T,k) = 2.032e-13
+Max |eta_lyapunov - integral(h_k^2)(trapezoid)|              = 4.633e-08
+Saved Gramian cross-verification table. All three independent computation routes agree.
+
+########## PART 2G ##########
+=== Part 2G: minimum-energy steering to Y(T)=Y* ===
+  q=0.0  k=4 T=1.0  eta_k=4.720160e-03  E*=211.857232  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=211.857232 (should = E*)
+  q=0.0  k=6 T=1.0  eta_k=7.142246e-04  E*=1400.119773  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=1400.119773 (should = E*)
+  q=1.0  k=4 T=1.0  eta_k=6.467652e-03  E*=154.615624  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=154.615624 (should = E*)
+  q=1.0  k=6 T=1.0  eta_k=4.784317e-03  E*=209.016262  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=209.016262 (should = E*)
+  q=0.0  k=4 T=3.0  eta_k=5.763906e-03  E*=173.493471  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=173.493471 (should = E*)
+  q=1.0  k=6 T=3.0  eta_k=4.829957e-03  E*=207.041165  Y(T) achieved=1.00000000 (target 1.0)  energy(quad)=207.041165 (should = E*)
+
+All representative minimum-energy control cases verified: Y(T)=1 achieved, energy matches E*.
+
+########## PART 2H/I ##########
+=== Part 2H: short-horizon analytic checks at q=0 ===
+
+Internal nodes 1,2,3 (expect h(0)=1/3):
+  k=1: h_k(0) = 0.3333333333  (expected 1/3 = 0.3333333333)
+  k=2: h_k(0) = 0.3333333333  (expected 1/3 = 0.3333333333)
+  k=3: h_k(0) = 0.3333333333  (expected 1/3 = 0.3333333333)
+
+Blanket node 4 (expect h'(0)=1):
+  h_4(0)=0.000e+00 (expect 0)  h_4'(0)=1.0000000000 (expect 1)
+
+Blanket node 5 (expect h'(0)=1/2):
+  h_5(0)=0.000e+00 (expect 0)  h_5'(0)=0.5000000000 (expect 0.5)
+
+Exterior nodes 6,7,8 (expect h(0)=h'(0)=0, h''(0)=5/4):
+  k=6: h(0)=0.000e+00  h'(0)=0.000e+00  h''(0)=1.2500000000 (expect 1.25)
+  k=7: h(0)=0.000e+00  h'(0)=0.000e+00  h''(0)=1.2500000000 (expect 1.25)
+  k=8: h(0)=0.000e+00  h'(0)=0.000e+00  h''(0)=1.2500000000 (expect 1.25)
+
+Small-T log-log slope verification (eta_k(T) ~ T^p):
+  internal k=1: fitted slope=0.9992  expected=1.0  (T probe range 1e-04-8e-04)
+  blanket k=4: fitted slope=2.9765  expected=3.0  (T probe range 1e-03-8e-03)
+  blanket k=5: fitted slope=2.9839  expected=3.0  (T probe range 1e-03-8e-03)
+  exterior k=6: fitted slope=4.9827  expected=5.0  (T probe range 1e-03-8e-03)
+
+Leading-order E*_k(T) prefactor checks (E* = 1/eta at Y*=1):
+  k=1: E*(1e-03) = 9.0225e+03  leading-order predicted = 9.0000e+03  rel.err=0.0025
+  k=4: E*(1e-03) = 3.0214e+09  leading-order predicted = 3.0000e+09  rel.err=0.0071
+  k=5: E*(1e-03) = 1.2059e+10  leading-order predicted = 1.2000e+10  rel.err=0.0049
+  k=6: E*(1e-03) = 1.2991e+16  leading-order predicted = 1.2800e+16  rel.err=0.0149
+
+All Part 2H short-horizon checks passed.
+
+=== Part 2I: nonequilibrium short-time coefficients (general q) ===
+  q=-2    h4'(0)=0.333333(exp 0.333333)  h5'(0)=0.166667(exp 0.166667)  h6'(0)=3.000000(exp 3.000000)  h7'(0)=-0.666667 h8'(0)=-0.666667(exp -0.666667)
+  q=-1    h4'(0)=0.666667(exp 0.666667)  h5'(0)=0.333333(exp 0.333333)  h6'(0)=1.500000(exp 1.500000)  h7'(0)=-0.333333 h8'(0)=-0.333333(exp -0.333333)
+  q=-0.5  h4'(0)=0.833333(exp 0.833333)  h5'(0)=0.416667(exp 0.416667)  h6'(0)=0.750000(exp 0.750000)  h7'(0)=-0.166667 h8'(0)=-0.166667(exp -0.166667)
+  q=0.5   h4'(0)=1.166667(exp 1.166667)  h5'(0)=0.583333(exp 0.583333)  h6'(0)=-0.750000(exp -0.750000)  h7'(0)=0.166667 h8'(0)=0.166667(exp 0.166667)
+  q=1     h4'(0)=1.333333(exp 1.333333)  h5'(0)=0.666667(exp 0.666667)  h6'(0)=-1.500000(exp -1.500000)  h7'(0)=0.333333 h8'(0)=0.333333(exp 0.333333)
+  q=2     h4'(0)=1.666667(exp 1.666667)  h5'(0)=0.833333(exp 0.833333)  h6'(0)=-3.000000(exp -3.000000)  h7'(0)=0.666667 h8'(0)=0.666667(exp 0.666667)
+
+Eta_6(T) ~ [h6'(0)]^2/3 * T^3 = (1.5q)^2/3 T^3 = (3/4) q^2 T^3 check, and E*_6(T) ~ 4/(3 q^2 T^3):
+  q=1.0: eta_6(1e-03) = 7.452019e-10  predicted = 7.500000e-10  rel.err=0.0064
+  q=-1.0: eta_6(1e-03) = 7.461337e-10  predicted = 7.500000e-10  rel.err=0.0052
+  q=2.0: eta_6(1e-03) = 2.981703e-09  predicted = 3.000000e-09  rel.err=0.0061
+
+Analytic crossover q* where eta_6(T)=eta_4(T) at leading order (T-independent ratio):
+  eta_4 ~ (1+q/3)^2/3 T^3 ;  eta_6 ~ (1.5q)^2/3 T^3
+  crossover: (1+q/3)^2 = (1.5q)^2  =>  1+q/3 = +-1.5q
+  q* = 6/7 = 0.857143   and   q* = -6/11 = -0.545455
+    check at q=0.857143: eta6_lead/eta4_lead = 1.000000 (expect 1.0)
+    check at q=-0.545455: eta6_lead/eta4_lead = 1.000000 (expect 1.0)
+
+All Part 2I identities and crossover values verified exactly (analytic, before finite-T check).
+
+########## PART 2J ##########
+=== Part 2J: actuator rankings over (q,T) grid ===
+Computed eta_k(T;q) grid: 81 x 81 x 8 nodes in 8.1s (0 non-finite entries)
+
+Full actuator set (1..8):
+Non-internal/external-access set (4..8) [scientifically primary comparison]:
+  Cells with >1 tied actuator (tol=0.001) in external-access set: 9 / 6561
+
+Saved actuator ranking grid (0.4 MB raw eta array).
+
+=== Finite-T crossover check: node 6 vs node 4 (companion to analytic q*=6/7, -6/11) ===
+  T=0.001  numerical crossovers (E6=E4): ['-0.5460', '0.8560']  (analytic asymptotic q*: -6/11=-0.5455, 6/7=0.8571; need not match exactly at finite T)
+  T=0.01   numerical crossovers (E6=E4): ['-0.5420', '0.8550']  (analytic asymptotic q*: -6/11=-0.5455, 6/7=0.8571; need not match exactly at finite T)
+  T=0.1    numerical crossovers (E6=E4): ['-0.5130', '0.8510']  (analytic asymptotic q*: -6/11=-0.5455, 6/7=0.8571; need not match exactly at finite T)
+  T=1.0    numerical crossovers (E6=E4): ['-0.3780']  (analytic asymptotic q*: -6/11=-0.5455, 6/7=0.8571; need not match exactly at finite T)
+
+########## PART 2K ##########
+=== Part 2K: statistical boundary strength vs. control authority (exploratory) ===
+  Delta_4(empty) = L(empty) - L({4}) = 0.155737
+  Delta_5(empty) = L(empty) - L({5}) = 0.082115
+  Delta_6(empty) = L(empty) - L({6}) = 0.034325
+  Delta_7(empty) = L(empty) - L({7}) = 0.034325
+  Delta_8(empty) = L(empty) - L({8}) = 0.034325
+
+Exploratory note (n=5 non-internal nodes -- NOT a basis for correlation statistics):
+Statistical Delta_k ranking (largest to smallest): [4, 5, 6, 7, 8]
+  q=0.0, T=0.1: control-authority ranking (eta, largest to smallest) = [4, 5, 8, 7, 6]
+  q=0.0, T=1.0: control-authority ranking (eta, largest to smallest) = [4, 5, 8, 7, 6]
+  q=1.0, T=0.1: control-authority ranking (eta, largest to smallest) = [6, 4, 5, 8, 7]
+  q=1.0, T=1.0: control-authority ranking (eta, largest to smallest) = [4, 6, 5, 8, 7]
+
+The question is qualitative: does a statistically important boundary node (e.g. node 4)
+remain a good actuator as q varies? Answer emerges visually in Steering Figure 8, not via
+a correlation coefficient computed on 5 points.

@@ -1,0 +1,12 @@
+=== Stage 5, Section 5: endogenous reference distribution p*_{y,z} ===
+max|c^T v(z) - 1| over grid = 2.22e-16
+max KKT-stationarity/constraint residual for mu*(y,z) QP = 3.11e-15
+Finite-difference optimality check (perturbations orthogonal to c in mu-space) passed at all sampled z.
+
+Spot values: v(-1) = [1.         1.         1.         0.56872038 0.49763033 0.32701422
+ 0.32701422 0.32701422]
+            v(0)  = [1.         1.         1.         0.4939759  0.52610442 0.4939759
+ 0.35742972 0.35742972]
+            v(+1) = [1.         1.         1.         0.32701422 0.49763033 0.56872038
+ 0.32701422 0.32701422]
+s(-1)=0.19812207  s(0)=0.19124424  s(+1)=0.19812207

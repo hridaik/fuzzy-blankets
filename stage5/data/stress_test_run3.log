@@ -1,0 +1,43 @@
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:435: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:439: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  g = append(wrapped_grad(x), 0.0)
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:493: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_eq = vstack([con['jac'](x, *con['args'])
+/home/hridai/programs/miniconda3/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py:499: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  a_ieq = vstack([con['jac'](x, *con['args'])
+3a already computed, loading cached results.
+
+=== Part 3A summary table (tau_z sweep, T=2.0, formulation A) ===
+task-feasible column uses dense task_resid <= 0.01 (see TASK_FEASIBLE_TOL note in source), NOT the stricter optimizer-internal `feasible` flag used elsewhere in Stage 5 (which additionally requires SLSQP's own res.success).
+   tau_z  task_ok  task_resid         E      max_L3  t_argmax  A_org_ctrl
+  0.0625    False      0.0130    8.8278   3.310e-05     0.151      3.5601
+   0.125    False      0.0273    9.7581   4.129e-05     0.131      3.5368
+    0.25     True      0.0002   13.1526   4.000e-05     0.161      3.4906
+     0.5     True      0.0096    9.8156   1.096e-05     0.241      3.4912
+       1     True      0.0009    8.5855   5.300e-06     0.884      3.6239
+       2    False      0.5000    7.3771   2.403e-06     1.709      2.9037
+       4     True      0.0019    8.4036   1.337e-06     1.156      3.5808
+
+Anomaly: tau_z=[2] show large task_resid (>0.1) -- likely optimizer non-convergence rather than genuine task infeasibility (per spec: do not call a numerically failed optimizer 'infeasible' without multiple starts). Re-running with more starts and a different seed as a robustness check:
+  tau_z=2: original task_resid=0.5000 max_L3=2.403e-06  -> robustness rerun task_resid=0.5000 max_L3=2.403e-06
+
+No task-feasible tau_z in the primary grid violates delta=0.01 -- Part 3A does NOT activate the primary threshold. Proceeding to Part 3B (population-level constraint-logic unit test, NOT changing the physical model).
+
+Part 3B: population-level constraint-LOGIC unit test (NOT a biological claim), baseline tau_x=tau_z=1, T=2.0, delta_unit in [1e-05, 1e-06]...
+  delta_unit=1e-05: A task-feasible=False max_L3=5.300e-06 activated=False
+  delta_unit=1e-06: A task-feasible=False max_L3=5.300e-06 activated=True
+    C at delta_unit=1e-06: max_L3=3.808e-06 E=10.5044 feasible=False
+    T=2 pathwise infeasible at delta_unit=1e-06 -- testing T=4 once...
+    T=4: max_L3=3.781e-06 feasible=False
+
+Activation found via unit test at delta_unit=1e-06.
+
+Part 3C: 12-vs-20-knot cross-check for unit_1e-06 (T=2.0, tau_z=None, delta=1e-06)...
+  A k=12: feasible=False E=8.5855 max_L3=5.300e-06 task_resid=0.0009
+  C k=12: feasible=False E=10.5044 max_L3=3.808e-06 task_resid=0.3604
+  A k=20: feasible=False E=8.8557 max_L3=5.690e-06 task_resid=0.1007
+  C k=20: feasible=False E=43.3555 max_L3=1.027e-05 task_resid=0.5000
+
+Decision persisted to data/stress_test_decision.json: ('3b', None, 1e-06)
+Part 3 stress test complete.

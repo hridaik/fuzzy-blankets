@@ -1,0 +1,25 @@
+=== PART 7: instantaneous-jump (T_ramp->0) limit ===
+z: -1 -> +1 instantaneously at t=0; Sigma(0)=Sigma_A*=Omega(-1)^-1 (no reaction time); then integrate dSigma/dt = -(Omega(+1) Sigma + Sigma Omega(+1) - 2I) alone (Lambda_K depends only on Sigma, so y/m are irrelevant to this diagnostic and are not simulated).
+SPD check: min eigenvalue of Sigma(t) over the whole window = 1.229e-01 (must be > 0)
+  K=1: max_t Lambda_K(t) = 7.904712e-02 at t=0.0680  (t=0 value = 4.227869e-02, t=12.0 value = 4.228e-02)
+  K=2: max_t Lambda_K(t) = 2.689759e-02 at t=0.0680  (t=0 value = 8.881784e-16, t=12.0 value = 0.000e+00)
+  K=3: max_t Lambda_K(t) = 4.221367e-05 at t=0.1040  (t=0 value = 0.000000e+00, t=12.0 value = 0.000e+00)
+  K=4: max_t Lambda_K(t) = 1.639151e-05 at t=0.1040  (t=0 value = 0.000000e+00, t=12.0 value = 0.000e+00)
+
+Lambda_3(t) throughout relaxation from the instantaneous jump -- does it remain small?
+  max_t Lambda_3 = 4.221367e-05  (compare: old Fig-3 peak was ~3.79e-05 at T_ramp~0.2 during-ramp-only; small-T_ramp full-event peaks from the main sweep, if similar magnitude, indicate this IS effectively the small-T_ramp full-event limit)
+  Lambda_3(t=0) = 0.000e+00 (expect ~0: Sigma_A* has {4,5,6} as an exact separator, Section 3)
+
+Minimizing K=3 boundary family through relaxation (sampled every ~10% of window):
+  t= 0.000  Lambda_3=0.0000e+00  K_delta=2.0  K=3 family=[(4, 5), (4, 5, 6), (4, 5, 7)]
+  t= 1.000  Lambda_3=7.9372e-08  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 2.001  Lambda_3=4.5537e-12  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 3.001  Lambda_3=0.0000e+00  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 4.001  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 5.002  Lambda_3=0.0000e+00  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 6.002  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 7.002  Lambda_3=0.0000e+00  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 8.003  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t= 9.003  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t=10.003  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]
+  t=11.004  Lambda_3=-8.8818e-16  K_delta=2.0  K=3 family=[(5, 6), (4, 5, 6), (5, 6, 7)]

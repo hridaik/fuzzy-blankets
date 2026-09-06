@@ -1,0 +1,29 @@
+=== Stage 5, Section 9: rate-induced screening loss ===
+Instantaneous-equilibrium reference: Lambda_3^*(z) = 0 for all z in [-1,1] (Section 8: {4,5,6} is always an exact size<=3 separator at equilibrium).
+T_ramp= 0.25: max_t Lambda_3(t) = 0.000036  at progress=0.940, z=0.979  (equilibrium value is exactly 0)
+T_ramp=  0.5: max_t Lambda_3(t) = 0.000024  at progress=0.696, z=0.557  (equilibrium value is exactly 0)
+T_ramp=    1: max_t Lambda_3(t) = 0.000013  at progress=0.522, z=0.065  (equilibrium value is exactly 0)
+T_ramp=    2: max_t Lambda_3(t) = 0.000005  at progress=0.401, z=-0.292  (equilibrium value is exactly 0)
+T_ramp=    4: max_t Lambda_3(t) = 0.000002  at progress=0.318, z=-0.523  (equilibrium value is exactly 0)
+T_ramp=    8: max_t Lambda_3(t) = 0.000000  at progress=0.271, z=-0.639  (equilibrium value is exactly 0)
+
+Hypothesis check: fast interface remodeling produces transient positive leakage (max_t Lambda_3 > 0): True
+Monotone decrease of max leakage across the REQUESTED duration set [0.25, 0.5, 1, 2, 4, 8] (faster ramp -> more leakage, within this set): True
+
+Finer duration grid to locate the leakage peak (this reveals a NON-monotonicity the primary set alone would miss -- reported per the audit requirement to retain unexpected results):
+  T_ramp= 0.02: max_t Lambda_3(t) = 1.349170e-07
+  T_ramp= 0.05: max_t Lambda_3(t) = 2.877535e-06
+  T_ramp=  0.1: max_t Lambda_3(t) = 1.702722e-05
+  T_ramp= 0.15: max_t Lambda_3(t) = 3.211899e-05
+  T_ramp=  0.2: max_t Lambda_3(t) = 3.785935e-05
+  T_ramp= 0.25: max_t Lambda_3(t) = 3.569632e-05
+  T_ramp= 0.35: max_t Lambda_3(t) = 3.035135e-05
+  T_ramp=  0.5: max_t Lambda_3(t) = 2.415096e-05
+  T_ramp= 0.75: max_t Lambda_3(t) = 1.734378e-05
+  T_ramp=    1: max_t Lambda_3(t) = 1.300149e-05
+  T_ramp=  1.5: max_t Lambda_3(t) = 7.961238e-06
+  T_ramp=    2: max_t Lambda_3(t) = 5.289654e-06
+  T_ramp=    4: max_t Lambda_3(t) = 1.650631e-06
+  T_ramp=    8: max_t Lambda_3(t) = 4.383159e-07
+
+Peak transient leakage occurs at T_ramp=0.2 (max_t Lambda_3 = 3.786e-05), NOT at the fastest tested ramp. As T_ramp->0 the ramp becomes a near-instantaneous jump: the system has too little time to leave the endpoint-A covariance, at which {4,5,6} is ALREADY an exact (zero-leakage) size-3 separator (see Section 3), so leakage stays small. As T_ramp->infinity the quasi-static limit is recovered (Section 8, Lambda_3^*(z)=0 identically). Leakage is maximal at an INTERMEDIATE rate where the covariance has moved away from the T->0 degenerate-safe configuration but not yet relaxed onto the new instantaneous-equilibrium separator. Because the spec's requested primary set {0.25,...,8} starts just past this peak, the monotone-decrease finding above is correct for that set but should NOT be read as evidence of monotonicity over all rates -- the qualitative hypothesis (finite-rate remodeling can transiently destroy exact screening) holds, but its rate-dependence is non-monotone, not monotone.
