@@ -1,0 +1,14 @@
+seed=17 arm=oracle         |A|= 9 p_success=1.00 mean_Hstar_end=1.00
+seed=17 arm=inferred       |A|= 3 p_success=1.00 mean_Hstar_end=0.80
+seed=17 arm=fiedler        |A|= 1 p_success=1.00 mean_Hstar_end=0.81
+seed=17 arm=random_matched |A|= 3 p_success=0.95 mean_Hstar_end=0.80
+seed=18 arm=oracle         |A|= 9 p_success=0.00 mean_Hstar_end=0.14
+seed=18 arm=inferred       |A|= 3 p_success=0.00 mean_Hstar_end=0.03
+seed=18 arm=fiedler        |A|=42 p_success=0.00 mean_Hstar_end=0.24
+seed=18 arm=random_matched |A|= 3 p_success=0.00 mean_Hstar_end=0.00
+seed=20 arm=oracle         |A|=13 p_success=0.95 mean_Hstar_end=0.96
+seed=20 arm=inferred       |A|= 3 p_success=0.30 mean_Hstar_end=0.69
+seed=20 arm=fiedler        |A|= 0 p_success=0.00 mean_Hstar_end=0.44
+seed=20 arm=random_matched |A|= 3 p_success=0.00 mean_Hstar_end=0.40
+
+Wrote data/control_comparison.json

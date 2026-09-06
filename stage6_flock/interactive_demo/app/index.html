@@ -42,6 +42,7 @@
   #introBanner button { margin-left: auto; }
 
   #main { flex: 1; display: flex; min-height: 0; }
+  #main[hidden], footer#timeline[hidden] { display: none; }
   #canvasArea { flex: 1; display: flex; flex-direction: column; padding: 12px 14px; min-width: 0; position: relative; }
   #stageIndicator { display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
   .stagePill { font-size: 10px; padding: 4px 9px; border-radius: 999px; background: #eee; color: var(--muted); white-space: nowrap; }
@@ -159,6 +160,95 @@
   table.allTable tbody tr:hover { background: #eaf1ff; }
   table.allTable tbody tr.active { background: #dbe9ff; font-weight: 600; }
 
+  /* Top-level mode nav (Control | Inference & Identity | Info) */
+  #topNav { display: flex; gap: 6px; padding: 6px 18px; background: var(--panel); border-bottom: 1px solid var(--border); }
+  button.navBtn { border: 1px solid var(--border); background: #fafaf9; color: var(--ink); padding: 6px 13px;
+    border-radius: 7px; font-size: 12.5px; cursor: pointer; font-weight: 500; }
+  button.navBtn:hover { border-color: var(--accent); }
+  button.navBtn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* ============================================================
+     Inference & Identity mode -- ALL rules namespaced under
+     .inference-identity so nothing here can leak into the Control view.
+     ============================================================ */
+  #refinementView { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  #refinementView[hidden] { display: none; }
+
+  .inference-identity { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .inference-identity .iiTabs { display: flex; gap: 6px; padding: 10px 18px; background: var(--panel);
+    border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .inference-identity button.iiTabBtn { border: 1px solid var(--border); background: #fafaf9; color: var(--ink);
+    padding: 7px 14px; border-radius: 7px; cursor: pointer; font-size: 12.5px; font-weight: 500; }
+  .inference-identity button.iiTabBtn:hover { border-color: var(--accent); }
+  .inference-identity button.iiTabBtn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+  .inference-identity .iiBody { flex: 1; display: flex; flex-direction: column; min-height: 0; padding: 12px 18px 16px; overflow-y: auto; }
+  .inference-identity .iiQuestion { font-size: 15px; font-weight: 600; margin: 0 0 2px; color: var(--ink); }
+  .inference-identity .iiSubtake { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+
+  .inference-identity .iiMain { flex: 1; display: flex; gap: 16px; min-height: 340px; }
+  .inference-identity .iiGraphCol { flex: 2.1; display: flex; flex-direction: column; min-width: 0; position: relative; }
+  .inference-identity svg.iiLattice { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    flex: 1; min-height: 320px; width: 100%; }
+  .inference-identity .iiSideCol { flex: 1; min-width: 240px; max-width: 300px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+
+  .inference-identity .iiLegend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted);
+    padding: 6px 2px; }
+  .inference-identity .iiLegend .sw { display: inline-flex; align-items: center; gap: 5px; }
+  .inference-identity .iiLegend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 1.5px solid #0002; }
+  .inference-identity .iiLegend .ring { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 2px solid var(--fiedler); background: transparent; }
+
+  .inference-identity .iiControls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 8px 2px; }
+  .inference-identity button.iiBtn { border: 1px solid var(--border); background: #fafaf9; color: var(--ink);
+    padding: 6px 11px; border-radius: 7px; font-size: 12px; cursor: pointer; }
+  .inference-identity button.iiBtn:hover:not(:disabled):not(.active) { border-color: var(--accent); color: var(--accent); }
+  .inference-identity button.iiBtn.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .inference-identity button.iiBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .inference-identity .iiSelect { border: 1px solid var(--border); border-radius: 7px; padding: 5px 8px; font-size: 12px; background: #fafaf9; }
+  .inference-identity label.iiToggle { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; cursor: pointer; }
+  .inference-identity label.iiToggle input:disabled + span { color: var(--muted); }
+
+  .inference-identity .iiCard { border: 1px solid var(--border); border-radius: 10px; background: var(--panel); padding: 11px 13px; }
+  .inference-identity .iiCard h4 { margin: 0 0 7px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .inference-identity .iiStat { display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  .inference-identity .iiStat:last-child { border-bottom: none; }
+  .inference-identity .iiStat .k { color: var(--muted); } .inference-identity .iiStat .v { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .inference-identity .iiStat .v.good { color: var(--good); } .inference-identity .iiStat .v.bad { color: var(--bad); }
+
+  .inference-identity .iiTakeaway { border: 1px solid #cddffb; background: #eaf1ff; border-radius: 8px;
+    padding: 9px 12px; font-size: 12.5px; line-height: 1.5; margin-top: 10px; }
+  .inference-identity .iiTakeaway b { color: var(--accent); }
+  .inference-identity .iiTakeaway.warn { background: #fff4e5; border-color: #f3d9a8; }
+  .inference-identity .iiRepNote { font-size: 10.5px; color: var(--warn); font-style: italic; margin-top: 4px; }
+
+  .inference-identity details.iiDetails { margin-top: 12px; border: 1px solid var(--border); border-radius: 8px;
+    background: #fbfbf9; padding: 0; }
+  .inference-identity details.iiDetails > summary { cursor: pointer; padding: 8px 12px; font-size: 11.5px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; list-style: none; }
+  .inference-identity details.iiDetails > summary::-webkit-details-marker { display: none; }
+  .inference-identity details.iiDetails > summary::before { content: "▸ "; }
+  .inference-identity details.iiDetails[open] > summary::before { content: "▾ "; }
+  .inference-identity details.iiDetails .iiDetailsBody { padding: 4px 14px 12px; overflow-x: auto; }
+  .inference-identity table.iiTable { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  .inference-identity table.iiTable th, .inference-identity table.iiTable td { padding: 4px 7px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+  .inference-identity table.iiTable th:first-child, .inference-identity table.iiTable td:first-child { text-align: left; }
+  .inference-identity svg.iiChart { width: 100%; height: 120px; display: block; }
+  .inference-identity .iiChartLegend { display: flex; gap: 10px; font-size: 10.5px; color: var(--muted); margin-top: 4px; flex-wrap: wrap; }
+  .inference-identity .iiChartLegend .box { width: 9px; height: 9px; border-radius: 2px; display: inline-block; margin-right: 4px; }
+
+  .inference-identity .iiBadge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 999px; }
+  .inference-identity .iiBadge.yes { background: #dff3e9; color: var(--good); }
+  .inference-identity .iiBadge.no { background: #fbe4e4; color: var(--bad); }
+  .inference-identity .iiFlagBanner { border-radius: 8px; padding: 8px 12px; font-size: 12.5px; font-weight: 700;
+    text-align: center; margin-top: 8px; }
+  .inference-identity .iiFlagBanner.collapse { background: #fbe4e4; color: var(--bad); border: 1px solid #f0b8b8; }
+  .inference-identity .iiFlagBanner.ok { background: #dff3e9; color: var(--good); border: 1px solid #b8e0c8; }
+
+  /* #iiTooltip is appended to document.body at runtime (outside .inference-identity),
+     so this rule is intentionally NOT namespaced -- the #iiTooltip id is already unique. */
+  #iiTooltip { position: absolute; background: #1c1e21; color: white; font-size: 11px; padding: 6px 9px;
+    border-radius: 6px; pointer-events: none; line-height: 1.4; z-index: 20; max-width: 220px; }
+
   .bird-arrow { stroke: #1c1e21; stroke-width: 1.5; }
   .bird circle.actuatorGlow { animation: pulse 1.1s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
@@ -182,6 +272,11 @@
     <button class="chip" id="infoBtn">Methods &amp; Metrics ℹ</button>
     <button class="chip" id="detailsToggle">Experiment details ▾</button>
   </header>
+  <div id="topNav">
+    <button class="navBtn active" data-mode="control">Control</button>
+    <button class="navBtn" data-mode="refinement">Inference &amp; Identity</button>
+    <button class="navBtn" id="navInfoBtn">Info</button>
+  </div>
   <div id="detailsPanel" hidden></div>
   <div id="introBanner">
     <span>👋 Default view: representative flock, adjacent target preselected, <b>Sparse Interface Multicover</b> (our method) selected. Press <b>Play</b> to watch the flock emerge and be retargeted.</span>
@@ -272,6 +367,18 @@
     </aside>
   </div>
 
+  <div id="refinementView" hidden>
+    <div class="inference-identity">
+      <div class="iiTabs">
+        <button class="iiTabBtn active" data-reftab="boundary">1. Predictive Boundary</button>
+        <button class="iiTabBtn" data-reftab="stress">2. Causal Stress Test</button>
+        <button class="iiTabBtn" data-reftab="control">3. Prediction vs Control</button>
+        <button class="iiTabBtn" data-reftab="identity">4. Collective Identity</button>
+      </div>
+      <div class="iiBody" id="iiBody"></div>
+    </div>
+  </div>
+
   <footer id="timeline">
     <button class="tbtn" id="restartBtn" title="Restart (R)">⏮</button>
     <button class="tbtn" id="stepBackBtn" title="Step back (←)">◀</button>
@@ -296,16 +403,20 @@
       <button class="infoTabBtn active" data-tab="methods">Methods</button>
       <button class="infoTabBtn" data-tab="boundaries">Boundaries</button>
       <button class="infoTabBtn" data-tab="metrics">Metrics</button>
+      <button class="infoTabBtn" data-tab="refinement">Inference &amp; Identity</button>
     </div>
     <div class="infoSection active" id="infoMethods"></div>
     <div class="infoSection" id="infoBoundaries"></div>
     <div class="infoSection" id="infoMetrics"></div>
+    <div class="infoSection" id="infoRefinement"></div>
   </div>
 </div>
 <div class="tooltipBox" id="tooltipBox" hidden></div>
 
 <script>
 window.DEMO_DATA = /*__DEMO_DATA__*/ null /*__END_DEMO_DATA__*/;
+window.REFINEMENT_DATA = /*__REFINEMENT_DATA__*/ null /*__END_REFINEMENT_DATA__*/;
+window.REFINEMENT_VIZ = /*__REFINEMENT_VIZ__*/ null /*__END_REFINEMENT_VIZ__*/;
 </script>
 <script>
 (function(){
@@ -663,6 +774,16 @@ window.DEMO_DATA = /*__DEMO_DATA__*/ null /*__END_DEMO_DATA__*/;
 
   // ------------------------------------------------------------------ render
   function render(){
+    if (state.mode === "refinement") {
+      document.getElementById("main").hidden = true;
+      document.getElementById("timeline").hidden = true;
+      document.getElementById("refinementView").hidden = false;
+      renderRefinementView();
+      return;
+    }
+    document.getElementById("main").hidden = false;
+    document.getElementById("timeline").hidden = false;
+    document.getElementById("refinementView").hidden = true;
     if (state.mode === "compare") { renderCompare(); return; }
     const b = currentBundle();
     if (!b) return;
@@ -898,6 +1019,584 @@ window.DEMO_DATA = /*__DEMO_DATA__*/ null /*__END_DEMO_DATA__*/;
     });
   }
 
+  // ================================================================
+  // Inference & Identity mode. Reuses the Control page's exact visual
+  // language (bird positions/arrows/halos/rings, tooltip, CSS palette)
+  // through a dedicated drawIILattice() renderer, under the
+  // .inference-identity CSS namespace (see top of <style>). REF holds the
+  // existing aggregate/table summaries (used only in collapsible Details
+  // sections); RVIZ holds the lattice-ready derived data each tab's graph
+  // is actually built from -- see STAGE6_5_VISUALIZATION_NOTES.md for the
+  // provenance of every field.
+  // ================================================================
+  const REF = window.REFINEMENT_DATA;
+  const RVIZ = window.REFINEMENT_VIZ;
+  const FROZEN_GAMMA = 0.5; // v3_refinement/configs/protocol_v3.yaml: interface_control_law.frozen_gamma
+
+  const ii = {
+    tab: "boundary",
+    boundary: { revealBD: false, labelMode: "roles", sampleN: 100 },
+    stress: { cls: "omitted_shell", perturbed: false },
+    control: { flockIdx: 0, arm: "inferred", showRedundant: false },
+    identity: { lens: "M", guard: false, t: 0, playing: false, timer: null },
+  };
+
+  function svgEl(tag, attrs){
+    const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    Object.entries(attrs||{}).forEach(([k,v]) => { if (v !== null && v !== undefined) el.setAttribute(k, v); });
+    return el;
+  }
+
+  function iiXY(lattice, id, size){
+    const [row, col] = lattice.positions[id];
+    const L = lattice.L;
+    const pad = size * 0.09, inner = size - 2*pad;
+    return [pad + (col + 0.5) / L * inner, pad + (row + 0.5) / L * inner];
+  }
+
+  function precisionRecall(B_hat, B_D){
+    const hat = new Set(B_hat), bd = new Set(B_D);
+    const tp = [...hat].filter(x => bd.has(x)).length;
+    return { precision: hat.size ? tp/hat.size : NaN, recall: bd.size ? tp/bd.size : NaN, tp };
+  }
+
+  // The single shared lattice-drawing primitive for every Inference &
+  // Identity tab -- same node size/arrow/halo/ring conventions as the
+  // Control page's renderLattice, generalized to an arbitrary per-bird
+  // role function instead of the Control page's fixed Core/Shell/Fiedler
+  // classify().
+  function drawIILattice(svg, opts){
+    const lattice = opts.lattice, headings = opts.headings;
+    const size = 400;
+    svg.setAttribute("viewBox", `0 0 ${size} ${size}`);
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const r = Math.max(4, size / lattice.L * 0.30);
+
+    (opts.edgeSets || []).forEach(es => {
+      const [sx, sy] = iiXY(lattice, es.from, size);
+      const nbrs = lattice.neighbors[String(es.from)] || [];
+      nbrs.forEach(n => {
+        if (es.to && !es.to.includes(n)) return;
+        const [nx, ny] = iiXY(lattice, n, size);
+        svg.appendChild(svgEl("line", {x1:sx, y1:sy, x2:nx, y2:ny, stroke: es.color || "#d64545",
+          "stroke-width": es.width || 2, "stroke-dasharray": es.dash || null}));
+      });
+    });
+
+    for (let id = 0; id < lattice.nn; id++){
+      const [x, y] = iiXY(lattice, id, size);
+      const role = opts.roleFn(id) || {};
+      const g = svgEl("g", {class:"bird"});
+      g.dataset.id = id;
+
+      if (role.halo) {
+        g.appendChild(svgEl("circle", {cx:x, cy:y, r:r*1.55, fill:"none", stroke:role.halo,
+          "stroke-width": role.haloWidth||1.6, "stroke-opacity": role.haloOpacity===undefined?0.55:role.haloOpacity}));
+      }
+      const c = svgEl("circle", {cx:x, cy:y, r:r, fill: role.fill || "var(--exterior)",
+        stroke: role.stroke || "var(--exterior-stroke)", "stroke-width": role.strokeWidth || 1});
+      if (role.glow) c.setAttribute("class", "actuatorGlow");
+      if (role.dim) c.setAttribute("opacity", "0.32");
+      g.appendChild(c);
+
+      if (role.ring) g.appendChild(svgEl("circle", {cx:x, cy:y, r:r+3.2, fill:"none", stroke:role.ring, "stroke-width":2.2}));
+
+      const h = headings ? headings[id] : null;
+      if (h !== undefined && h !== null) {
+        const [dx,dy] = UV[h];
+        const alen = r*0.95;
+        g.appendChild(svgEl("line", {x1:x, y1:y, x2:x+dx*alen, y2:y-dy*alen, class:"bird-arrow"}));
+      }
+      if (role.badge) {
+        const t = svgEl("text", {x:x, y:y-r-3.5, "text-anchor":"middle", "font-size":"7.5", fill:"#333", "font-weight":"700"});
+        t.textContent = role.badge;
+        g.appendChild(t);
+      }
+      if (opts.selectedId === id) { c.setAttribute("stroke", "#111"); c.setAttribute("stroke-width", 3); }
+
+      if (opts.inspectable !== false) {
+        g.style.cursor = "pointer";
+        if (opts.onClick) g.addEventListener("click", ev => opts.onClick(id, ev));
+        if (opts.onHover) g.addEventListener("mousemove", ev => opts.onHover(id, ev));
+        if (opts.onLeave) g.addEventListener("mouseleave", opts.onLeave);
+      }
+      svg.appendChild(g);
+    }
+  }
+
+  function iiLegendItem(swatchHtml, label){ return `<span class="sw">${swatchHtml}${label}</span>`; }
+  function iiDot(color){ return `<span class="dot" style="background:${color};border-color:${color}"></span>`; }
+  function iiRing(color){ return `<span class="ring" style="border-color:${color}"></span>`; }
+
+  function iiShowTooltip(ev, html){
+    let tip = document.getElementById("iiTooltip");
+    if (!tip) {
+      tip = document.createElement("div");
+      tip.id = "iiTooltip"; tip.className = "iiTooltip";
+      document.body.appendChild(tip);
+    }
+    tip.innerHTML = html; tip.hidden = false;
+    // keep the tooltip from covering the hovered node: offset away from cursor
+    tip.style.left = (ev.clientX + 16) + "px"; tip.style.top = Math.max(4, ev.clientY - 60) + "px";
+  }
+  function iiHideTooltip(){ const t = document.getElementById("iiTooltip"); if (t) t.hidden = true; }
+
+  function iiDetails(title, bodyHtml){
+    return `<details class="iiDetails"><summary>${title}</summary><div class="iiDetailsBody">${bodyHtml}</div></details>`;
+  }
+
+  // Compact grouped bar chart, used only inside collapsible Details panels
+  // and small supporting-evidence panels (never as the primary explanation).
+  function iiBarChart(labels, series, opts){
+    opts = opts || {};
+    const w = 480, h = opts.h || 130, padL = 36, padB = 22, padT = 8, padR = 8;
+    const svg = svgEl("svg", {class:"iiChart", viewBox:`0 0 ${w} ${h}`});
+    const plotW = w - padL - padR, plotH = h - padT - padB;
+    let yMax = opts.yMax;
+    if (yMax === undefined) { yMax = Math.max(0.0001, ...series.flatMap(s => s.values.map(v => v||0))); yMax *= 1.15; }
+    const groupW = plotW / labels.length;
+    const barW = groupW / (series.length + 1);
+    svg.appendChild(svgEl("line", {x1:padL, x2:padL, y1:padT, y2:padT+plotH, stroke:"#ccc"}));
+    svg.appendChild(svgEl("line", {x1:padL, x2:padL+plotW, y1:padT+plotH, y2:padT+plotH, stroke:"#ccc"}));
+    [0,0.5,1].forEach(f => {
+      const y = padT + plotH - f*plotH;
+      const t = svgEl("text", {x:padL-4, y:y+3, "text-anchor":"end", "font-size":"8.5", fill:"#888"});
+      t.textContent = (yMax*f).toFixed(opts.yFmt===undefined?3:opts.yFmt);
+      svg.appendChild(t);
+    });
+    labels.forEach((lab,i) => {
+      series.forEach((s,k) => {
+        const v = s.values[i] || 0;
+        const bh = Math.max(0, (v/yMax)*plotH);
+        svg.appendChild(svgEl("rect", {x: padL + i*groupW + (k+0.5)*barW, y: padT+plotH-bh, width: barW*0.85, height: bh, fill: s.color}));
+      });
+      const t = svgEl("text", {x: padL + i*groupW + groupW/2, y: h-6, "text-anchor":"middle", "font-size":"8.5", fill:"#888"});
+      t.textContent = lab;
+      svg.appendChild(t);
+    });
+    let legend = "";
+    if (series.length > 1) legend = `<div class="iiChartLegend">${series.map(s => `<span><span class="box" style="background:${s.color}"></span>${s.name}</span>`).join("")}</div>`;
+    return svg.outerHTML + legend;
+  }
+
+  // ---------------------------------------------------------- TAB 1
+  function iiBoundaryRoleName(role){
+    return {core:"Core", inferred:"Inferred boundary", inferred_true:"Inferred boundary (true shell member)",
+            omitted:"Omitted causal shell", exterior:"Exterior"}[role] || role;
+  }
+
+  function renderTabBoundary(){
+    const d = RVIZ.predictive_boundary, c = d.canonical, st = ii.boundary;
+    const lattice = RVIZ.lattice;
+    const sampleRow = st.sampleN === 100 ? null : d.sample_efficiency.rows.find(r => r.n_traj === st.sampleN);
+    const B_hat_now = sampleRow ? sampleRow.B_hat : c.B_hat;
+    const pr = precisionRecall(B_hat_now, c.B_D);
+    const excessLoss = sampleRow ? sampleRow.excess_loss : c.excess_loss;
+
+    document.getElementById("iiBody").innerHTML = `
+      <p class="iiQuestion">Can we infer the flock's interface from observations alone?</p>
+      <p class="iiSubtake"><b>Learned from trajectories only</b> — the true interaction shell stays hidden until you reveal it.</p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="iiSvg1"></svg>
+          <div class="iiLegend" id="iiLegend1"></div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            <button class="iiBtn" id="iiRevealBtn">${st.revealBD ? "Hide true interaction shell" : "Reveal true interaction shell"}</button>
+          </div>
+          <div class="iiControls">
+            <span style="font-size:11px;color:var(--muted);">Labels:</span>
+            <button class="iiBtn ${st.labelMode==='ids'?'active':''}" data-label="ids">IDs</button>
+            <button class="iiBtn ${st.labelMode==='roles'?'active':''}" data-label="roles">Roles</button>
+          </div>
+          <div class="iiControls">
+            <span style="font-size:11px;color:var(--muted);">Observed trajectories:</span>
+            ${[5,10,20,50,100].map(n => `<button class="iiBtn ${st.sampleN===n?'active':''}" data-n="${n}">${n}</button>`).join("")}
+          </div>
+          <div class="iiCard">
+            <h4>Metrics${sampleRow ? ` (N=${st.sampleN})` : ""}</h4>
+            <div class="iiStat"><span class="k">Precision</span><span class="v good">${pr.precision.toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">Recall</span><span class="v">${pr.recall.toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">Predictive excess loss</span><span class="v">${excessLoss.toFixed(4)} nats</span></div>
+            <div class="iiStat"><span class="k">True shell / inferred size</span><span class="v">${c.B_D.length} / ${B_hat_now.length}</span></div>
+          </div>
+          <div class="iiTakeaway">The inferred set misses many direct neighbours, but still predicts the core's
+            next state almost as well as the full shell.</div>
+        </div>
+      </div>
+      ${iiDetails("Full statistics — held-out flocks", `
+        <table class="iiTable"><thead><tr><th>seed</th><th>|B&#770;|</th><th>|B<sup>D</sup>|</th><th>precision</th><th>recall</th>
+          <th>&Delta;&#8467;(B&#770;)</th><th>&Delta;&#8467;(B<sup>F</sup>)</th><th>&Delta;&#8467;(rand)</th></tr></thead><tbody>
+          ${d.held_out.map(r => `<tr><td>${r.seed}</td><td>${r.B_hat.length}</td><td>${r.B_D.length}</td><td>${r.precision.toFixed(2)}</td>
+            <td>${r.recall.toFixed(2)}</td><td>${r.excess_loss.B_hat.toFixed(4)}</td><td>${r.excess_loss.B_F.toFixed(4)}</td>
+            <td>${r.excess_loss.random_matched_mean.toFixed(4)}</td></tr>`).join("")}
+        </tbody></table>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:8px;">Size-matched Fiedler and random exterior draws sit 3-12&times; higher in excess loss than the inferred boundary, on every held-out flock.</p>
+      `)}`;
+
+    function roleFn(id){
+      const badge = st.labelMode === "ids" ? String(id) : null;
+      if (c.I0.includes(id)) return { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:2.2, badge, role:"core" };
+      if (st.revealBD) {
+        const inHat = B_hat_now.includes(id), inBD = c.B_D.includes(id);
+        if (inHat && inBD) return { fill:"var(--shell)", stroke:"var(--shell-stroke)", badge, role:"inferred_true" };
+        if (inBD) return { fill:"#8172b2", stroke:"#5b4a8a", badge, role:"omitted" };
+        return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", badge, role:"exterior" };
+      }
+      if (B_hat_now.includes(id)) {
+        const m = (!sampleRow && c.membership[id]) ? c.membership[id] : 1;
+        return { fill:"var(--shell)", stroke:"var(--shell-stroke)", halo:"#2563eb", haloOpacity: 0.25+0.5*m, badge, role:"inferred" };
+      }
+      return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", badge, role:"exterior" };
+    }
+
+    const svg1 = document.getElementById("iiSvg1");
+    drawIILattice(svg1, {
+      lattice, headings: c.z_t0, roleFn,
+      onHover: (id, ev) => {
+        const role = roleFn(id);
+        const inBhat = B_hat_now.includes(id);
+        const m = c.membership[id];
+        iiShowTooltip(ev, `<b>Bird ${id}</b><br>Current heading: ${HEAD_ARROWS[c.z_t0[id]]}<br>Role: ${iiBoundaryRoleName(role.role)}<br>
+          In inferred boundary: ${inBhat ? "Yes" : "No"}${m!==undefined ? `<br>Bootstrap membership: ${m.toFixed(2)}` : ""}`);
+      },
+      onLeave: iiHideTooltip,
+    });
+    document.getElementById("iiLegend1").innerHTML = [
+      iiLegendItem(iiDot("var(--core)"), "core I&#8320;"),
+      iiLegendItem(iiDot("var(--shell)"), st.revealBD ? "inferred &cap; true shell" : "inferred boundary B&#770;"),
+      st.revealBD ? iiLegendItem(iiDot("#8172b2"), "omitted true shell") : "",
+      iiLegendItem(iiDot("var(--exterior)"), "exterior"),
+      "<span>&uarr; = heading</span>",
+    ].join("");
+
+    document.getElementById("iiRevealBtn").addEventListener("click", () => { st.revealBD = !st.revealBD; renderTabBoundary(); });
+    document.querySelectorAll("[data-label]").forEach(b => b.addEventListener("click", () => { st.labelMode = b.dataset.label; renderTabBoundary(); }));
+    document.querySelectorAll("[data-n]").forEach(b => b.addEventListener("click", () => { st.sampleN = parseInt(b.dataset.n,10); renderTabBoundary(); }));
+  }
+
+  // ---------------------------------------------------------- TAB 2
+  function renderTabStress(){
+    const d = RVIZ.causal_stress_test, st = ii.stress;
+    const lattice = RVIZ.lattice;
+    const ex = d.examples[st.cls];
+    const isZero = ex.D_do_joint < 1e-9;
+    const headings = ex.z_t.slice();
+    if (st.perturbed) headings[ex.bird] = ex.perturb_heading;
+
+    const clsLabel = {omitted_shell:"Omitted shell", included_shell:"Included shell", non_shell:"Non-shell (negative control)"};
+    const shiftClassKey = st.cls === "non_shell" ? "non_shell_sample" : st.cls;
+    const shiftVal = (d.delta_shift_by_class[shiftClassKey] || {}).B_hat;
+
+    document.getElementById("iiBody").innerHTML = `
+      <p class="iiQuestion">If an omitted bird was unnecessary for prediction, can it still change the flock when perturbed?</p>
+      <p class="iiSubtake">Representative flock (seed ${d.seed}) — <span class="iiRepNote">representative high-effect intervention, not an average case</span></p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="iiSvg2"></svg>
+          <div class="iiLegend" id="iiLegend2"></div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            <button class="iiBtn ${st.cls==='included_shell'?'active':''}" data-cls="included_shell">Included shell</button>
+            <button class="iiBtn ${st.cls==='omitted_shell'?'active':''}" data-cls="omitted_shell">Omitted shell</button>
+            <button class="iiBtn ${st.cls==='non_shell'?'active':''}" data-cls="non_shell">Non-shell negative control</button>
+          </div>
+          <div class="iiControls">
+            <span style="font-size:12px;">Bird ${ex.bird} — natural heading: <b>${HEAD_ARROWS[ex.natural_heading]}</b></span>
+            <button class="iiBtn ${st.perturbed?'active':''}" id="iiPerturbBtn">Perturb to ${HEAD_ARROWS[ex.perturb_heading]}</button>
+            <button class="iiBtn" id="iiResetBtn" ${!st.perturbed?'disabled':''}>Reset to natural</button>
+          </div>
+          <div class="iiCard">
+            <h4>Direct causal change</h4>
+            <div class="iiStat"><span class="k">D<sub>j</sub><sup>do</sup></span><span class="v ${isZero?'good':''}">${ex.D_do_joint.toFixed(3)} nats</span></div>
+            <div class="iiStat"><span class="k">Core birds affected</span><span class="v">${ex.affected_core_ids.length}</span></div>
+          </div>
+          <div class="iiCard">
+            <h4>Extra predictive penalty for B&#770;</h4>
+            <div class="iiStat"><span class="k">mean &Delta;<sub>shift</sub> (this class)</span><span class="v">${shiftVal!==undefined ? shiftVal.toFixed(4)+" nats" : "n/a"}</span></div>
+          </div>
+          ${isZero ? `<div class="iiFlagBanner ok">Direct one-step effect = exactly 0</div>` : ""}
+          <div class="iiTakeaway">${st.cls === 'non_shell'
+            ? "A true non-shell bird cannot enter any core bird's update, by construction — perturbing it changes nothing."
+            : "A variable can be redundant for prediction but still causally important when independently perturbed."}
+            Note the direct effect (${isZero?'0':ex.D_do_joint.toFixed(2)+' nats'}) and the predictive penalty
+            (${shiftVal!==undefined?Math.abs(shiftVal).toFixed(4):'?'} nats) are <b>different metrics at very different scales</b> —
+            not directly comparable magnitudes.</div>
+        </div>
+      </div>
+      ${ex.per_core.filter(pc => ex.affected_core_ids.includes(pc.core_id)).length ? iiDetails("Next-heading probability, before vs. after (affected core birds)", `
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        ${ex.per_core.filter(pc => ex.affected_core_ids.includes(pc.core_id)).map(pc => `
+          <div style="min-width:220px;">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px;">Core bird ${pc.core_id} (KL=${pc.kl.toFixed(3)})</div>
+            ${iiBarChart(["up","down","left","right"], [
+              {name:"natural", color:"#4c72b0", values:pc.natural},
+              {name:"perturbed", color:"#c44e52", values:pc.perturbed},
+            ], {yMax:1, yFmt:1, h:110})}
+          </div>`).join("")}
+        </div>
+      `) : ""}`;
+
+    function roleFn(id){
+      if (id === ex.bird) return { fill: st.perturbed ? "var(--actuator)" : "#dd8452", stroke:"#8a1f1f", strokeWidth:2.4,
+                                    glow: st.perturbed, ring: "#111" };
+      if (d.I0.includes(id)) {
+        const affected = st.perturbed && ex.affected_core_ids.includes(id);
+        return { fill:"var(--core)", stroke: affected ? "#8a1f1f" : "var(--core-stroke)", strokeWidth: affected ? 3 : 2.2,
+                 ring: affected ? "var(--actuator)" : null };
+      }
+      if (d.B_hat.includes(id)) return { fill:"var(--shell)", stroke:"var(--shell-stroke)" };
+      if (d.B_D.includes(id)) return { fill:"#8172b2", stroke:"#5b4a8a" };
+      return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)" };
+    }
+
+    drawIILattice(document.getElementById("iiSvg2"), {
+      lattice, headings, roleFn,
+      edgeSets: (st.perturbed && !isZero) ? [{from: ex.bird, to: ex.affected_core_ids, color:"#d64545", width:2.2}] : [],
+      onHover: (id, ev) => {
+        const pc = ex.per_core.find(p => p.core_id === id);
+        let extra = "";
+        if (id === ex.bird) extra = `<br>Role: perturbed bird${st.perturbed ? " (perturbed now)" : ""}`;
+        else if (d.I0.includes(id)) extra = `<br>Role: core${pc ? `<br>Direct causal effect (KL): ${pc.kl.toFixed(3)}` : ""}`;
+        else if (d.B_hat.includes(id)) extra = "<br>Role: inferred boundary";
+        else if (d.B_D.includes(id)) extra = "<br>Role: omitted true shell";
+        else extra = "<br>Role: exterior";
+        iiShowTooltip(ev, `<b>Bird ${id}</b><br>Current heading: ${HEAD_ARROWS[headings[id]]}${extra}`);
+      },
+      onLeave: iiHideTooltip,
+    });
+    document.getElementById("iiLegend2").innerHTML = [
+      iiLegendItem(iiDot("#dd8452"), "selected bird"),
+      iiLegendItem(iiDot("var(--core)"), "core (red ring = affected)"),
+      iiLegendItem(iiDot("var(--shell)"), "inferred boundary"),
+      iiLegendItem(iiDot("#8172b2"), "omitted true shell"),
+      iiLegendItem(iiDot("var(--exterior)"), "exterior"),
+    ].join("");
+
+    document.querySelectorAll("[data-cls]").forEach(b => b.addEventListener("click", () => { st.cls = b.dataset.cls; st.perturbed = false; renderTabStress(); }));
+    document.getElementById("iiPerturbBtn").addEventListener("click", () => { st.perturbed = true; renderTabStress(); });
+    document.getElementById("iiResetBtn").addEventListener("click", () => { st.perturbed = false; renderTabStress(); });
+  }
+
+  // ---------------------------------------------------------- TAB 3
+  const ARM_LABEL = {oracle:"Oracle shell", inferred:"Inferred boundary", fiedler:"Fiedler", random_matched:"Random matched budget"};
+  const ARM_COLOR3 = {oracle:"#55a868", inferred:"#4c72b0", fiedler:"#c44e52", random_matched:"#8172b2"};
+
+  function renderTabControl(){
+    const d = RVIZ.prediction_vs_control, st = ii.control;
+    const lattice = RVIZ.lattice;
+    const row = d.rows[st.flockIdx];
+    const arm = row.arms[st.arm];
+    const s = d.summary;
+
+    document.getElementById("iiBody").innerHTML = `
+      <p class="iiQuestion">If B&#770; predicts well, is it also the right place to control?</p>
+      <p class="iiSubtake">Not reliably in this flock — switch controllers to see the actuator sets change on the same graph.</p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="iiSvg3"></svg>
+          <div class="iiLegend" id="iiLegend3"></div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            <span style="font-size:11px;color:var(--muted);">Flock:</span>
+            <select class="iiSelect" id="iiFlockSelect">${d.rows.map((r,i)=>`<option value="${i}" ${i===st.flockIdx?"selected":""}>seed ${r.seed}</option>`).join("")}</select>
+          </div>
+          <div class="iiControls">
+            ${Object.keys(ARM_LABEL).map(a => `<button class="iiBtn ${st.arm===a?'active':''}" data-arm="${a}">${ARM_LABEL[a]}</button>`).join("")}
+          </div>
+          <div class="iiControls">
+            <label class="iiToggle"><input type="checkbox" id="iiRedundantBox" ${st.showRedundant?"checked":""}><span>Show redundant support (m<sub>i</sub>)</span></label>
+          </div>
+          <div class="iiCard">
+            <h4>This flock (seed ${row.seed})</h4>
+            ${Object.keys(ARM_LABEL).map(a => `<div class="iiStat"><span class="k">${ARM_LABEL[a]}</span><span class="v ${row.arms[a].p_success>=0.7?'good':(row.arms[a].p_success<=0.05?'bad':'')}">${row.arms[a].p_success.toFixed(2)} (k=${row.arms[a].n_actuators})</span></div>`).join("")}
+          </div>
+          ${st.showRedundant ? `<div class="iiCard"><h4>Redundant coverage — ${ARM_LABEL[st.arm]}</h4>
+            <div class="iiStat"><span class="k">fraction of core with m<sub>i</sub>&ge;2</span><span class="v">${(iiCoverageFrac(row, arm.actuators, lattice)).toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">required (&gamma;, frozen V3)</span><span class="v">${FROZEN_GAMMA.toFixed(2)}</span></div>
+          </div>` : ""}
+          <div class="iiTakeaway">The information needed to predict the flock is not necessarily enough physical
+            influence to steer it.${st.showRedundant ? " The inferred boundary often contains too few of the shell's redundant influence routes to satisfy the controller's multicover requirement — a <i>supported, plausible</i> structural explanation, not a theorem." : ""}</div>
+        </div>
+      </div>
+      <div class="iiTakeaway warn" style="margin-top:10px;">Across the frozen 12-flock benchmark, inferred-boundary control did
+        <b>not</b> outperform matched-budget random control (mean P(success): oracle ${s.mean_p_success.oracle.toFixed(2)}, inferred
+        ${s.mean_p_success.inferred.toFixed(3)}, random ${s.mean_p_success.random_matched.toFixed(3)}; bootstrap 95% CI of the mean
+        flock-level difference: [${s.bootstrap.ci_lo.toFixed(3)}, ${s.bootstrap.ci_hi.toFixed(3)}]).
+        <b>predictive sufficiency &ne; sufficient actuator coverage.</b></div>
+      ${iiDetails("Full statistics — across-flocks comparison", `
+        ${iiBarChart(d.rows.map(r=>String(r.seed)), Object.keys(ARM_LABEL).map(a => ({name:ARM_LABEL[a], color:ARM_COLOR3[a], values:d.rows.map(r=>r.arms[a].p_success)})), {yMax:1, yFmt:1, h:150})}
+        <p style="font-size:11px;color:var(--muted);margin-top:6px;">Scanned seeds ${d.scan_range[0]}&ndash;${d.scan_range[1]}
+          (${d.n_scanned} scanned, ${d.n_qualifying} qualifying, ${d.n_discriminating} discriminating).</p>
+      `)}`;
+
+    function roleFn(id){
+      if (row.I0.includes(id)) {
+        let stroke = "var(--core-stroke)", strokeWidth = 2.2, badge = null;
+        if (st.showRedundant) {
+          const mi = (lattice.neighbors[String(id)]||[]).filter(n => arm.actuators.includes(n)).length;
+          stroke = mi === 0 ? "var(--bad)" : mi === 1 ? "var(--warn)" : "var(--good)";
+          strokeWidth = 2.8;
+          badge = String(mi);
+        }
+        return { fill:"var(--core)", stroke, strokeWidth, badge };
+      }
+      if (arm.actuators.includes(id)) return { fill:"var(--actuator)", stroke:"#8a1f1f", strokeWidth:2, glow:true };
+      if (row.B_hat.includes(id)) return { fill:"var(--shell)", stroke:"var(--shell-stroke)", halo:"#2563eb", haloOpacity:0.3 };
+      if (row.B_D.includes(id)) return { fill:"#f0d9b5", stroke:"#b5601c" };
+      return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)" };
+    }
+    drawIILattice(document.getElementById("iiSvg3"), {
+      lattice, headings: row.z_t0, roleFn,
+      onHover: (id, ev) => {
+        const mi = (lattice.neighbors[String(id)]||[]).filter(n => arm.actuators.includes(n)).length;
+        let role = row.I0.includes(id) ? "core" : arm.actuators.includes(id) ? "actuator (current method)" :
+                   row.B_hat.includes(id) ? "inferred boundary" : row.B_D.includes(id) ? "true shell (not inferred)" : "exterior";
+        iiShowTooltip(ev, `<b>Bird ${id}</b><br>Current heading: ${HEAD_ARROWS[row.z_t0[id]]}<br>Role: ${role}<br>
+          Controlled: ${arm.actuators.includes(id)?"Yes":"No"}${row.I0.includes(id)?`<br>m<sub>i</sub> (actuated neighbours): ${mi}`:""}`);
+      },
+      onLeave: iiHideTooltip,
+    });
+    document.getElementById("iiLegend3").innerHTML = [
+      iiLegendItem(iiDot("var(--core)"), "core I&#8320;"),
+      iiLegendItem(iiDot("#f0d9b5"), "true shell B<sup>D</sup>"),
+      iiLegendItem(iiDot("var(--shell)"), "inferred boundary B&#770;"),
+      iiLegendItem(iiDot("var(--actuator)"), "actuator (current method)"),
+      iiLegendItem(iiDot("var(--exterior)"), "exterior"),
+    ].join("");
+
+    document.getElementById("iiFlockSelect").addEventListener("change", e => { st.flockIdx = parseInt(e.target.value,10); renderTabControl(); });
+    document.querySelectorAll("[data-arm]").forEach(b => b.addEventListener("click", () => { st.arm = b.dataset.arm; renderTabControl(); }));
+    document.getElementById("iiRedundantBox").addEventListener("change", e => { st.showRedundant = e.target.checked; renderTabControl(); });
+  }
+  function iiCoverageFrac(row, actuators, lattice){
+    const n = row.I0.length;
+    if (!n) return NaN;
+    const covered = row.I0.filter(i => (lattice.neighbors[String(i)]||[]).filter(nb => actuators.includes(nb)).length >= 2).length;
+    return covered / n;
+  }
+
+  // ---------------------------------------------------------- TAB 4
+  const IDENTITY_LENS_KEY = { M: () => "M", L: () => "L", F: () => (ii.identity.guard ? "F_guard" : "F") };
+  const IDENTITY_LENS_LABEL = { M: "Material", L: "Lineage", F: "Functional" };
+
+  function iiStopIdentityPlayback(){ if (ii.identity.timer) { clearInterval(ii.identity.timer); ii.identity.timer = null; } ii.identity.playing = false; }
+
+  function renderTabIdentity(){
+    const d = RVIZ.collective_identity, st = ii.identity;
+    const lattice = RVIZ.lattice;
+    const key = IDENTITY_LENS_KEY[st.lens]();
+    const track = d.tracks[key];
+    const t = Math.min(st.t, d.n_steps - 1);
+    const I_t = track.members[t];
+    const guardDisabled = st.lens !== "F";
+    const collapsedNow = !!track.collapsed[t];
+    const atControlEnd = t === d.T_u;
+
+    document.getElementById("iiBody").innerHTML = `
+      <p class="iiQuestion">What does it mean for the "same flock" to survive control?</p>
+      <p class="iiSubtake">One fixed physical trajectory (flock seed ${d.seed}, replicate ${d.replicate}) — only the identity lens changes. <span class="iiRepNote">Representative documented failure case for Functional.</span></p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="iiSvg4"></svg>
+          <div class="iiLegend" id="iiLegend4"></div>
+          <div class="iiControls" style="margin-top:6px;">
+            <button class="tbtn" id="iiRestartBtn" title="Restart">⏮</button>
+            <button class="tbtn" id="iiStepBackBtn" title="Step back">◀</button>
+            <button class="tbtn" id="iiPlayBtn" title="Play/Pause">${st.playing?"❚❚":"▶"}</button>
+            <button class="tbtn" id="iiStepFwdBtn" title="Step forward">▶|</button>
+            <input type="range" id="iiTimeSlider" min="0" max="${d.n_steps-1}" value="${t}" style="flex:1;">
+            <span style="font-size:11.5px;color:var(--muted);min-width:110px;">t = ${t} / ${d.n_steps-1} (control ends ${d.T_u})</span>
+          </div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            ${Object.keys(IDENTITY_LENS_LABEL).map(l => `<button class="iiBtn ${st.lens===l?'active':''}" data-lens="${l}">${IDENTITY_LENS_LABEL[l]}</button>`).join("")}
+          </div>
+          <div class="iiControls">
+            <label class="iiToggle" title="${guardDisabled ? 'Validity guard applies to the Functional definition, where collapse was observed.' : ''}">
+              <input type="checkbox" id="iiGuardBox" ${st.guard?"checked":""} ${guardDisabled?"disabled":""}><span>Apply identity validity guard</span>
+            </label>
+          </div>
+          <div class="iiCard">
+            <h4>${IDENTITY_LENS_LABEL[st.lens]}${key==='F_guard'?' (guarded)':''} at t=${t}</h4>
+            <div class="iiStat"><span class="k">|I<sub>t</sub>|</span><span class="v">${I_t.length} / ${d.I0.length}</span></div>
+            <div class="iiStat"><span class="k">R<sub>0</sub>(t)</span><span class="v">${track.R0[t].toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">turnover this step</span><span class="v">${track.turnover[t]}</span></div>
+            ${key==='F_guard' ? `<div class="iiStat"><span class="k">identity valid now</span><span class="v ${collapsedNow?'bad':'good'}">${collapsedNow?"No":"Yes"}</span></div>` : ""}
+          </div>
+          ${atControlEnd ? `<div class="iiCard">
+            <h4>At control end (t=${d.T_u})</h4>
+            <div class="iiStat"><span class="k">Task success</span><span class="v ${d.nominal_success[key]?'good':'bad'}">${d.nominal_success[key]?"YES":"NO"}</span></div>
+            <div class="iiStat"><span class="k">Collective size</span><span class="v">${track.size[d.T_u]} / ${d.I0.length}</span></div>
+            ${key==='F_guard' ? `<div class="iiStat"><span class="k">Identity valid</span><span class="v ${!track.collapsed[d.T_u]?'good':'bad'}">${!track.collapsed[d.T_u]?"YES":"NO"}</span></div>` : ""}
+            ${(key==='F_guard' && track.collapsed[d.T_u]) ? `<div class="iiFlagBanner collapse">IDENTITY COLLAPSE / UNRESOLVED</div>` : ""}
+          </div>` : ""}
+          <div class="iiTakeaway">Task success only counts if a nontrivial continuation of the same collective survives.
+            ${st.lens==='L' ? '<br><span style="font-size:11px;">Some turnover reflects detector instability; temporal regularization did not produce a clean regime-independent fix (see Details).</span>' : ""}</div>
+        </div>
+      </div>
+      ${iiDetails("Full statistics — pathwise leakage & lambda_T note", `
+        <p style="font-size:11.5px;color:#333;">Temporal regularization (&lambda;<sub>T</sub>) was tested on baseline (uncontrolled)
+        data and could not be tuned to suppress jitter while still permitting genuine control-period transitions
+        — see <code>identity_stability/IDENTITY_STABILITY_RESULTS.md</code>. The guard shown here targets the
+        Functional definition, where the collapse pathology was actually observed.</p>
+      `)}`;
+
+    function roleFn(id){
+      const inI0 = d.I0.includes(id), inIt = I_t.includes(id);
+      if (inIt && inI0) return { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:2.2, ring: guardDisabled?null:(collapsedNow?"var(--bad)":null) };
+      if (inIt) return { fill:"#2ea3a3", stroke:"#1c6e6e", strokeWidth:2 }; // recruited (lineage/functional only)
+      if (inI0) return { fill:"var(--exterior)", stroke:"var(--core-stroke)", strokeWidth:1.6, dim:false }; // original member, not currently tracked
+      return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", dim:true };
+    }
+    drawIILattice(document.getElementById("iiSvg4"), {
+      lattice, headings: d.z_hist[t], roleFn,
+      onHover: (id, ev) => {
+        const inI0 = d.I0.includes(id), inIt = I_t.includes(id);
+        const role = inIt && inI0 ? "retained original member" : inIt ? "recruited (not original)" : inI0 ? "original member (I&#8320;), not currently tracked" : "exterior";
+        iiShowTooltip(ev, `<b>Bird ${id}</b><br>Current heading: ${HEAD_ARROWS[d.z_hist[t][id]]}<br>Role: ${role}<br>In current collective: ${inIt?"Yes":"No"}`);
+      },
+      onLeave: iiHideTooltip,
+    });
+    document.getElementById("iiLegend4").innerHTML = [
+      iiLegendItem(iiDot("var(--core)"), "retained original member"),
+      iiLegendItem(iiDot("#2ea3a3"), "recruited (not original)"),
+      iiLegendItem(`<span class="dot" style="background:var(--exterior);border-color:var(--core-stroke)"></span>`, "original member, not tracked"),
+      iiLegendItem(iiDot("var(--exterior)"), "exterior"),
+    ].join("");
+
+    document.querySelectorAll("[data-lens]").forEach(b => b.addEventListener("click", () => { iiStopIdentityPlayback(); st.lens = b.dataset.lens; renderTabIdentity(); }));
+    const guardBox = document.getElementById("iiGuardBox");
+    if (guardBox) guardBox.addEventListener("change", e => { st.guard = e.target.checked; renderTabIdentity(); });
+    document.getElementById("iiTimeSlider").addEventListener("input", e => { iiStopIdentityPlayback(); st.t = parseInt(e.target.value,10); renderTabIdentity(); });
+    document.getElementById("iiRestartBtn").addEventListener("click", () => { iiStopIdentityPlayback(); st.t = 0; renderTabIdentity(); });
+    document.getElementById("iiStepBackBtn").addEventListener("click", () => { iiStopIdentityPlayback(); st.t = Math.max(0, st.t-1); renderTabIdentity(); });
+    document.getElementById("iiStepFwdBtn").addEventListener("click", () => { iiStopIdentityPlayback(); st.t = Math.min(d.n_steps-1, st.t+1); renderTabIdentity(); });
+    document.getElementById("iiPlayBtn").addEventListener("click", () => {
+      if (st.playing) { iiStopIdentityPlayback(); renderTabIdentity(); return; }
+      st.playing = true;
+      st.timer = setInterval(() => {
+        if (st.t >= d.n_steps - 1) { iiStopIdentityPlayback(); renderTabIdentity(); return; }
+        st.t += 1; renderTabIdentity();
+      }, 250);
+      renderTabIdentity();
+    });
+  }
+
+  // ---------------------------------------------------------------- router
+  function renderRefinementView(){
+    document.querySelectorAll(".iiTabBtn").forEach(b => b.classList.toggle("active", b.dataset.reftab === ii.tab));
+    if (!RVIZ) { document.getElementById("iiBody").innerHTML = `<p class="iiSubtake">Refinement visualization data not available in this build.</p>`; return; }
+    if (ii.tab === "boundary") renderTabBoundary();
+    else if (ii.tab === "stress") renderTabStress();
+    else if (ii.tab === "control") renderTabControl();
+    else if (ii.tab === "identity") renderTabIdentity();
+  }
+
   // -------------------------------------------------------------- info panel
   const INFO_METHODS = [
     ["No Control", "The flock evolves naturally. Establishes the baseline probability of reaching the target without intervention."],
@@ -928,10 +1627,22 @@ window.DEMO_DATA = /*__DEMO_DATA__*/ null /*__END_DEMO_DATA__*/;
     <h4>Recovery time</h4><p>Time until the same core reconverges to C(t)≥0.8 for three consecutive timesteps (V3's transition-aware integrity criterion).</p>
     <h4>Persistence</h4><p>Whether H*≥0.5 still holds after external control is released.</p>`;
 
+  const INFO_REFINEMENT = `
+    <h4>Structural interface (B<sup>D</sup>) — the true shell</h4><p>Every exterior state that directly enters the core's next-state dynamics. A fact about the true interaction lattice, never used by the inference pipeline itself. Also called the <b>true shell</b> or <b>complete structural/causal shell</b> in the tabs.</p>
+    <h4>Predictive interface (B<sup>pred</sup> = B&#770;) — the inferred boundary</h4><p>A compact set learned from observed trajectories alone, sufficient for next-state prediction in the observed regime. Precision-1.0, recall-capped in every flock tested (0.15-0.58): B<sup>pred</sup> &ne; B<sup>D</sup>, but its predictive excess loss tracks B<sup>D</sup>'s own closely under natural data.</p>
+    <h4>Spectral candidate boundary (B<sup>F</sup>) — Fiedler</h4><p>The spectral separator in the heading-similarity graph. A useful null baseline, not the true one-step interaction interface.</p>
+    <h4>Intervention/control interface (B<sup>C</sup>)</h4><p>States whose perturbation matters for the task/dynamics. This need not equal the predictive interface — the Causal Stress Test tab shows birds with near-zero predictive value that still have large direct causal effects when perturbed.</p>
+    <h4>Observational vs. causal redundancy</h4><p>Two variables can carry nearly the same information during natural flock behavior even though independently perturbing either one changes the dynamics. Real (sometimes large) causal effects were found from birds B<sup>pred</sup> omits, even though B<sup>pred</sup>'s own predictive-loss gap only widens modestly under the same intervention.</p>
+    <h4>Discriminating-flock generalization</h4><p>On a 12-flock benchmark selected purely from oracle/random baselines (frozen before any inferred-controller run), inferred-boundary control did not reliably beat a matched-budget random draw.</p>
+    <h4>Multiplicity m<sub>i</sub>(A)</h4><p><code>m&#8305;(A) = number of controlled interface neighbours of core bird i</code> — the V3 controller's redundant-support concept. The frozen multicover law requires a fraction &gamma; of the core to reach m&#8305;&ge;2.</p>
+    <h4>Identity validity</h4><p>A separate condition ensuring the controlled object remains a nontrivial continuation of the original collective (I<sub>t</sub>) — not just that the task metric was hit. An unconstrained adaptive identity definition can shrink to a near-single-bird remnant while still registering nominal success; a validity guard exposes this as IDENTITY COLLAPSE / UNRESOLVED rather than rewarding it.</p>
+    <h4>Retention R<sub>0</sub>(t)</h4><p><code>R&#8320;(t) = |I&#8348; &cap; I&#8320;| / |I&#8320;|</code> — the fraction of the ORIGINAL collective still present in the currently-tracked one. Reported alongside, never instead of, nominal success.</p>`;
+
   function buildInfoPanel(){
     document.getElementById("infoMethods").innerHTML = INFO_METHODS.map(([t,d]) => `<h4>${t}</h4><p>${d}</p>`).join("");
     document.getElementById("infoBoundaries").innerHTML = INFO_BOUNDARIES;
     document.getElementById("infoMetrics").innerHTML = INFO_METRICS;
+    document.getElementById("infoRefinement").innerHTML = INFO_REFINEMENT;
   }
 
   // ------------------------------------------------------------------ wiring
@@ -949,6 +1660,19 @@ window.DEMO_DATA = /*__DEMO_DATA__*/ null /*__END_DEMO_DATA__*/;
         btn.classList.add("active");
         document.getElementById("info" + btn.dataset.tab[0].toUpperCase() + btn.dataset.tab.slice(1)).classList.add("active");
       });
+    });
+
+    document.querySelectorAll(".navBtn[data-mode]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".navBtn[data-mode]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        state.mode = btn.dataset.mode === "control" ? "single" : "refinement";
+        render();
+      });
+    });
+    document.getElementById("navInfoBtn").addEventListener("click", () => document.getElementById("infoOverlay").classList.add("on"));
+    document.querySelectorAll(".iiTabBtn").forEach(btn => {
+      btn.addEventListener("click", () => { iiStopIdentityPlayback(); ii.tab = btn.dataset.reftab; render(); });
     });
 
     document.getElementById("dismissIntroBtn").addEventListener("click", () => { document.getElementById("introBanner").remove(); });

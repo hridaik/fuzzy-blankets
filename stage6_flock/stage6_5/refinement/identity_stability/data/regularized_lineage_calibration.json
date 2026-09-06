@@ -1,0 +1,94 @@
+{
+ "informative_seeds": [
+  2,
+  3,
+  4,
+  8,
+  9
+ ],
+ "lambda_T_grid": [
+  0.1,
+  0.25,
+  0.5,
+  0.75,
+  1.0,
+  1.5,
+  2.0
+ ],
+ "baseline_nt": 60,
+ "grid_results": [
+  {
+   "lambda_T": 0.1,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.11282051282051282,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.7567676767676768,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 0.25,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.041025641025641026,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.5784343434343434,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 0.5,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.0,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.0,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 0.75,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.0,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.0,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 1.0,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.0,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.0,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 1.5,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.0,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.0,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  },
+  {
+   "lambda_T": 2.0,
+   "mean_turnover_low_DX_original": 1.7090411549235078,
+   "mean_turnover_low_DX_regularized": 0.0,
+   "mean_turnover_high_DX_original": 4.904999999999999,
+   "mean_turnover_high_DX_regularized": 0.0,
+   "suppresses_jitter": true,
+   "permits_transitions": false,
+   "criterion_met": false
+  }
+ ],
+ "chosen_lambda_T": 0.1,
+ "chose_by_fallback": true,
+ "fallback_reason": "no grid value satisfied both suppresses_jitter and permits_transitions; fell back to the smallest lambda_T satisfying suppresses_jitter alone"
+}

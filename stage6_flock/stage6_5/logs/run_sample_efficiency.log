@@ -1,0 +1,7 @@
+n_traj=5: |B_hat|=4 jaccard=0.33 excess=-0.0010 total_gap=0.0118 (4.8s)
+n_traj=10: |B_hat|=4 jaccard=0.33 excess=0.0004 total_gap=0.0120 (7.8s)
+n_traj=20: |B_hat|=4 jaccard=0.33 excess=-0.0004 total_gap=0.0125 (11.5s)
+n_traj=50: |B_hat|=6 jaccard=0.50 excess=-0.0001 total_gap=0.0166 (32.2s)
+n_traj=100: |B_hat|=7 jaccard=0.58 excess=0.0005 total_gap=0.0187 (81.5s)
+
+Wrote data/sample_efficiency.json

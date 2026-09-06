@@ -1,0 +1,5 @@
+rep=M: mean_leakage=0.0138 max_leakage=0.0738 time_above_tol=2/11 boundary_sizes=[12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+rep=L: mean_leakage=0.0143 max_leakage=0.0337 time_above_tol=4/11 boundary_sizes=[12, 12, 15, 23, 14, 22, 28, 16, 16, 17, 13]
+rep=F: mean_leakage=0.0118 max_leakage=0.0752 time_above_tol=2/11 boundary_sizes=[12, 12, 9, 7, 4, 4, 4, 4, 4, 4, 4]
+
+Wrote data/pathwise_boundary.json

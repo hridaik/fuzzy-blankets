@@ -1,0 +1,11 @@
+flock=2 rep=M: p_success=1.00 p_persistence=1.00
+flock=2 rep=L: p_success=1.00 p_persistence=1.00
+flock=2 rep=F: p_success=1.00 p_persistence=1.00
+flock=3 rep=M: p_success=1.00 p_persistence=1.00
+flock=3 rep=L: p_success=1.00 p_persistence=1.00
+flock=3 rep=F: p_success=1.00 p_persistence=1.00
+flock=4 rep=M: p_success=0.12 p_persistence=0.25
+flock=4 rep=L: p_success=0.12 p_persistence=0.38
+flock=4 rep=F: p_success=0.00 p_persistence=0.25
+
+Wrote data/identity_evaluation.json

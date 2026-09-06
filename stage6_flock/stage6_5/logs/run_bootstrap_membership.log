@@ -1,0 +1,18 @@
+Top-15 exterior birds by bootstrap membership frequency m_j:
+  bird   6  m_j=1.00  (in B^D)
+  bird  25  m_j=1.00  (in B^D)
+  bird  69  m_j=1.00  (in B^D)
+  bird  15  m_j=0.93  (in B^D)
+  bird  46  m_j=0.60  (in B^D)
+  bird  57  m_j=0.47  (in B^D)
+  bird  68  m_j=0.27  (in B^D)
+  bird   0  m_j=0.00  
+  bird   1  m_j=0.00  
+  bird   2  m_j=0.00  
+  bird   3  m_j=0.00  
+  bird   4  m_j=0.00  
+  bird   5  m_j=0.00  (in B^D)
+  bird  10  m_j=0.00  
+  bird  11  m_j=0.00  
+
+Wrote data/bootstrap_membership.json

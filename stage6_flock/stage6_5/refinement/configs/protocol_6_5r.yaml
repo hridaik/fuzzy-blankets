@@ -1,0 +1,148 @@
+# PROTOCOL_6_5R -- Part A section frozen BEFORE any causal_redundancy/data/*.json
+# number was computed. Do not edit this section after that. See
+# ../PROTOCOL_6_5R.md for the full narrative and ../PLAN.md for the scope
+# decisions made before this section was written.
+
+part_a_causal_redundancy:
+  reused_unmodified_from_stage6_5:
+    frozen_boundary_source: stage6_5/boundary_inference/data/held_out_evaluation.json
+    inference_pipeline: "NOT re-run -- B_hat/B^D read verbatim from the frozen file (A1)"
+    flock_discovery: v2_interface_control/code/common_v2.py:find_flock
+    true_shell: v2_interface_control/code/common_v2.py:dynamical_shell
+
+  held_out_flocks: [17, 18, 20]  # identical to boundary_inference's own held-out set
+
+  exact_intervention_method: >
+    Closed-form one-step propagation, not Monte Carlo (see
+    causal_redundancy/code/exact_intervention.py's module docstring for the
+    derivation). Cross-checked against literal simulator rollouts
+    (2000 replicates, tolerance 0.06 on per-bird next-heading frequency) in
+    causal_redundancy/tests/test_closed_form_matches_rollout.py.
+
+  perturbation_checkpoints:
+    n_traj: 30
+    n_time_steps_per_trajectory: 15
+    checkpoint_t: 7  # mid-window
+    seed_offset: 6650000  # disjoint from Part 1's TRAJ_SEED_OFFSET (650000) and its
+                           # held_out_evaluation split rng (1000000+seed)
+
+  perturbation_classes:
+    included_shell: "all of B_hat"
+    omitted_shell: "all of B^D \\ B_hat"
+    non_shell_sample:
+      size: 10
+      seed_offset: 64000  # + flock seed
+      note: >
+        A fixed random sample, not the full ~65-75-bird non-shell set --
+        the exact-zero-effect claim for E^D is proved by construction (see
+        exact_intervention.py + tests/test_exact_zero_effect.py), so this
+        sample is a numerical sanity check, not the identifiability
+        evidence itself.
+
+  alternative_headings: "all 3 z'_j != z_j per (state, bird) -- cheap under the closed-form approach"
+
+  stress_test_metric: >
+    Exact cross-entropy of the frozen NodewiseModel predictions against the
+    TRUE generative next-heading distribution (natural or do-intervened),
+    computed in closed form (causal_redundancy/code/stress_test.py) -- zero
+    sampling noise, a new exact operationalization of Delta-ell for this
+    refinement's own checkpoint set (not identical to, but consistent with,
+    Part 1's own empirical validation-split Delta-ell).
+
+  models_refit: "M_full, M_{B^D}, M_{B_hat} on Part 1's own training split (byte-identical
+                 reproduction via the same deterministic seed/rng chain), never on a
+                 different or newly-selected boundary"
+
+part_b_control_generalization:
+  reused_unmodified_from_stage6_5:
+    inference_pipeline: "boundary_inference/code/api.py:infer_boundary, SAME hyperparameters as protocol_6_5.yaml"
+    multicover_controller_law: "v3_refinement/code/selection_rules_v3.py, q=2, gamma=0.5 (not re-tuned)"
+    flock_discovery: v2_interface_control/code/common_v2.py:find_flock
+
+  seed_scan:
+    scan_start: 41   # first seed after V3's held-out pool (17-40)
+    scan_end_inclusive: 140   # predeclared max scan range, 100 candidates
+    target_discriminating_flocks: [8, 12]
+    stop_condition: "stop scanning once target_discriminating_flocks[1] (12) qualify, or scan_end_inclusive is reached"
+
+  discriminating_criterion:
+    p_oracle_success_min: 0.7
+    p_random_success_max: 0.3
+    oracle_controller: "true B^D_0, true incidence, min_actuators_for_multicover(q=2, gamma=0.5)"
+    random_null_screen: "matched to the ORACLE's own actuator budget, drawn uniformly from the full exterior"
+    screening_n_replicates: 20   # cheap screen, per user instruction (2026-09-06 direction)
+    screening_seed_offset: 8100000
+
+  four_controller_comparison:
+    controllers: [oracle, inferred, fiedler, random_matched]
+    inferred_boundary: "re-run api.infer_boundary with the SAME frozen hyperparameters (delta_tol_frac=0.05,
+                         min_gain_frac=0.005, shortlist_k=20) on freshly generated observational trajectories
+                         for each discriminating flock -- never refit/re-tuned"
+    trajectory_generation: {n_train: 100, n_val: 30, n_test: 30, n_time: 15}
+    random_null_final: "matched to the INFERRED controller's own actuator budget (not the oracle's),
+                         drawn uniformly from the full exterior"
+    n_replicates: 50   # fresh evaluation, per user instruction (2026-09-06 direction) -- distinct seed
+                        # range from the 20-replicate screening phase, so screening and final numbers
+                        # are statistically independent
+    final_eval_seed_offset: 8300000
+
+  aggregation:
+    per_flock_delta: "Delta_s^(f) = P_Bhat^(f)(success) - P_random^(f)(success)"
+    bootstrap: "resample FLOCKS with replacement (not replicates), 10000 resamples, percentile CI"
+
+  note: >
+    Numeric replicate counts (20 for screening, 50 for the final four-controller
+    comparison) were set by explicit user direction on 2026-09-06, before the
+    seed scan ran -- not tuned after seeing inferred-controller outcomes.
+
+part_c_identity_stability:
+  reused_unmodified_from_stage6_5:
+    identity_definitions: "collective_identity/code/definitions.py (material_track, lineage_track, functional_track)"
+    identity_metrics: "collective_identity/code/identity_metrics.py"
+    closed_loop_harness: "collective_identity/code/adaptive_control.py (extended, not edited, by
+                           identity_stability/code/guarded_controller.py)"
+    multicover_controller_law: "v3_refinement/code/selection_rules_v3.py, q=2, gamma=0.5 (not re-tuned)"
+
+  flock_scope:
+    informative_flocks: [2, 3, 4, 8, 9]   # first 5 of V3's frozen DEV_SEEDS, in frozen seed order --
+                                            # NOT selected post-hoc for showing interesting behavior
+    evaluation_only_scope: "C1 (jitter) and C5 (representation re-evaluation): all 5 informative flocks"
+    closed_loop_scope: "C7/C8: flocks 2, 3, 4 only (deliberately smaller than the 5-flock evaluation-only
+                         scope, per user instruction (2026-09-06 direction) to keep Part C smaller)"
+    closed_loop_n_replicates: 30   # per user instruction (2026-09-06 direction), up from Stage 6.5's own N_REP=8
+
+  regularized_lineage:
+    calibration_data: "uncontrolled/baseline (no-actuation) continuations of the 5 informative flocks only --
+                        NEVER controlled-episode outcomes (Part C7's stopping rule)"
+    lambda_T_grid: [0.1, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
+    lambda_J_fixed: 0.3   # NOT 1.0: an analytic check (before any calibration ran -- see
+                           # identity_stability/code/regularized_lineage.py's LAMBDA_J_FIXED comment)
+                           # found lambda_J=1.0 makes the continuity bonus mathematically
+                           # unbeatable (F(C) in [0,1], and keeping the previous collective always
+                           # scores F(I_{t-1})+lambda_J exactly), i.e. a de facto permanent freeze
+                           # rather than "suppress jitter, permit genuine transitions". 0.3 leaves
+                           # headroom for a large coherence gain to still win; not swept, since the
+                           # actual suppression/permission balance is tuned by lambda_T alone.
+    calibration_criterion: "smallest lambda_T that suppresses spurious large membership changes during
+                             low-D_X(t) stretches (D_X(t) below its own trajectory's median) while still
+                             permitting the change when D_X(t) is above its trajectory's 90th percentile,
+                             on the 5 informative flocks' baseline continuations"
+    fallback_if_no_grid_value_satisfies_both_halves: "the smallest lambda_T that satisfies the criterion's
+                             PRIMARY verb (suppression) alone -- a pre-specified tie-break favoring the
+                             goal named first in the criterion, not a value chosen after inspecting results;
+                             if none suppress jitter either, fall back to the tightest grid value"
+
+  identity_validity_guard:
+    S_I_lower_bound: "5th percentile of |I_t|/|I_0| over the 5 informative flocks' baseline continuations"
+    J_min: "5th percentile of J(I_t, I_{t-1}) over the same baseline continuations"
+    grace_period_steps: 3   # matches integrity_v3's own dwell_steps=3 convention
+
+frozen_at_utc: "2026-09-06T00:00:00Z"
+frozen_after: "causal_redundancy/tests/ passing (closed-form derivation validated against rollouts)"
+frozen_before: ["causal_redundancy/data/causal_redundancy.json",
+                "control_generalization/data/discriminating_flocks.json",
+                "control_generalization/data/four_controller_comparison.json",
+                "identity_stability/data/jitter_analysis.json",
+                "identity_stability/data/regularized_lineage_calibration.json",
+                "identity_stability/data/validity_envelope.json",
+                "identity_stability/data/closed_loop_stabilized.json"]

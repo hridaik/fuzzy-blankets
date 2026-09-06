@@ -1,0 +1,17 @@
+seed=2 delta_tol_frac=0.05 -> total_gap=0.0187 |B_hat|=7 jaccard=0.58 excess=0.0006 (78.6s, stop=delta_tol_reached)
+seed=3 delta_tol_frac=0.05 -> total_gap=0.0050 |B_hat|=3 jaccard=0.21 excess=-0.0002 (16.4s, stop=delta_tol_reached)
+seed=4 delta_tol_frac=0.05 -> total_gap=0.0296 |B_hat|=3 jaccard=0.18 excess=0.0008 (47.7s, stop=delta_tol_reached)
+seed=2 delta_tol_frac=0.1 -> total_gap=0.0155 |B_hat|=5 jaccard=0.42 excess=0.0003 (62.9s, stop=delta_tol_reached)
+seed=3 delta_tol_frac=0.1 -> total_gap=0.0061 |B_hat|=3 jaccard=0.21 excess=0.0005 (17.0s, stop=delta_tol_reached)
+seed=4 delta_tol_frac=0.1 -> total_gap=0.0293 |B_hat|=3 jaccard=0.18 excess=0.0028 (40.9s, stop=delta_tol_reached)
+seed=2 delta_tol_frac=0.2 -> total_gap=0.0195 |B_hat|=4 jaccard=0.33 excess=0.0034 (55.2s, stop=delta_tol_reached)
+seed=3 delta_tol_frac=0.2 -> total_gap=0.0049 |B_hat|=1 jaccard=0.07 excess=0.0003 (9.3s, stop=delta_tol_reached)
+seed=4 delta_tol_frac=0.2 -> total_gap=0.0284 |B_hat|=3 jaccard=0.18 excess=0.0017 (45.6s, stop=delta_tol_reached)
+seed=2 delta_tol_frac=0.4 -> total_gap=0.0213 |B_hat|=3 jaccard=0.25 excess=0.0085 (57.8s, stop=delta_tol_reached)
+seed=3 delta_tol_frac=0.4 -> total_gap=0.0063 |B_hat|=1 jaccard=0.07 excess=0.0000 (10.2s, stop=delta_tol_reached)
+seed=4 delta_tol_frac=0.4 -> total_gap=0.0297 |B_hat|=2 jaccard=0.12 excess=0.0104 (37.0s, stop=delta_tol_reached)
+seed=2 delta_tol_frac=0.6 -> total_gap=0.0192 |B_hat|=2 jaccard=0.17 excess=0.0098 (46.7s, stop=delta_tol_reached)
+seed=3 delta_tol_frac=0.6 -> total_gap=0.0038 |B_hat|=1 jaccard=0.07 excess=0.0016 (9.7s, stop=delta_tol_reached)
+seed=4 delta_tol_frac=0.6 -> total_gap=0.0253 |B_hat|=2 jaccard=0.12 excess=0.0107 (37.2s, stop=delta_tol_reached)
+
+Wrote data/dev_sweep.json

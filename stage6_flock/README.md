@@ -60,6 +60,13 @@ trajectories. Start at `STAGE6_FINAL_REFINEMENT.md` for the short version,
 or `v3_refinement/README.md` for the full one. Nothing in this section or
 below has been changed.
 
+`stage6_5/` is further additive work: it removes two conveniences the
+sections above relied on (privileged access to the simulator's true
+interaction graph; a permanently frozen interior) as methodological
+preparation for a future moving-shepherding model. See
+`STAGE6_5_SYNTHESIS.md` for the summary or `stage6_5/README.md` to start
+reading. Nothing above this paragraph has been changed.
+
 ## Running
 
 ```

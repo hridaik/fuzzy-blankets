@@ -10,8 +10,11 @@ comparison shown (cost, speed, reliability) is computed from real
 trajectory/ensemble data, never inferred from how the animation looks.
 
 See also: `METRIC_DEFINITIONS.md` (exact formula + provenance for every
-metric shown) and `UX_REFINEMENT_LOG.md` (what changed in the most recent
-presentation/UX refinement pass and why).
+metric shown), `UX_REFINEMENT_LOG.md` (what changed in the most recent
+Control-view presentation/UX refinement pass and why), and
+`STAGE6_5_VISUALIZATION_NOTES.md` (the `Inference & Identity` mode: what
+each tab's graph is built from, which examples were chosen and why, and
+the regressions/bugs found and fixed while building it).
 
 ## Opening it
 
@@ -66,14 +69,30 @@ interactive_demo/
         verify_bundles.py        independently recomputes every bundle's
                                   summary statistics from its raw arrays and
                                   checks them against the embedded values
+        export_refinement_bundle.py  exports a compact summary of Stage
+                                  6.5 + Stage 6.5-refinement results (reads
+                                  only already-saved data/*.json under
+                                  stage6_5/, computes nothing) for the
+                                  "Full statistics" Details sections
+        derive_refinement_viz_data.py  derives lattice/graph-ready data
+                                  (shared node positions/edges, per-flock
+                                  role sets, one representative
+                                  intervention example, one fixed identity
+                                  trajectory) for the four Inference &
+                                  Identity tabs' main graphs -- see
+                                  ../STAGE6_5_VISUALIZATION_NOTES.md for
+                                  field-by-field provenance
         *.json                   one bundle per (flock, method, target)
                                   scenario (see schema below)
+        refinement_bundle.json   Details-section table data
+        refinement_viz_data.json  the four tabs' graph-ready data
         manifest.json            lists every flock/method/target combo and
                                   which scenario id it maps to
     app/
-        index.html               authored source (HTML/CSS/JS), with a
-                                  `/*__DEMO_DATA__*/` placeholder
-        build.py                  inlines data/*.json into the placeholder,
+        index.html               authored source (HTML/CSS/JS), with
+                                  `/*__DEMO_DATA__*/`, `/*__REFINEMENT_DATA__*/`,
+                                  and `/*__REFINEMENT_VIZ__*/` placeholders
+        build.py                  inlines data/*.json into the placeholders,
                                    writes build/index.html
     assets/                  (reserved; the app is a single self-contained
                               file, so this is currently empty)
@@ -138,13 +157,72 @@ horizon, for the dedicated "V1 vs V3" compare preset. This flock
 intentionally keeps only its one frozen-protocol target (it is a fixed
 historical comparison, not a target-exploration surface).
 
+## Inference & Identity mode
+
+A second top-level mode (alongside the Control view described above),
+reached via the `Inference & Identity` button in the top nav — redesigned
+(2026-09-07) to explain each Stage 6.5 result primarily through the same
+10x10 node-graph visual language as the Control view (bird positions,
+heading arrows, halos/rings, hover tooltips), with tables/plots demoted to
+collapsible "Full statistics" sections rather than the primary explanation.
+See `STAGE6_5_VISUALIZATION_NOTES.md` for full provenance of every derived
+quantity, which examples were chosen and why, and the regressions/bugs
+found and fixed during the redesign. Four tabs, each built from
+`data/refinement_viz_data.json` (lattice-ready derived data; supporting
+tables come from `data/refinement_bundle.json`) — both read only
+already-saved `stage6_5/{boundary_inference,refinement/*}/data/*.json`, or
+deterministic re-derivations of already-frozen quantities (documented
+field-by-field in the notes doc); no simulation is re-run to make the
+visualization prettier, no fabricated dynamics:
+
+- **1. Predictive Boundary** — the canonical flock's core/inferred-boundary
+  graph, a "Reveal true interaction shell" toggle showing `B_hat ⊂ B^D`
+  visually, an IDs/Roles label toggle, and a 5/10/20/50/100-trajectory
+  sample-size slider that swaps the highlighted node set on the same graph.
+- **2. Causal Stress Test** — a representative flock (seed 20) with
+  Included-shell/Omitted-shell/Non-shell selectors; perturbing the selected
+  bird highlights its true lattice edges to the core birds it actually
+  affects and shows before/after next-heading probabilities, with the
+  direct causal effect and the predictive-loss penalty reported as two
+  separate, explicitly non-comparable metrics. The non-shell negative
+  control shows an exact-zero effect with no highlighted edges.
+- **3. Prediction vs Control** — a 12-flock selector and a four-controller
+  button group (Oracle/Inferred/Fiedler/Random) that swap actuator
+  highlighting on the same graph; an optional "redundant support" overlay
+  color-codes each core bird's actuated-neighbor count `m_i`, with the
+  frozen benchmark's negative finding stated plainly below.
+- **4. Collective Identity** — one fixed physical trajectory (flock 2,
+  replicate 0) with a local timeline scrubber; switching the
+  Material/Lineage/Functional lens changes only which birds are
+  highlighted as "the collective," never the underlying headings. The
+  Functional lens visibly collapses toward a documented ~1-bird remnant;
+  an "Apply identity validity guard" toggle (enabled only for Functional,
+  where it was actually built and calibrated) shows the guard holding a
+  larger group while correctly flagging IDENTITY COLLAPSE / UNRESOLVED —
+  nominal and identity-valid success are always shown as two separate
+  values, never one checkmark.
+
 ## Rebuilding after a data or science change
 
 ```
 cd data && python3 export_scenarios.py     # regenerate trajectory bundles
 python3 verify_bundles.py                   # independently check summary stats
+python3 export_refinement_bundle.py         # refresh Details-table data
+python3 derive_refinement_viz_data.py       # refresh the graph-ready lattice data
 cd ../app && python3 build.py               # re-inline into build/index.html
 ```
+
+`export_refinement_bundle.py` and `derive_refinement_viz_data.py` only need
+rerunning after a `stage6_5/` science change (new `data/*.json` in
+`boundary_inference/`, `refinement/causal_redundancy/`,
+`refinement/control_generalization/`, or `refinement/identity_stability/`);
+neither touches the V1-V3 scenario bundles above.
+`derive_refinement_viz_data.py` additionally calls a handful of already-
+frozen functions (`find_flock`, the identity `definitions.py` tracks, the
+closed-form intervention propagator) to deterministically reproduce a few
+full trajectories/probability vectors the frozen driver scripts summarized
+before discarding — see `STAGE6_5_VISUALIZATION_NOTES.md` for exactly which
+fields these are and why.
 
 `export_scenarios.py` imports `flock_sim`, `v2_interface_control/code`, and
 `v3_refinement/code` unmodified — it is presentation tooling, not a new

@@ -1,0 +1,8 @@
+flock=2 rep=M: p_success=1.00 p_success_retained_only=1.00 mean_n_actuators=12.0 mean_final_retention=1.00 mean_membership_turnover=0.0
+flock=2 rep=L: p_success=1.00 p_success_retained_only=0.88 mean_n_actuators=10.5 mean_final_retention=0.44 mean_membership_turnover=163.0
+flock=2 rep=F: p_success=1.00 p_success_retained_only=1.00 mean_n_actuators=7.0 mean_final_retention=0.06 mean_membership_turnover=18.9
+flock=3 rep=M: p_success=1.00 p_success_retained_only=1.00 mean_n_actuators=7.0 mean_final_retention=1.00 mean_membership_turnover=0.0
+flock=3 rep=L: p_success=1.00 p_success_retained_only=1.00 mean_n_actuators=6.5 mean_final_retention=0.43 mean_membership_turnover=82.5
+flock=3 rep=F: p_success=1.00 p_success_retained_only=1.00 mean_n_actuators=4.3 mean_final_retention=0.13 mean_membership_turnover=23.2
+
+Wrote data/adaptive_control.json
