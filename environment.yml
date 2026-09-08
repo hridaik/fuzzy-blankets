@@ -1,0 +1,10 @@
+name: fuzzy-blankets
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - scipy
+  - matplotlib
+  - scikit-learn=1.4  # >=1.7 drops implicit OvR wrapping for liblinear multiclass, breaks stage6_flock tests
+  - pytest
