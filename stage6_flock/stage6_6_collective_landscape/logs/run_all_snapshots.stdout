@@ -1,0 +1,31 @@
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed2__no_control__fE1.00__t20.csv
+[1/15] seed=2 condition=no_control n_unique=5000 elapsed=466.7s fits=17414
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed2__shell_only__fE1.00__t20.csv
+[2/15] seed=2 condition=shell_only n_unique=5000 elapsed=424.3s fits=17410
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed2__same_direction__fE1.00__t20.csv
+[3/15] seed=2 condition=same_direction n_unique=5000 elapsed=408.1s fits=17412
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed2__opposite__fE1.00__t20.csv
+[4/15] seed=2 condition=opposite n_unique=5000 elapsed=447.2s fits=17405
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed2__disordered__fE1.00__t20.csv
+[5/15] seed=2 condition=disordered n_unique=5000 elapsed=805.7s fits=17420
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed3__no_control__fE1.00__t20.csv
+[6/15] seed=3 condition=no_control n_unique=5000 elapsed=503.7s fits=17376
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed3__shell_only__fE1.00__t20.csv
+[7/15] seed=3 condition=shell_only n_unique=5000 elapsed=446.9s fits=17393
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed3__same_direction__fE1.00__t20.csv
+[8/15] seed=3 condition=same_direction n_unique=5000 elapsed=428.7s fits=17418
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed3__opposite__fE1.00__t20.csv
+[9/15] seed=3 condition=opposite n_unique=5000 elapsed=396.0s fits=17428
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed3__disordered__fE1.00__t20.csv
+[10/15] seed=3 condition=disordered n_unique=5000 elapsed=416.7s fits=17413
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed4__no_control__fE1.00__t20.csv
+[11/15] seed=4 condition=no_control n_unique=5000 elapsed=399.0s fits=17402
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed4__shell_only__fE1.00__t20.csv
+[12/15] seed=4 condition=shell_only n_unique=5000 elapsed=413.6s fits=17385
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed4__same_direction__fE1.00__t20.csv
+[13/15] seed=4 condition=same_direction n_unique=5000 elapsed=418.1s fits=17407
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed4__opposite__fE1.00__t20.csv
+[14/15] seed=4 condition=opposite n_unique=5000 elapsed=409.0s fits=17428
+saved /home/hridai/code/graded-mb/stage6_flock/stage6_6_collective_landscape/data/seed4__disordered__fE1.00__t20.csv
+[15/15] seed=4 condition=disordered n_unique=5000 elapsed=408.2s fits=17402
+DONE total=6791.9s

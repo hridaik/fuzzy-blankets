@@ -1,0 +1,18 @@
+
+=== run_all_snapshots start 2026-09-07 16:43:46 ===
+[1/15] seed=2 condition=no_control n_unique=5000 elapsed=466.7s fits=17414
+[2/15] seed=2 condition=shell_only n_unique=5000 elapsed=424.3s fits=17410
+[3/15] seed=2 condition=same_direction n_unique=5000 elapsed=408.1s fits=17412
+[4/15] seed=2 condition=opposite n_unique=5000 elapsed=447.2s fits=17405
+[5/15] seed=2 condition=disordered n_unique=5000 elapsed=805.7s fits=17420
+[6/15] seed=3 condition=no_control n_unique=5000 elapsed=503.7s fits=17376
+[7/15] seed=3 condition=shell_only n_unique=5000 elapsed=446.9s fits=17393
+[8/15] seed=3 condition=same_direction n_unique=5000 elapsed=428.7s fits=17418
+[9/15] seed=3 condition=opposite n_unique=5000 elapsed=396.0s fits=17428
+[10/15] seed=3 condition=disordered n_unique=5000 elapsed=416.7s fits=17413
+[11/15] seed=4 condition=no_control n_unique=5000 elapsed=399.0s fits=17402
+[12/15] seed=4 condition=shell_only n_unique=5000 elapsed=413.6s fits=17385
+[13/15] seed=4 condition=same_direction n_unique=5000 elapsed=418.1s fits=17407
+[14/15] seed=4 condition=opposite n_unique=5000 elapsed=409.0s fits=17428
+[15/15] seed=4 condition=disordered n_unique=5000 elapsed=408.2s fits=17402
+=== run_all_snapshots done, total 6791.9s ===

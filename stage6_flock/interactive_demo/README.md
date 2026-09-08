@@ -11,10 +11,12 @@ trajectory/ensemble data, never inferred from how the animation looks.
 
 See also: `METRIC_DEFINITIONS.md` (exact formula + provenance for every
 metric shown), `UX_REFINEMENT_LOG.md` (what changed in the most recent
-Control-view presentation/UX refinement pass and why), and
-`STAGE6_5_VISUALIZATION_NOTES.md` (the `Inference & Identity` mode: what
-each tab's graph is built from, which examples were chosen and why, and
-the regressions/bugs found and fixed while building it).
+Control-view presentation/UX refinement pass and why),
+`STAGE6_5_VISUALIZATION_NOTES.md` (the `Inference & Identity` mode's first
+four tabs: what each tab's graph is built from, which examples were chosen
+and why, and the regressions/bugs found and fixed while building it), and
+`STAGE6_6_VISUALIZATION_NOTES.md` (the 5th tab, "Collective Landscape":
+same, for the Stage 6.6 candidate-interior landscape).
 
 ## Opening it
 
@@ -62,6 +64,8 @@ interactive_demo/
     README.md                  this file
     METRIC_DEFINITIONS.md       exact formulas + data provenance for every metric
     UX_REFINEMENT_LOG.md        what changed in the latest UX pass, and why
+    STAGE6_5_VISUALIZATION_NOTES.md  Inference & Identity tabs 1-4: design, provenance, bug log
+    STAGE6_6_VISUALIZATION_NOTES.md  Inference & Identity tab 5 (Collective Landscape): design, provenance, bug log
     data/
         export_scenarios.py     generates every scenario bundle from the
                                  real simulator (the ONLY place trajectories
@@ -78,20 +82,29 @@ interactive_demo/
                                   (shared node positions/edges, per-flock
                                   role sets, one representative
                                   intervention example, one fixed identity
-                                  trajectory) for the four Inference &
-                                  Identity tabs' main graphs -- see
+                                  trajectory) for Inference & Identity tabs
+                                  1-4's main graphs -- see
                                   ../STAGE6_5_VISUALIZATION_NOTES.md for
                                   field-by-field provenance
         *.json                   one bundle per (flock, method, target)
                                   scenario (see schema below)
-        refinement_bundle.json   Details-section table data
-        refinement_viz_data.json  the four tabs' graph-ready data
+        refinement_bundle.json   Details-section table data (tabs 1-4)
+        refinement_viz_data.json  tabs 1-4's graph-ready data
+        collective_landscape_bundle.json  tab 5's data: candidate-interior
+                                  landscape (per snapshot) + archetype
+                                  control trajectories + curated
+                                  illustrative real-trajectory examples,
+                                  written by
+                                  stage6_6_collective_landscape/code/export_demo_data.py
+                                  (not part of this directory's own data/
+                                  pipeline -- see ../STAGE6_6_VISUALIZATION_NOTES.md)
         manifest.json            lists every flock/method/target combo and
                                   which scenario id it maps to
     app/
         index.html               authored source (HTML/CSS/JS), with
                                   `/*__DEMO_DATA__*/`, `/*__REFINEMENT_DATA__*/`,
-                                  and `/*__REFINEMENT_VIZ__*/` placeholders
+                                  `/*__REFINEMENT_VIZ__*/`, and
+                                  `/*__LANDSCAPE_DATA__*/` placeholders
         build.py                  inlines data/*.json into the placeholders,
                                    writes build/index.html
     assets/                  (reserved; the app is a single self-contained
@@ -167,8 +180,8 @@ heading arrows, halos/rings, hover tooltips), with tables/plots demoted to
 collapsible "Full statistics" sections rather than the primary explanation.
 See `STAGE6_5_VISUALIZATION_NOTES.md` for full provenance of every derived
 quantity, which examples were chosen and why, and the regressions/bugs
-found and fixed during the redesign. Four tabs, each built from
-`data/refinement_viz_data.json` (lattice-ready derived data; supporting
+found and fixed during the redesign. Five tabs. Tabs 1-4 are each built
+from `data/refinement_viz_data.json` (lattice-ready derived data; supporting
 tables come from `data/refinement_bundle.json`) — both read only
 already-saved `stage6_5/{boundary_inference,refinement/*}/data/*.json`, or
 deterministic re-derivations of already-frozen quantities (documented
@@ -201,6 +214,44 @@ visualization prettier, no fabricated dynamics:
   larger group while correctly flagging IDENTITY COLLAPSE / UNRESOLVED —
   nominal and identity-valid success are always shown as two separate
   values, never one checkmark.
+- **5. Collective Landscape** (Stage 6.6) — built from
+  `data/collective_landscape_bundle.json` instead of
+  `refinement_viz_data.json`; see `STAGE6_6_VISUALIZATION_NOTES.md` for
+  full design rationale, field provenance, and bug log. Two internal
+  submodes:
+  - **Explore** — a snapshot/regime selector (seed 2/3/4 x 5 control
+    conditions, at control-end); a large scatter over any pair of the four
+    per-candidate-interior properties (coherence C, integration G, leakage
+    L, contrast D), with independent color/size encodings and four
+    independent range filters (never combined into one score); a
+    Scatter/Sweep-grid toggle (5x5 binned view with per-bin counts and a
+    nearest-to-centre representative); the same lattice renderer used by
+    tabs 1-4 shows the selected candidate's interior/selected-boundary/
+    structural-shell/near-exterior/distant-exterior roles and real
+    headings; an optional Pareto-only filter (default off, never a default
+    visual emphasis); a lightweight pin-and-compare (two candidates side
+    by side); and data-driven "teaching case" shortcuts (only rendered
+    when the current snapshot's actual candidate population contains a
+    clear example).
+  - **Control** — a fixed candidate (the seed's own established I₀ by
+    default) with a local timeline scrubber over one of the five archetype
+    control conditions (and, for the three exterior-control conditions, an
+    exterior-budget of 25/50/75/100%); the lattice shows interior/actuated
+    structural shell/actuated near-exterior roles exactly at every
+    timestep. For 7 hand-picked (seed, condition) combinations (10 curated
+    candidates total, chosen to span the C/G/L/D surface and all five
+    control archetypes), real per-timestep heading arrows animate
+    frame-by-frame through Play/step/scrub, exactly like the main Control
+    tab — an "Example" selector appears when more than one curated
+    candidate shares a regime, letting you compare e.g. the reference I₀
+    against a visually-scattered-but-metrically-favorable alternative on
+    the same physical trajectory. Everywhere else, real per-bird headings
+    are shown only at the single instant the underlying data actually
+    contains them, and omitted (not interpolated or fabricated) elsewhere
+    — stated explicitly in the UI either way. Four compact live metric
+    traces (C_I(t), G_I(t), L_I(t), D_local(t)) plus target fraction,
+    external entropy, and control effort as secondary numbers — these
+    reflect whichever candidate is currently displayed, not always I₀.
 
 ## Rebuilding after a data or science change
 
@@ -208,8 +259,9 @@ visualization prettier, no fabricated dynamics:
 cd data && python3 export_scenarios.py     # regenerate trajectory bundles
 python3 verify_bundles.py                   # independently check summary stats
 python3 export_refinement_bundle.py         # refresh Details-table data
-python3 derive_refinement_viz_data.py       # refresh the graph-ready lattice data
-cd ../app && python3 build.py               # re-inline into build/index.html
+python3 derive_refinement_viz_data.py       # refresh tabs 1-4's graph-ready lattice data
+cd ../../stage6_6_collective_landscape/code && python3 export_demo_data.py  # refresh tab 5's bundle
+cd ../../interactive_demo/app && python3 build.py    # re-inline into build/index.html
 ```
 
 `export_refinement_bundle.py` and `derive_refinement_viz_data.py` only need

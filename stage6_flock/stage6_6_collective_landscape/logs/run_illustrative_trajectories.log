@@ -1,0 +1,10 @@
+
+=== run_illustrative_trajectories start 2026-09-07 22:02:42 ===
+seed=2 condition=no_control n_candidates=2 elapsed=49.9s
+seed=2 condition=shell_only n_candidates=2 elapsed=35.4s
+seed=2 condition=same_direction n_candidates=1 elapsed=3.7s
+seed=2 condition=opposite n_candidates=1 elapsed=4.7s
+seed=2 condition=disordered n_candidates=1 elapsed=4.4s
+seed=3 condition=same_direction n_candidates=1 elapsed=9.3s
+seed=4 condition=disordered n_candidates=2 elapsed=20.8s
+=== done, total 181.1s, 10 trajectories ===
