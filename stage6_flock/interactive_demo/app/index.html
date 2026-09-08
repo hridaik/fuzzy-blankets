@@ -303,14 +303,30 @@
   .inference-identity .iiLandscape .iiLsRow { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; margin-bottom: 6px; flex-shrink: 0; }
   .inference-identity .iiLandscape .iiLsField { display: flex; flex-direction: column; gap: 3px; }
   .inference-identity .iiLandscape .iiLsField label { font-size: 10px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
-  .inference-identity .iiLandscape .iiLsExploreRow { display: flex; gap: 16px; min-height: 0; flex: 1; }
+  /* min-height is a floor sized to the actual worst-case content (a
+     ~260px lattice + legend + 5-row metric card + boundary-source
+     row), not an arbitrary guess -- low enough to still shrink/scroll
+     gracefully via #iiLsBody's overflow-y:auto on very short viewports,
+     high enough that the row is never squeezed below what its own
+     content needs (which is what let the metric card get clipped --
+     see iiFitColumnSvg). */
+  .inference-identity .iiLandscape .iiLsExploreRow { display: flex; gap: 16px; min-height: 560px; flex: 1; }
   .inference-identity .iiLandscape .iiLsScatterCol { flex: 1.35; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
   .inference-identity .iiLandscape .iiLsGraphCol { flex: 1; min-width: 300px; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
   /* Control mode's 2nd column (live metrics) -- capped at Control tab's own
      side-panel width instead of splitting 50/50 with the lattice, so the
      lattice stays the dominant visual (VISUAL_CONSISTENCY_AUDIT.md #1). */
   .inference-identity .iiLandscape .iiLsMetricsCol { flex: 0 1 320px; min-width: 260px; max-width: 320px; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
-  .inference-identity .iiLandscape svg.iiLsScatter { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; flex: 1; min-height: 320px; width: 100%; }
+  /* Landscape's lattice/scatter SVGs share their column with a
+     variable-height sibling (a metric card whose row count differs per
+     candidate). Chromium and Firefox resolve flex:1-vs-sibling-height
+     negotiation differently -- Firefox was clipping the metric card's
+     stat rows entirely rather than shrinking the SVG to make room. Both
+     get an explicit, JS-computed pixel height instead (see
+     iiFitColumnSvg below) so sizing is deterministic across browsers;
+     the static height here is only the pre-JS/no-JS fallback. */
+  .inference-identity .iiLandscape svg.iiLsScatter { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; flex: none; height: 300px; min-height: 0; width: 100%; }
+  .inference-identity .iiLandscape svg.iiLattice { flex: none; height: 300px; min-height: 0; }
   .inference-identity .iiLandscape .iiLsPoint { cursor: pointer; }
   .inference-identity .iiLandscape .iiLsPoint:hover { stroke: #111 !important; stroke-width: 2 !important; }
   .inference-identity .iiLandscape .iiLsFilters { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 18px; }
@@ -1271,6 +1287,27 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
   }
   function iiHideTooltip(){ const t = document.getElementById("iiTooltip"); if (t) t.hidden = true; }
 
+  // Deterministic replacement for flex:1-vs-sibling-height negotiation
+  // (see the CSS comment above svg.iiLsScatter/.iiLattice under
+  // .iiLandscape): sets an explicit pixel height on `svg` equal to
+  // whatever's actually left in its column after its OTHER children's
+  // real (already-rendered) height is subtracted, so a variable-height
+  // sibling (a metric card whose row count differs per candidate) always
+  // gets the room it needs instead of being silently clipped, and the
+  // graph still claims all remaining space rather than an arbitrary
+  // static guess. Call after the column's other children (legend, card)
+  // are already in the DOM.
+  function iiFitColumnSvg(svg, minPx){
+    if (!svg) return;
+    const col = svg.parentElement;
+    if (!col) return;
+    let siblingsH = 0;
+    Array.from(col.children).forEach(ch => { if (ch !== svg) siblingsH += ch.getBoundingClientRect().height; });
+    const colH = col.getBoundingClientRect().height;
+    const avail = colH - siblingsH - 10; // small fixed allowance for inter-child spacing
+    svg.style.height = Math.max(minPx || 240, Math.floor(avail)) + "px";
+  }
+
   function iiDetails(title, bodyHtml){
     return `<details class="iiDetails"><summary>${title}</summary><div class="iiDetailsBody">${bodyHtml}</div></details>`;
   }
@@ -2207,6 +2244,7 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
     const lattice = LS.lattice;
     if (st.view === "scatter") {
       drawLsScatter(document.getElementById("iiLsScatterSvg"), snap, indices, st, (i) => { st.selectedIdx = i; renderLsExplore(); });
+      iiFitColumnSvg(document.getElementById("iiLsScatterSvg"), 300);
     } else {
       drawLsSweepGrid(document.getElementById("iiLsSweepGrid"), snap, indices, st, (i) => { st.selectedIdx = i; renderLsExplore(); });
     }
@@ -2217,6 +2255,8 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
         onHover: (id, ev) => iiShowTooltip(ev, lsCandidateTooltip(setsA, snap, id)), onLeave: iiHideTooltip });
       drawIILattice(document.getElementById("iiLsSvgB"), { lattice, headings: snap.representative_z, roleFn: lsRoleFn(setsB),
         onHover: (id, ev) => iiShowTooltip(ev, lsCandidateTooltip(setsB, snap, id)), onLeave: iiHideTooltip });
+      iiFitColumnSvg(document.getElementById("iiLsSvgA"), 240);
+      iiFitColumnSvg(document.getElementById("iiLsSvgB"), 240);
       document.getElementById("iiLsUnpin").addEventListener("click", () => { st.pinnedIdx = null; renderLsExplore(); });
     } else if (st.selectedIdx !== null) {
       const entry67 = st.boundarySource === "inferred" ? ls67Entry(snap.candidates.id[st.selectedIdx]) : null;
@@ -2245,6 +2285,12 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
           iiLegendItem(iiDot("var(--exterior)"), "distant exterior"),
         ].join("");
       }
+      // Lower floor than the compare-mode/control-mode call sites: this
+      // column can carry a 2nd "Blind boundary" card when boundarySource
+      // is "inferred" (see lsInferredMetricCardHtml), so it must be able
+      // to shrink further to keep both cards fully visible without
+      // relying on the column's overflow-y:auto scroll fallback.
+      iiFitColumnSvg(document.getElementById("iiLsSvg1"), 180);
       const pinBtn = document.getElementById("iiLsPinBtn");
       if (pinBtn) pinBtn.addEventListener("click", () => { st.pinnedIdx = (st.pinnedIdx===st.selectedIdx) ? null : st.selectedIdx; renderLsExplore(); });
       const bSrcOracle = document.getElementById("iiLsBSrcOracle");
@@ -2470,6 +2516,7 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
       iiLegendItem(`<span class="dot" style="background:var(--exterior);border-color:#8172b2"></span>`, "near exterior"),
       iiLegendItem(iiDot("var(--exterior)"), "distant exterior"),
     ].join("");
+    iiFitColumnSvg(document.getElementById("iiLsCtrlSvg"), 280);
     ["C","G","L","D"].forEach(k => {
       const color = { C:"#1e8f5f", G:"#2563eb", L:"#d64545", D:"#b5601c" }[k];
       drawLsTrace("iiLsTrace_"+k, activeSeries[k], tIdx, color);
