@@ -21,13 +21,19 @@
   #app { display: flex; flex-direction: column; height: 100vh; min-height: 640px; }
 
   header { display: flex; align-items: center; gap: 14px; padding: 8px 18px;
-    background: var(--panel); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  header h1 { font-size: 14.5px; font-weight: 600; margin: 0; white-space: nowrap; }
-  #legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted); }
-  .swatch { display: inline-flex; align-items: center; gap: 5px; }
+    background: var(--panel); border-bottom: 1px solid var(--border); flex-wrap: nowrap; }
+  header h1 { font-size: 14.5px; font-weight: 600; margin: 0; white-space: nowrap; flex-shrink: 0; }
+  /* Scrolls horizontally instead of wrapping to a 2nd line when the header gets tight --
+     keeps header height stable across viewports instead of doubling (see
+     VISUAL_CONSISTENCY_AUDIT.md #3). */
+  #legend { display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto; font-size: 10.5px;
+    color: var(--muted); min-width: 0; scrollbar-width: none; -ms-overflow-style: none; }
+  #legend::-webkit-scrollbar { display: none; }
+  .swatch { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; }
   .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 1.5px solid #0002; }
   .ring { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 2px solid var(--fiedler); background: transparent; }
-  header .spacer { flex: 1; }
+  header .spacer { flex: 1; min-width: 8px; }
+  header > button.chip { flex-shrink: 0; }
   button.chip { border: 1px solid var(--border); background: var(--panel); color: var(--ink);
     padding: 5px 10px; border-radius: 6px; font-size: 12px; cursor: pointer; }
   button.chip:hover { border-color: var(--accent); color: var(--accent); }
@@ -190,7 +196,7 @@
   .inference-identity .iiGraphCol { flex: 2.1; display: flex; flex-direction: column; min-width: 0; position: relative; }
   .inference-identity svg.iiLattice { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
     flex: 1; min-height: 320px; width: 100%; }
-  .inference-identity .iiSideCol { flex: 1; min-width: 240px; max-width: 300px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+  .inference-identity .iiSideCol { flex: 1; min-width: 240px; max-width: 320px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
 
   .inference-identity .iiLegend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted);
     padding: 6px 2px; }
@@ -208,9 +214,12 @@
   .inference-identity label.iiToggle { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; cursor: pointer; }
   .inference-identity label.iiToggle input:disabled + span { color: var(--muted); }
 
-  .inference-identity .iiCard { border: 1px solid var(--border); border-radius: 10px; background: var(--panel); padding: 11px 13px; }
+  /* Matches #summaryCard's radius/padding/border exactly (see
+     VISUAL_CONSISTENCY_AUDIT.md #2) -- same "labelled numeric readout" component,
+     shared tokens instead of an independently-tuned radius/padding. */
+  .inference-identity .iiCard { border: 1px solid var(--border); border-radius: 8px; background: var(--panel); padding: 9px 11px; }
   .inference-identity .iiCard h4 { margin: 0 0 7px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
-  .inference-identity .iiStat { display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  .inference-identity .iiStat { display: flex; justify-content: space-between; font-size: 11.5px; padding: 2.5px 0; border-bottom: 1px dashed var(--border); }
   .inference-identity .iiStat:last-child { border-bottom: none; }
   .inference-identity .iiStat .k { color: var(--muted); } .inference-identity .iiStat .v { font-weight: 700; font-variant-numeric: tabular-nums; }
   .inference-identity .iiStat .v.good { color: var(--good); } .inference-identity .iiStat .v.bad { color: var(--bad); }
@@ -245,22 +254,62 @@
   .inference-identity .iiFlagBanner.ok { background: #dff3e9; color: var(--good); border: 1px solid #b8e0c8; }
 
   /* ------------------------------------------------------------
+     "View settings" / "Filters" popovers (task: move display-only
+     encodings out of the always-visible control row). Anchored,
+     click-to-open, closed by a single document-level click/Escape
+     listener (see the router section of the script) -- no external
+     dependency, no modal overlay. `.right` aligns the panel to the
+     trigger's right edge for triggers that sit near the column's
+     right border, so the panel opens inward instead of off-screen.
+     ------------------------------------------------------------ */
+  .inference-identity .iiPopoverWrap { position: relative; display: inline-flex; }
+  .inference-identity button.iiPopoverBtn { display: inline-flex; align-items: center; gap: 4px; }
+  .inference-identity button.iiPopoverBtn.active { background: #eaf1ff; border-color: var(--accent); color: var(--accent); }
+  .inference-identity .iiPopover { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14); padding: 10px 12px; font-size: 12px;
+    min-width: 220px; max-width: 280px; max-height: min(60vh, 420px); overflow-y: auto; }
+  .inference-identity .iiPopover.right { left: auto; right: 0; }
+  .inference-identity .iiPopover h5 { margin: 0 0 7px; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.04em; color: var(--muted); }
+  .inference-identity .iiPopover .row { margin-bottom: 9px; }
+  .inference-identity .iiPopover .row:last-child { margin-bottom: 0; }
+  .inference-identity .iiPopover .rowLabel { font-size: 10px; text-transform: uppercase; letter-spacing: .03em;
+    color: var(--muted); display: block; margin-bottom: 4px; }
+
+  /* ------------------------------------------------------------
      Tab 5 -- Collective Landscape. Everything here is additionally
      scoped under .iiLandscape (nested inside .inference-identity)
      so it cannot leak into tabs 1-4 or the Control view, matching
      the file's existing per-feature namespacing convention (see
      STAGE6_6_VISUALIZATION_NOTES.md Part 1).
      ------------------------------------------------------------ */
+  /* .iiLandscape and #iiLsBody are plain wrapper divs the router injects
+     content into -- without their own flex-column sizing, they broke the
+     flex height chain coming down from .iiBody, so .iiLsExploreRow's
+     flex:1 had no bounded ancestor to size against and the row ballooned
+     to its content's height (a square lattice stacked with a legend and a
+     metric card in one column, cross-axis-stretched onto the scatter in
+     the other) well past the viewport -- see VISUAL_CONSISTENCY_AUDIT.md
+     #1. Restoring the chain lets the row's flex:1 (and its own children's
+     min-height:0 below) size against the actual remaining space, matching
+     how tabs 1-4's .iiMain already behaves as a direct child of .iiBody. */
+  .inference-identity .iiLandscape { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .inference-identity .iiLandscape #iiLsBody { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
   .inference-identity .iiLandscape .iiLsTop { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
     padding: 2px 2px 6px; border-bottom: 1px dashed var(--border); margin-bottom: 6px; }
   .inference-identity .iiLandscape .iiLsModeRow { display: flex; gap: 6px; margin-left: auto; }
   .inference-identity .iiLandscape .iiLsModeHint { font-size: 11.5px; color: var(--muted); margin: 0 0 8px; }
-  .inference-identity .iiLandscape .iiLsRow { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; margin-bottom: 6px; }
+  .inference-identity .iiLandscape .iiLsRow { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; margin-bottom: 6px; flex-shrink: 0; }
   .inference-identity .iiLandscape .iiLsField { display: flex; flex-direction: column; gap: 3px; }
   .inference-identity .iiLandscape .iiLsField label { font-size: 10px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
-  .inference-identity .iiLandscape .iiLsExploreRow { display: flex; gap: 16px; min-height: 380px; flex: 1; }
-  .inference-identity .iiLandscape .iiLsScatterCol { flex: 1.35; display: flex; flex-direction: column; min-width: 0; }
-  .inference-identity .iiLandscape .iiLsGraphCol { flex: 1; min-width: 300px; display: flex; flex-direction: column; }
+  .inference-identity .iiLandscape .iiLsExploreRow { display: flex; gap: 16px; min-height: 0; flex: 1; }
+  .inference-identity .iiLandscape .iiLsScatterCol { flex: 1.35; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+  .inference-identity .iiLandscape .iiLsGraphCol { flex: 1; min-width: 300px; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+  /* Control mode's 2nd column (live metrics) -- capped at Control tab's own
+     side-panel width instead of splitting 50/50 with the lattice, so the
+     lattice stays the dominant visual (VISUAL_CONSISTENCY_AUDIT.md #1). */
+  .inference-identity .iiLandscape .iiLsMetricsCol { flex: 0 1 320px; min-width: 260px; max-width: 320px; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
   .inference-identity .iiLandscape svg.iiLsScatter { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; flex: 1; min-height: 320px; width: 100%; }
   .inference-identity .iiLandscape .iiLsPoint { cursor: pointer; }
   .inference-identity .iiLandscape .iiLsPoint:hover { stroke: #111 !important; stroke-width: 2 !important; }
@@ -1090,12 +1139,37 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
 
   const ii = {
     tab: "boundary",
-    boundary: { revealBD: false, labelMode: "roles", sampleN: 100 },
+    boundary: { revealBD: false, labelMode: "roles", sampleN: 100, viewOpen: false },
     stress: { cls: "omitted_shell", perturbed: false },
-    control: { flockIdx: 0, arm: "inferred", showRedundant: false },
+    control: { flockIdx: 0, arm: "inferred", showRedundant: false, viewOpen: false },
     identity: { lens: "M", guard: false, t: 0, playing: false, timer: null },
     landscape: null, // lazily initialized in renderTabLandscape() once LS is known to exist
   };
+
+  // ---- "View settings" / "Filters" popovers: display-only encodings that
+  // don't change the scientific question, moved out of the always-visible
+  // control row (task brief items D/E/O). Each tab keeps its own open/closed
+  // flag on its state object (st.viewOpen / ii.landscape.filtersOpen) and a
+  // full re-render already redraws the popover's contents in place -- same
+  // "state var -> full re-render" pattern already used everywhere else in
+  // this file, so opening/closing one is just another state change.
+  // Closing on outside-click/Escape is handled by ONE listener here rather
+  // than per-popover, since only one can ever be open at a time.
+  function iiClosePopovers(){
+    let changed = false;
+    if (ii.boundary.viewOpen) { ii.boundary.viewOpen = false; changed = true; }
+    if (ii.control.viewOpen) { ii.control.viewOpen = false; changed = true; }
+    if (ii.landscape) {
+      if (ii.landscape.viewOpen) { ii.landscape.viewOpen = false; changed = true; }
+      if (ii.landscape.filtersOpen) { ii.landscape.filtersOpen = false; changed = true; }
+    }
+    if (changed) renderRefinementView();
+  }
+  document.addEventListener("click", ev => {
+    if (ev.target.closest(".iiPopover") || ev.target.closest(".iiPopoverBtn")) return;
+    iiClosePopovers();
+  }, true);
+  document.addEventListener("keydown", ev => { if (ev.key === "Escape") iiClosePopovers(); }, true);
 
   function svgEl(tag, attrs){
     const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
@@ -1260,11 +1334,16 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
         <div class="iiSideCol">
           <div class="iiControls">
             <button class="iiBtn" id="iiRevealBtn">${st.revealBD ? "Hide true interaction shell" : "Reveal true interaction shell"}</button>
-          </div>
-          <div class="iiControls">
-            <span style="font-size:11px;color:var(--muted);">Labels:</span>
-            <button class="iiBtn ${st.labelMode==='ids'?'active':''}" data-label="ids">IDs</button>
-            <button class="iiBtn ${st.labelMode==='roles'?'active':''}" data-label="roles">Roles</button>
+            <span class="iiPopoverWrap">
+              <button class="iiBtn iiPopoverBtn ${st.viewOpen?'active':''}" id="iiViewBtn1" aria-expanded="${st.viewOpen}">View settings ${st.viewOpen?'▴':'▾'}</button>
+              ${st.viewOpen ? `<div class="iiPopover right">
+                <h5>Display</h5>
+                <div class="row"><span class="rowLabel">Labels</span>
+                  <button class="iiBtn ${st.labelMode==='ids'?'active':''}" data-label="ids">IDs</button>
+                  <button class="iiBtn ${st.labelMode==='roles'?'active':''}" data-label="roles">Roles</button>
+                </div>
+              </div>` : ""}
+            </span>
           </div>
           <div class="iiControls">
             <span style="font-size:11px;color:var(--muted);">Observed trajectories:</span>
@@ -1328,6 +1407,7 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
     ].join("");
 
     document.getElementById("iiRevealBtn").addEventListener("click", () => { st.revealBD = !st.revealBD; renderTabBoundary(); });
+    document.getElementById("iiViewBtn1").addEventListener("click", () => { st.viewOpen = !st.viewOpen; renderTabBoundary(); });
     document.querySelectorAll("[data-label]").forEach(b => b.addEventListener("click", () => { st.labelMode = b.dataset.label; renderTabBoundary(); }));
     document.querySelectorAll("[data-n]").forEach(b => b.addEventListener("click", () => { st.sampleN = parseInt(b.dataset.n,10); renderTabBoundary(); }));
   }
@@ -1377,9 +1457,8 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
           <div class="iiTakeaway">${st.cls === 'non_shell'
             ? "A true non-shell bird cannot enter any core bird's update, by construction — perturbing it changes nothing."
             : "A variable can be redundant for prediction but still causally important when independently perturbed."}
-            Note the direct effect (${isZero?'0':ex.D_do_joint.toFixed(2)+' nats'}) and the predictive penalty
-            (${shiftVal!==undefined?Math.abs(shiftVal).toFixed(4):'?'} nats) are <b>different metrics at very different scales</b> —
-            not directly comparable magnitudes.</div>
+            Direct effect (${isZero?'0':ex.D_do_joint.toFixed(2)+' nats'}) and predictive penalty
+            (${shiftVal!==undefined?Math.abs(shiftVal).toFixed(4):'?'} nats) are <b>different metrics at different scales</b> — not comparable.</div>
         </div>
       </div>
       ${ex.per_core.filter(pc => ex.affected_core_ids.includes(pc.core_id)).length ? iiDetails("Next-heading probability, before vs. after (affected core birds)", `
@@ -1462,9 +1541,13 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
           </div>
           <div class="iiControls">
             ${Object.keys(ARM_LABEL).map(a => `<button class="iiBtn ${st.arm===a?'active':''}" data-arm="${a}">${ARM_LABEL[a]}</button>`).join("")}
-          </div>
-          <div class="iiControls">
-            <label class="iiToggle"><input type="checkbox" id="iiRedundantBox" ${st.showRedundant?"checked":""}><span>Show redundant support (m<sub>i</sub>)</span></label>
+            <span class="iiPopoverWrap">
+              <button class="iiBtn iiPopoverBtn ${st.viewOpen?'active':''}" id="iiViewBtn3" aria-expanded="${st.viewOpen}">View settings ${st.viewOpen?'▴':'▾'}</button>
+              ${st.viewOpen ? `<div class="iiPopover right">
+                <h5>Display</h5>
+                <div class="row"><label class="iiToggle"><input type="checkbox" id="iiRedundantBox" ${st.showRedundant?"checked":""}><span>Show redundant support (m<sub>i</sub>)</span></label></div>
+              </div>` : ""}
+            </span>
           </div>
           <div class="iiCard">
             <h4>This flock (seed ${row.seed})</h4>
@@ -1526,7 +1609,9 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
 
     document.getElementById("iiFlockSelect").addEventListener("change", e => { st.flockIdx = parseInt(e.target.value,10); renderTabControl(); });
     document.querySelectorAll("[data-arm]").forEach(b => b.addEventListener("click", () => { st.arm = b.dataset.arm; renderTabControl(); }));
-    document.getElementById("iiRedundantBox").addEventListener("change", e => { st.showRedundant = e.target.checked; renderTabControl(); });
+    document.getElementById("iiViewBtn3").addEventListener("click", () => { st.viewOpen = !st.viewOpen; renderTabControl(); });
+    const redundantBox = document.getElementById("iiRedundantBox");
+    if (redundantBox) redundantBox.addEventListener("change", e => { st.showRedundant = e.target.checked; renderTabControl(); });
   }
   function iiCoverageFrac(row, actuators, lattice){
     const n = row.I0.length;
@@ -1674,6 +1759,7 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
       x: "L", y: "G", color: "D", size: "C",
       filters: { C:[0,1], G:[0,1], L:[0,1], D:[0,1] },
       paretoOnly: false, selectedIdx: null, pinnedIdx: null,
+      viewOpen: false, filtersOpen: false,
       control: { seed: seeds.includes("2") ? "2" : (seeds[0] || null), condition: "no_control", fE: "1.00",
                  candidateIdx: 0, tIdx: 0, playing: false, timer: null },
       // Stage 6.7 boundary-source toggle (task brief section 18) -- "oracle"
@@ -1949,15 +2035,28 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
       <select class="iiSelect" id="iiLsCondSel">${condOpts}</select>
     </div>`;
   }
+  // X/Y axis choice is the actual exploration question (task brief item F) and
+  // stays directly visible. Color-by/size-by are purely visual encodings of
+  // the same 4 metrics and live in the "View settings" popover instead --
+  // see lsEncodingControlsHtml below.
   function lsAxisControlsHtml(st){
     const opts = k => Object.keys(LS_METRIC).map(m => `<option value="${m}" ${st[k]===m?'selected':''}>${LS_METRIC[m].full}</option>`).join("");
-    const sizeOpts = Object.keys(LS_METRIC).map(m => `<option value="${m}" ${st.size===m?'selected':''}>${LS_METRIC[m].full}</option>`).join("") + `<option value="const" ${st.size==='const'?'selected':''}>constant</option>`;
     return `
       <div class="iiLsField"><label>X axis</label><select class="iiSelect" id="iiLsX">${opts('x')}</select></div>
       <div class="iiLsField"><label>Y axis</label><select class="iiSelect" id="iiLsY">${opts('y')}</select></div>
-      <div class="iiLsField"><label>Color by</label><select class="iiSelect" id="iiLsColor">${opts('color')}</select></div>
-      <div class="iiLsField"><label>Size by</label><select class="iiSelect" id="iiLsSize">${sizeOpts}</select></div>
     `;
+  }
+  function lsEncodingControlsHtml(st){
+    const opts = k => Object.keys(LS_METRIC).map(m => `<option value="${m}" ${st[k]===m?'selected':''}>${LS_METRIC[m].full}</option>`).join("");
+    const sizeOpts = Object.keys(LS_METRIC).map(m => `<option value="${m}" ${st.size===m?'selected':''}>${LS_METRIC[m].full}</option>`).join("") + `<option value="const" ${st.size==='const'?'selected':''}>constant</option>`;
+    return `
+      <div class="row"><span class="rowLabel">Color by</span><select class="iiSelect" id="iiLsColor" style="width:100%;">${opts('color')}</select></div>
+      <div class="row"><span class="rowLabel">Size by</span><select class="iiSelect" id="iiLsSize" style="width:100%;">${sizeOpts}</select></div>
+      <div class="row"><label class="iiToggle"><input type="checkbox" id="iiLsPareto" ${st.paretoOnly?'checked':''}><span>Show Pareto candidates only</span></label></div>
+    `;
+  }
+  function lsActiveFilterCount(st){
+    return Object.keys(LS_METRIC).filter(k => st.filters[k][0] > 0.001 || st.filters[k][1] < 0.999).length;
   }
   function lsFiltersHtml(st, snap){
     return `<div class="iiLsFilters">` + Object.keys(LS_METRIC).map(k => {
@@ -2037,13 +2136,25 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
           <button class="iiBtn ${st.view==='sweep'?'active':''}" id="iiLsViewSweep">Sweep grid</button>
         </div></div>
         <div class="iiLsField"><label>&nbsp;</label>
-          <label class="iiToggle"><input type="checkbox" id="iiLsPareto" ${st.paretoOnly?'checked':''}><span>Show Pareto candidates only</span></label>
+          <span class="iiPopoverWrap">
+            <button class="iiBtn iiPopoverBtn ${st.viewOpen?'active':''}" id="iiLsViewSettingsBtn" aria-expanded="${st.viewOpen}">View settings ${st.viewOpen?'▴':'▾'}</button>
+            ${st.viewOpen ? `<div class="iiPopover"><h5>Display encoding</h5>${lsEncodingControlsHtml(st)}</div>` : ""}
+          </span>
+        </div>
+        <div class="iiLsField"><label>&nbsp;</label>
+          <span class="iiPopoverWrap">
+            <button class="iiBtn iiPopoverBtn ${st.filtersOpen?'active':''}" id="iiLsFiltersBtn" aria-expanded="${st.filtersOpen}">Filters${lsActiveFilterCount(st) ? ` · ${lsActiveFilterCount(st)} active` : ""} ${st.filtersOpen?'▴':'▾'}</button>
+            ${st.filtersOpen ? `<div class="iiPopover" style="min-width:300px;max-width:340px;">
+              <h5>Filters <span style="font-weight:400;text-transform:none;letter-spacing:0;">&mdash; independent, not combined into one score</span></h5>
+              ${lsFiltersHtml(st, snap)}
+              <div class="row" style="margin-top:8px;"><button class="iiBtn" id="iiLsFiltersReset">Reset filters</button></div>
+            </div>` : ""}
+          </span>
         </div>
         <div class="iiLsField" style="margin-left:auto;"><label>&nbsp;</label>
           <span style="font-size:10.5px;color:var(--muted);">${indices.length} / ${snap.candidates.id.length} shown (of ${snap.n_candidates_full} total &mdash; see Details)</span>
         </div>
       </div>
-      <div class="iiLsRow"><div style="flex:1;"><label style="font-size:10px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);">Filters (independent, not combined into one score)</label>${lsFiltersHtml(st, snap)}</div></div>
 
       <div class="iiLsExploreRow">
         <div class="iiLsScatterCol">
@@ -2159,17 +2270,23 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
     document.getElementById("iiLsCondSel").addEventListener("change", lsApplySnapshotChange);
     document.getElementById("iiLsX").addEventListener("change", e => { st.x = e.target.value; renderLsExplore(); });
     document.getElementById("iiLsY").addEventListener("change", e => { st.y = e.target.value; renderLsExplore(); });
-    document.getElementById("iiLsColor").addEventListener("change", e => { st.color = e.target.value; renderLsExplore(); });
-    document.getElementById("iiLsSize").addEventListener("change", e => { st.size = e.target.value; renderLsExplore(); });
     document.getElementById("iiLsViewScatter").addEventListener("click", () => { st.view = "scatter"; renderLsExplore(); });
     document.getElementById("iiLsViewSweep").addEventListener("click", () => { st.view = "sweep"; renderLsExplore(); });
-    document.getElementById("iiLsPareto").addEventListener("change", e => { st.paretoOnly = e.target.checked; renderLsExplore(); });
+    document.getElementById("iiLsViewSettingsBtn").addEventListener("click", () => { st.viewOpen = !st.viewOpen; st.filtersOpen = false; renderLsExplore(); });
+    document.getElementById("iiLsFiltersBtn").addEventListener("click", () => { st.filtersOpen = !st.filtersOpen; st.viewOpen = false; renderLsExplore(); });
+    // Color/Size/Pareto only exist in the DOM while the View settings popover
+    // is open; the 4 range sliders and Reset only exist while Filters is open.
+    const colorSel = document.getElementById("iiLsColor"); if (colorSel) colorSel.addEventListener("change", e => { st.color = e.target.value; renderLsExplore(); });
+    const sizeSel = document.getElementById("iiLsSize"); if (sizeSel) sizeSel.addEventListener("change", e => { st.size = e.target.value; renderLsExplore(); });
+    const paretoBox = document.getElementById("iiLsPareto"); if (paretoBox) paretoBox.addEventListener("change", e => { st.paretoOnly = e.target.checked; renderLsExplore(); });
     document.querySelectorAll("[data-filt]").forEach(inp => inp.addEventListener("input", e => {
       const k = e.target.dataset.filt, side = e.target.dataset.side, v = parseFloat(e.target.value);
       const f = st.filters[k];
       if (side === "lo") f[0] = Math.min(v, f[1]); else f[1] = Math.max(v, f[0]);
       renderLsExplore();
     }));
+    const filtersReset = document.getElementById("iiLsFiltersReset");
+    if (filtersReset) filtersReset.addEventListener("click", () => { st.filters = {C:[0,1],G:[0,1],L:[0,1],D:[0,1]}; renderLsExplore(); });
     const cb = document.getElementById("iiLsCaseConsensus"); if (cb) cb.addEventListener("click", () => lsJumpToCase(cases.consensus));
     const db = document.getElementById("iiLsCaseDistinct"); if (db) db.addEventListener("click", () => lsJumpToCase(cases.distinct));
     const wb = document.getElementById("iiLsCaseWeak"); if (wb) wb.addEventListener("click", () => lsJumpToCase(cases.weak));
@@ -2324,7 +2441,7 @@ window.STAGE67_DATA = {"snapshots":{"seed2_no_control":{"seed":2,"condition":"no
           </div>
           <div class="iiLsLegendNote">${headingNote}</div>
         </div>
-        <div class="iiLsGraphCol">
+        <div class="iiLsGraphCol iiLsMetricsCol">
           <div class="iiCard"><h4>Live metrics at t=${t}${illEntry ? ` &mdash; ${illEntry.label}` : ""}</h4>
             <div class="iiLsTraceGrid">
               ${["C","G","L","D"].map(k => lsTraceBlock(k, activeSeries, tIdx)).join("")}

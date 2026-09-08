@@ -14,9 +14,13 @@ metric shown), `UX_REFINEMENT_LOG.md` (what changed in the most recent
 Control-view presentation/UX refinement pass and why),
 `STAGE6_5_VISUALIZATION_NOTES.md` (the `Inference & Identity` mode's first
 four tabs: what each tab's graph is built from, which examples were chosen
-and why, and the regressions/bugs found and fixed while building it), and
+and why, and the regressions/bugs found and fixed while building it),
 `STAGE6_6_VISUALIZATION_NOTES.md` (the 5th tab, "Collective Landscape":
-same, for the Stage 6.6 candidate-interior landscape).
+same, for the Stage 6.6 candidate-interior landscape), and
+`VISUAL_CONSISTENCY_AUDIT.md` / `VISUAL_CONSISTENCY_PASS.md` (a later
+visual-consistency / information-architecture pass across the whole demo —
+shared design tokens, "View settings"/"Filters" popovers, copy tightening;
+no simulation data, metric definitions, or scientific conclusions changed).
 
 ## Opening it
 
@@ -189,9 +193,11 @@ field-by-field in the notes doc); no simulation is re-run to make the
 visualization prettier, no fabricated dynamics:
 
 - **1. Predictive Boundary** — the canonical flock's core/inferred-boundary
-  graph, a "Reveal true interaction shell" toggle showing `B_hat ⊂ B^D`
-  visually, an IDs/Roles label toggle, and a 5/10/20/50/100-trajectory
-  sample-size slider that swaps the highlighted node set on the same graph.
+  graph, a "Reveal true interaction shell" toggle, and a 5/10/20/50/100-
+  trajectory sample-size slider that swaps the highlighted node set on the
+  same graph (kept directly visible — it changes which boundary is actually
+  shown). The IDs/Roles label toggle is purely a display choice and lives
+  in a small "View settings" popover next to Reveal.
 - **2. Causal Stress Test** — a representative flock (seed 20) with
   Included-shell/Omitted-shell/Non-shell selectors; perturbing the selected
   bird highlights its true lattice edges to the core birds it actually
@@ -201,9 +207,11 @@ visualization prettier, no fabricated dynamics:
   control shows an exact-zero effect with no highlighted edges.
 - **3. Prediction vs Control** — a 12-flock selector and a four-controller
   button group (Oracle/Inferred/Fiedler/Random) that swap actuator
-  highlighting on the same graph; an optional "redundant support" overlay
-  color-codes each core bird's actuated-neighbor count `m_i`, with the
-  frozen benchmark's negative finding stated plainly below.
+  highlighting on the same graph, with the frozen benchmark's negative
+  finding stated plainly below. The optional "redundant support" overlay
+  (color-codes each core bird's actuated-neighbor count `m_i`) is a display
+  encoding, not a different controller, so it lives in a "View settings"
+  popover next to the controller buttons.
 - **4. Collective Identity** — one fixed physical trajectory (flock 2,
   replicate 0) with a local timeline scrubber; switching the
   Material/Lineage/Functional lens changes only which birds are
@@ -220,19 +228,21 @@ visualization prettier, no fabricated dynamics:
   full design rationale, field provenance, and bug log. Two internal
   submodes:
   - **Explore** — a snapshot/regime selector (seed 2/3/4 x 5 control
-    conditions, at control-end); a large scatter over any pair of the four
-    per-candidate-interior properties (coherence C, integration G, leakage
-    L, contrast D), with independent color/size encodings and four
-    independent range filters (never combined into one score); a
-    Scatter/Sweep-grid toggle (5x5 binned view with per-bin counts and a
-    nearest-to-centre representative); the same lattice renderer used by
+    conditions, at control-end), the X/Y axis choice (the actual exploration
+    question), and a Scatter/Sweep-grid toggle stay directly visible. Color
+    encoding, size encoding, and the Pareto-only filter (default off, never
+    a default visual emphasis) are purely visual and live in a "View
+    settings" popover; the four independent per-metric range filters (never
+    combined into one score) live in a "Filters" popover, with a
+    "Filters · N active" count on its trigger and a one-click reset — this
+    keeps the scatter/lattice pair the dominant visual instead of a wall of
+    controls pushing them below the fold. The same lattice renderer used by
     tabs 1-4 shows the selected candidate's interior/selected-boundary/
     structural-shell/near-exterior/distant-exterior roles and real
-    headings; an optional Pareto-only filter (default off, never a default
-    visual emphasis); a lightweight pin-and-compare (two candidates side
-    by side); and data-driven "teaching case" shortcuts (only rendered
-    when the current snapshot's actual candidate population contains a
-    clear example).
+    headings; a lightweight pin-and-compare (two candidates side by side);
+    and data-driven "teaching case" shortcuts (only rendered when the
+    current snapshot's actual candidate population contains a clear
+    example).
   - **Control** — a fixed candidate (the seed's own established I₀ by
     default) with a local timeline scrubber over one of the five archetype
     control conditions (and, for the three exterior-control conditions, an
