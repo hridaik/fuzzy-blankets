@@ -1,0 +1,149 @@
+# PROTOCOL_6_8 -- machine-readable twin of ../PROTOCOL_6_8.md.
+# Frozen AFTER tests/test_no_topology_leakage_68.py passed (44/44) and AFTER
+# PHASE_MAP.md was written from uncontrolled phenomenology alone, and BEFORE
+# code/run_oracle_reveal.py was run. Do not edit after viewing oracle-reveal
+# numbers. The dated audit trail of the operating-point search is
+# ../logs/mesoscopic_criteria_predeclared.txt.
+
+stage: 6.8
+title: dynamic interaction and online boundary inference
+
+reused_unmodified_from_stage6:
+  simulator: python/flock_sim/*
+  model_tables: python/flock_sim/model.py (base_R, SLOT_OVERRIDES, transition_matrix)
+  policy_posterior: python/flock_sim/active_inference.py:policy_posterior,sample_categorical_rows
+  spectral_reference: python/flock_sim/spectral.py (compared against, never modified)
+  frozen_L0_parameters: {beta: 1.0, rho: 15.0, omega: 3.0}
+
+reused_unmodified_from_stage6_5_6_6_6_7:
+  estimator_family: multinomial logistic regression
+  estimator_hyperparameters: {solver: liblinear, penalty: l2, C: 1.0, max_iter: 200}
+  delta_tol: 0.01          # nats/bird-step
+  min_gain: 0.002
+  tau_freq: 0.5            # bootstrap edge-selection frequency
+  split: {train: 0.6, val: 0.2, test: 0.2, level: replicate, split_seed: 0}
+  exact_counterfactual_derivation: stage6_5/refinement/causal_redundancy/code/exact_intervention.py
+
+firewall:
+  allowed_to_inference: [bird_ids, positions, headings, past_trajectories, own_interventions]
+  withheld: [fov_rule, effective_edges, latent_edge_gates, oracle_B_D, source_neighbour_lists]
+  inference_side_modules:
+    [observer.py, louvain.py, candidate_detection.py, spectral_proposal.py, tracker.py,
+     heading_stratified.py, predictive_boundary_68.py, challenger.py, probing.py]
+  evaluation_side_exceptions:
+    oracle_68.py: "the only module allowed to compute the FOV graph and B_t^D; runs after inference is on disk"
+    intervention_api_68.py: "imports the simulator to run interventions; returns numeric effects only"
+  enforcement: tests/test_no_topology_leakage_68.py (AST import + identifier + parameter scan, plus runtime seal)
+  disclosed_weakening: "positions are permitted (Stage 6.7 withheld them); geometric adjacency is
+    therefore recoverable, but the heading-dependent DIRECTED live subset is not a function of positions"
+
+ladder:
+  L0: fixed undirected Moore graph (frozen reference)
+  L1: same graph, beta varied (operating-point search only)
+  L2: heading-dependent FOV, time-varying directed graph (MAIN RESULT)
+  L3: L2 + persistent two-state Markov edge gates (SECONDARY ROBUSTNESS ONLY)
+
+fov_rule: "(r_j - r_i) . d_i(t) >= 0; 5 of 8 Moore slots visible per heading; never symmetrized"
+
+phase_scan:
+  primary_beta_grid: [0.25, 0.5, 0.75, 1.0, 1.25, 1.5]
+  secondary_s_grid: [0.5, 0.75, 1.0, 1.5, 2.0]     # (rho, omega) = s * (15, 3)
+  seeds: 20
+  nt: 120
+  burn_in: 40
+  mesoscopic_criteria:      # applied per EPISODE, never relaxed
+    M1_min_largest_component_frac: 0.10
+    M2_min_component_lifetime: 5
+    M3a_max_frac_time_largest_ge_90: 0.20
+    M3b_max_largest_component_frac: 0.70
+    M4a_min_membership_turnover: 0.05
+    M4b_min_heading_entropy: 0.40
+  outcome: "no cell of either predeclared grid, nor of the declared resolution refinements,
+    qualifies at L1 or L2 with nn=100; see PHASE_MAP.md"
+
+operating_point:
+  nn: 400                   # THE ONLY deviation from the frozen Stage 6-6.7 nn=100
+  nn_justification: "finite-size scan (data/phase_scan_size.json): mesoscopic-episode fraction
+    is 0.00 at every beta for nn=100 and peaks at nn=400"
+  OP1: {beta: 1.0, s: 1.0, rho: 15.0, omega: 3.0}   # the frozen Stage 6 values
+  OP2_retained: {beta: 1.5, s: 1.0}
+  episode_screen: {n_screened: 600, n_qualifying: 22, dev: 11, heldout: 11, split: rank_parity}
+
+detection:
+  affinity_window: 8
+  kernel: {type: gaussian, sigma: 1.75, cutoff: 4.0}
+  community: {method: deterministic_weighted_louvain, resolution: 1.0}
+  validity: {min_size_frac: 0.02, max_size_frac: 0.55, min_compactness: 0.25,
+             connect_radius: 1.75, n_spatial_components: 1}
+  comparator: {method: spectral_coherence_fiedler, core_pctl: [80, 20],
+               naming: "spectral/coherence proposal -- NEVER a Markov blanket"}
+  forbidden_inputs: [control_target, oracle_edges, oracle_boundary, future_observations,
+                     G, L, D, causal_recovery, control_performance]
+
+tracking:
+  score: 0.7 * jaccard + 0.3 * functional_similarity
+  min_score: 0.35
+  material_identity_as_exact_equality: false
+
+prediction:
+  stratification: one model per (target, current heading)
+  min_stratum_samples: 40
+  r_pool: 3.5
+  shortlist_k: 12
+  bootstrap_stability: {n_boot: 6, tau_freq: 0.5}
+  observation_protocol: {W: 20, R_replicates: 200}
+  max_targets: 24
+  target_selection: "observed periphery (member with a non-member within 1.5), then uniform subsample"
+
+boundary:
+  construction: {greedy: true, pool_cap: 20, delta_tol: 0.01, min_gain: 0.002, k_max: 12,
+                 k_max_role: "computational safety cap only; stop reason recorded, never padded"}
+  certification:
+    challengers: [C1_best_single, C2_best_pair_of_8_shortlist, C3_sparse_L1_all_residual]
+    C3_regularization: {penalty: l1, C: 0.05}
+    selection_data: train+validation only
+    evaluation_data: test split, touched exactly once
+    bootstrap: {n: 500, level: test_trajectory}
+    delta: 0.01
+    alpha: 0.05
+    verdict_wording: "predictively sufficient relative to the challenger class
+      (NOT exact conditional independence)"
+
+causal_probing:
+  primary_estimator: finite_active_probing
+  probe_near_radius: 2.5
+  rollouts_per_arm: 50
+  common_random_numbers: true
+  repeats_per_source_and_alternative: 6
+  smoothing: {laplace_alpha: 0.5, applied_to: both_arms}
+  bootstrap: {n: 500, alpha: 0.05}
+  decision: "B_causal = { j : CI lower bound > 0 }"
+  probe_state: "the real observed current state z_t"
+
+oracle_reveal:
+  tau_exact: 1.0e-9
+  reported_separately:
+    - estimation_error: B_causal_sampled vs B_causal_exact
+    - identifiability: B_causal_exact vs B_D
+    - structural_agreement: B_causal_sampled vs B_D
+  turnover_similarity: "T_B(t) = J(B_t xor B_{t-1}, B_t^D xor B_{t-1}^D)"
+  never_used_to_retune: [shortlist_k, tau_freq, delta_tol, min_gain, probe budget, k_max]
+
+gates_L3:
+  process: two-state Markov per DIRECTED Moore edge, evolves regardless of visibility
+  conditions: {G1: mesoscopic fraction within 0.5x-2x ungated,
+               G2: flip rate >= 0.5 * FOV flip rate and live fraction in [0.45, 0.85],
+               G3: largest component >= 0.5x ungated and entropy <= 1.2x ungated}
+  outcome: "NO predeclared regime satisfies all three; G1 is binding"
+  robustness_fallback: {stationary_on: 0.85, mean_on_run: 10, p01: 0.5667, p10: 0.1,
+                        label: "fails G1; reported separately, never folded into L2 headline"}
+
+control:
+  t0: 60
+  horizon: 16
+  k_act: 10
+  reinfer_every: 4
+  support_rule: "s_i(A,t) = sum_j C_do_{j->i} >= theta for >= 50% of the REACHABLE interior"
+  theta_calibration: "25th percentile of per-reachable-interior-bird max single-source inferred
+    influence, pooled over DEVELOPMENT seeds; control success not computed in that phase"
+  arms: [frozen_causal, adaptive_causal, adaptive_oracle, predictive, random_matched]

@@ -1,0 +1,12 @@
+nn=400 beta=0.75  s=1.0  frac=0.05 largest= 280.2 ncomp= 4.97 life=  2.56 turn=0.130 H=0.626 glob=0.184
+nn=400 beta=0.75  s=1.5  frac=0.00 largest= 272.6 ncomp= 4.97 life=  2.39 turn=0.127 H=0.633 glob=0.206
+nn=400 beta=0.75  s=2.0  frac=0.10 largest= 292.0 ncomp= 4.71 life=  3.49 turn=0.112 H=0.562 glob=0.265
+nn=400 beta=1.0   s=1.0  frac=0.15 largest= 283.5 ncomp= 4.68 life=  3.23 turn=0.138 H=0.599 glob=0.203
+nn=400 beta=1.0   s=1.5  frac=0.05 largest= 274.3 ncomp= 5.04 life=  4.20 turn=0.114 H=0.594 glob=0.250
+nn=400 beta=1.0   s=2.0  frac=0.05 largest= 253.3 ncomp= 5.47 life=  2.53 turn=0.121 H=0.685 glob=0.143
+nn=400 beta=1.25  s=1.0  frac=0.05 largest= 256.7 ncomp= 6.34 life=  2.32 turn=0.118 H=0.684 glob=0.133
+nn=400 beta=1.25  s=1.5  frac=0.05 largest= 248.0 ncomp= 5.69 life=  2.47 turn=0.108 H=0.665 glob=0.155
+nn=400 beta=1.25  s=2.0  frac=0.10 largest= 259.4 ncomp= 4.94 life=  3.09 turn=0.119 H=0.648 glob=0.151
+nn=400 beta=1.5   s=1.0  frac=0.10 largest= 277.6 ncomp= 5.04 life=  3.19 turn=0.128 H=0.616 glob=0.136
+nn=400 beta=1.5   s=1.5  frac=0.05 largest= 253.3 ncomp= 5.67 life=  2.58 turn=0.127 H=0.698 glob=0.122
+nn=400 beta=1.5   s=2.0  frac=0.05 largest= 271.4 ncomp= 5.51 life=  2.90 turn=0.136 H=0.654 glob=0.152

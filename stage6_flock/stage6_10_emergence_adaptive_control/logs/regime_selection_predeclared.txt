@@ -1,0 +1,76 @@
+OPERATIONALIZATION of PLAN.md's pre-registered regime criteria.
+Written after data/regime_scan__main.json existed and BEFORE a cell was chosen.
+PLAN.md section G states the target qualitatively:
+
+  "collective persists; weak cue has measurable but non-saturating effect;
+   lineage remains coherent; interface changes; policy posterior not
+   numerically locked"
+
+plus the desiderata list: persistent, non-global, moderate-size, thing-like,
+clump-like, real membership turnover, real boundary turnover, not saturated.
+
+Operationalized, unchanged thereafter:
+
+  R1 not locked        frac_locked == 0            AND median_max_ut < 0.99
+  R2 responsive        chi_max_mean >= 0.02        AND not dead
+  R3 non-saturating    frac_saturating <= 0.5      (curve still rising in k)
+  R4 moderate/nonglobal frac_moderate >= 0.60      AND frac_global == 0
+  R5 coherent lineage  mean_jaccard >= 0.60        AND mean_comp <= 1.5
+  R6 real turnover     mean_turnover >= 0.05       AND B_turnover >= 0.30
+  R7 clump-like        mean_q >= 0.75
+
+TIE-BREAK among qualifying cells: highest chi_max_mean, i.e. the most
+responsive regime. chi is UNCONTROLLED phenomenology measured by a standardized
+weak probe; it is not controller performance, and no controller has been run at
+any cell. PLAN.md explicitly asks for a robust-responsive window.
+
+If no cell qualifies, the failure is reported and the closed loop does not run
+at a regime the probe says is dead.
+
+================================================================
+SELECTION EXECUTED -- 2026-09-09
+================================================================
+Scan complete: 12 cells (beta in {1.0,0.6,0.5,0.4} x s in {1.0,0.75,0.5}),
+nn=400, uncontrolled episodes only. Source: data/regime_scan__main.json.
+No control arm was run before this selection; chi is the standardized weak
+directional probe applied to UNCONTROLLED trajectories, i.e. phenomenology of
+the physics, not controller performance.
+
+ beta     s  lock      ut   size   mod     Q   jac  turn  Bturn    chi  dead   sat  pass
+  1.0  1.00  0.91  1.0000   88.5  0.62  0.89  0.69 0.203   0.67  0.011  0.50  0.00  no (R1,R2)
+  1.0  0.75  0.90  1.0000   83.6  0.65  0.95  0.68 0.192   0.69  0.004  ----  ----  no (R1,R2)
+  1.0  0.50  0.71  1.0000   78.7  0.75  0.93  0.73 0.168   0.67  0.042  0.00  0.00  no (R1)
+  0.6  1.00  0.77  0.9999   89.2  0.60  0.87  0.68 0.215   0.68  0.008  ----  ----  no (R1,R2)
+  0.6  0.75  0.72  0.9996   86.0  0.62  0.91  0.68 0.208   0.73  0.009  ----  ----  no (R1,R2)
+  0.6  0.50  0.00  0.9944   76.1  0.68  0.89  0.70 0.199   0.70  0.026  0.00  0.00  no (R1)
+  0.5  1.00  0.75  1.0000   81.7  0.70  0.90  0.67 0.143   0.67  0.019  ----  ----  no (R1,R2)
+  0.5  0.75  0.68  0.9999   85.7  0.65  0.90  0.70 0.192   0.70  0.018  ----  ----  no (R1,R2)
+  0.5  0.50  0.00  0.9505   78.1  0.72  0.92  0.72 0.166   0.72  0.030  0.00  0.00  YES
+  0.4  1.00  0.57  0.9992   82.5  0.60  0.92  0.73 0.255   0.73  0.023  ----  ----  no (R1)
+  0.4  0.75  0.00  0.9858   74.3  0.80  0.91  0.63 0.230   0.73  0.035  0.25  0.00  YES
+  0.4  0.50  0.00  0.5869   70.3  0.88  0.88  0.59 0.271   0.81  0.048  0.00  0.00  no (R5)
+
+Qualifying cells: 2.
+TIE-BREAK (highest chi_max_mean among qualifiers, as predeclared):
+
+  FROZEN OPERATING REGIME:   nn = 400,  beta = 0.4,  s = 0.75
+  RUNNER-UP (sensitivity):   nn = 400,  beta = 0.5,  s = 0.50
+
+Notes recorded at selection time, before any Part H/I run at this regime:
+
+1. The highest-chi cell in the whole scan (beta=0.4, s=0.5, chi=0.048) was
+   REJECTED by R5: mean lineage Jaccard 0.59 < 0.60 threshold. It is the most
+   responsive cell in the scan and would have been the convenient choice. It is
+   excluded because the predeclared lineage-coherence criterion excludes it. No
+   threshold was moved to admit it.
+
+2. The Stage 6.8 operating point (beta=1.0, s=1.0) fails R1 and R2: 91% of birds
+   policy-locked (max u_t > 0.999) and chi = 0.011 with 50% of probe magnitudes
+   producing a dead response. This is the Part A finding, reproduced
+   independently by the uncontrolled regime scan. It is a property of the
+   physics at that operating point, not of any controller.
+
+3. Selection used only: policy saturation, probe susceptibility, candidate size
+   distribution, morphology, lineage coherence, and interface turnover. No arm,
+   no benchmark, no inference method was run on any cell before this line was
+   written.

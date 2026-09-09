@@ -1,0 +1,8 @@
+seed 0    |B|=17  k=4  bw4=+0.066  bw8=+0.069  bw16=+0.067   climb=+0.002
+seed 1    |B|=19  k=5  bw4=+0.065  bw8=+0.065  bw16=+0.064   climb=-0.001
+seed 2    |B|=16  k=4  bw4=+0.068  bw8=+0.069  bw16=+0.066   climb=-0.002
+seed 3    |B|=11  k=3  bw4=+0.037  bw8=+0.036  bw16=+0.033   climb=-0.004
+seed 4    |B|=19  k=5  bw4=+0.073  bw8=+0.073  bw16=+0.073   climb=+0.000
+seed 5    |B|=15  k=4  bw4=+0.022  bw8=+0.023  bw16=+0.023   climb=+0.002
+
+mean climb -0.0005  max +0.0017  converged=True (threshold 0.05 objective units)

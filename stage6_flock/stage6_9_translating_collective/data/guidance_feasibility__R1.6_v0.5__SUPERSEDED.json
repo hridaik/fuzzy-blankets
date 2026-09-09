@@ -1,0 +1,31 @@
+{
+ "grid": [
+  {
+   "k_act": 12,
+   "horizon": 40,
+   "oracle_mean_path_error_radii": 4.874884232462742,
+   "n": 4
+  },
+  {
+   "k_act": 24,
+   "horizon": 40,
+   "oracle_mean_path_error_radii": 4.9401524614618655,
+   "n": 4
+  },
+  {
+   "k_act": 24,
+   "horizon": 60,
+   "oracle_mean_path_error_radii": 5.819249512874453,
+   "n": 4
+  },
+  {
+   "k_act": 36,
+   "horizon": 60,
+   "oracle_mean_path_error_radii": 5.8236556816809895,
+   "n": 4
+  }
+ ],
+ "target_radii": 3.0,
+ "chosen": null,
+ "rule": "smallest (K_act, horizon) whose oracle mean path error beats the target; only the oracle arm was run"
+}

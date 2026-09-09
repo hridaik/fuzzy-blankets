@@ -1,0 +1,43 @@
+seed 0   dur=160  size  48->62  disp=  4.1R R_M=0.54 R_F=0.86 Ddef=0.092 turn=0.035 valid=0.64 | T1T2T3T4 
+seed 1   dur=60   size  46->12  disp= 11.7R R_M=0.00 R_F=0.58 Ddef=0.233 turn=0.115 valid=0.37 | T1T2T3 
+seed 2   dur=160  size  48->88  disp=  5.4R R_M=0.52 R_F=0.89 Ddef=0.071 turn=0.021 valid=0.65 | T1T2T3T4 
+seed 3   dur=160  size  55->86  disp=  8.1R R_M=0.29 R_F=0.75 Ddef=0.129 turn=0.060 valid=0.34 | T1T2T3T4 
+seed 4   dur=120  size  53->25  disp= 10.7R R_M=0.04 R_F=0.62 Ddef=0.237 turn=0.095 valid=0.35 | T1T2T3 
+seed 5   dur=55   size  79->21  disp=  3.0R R_M=0.18 R_F=0.56 Ddef=0.241 turn=0.105 valid=0.15 | T1T3 
+seed 6   dur=160  size  75->114 disp= 16.1R R_M=0.15 R_F=0.83 Ddef=0.090 turn=0.044 valid=0.71 | T1T2T3T4 
+seed 7   dur=5    size  51->34  disp=  6.6R R_M=0.27 R_F=0.42 Ddef=0.277 turn=0.251 valid=0.20 | T2T3 
+seed 8   dur=20   size  76->28  disp=  9.9R R_M=0.01 R_F=0.49 Ddef=0.241 turn=0.137 valid=0.35 | T2T3 
+seed 9   dur=83   size  53->25  disp=  7.2R R_M=0.09 R_F=0.54 Ddef=0.255 turn=0.086 valid=0.06 | T1T2T3 
+seed 10  dur=160  size  55->51  disp= 13.2R R_M=0.40 R_F=0.82 Ddef=0.107 turn=0.033 valid=0.48 | T1T2T3T4 
+seed 11  dur=21   size  55->27  disp=  4.3R R_M=0.38 R_F=0.64 Ddef=0.212 turn=0.136 valid=0.86 | T2T3 
+seed 12  dur=41   size  56->98  disp= 13.1R R_M=0.48 R_F=0.53 Ddef=0.240 turn=0.139 valid=0.07 | T1T2T3 
+seed 13  dur=160  size  54->143 disp= 10.9R R_M=0.59 R_F=0.85 Ddef=0.096 turn=0.044 valid=0.66 | T1T2T3T4 
+seed 14  dur=160  size  49->72  disp=  5.8R R_M=0.49 R_F=0.84 Ddef=0.096 turn=0.035 valid=0.75 | T1T2T3T4 
+seed 15  dur=6    size  51->38  disp=  0.4R R_M=0.73 R_F=0.54 Ddef=0.230 turn=0.100 valid=0.50 |  
+seed 16  dur=5    size  44->21  disp=  3.3R R_M=0.45 R_F=0.46 Ddef=0.262 turn=0.155 valid=0.40 | T2T3 
+seed 17  dur=22   size  60->91  disp=  2.0R R_M=0.92 R_F=0.53 Ddef=0.240 turn=0.139 valid=0.23 |  
+seed 18  dur=160  size  50->70  disp= 10.7R R_M=0.10 R_F=0.79 Ddef=0.127 turn=0.055 valid=0.42 | T1T2T3T4 
+seed 19  dur=21   size  73->14  disp=  1.9R R_M=0.19 R_F=0.60 Ddef=0.201 turn=0.090 valid=0.67 | T3 
+seed 20  dur=160  size  52->35  disp= 11.0R R_M=0.06 R_F=0.78 Ddef=0.136 turn=0.074 valid=0.61 | T1T2T3T4 
+seed 21  dur=93   size  49->16  disp=  2.5R R_M=0.16 R_F=0.73 Ddef=0.162 turn=0.080 valid=0.49 | T1T3T4 
+seed 22  dur=160  size  50->36  disp= 10.2R R_M=0.20 R_F=0.74 Ddef=0.167 turn=0.065 valid=0.13 | T1T2T3T4 
+seed 23  dur=160  size  56->118 disp=  6.2R R_M=0.77 R_F=0.91 Ddef=0.053 turn=0.015 valid=0.72 | T1T2T4 
+seed 24  dur=44   size  46->12  disp= 13.8R R_M=0.00 R_F=0.63 Ddef=0.211 turn=0.114 valid=0.50 | T1T2T3 
+seed 25  dur=160  size  70->29  disp= 12.1R R_M=0.06 R_F=0.69 Ddef=0.164 turn=0.069 valid=0.21 | T1T2T3 
+seed 26  dur=65   size  56->22  disp=  9.6R R_M=0.14 R_F=0.56 Ddef=0.224 turn=0.094 valid=0.03 | T1T2T3 
+seed 27  dur=4    size  53->24  disp=  4.6R R_M=0.45 R_F=0.41 Ddef=0.303 turn=0.118 valid=1.00 | T2T3T5 
+seed 28  dur=160  size  54->105 disp=  9.2R R_M=0.61 R_F=0.83 Ddef=0.096 turn=0.035 valid=0.41 | T1T2T3T4 
+seed 29  dur=44   size  72->37  disp=  2.9R R_M=0.35 R_F=0.54 Ddef=0.235 turn=0.125 valid=0.11 | T1T3 
+seed 30  dur=11   size  72->21  disp=  9.7R R_M=0.11 R_F=0.41 Ddef=0.282 turn=0.145 valid=0.18 | T2T3 
+seed 31  dur=51   size  52->30  disp= 13.7R R_M=0.12 R_F=0.46 Ddef=0.275 turn=0.137 valid=0.02 | T1T2T3 
+seed 32  dur=64   size  60->55  disp=  2.6R R_M=0.37 R_F=0.63 Ddef=0.197 turn=0.081 valid=0.25 | T1T3 
+seed 33  dur=18   size  48->27  disp=  3.1R R_M=0.44 R_F=0.70 Ddef=0.189 turn=0.028 valid=0.17 | T2T3 
+seed 34  dur=160  size  40->76  disp=  5.4R R_M=0.72 R_F=0.92 Ddef=0.058 turn=0.012 valid=0.64 | T1T2T4 
+seed 35  dur=24   size  71->13  disp= 11.3R R_M=0.00 R_F=0.61 Ddef=0.218 turn=0.073 valid=0.08 | T2T3 
+seed 36  dur=33   size  78->24  disp=  7.5R R_M=0.21 R_F=0.58 Ddef=0.225 turn=0.155 valid=0.30 | T2T3 
+seed 37  dur=37   size  59->40  disp=  4.0R R_M=0.32 R_F=0.68 Ddef=0.203 turn=0.101 valid=0.32 | T2T3 
+seed 38  dur=23   size  64->27  disp=  2.1R R_M=0.42 R_F=0.53 Ddef=0.229 turn=0.120 valid=0.17 | T3 
+seed 39  dur=160  size  54->36  disp=  9.9R R_M=0.48 R_F=0.84 Ddef=0.092 turn=0.036 valid=0.74 | T1T2T3T4 
+
+pass rate 0.00  gate_passes=False
+per-criterion rates: {'T1': 0.65, 'T2': 0.8, 'T3': 0.9, 'T4': 0.38, 'T5': 0.03}

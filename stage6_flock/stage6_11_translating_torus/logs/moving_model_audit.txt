@@ -1,0 +1,84 @@
+================================================================
+STAGE 6.11 SECTION M -- AUDIT OF THE MOVING MODEL, BEFORE CHANGES
+2026-09-09
+================================================================
+Subject: stage6_9_translating_collective/code/moving_flock.py, whose physics is
+inherited entirely from flock_sim/model.py (base_R / neighbor_R / SLOT_OVERRIDES).
+
+The brief requires checking whether EFFECTIVE versions of the three generic
+moving-flock ingredients already exist, and forbids adding duplicates.
+
+----------------------------------------------------------------
+INGREDIENT 1 -- ALIGNMENT / HEADING MATCHING          ** PRESENT **
+----------------------------------------------------------------
+flock_sim/model.py:76 base_R()
+        R = fc * (UV4 @ UV4.T)
+        np.fill_diagonal(R, vm)          # vm = 4.0
+
+The diagonal rewards adopting the same heading as the neighbour, at a strength
+(vm = 4.0) four times the off-diagonal scale (fc = 1.0). This is velocity
+matching. Nothing to add.
+
+----------------------------------------------------------------
+INGREDIENT 2 -- COLLISION AVOIDANCE / SEPARATION      ** PRESENT **
+----------------------------------------------------------------
+flock_sim/model.py:84 neighbor_R(), via SLOT_OVERRIDES
+        R[o, s] = -ca                    # ca = 2.0
+
+For each of the 8 neighbour directions, specific (neighbour-direction,
+own-heading) pairs are penalised: heading into an occupied direction costs -ca.
+moving_flock.py generalises this to continuous positions by assigning each
+partner to the Moore SLOT whose octant it falls in (OCTANT_TO_SLOT), so a bird
+approaching head-on still incurs the same penalty. Nothing to add.
+
+----------------------------------------------------------------
+INGREDIENT 3 -- CENTERING / COHESION                  ** PARTIAL **
+----------------------------------------------------------------
+What exists: the off-diagonal fc * dot(own heading, neighbour heading) term.
+What does NOT exist: any term that depends on the neighbour's POSITION relative
+to the bird, i.e. anything pulling a bird toward the local centre of mass.
+
+Evidence that cohesion is heading-based only:
+  * base_R is built from UV4 @ UV4.T -- an inner product of HEADING unit
+    vectors. No position enters it.
+  * moving_flock.compute_G weights every live partner identically; the only
+    positional information used is the OCTANT (which slot), consumed by the
+    collision term. There is no distance weighting and no centroid term.
+  * Consequently a bird with all its neighbours to its north has no preference
+    to move north; it only prefers to match their headings and to avoid heading
+    into whichever octants they occupy.
+
+WHY THIS WAS INVISIBLE UNTIL NOW
+On the fixed lattice (Stages 6-6.8, 6.10) positions never change, so a
+positional cohesion term would have no effect and its absence cannot be
+detected. It becomes load-bearing only once birds translate.
+
+LIKELY CONNECTION TO THE STAGE 6.9 FAILURE
+Stage 6.9 obtained a trackable translating collective only at R = 1.6, where
+realized in-degree was 21.2 against a Moore scale of 8 -- roughly 3x
+over-connection -- and that same over-connection produced 77% policy saturation
+and a 1-of-47 causal interface. With alignment as the ONLY force holding a group
+together spatially, cohesion has to be bought with interaction range, and range
+buys saturation. That is a plausible mechanism for "you can have a trackable
+translating collective or an inferable interface, but not both", and it is a
+hypothesis this stage can test, not a conclusion.
+
+----------------------------------------------------------------
+DECISION (recorded before any 6.11 experiment)
+----------------------------------------------------------------
+Ingredients 1 and 2 are present and are NOT duplicated.
+
+Ingredient 3 is genuinely absent in its positional form. Section M permits
+adding a genuinely absent ingredient once. It will be added as an explicitly
+labelled, separately switchable term with the raw model retained as comparator,
+in the same manner as the Section N degree normalisation -- i.e. as a MODELLING
+ASSUMPTION, declared here in advance, not as a fix introduced after seeing a
+result.
+
+It is NOT added in order to make any trajectory work. The test of whether it
+was the right call is Section O's uncontrolled (R, v) scan: if positional
+cohesion holds a collective together at LOWER realized degree, then range and
+decision gain have been successfully separated, which is the stated purpose of
+Sections M-N. If it does not, that is reported and the term is kept off.
+
+No parameter of it may be tuned on control success (Section V rule 6/7).

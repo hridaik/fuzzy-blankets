@@ -21,3 +21,6 @@ dist/
 
 # Jupyter
 .ipynb_checkpoints/
+stage6_flock/**/__pycache__/
+stage6_flock/**/data/*_seed*.json
+stage6_flock/**/data/controllability__main__*.json

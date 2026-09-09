@@ -1,0 +1,116 @@
+# PROTOCOL_6_9 -- machine-readable twin of ../PROTOCOL_6_9.md.
+# The feasibility gate's five criteria were frozen in
+# ../logs/translation_gate_criteria_predeclared.txt BEFORE the gate was run.
+# Do not edit after viewing results.
+
+stage: 6.9
+title: translating-collective pilot
+status: pilot
+
+hypothesis: >
+  A collective can preserve functional identity in a co-moving frame even while
+  its material membership changes substantially. TESTED, not assumed.
+
+firewall:
+  allowed_to_inference: [bird_ids, positions, headings, past_trajectories, own_interventions]
+  withheld: [fov_rule, effective_edges, oracle_B_D, neighbour_lists,
+             simulator_true_centre_trajectory]
+  inference_side_modules: [identity_69.py, detect_69.py]
+  evaluation_side: [common_69.py, moving_flock.py, intervention_api_69.py, run_*.py]
+  enforcement: tests/test_no_topology_leakage_69.py
+
+model:
+  kept_unchanged: [four_state_cardinal_headings, active_inference_heading_update,
+                   stage6_8_fov_rule]
+  added: [torus_positions, radius_R_partners, "r(t+1) = r(t) + v*d(t+1) mod L"]
+  invented_terms: none
+  reused_collision_physics: flock_sim.model.SLOT_OVERRIDES via octant->Moore-slot assignment
+  free_parameters_added_by_that_choice: 0
+  N: 400
+  L: 24.0
+  R: 0.9                  # corrected; see ADDENDUM 4
+  v: 0.28                 # scaled with R to hold v/R = 0.31
+  R_superseded: 1.6       # mis-specified; realized in-degree 21.2 vs Moore-scale 8
+  v_superseded: 0.5
+  beta: 1.0          # frozen Stage 6-6.8 value
+  rho: 15.0          # frozen
+  omega: 3.0         # frozen
+  realized_live_in_degree_clustered: 8.9      # the Moore model's scale
+  realized_live_in_degree_at_R1.6: 21.2       # ~3x Moore scale -- the mis-specification
+
+detection:
+  method: stage6_8 affinity + deterministic weighted Louvain, torus distance
+  affinity_window: 6
+  sigma: 1.1
+  cutoff: 3.3
+  valid_size_frac: [0.03, 0.55]
+  lineage_score: 0.6*jaccard + 0.4*R_F
+  continuation_threshold: 0.30
+  forbidden_inputs: [target_path, oracle_interaction_graph, true_centre_trajectory]
+
+identity:
+  material: "R_M(t) = |I_t n I_t0| / |I_t0|"
+  lineage: "J(I_t, I_{t-1})"
+  functional_modulo_translation: "R_F(t) = 1 - d(T_Delta phi_t, phi_{t+1}) / d_norm"
+  never_combined_into_one_score: true
+  field: {half_width: 8.0, pixel: 0.5, kernel_sigma: 0.9}
+  distance: 0.5*normalized_density_mismatch + 0.5*density_weighted_orientation_mismatch
+  d_norm: field distance to an independently drawn same-size random subset at tracking start
+  translation_estimate: centroid displacement, then integer-pixel cross-correlation refinement
+  distances_reported_separately: [D_world_frame, D_centroid_aligned_only, D_deform]
+  shape_recorded: [size, n_components, area, density, aspect_ratio, radius_of_gyration,
+                   centroid, bulk_speed, turnover, material_retention]
+
+feasibility_gate:
+  T1_min_duration: 40
+  T2_min_displacement_radii: 3.0
+  T3_max_material_retention: 0.70
+  T4_min_mean_RF: 0.70
+  T5_min_frac_valid: 0.90
+  gate_min_pass_rate: 0.20
+  episode_selection: longest tracked collective, chosen by DURATION alone
+  outcome: {pass_rate: 0.00, gate_passes: false, n_episodes: 40,
+            rates: {T1: 0.65, T2: 0.80, T3: 0.90, T4: 0.38, T5: 0.03},
+            binding_criterion: T5,
+            T5_breakdown: {size_in_range_frac_steps: 1.00, le_2_components_frac_steps: 0.40},
+            reading: "membership turns over freely but the group fragments and its
+              organization does not persist -- destroyed and replaced, not transported"}
+  outcome_superseded_R1.6: {pass_rate: 0.40, gate_passes: true,
+            rates: {T1: 1.00, T2: 0.90, T3: 0.50, T4: 1.00, T5: 0.95},
+            note: "off-specification (degree 21.2); reported for contrast, never claimed"}
+  reporting_rule: >
+    Episodes that translate with R_M ~ 1 are reported as MOVING MATERIAL
+    IDENTITY; the constituent-replacement result is not claimed for them.
+
+# NOT RUN -- the feasibility gate failed, and it is a hard stop (task brief 33).
+# The settings below are retained as the specification that WOULD have applied.
+boundary_inference:
+  hierarchy: "I_t -> Bhat^pred -> Bhat^causal"
+  probe: {rollouts: 60, repeats: 3, candidate_radius_factor: 1.1,
+          budget_rule: "fixed by a compute ceiling, NOT by any recovery score"}
+  predictive: {W: 10, R_replicates: 60, r_pool: 1.9, shortlist_k: 8,
+               max_targets: 12, n_boot: 4, k_max: 12}
+  turnover_measured_in: [world_coordinates, co_moving_frame]
+
+# NOT RUN -- gate failed.
+guidance:
+  success: "S_full = S_path AND S_functional_identity AND S_nondegenerate AND S_boundary"
+  material_retention: reported, NOT required to stay high
+  thresholds: {S_path_max_mean_error_radii: 3.0, S_func_min_mean_RF: 0.70,
+               S_nondeg_size_frac: [0.03, 0.55], S_boundary_min_frac_steps: 0.80}
+  failure_modes_detected_explicitly:
+    - destruction_and_replacement (lineage break)
+    - splitting (lineage branch events; the child nearest the target is NOT silently chosen)
+    - shrink_to_win (size below the validity envelope)
+    - material_only_persistence (R_M high while R_F low)
+  arms: [adaptive_causal, no_control, adaptive_oracle, random_matched, interior_forcing]
+  feasibility_first: >
+    Only the oracle arm is run on development seeds over a predeclared
+    (K_act, horizon) grid, so that a failure of the task at this scale is not
+    mistaken for a failure of the inferred interface -- the lesson inherited
+    from Stage 6.8's control experiment.
+
+interpretation_rules:
+  - no claim of a universal definition of identity
+  - material, lineage and functional-modulo-translation continuity kept separate
+  - the hypothesis is tested, not assumed

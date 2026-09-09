@@ -360,6 +360,33 @@
   .inference-identity .iiLandscape .iiLsLegendNote { font-size: 10.5px; color: var(--muted); font-style: italic; margin-top: 4px; }
   .inference-identity .iiLandscape button.iiBtn.disabledLook { opacity: .4; cursor: not-allowed; }
 
+  /* ---------------------------------------------------------------- Tab 6
+     Dynamic Interfaces (Stage 6.8 / 6.9). Reuses .iiMain/.iiGraphCol/
+     .iiSideCol/.iiCard/.iiStat verbatim so sizing matches the Control tab and
+     tabs 1-5; the only new pieces are the two-panel row that 6.9 needs and the
+     persistent off-spec warning strip. */
+  .inference-identity .iiDyn { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .inference-identity .iiDynViews { display: flex; gap: 6px; margin: 0 0 8px; }
+  .inference-identity button.iiViewBtn { border: 1px solid var(--border); background: #fafaf9;
+    color: var(--ink); border-radius: 999px; padding: 4px 13px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .inference-identity button.iiViewBtn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+  .inference-identity button.iiViewBtn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .inference-identity .iiDynPanels { display: flex; gap: 12px; flex: 1; min-height: 0; }
+  .inference-identity .iiDynPanel { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .inference-identity .iiDynPanel h5 { margin: 0 0 5px; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); font-weight: 700; }
+  .inference-identity svg.iiDynSvg { background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; width: 100%; flex: 1; min-height: 0; display: block; }
+  .inference-identity .iiOffspecBar { display: flex; align-items: center; gap: 8px; background: #fff4e5;
+    border: 1px solid #f3d9a8; color: var(--warn); border-radius: 8px; padding: 6px 11px;
+    font-size: 11.5px; font-weight: 700; margin-bottom: 8px; }
+  .inference-identity .iiOffspecBar::before { content: "⚠"; font-size: 13px; }
+  .inference-identity .iiCaveatLine { font-size: 11px; color: var(--warn); margin: 6px 2px 0; }
+  .inference-identity .iiOverlayGrid { display: flex; flex-direction: column; gap: 3px; }
+  .inference-identity .iiOverlayGrid label.iiToggle { font-size: 11.5px; }
+  .inference-identity .iiOverlayGrid label.iiToggle.oracleTint span { color: var(--warn); }
+  .inference-identity .iiTrace { width: 100%; height: 86px; display: block; }
+
   /* #iiTooltip is appended to document.body at runtime (outside .inference-identity),
      so this rule is intentionally NOT namespaced -- the #iiTooltip id is already unique. */
   #iiTooltip { position: absolute; background: #1c1e21; color: white; font-size: 11px; padding: 6px 9px;
@@ -491,6 +518,7 @@
         <button class="iiTabBtn" data-reftab="control">3. Prediction vs Control</button>
         <button class="iiTabBtn" data-reftab="identity">4. Collective Identity</button>
         <button class="iiTabBtn" data-reftab="landscape">5. Collective Landscape</button>
+        <button class="iiTabBtn" data-reftab="dynamic">6. Dynamic Interfaces</button>
       </div>
       <div class="iiBody" id="iiBody"></div>
     </div>
@@ -536,6 +564,8 @@ window.REFINEMENT_DATA = /*__REFINEMENT_DATA__*/ null /*__END_REFINEMENT_DATA__*
 window.REFINEMENT_VIZ = /*__REFINEMENT_VIZ__*/ null /*__END_REFINEMENT_VIZ__*/;
 window.LANDSCAPE_DATA = /*__LANDSCAPE_DATA__*/ null /*__END_LANDSCAPE_DATA__*/;
 window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
+window.STAGE68_DATA = /*__STAGE68_DATA__*/ null /*__END_STAGE68_DATA__*/;
+window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
 </script>
 <script>
 (function(){
@@ -1160,6 +1190,19 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
     control: { flockIdx: 0, arm: "inferred", showRedundant: false, viewOpen: false },
     identity: { lens: "M", guard: false, t: 0, playing: false, timer: null },
     landscape: null, // lazily initialized in renderTabLandscape() once LS is known to exist
+    dynamic: {
+      view: "s68",                 // "s68" | "s69"
+      cond: "L2",                  // L0 | L2 | L3 | control
+      t: 60, playing: false, timer: null,
+      interior: "ref",             // "ref" (fixed reference I) | "tracked" (I(t))
+      ov: { pred: false, causal: false, oracle: false, live: false },
+      sel: null,                   // selected bird for the live-interaction overlay
+      arm: "adaptive_causal",
+      model: "spec",               // "spec" | "offspec" -- spec is always the default
+      k: 1,                        // 6.9 frame index (frame 0 has no previous
+                                   // frame, so R_F / D_deform are undefined there)
+      playing9: false, timer9: null,
+    },
   };
 
   // ---- "View settings" / "Filters" popovers: display-only encodings that
@@ -1216,7 +1259,12 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
     const size = 400;
     svg.setAttribute("viewBox", `0 0 ${size} ${size}`);
     while (svg.firstChild) svg.removeChild(svg.firstChild);
-    const r = Math.max(4, size / lattice.L * 0.30);
+    // Radius/arrow length are overridable so a denser lattice (Stage 6.8 uses
+    // 20x20, tabs 1-5 use 10x10) can shrink the dots and lengthen the heading
+    // arrows enough to stay legible. Defaults are exactly the previous values,
+    // so tabs 1-5 render identically.
+    const r = opts.radius !== undefined ? opts.radius : Math.max(4, size / lattice.L * 0.30);
+    const arrowScale = opts.arrowScale !== undefined ? opts.arrowScale : 1;
 
     (opts.edgeSets || []).forEach(es => {
       const [sx, sy] = iiXY(lattice, es.from, size);
@@ -1250,7 +1298,7 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
       const h = headings ? headings[id] : null;
       if (h !== undefined && h !== null) {
         const [dx,dy] = UV[h];
-        const alen = r*0.95;
+        const alen = r*0.95*arrowScale;
         g.appendChild(svgEl("line", {x1:x, y1:y, x2:x+dx*alen, y2:y-dy*alen, class:"bird-arrow"}));
       }
       if (role.badge) {
@@ -2576,6 +2624,535 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
     else if (ii.tab === "control") renderTabControl();
     else if (ii.tab === "identity") renderTabIdentity();
     else if (ii.tab === "landscape") renderTabLandscape();
+    else if (ii.tab === "dynamic") renderTabDynamic();
+  }
+
+
+  // ============================================================ TAB 6
+  // Dynamic Interfaces — Stage 6.8 (fixed-lattice, time-varying interface)
+  // and Stage 6.9 (moving collective). Both read frozen bundles produced by
+  // export_demo_data_68.py / export_demo_data_69.py; nothing is simulated here.
+  const S68 = window.STAGE68_DATA, S69 = window.STAGE69_DATA;
+  const DYN_COND_LABEL = { L0: "L0 fixed graph", L2: "L2 FOV", L3: "L3 FOV + gates", control: "Control" };
+  const DYN_ARM_LABEL = {
+    no_control: "No control", predictive: "Predictive", random_matched: "Matched random",
+    frozen_causal: "Frozen causal", adaptive_causal: "Adaptive inferred", adaptive_oracle: "Adaptive oracle",
+  };
+
+  function iiStopDynPlayback(){
+    const st = ii.dynamic;
+    if (st.timer) { clearInterval(st.timer); st.timer = null; }
+    if (st.timer9) { clearInterval(st.timer9); st.timer9 = null; }
+    st.playing = false; st.playing9 = false;
+  }
+
+  function dynZ(str){ const n = str.length, a = new Array(n); for (let i=0;i<n;i++) a[i] = str.charCodeAt(i)-48; return a; }
+
+  // base64 bit-mask (np.packbits, MSB-first) -> bit accessor
+  function dynMask(b64){
+    const bin = atob(b64), bytes = new Uint8Array(bin.length);
+    for (let i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+    return e => (bytes[e >> 3] >> (7 - (e & 7))) & 1;
+  }
+  // Global directed-edge index of bird i's k-th neighbour. The exporter's edge
+  // list is ordered by receiving bird then by that bird's own neighbour order,
+  // which is exactly the order `lattice.neighbors[i]` preserves.
+  let DYN_EDGE_OFF = null;
+  function dynEdgeOffsets(lat){
+    if (DYN_EDGE_OFF) return DYN_EDGE_OFF;
+    const off = new Array(lat.nn); let acc = 0;
+    for (let i=0;i<lat.nn;i++){ off[i] = acc; acc += lat.neighbors[String(i)].length; }
+    DYN_EDGE_OFF = off; return off;
+  }
+  // Live in-edges of one bird: FOV visibility (slot x its own heading), and at
+  // L3 the latent gate as well. A lookup over stored state, not a simulation.
+  function dynLiveSources(lat, cond, frame, z, i){
+    const nbrs = lat.neighbors[String(i)], slots = lat.slots[String(i)];
+    const off = dynEdgeOffsets(lat)[i];
+    const gate = (cond.has_gate && frame.gate) ? dynMask(frame.gate) : null;
+    const out = [];
+    for (let k=0;k<nbrs.length;k++){
+      if (cond.key === "L0" ? true : lat.vis_table[slots[k]][z[i]]) {
+        if (!gate || gate(off + k)) out.push(nbrs[k]);
+      }
+    }
+    return out;
+  }
+
+  function dynFrameAt(cond, t){ return cond.frames[t - cond.t_start]; }
+
+  function renderTabDynamic(){
+    const st = ii.dynamic;
+    if (!S68 && !S69) {
+      document.getElementById("iiBody").innerHTML =
+        `<p class="iiSubtake">Stage 6.8 / 6.9 visualization data not available in this build.</p>`;
+      return;
+    }
+    const views = `<div class="iiDynViews">
+        <button class="iiViewBtn ${st.view==='s68'?'active':''}" data-dynview="s68">6.8 Dynamic flock</button>
+        <button class="iiViewBtn ${st.view==='s69'?'active':''}" data-dynview="s69">6.9 Translation pilot</button>
+      </div>`;
+    if (st.view === "s69") renderDyn69(views); else renderDyn68(views);
+    document.querySelectorAll("[data-dynview]").forEach(b => b.addEventListener("click", () => {
+      iiStopDynPlayback(); st.view = b.dataset.dynview; renderTabDynamic();
+    }));
+  }
+
+  // ------------------------------------------------------------ 6.8 view ----
+  function renderDyn68(viewsHtml){
+    const st = ii.dynamic;
+    if (!S68) { document.getElementById("iiBody").innerHTML = viewsHtml +
+      `<p class="iiSubtake">Stage 6.8 bundle not available in this build.</p>`; return; }
+    if (st.cond === "control") return renderDyn68Control(viewsHtml);
+
+    const lat = S68.lattice, cond = S68.conditions[st.cond];
+    cond.key = st.cond;
+    // The tracked collective exists only over the window the inference pipeline
+    // ran, and the overlays belong to THAT collective, so tracked mode restricts
+    // the timeline to it instead of pairing boundaries with a different set
+    // (the two are disjoint here -- see STAGE6_8_9_VISUALIZATION_NOTES.md).
+    const canTrackC = !!cond.has_tracked;
+    const trackedMode = (st.interior === "tracked" && canTrackC);
+    const tMin = trackedMode ? cond.tracked_t_start : cond.t_start;
+    const tMax = trackedMode ? cond.tracked_t_end : cond.t_end;
+    const t = Math.min(Math.max(st.t, tMin), tMax);
+    const frame = dynFrameAt(cond, t);
+    const z = dynZ(frame.z);
+
+    // Interior: the fixed reference disc, or the online-detected collective.
+    // "tracked" is only offered where a real per-timestep track was stored.
+    const canTrack = canTrackC;
+    const mode = trackedMode ? "tracked" : "ref";
+    const trackedAt = canTrack ? cond.tracked[String(t)] : null;
+    const trackedPrev = canTrack ? cond.tracked[String(t-1)] : null;
+    const I = mode === "tracked" ? (trackedAt || []) : cond.I_ref;
+    const Iset = new Set(I), prevSet = new Set(trackedPrev || []);
+    const origin = mode === "tracked" ? new Set(cond.tracked[String(tMin)] || []) : new Set(cond.I_ref);
+
+    // Inference overlays are defined only for the tracked collective they were
+    // computed on; in fixed-reference mode only that disc's oracle interface exists.
+    const inf = (mode === "tracked" && cond.inference) ? cond.inference[String(t)] : null;
+    const hasInfHere = !!inf;
+    const ov = st.ov;
+    const BD = (mode === "ref") ? frame.BD : (inf ? inf.B_D : null);
+    const Bpred = hasInfHere ? inf.B_pred : [];
+    const Bcaus = hasInfHere ? inf.B_causal : [];
+    const predSet = new Set(ov.pred && hasInfHere ? Bpred : []);
+    const causSet = new Set(ov.causal && hasInfHere ? Bcaus : []);
+    const oracleSet = new Set(ov.oracle && BD ? BD : []);
+
+    // material retention against the first tracked frame (tracked mode only)
+    const retention = mode === "tracked" && origin.size
+      ? [...Iset].filter(x => origin.has(x)).length / origin.size : 1;
+
+    const overlayRow = `
+      <div class="iiOverlayGrid">
+        <label class="iiToggle"><input type="checkbox" id="dOvPred" ${ov.pred?"checked":""} ${hasInfHere?"":"disabled"}><span>Inferred predictive boundary</span></label>
+        <label class="iiToggle"><input type="checkbox" id="dOvCaus" ${ov.causal?"checked":""} ${hasInfHere?"":"disabled"}><span>Sampled causal interface</span></label>
+        <label class="iiToggle oracleTint"><input type="checkbox" id="dOvOra" ${ov.oracle?"checked":""} ${BD?"":"disabled"}><span>Oracle causal interface B<sup>D</sup></span></label>
+        <label class="iiToggle oracleTint"><input type="checkbox" id="dOvLive" ${ov.live?"checked":""}><span>Live interactions for a selected bird</span></label>
+      </div>`;
+
+    document.getElementById("iiBody").innerHTML = `
+      ${viewsHtml}
+      <p class="iiQuestion">Does the interaction interface move when the birds turn?</p>
+      <p class="iiSubtake">${cond.note} Representative episode, seed ${cond.seed}
+        <span class="iiRepNote">chosen as the median of the reported interface metrics — see Details.</span></p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="dSvg"></svg>
+          <div class="iiLegend" id="dLegend"></div>
+          <div class="iiControls" style="margin-top:6px;">
+            <button class="tbtn" id="dRestart" title="Restart">⏮</button>
+            <button class="tbtn" id="dBack" title="Step back">◀</button>
+            <button class="tbtn" id="dPlay" title="Play/Pause">${st.playing?"❚❚":"▶"}</button>
+            <button class="tbtn" id="dFwd" title="Step forward">▶|</button>
+            <input type="range" id="dSlider" min="${tMin}" max="${tMax}" value="${t}" style="flex:1;">
+            <span style="font-size:11.5px;color:var(--muted);min-width:152px;">t = ${t} / ${tMax}${trackedMode?" (tracked window)":""}</span>
+          </div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            ${["L0","L2","L3","control"].map(c => `<button class="iiBtn ${st.cond===c?'active':''}" data-dcond="${c}">${DYN_COND_LABEL[c]}</button>`).join("")}
+          </div>
+          <div class="iiControls">
+            <button class="iiBtn ${mode==='ref'?'active':''}" data-dint="ref">Fixed reference I</button>
+            <button class="iiBtn ${mode==='tracked'?'active':''}" data-dint="tracked" ${canTrack?"":"disabled"}
+              title="${canTrack?'':'This experiment used a fixed interior; no time-varying track was recorded.'}">Tracked collective I(t)</button>
+          </div>
+          <div class="iiCard">
+            <h4>Overlays</h4>
+            ${overlayRow}
+            ${hasInfHere ? "" : `<p style="font-size:10.5px;color:var(--muted);margin:6px 0 0;">${canTrack ? `Predictive and causal boundaries were computed for the tracked collective only &mdash; switch to <b>Tracked collective I(t)</b> (t ${cond.tracked_t_start}&ndash;${cond.tracked_t_end}).` : "No inference was run on this condition&rsquo;s interior."}</p>`}
+          </div>
+          <div class="iiCard">
+            <h4>At t = ${t}</h4>
+            <div class="iiStat"><span class="k">|I<sub>t</sub>|</span><span class="v">${I.length}</span></div>
+            <div class="iiStat"><span class="k">material retention</span><span class="v">${mode==='tracked'?retention.toFixed(2):"1.00 (fixed)"}</span></div>
+            <div class="iiStat"><span class="k">|B<sub>t</sub><sup>D</sup>|</span><span class="v">${BD?BD.length:"—"}</span></div>
+            <div class="iiStat"><span class="k">predictive boundary</span><span class="v">${hasInfHere?Bpred.length:"—"}</span></div>
+            <div class="iiStat"><span class="k">sampled causal</span><span class="v">${hasInfHere?Bcaus.length:"—"}</span></div>
+            ${(ov.oracle && hasInfHere) ? `<div class="iiStat"><span class="k">J(causal, B<sup>D</sup>)</span><span class="v">${inf.J_causal.toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">J(predictive, B<sup>D</sup>)</span><span class="v">${inf.J_pred.toFixed(2)}</span></div>` : ""}
+          </div>
+          <div class="iiTakeaway">${st.cond==="L0"
+            ? "Interface fixed: every Moore edge is always live."
+            : "Interface changes as headings change."}${mode==='tracked' ? "<br>The tracked collective gains and loses members." : ""}${(ov.causal&&hasInfHere) ? "<br>Active probing finds a conservative subset of the causal interface." : ""}</div>
+        </div>
+      </div>
+      ${iiDetails("Representative-episode selection & full numbers", dyn68Details(cond))}`;
+
+    // ---- draw
+    function roleFn(id){
+      const inI = Iset.has(id);
+      const isOra = oracleSet.has(id), isCau = causSet.has(id), isPre = predSet.has(id);
+      let r;
+      if (inI) {
+        if (mode === "tracked" && trackedPrev) {
+          if (!prevSet.has(id)) r = { fill:"#2ea3a3", stroke:"#1c6e6e", strokeWidth:2.2 };      // entered
+          else r = { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:2 };           // remained
+        } else r = { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:2 };
+      } else if (mode === "tracked" && prevSet.has(id)) {
+        r = { fill:"var(--exterior)", stroke:"#1c6e6e", strokeWidth:1.8, dim:false };            // left
+      } else r = { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", dim:true };
+      if (isCau) { r.fill = "var(--actuator)"; r.stroke = "#8a1f1f"; r.strokeWidth = 2; r.dim = false; }
+      else if (isPre) { r.fill = "var(--shell)"; r.stroke = "var(--shell-stroke)"; r.strokeWidth = 2; r.dim = false; }
+      if (isOra) { r.ring = "#4a4a4a"; r.dim = false; }
+      if (st.sel === id) r.halo = "var(--accent)";
+      return r;
+    }
+    const edgeSets = [];
+    if (ov.live && st.sel !== null) {
+      edgeSets.push({ from: st.sel, to: dynLiveSources(lat, cond, frame, z, st.sel),
+                      color: "var(--accent)", width: 1.8 });
+    }
+    drawIILattice(document.getElementById("dSvg"), {
+      lattice: lat, headings: z, roleFn, edgeSets, radius: 4.1, arrowScale: 2.35,
+      onHover: (id, ev) => {
+        const inI = Iset.has(id);
+        const bits = [`<b>Bird ${id}</b>`, `Heading: ${HEAD_ARROWS[z[id]]}`,
+          `In collective: ${inI?"Yes":"No"}`];
+        if (oracleSet.has(id)) bits.push("In oracle B<sup>D</sup>");
+        if (causSet.has(id)) bits.push("In sampled causal interface");
+        if (predSet.has(id)) bits.push("In predictive boundary");
+        if (ov.live) bits.push(`<i>click to show its live inputs</i>`);
+        iiShowTooltip(ev, bits.join("<br>"));
+      },
+      onLeave: iiHideTooltip,
+      onClick: (id) => { if (ov.live) { st.sel = (st.sel === id ? null : id); renderTabDynamic(); } },
+    });
+    const leg = [
+      iiLegendItem(iiDot("var(--core)"), mode==='tracked' ? "member (remained)" : "interior I"),
+    ];
+    if (mode === "tracked") {
+      leg.push(iiLegendItem(iiDot("#2ea3a3"), "entered this step"));
+      leg.push(iiLegendItem(`<span class="dot" style="background:var(--exterior);border-color:#1c6e6e"></span>`, "left this step"));
+    }
+    if (ov.pred) leg.push(iiLegendItem(iiDot("var(--shell)"), "predictive boundary"));
+    if (ov.causal) leg.push(iiLegendItem(iiDot("var(--actuator)"), "sampled causal"));
+    if (ov.oracle) leg.push(iiLegendItem(`<span class="ring" style="border-color:#4a4a4a"></span>`, "oracle B<sup>D</sup>"));
+    leg.push(iiLegendItem(iiDot("var(--exterior)"), "exterior"));
+    document.getElementById("dLegend").innerHTML = leg.join("");
+
+    dyn68Wire(tMin, tMax);
+  }
+
+  function dyn68Details(cond){
+    const sel = S68.selection[cond.key] || {};
+    const rows = (sel.ranked || []).map(r =>
+      `<tr><td>${r.seed}</td><td>${r.score.toFixed(3)}</td>${(sel.metric_names||[]).map(m =>
+        `<td>${(r.metrics[m]).toFixed(3)}</td>`).join("")}</tr>`).join("");
+    return `<p style="font-size:11.5px;color:#333;margin:0 0 8px;">
+        <b>Selection rule.</b> ${S68.provenance.selection_rule} Chosen: seed ${sel.chosen_seed}
+        of ${sel.candidates} candidate episode(s).${sel.restricted_to_seeds_with_inference
+        ? ` Restricted to seeds with stored inference results (${sel.restricted_to_seeds_with_inference.join(", ")}) so every overlay is backed by real data.` : ""}</p>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 8px;">${S68.provenance.replay_note}</p>
+      <table class="iiTable"><thead><tr><th>seed</th><th>score</th>${(sel.metric_names||[]).map(m=>`<th>${m}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  function dyn68Wire(tMin, tMax){
+    const st = ii.dynamic;
+    document.querySelectorAll("[data-dcond]").forEach(b => b.addEventListener("click", () => {
+      iiStopDynPlayback(); st.cond = b.dataset.dcond; st.sel = null;
+      const c = S68.conditions[st.cond];
+      if (c) st.t = Math.min(Math.max(st.t, c.t_start), c.t_end);
+      if (c && !c.has_tracked) st.interior = "ref";
+      renderTabDynamic();
+    }));
+    document.querySelectorAll("[data-dint]").forEach(b => b.addEventListener("click", () => {
+      if (b.disabled) return;
+      iiStopDynPlayback();
+      st.interior = b.dataset.dint;
+      const c = S68.conditions[st.cond];
+      if (st.interior === "tracked" && c && c.has_tracked) {
+        st.t = Math.min(Math.max(st.t, c.tracked_t_start), c.tracked_t_end);
+      }
+      renderTabDynamic();
+    }));
+    const bind = (id, key) => { const el = document.getElementById(id);
+      if (el) el.addEventListener("change", e => { st.ov[key] = e.target.checked;
+        if (key === "live" && !e.target.checked) st.sel = null; renderTabDynamic(); }); };
+    bind("dOvPred","pred"); bind("dOvCaus","causal"); bind("dOvOra","oracle"); bind("dOvLive","live");
+    const sl = document.getElementById("dSlider");
+    if (sl) sl.addEventListener("input", e => { iiStopDynPlayback(); st.t = parseInt(e.target.value,10); renderTabDynamic(); });
+    const on = (id, fn) => { const el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
+    on("dRestart", () => { iiStopDynPlayback(); st.t = tMin; renderTabDynamic(); });
+    on("dBack", () => { iiStopDynPlayback(); st.t = Math.max(tMin, st.t-1); renderTabDynamic(); });
+    on("dFwd", () => { iiStopDynPlayback(); st.t = Math.min(tMax, st.t+1); renderTabDynamic(); });
+    on("dPlay", () => {
+      if (st.playing) { iiStopDynPlayback(); renderTabDynamic(); return; }
+      st.playing = true;
+      st.timer = setInterval(() => {
+        st.t = st.t >= tMax ? tMin : st.t + 1;
+        renderTabDynamic();
+      }, 220);
+      renderTabDynamic();
+    });
+  }
+
+  // ------------------------------------------------- 6.8 control comparison --
+  function renderDyn68Control(viewsHtml){
+    const st = ii.dynamic, C = S68.control, lat = S68.lattice;
+    const arm = C.by_arm[st.arm] ? st.arm : C.arms[0];
+    const A = C.by_arm[arm];
+    const nSteps = A.frames.length;
+    const step = Math.min(Math.max(st.t - C.t0, 0), nSteps - 1);
+    const z = dynZ(A.frames[step].z);
+    const rec = A.records[Math.min(step, A.records.length - 1)];
+    const I0 = new Set(C.I0), act = new Set(rec ? rec.actuators : []);
+
+    document.getElementById("iiBody").innerHTML = `
+      ${viewsHtml}
+      <p class="iiQuestion">Does actuating an inferred causal interface steer the collective?</p>
+      <p class="iiSubtake">One control episode (seed ${C.seed}, ${C.split}), all arms from the same start
+        <span class="iiRepNote">episode chosen as the median of the six arms' reported success — see Details.</span></p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice" id="dSvg"></svg>
+          <div class="iiLegend" id="dLegend"></div>
+          <div class="iiControls" style="margin-top:6px;">
+            <button class="tbtn" id="dRestart" title="Restart">⏮</button>
+            <button class="tbtn" id="dBack" title="Step back">◀</button>
+            <button class="tbtn" id="dPlay" title="Play/Pause">${st.playing?"❚❚":"▶"}</button>
+            <button class="tbtn" id="dFwd" title="Step forward">▶|</button>
+            <input type="range" id="dSlider" min="${C.t0}" max="${C.t0+nSteps-1}" value="${C.t0+step}" style="flex:1;">
+            <span style="font-size:11.5px;color:var(--muted);min-width:120px;">step ${step} / ${nSteps-1}</span>
+          </div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            ${["L0","L2","L3","control"].map(c => `<button class="iiBtn ${st.cond===c?'active':''}" data-dcond="${c}">${DYN_COND_LABEL[c]}</button>`).join("")}
+          </div>
+          <div class="iiCard">
+            <h4>Arm</h4>
+            <div class="iiControls" style="padding:0;">
+              ${C.arms.map(a => `<button class="iiBtn ${arm===a?'active':''}" data-darm="${a}">${DYN_ARM_LABEL[a]||a}</button>`).join("")}
+            </div>
+          </div>
+          <div class="iiCard">
+            <h4>At step ${step}</h4>
+            <div class="iiStat"><span class="k">actuated now</span><span class="v">${rec?rec.actuators.length:0}</span></div>
+            <div class="iiStat"><span class="k">target fraction</span><span class="v">${rec?rec.target_fraction.toFixed(2):"—"}</span></div>
+            <div class="iiStat"><span class="k">final (this arm)</span><span class="v">${A.final_target_fraction.toFixed(3)}</span></div>
+            <div class="iiStat"><span class="k">mean actuators</span><span class="v">${A.mean_actuators.toFixed(1)}</span></div>
+          </div>
+          <div class="iiCard">
+            <h4>Target fraction through time</h4>
+            <svg class="iiTrace" id="dTrace" viewBox="0 0 300 86" preserveAspectRatio="none"></svg>
+          </div>
+          <p class="iiCaveatLine">${C.caveat}</p>
+        </div>
+      </div>
+      ${iiDetails("Representative-episode selection & all arms", dyn68Details({key:"control"}) +
+        `<table class="iiTable"><thead><tr><th>arm</th><th>final target fraction</th><th>mean actuators</th></tr></thead><tbody>
+         ${C.arms.map(a=>`<tr><td>${DYN_ARM_LABEL[a]||a}</td><td>${C.by_arm[a].final_target_fraction.toFixed(3)}</td><td>${C.by_arm[a].mean_actuators.toFixed(1)}</td></tr>`).join("")}
+         </tbody></table>`)}`;
+
+    drawIILattice(document.getElementById("dSvg"), {
+      lattice: lat, headings: z, radius: 4.1, arrowScale: 2.35,
+      roleFn: id => {
+        if (act.has(id)) return { fill:"var(--actuator)", stroke:"#8a1f1f", strokeWidth:2.2, glow:true };
+        if (I0.has(id)) return { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:1.8 };
+        return { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", dim:true };
+      },
+      onHover: (id, ev) => iiShowTooltip(ev, `<b>Bird ${id}</b><br>Heading: ${HEAD_ARROWS[z[id]]}<br>${
+        act.has(id)?"Actuated this step":(I0.has(id)?"In I₀":"Exterior")}`),
+      onLeave: iiHideTooltip,
+    });
+    document.getElementById("dLegend").innerHTML = [
+      iiLegendItem(iiDot("var(--core)"), "I₀ at control start"),
+      iiLegendItem(iiDot("var(--actuator)"), "actuated this step"),
+      iiLegendItem(iiDot("var(--exterior)"), "exterior"),
+    ].join("");
+
+    // compact trace
+    const svg = document.getElementById("dTrace");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const W = 300, H = 86, pad = 6;
+    C.arms.forEach(a => {
+      const rs = C.by_arm[a].records, n = rs.length;
+      const pts = rs.map((r,i) => `${pad + i/(n-1)*(W-2*pad)},${H-pad - r.target_fraction*(H-2*pad)}`).join(" ");
+      svg.appendChild(svgEl("polyline", { points: pts, fill:"none",
+        stroke: a===arm ? "var(--accent)" : "#d6d6d2", "stroke-width": a===arm ? 2 : 1 }));
+    });
+    const rsA = A.records;
+    svg.appendChild(svgEl("line", { x1: pad + step/(rsA.length-1)*(W-2*pad), y1: pad,
+      x2: pad + step/(rsA.length-1)*(W-2*pad), y2: H-pad, stroke:"var(--ink)", "stroke-width":1, "stroke-dasharray":"2 2" }));
+
+    document.querySelectorAll("[data-darm]").forEach(b => b.addEventListener("click", () => {
+      iiStopDynPlayback(); st.arm = b.dataset.darm; renderTabDynamic();
+    }));
+    dyn68Wire(C.t0, C.t0 + nSteps - 1);
+  }
+
+
+  // ------------------------------------------------------------ 6.9 view ----
+  // Two synchronized panels. The world panel shows every bird and the detected
+  // collective; the co-moving panel shows the SAME collective after the
+  // estimated bulk translation is removed -- the representation the identity
+  // calculation itself uses. Both read the same frame index, so they are
+  // synchronized by construction.
+  function dyn69Draw(svg, frame, opts){
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const S = 460, pad = 8;
+    svg.setAttribute("viewBox", `0 0 ${S} ${S}`);
+    const mem = new Set(frame.members), origin = opts.origin;
+    if (opts.world) {
+      const L = opts.L, sc = (S - 2*pad) / L;
+      const px = i => pad + frame.x[i]*sc, py = i => S - pad - frame.y[i]*sc;
+      for (let i = 0; i < frame.x.length; i++){
+        const inI = mem.has(i);
+        const c = svgEl("circle", { cx:px(i), cy:py(i), r: inI?3.1:1.5,
+          fill: inI ? (origin.has(i) ? "var(--actuator)" : "var(--core)") : "#e2e2de",
+          stroke: inI ? (origin.has(i) ? "#8a1f1f" : "var(--core-stroke)") : "none",
+          "stroke-width": inI ? 1.1 : 0 });
+        svg.appendChild(c);
+        if (inI) {
+          const [dx,dy] = UV[frame.h[i]];
+          svg.appendChild(svgEl("line", { x1:px(i), y1:py(i), x2:px(i)+dx*6, y2:py(i)-dy*6,
+            stroke:"#33333388", "stroke-width":1 }));
+        }
+      }
+      const cx = pad + frame.centroid[0]*sc, cy = S - pad - frame.centroid[1]*sc;
+      svg.appendChild(svgEl("path", { d:`M${cx-5},${cy} L${cx+5},${cy} M${cx},${cy-5} L${cx},${cy+5}`,
+        stroke:"var(--ink)", "stroke-width":1.6 }));
+    } else {
+      const H = 7, sc = (S - 2*pad) / (2*H);
+      const px = v => S/2 + v*sc, py = v => S/2 - v*sc;
+      svg.appendChild(svgEl("line", { x1:S/2, y1:pad, x2:S/2, y2:S-pad, stroke:"#f0f0ec", "stroke-width":1 }));
+      svg.appendChild(svgEl("line", { x1:pad, y1:S/2, x2:S-pad, y2:S/2, stroke:"#f0f0ec", "stroke-width":1 }));
+      frame.rel.forEach((p, k) => {
+        const id = frame.members[k];
+        svg.appendChild(svgEl("circle", { cx:px(p[0]), cy:py(p[1]), r:3.3,
+          fill: origin.has(id) ? "var(--actuator)" : "var(--core)",
+          stroke: origin.has(id) ? "#8a1f1f" : "var(--core-stroke)", "stroke-width":1.1 }));
+        const [dx,dy] = UV[frame.h[id]];
+        svg.appendChild(svgEl("line", { x1:px(p[0]), y1:py(p[1]), x2:px(p[0])+dx*7, y2:py(p[1])-dy*7,
+          stroke:"#33333388", "stroke-width":1 }));
+      });
+    }
+  }
+
+  function renderDyn69(viewsHtml){
+    const st = ii.dynamic;
+    if (!S69) { document.getElementById("iiBody").innerHTML = viewsHtml +
+      `<p class="iiSubtake">Stage 6.9 bundle not available in this build.</p>`; return; }
+    const isOff = st.model === "offspec";
+    const B = isOff ? S69.offspec : S69.spec;
+    const k = Math.min(Math.max(st.k, 0), B.frames.length - 1);
+    const f = B.frames[k];
+    const origin = new Set(B.origin);
+
+    document.getElementById("iiBody").innerHTML = `
+      ${viewsHtml}
+      ${isOff ? `<div class="iiOffspecBar">${B.warning}</div>` : ""}
+      <p class="iiQuestion">Does a moving collective keep its organization while its members change?</p>
+      <p class="iiSubtake">${isOff
+        ? `Over-connected model (R=${B.R}) whose gate passed — shown only for contrast.`
+        : `Specified model (R=${B.R}) — the gate <b>failed</b>, ${Math.round(B.pass_rate*B.n_episodes)}/${B.n_episodes} episodes.`}
+        Seed ${B.seed} <span class="iiRepNote">median of R<sub>M</sub>, R<sub>F</sub>, component count and D<sub>deform</sub> — see Details.</span></p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <div class="iiDynPanels">
+            <div class="iiDynPanel"><h5>World frame</h5><svg class="iiDynSvg" id="d9World"></svg></div>
+            <div class="iiDynPanel"><h5>Co-moving frame</h5><svg class="iiDynSvg" id="d9Co"></svg></div>
+          </div>
+          <div class="iiControls" style="margin-top:6px;">
+            <button class="tbtn" id="d9Restart" title="Restart">⏮</button>
+            <button class="tbtn" id="d9Back" title="Step back">◀</button>
+            <button class="tbtn" id="d9Play" title="Play/Pause">${st.playing9?"❚❚":"▶"}</button>
+            <button class="tbtn" id="d9Fwd" title="Step forward">▶|</button>
+            <input type="range" id="d9Slider" min="0" max="${B.frames.length-1}" value="${k}" style="flex:1;">
+            <span style="font-size:11.5px;color:var(--muted);min-width:96px;">t = ${f.t}</span>
+          </div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiControls">
+            <button class="iiBtn ${!isOff?'active':''}" data-dmodel="spec">Specified model</button>
+            <button class="iiBtn ${isOff?'active':''}" data-dmodel="offspec">Off-spec diagnostic</button>
+          </div>
+          <div class="iiCard">
+            <h4>At t = ${f.t}</h4>
+            <div class="iiStat"><span class="k">material retention R<sub>M</sub></span><span class="v">${f.R_M.toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">co-moving similarity R<sub>F</sub></span><span class="v ${f.R_F>=0.7?'good':'bad'}">${isNaN(f.R_F)?"—":f.R_F.toFixed(2)}</span></div>
+            <div class="iiStat"><span class="k">spatial components</span><span class="v ${f.n_components<=2?'good':'bad'}">${f.n_components}</span></div>
+            <div class="iiStat"><span class="k">deformation D<sub>deform</sub></span><span class="v">${isNaN(f.D_deform)?"—":f.D_deform.toFixed(3)}</span></div>
+            <div class="iiStat"><span class="k">path travelled</span><span class="v">${f.path_R.toFixed(1)} R</span></div>
+            <div class="iiStat"><span class="k">|I<sub>t</sub>|</span><span class="v">${f.size}</span></div>
+          </div>
+          <div class="iiTakeaway ${isOff?'':'warn'}">${isOff
+            ? "Members change while the co-moving pattern holds."
+            : "This moving group fragments rather than preserving a co-moving pattern."}</div>
+        </div>
+      </div>
+      ${iiDetails("Representative-episode selection, gate outcome & provenance", dyn69Details(B, isOff))}`;
+
+    dyn69Draw(document.getElementById("d9World"), f, { world:true, L:B.L, origin });
+    dyn69Draw(document.getElementById("d9Co"), f, { world:false, origin });
+
+    document.querySelectorAll("[data-dmodel]").forEach(b => b.addEventListener("click", () => {
+      iiStopDynPlayback(); st.model = b.dataset.dmodel;
+      st.k = Math.min(1, (b.dataset.dmodel === "offspec" ? S69.offspec : S69.spec).frames.length - 1);
+      renderTabDynamic();
+    }));
+    const sl = document.getElementById("d9Slider");
+    sl.addEventListener("input", e => { iiStopDynPlayback(); st.k = parseInt(e.target.value,10); renderTabDynamic(); });
+    const on = (id, fn) => document.getElementById(id).addEventListener("click", fn);
+    const last = B.frames.length - 1;
+    on("d9Restart", () => { iiStopDynPlayback(); st.k = 0; renderTabDynamic(); });
+    on("d9Back", () => { iiStopDynPlayback(); st.k = Math.max(0, st.k-1); renderTabDynamic(); });
+    on("d9Fwd", () => { iiStopDynPlayback(); st.k = Math.min(last, st.k+1); renderTabDynamic(); });
+    on("d9Play", () => {
+      if (st.playing9) { iiStopDynPlayback(); renderTabDynamic(); return; }
+      st.playing9 = true;
+      st.timer9 = setInterval(() => { st.k = st.k >= last ? 0 : st.k + 1; renderTabDynamic(); }, 200);
+      renderTabDynamic();
+    });
+  }
+
+  function dyn69Details(B, isOff){
+    const sel = B.selection || {};
+    const rows = (sel.ranked||[]).slice(0,10).map(r =>
+      `<tr><td>${r.seed}</td><td>${r.score.toFixed(3)}</td>${(sel.metric_names||[]).map(m =>
+        `<td>${r.metrics[m].toFixed(3)}</td>`).join("")}</tr>`).join("");
+    return `${isOff ? `<p style="font-size:11.5px;color:var(--warn);margin:0 0 8px;"><b>${B.warning}.</b>
+        This model's interaction radius is ~3&times; the Moore scale the stage specifies. It is shown
+        because it makes visible what a coherent translating organization looks like, which is the
+        contrast that identifies connectivity as the controlling variable.</p>` : ""}
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>Gate.</b> pass rate
+        ${B.pass_rate.toFixed(2)} over ${B.n_episodes} episodes; per-criterion
+        T1 ${B.rates.T1.toFixed(2)}, T2 ${B.rates.T2.toFixed(2)}, T3 ${B.rates.T3.toFixed(2)},
+        T4 ${B.rates.T4.toFixed(2)}, T5 ${B.rates.T5.toFixed(2)}.</p>
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>This episode.</b>
+        R<sub>M</sub> ${B.episode.R_M_final.toFixed(2)}, R<sub>F</sub> ${B.episode.mean_R_F.toFixed(2)},
+        components ${B.episode.mean_n_components.toFixed(2)}, D<sub>deform</sub>
+        ${B.episode.mean_D_deform.toFixed(3)}, path ${B.episode.path_radii}R,
+        net ${B.episode.net_radii}R, duration ${B.episode.duration}.</p>
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>Selection rule.</b>
+        ${S69.provenance.selection_rule} Chosen: seed ${sel.chosen_seed} of ${sel.candidates}
+        candidates${sel.only_gate_passing ? " (gate-passing only)" : ""}.</p>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 8px;">${S69.provenance.replay_note}</p>
+      <table class="iiTable"><thead><tr><th>seed</th><th>score</th>${(sel.metric_names||[]).map(m=>`<th>${m}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
   }
 
   // -------------------------------------------------------------- info panel
@@ -2653,7 +3230,7 @@ window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
     });
     document.getElementById("navInfoBtn").addEventListener("click", () => document.getElementById("infoOverlay").classList.add("on"));
     document.querySelectorAll(".iiTabBtn").forEach(btn => {
-      btn.addEventListener("click", () => { iiStopIdentityPlayback(); iiStopLandscapePlayback(); ii.tab = btn.dataset.reftab; render(); });
+      btn.addEventListener("click", () => { iiStopIdentityPlayback(); iiStopLandscapePlayback(); iiStopDynPlayback(); ii.tab = btn.dataset.reftab; render(); });
     });
 
     document.getElementById("dismissIntroBtn").addEventListener("click", () => { document.getElementById("introBanner").remove(); });

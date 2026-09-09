@@ -1,0 +1,100 @@
+# PROTOCOL_6_10 -- machine-readable twin of ../PROTOCOL_6_10.md.
+# Additive stage. Every Stage 6-6.9 path is opened READ-ONLY.
+
+stage: 6.10
+title: emergence -> dynamic identity/interface -> adaptive steering
+
+naming:
+  full_info_causal_heuristic: "exact influence + weighted multicover; the policy
+    Stage 6.8 recorded as `adaptive_oracle`"
+  full_model_control_benchmark: "explicitly optimizes the control objective (Part C)"
+  rule: "`adaptive_oracle` appears only when quoting a frozen Stage 6.8 file
+    verbatim; `optimum` only where an exhaustive search completed"
+
+part_A_audit:
+  replay: "calls stage6_8 adaptive_control.run_arm; final_target_fraction asserted to 1e-12"
+  authority_tau: 2
+  authority_rollouts: {trace: 96, hypotheses: 128}
+  sample_steps: [0, 6, 12, 18, 24]
+  horizons_H5: [2, 4, 8]
+  synergy_pairs_per_state: 24
+  fixed_k_grid: [4, 8, 12, 16]
+  bootstrap_H6: 20000
+  common_random_numbers: true
+
+part_B_truth:
+  structural: "read from simulator transition dependencies"
+  interventional: "exact next-state distributions; structural graph NOT used"
+  epsilon: 1.0e-9
+  gate: "the two must agree; tests/test_reference_truth.py -- stage stops otherwise"
+  structural_fact: "A_j^{h*,tau=1} == 0 exactly for every exterior actuator;
+    first effective horizon is tau=2. A one-step influence score therefore
+    cannot be a task-authority score."
+  kl_vs_authority: "KL influence is non-negative; task authority is signed.
+    Never equated."
+
+part_C_benchmark:
+  objective: "A_S = E[H*(I,t+tau)|do(u_S=h*)] - E[H*(I,t+tau)|no action]"
+  tau: 4
+  rollouts: 96
+  exhaustive_max_subsets: 20000
+  beam_width: {closed_loop: 10, convergence_check: 12}
+  convergence_budgets: [[6, 48], [12, 96], [20, 192]]
+  convergence_seeds: [0, 1, 2]
+  optimum_claim: "only when info.is_optimum (a completed exhaustive search)"
+
+part_E_thingness:
+  C: heading coherence
+  G: "internal predictive integration = ell(marginal) - ell(interior-only)"
+  L: "residual leakage after conditioning on interior + inferred boundary (LOW is thing-like)"
+  D: "total-variation contrast vs the local exterior ring"
+  ranks: "percentile vs comparable connected candidates of similar size, same regime"
+  estimator: {solver: liblinear, penalty: l2, C: 1.0, max_iter: 200}
+  thresholds_frozen_on: development/uncontrolled data only
+  control_success_used: false
+
+part_F_clumpness:
+  perimeter: "P_4 -- CARDINAL grid edges only; Moore adjacency never used"
+  lattice_edge: counts as exterior space
+  p_min: "2 * ceil(2 * sqrt(A))"
+  q_clump: "P_min(A) / P_4(I)"
+  validated_ordering: "compact square (>0.85) > strip > diagonal snake (<0.3); fragmented < strip"
+  snakes: retained in the landscape; never deleted
+  clear_clump_stratum: "thing-like AND high Q_clump -- a selection for examples, not a filter"
+
+part_G_regime:
+  grid: {beta: [1.0, 0.6, 0.5, 0.4], s: [1.0, 0.75, 0.5], nn: 400}
+  seeds: 8
+  nt: 90
+  t_eval: [60, 65, 70, 75, 80]
+  moderate_size_band: [12, 90]
+  lineage_seed_rule: "moderate-size, most clump-like candidate (size + morphology only)"
+  saturation_metric: "frac of birds with max(u_t) > 0.999"
+  probe: {k: [2, 4, 8, 16], draws: 6, tau: 4, rollouts: 96}
+  dead_if: chi_max < 0.01
+  saturating_if: "last increment < 15% of chi_max"
+  selection: "uncontrolled phenomenology only; controller performance NOT used"
+
+part_I_closed_loop:
+  arms: [full_model_benchmark, adaptive_causal, full_info_heuristic,
+         frozen_causal, predictive, random_matched, no_control]
+  online: "both I_t and B_t recomputed every step"
+  sampled_probe: {rollouts: 40, repeats: 3}
+  budget: "matched; effort reported; a fixed-K comparison run separately"
+
+part_J_scoring:
+  primary: "H*(I_t, t) on the current tracked lineage"
+  diagnostic: "frozen-I_0 alignment retained"
+  success: "S_target AND S_lineage AND S_nondegenerate"
+  envelope_learned_from: comparable uncontrolled lineages
+  material_membership_fixed: not required
+  shrink_to_win: excluded by the size floor
+
+hard_rules:
+  - no method success claimed where the benchmark says the task is uncontrollable
+  - the full-info causal heuristic is never called optimal
+  - the candidate interior is never called ground truth
+  - clumpness never erases snake-like candidates from the landscape
+  - the regime is never selected using blind-estimator performance
+  - thingness thresholds are never tuned on control success
+  - identity/clumpness thresholds are never relaxed after a failed intervention

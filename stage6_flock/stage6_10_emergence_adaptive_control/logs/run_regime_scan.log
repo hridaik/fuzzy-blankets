@@ -1,0 +1,13 @@
+beta=1.0  s=1.0   locked=0.91 ut=1.0000 size=  88.5 mod=0.62 glob=0.00 Q=0.89 comp=1.0 turn=0.203 Bturn=0.67 chi=0.011
+beta=1.0  s=0.75  locked=0.90 ut=1.0000 size=  83.6 mod=0.65 glob=0.00 Q=0.95 comp=1.0 turn=0.192 Bturn=0.69 chi=0.004
+beta=1.0  s=0.5   locked=0.71 ut=1.0000 size=  78.7 mod=0.75 glob=0.00 Q=0.93 comp=1.0 turn=0.168 Bturn=0.67 chi=0.042
+beta=0.6  s=1.0   locked=0.77 ut=0.9999 size=  89.2 mod=0.60 glob=0.00 Q=0.87 comp=1.0 turn=0.215 Bturn=0.68 chi=0.008
+beta=0.6  s=0.75  locked=0.72 ut=0.9996 size=  86.0 mod=0.62 glob=0.00 Q=0.91 comp=1.0 turn=0.208 Bturn=0.73 chi=0.009
+beta=0.6  s=0.5   locked=0.00 ut=0.9944 size=  76.1 mod=0.68 glob=0.00 Q=0.89 comp=1.0 turn=0.199 Bturn=0.70 chi=0.026
+beta=0.5  s=1.0   locked=0.75 ut=1.0000 size=  81.7 mod=0.70 glob=0.00 Q=0.90 comp=1.0 turn=0.143 Bturn=0.67 chi=0.019
+beta=0.5  s=0.75  locked=0.68 ut=0.9999 size=  85.7 mod=0.65 glob=0.00 Q=0.90 comp=1.0 turn=0.192 Bturn=0.70 chi=0.018
+beta=0.5  s=0.5   locked=0.00 ut=0.9505 size=  78.1 mod=0.72 glob=0.00 Q=0.92 comp=1.0 turn=0.166 Bturn=0.72 chi=0.030
+beta=0.4  s=1.0   locked=0.57 ut=0.9992 size=  82.5 mod=0.60 glob=0.00 Q=0.92 comp=1.0 turn=0.255 Bturn=0.73 chi=0.023
+beta=0.4  s=0.75  locked=0.00 ut=0.9858 size=  74.3 mod=0.80 glob=0.00 Q=0.91 comp=1.0 turn=0.230 Bturn=0.73 chi=0.035
+beta=0.4  s=0.5   locked=0.00 ut=0.5869 size=  70.3 mod=0.88 glob=0.00 Q=0.88 comp=1.0 turn=0.271 Bturn=0.81 chi=0.048
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/data/regime_scan__main.json

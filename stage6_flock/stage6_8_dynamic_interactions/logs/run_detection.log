@@ -1,0 +1,45 @@
+seed 15   affinity_louvain     n_lineages= 24 max_dur= 81 n>=10 steps= 8 mean_size=  67.7 mean_J=0.874 mean_turnover=0.070
+seed 15   spectral_coherence   n_lineages=  4 max_dur= 16 n>=10 steps= 1 mean_size=  78.2 mean_J=0.932 mean_turnover=0.036
+seed 17   affinity_louvain     n_lineages= 18 max_dur= 81 n>=10 steps=10 mean_size=  70.2 mean_J=0.834 mean_turnover=0.103
+seed 17   spectral_coherence   n_lineages=  8 max_dur=  3 n>=10 steps= 0 mean_size=  73.0 mean_J=0.956 mean_turnover=0.020
+seed 70   affinity_louvain     n_lineages= 23 max_dur= 54 n>=10 steps=10 mean_size=  78.9 mean_J=0.871 mean_turnover=0.074
+seed 70   spectral_coherence   n_lineages=  4 max_dur=  3 n>=10 steps= 0 mean_size=  66.5 mean_J=0.972 mean_turnover=0.013
+seed 172  affinity_louvain     n_lineages= 25 max_dur= 75 n>=10 steps= 9 mean_size=  53.4 mean_J=0.897 mean_turnover=0.058
+seed 172  spectral_coherence   n_lineages= 11 max_dur= 10 n>=10 steps= 1 mean_size=  70.6 mean_J=0.771 mean_turnover=0.137
+seed 217  affinity_louvain     n_lineages= 25 max_dur= 81 n>=10 steps=10 mean_size=  66.3 mean_J=0.893 mean_turnover=0.056
+seed 217  spectral_coherence   n_lineages= 11 max_dur= 11 n>=10 steps= 1 mean_size=  70.4 mean_J=0.953 mean_turnover=0.022
+seed 259  affinity_louvain     n_lineages= 24 max_dur= 48 n>=10 steps=14 mean_size=  89.4 mean_J=0.844 mean_turnover=0.090
+seed 259  spectral_coherence   n_lineages=  3 max_dur=  2 n>=10 steps= 0 mean_size=  41.3 mean_J=0.848 mean_turnover=0.104
+seed 300  affinity_louvain     n_lineages= 15 max_dur= 81 n>=10 steps= 5 mean_size=  65.7 mean_J=0.931 mean_turnover=0.028
+seed 300  spectral_coherence   n_lineages= 15 max_dur= 34 n>=10 steps= 1 mean_size=  78.7 mean_J=0.925 mean_turnover=0.043
+seed 317  affinity_louvain     n_lineages= 19 max_dur= 81 n>=10 steps= 8 mean_size=  64.0 mean_J=0.834 mean_turnover=0.103
+seed 317  spectral_coherence   n_lineages=  4 max_dur= 11 n>=10 steps= 1 mean_size=  78.9 mean_J=0.861 mean_turnover=0.087
+seed 340  affinity_louvain     n_lineages= 22 max_dur= 81 n>=10 steps= 8 mean_size=  62.2 mean_J=0.854 mean_turnover=0.073
+seed 340  spectral_coherence   n_lineages= 10 max_dur=  8 n>=10 steps= 0 mean_size=  57.7 mean_J=0.996 mean_turnover=0.002
+seed 347  affinity_louvain     n_lineages= 26 max_dur= 81 n>=10 steps= 7 mean_size=  62.7 mean_J=0.876 mean_turnover=0.079
+seed 347  spectral_coherence   n_lineages=  9 max_dur= 12 n>=10 steps= 1 mean_size=  75.9 mean_J=0.913 mean_turnover=0.056
+seed 533  affinity_louvain     n_lineages= 26 max_dur= 81 n>=10 steps= 8 mean_size=  66.0 mean_J=0.867 mean_turnover=0.074
+seed 533  spectral_coherence   n_lineages=  4 max_dur=  4 n>=10 steps= 0 mean_size=  69.1 mean_J=0.956 mean_turnover=0.032
+seed 16   affinity_louvain     n_lineages= 24 max_dur= 71 n>=10 steps=11 mean_size=  59.6 mean_J=0.870 mean_turnover=0.069
+seed 16   spectral_coherence   n_lineages=  2 max_dur=  3 n>=10 steps= 0 mean_size=  79.0 mean_J=0.887 mean_turnover=0.059
+seed 22   affinity_louvain     n_lineages= 22 max_dur= 81 n>=10 steps= 7 mean_size=  61.6 mean_J=0.889 mean_turnover=0.065
+seed 22   spectral_coherence   n_lineages= 10 max_dur= 18 n>=10 steps= 5 mean_size=  79.4 mean_J=0.944 mean_turnover=0.032
+seed 71   affinity_louvain     n_lineages= 22 max_dur= 81 n>=10 steps= 8 mean_size=  62.0 mean_J=0.857 mean_turnover=0.079
+seed 71   spectral_coherence   n_lineages=  3 max_dur=  2 n>=10 steps= 0 mean_size=  75.8 mean_J=0.862 mean_turnover=0.085
+seed 192  affinity_louvain     n_lineages= 16 max_dur= 81 n>=10 steps= 8 mean_size=  74.8 mean_J=0.855 mean_turnover=0.071
+seed 192  spectral_coherence   n_lineages=  5 max_dur=  2 n>=10 steps= 0 mean_size=  63.4 mean_J=0.972 mean_turnover=0.015
+seed 239  affinity_louvain     n_lineages= 20 max_dur= 81 n>=10 steps= 6 mean_size=  64.7 mean_J=0.915 mean_turnover=0.049
+seed 239  spectral_coherence   n_lineages= 16 max_dur= 10 n>=10 steps= 1 mean_size=  73.9 mean_J=0.820 mean_turnover=0.109
+seed 274  affinity_louvain     n_lineages= 17 max_dur= 81 n>=10 steps= 9 mean_size=  80.4 mean_J=0.878 mean_turnover=0.068
+seed 274  spectral_coherence   n_lineages=  5 max_dur=  9 n>=10 steps= 0 mean_size=  76.9 mean_J=0.791 mean_turnover=0.133
+seed 303  affinity_louvain     n_lineages= 13 max_dur= 81 n>=10 steps= 5 mean_size=  66.3 mean_J=0.898 mean_turnover=0.075
+seed 303  spectral_coherence   n_lineages= 12 max_dur= 45 n>=10 steps= 1 mean_size=  76.1 mean_J=0.921 mean_turnover=0.048
+seed 319  affinity_louvain     n_lineages= 24 max_dur= 78 n>=10 steps= 9 mean_size=  70.8 mean_J=0.809 mean_turnover=0.124
+seed 319  spectral_coherence   n_lineages=  9 max_dur= 35 n>=10 steps= 1 mean_size=  73.1 mean_J=0.922 mean_turnover=0.042
+seed 345  affinity_louvain     n_lineages= 16 max_dur= 81 n>=10 steps=11 mean_size=  64.7 mean_J=0.939 mean_turnover=0.025
+seed 345  spectral_coherence   n_lineages=  8 max_dur= 18 n>=10 steps= 1 mean_size=  76.7 mean_J=0.884 mean_turnover=0.070
+seed 430  affinity_louvain     n_lineages= 26 max_dur= 81 n>=10 steps= 9 mean_size=  50.7 mean_J=0.886 mean_turnover=0.058
+seed 430  spectral_coherence   n_lineages=  9 max_dur=  5 n>=10 steps= 0 mean_size=  78.9 mean_J=0.935 mean_turnover=0.046
+seed 551  affinity_louvain     n_lineages= 17 max_dur= 74 n>=10 steps= 7 mean_size=  78.2 mean_J=0.810 mean_turnover=0.107
+seed 551  spectral_coherence   n_lineages=  6 max_dur=  8 n>=10 steps= 0 mean_size=  70.5 mean_J=0.976 mean_turnover=0.012
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_8_dynamic_interactions/data/detection.json

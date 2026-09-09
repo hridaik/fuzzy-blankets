@@ -1,0 +1,11 @@
+[L2 refine] beta=0.55  s=0.5   pol=0.635 largest= 70.1 ncomp= 3.13 life=  1.78 turn=0.175 H=0.767 glob=0.143
+[L2 refine] beta=0.55  s=0.6   pol=0.697 largest= 74.0 ncomp= 2.60 life=  2.47 turn=0.164 H=0.632 glob=0.219
+[L2 refine] beta=0.6   s=0.5   pol=0.648 largest= 71.8 ncomp= 2.65 life=  2.08 turn=0.168 H=0.701 glob=0.179
+[L2 refine] beta=0.6   s=0.6   pol=0.750 largest= 78.5 ncomp= 2.23 life=  3.95 turn=0.142 H=0.516 glob=0.394
+[L2 refine] beta=0.65  s=0.5   pol=0.682 largest= 71.9 ncomp= 2.61 life=  2.20 turn=0.169 H=0.681 glob=0.202
+[L2 refine] beta=0.65  s=0.6   pol=0.728 largest= 78.6 ncomp= 2.50 life=  3.20 turn=0.147 H=0.502 glob=0.309
+[L2 refine] beta=0.7   s=0.5   pol=0.758 largest= 78.9 ncomp= 2.36 life=  2.60 turn=0.139 H=0.542 glob=0.323
+[L2 refine] beta=0.7   s=0.6   pol=0.695 largest= 77.5 ncomp= 2.62 life=  3.13 turn=0.150 H=0.500 glob=0.323
+[L2 refine] beta=0.5   s=0.6   pol=0.709 largest= 74.3 ncomp= 2.66 life=  2.08 turn=0.160 H=0.669 glob=0.213
+[L2 refine] beta=0.5   s=0.65  pol=0.692 largest= 73.4 ncomp= 2.65 life=  2.14 turn=0.155 H=0.656 glob=0.254
+[L2 refine] beta=0.5   s=0.7   pol=0.759 largest= 77.4 ncomp= 2.34 life=  2.82 turn=0.142 H=0.556 glob=0.300

@@ -50,12 +50,24 @@ def main():
     stage67_path = DATA_DIR / "stage6_7_bundle.json"
     stage67_payload = stage67_path.read_text() if stage67_path.exists() else "null"
 
+    # Stage 6.8 "Dynamic Interfaces" sub-tab and Stage 6.9 "Translation pilot"
+    # sub-view: one bundle each, same "each pipeline owns one file" convention
+    # as LANDSCAPE_DATA / STAGE67_DATA above. Generators:
+    #   stage6_8_dynamic_interactions/code/export_demo_data_68.py
+    #   stage6_9_translating_collective/code/export_demo_data_69.py
+    stage68_path = DATA_DIR / "stage6_8_bundle.json"
+    stage68_payload = stage68_path.read_text() if stage68_path.exists() else "null"
+    stage69_path = DATA_DIR / "stage6_9_bundle.json"
+    stage69_payload = stage69_path.read_text() if stage69_path.exists() else "null"
+
     template = (APP_DIR / "index.html").read_text()
     out = inline(template, "DEMO_DATA", demo_payload)
     out = inline(out, "REFINEMENT_DATA", refinement_payload)
     out = inline(out, "REFINEMENT_VIZ", viz_payload)
     out = inline(out, "LANDSCAPE_DATA", landscape_payload)
     out = inline(out, "STAGE67_DATA", stage67_payload)
+    out = inline(out, "STAGE68_DATA", stage68_payload)
+    out = inline(out, "STAGE69_DATA", stage69_payload)
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     out_path = BUILD_DIR / "index.html"
@@ -67,7 +79,9 @@ def main():
           f"refinement bundle {'included' if refinement_path.exists() else 'MISSING'}, "
           f"refinement viz data {'included' if viz_path.exists() else 'MISSING'}, "
           f"landscape bundle {'included (' + str(n_snapshots) + ' snapshots)' if landscape_path.exists() else 'MISSING'}, "
-          f"stage 6.7 bundle {'included' if stage67_path.exists() else 'MISSING'})")
+          f"stage 6.7 bundle {'included' if stage67_path.exists() else 'MISSING'}, "
+          f"stage 6.8 bundle {'included' if stage68_path.exists() else 'MISSING'}, "
+          f"stage 6.9 bundle {'included' if stage69_path.exists() else 'MISSING'})")
 
 
 if __name__ == "__main__":

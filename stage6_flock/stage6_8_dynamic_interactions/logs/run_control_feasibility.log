@@ -1,0 +1,6 @@
+K_act=10  horizon=16  oracle_final_target_frac=0.214
+K_act=20  horizon=16  oracle_final_target_frac=0.282
+K_act=10  horizon=30  oracle_final_target_frac=0.256
+K_act=20  horizon=30  oracle_final_target_frac=0.327
+K_act=30  horizon=30  oracle_final_target_frac=0.320
+chosen: None

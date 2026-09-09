@@ -1,0 +1,174 @@
+================================================================
+STAGE 6.10 PART H -- OPERATING-TASK SELECTION RULE
+Written 2026-09-09, with 3 of 6 controllability cells observed
+(frac=0.25/T=12, frac=0.25/T=24, frac=0.5/T=12) and 3 not yet run.
+================================================================
+
+PLAN.md requires a frozen operating task where the full-model control benchmark
+"succeeds reliably but not trivially", and forbids running controller
+comparison on episodes where full-information control cannot steer the
+collective. This file operationalizes both before the remaining cells exist.
+
+WHAT HAS ALREADY BEEN SEEN (and why it forces a per-episode rule):
+
+  frac=0.25 T=12   meanH=0.450  >=0.60: 0.33   <=0.10: 0.33
+  frac=0.25 T=24   meanH=0.492  >=0.60: 0.42   <=0.10: 0.25
+  frac=0.5  T=12   meanH=0.474  >=0.60: 0.42   <=0.10: 0.42
+
+The outcome is BIMODAL and barely responds to resources: doubling the horizon
+moved the mean 0.450 -> 0.492, doubling the actuator fraction moved it
+0.450 -> 0.474, and the fraction of completely-stuck episodes did not fall.
+Whether an episode is steerable therefore looks like a property of the episode,
+not of the control budget. A per-cell threshold alone would either discard the
+whole regime or average steerable and unsteerable episodes together.
+
+RULE 1 -- FROZEN CELL.
+  Among cells with frac_above_hi >= 0.50, take the one with the SMALLEST
+  resource cost, ordered by actuator fraction first, then horizon.
+  Smallest-sufficient, not largest-success: selecting the most generous cell
+  would make the task trivial and would flatter every arm equally.
+  If NO cell reaches 0.50, take the cell with the highest frac_above_hi and
+  record explicitly that reliability was not established at the cell level.
+
+RULE 2 -- PRIMARY EPISODES (the per-episode gate).
+  Within the frozen cell, an episode is a PROSPECTIVE PRIMARY EPISODE iff the
+  full-model benchmark reached H*(I_t,t) >= 0.60 on it. Part I runs only on
+  these. This is the direct implementation of "do not proceed with controller
+  comparison on episodes where full-information control itself cannot steer the
+  collective."
+
+RULE 3 -- SCOPE OF CLAIMS.
+  The number of excluded episodes is reported alongside every Part I result,
+  and all Part I conclusions are scoped to the steerable stratum. No statement
+  of the form "the method steers collectives at this regime" is made; the
+  admissible form is "within the stratum where full-model control succeeds, the
+  method does/does not match it".
+
+RULE 4 -- WHAT MAY NOT HAPPEN.
+  * The cell is not re-chosen after seeing any inference arm's performance.
+  * The primary-episode set is defined by the BENCHMARK only, never by any
+    inference arm, and is fixed before Part I runs.
+  * Episodes are not added back after a failure, and the H threshold (0.60) is
+    not lowered. It is already frozen in PROTOCOL_6_10.md as the conjunctive
+    success threshold.
+  * If the steerable stratum is too small to support a comparison, that is
+    reported as the result. It is not fixed by enlarging the budget until
+    everything becomes steerable.
+
+================================================================
+ADDENDUM 1 -- 2026-09-09: the first controllability scan is SUPERSEDED
+================================================================
+While the scan was running (4 of 6 cells complete) a defect was found in the
+benchmark's objective, not in the scan:
+
+  `reference_truth.rollout_alignment` applied the intervention only at the FIRST
+  rollout step (`if s == 0`), i.e. it evaluated "force the actuators now, then
+  release, and look tau steps later". Execution does the opposite: `sim.step` is
+  called with `forced_actions` on EVERY step between re-plans, so the actuators
+  are held for the whole horizon.
+
+The full-model benchmark was therefore planning a weaker intervention than the
+one it actually carried out. The direction of the error matters for this
+particular use: it makes the benchmark look LESS capable than it is, and Part H
+uses the benchmark to decide which episodes are unsteerable. An
+under-powered benchmark would have excluded steerable episodes and understated
+how controllable the regime is.
+
+FIX: `hold` parameter on `rollout_alignment` / `_expected_alignment_after`.
+  * default hold = 1, so task authority A_j^{h*,tau} remains the one-shot
+    quantity it is defined to be -- Part B's numbers are unchanged.
+  * `full_model_benchmark.optimize` defaults to hold = tau, matching execution.
+  * asserted in tests/test_reference_truth.py::
+      test_hold_semantics_are_distinct_and_authority_stays_one_shot
+    which also had to move to the Stage 6.10 regime: at the Stage 6.8 operating
+    point both semantics return exactly 0.0, because nothing there is steerable
+    at all.
+
+The partial scan is retained as `data/controllability__SUPERSEDED_hold1.json`
+and is not used for any claim. The scan is being re-run with the corrected
+objective. The selection rules above are NOT modified: they were written before
+either scan's outcome was known, and they apply unchanged to the new one.
+
+ADDENDUM 1a -- what the correction actually changed, empirically.
+The first corrected cell (frac=0.25, T=12) gives meanH = 0.410, against 0.450
+under the superseded objective; frac_above_hi is 0.33 in both. With sd = 0.40
+and n = 12 (se ~ 0.116) that difference is well inside noise, and it is in the
+opposite direction from the one predicted when the fix was made.
+
+Recorded explicitly so the re-run is not later read as an improvement: the fix
+is justified because planning must model execution, NOT because it raised any
+number. No measurable change in benchmark performance has been demonstrated.
+
+================================================================
+ADDENDUM 2 -- 2026-09-09: second controllability scan SUPERSEDED
+================================================================
+The corrected (hold=tau) scan selected frac=0.5, T=24 and a 7-episode primary
+stratum. Running Part I on that stratum exposed an inconsistency in the GATE,
+not in Part I:
+
+  run_controllability.run_benchmark_episode started its tracker with I_t = None,
+  so `detect` seeded the lineage with the LARGEST detected candidate. Part I
+  (closed_loop.run_arm, I_init=I0) steers the QUALIFYING start -- the
+  most-clump-like moderate-size candidate. The gate and the comparison were
+  therefore about different collectives.
+
+Symptom that revealed it: all 7 primary episodes were admitted because the
+benchmark reached H >= 0.60 on them, yet in Part I the same benchmark met the
+task on only 4 of 7 (taskOK = 0.57). Episodes had been admitted on the strength
+of steering a collective Part I never touches.
+
+FIX (run_controllability.py):
+  * the gate's tracker is seeded with the qualifying start I0 and continued by
+    maximum overlap, identical to closed_loop.run_arm;
+  * the actuator budget is fixed from the interface size at t0 and held for the
+    episode, also identical to Part I. A budget re-derived from each arm's own
+    current interface would differ per arm and make "matched budget" undefined,
+    so "actuator fraction of the current causal interface" is evaluated at the
+    moment control begins.
+
+`data/controllability__SUPERSEDED_largestcand.json` is retained and used for no
+claim. Selection RULES 1-4 above are unchanged -- they predate both scans.
+
+The Part I run on the superseded stratum is also discarded rather than reported:
+its episode list was chosen by a gate that measured a different object.
+
+================================================================
+ADDENDUM 3 -- 2026-09-09: third scan superseded; gate now DELEGATES
+================================================================
+Scan 3 fixed the tracker and the budget, and the frozen cell stayed
+frac=0.5 / T=24. But Part I's benchmark arm STILL met the task on only 4 of the
+7 episodes that the gate had admitted for reaching H >= 0.60.
+
+Cause: the gate reimplemented the control loop instead of calling Part I's. The
+two had drifted apart in three places at once --
+
+  candidate pool   gate used B_struct;      Part I used B_do (exact-do over
+                                            near_exterior candidates)
+  rollout count    gate 32;                 Part I 48
+  CRN seed         gate seed*977 + step;    Part I seed*1000 + step
+
+so the gate's benchmark run was never the run Part I reproduced. Two separate
+problems were tangled here and both are now addressed:
+
+1. CONFIGURATION DRIFT. `run_benchmark_episode` now delegates to
+   `closed_loop.run_arm("full_model_benchmark", ...)` with exactly the arguments
+   Part I uses, including `budget_schedule=None` (Part I runs this arm first, so
+   the schedule is None there too). The gate and the comparison are now the same
+   code on the same episode with the same random streams, and cannot drift again
+   without both moving together.
+
+2. SELECTION ON A NOISY MEASUREMENT. Even with identical code, choosing the top
+   episodes by one benchmark run and then RE-RUNNING with different randomness
+   would regress toward the mean, so the benchmark would "fail" some episodes it
+   was selected for. Delegation removes this too, because the gate's run and
+   Part I's benchmark arm are now bit-for-bit the same run rather than two draws.
+
+CONSEQUENCE THAT MUST BE STATED WHEREVER PART I IS REPORTED:
+  the benchmark's task-success rate within the primary stratum is 1.0 BY
+  CONSTRUCTION -- the stratum is defined as the episodes it succeeds on. That
+  number is a selection artefact, not a measurement, and is never quoted as
+  evidence that the benchmark is good. Its IDENTITY-VALIDITY rate is a real
+  measurement, since validity plays no part in the selection.
+
+Retained and unused: controllability__SUPERSEDED_pathdrift.json,
+data/superseded_partI_v2/. Selection RULES 1-4 remain as first written.

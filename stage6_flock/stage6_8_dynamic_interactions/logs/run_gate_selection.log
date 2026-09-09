@@ -1,0 +1,8 @@
+on=0.90 run=40.0  p01=0.2250 p10=0.0250 flip=0.0449 live=0.577 meso=0.05 largest= 259.2 H=0.718 G1=False G2=False G3=True
+on=0.90 run=20.0  p01=0.4500 p10=0.0500 flip=0.0900 live=0.576 meso=0.05 largest= 269.3 H=0.697 G1=False G2=False G3=True
+on=0.85 run=20.0  p01=0.2833 p10=0.0500 flip=0.0851 live=0.541 meso=0.05 largest= 283.6 H=0.701 G1=False G2=False G3=True
+on=0.85 run=10.0  p01=0.5667 p10=0.1000 flip=0.1701 live=0.543 meso=0.00 largest= 286.0 H=0.652 G1=False G2=True G3=True
+on=0.75 run=10.0  p01=0.3000 p10=0.1000 flip=0.1502 live=0.480 meso=0.00 largest= 278.3 H=0.682 G1=False G2=False G3=True
+on=0.75 run=5.0   p01=0.6000 p10=0.2000 flip=0.3002 live=0.478 meso=0.00 largest= 291.8 H=0.637 G1=False G2=True G3=True
+on=0.60 run=5.0   p01=0.3000 p10=0.2000 flip=0.2400 live=0.383 meso=0.00 largest= 254.2 H=0.863 G1=False G2=False G3=False
+chosen: None

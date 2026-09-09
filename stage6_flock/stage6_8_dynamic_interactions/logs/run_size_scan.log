@@ -1,0 +1,16 @@
+nn=100  beta=0.5   mesoscopic_frac=0.00 largest=  78.7 (0.79N) ncomp= 2.56 life=  6.59 turn=0.141 H=0.457 glob=0.372
+nn=100  beta=0.75  mesoscopic_frac=0.00 largest=  75.7 (0.76N) ncomp= 3.50 life= 15.19 turn=0.071 H=0.397 glob=0.439
+nn=100  beta=1.0   mesoscopic_frac=0.00 largest=  74.3 (0.74N) ncomp= 3.54 life= 23.42 turn=0.062 H=0.361 glob=0.478
+nn=100  beta=1.5   mesoscopic_frac=0.00 largest=  66.2 (0.66N) ncomp= 4.31 life= 16.21 turn=0.052 H=0.428 glob=0.388
+nn=225  beta=0.5   mesoscopic_frac=0.00 largest= 165.3 (0.73N) ncomp= 3.03 life= 10.43 turn=0.133 H=0.565 glob=0.298
+nn=225  beta=0.75  mesoscopic_frac=0.10 largest= 159.4 (0.71N) ncomp= 4.26 life= 10.68 turn=0.099 H=0.550 glob=0.312
+nn=225  beta=1.0   mesoscopic_frac=0.00 largest= 159.6 (0.71N) ncomp= 5.20 life=  7.50 turn=0.093 H=0.509 glob=0.306
+nn=225  beta=1.5   mesoscopic_frac=0.00 largest= 166.1 (0.74N) ncomp= 4.72 life=  7.63 turn=0.092 H=0.467 glob=0.363
+nn=400  beta=0.5   mesoscopic_frac=0.00 largest= 283.3 (0.71N) ncomp= 4.00 life=  2.65 turn=0.139 H=0.643 glob=0.188
+nn=400  beta=0.75  mesoscopic_frac=0.05 largest= 280.2 (0.70N) ncomp= 4.97 life=  2.56 turn=0.130 H=0.626 glob=0.184
+nn=400  beta=1.0   mesoscopic_frac=0.15 largest= 283.5 (0.71N) ncomp= 4.68 life=  3.23 turn=0.138 H=0.599 glob=0.203
+nn=400  beta=1.5   mesoscopic_frac=0.10 largest= 277.6 (0.69N) ncomp= 5.04 life=  3.19 turn=0.128 H=0.616 glob=0.136
+nn=900  beta=0.5   mesoscopic_frac=0.00 largest= 523.5 (0.58N) ncomp= 6.05 life=  2.72 turn=0.138 H=0.889 glob=0.010
+nn=900  beta=0.75  mesoscopic_frac=0.00 largest= 516.0 (0.57N) ncomp= 7.85 life=  1.96 turn=0.134 H=0.886 glob=0.061
+nn=900  beta=1.0   mesoscopic_frac=0.00 largest= 526.1 (0.58N) ncomp= 6.91 life=  2.25 turn=0.133 H=0.852 glob=0.069
+nn=900  beta=1.5   mesoscopic_frac=0.05 largest= 482.3 (0.54N) ncomp= 7.97 life=  2.41 turn=0.133 H=0.963 glob=0.075

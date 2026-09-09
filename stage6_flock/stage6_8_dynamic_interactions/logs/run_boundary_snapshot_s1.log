@@ -1,0 +1,6 @@
+seed 17   t=60  affinity_louvain    |I|=108  |Bpred|=9   (no_candidate_above_min_gain) |Bcausal|=20  suff=True [151s]
+seed 17   t=60  affinity_louvain    |I|=95   |Bpred|=2   (delta_tol_reached) |Bcausal|=9   suff=True [95s]
+seed 17   t=60  spectral_coherence  |I|=79   |Bpred|=2   (no_candidate_above_min_gain) |Bcausal|=14  suff=True [90s]
+seed 22   t=60  affinity_louvain    |I|=119  |Bpred|=5   (delta_tol_reached) |Bcausal|=14  suff=True [161s]
+seed 22   t=60  affinity_louvain    |I|=100  |Bpred|=10  (delta_tol_reached) |Bcausal|=16  suff=True [156s]
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_8_dynamic_interactions/data/boundary_inference__snapshot__shard1.json

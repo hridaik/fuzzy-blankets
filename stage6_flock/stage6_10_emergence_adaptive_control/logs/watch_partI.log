@@ -1,0 +1,26 @@
+RESULT: COMPLETE at 14:26
+14:26  matched=7/7 fixedk=7/7 live=2 arm_lines=112/98 tracebacks=0
+=== MATCHED BUDGET ===
+merged 7 episodes -> closed_loop__main.json
+
+==============================================================================
+arm                        meanH    succ  taskOK   valid   meanA
+full_model_benchmark       0.651    0.43    0.57    0.71     7.6
+adaptive_causal            0.256    0.14    0.14    0.71     3.6
+full_info_heuristic        0.358    0.29    0.29    0.86     3.1
+frozen_causal              0.266    0.29    0.29    0.86     3.3
+predictive                 0.266    0.14    0.14    0.71     7.6
+random_matched             0.475    0.29    0.43    0.86     7.6
+no_control                 0.144    0.00    0.00    0.86     0.0
+=== FIXED-K ===
+merged 7 episodes -> closed_loop__fixedk.json
+
+==============================================================================
+arm                        meanH    succ  taskOK   valid   meanA
+full_model_benchmark       0.756    0.57    0.57    0.86    10.1
+adaptive_causal            0.724    0.57    0.71    0.86    10.1
+full_info_heuristic        0.784    0.86    0.86    0.86    10.1
+frozen_causal              0.567    0.29    0.57    0.57    10.1
+predictive                 0.324    0.14    0.14    0.57    10.1
+random_matched             0.551    0.14    0.29    0.43    10.1
+no_control                 0.144    0.00    0.00    0.86     0.0

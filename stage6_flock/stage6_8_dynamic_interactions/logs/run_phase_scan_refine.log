@@ -1,0 +1,12 @@
+beta=0.3   s=1.0   pol=0.880 largest= 89.5 ncomp= 1.45 life= 22.24 turn=0.064 H=0.298 glob=0.720
+beta=0.3   s=1.25  pol=0.855 largest= 87.8 ncomp= 1.42 life= 36.23 turn=0.053 H=0.291 glob=0.679
+beta=0.35  s=1.0   pol=0.900 largest= 91.9 ncomp= 1.32 life= 51.13 turn=0.034 H=0.189 glob=0.765
+beta=0.35  s=1.25  pol=0.950 largest= 94.1 ncomp= 1.22 life= 55.03 turn=0.024 H=0.128 glob=0.825
+beta=0.4   s=1.0   pol=0.862 largest= 89.0 ncomp= 1.30 life= 65.35 turn=0.025 H=0.199 glob=0.721
+beta=0.4   s=1.25  pol=0.899 largest= 91.4 ncomp= 1.31 life= 65.17 turn=0.025 H=0.173 glob=0.749
+beta=0.45  s=1.0   pol=0.884 largest= 91.9 ncomp= 1.40 life= 59.17 turn=0.032 H=0.189 glob=0.746
+beta=0.45  s=1.25  pol=0.840 largest= 87.1 ncomp= 1.55 life= 55.01 turn=0.038 H=0.268 glob=0.664
+beta=0.25  s=1.1   pol=0.284 largest= 35.9 ncomp= 7.52 life=  1.12 turn=0.265 H=1.242 glob=0.004
+beta=0.25  s=1.2   pol=0.498 largest= 56.5 ncomp= 5.04 life=  1.48 turn=0.217 H=0.972 glob=0.110
+beta=0.25  s=1.3   pol=0.653 largest= 70.4 ncomp= 3.48 life=  2.03 turn=0.178 H=0.780 glob=0.207
+beta=0.25  s=1.4   pol=0.583 largest= 64.0 ncomp= 4.08 life=  1.94 turn=0.187 H=0.856 glob=0.210

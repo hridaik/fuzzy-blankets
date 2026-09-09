@@ -1,0 +1,17 @@
+seed 1    full_model_benchmark   H=0.973 valid=True succ=True A=10.0 [483s]
+seed 1    adaptive_causal        H=0.867 valid=True succ=True A=10.0 [209s]
+seed 1    full_info_heuristic    H=0.867 valid=True succ=True A=10.0 [19s]
+seed 1    frozen_causal          H=0.282 valid=True succ=False A=10.0 [28s]
+seed 1    predictive             H=0.275 valid=False succ=False A=10.0 [8s]
+seed 1    random_matched         H=0.446 valid=False succ=False A=10.0 [9s]
+seed 1    no_control             H=0.191 valid=True succ=False A=0.0 [8s]
+
+==============================================================================
+arm                        meanH    succ  taskOK   valid   meanA
+full_model_benchmark       0.973    1.00    1.00    1.00    10.0
+adaptive_causal            0.867    1.00    1.00    1.00    10.0
+full_info_heuristic        0.867    1.00    1.00    1.00    10.0
+frozen_causal              0.282    0.00    0.00    1.00    10.0
+predictive                 0.275    0.00    0.00    0.00    10.0
+random_matched             0.446    0.00    0.00    0.00    10.0
+no_control                 0.191    0.00    0.00    1.00     0.0

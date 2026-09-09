@@ -1,0 +1,54 @@
+=== trace done, running hypotheses ===
+  seed 15 step 0: rho(KL, A_tau2) = 0.437
+  seed 16 step 0: rho(KL, A_tau2) = 0.921
+  seed 17 step 0: rho(KL, A_tau2) = 0.159
+  seed 22 step 0: rho(KL, A_tau2) = 0.468
+  seed 70 step 0: rho(KL, A_tau2) = 0.618
+  seed 71 step 0: rho(KL, A_tau2) = 0.286
+  seed 172 step 0: rho(KL, A_tau2) = 0.648
+  seed 192 step 0: rho(KL, A_tau2) = 0.663
+
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/data/audit_hypotheses.json
+H3 mean rho(KL, authority) = 0.525
+H4 mean |S_jk| = 0.0008 over 192 pairs
+H6 mean paired diff = 0.078 CI [-0.05410527521720885, 0.2086758019637258]
+=== fixed-K ===
+K=4   seed=15   adaptive_causal=0.000  adaptive_oracle=0.030
+K=4   seed=16   adaptive_causal=0.124  adaptive_oracle=0.248
+K=4   seed=17   adaptive_causal=0.056  adaptive_oracle=0.046
+K=4   seed=22   adaptive_causal=0.597  adaptive_oracle=0.487
+K=4   seed=70   adaptive_causal=0.208  adaptive_oracle=0.277
+K=4   seed=71   adaptive_causal=0.991  adaptive_oracle=0.796
+K=4   seed=172  adaptive_causal=0.336  adaptive_oracle=0.269
+K=4   seed=192  adaptive_causal=0.200  adaptive_oracle=0.036
+K=8   seed=15   adaptive_causal=0.053  adaptive_oracle=0.038
+K=8   seed=16   adaptive_causal=0.105  adaptive_oracle=0.333
+K=8   seed=17   adaptive_causal=0.278  adaptive_oracle=0.130
+K=8   seed=22   adaptive_causal=0.655  adaptive_oracle=0.479
+K=8   seed=70   adaptive_causal=0.431  adaptive_oracle=0.392
+K=8   seed=71   adaptive_causal=0.991  adaptive_oracle=0.991
+K=8   seed=172  adaptive_causal=0.373  adaptive_oracle=0.425
+K=8   seed=192  adaptive_causal=0.400  adaptive_oracle=0.221
+K=12  seed=15   adaptive_causal=0.218  adaptive_oracle=0.038
+K=12  seed=16   adaptive_causal=0.143  adaptive_oracle=0.400
+K=12  seed=17   adaptive_causal=0.407  adaptive_oracle=0.204
+K=12  seed=22   adaptive_causal=0.454  adaptive_oracle=0.538
+K=12  seed=70   adaptive_causal=0.646  adaptive_oracle=0.446
+K=12  seed=71   adaptive_causal=0.991  adaptive_oracle=0.991
+K=12  seed=172  adaptive_causal=0.455  adaptive_oracle=0.343
+K=12  seed=192  adaptive_causal=0.543  adaptive_oracle=0.171
+K=16  seed=15   adaptive_causal=0.218  adaptive_oracle=0.075
+K=16  seed=16   adaptive_causal=0.143  adaptive_oracle=0.400
+K=16  seed=17   adaptive_causal=0.407  adaptive_oracle=0.194
+K=16  seed=22   adaptive_causal=0.454  adaptive_oracle=0.571
+K=16  seed=70   adaptive_causal=0.646  adaptive_oracle=0.562
+K=16  seed=71   adaptive_causal=0.991  adaptive_oracle=0.885
+K=16  seed=172  adaptive_causal=0.507  adaptive_oracle=0.448
+K=16  seed=192  adaptive_causal=0.543  adaptive_oracle=0.629
+
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/data/audit_fixed_k.json
+K=4: adaptive_causal 0.314 | full-info heuristic 0.274 | paired diff +0.040
+K=8: adaptive_causal 0.411 | full-info heuristic 0.376 | paired diff +0.034
+K=12: adaptive_causal 0.482 | full-info heuristic 0.391 | paired diff +0.091
+K=16: adaptive_causal 0.489 | full-info heuristic 0.470 | paired diff +0.018
+=== ALL PART A DONE ===

@@ -1,0 +1,5 @@
+K_act=12  horizon=40  oracle_mean_path_error=4.87 R
+K_act=24  horizon=40  oracle_mean_path_error=4.94 R
+K_act=24  horizon=60  oracle_mean_path_error=5.82 R
+K_act=36  horizon=60  oracle_mean_path_error=5.82 R
+chosen: None

@@ -1,0 +1,5 @@
+seed 0   t=60   |I|=100  |Bpred|=0   |Bcausal|=1   cands=63  [1+344s]
+seed 0   t=61   |I|=100  |Bpred|=0   |Bcausal|=0   cands=62  [1+338s]
+seed 0   t=62   |I|=101  |Bpred|=0   |Bcausal|=1   cands=63  [1+338s]
+seed 0   t=63   |I|=101  |Bpred|=0   |Bcausal|=0   cands=62  [1+333s]
+seed 0   t=64   |I|=102  |Bpred|=0   |Bcausal|=0   cands=61  [0+327s]

@@ -1,0 +1,12 @@
+{
+ "theta": 0.031172462465788774,
+ "q_support": 0.9,
+ "n_values": 39,
+ "dev_seeds": [
+  15,
+  17,
+  70,
+  172
+ ],
+ "rule": "25th percentile of per-interior-bird max single-source inferred influence, pooled over development seeds; no control outcome used"
+}

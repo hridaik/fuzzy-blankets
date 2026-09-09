@@ -1,0 +1,85 @@
+seed 200  cands=7   |I0|=83  minJ=0.26 J0=0.16 sz=1.05 Q=0.90 comp=2 [5s]
+seed 201  cands=5   |I0|=83  minJ=0.24 J0=0.03 sz=1.22 Q=0.95 comp=1 [4s]
+seed 202  cands=4   |I0|=80  minJ=0.69 J0=0.63 sz=1.40 Q=0.96 comp=1 [4s]
+seed 203  cands=4   |I0|=33  minJ=0.22 J0=0.00 sz=3.03 Q=0.87 comp=1 [4s]
+seed 204  cands=5   |I0|=60  minJ=0.34 J0=0.13 sz=1.98 Q=0.96 comp=1 [5s]
+seed 205  cands=4   |I0|=71  minJ=0.30 J0=0.00 sz=1.14 Q=0.78 comp=1 [5s]
+seed 206  cands=5   |I0|=89  minJ=0.42 J0=0.02 sz=1.20 Q=0.88 comp=1 [6s]
+seed 207  cands=4   |I0|=81  minJ=0.20 J0=0.34 sz=1.33 Q=0.91 comp=1 [4s]
+seed 208  cands=4   |I0|=88  minJ=0.28 J0=0.08 sz=1.05 Q=1.00 comp=1 [5s]
+seed 209  cands=6   |I0|=76  minJ=0.39 J0=0.82 sz=0.82 Q=1.00 comp=1 [5s]
+seed 210  cands=4   |I0|=89  minJ=0.68 J0=0.66 sz=0.66 Q=1.00 comp=1 [4s]
+seed 211  cands=4   |I0|=72  minJ=0.41 J0=0.32 sz=1.22 Q=0.73 comp=1 [4s]
+seed 212  cands=4   |I0|=90  minJ=0.28 J0=0.01 sz=1.32 Q=0.81 comp=1 [4s]
+seed 213  cands=4   |I0|=56  minJ=0.29 J0=0.06 sz=1.59 Q=0.90 comp=1 [4s]
+seed 214  cands=4   |I0|=67  minJ=0.24 J0=0.00 sz=1.64 Q=0.78 comp=1 [4s]
+seed 215  cands=5   |I0|=55  minJ=0.29 J0=0.00 sz=1.24 Q=1.00 comp=1 [5s]
+seed 216  cands=5   |I0|=82  minJ=0.35 J0=0.82 sz=1.00 Q=0.86 comp=1 [5s]
+seed 217  cands=5   |I0|=50  minJ=0.26 J0=0.40 sz=2.48 Q=0.92 comp=1 [4s]
+seed 218  cands=4   |I0|=68  minJ=0.17 J0=0.00 sz=1.47 Q=0.74 comp=1 [4s]
+seed 219  cands=6   |I0|=43  minJ=0.25 J0=0.08 sz=2.60 Q=0.88 comp=1 [5s]
+seed 220  cands=5   |I0|=53  minJ=0.30 J0=0.15 sz=1.38 Q=0.95 comp=1 [5s]
+seed 221  cands=6   |I0|=46  minJ=0.27 J0=0.05 sz=2.30 Q=0.84 comp=1 [4s]
+seed 222  cands=5   |I0|=77  minJ=0.38 J0=0.20 sz=1.42 Q=0.95 comp=1 [5s]
+seed 223  cands=5   |I0|=83  minJ=0.44 J0=0.68 sz=1.43 Q=0.81 comp=1 [5s]
+seed 224  cands=4   |I0|=83  minJ=0.80 J0=0.78 sz=1.29 Q=0.95 comp=1 [4s]
+seed 225  cands=4   |I0|=85  minJ=0.32 J0=0.74 sz=0.85 Q=1.00 comp=1 [5s]
+seed 226  cands=4   |I0|=64  minJ=0.33 J0=0.00 sz=2.02 Q=0.82 comp=1 [4s]
+seed 227  cands=5   |I0|=70  minJ=0.19 J0=0.10 sz=1.71 Q=0.85 comp=1 [5s]
+seed 228  cands=4   |I0|=66  minJ=0.23 J0=0.26 sz=1.53 Q=0.91 comp=1 [4s]
+seed 229  cands=6   |I0|=73  minJ=0.49 J0=0.64 sz=1.56 Q=0.81 comp=1 [5s]
+seed 230  no qualifying start; skipped
+seed 231  cands=4   |I0|=84  minJ=0.31 J0=0.62 sz=1.27 Q=0.84 comp=1 [4s]
+seed 232  cands=5   |I0|=87  minJ=0.44 J0=0.59 sz=1.21 Q=0.84 comp=1 [5s]
+seed 233  cands=6   |I0|=49  minJ=0.48 J0=0.03 sz=1.51 Q=0.86 comp=1 [5s]
+seed 234  cands=4   |I0|=86  minJ=0.24 J0=0.63 sz=1.05 Q=0.95 comp=1 [4s]
+seed 235  cands=4   |I0|=73  minJ=0.34 J0=0.44 sz=1.05 Q=0.86 comp=1 [5s]
+seed 236  cands=5   |I0|=67  minJ=0.23 J0=0.08 sz=2.01 Q=0.83 comp=1 [4s]
+seed 237  cands=5   |I0|=53  minJ=0.34 J0=0.00 sz=1.26 Q=0.89 comp=1 [5s]
+seed 238  cands=4   |I0|=58  minJ=0.22 J0=0.18 sz=1.45 Q=0.95 comp=1 [4s]
+seed 239  cands=5   |I0|=80  minJ=0.24 J0=0.08 sz=0.61 Q=0.88 comp=1 [4s]
+seed 240  cands=5   |I0|=58  minJ=0.22 J0=0.18 sz=1.33 Q=0.95 comp=1 [4s]
+seed 241  cands=5   |I0|=82  minJ=0.27 J0=0.43 sz=1.02 Q=0.86 comp=1 [4s]
+seed 242  cands=5   |I0|=61  minJ=0.40 J0=0.64 sz=1.05 Q=0.84 comp=1 [4s]
+seed 243  no qualifying start; skipped
+seed 244  cands=4   |I0|=57  minJ=0.16 J0=0.40 sz=2.47 Q=0.83 comp=2 [4s]
+seed 245  no qualifying start; skipped
+seed 246  cands=4   |I0|=79  minJ=0.37 J0=0.30 sz=1.52 Q=0.85 comp=1 [5s]
+seed 247  cands=4   |I0|=89  minJ=0.35 J0=0.17 sz=1.74 Q=0.89 comp=1 [5s]
+seed 248  cands=6   |I0|=56  minJ=0.32 J0=0.00 sz=1.82 Q=1.00 comp=1 [5s]
+seed 249  cands=4   |I0|=88  minJ=0.52 J0=0.71 sz=0.89 Q=0.86 comp=1 [4s]
+seed 250  cands=4   |I0|=50  minJ=0.22 J0=0.44 sz=1.60 Q=1.00 comp=1 [5s]
+seed 251  no qualifying start; skipped
+seed 252  cands=5   |I0|=22  minJ=0.46 J0=0.00 sz=4.59 Q=0.84 comp=1 [4s]
+seed 253  cands=5   |I0|=68  minJ=0.26 J0=0.00 sz=1.57 Q=0.88 comp=1 [5s]
+seed 254  cands=4   |I0|=41  minJ=0.26 J0=0.11 sz=3.10 Q=0.85 comp=1 [5s]
+seed 255  cands=5   |I0|=74  minJ=0.68 J0=0.83 sz=0.85 Q=0.94 comp=1 [5s]
+seed 256  cands=6   |I0|=51  minJ=0.30 J0=0.24 sz=2.59 Q=0.79 comp=1 [5s]
+seed 257  cands=4   |I0|=35  minJ=0.23 J0=0.30 sz=2.71 Q=0.91 comp=1 [5s]
+seed 258  cands=4   |I0|=86  minJ=0.47 J0=0.59 sz=1.63 Q=0.92 comp=1 [4s]
+seed 259  cands=4   |I0|=88  minJ=0.33 J0=0.11 sz=0.90 Q=0.95 comp=1 [5s]
+
+VALIDITY ENVELOPE, horizon 12  (per-axis q=0.0%, joint pass on held-out uncontrolled lineages 0.89, target 0.90  -- TARGET NOT MET)
+  min_step_jaccard         >= 0.165
+  final_jaccard_to_I0      >= 0.000
+  final_size_ratio         >= 0.361
+  final_q_clump            >= 0.778
+  mean_coherence           >= 0.546
+  max_n_components         <= 2.000
+  grid: q5.0->0.82  q2.5->0.89  q1.0->0.89  q0.5->0.89  q0.1->0.89  q0.0->0.89
+
+VALIDITY ENVELOPE, horizon 24  (per-axis q=5.0%, joint pass on held-out uncontrolled lineages 0.93, target 0.90)
+  min_step_jaccard         >= 0.191
+  final_jaccard_to_I0      >= 0.000
+  final_size_ratio         >= 0.827
+  final_q_clump            >= 0.754
+  mean_coherence           >= 0.606
+  max_n_components         <= 1.000
+  grid: q5.0->0.93  q2.5->0.93  q1.0->0.93  q0.5->0.93  q0.1->0.93  q0.0->0.93
+Traceback (most recent call last):
+  File "/home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/code/run_uncontrolled_reference.py", line 160, in <module>
+    main(0.4, 0.75, list(range(200, 260)), sys.argv[1] if len(sys.argv) > 1 else "main")
+  File "/home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/code/run_uncontrolled_reference.py", line 155, in main
+    f"(snakes retained; clump stratum Q >= {out['clump_stratum_threshold']:.3f}, "
+                                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'clump_stratum_threshold'

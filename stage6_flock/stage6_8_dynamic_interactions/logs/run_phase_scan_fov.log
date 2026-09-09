@@ -1,0 +1,31 @@
+[L2 primary] beta=0.25  s=1.0   pol=0.147 largest= 21.9 ncomp= 9.91 life=  1.05 turn=0.259 H=1.348 glob=0.000
+[L2 primary] beta=0.5   s=1.0   pol=0.702 largest= 78.7 ncomp= 2.56 life=  6.59 turn=0.141 H=0.457 glob=0.372
+[L2 primary] beta=0.75  s=1.0   pol=0.672 largest= 75.7 ncomp= 3.50 life= 15.19 turn=0.071 H=0.397 glob=0.439
+[L2 primary] beta=1.0   s=1.0   pol=0.685 largest= 74.3 ncomp= 3.54 life= 23.42 turn=0.062 H=0.361 glob=0.478
+[L2 primary] beta=1.25  s=1.0   pol=0.604 largest= 66.5 ncomp= 4.25 life= 20.68 turn=0.044 H=0.395 glob=0.425
+[L2 primary] beta=1.5   s=1.0   pol=0.590 largest= 66.2 ncomp= 4.31 life= 16.21 turn=0.052 H=0.428 glob=0.388
+[L2 cross]   beta=0.25  s=0.5   pol=0.104 largest= 17.0 ncomp=11.33 life=  1.05 turn=0.275 H=1.366 glob=0.000
+[L2 cross]   beta=0.25  s=0.75  pol=0.120 largest= 18.7 ncomp=10.73 life=  1.05 turn=0.264 H=1.360 glob=0.000
+[L2 cross]   beta=0.25  s=1.5   pol=0.204 largest= 27.3 ncomp= 8.71 life=  1.07 turn=0.266 H=1.317 glob=0.000
+[L2 cross]   beta=0.25  s=2.0   pol=0.266 largest= 34.0 ncomp= 7.77 life=  1.10 turn=0.265 H=1.276 glob=0.000
+[L2 cross]   beta=0.5   s=0.5   pol=0.552 largest= 59.9 ncomp= 4.02 life=  1.47 turn=0.215 H=0.948 glob=0.044
+[L2 cross]   beta=0.5   s=0.75  pol=0.746 largest= 77.2 ncomp= 2.26 life=  3.32 turn=0.145 H=0.528 glob=0.340
+[L2 cross]   beta=0.5   s=1.5   pol=0.656 largest= 75.0 ncomp= 3.13 life= 11.17 turn=0.113 H=0.460 glob=0.332
+[L2 cross]   beta=0.5   s=2.0   pol=0.620 largest= 74.1 ncomp= 3.67 life= 18.30 turn=0.101 H=0.447 glob=0.349
+[L2 cross]   beta=0.75  s=0.5   pol=0.744 largest= 78.7 ncomp= 2.22 life=  4.11 turn=0.143 H=0.511 glob=0.360
+[L2 cross]   beta=0.75  s=0.75  pol=0.701 largest= 78.0 ncomp= 3.00 life= 16.35 turn=0.098 H=0.412 glob=0.412
+[L2 cross]   beta=0.75  s=1.5   pol=0.642 largest= 68.2 ncomp= 3.91 life= 12.01 turn=0.070 H=0.422 glob=0.386
+[L2 cross]   beta=0.75  s=2.0   pol=0.610 largest= 66.0 ncomp= 4.20 life= 15.62 turn=0.067 H=0.447 glob=0.339
+[L2 cross]   beta=1.0   s=0.5   pol=0.694 largest= 78.9 ncomp= 2.79 life=  2.21 turn=0.147 H=0.484 glob=0.308
+[L2 cross]   beta=1.0   s=0.75  pol=0.621 largest= 71.8 ncomp= 3.98 life=  7.07 turn=0.082 H=0.425 glob=0.394
+[L2 cross]   beta=1.0   s=1.5   pol=0.704 largest= 73.0 ncomp= 3.37 life= 18.88 turn=0.068 H=0.384 glob=0.422
+[L2 cross]   beta=1.0   s=2.0   pol=0.632 largest= 68.2 ncomp= 3.95 life= 13.66 turn=0.079 H=0.438 glob=0.340
+[L2 cross]   beta=1.25  s=0.5   pol=0.727 largest= 79.9 ncomp= 2.67 life=  2.88 turn=0.135 H=0.450 glob=0.385
+[L2 cross]   beta=1.25  s=0.75  pol=0.709 largest= 75.0 ncomp= 3.01 life=  8.34 turn=0.078 H=0.386 glob=0.435
+[L2 cross]   beta=1.25  s=1.5   pol=0.660 largest= 71.3 ncomp= 3.62 life= 17.16 turn=0.083 H=0.427 glob=0.374
+[L2 cross]   beta=1.25  s=2.0   pol=0.631 largest= 68.7 ncomp= 3.92 life= 17.05 turn=0.080 H=0.428 glob=0.352
+[L2 cross]   beta=1.5   s=0.5   pol=0.724 largest= 77.9 ncomp= 2.69 life=  6.44 turn=0.142 H=0.493 glob=0.320
+[L2 cross]   beta=1.5   s=0.75  pol=0.759 largest= 80.3 ncomp= 2.81 life=  9.68 turn=0.078 H=0.344 glob=0.513
+[L2 cross]   beta=1.5   s=1.5   pol=0.655 largest= 71.1 ncomp= 3.75 life= 15.56 turn=0.077 H=0.407 glob=0.417
+[L2 cross]   beta=1.5   s=2.0   pol=0.635 largest= 67.7 ncomp= 3.75 life= 17.54 turn=0.078 H=0.440 glob=0.367
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_8_dynamic_interactions/data/phase_scan_fov.json
