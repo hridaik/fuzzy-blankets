@@ -1,0 +1,6 @@
+[budget_sensitivity] candidate size=75
+[budget_sensitivity] exterior pool size=28
+  rollouts20_repeats3: |B_causal|=1 mean_ci_width=0.0094 B_causal=[328]
+  rollouts40_repeats3: |B_causal|=2 mean_ci_width=0.0075 B_causal=[197, 328]
+  rollouts80_repeats3: |B_causal|=7 mean_ci_width=0.0053 B_causal=[0, 197, 233, 254, 256, 328, 337]
+[budget_sensitivity] wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/data/causal_budget_sensitivity_611.json

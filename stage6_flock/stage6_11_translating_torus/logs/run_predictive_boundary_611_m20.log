@@ -1,0 +1,40 @@
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+[predictive_boundary_611] M_obs=20: estimating distance cuts from train...
+  rows: train=21600 val=7200 test=7200
+  mean logloss: train=0.3412 val=0.3892 test=0.4298 (uniform baseline=1.3863)
+  candidate: size=75, periphery_radius=0.255
+  construction rows (val periphery): 3000
+  B_pred = [0, 12, 24, 35, 41, 94, 107, 195, 303, 335, 343, 351] (interior_only_loss=0.4378, full_pool_loss=0.2362, final_loss=0.4066)
+  certification: L_challenge_upper=0.0043 (delta=0.01) sufficient=True
+[predictive_boundary_611] wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/data/predictive_boundary_611.json (after M_obs=20)
+[predictive_boundary_611] done
+	Command being timed: "/home/hkhurana/miniconda3/envs/fuzzy-blankets/bin/python run_predictive_boundary_611.py --m_obs 20"
+	User time (seconds): 29.08
+	System time (seconds): 1.30
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3236404
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 214009
+	Voluntary context switches: 22
+	Involuntary context switches: 568
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 24
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

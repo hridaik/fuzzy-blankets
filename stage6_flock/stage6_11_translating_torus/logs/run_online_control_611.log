@@ -1,0 +1,43 @@
+[run_online_control_611] loading pretrained relational model...
+[run_online_control_611] pretrained on 4000 rows
+  [t=20] phase=uncontrolled interior=40
+  [t=40] phase=uncontrolled interior=20
+  [t=60] phase=uncontrolled interior=33
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+  [t=80] phase=control interior=30
+  [t=100] phase=release interior=38
+[run_online_control_611] episode ended: phase=release t=108
+  qualified_and_target_set at t=[61]
+  release_begin at t=[84]
+  episode_end at t=[108]
+[run_online_control_611] wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/data/online_control_611__seed500.json
+	Command being timed: "/home/hkhurana/miniconda3/envs/fuzzy-blankets/bin/python run_online_control_611.py"
+	User time (seconds): 70.58
+	System time (seconds): 0.55
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:10.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 160152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 392884
+	Voluntary context switches: 9
+	Involuntary context switches: 597
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

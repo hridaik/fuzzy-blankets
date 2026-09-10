@@ -1,0 +1,8 @@
+[oracle_k8_benchmark] seed=500 ...
+  control: frac@target 0.154 -> 0.921
+  release: frac@target mean=0.640 final=0.647
+  wrote oracle_k8_benchmark_611__seed500.json
+[oracle_k8_benchmark] seed=504 ...
+  control: frac@target 0.103 -> 0.053
+  release: frac@target mean=0.057 final=0.000
+  wrote oracle_k8_benchmark_611__seed504.json

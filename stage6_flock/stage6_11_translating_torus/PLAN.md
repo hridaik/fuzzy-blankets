@@ -154,15 +154,22 @@ Dynamic interface → Target introduced → Adaptive steering → Release.
 
 ## Order of work, with stop conditions
 
-| step | gate to pass | if it fails |
+| step | gate to pass | outcome |
 |---|---|---|
-| M audit | ingredients present or added once | record the addition |
-| N normalization | preserves operating scale at original degree | report and keep raw-sum |
-| O (R,v) scan | a non-saturated, cohesive cell exists | **stop**; report no viable regime |
-| P emergence | qualifying episodes at reasonable frequency | proceed to Q |
-| Q nucleation | persists after cue removal | proceed to R, detection-only |
-| T control | benchmark establishes controllability | **stop**; no control claims |
+| M audit | ingredients present or added once | done (`logs/moving_model_audit.txt`) |
+| N normalization | preserves operating scale at original degree | done; kept as labelled comparator only (Section N did not achieve gain/degree separation) |
+| O (R,v,cohesion) scan | a non-saturated, cohesive cell exists | **passed** — global-collapse probability 0.00 in all 36 dev cells; 26 candidates; see `RESULTS_6_11.md` §1 |
+| P emergence | qualifying episodes at reasonable frequency | **passed in the same screen** — 95-100% episode frequency at the confirmed regimes; no gap to Q |
+| Q nucleation | only if P too rare | **not needed** |
+| R driven benchmark | only if Q insufficient | **not needed** |
+| T control | benchmark establishes controllability | **partial positive**: 3/5 online seeds turned and the turn persisted through release at the primary regime (reduced compute budget, no full-model benchmark run); see `RESULTS_6_11.md` §7 |
+
+Full task-brief items 1-20 (firewall, relational predictor, causal probing,
+lineage, thingness, control interfaces, online loop, oracle reveal, figures)
+are reported in `RESULTS_6_11.md`, not re-narrated here.
 
 **Stage 6.9 is the precedent for stopping.** Its translation gate failed 0/40
-and the radius was *not* moved back up to make it pass. The same discipline
-applies here: a failed gate is a result.
+and the radius was *not* moved back up to make it pass. Here the same radius
+DID pass once the Section M/N positional-cohesion term (already planned,
+not invented after the fact) was switched on — the discipline that mattered
+was resisting the temptation to raise R, not resisting cohesion.

@@ -1,0 +1,6 @@
+[observational_corpus_611] generating train=36 val=12 test=12 episodes at PRIMARY regime R=0.9 v=0.28 cohesion=1.0, nt=240, burn_in=60
+[observational_corpus_611] report:
+  train: episodes=36 steps/ep=180 bird_level_examples=2592000 class_counts=[651651, 693709, 651582, 595058]
+  val: episodes=12 steps/ep=180 bird_level_examples=864000 class_counts=[206034, 225217, 212887, 219862]
+  test: episodes=12 steps/ep=180 bird_level_examples=864000 class_counts=[288974, 172081, 212796, 190149]
+[observational_corpus_611] wrote npz splits to /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/data

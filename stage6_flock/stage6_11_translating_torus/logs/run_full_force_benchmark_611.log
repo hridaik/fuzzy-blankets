@@ -1,0 +1,8 @@
+[full_force_benchmark] seed=500 ...
+  control: n_actuators~374-356, frac@target 0.154 -> 0.818
+  release: frac@target mean=0.903 final=0.913
+  wrote full_force_benchmark_611__seed500.json
+[full_force_benchmark] seed=504 ...
+  control: n_actuators~361-350, frac@target 0.103 -> 0.880
+  release: frac@target mean=0.895 final=0.952
+  wrote full_force_benchmark_611__seed504.json

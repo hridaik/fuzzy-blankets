@@ -1,0 +1,14 @@
+[export_viz_611] rerunning seed=501 with trajectory recording...
+  [t=20] phase=uncontrolled interior=35
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+/home/hkhurana/miniconda3/envs/fuzzy-blankets/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:455: OptimizeWarning: Unknown solver options: iprint
+  opt_res = optimize.minimize(
+  [t=40] phase=control interior=40
+  [t=60] phase=release interior=29
+[export_viz_611] 77 steps recorded, ended_phase=release
+[export_viz_611] wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/data/viz_bundle_611__seed501.json (77 frames)

@@ -24,3 +24,8 @@ dist/
 stage6_flock/**/__pycache__/
 stage6_flock/**/data/*_seed*.json
 stage6_flock/**/data/controllability__main__*.json
+
+# Stage 6.11: regeneratable bulk corpus/model artifacts (run observational_corpus_611.py
+# / run_predictive_boundary_611.py to reproduce) -- kept off git like other stages' raw dumps.
+stage6_flock/stage6_11_translating_torus/data/observational_corpus_611__*.npz
+stage6_flock/stage6_11_translating_torus/data/pretrained_relational_model_611.pkl
