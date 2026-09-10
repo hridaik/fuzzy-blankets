@@ -228,11 +228,18 @@ def fig4_controllability():
 
 # ------------------------------------------------------------ Fig 6.10-5 ----
 def fig5_arms():
-    """Part I/J: the seven arms, with the task axis and the identity axis kept
-    SEPARATE. An arm can reach the heading and still fail, and the panel has to
-    show that rather than hide it inside one success number."""
-    d = load_json(DATA_DIR / "closed_loop__main.json")
-    arms = d["arms"]
+    """Part I/J: the seven arms under BOTH budget conventions, side by side.
+
+    Plotting only the matched-budget table would be actively misleading: there
+    random_matched appears to beat every causal arm, but that is an artefact of
+    unequal spend (multicover stops early on its own coverage criterion, while
+    random and predictive spend the full realized schedule). Fixed-K removes
+    that confound and the ordering inverts. Both are shown so neither reads as
+    the whole story on its own.
+    """
+    dm = load_json(DATA_DIR / "closed_loop__main.json")
+    dk = load_json(DATA_DIR / "closed_loop__fixedk.json")
+    arms = dm["arms"]
     lbl = {"full_model_benchmark": "full-model\nbenchmark",
            "adaptive_causal": "adaptive\ncausal",
            "full_info_heuristic": "full-info\nheuristic",
@@ -240,33 +247,45 @@ def fig5_arms():
            "predictive": "predictive",
            "random_matched": "random\nmatched",
            "no_control": "no control"}
-    eps = d["episodes"]
-    def agg(arm, f):
-        return np.array([f(e["arms"][arm]) for e in eps], float)
 
-    fig, ax = plt.subplots(1, 3, figsize=(10.4, 2.8))
-    x = np.arange(len(arms))
-    mH = [agg(a, lambda r: r["final_H_current"]).mean() for a in arms]
-    sH = [agg(a, lambda r: r["final_H_current"]).std() / max(1, len(eps)) ** 0.5 for a in arms]
+    def agg(d, arm, f):
+        return np.array([f(e["arms"][arm]) for e in d["episodes"]], float)
+
     cols = [C_BENCH if a == "full_model_benchmark" else
             (C_ADAPT if a == "adaptive_causal" else
              (C_HEUR if a == "full_info_heuristic" else C_MUTE)) for a in arms]
-    ax[0].bar(x, mH, yerr=sH, color=cols, width=0.66, capsize=2)
-    ax[0].axhline(d["h_threshold"], color="k", lw=0.7, ls="--")
-    ax[0].set_ylabel(r"final $H^*(I_t,t)$"); ax[0].set_title("task axis")
+    x = np.arange(len(arms))
 
-    tk = [agg(a, lambda r: r["score"]["task_met"]).mean() for a in arms]
-    iv = [agg(a, lambda r: r["score"]["identity_valid"]).mean() for a in arms]
-    sc = [agg(a, lambda r: r["score"]["success"]).mean() for a in arms]
-    ax[1].bar(x - 0.22, tk, width=0.2, color=C_MUTE, label="task met")
-    ax[1].bar(x, iv, width=0.2, color=C_OK, label="identity valid")
-    ax[1].bar(x + 0.22, sc, width=0.2, color=C_BENCH, label="conjunctive")
-    ax[1].set_ylabel("fraction of episodes"); ax[1].set_title("task vs identity")
-    ax[1].legend(frameon=False, fontsize=6)
+    fig, ax = plt.subplots(1, 4, figsize=(13.2, 2.8))
 
-    mA = [agg(a, lambda r: r["mean_actuators"]).mean() for a in arms]
-    ax[2].bar(x, mA, color=cols, width=0.66)
-    ax[2].set_ylabel("mean actuators"); ax[2].set_title("spend (budget-matched)")
+    for a_idx, (d, ttl, spend_ttl) in enumerate(
+            [(dm, "matched budget\n(spend varies by arm)", "spend (matched)"),
+             (dk, "fixed K\n(every arm spends the same)", "spend (fixed K)")]):
+        mH = [agg(d, a, lambda r: r["final_H_current"]).mean() for a in arms]
+        sH = [agg(d, a, lambda r: r["final_H_current"]).std() / max(1, len(d["episodes"])) ** 0.5
+              for a in arms]
+        ax[a_idx].bar(x, mH, yerr=sH, color=cols, width=0.66, capsize=2)
+        ax[a_idx].axhline(d["h_threshold"], color="k", lw=0.7, ls="--")
+        ax[a_idx].set_ylabel(r"final $H^*(I_t,t)$"); ax[a_idx].set_title(ttl, fontsize=8)
+        ax[a_idx].set_ylim(0, 1.05)
+
+    d = dk   # task-vs-identity and spend are shown for fixed-K, where spend is
+             # controlled and the comparison is therefore not confounded by it
+    tk = [agg(d, a, lambda r: r["score"]["task_met"]).mean() for a in arms]
+    iv = [agg(d, a, lambda r: r["score"]["identity_valid"]).mean() for a in arms]
+    sc = [agg(d, a, lambda r: r["score"]["success"]).mean() for a in arms]
+    ax[2].bar(x - 0.22, tk, width=0.2, color=C_MUTE, label="task met")
+    ax[2].bar(x, iv, width=0.2, color=C_OK, label="identity valid")
+    ax[2].bar(x + 0.22, sc, width=0.2, color=C_BENCH, label="conjunctive")
+    ax[2].set_ylabel("fraction of episodes"); ax[2].set_title("task vs identity\n(fixed K)", fontsize=8)
+    ax[2].legend(frameon=False, fontsize=6)
+
+    mAm = [agg(dm, a, lambda r: r["mean_actuators"]).mean() for a in arms]
+    mAk = [agg(dk, a, lambda r: r["mean_actuators"]).mean() for a in arms]
+    ax[3].bar(x - 0.18, mAm, width=0.32, color=cols, alpha=0.45, label="matched")
+    ax[3].bar(x + 0.18, mAk, width=0.32, color=cols, label="fixed K")
+    ax[3].set_ylabel("mean actuators"); ax[3].set_title("spend, both conventions", fontsize=8)
+    ax[3].legend(frameon=False, fontsize=6)
 
     for a in ax:
         a.set_xticks(x)

@@ -1,0 +1,11 @@
+merged 7 episodes -> closed_loop__fixedk.json
+
+==============================================================================
+arm                        meanH    succ  taskOK   valid   meanA
+full_model_benchmark       0.813    0.71    0.71    0.86    11.0
+adaptive_causal            0.741    0.43    0.71    0.71    11.0
+full_info_heuristic        0.752    0.86    0.86    0.86    11.0
+frozen_causal              0.603    0.29    0.57    0.71    11.0
+predictive                 0.316    0.14    0.14    0.71    11.0
+random_matched             0.532    0.14    0.29    0.57    11.0
+no_control                 0.130    0.00    0.00    0.86     0.0

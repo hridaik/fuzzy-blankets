@@ -59,6 +59,11 @@ def main():
     stage68_payload = stage68_path.read_text() if stage68_path.exists() else "null"
     stage69_path = DATA_DIR / "stage6_9_bundle.json"
     stage69_payload = stage69_path.read_text() if stage69_path.exists() else "null"
+    # Stage 6.10 "Steering & release" sub-view, third internal view of the same
+    # Dynamic Interfaces tab. Same convention again: one bundle, one generator
+    #   stage6_10_emergence_adaptive_control/code/export_demo_data_610.py
+    stage610_path = DATA_DIR / "stage6_10_bundle.json"
+    stage610_payload = stage610_path.read_text() if stage610_path.exists() else "null"
 
     template = (APP_DIR / "index.html").read_text()
     out = inline(template, "DEMO_DATA", demo_payload)
@@ -68,6 +73,7 @@ def main():
     out = inline(out, "STAGE67_DATA", stage67_payload)
     out = inline(out, "STAGE68_DATA", stage68_payload)
     out = inline(out, "STAGE69_DATA", stage69_payload)
+    out = inline(out, "STAGE610_DATA", stage610_payload)
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     out_path = BUILD_DIR / "index.html"
@@ -81,7 +87,8 @@ def main():
           f"landscape bundle {'included (' + str(n_snapshots) + ' snapshots)' if landscape_path.exists() else 'MISSING'}, "
           f"stage 6.7 bundle {'included' if stage67_path.exists() else 'MISSING'}, "
           f"stage 6.8 bundle {'included' if stage68_path.exists() else 'MISSING'}, "
-          f"stage 6.9 bundle {'included' if stage69_path.exists() else 'MISSING'})")
+          f"stage 6.9 bundle {'included' if stage69_path.exists() else 'MISSING'}, "
+          f"stage 6.10 bundle {'included' if stage610_path.exists() else 'MISSING'})")
 
 
 if __name__ == "__main__":

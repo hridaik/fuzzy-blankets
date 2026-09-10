@@ -60,7 +60,7 @@ forcing 50%. Saturating the interface deforms the collective rather than
 steering it harder — a property of the benchmark, found before any inference.
 
 **Methods separate on identity, not heading.** At identical spend, random
-actuation holds identity on 0.43 of episodes versus 0.86 for causally-selected
+actuation holds identity on 0.57 of episodes versus 0.86 for causally-selected
 actuation, failing mostly by `shrink-to-win`. Both move the heading; only one
 leaves the collective intact. A heading-only score sees none of this.
 
@@ -95,6 +95,8 @@ caught by an internal inconsistency, and each would have changed a headline.
 | 3 | Certified predictive boundary mostly empty | Predictive arm a silent clone of `no_control` | Arm produced zero actuators |
 | 4 | Gate tracked the **largest** candidate; Part I steers the **qualifying** one | Comparing on episodes selected for a different object | Benchmark met task on 4/7 of episodes admitted for ≥ 0.60 |
 | 5 | `_rank_by_influence` written against a matrix, given a dict | Crashed all 14 workers on arm 2, ~5h lost | The crash — no smoke test after patching |
+| 6 | Reimplemented gate drifted from Part I in pool/rollouts/seed simultaneously | Same class of defect as #4, recurring | Second concurrent session's own equivalence test |
+| 7 | Gate delegation initially shared Part I's random stream | Stratum success = 1.0 by construction, biasing every arm comparison in the benchmark's favour | Reading the delegating gate's own docstring |
 
 Defect 4 is the instructive one. The gate and the comparison each looked
 internally fine; only their *disagreement about the benchmark* revealed that

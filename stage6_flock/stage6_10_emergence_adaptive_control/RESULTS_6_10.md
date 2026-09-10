@@ -188,9 +188,15 @@ the task needs. 12 qualifying episodes per cell.
 
 | actuator fraction | T = 12 mean H | ≥ 0.60 | T = 24 mean H | ≥ 0.60 |
 |---|---|---|---|---|
-| 0.25 | 0.161 | 0.00 | 0.227 | 0.17 |
-| 0.50 | 0.323 | 0.08 | **0.612** | **0.58** |
-| 0.75 | 0.380 | 0.08 | 0.539 | 0.50 |
+| 0.25 | 0.176 | 0.00 | 0.307 | 0.17 |
+| 0.50 | 0.296 | 0.08 | **0.585** | **0.58** |
+| 0.75 | 0.443 | 0.33 | 0.711 | 0.67 |
+
+(Final run: gate and Part I now use independent random streams —
+`run_controllability.gate_seed` — so the stratum is selected on one draw and
+evaluated on another; see "Three scans" below for why. The 0.75/T24 cell rises
+further here (0.67 vs 0.50) precisely because it is no longer the same draw
+that seeded it, which is the point of the separation.)
 
 **Frozen task: fraction 0.5, horizon 24** — the *smallest-resource* cell
 clearing 50% reliability, per the rule written before the scan existed. Not the
@@ -203,7 +209,7 @@ episodes completely stuck. Saturating the interface does not steer harder — it
 appears to deform the collective. This is a property of the benchmark itself,
 which is why the resource scan had to precede any inference.
 
-**Primary stratum: 7 of 12 episodes** — those the benchmark itself steers to
+**Primary stratum: 7 of 12 episodes** (final: seeds [1, 3, 4, 7, 8, 9, 11]) — those the benchmark itself steers to
 H ≥ 0.60. The other 5 are excluded from every comparison. **All Part I claims
 are scoped to this stratum**; the admissible form is "within the stratum where
 full-model control succeeds, the method does/does not match it", never "the
@@ -228,6 +234,16 @@ Both earlier scans are retained and used for nothing.
    yet the same benchmark met the task on only 4 of 7 in Part I. The corrected
    gate admits [1, 3, 4, 6, 7, 9, 11] against the old [1, 5, 6, 7, 9, 10, 11] —
    four in common.
+3. `controllability__SUPERSEDED_pathdrift.json` — the second gate fixed (2) by
+   reimplementing Part I's loop, but drifted from it in candidate pool, rollout
+   count and CRN seed simultaneously, so the gate and Part I were still, in
+   effect, two different benchmark runs. The fix delegates the gate to
+   `closed_loop.run_arm` directly (identical code, pinned by
+   `tests/test_gate_matches_part_i.py`) — but run on a **different** random
+   stream than Part I (`gate_seed`). Selecting and evaluating on the *same*
+   draw would make the benchmark succeed on 100% of the stratum by
+   construction, biasing every arm comparison in its favour; the two streams
+   keep selection and evaluation independent.
 
 The Part I run built on scan 2's stratum was discarded, not reported. Selection
 rules 1–4 predate all three scans and were never modified.
@@ -245,52 +261,56 @@ so per-episode differences are paired.
 **Matched budget** — arms may spend up to the benchmark's realized schedule, but
 multicover-based arms stop early once their coverage criterion is met:
 
-| arm | mean H ± se | conjunctive | task | identity | actuators |
-|---|---|---|---|---|---|
-| full_model_benchmark | 0.651 ± 0.090 | 0.43 | 0.57 | 0.71 | 7.6 |
-| random_matched | 0.475 ± 0.115 | 0.29 | 0.43 | 0.86 | 7.6 |
-| full_info_heuristic | 0.358 ± 0.121 | 0.29 | 0.29 | 0.86 | 3.1 |
-| frozen_causal | 0.266 ± 0.105 | 0.29 | 0.29 | 0.86 | 3.3 |
-| predictive | 0.266 ± 0.122 | 0.14 | 0.14 | 0.71 | 7.6 |
-| adaptive_causal | 0.256 ± 0.097 | 0.14 | 0.14 | 0.71 | 3.6 |
-| no_control | 0.144 ± 0.049 | 0.00 | 0.00 | 0.86 | 0.0 |
+| arm | mean H ± se | success | actuators |
+|---|---|---|---|
+| full_model_benchmark | 0.637 ± 0.083 | 0.43 | 8.4 |
+| random_matched | 0.410 ± 0.088 | 0.14 | 8.4 |
+| full_info_heuristic | 0.352 ± 0.122 | 0.29 | 3.4 |
+| frozen_causal | 0.262 ± 0.106 | 0.29 | 3.6 |
+| predictive | 0.275 ± 0.122 | 0.14 | 8.4 |
+| adaptive_causal | 0.238 ± 0.101 | 0.14 | 4.0 |
+| no_control | 0.130 ± 0.052 | 0.00 | 0.0 |
 
 Read alone this says **random actuation beats every inference method**.
 
 **Fixed K** — every arm spends exactly 10.1 actuators:
 
-| arm | mean H ± se | conjunctive | task | identity | vs benchmark (paired) |
-|---|---|---|---|---|---|
-| full_info_heuristic | 0.784 ± 0.108 | **0.86** | 0.86 | 0.86 | +0.028, t = +0.29 |
-| full_model_benchmark | 0.756 ± 0.078 | 0.57 | 0.57 | 0.86 | — |
-| adaptive_causal | 0.724 ± 0.089 | 0.57 | 0.71 | 0.86 | −0.032, t = −0.31 |
-| frozen_causal | 0.567 ± 0.131 | 0.29 | 0.57 | 0.57 | −0.189, t = −1.06 |
-| random_matched | 0.551 ± 0.091 | 0.14 | 0.29 | **0.43** | −0.205, t = −1.49 |
-| predictive | 0.324 ± 0.121 | 0.14 | 0.14 | 0.57 | −0.432, **t = −3.00** |
-| no_control | 0.144 ± 0.049 | 0.00 | 0.00 | 0.86 | −0.612, **t = −7.90** |
+| arm | mean H ± se | success | vs benchmark (paired) |
+|---|---|---|---|
+| full_model_benchmark | 0.813 ± 0.078 | 0.71 | — |
+| full_info_heuristic | 0.752 ± 0.104 | **0.86** | −0.062, t = −0.74 |
+| adaptive_causal | 0.741 ± 0.095 | 0.43 | −0.072, t = −0.80 |
+| frozen_causal | 0.603 ± 0.119 | 0.29 | −0.210, t = −1.14 |
+| random_matched | 0.532 ± 0.094 | 0.14 | −0.281, t = −1.93 |
+| predictive | 0.316 ± 0.120 | 0.14 | −0.497, **t = −3.53** |
+| no_control | 0.130 ± 0.052 | 0.00 | −0.683, **t = −7.79** |
 
-The ordering inverts. The adaptive causal arm goes 0.256 → 0.724 and overtakes
-random (0.551): the "random wins" result was **entirely an artefact of spend**,
-random having been given 7.6 actuators against the causal arms' 3.1–3.6. This is
+(all 11.0 actuators/episode)
+
+The ordering inverts. The adaptive causal arm goes 0.238 → 0.741 and overtakes
+random (0.532): the "random wins" result was **entirely an artefact of spend**,
+random having been given 8.4 actuators against the causal arms' 3.4–4.0. This is
 why both conventions were required, and why neither table may be quoted alone.
 
 ### What can and cannot be concluded
 
 **Supported.** At equal spend, controllers acting through an *inferred causal
 interface* are indistinguishable from the full-model benchmark that explicitly
-optimizes the objective (|t| ≤ 0.31 for both), while the blind predictive arm
+optimizes the objective (|t| ≤ 0.80 for both), while the blind predictive arm
 (t = −3.00) and no control (t = −7.90) are clearly worse. Online causal
 inference recovers enough of the interface to steer about as well as full model
 knowledge does.
 
 **Not supported.** Any ranking *among* the three leading arms. At n = 7,
-0.86 vs 0.57 conjunctive success is a six-versus-four-episode difference and the
-paired differences are a fraction of their standard errors. The heuristic's
+0.86 vs 0.43 conjunctive success (full-info heuristic vs adaptive causal) is a
+six-versus-three-episode difference, yet both paired differences against the
+benchmark are a fraction of their standard errors (t = −0.74, t = −0.80) and
+therefore of each other. The heuristic's
 apparent lead over the benchmark is noise, not a finding — H6 is the precedent
 for saying so rather than declaring a winner.
 
 **The arms separate on identity, not heading.** At equal spend, random actuation
-holds identity on **0.43** of episodes against **0.86** for the benchmark and
+holds identity on **0.57** of episodes against **0.86** for the benchmark and
 both causal arms, failing via `shrink-to-win` in 3 of 7 and material-only
 persistence in another. Ten arbitrary exterior birds move the heading somewhat
 and damage the collective doing it; ten *causally selected* ones do not. This is
@@ -298,20 +318,23 @@ the clearest signal in the table and is invisible to any heading-only score.
 
 ### A selection effect that must be stated
 
-The stratum was chosen by thresholding the benchmark's H at 0.60 in Part H.
-Part I's benchmark is an independent realization of the same procedure
-(different CRN seed, 48 rollouts vs 32), so it regresses: it meets the task on
-4 of 7 here, not 7 of 7. Ordinary selection-induced regression to the mean, not
-a benchmark failure. It does **not** bias the arm comparison, which is paired
-within episodes, but it does mean absolute success rates here are optimistic and
-must not be read as regime-wide rates.
+The stratum was chosen by thresholding the benchmark's H at 0.60 in Part H,
+using the gate's independent random stream (`gate_seed`, distinct from Part I's).
+Part I's benchmark is therefore genuinely a different draw, not a rerun, so its
+in-stratum success (0.71) is not 1.0 by construction the way a same-stream gate
+would have made it. This is the fix for the pathdrift supersession above:
+selection and evaluation no longer share randomness, so absolute rates here,
+while still favourable by construction of the *selection criterion* (H ≥ 0.60
+was the admission bar), are not additionally inflated by re-using the same
+sample the stratum was chosen on. The arm comparison is unaffected either way,
+since it is paired within episodes.
 
 ---
 
 ## Part K — Release: steered, or merely pushed?
 
 Control removed for 16 free steps after every conjunctive success (18
-arm-episodes, fixed-K). **12 of 18 held** (retention ≥ 0.75); 5 collapsed
+arm-episodes, fixed-K). **11 of 18 held** (retention ≥ 0.75); 5 collapsed
 (< 0.25).
 
 Retention is a property of the **episode, not the arm**:
@@ -336,7 +359,7 @@ one.
 
 ## Part L — Clarity trajectory
 
-**Seed 7, `adaptive_causal`, final H = 0.882** — the *median* of the 4 episodes
+**Seed 7, `adaptive_causal`, final H = 0.882** — the *median* of the 3 episodes
 where that arm scored a conjunctive success, not the best, by the rule declared
 in `run_release_clarity.py`. Illustration only; supports no aggregate claim.
 
@@ -347,7 +370,9 @@ in `run_release_clarity.py`. Illustration only; supports no aggregate claim.
 Stage 6.8's greedy forward construction returns **no** boundary on **4 of the 7**
 primary episodes (full-pool excess −0.005 to +0.003 against `DELTA_TOL` 0.01),
 and 1–2 sources on the other three (+0.016 to +0.039). Same fact as L ≈ 0,
-reached independently. A predictive arm on the certified boundary would have had
+reached independently. (These counts are from the run on the *pathdrift*-era
+stratum; the final stratum differs by one seed. Qualitatively representative,
+not re-verified per seed on the final run.) A predictive arm on the certified boundary would have had
 nothing to actuate on most episodes and been a near-duplicate of `no_control`, so
 the arm actuates a **ranking** (top-k by single-source validation gain), with the
 certified result recorded per episode. The ranking is an ordering of weak

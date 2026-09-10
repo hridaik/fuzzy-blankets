@@ -82,3 +82,89 @@ decision gain have been successfully separated, which is the stated purpose of
 Sections M-N. If it does not, that is reported and the term is kept off.
 
 No parameter of it may be tuned on control success (Section V rule 6/7).
+
+================================================================
+ADDENDUM 1 -- 2026-09-09: the audit's HYPOTHESIS WAS NOT SUPPORTED
+Measured in logs/model_validation_611.txt / data/model_validation_611.json.
+================================================================
+This addendum corrects the section headed "LIKELY CONNECTION TO THE STAGE 6.9
+FAILURE" above. That paragraph proposed a causal chain:
+
+    no positional cohesion  ->  cohesion must be bought with interaction range
+                            ->  range raises realized degree
+                            ->  degree raises policy saturation
+                            ->  saturation destroys the causal interface.
+
+Two of those links are now measured, and BOTH fail.
+
+LINK "cohesion term reduces the range needed to bind" -- NOT SUPPORTED.
+  Sweep: compact-disc start, N=200, L=24, R in {0.4..1.2} x fc_pos in {0..4},
+  5 seeds. The largest improvement in radius of gyration at fixed R for
+  fc_pos <= 2 is 0.50, against an across-seed sd of 0.09-1.32 (SE up to 0.59):
+  every effect is inside noise, and the sign is inconsistent across cells
+  (d_rg = +0.30 at R=0.4/fc=2, -0.16 at R=0.5/fc=2). Spatial binding is set by
+  R alone -- the group disperses for R <= 0.5 and binds for R >= 0.9, with or
+  without the term. At fc_pos = 4 the term is actively HARMFUL: it overrides
+  alignment, the group loses its common heading, and realized degree collapses.
+  With 5 seeds this is "not detected at this power", not "no effect" -- but the
+  audit's chain cannot be asserted on it.
+
+LINK "degree raises decision gain, so normalizing degree lowers saturation"
+  -- NOT SUPPORTED, and the reason is structural.
+  Section N's degree normalization is a per-bird SCALAR rescale of G. But
+  `flock_sim.active_inference.policy_posterior` re-initializes W = 0 every
+  timestep for every bird and refits W = alpha / (spm_beta - sum(u*G)). In the
+  large-|G| regime where saturation lives, the c in W*(cG) cancels between
+  numerator and denominator, so the model ALREADY self-normalizes magnitude.
+  Measured: across realized degree 5.1 -> 25.8, mean max(u_t) spans 0.1095 raw
+  vs 0.1094 normalized -- indistinguishable. Degree sharpens the SHAPE of G
+  across the four actions; a scalar cannot touch shape.
+  At the Stage 6.9 operating degree, normalization with k_ref = 8 makes exact
+  saturation WORSE (0.635 -> 0.772), by equalizing per-bird |G| and pushing
+  low-degree birds into saturation faster than it pulls high-degree birds out.
+
+WHAT IS ACTUALLY TRUE, and it was not predicted here
+  The positional cohesion term does collapse saturation -- but by the mechanism
+  the audit did not consider, and while moving degree in the OPPOSITE direction
+  from the audit's chain. At matched R AND matched radius of gyration (R = 0.9:
+  Rg 3.85 -> 3.86), realized degree RISES 21.7 -> 25.8 while exact saturation
+  falls 0.842 -> 0.087. A more connected flock that is far less saturated is
+  the exact opposite of "range buys saturation".
+  Mechanism: cohesion adds a bearing-dependent contribution that differs across
+  the four candidate headings, so it changes the SHAPE of G rather than its
+  magnitude -- which is the thing precision self-tuning cannot normalize away.
+
+STATUS OF THE THREE INGREDIENT FINDINGS
+  Unchanged and independently re-derived (logs/audit_verification_611.txt),
+  with two refinements to my wording:
+   * Separation is CONDITIONAL, not positional: the -ca override fires on
+     (partner octant, partner heading, own heading) triples -- head-on collision
+     courses -- not on mere occupancy as I wrote.
+   * Ingredient 3's absence is EXACT and stronger than my argument: averaging
+     the full per-edge contribution over the partner's heading gives -4.778 in
+     all 32 (slot, action) cells. Knowing WHERE a partner is changes preferences
+     by exactly nothing. A weak positional dependence exists in the ambiguity
+     table alone and is exactly cancelled by the risk term.
+
+CONSEQUENCE FOR THE STAGE 6.11 PLAN
+  Sections M and N remain implemented and switchable, but their JUSTIFICATION
+  changes, and PLAN.md must not be read as if normalization solves saturation:
+   * Section N is retained as a labelled modelling variant. It must NOT be
+     described as a fix for Stage 6.9's saturation. It compresses the saturation
+     STATISTIC (span 0.243 -> 0.095 at k_ref=8, -> 0.000 at k_ref=1) without
+     changing the decision shape.
+   * The positional cohesion term is now the more interesting object, for a
+     reason nobody planned: it is a candidate route to a translating collective
+     that is cohesive AND unsaturated, i.e. one whose causal interface may be
+     inferable. Stage 6.9 could not have both. That is a HYPOTHESIS for Section
+     O's uncontrolled (R, v, fc_pos) scan to test, exactly as this one was --
+     and this addendum is what happens when such a hypothesis is wrong.
+  No parameter here was chosen against any control or inference outcome; none
+  exists yet for Stage 6.11.
+
+OPEN, carried into Section O
+  * k_ref is consequential for the saturation statistic (8 makes it worse, 1
+    takes it to zero) but not for decision shape. Section O must DECLARE the
+    choice in advance rather than inherit a default.
+  * The cohesion x normalization interaction on spatial binding is unmeasured.
+  * V4's Rg null is at 5 seeds; power is low.

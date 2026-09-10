@@ -1,10 +1,10 @@
-seed 4    full_model_benchmark   H=0.477 valid=False succ=False A=10.0 [550s]
-seed 4    adaptive_causal        H=0.676 valid=False succ=False A=10.0 [187s]
-seed 4    full_info_heuristic    H=0.143 valid=False succ=False A=10.0 [12s]
-seed 4    frozen_causal          H=0.837 valid=False succ=False A=10.0 [29s]
-seed 4    predictive             H=0.053 valid=True succ=False A=10.0 [6s]
-seed 4    random_matched         H=0.491 valid=False succ=False A=10.0 [6s]
-seed 4    no_control             H=0.033 valid=True succ=False A=0.0 [6s]
+seed 4    full_model_benchmark   H=0.477 valid=False succ=False A=10.0 [567s]
+seed 4    adaptive_causal        H=0.676 valid=False succ=False A=10.0 [194s]
+seed 4    full_info_heuristic    H=0.143 valid=False succ=False A=10.0 [10s]
+seed 4    frozen_causal          H=0.837 valid=False succ=False A=10.0 [37s]
+seed 4    predictive             H=0.053 valid=True succ=False A=10.0 [7s]
+seed 4    random_matched         H=0.491 valid=False succ=False A=10.0 [7s]
+seed 4    no_control             H=0.033 valid=True succ=False A=0.0 [8s]
 
 ==============================================================================
 arm                        meanH    succ  taskOK   valid   meanA

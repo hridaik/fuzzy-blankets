@@ -1,9 +1,9 @@
-seed 11   full_model_benchmark   H=0.385 valid=False succ=False A=8.2 [431s]
-seed 11   adaptive_causal        H=0.096 valid=True succ=False A=3.3 [200s]
-seed 11   full_info_heuristic    H=0.053 valid=True succ=False A=3.0 [17s]
-seed 11   frozen_causal          H=0.051 valid=True succ=False A=3.0 [38s]
-seed 11   predictive             H=0.037 valid=True succ=False A=8.2 [8s]
-seed 11   random_matched         H=0.485 valid=True succ=False A=8.2 [10s]
+seed 11   full_model_benchmark   H=0.385 valid=False succ=False A=8.2 [439s]
+seed 11   adaptive_causal        H=0.096 valid=True succ=False A=3.3 [206s]
+seed 11   full_info_heuristic    H=0.053 valid=True succ=False A=3.0 [15s]
+seed 11   frozen_causal          H=0.051 valid=True succ=False A=3.0 [37s]
+seed 11   predictive             H=0.037 valid=True succ=False A=8.2 [9s]
+seed 11   random_matched         H=0.485 valid=True succ=False A=8.2 [8s]
 seed 11   no_control             H=0.030 valid=True succ=False A=0.0 [10s]
 
 ==============================================================================

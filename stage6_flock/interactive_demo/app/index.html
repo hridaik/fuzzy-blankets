@@ -386,6 +386,31 @@
   .inference-identity .iiOverlayGrid label.iiToggle { font-size: 11.5px; }
   .inference-identity .iiOverlayGrid label.iiToggle.oracleTint span { color: var(--warn); }
   .inference-identity .iiTrace { width: 100%; height: 86px; display: block; }
+  /* Stage 6.10 walkthrough strip: the seven story beats, as timeline markers.
+     Reuses the iiViewBtn/iiBtn idiom at a smaller scale; adds no new colours. */
+  .inference-identity .iiPhaseStrip { display: flex; gap: 4px; flex-wrap: wrap; margin: 0 0 8px; }
+  .inference-identity button.iiPhaseChip { border: 1px solid var(--border); background: #fafaf9;
+    color: var(--muted); padding: 2px 7px; border-radius: 6px; font-size: 10.5px; cursor: pointer;
+    white-space: nowrap; }
+  .inference-identity button.iiPhaseChip:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+  .inference-identity button.iiPhaseChip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .inference-identity .iiPhaseNote { font-size: 11.5px; line-height: 1.45; margin: 0; }
+  /* The 6.10 header carries two extra rows (the seven-beat strip and the scope
+     caption). At the narrowest audited viewport (1100x720) the shared 320px
+     lattice floor would then push the controls past the Details bar, so this
+     view -- and only this view -- lets the lattice shrink further at that
+     width. The unqualified rule below is therefore left EXACTLY as it was;
+     the two min-width overrides only raise the floor on wider windows, where
+     there is headroom, so the lattice reads larger without reopening the
+     1100x720 overflow this rule exists to prevent. First-tier / no-media-match
+     is unchanged; each rule below wins only at or above its own breakpoint. */
+  .inference-identity svg.iiLattice.d10Lattice { min-height: 250px; }
+  @media (min-width: 1280px) {
+    .inference-identity svg.iiLattice.d10Lattice { min-height: 380px; }
+  }
+  @media (min-width: 1440px) {
+    .inference-identity svg.iiLattice.d10Lattice { min-height: 440px; }
+  }
 
   /* #iiTooltip is appended to document.body at runtime (outside .inference-identity),
      so this rule is intentionally NOT namespaced -- the #iiTooltip id is already unique. */
@@ -566,6 +591,7 @@ window.LANDSCAPE_DATA = /*__LANDSCAPE_DATA__*/ null /*__END_LANDSCAPE_DATA__*/;
 window.STAGE67_DATA = /*__STAGE67_DATA__*/ null /*__END_STAGE67_DATA__*/;
 window.STAGE68_DATA = /*__STAGE68_DATA__*/ null /*__END_STAGE68_DATA__*/;
 window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
+window.STAGE610_DATA = /*__STAGE610_DATA__*/ null /*__END_STAGE610_DATA__*/;
 </script>
 <script>
 (function(){
@@ -1202,6 +1228,12 @@ window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
       k: 1,                        // 6.9 frame index (frame 0 has no previous
                                    // frame, so R_F / D_deform are undefined there)
       playing9: false, timer9: null,
+      // ---- Stage 6.10 walkthrough (third internal view) ----
+      t10: 0,                      // absolute timestep on the single 6.10 timeline
+      beat: 0,                     // which of the seven story beats is selected
+      ov10: { struct: false, exdo: false },   // reference overlays -- OFF by default
+      playing10: false, timer10: null,
+      speed10: 350,               // ms per frame; default is slower than the fixed 180ms this view used before, plus a selector like the Control tab's
     },
   };
 
@@ -2632,7 +2664,7 @@ window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
   // Dynamic Interfaces — Stage 6.8 (fixed-lattice, time-varying interface)
   // and Stage 6.9 (moving collective). Both read frozen bundles produced by
   // export_demo_data_68.py / export_demo_data_69.py; nothing is simulated here.
-  const S68 = window.STAGE68_DATA, S69 = window.STAGE69_DATA;
+  const S68 = window.STAGE68_DATA, S69 = window.STAGE69_DATA, S610 = window.STAGE610_DATA;
   const DYN_COND_LABEL = { L0: "L0 fixed graph", L2: "L2 FOV", L3: "L3 FOV + gates", control: "Control" };
   const DYN_ARM_LABEL = {
     no_control: "No control", predictive: "Predictive", random_matched: "Matched random",
@@ -2643,7 +2675,8 @@ window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
     const st = ii.dynamic;
     if (st.timer) { clearInterval(st.timer); st.timer = null; }
     if (st.timer9) { clearInterval(st.timer9); st.timer9 = null; }
-    st.playing = false; st.playing9 = false;
+    if (st.timer10) { clearInterval(st.timer10); st.timer10 = null; }
+    st.playing = false; st.playing9 = false; st.playing10 = false;
   }
 
   function dynZ(str){ const n = str.length, a = new Array(n); for (let i=0;i<n;i++) a[i] = str.charCodeAt(i)-48; return a; }
@@ -2683,16 +2716,19 @@ window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
 
   function renderTabDynamic(){
     const st = ii.dynamic;
-    if (!S68 && !S69) {
+    if (!S68 && !S69 && !S610) {
       document.getElementById("iiBody").innerHTML =
-        `<p class="iiSubtake">Stage 6.8 / 6.9 visualization data not available in this build.</p>`;
+        `<p class="iiSubtake">Stage 6.8 / 6.9 / 6.10 visualization data not available in this build.</p>`;
       return;
     }
     const views = `<div class="iiDynViews">
         <button class="iiViewBtn ${st.view==='s68'?'active':''}" data-dynview="s68">6.8 Dynamic flock</button>
         <button class="iiViewBtn ${st.view==='s69'?'active':''}" data-dynview="s69">6.9 Translation pilot</button>
+        <button class="iiViewBtn ${st.view==='s610'?'active':''}" data-dynview="s610">6.10 Steering &amp; release</button>
       </div>`;
-    if (st.view === "s69") renderDyn69(views); else renderDyn68(views);
+    if (st.view === "s69") renderDyn69(views);
+    else if (st.view === "s610") renderDyn610(views);
+    else renderDyn68(views);
     document.querySelectorAll("[data-dynview]").forEach(b => b.addEventListener("click", () => {
       iiStopDynPlayback(); st.view = b.dataset.dynview; renderTabDynamic();
     }));
@@ -3153,6 +3189,348 @@ window.STAGE69_DATA = /*__STAGE69_DATA__*/ null /*__END_STAGE69_DATA__*/;
         candidates${sel.only_gate_passing ? " (gate-passing only)" : ""}.</p>
       <p style="font-size:11px;color:var(--muted);margin:0 0 8px;">${S69.provenance.replay_note}</p>
       <table class="iiTable"><thead><tr><th>seed</th><th>score</th>${(sel.metric_names||[]).map(m=>`<th>${m}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  // ----------------------------------------------------------- 6.10 view ----
+  // Stage 6.10, ONE illustrative episode: the Part L clarity trajectory (seed
+  // and arm taken from release__fixedk.json's `clarity_trajectory`, together
+  // with the declared selection rule and its caveat, both displayed).
+  //
+  // Everything drawn is decoded from the bundle. The client does set lookups
+  // (entered/left, membership, actuated) and never advances any dynamics: the
+  // headings come from a deterministic replay in export_demo_data_610.py that
+  // is asserted equal to the frozen result files, step by step.
+  //
+  // The blind/reference split is structural, not cosmetic. Blue interior,
+  // actuated nodes and H* are what the online-inferring controller produced.
+  // The structural interface B_t and the exact-do interface are REFERENCE
+  // objects computed with full model access; both are off by default, tinted
+  // with --warn like the 6.8 oracle toggles, and their sizes are not even
+  // reported until their overlay is switched on.
+  const DYN610_ARM_LABEL = {
+    full_model_benchmark: "Full-model benchmark", adaptive_causal: "Adaptive causal (inferred)",
+    full_info_heuristic: "Full-info heuristic", frozen_causal: "Frozen causal",
+    predictive: "Predictive", random_matched: "Matched random", no_control: "No control",
+  };
+
+  function d10Phases(){
+    const p = {}; (S610.phases || []).forEach(x => p[x.key] = x); return p;
+  }
+  // The seven story beats. Every timestep below is derived from the bundle's
+  // own protocol constants, never hand-placed.
+  function d10Beats(){
+    const E = S610.episode, p = d10Phases();
+    const T0 = E.t0, mid = Math.round((p.emergence.t_start + p.emergence.t_end) / 2);
+    return [
+      { k:"unstructured", label:"1 Unstructured", t:p.unstructured.t_start, note:p.unstructured.note },
+      { k:"emergence",    label:"2 Emergence",    t:mid,                    note:p.emergence.note },
+      { k:"detected",     label:"3 Detected thing", t:T0,                   note:p.detected.note },
+      { k:"interface",    label:"4 Dynamic interface", t:T0,
+        note:"The actuated set is the arm's own online causal inference, re-inferred during the "
+           + "run; it moves from step to step. The structural and exact-do interfaces are "
+           + "reference objects, off by default." },
+      { k:"target",       label:"5 Target introduced", t:T0,
+        note:`Target heading h* = ${HEAD_ARROWS[E.h_star]}, a 90° clockwise turn from the `
+           + `collective's own heading ${HEAD_ARROWS[E.h0]} at t = ${T0}. Fixed lattice: the `
+           + `turn is a HEADING turn, not a translation.` },
+      { k:"steering",     label:"6 Adaptive steering", t:T0 + 1, note:p.steering.note },
+      { k:"release",      label:"7 Release", t:p.release.t_start, note:p.release.note },
+    ];
+  }
+  // Which beat a given timestep belongs to when the user scrubs or plays.
+  // t0 carries beats 3-5 at once, so a beat already chosen there is kept.
+  function d10BeatOf(t, cur){
+    const E = S610.episode, p = d10Phases(), T0 = E.t0;
+    if (t < p.emergence.t_start) return 0;
+    if (t < T0) return 1;
+    if (t === T0) return (cur >= 2 && cur <= 4) ? cur : 2;
+    if (t < p.release.t_start) return 5;
+    return 6;
+  }
+
+  // One timestep's state, assembled from whichever stream owns it. Control
+  // wins at t0 (its step-0 interior IS the detected I0 -- the exporter asserts
+  // that), so the two streams never disagree on screen.
+  function d10At(t){
+    const E = S610.episode, T0 = E.t0, HZ = E.horizon;
+    if (t >= T0 && t < T0 + HZ) {
+      const k = t - T0, r = S610.control[k];
+      return { phase:"control", k, rec:r, I:r.I, prevI: k > 0 ? S610.control[k-1].I : null,
+               act:r.actuators };
+    }
+    if (t >= T0 + HZ) {
+      const k = t - (T0 + HZ), r = S610.release[k];
+      return { phase:"release", k, rec:r, I:r.I, prevI: k > 0 ? S610.release[k-1].I : null, act:[] };
+    }
+    const e = S610.emergence[t] || { t };
+    const prev = t > 0 ? (S610.emergence[t-1] || {}) : {};
+    return { phase:"emergence", k:t, rec:e, I:e.I || [], prevI: prev.I || null, act:[] };
+  }
+
+  function renderDyn610(viewsHtml){
+    const st = ii.dynamic;
+    if (!S610) { document.getElementById("iiBody").innerHTML = viewsHtml +
+      `<p class="iiSubtake">Stage 6.10 bundle not available in this build.</p>`; return; }
+    const E = S610.episode, lat = S610.lattice, T0 = E.t0, HZ = E.horizon;
+    const last = E.n_frames - 1;
+    const t = Math.min(Math.max(st.t10, 0), last);
+    const beats = d10Beats();
+    const beat = d10BeatOf(t, st.beat);
+    const at = d10At(t);
+    const z = dynZ(S610.frames[t]);
+    const Iset = new Set(at.I), prevSet = new Set(at.prevI || []);
+    const actSet = new Set(at.act);
+    const ov = st.ov10;
+    const inControl = at.phase === "control";
+    const Bst = (ov.struct && inControl) ? new Set(at.rec.B_struct) : new Set();
+    const Bdo = (ov.exdo && inControl) ? new Set(at.rec.B_do) : new Set();
+    const entered = at.prevI ? at.I.filter(x => !prevSet.has(x)).length : 0;
+    const left = at.prevI ? at.prevI.filter(x => !Iset.has(x)).length : 0;
+    const phaseName = at.phase === "control" ? "control on"
+                    : at.phase === "release" ? "control off" : "no control yet";
+
+    document.getElementById("iiBody").innerHTML = `
+      ${viewsHtml}
+      <p class="iiQuestion">Can a collective be found, turned 90°, and left to hold the turn?</p>
+      <p class="iiSubtake">One episode — seed ${E.seed}, ${DYN610_ARM_LABEL[E.arm] || E.arm},
+        fixed lattice, 90° heading turn ${HEAD_ARROWS[E.h0]} to ${HEAD_ARROWS[E.h_star]}.
+        <span class="iiRepNote">${S610.provenance.selection_rule} — see Details.</span></p>
+      <div class="iiPhaseStrip">
+        ${beats.map((b,i) => `<button class="iiPhaseChip ${beat===i?'active':''}" data-d10beat="${i}">${b.label}</button>`).join("")}
+      </div>
+      <p class="iiCaveatLine" style="margin:0 0 8px;">${S610.task.scope_line}</p>
+      <div class="iiMain">
+        <div class="iiGraphCol">
+          <svg class="iiLattice d10Lattice" id="d10Svg"></svg>
+          <div class="iiLegend" id="d10Legend"></div>
+          <div class="iiControls" style="margin-top:6px;">
+            <button class="tbtn" id="d10Restart" title="Restart">⏮</button>
+            <button class="tbtn" id="d10Back" title="Step back">◀</button>
+            <button class="tbtn" id="d10Play" title="Play/Pause">${st.playing10?"❚❚":"▶"}</button>
+            <button class="tbtn" id="d10Fwd" title="Step forward">▶|</button>
+            <input type="range" id="d10Slider" min="0" max="${last}" value="${t}" style="flex:1;">
+            <select id="d10Speed" title="Playback speed">
+              <option value="700" ${st.speed10===700?"selected":""}>0.5×</option>
+              <option value="350" ${st.speed10===350?"selected":""}>1×</option>
+              <option value="180" ${st.speed10===180?"selected":""}>2×</option>
+            </select>
+            <span style="font-size:11.5px;color:var(--muted);min-width:150px;">t = ${t} / ${last} · ${phaseName}</span>
+          </div>
+        </div>
+        <div class="iiSideCol">
+          <div class="iiTakeaway" style="margin-top:0;"><b>${beats[beat].label.replace(/^\d+\s/, "")}.</b>
+            <span class="iiPhaseNote">${beats[beat].note}</span></div>
+          <div class="iiCard">
+            <h4>Reference overlays</h4>
+            <div class="iiOverlayGrid">
+              <label class="iiToggle oracleTint"><input type="checkbox" id="d10OvB" ${ov.struct?"checked":""} ${inControl?"":"disabled"}><span>Structural interface B<sub>t</sub> (reference)</span></label>
+              <label class="iiToggle oracleTint"><input type="checkbox" id="d10OvD" ${ov.exdo?"checked":""} ${inControl?"":"disabled"}><span>Exact-do interface (reference)</span></label>
+            </div>
+            <p style="font-size:10.5px;color:var(--muted);margin:6px 0 0;">
+              Both are computed with full model access and are <b>not</b> available to the controller.
+              ${inControl?"":"Recorded during the control window only."}</p>
+          </div>
+          <div class="iiCard">
+            <h4>At t = ${t}</h4>
+            ${at.phase === "emergence" ? (at.rec.I ? `
+              <div class="iiStat"><span class="k">detected |I<sub>t</sub>|</span><span class="v">${at.rec.I.length}</span></div>
+              <div class="iiStat"><span class="k">internal coherence</span><span class="v">${at.rec.coh.toFixed(2)}</span></div>
+              <div class="iiStat"><span class="k">Q<sub>clump</sub></span><span class="v">${at.rec.q_clump.toFixed(2)}</span></div>
+              <div class="iiStat"><span class="k">candidates proposed</span><span class="v">${at.rec.n_cand}</span></div>`
+            : `<div class="iiStat"><span class="k">detected |I<sub>t</sub>|</span><span class="v">—</span></div>
+              <div class="iiStat"><span class="k">candidates proposed</span><span class="v">${at.rec.n_cand===undefined?"—":at.rec.n_cand}</span></div>
+              <p style="font-size:10.5px;color:var(--muted);margin:6px 0 0;">The detector's ${d10Phases().emergence.t_start}-step affinity window is not filled yet, so nothing is proposed.</p>`)
+            : at.phase === "control" ? `
+              <div class="iiStat"><span class="k">|I<sub>t</sub>|</span><span class="v">${at.rec.I_size}</span></div>
+              <div class="iiStat"><span class="k">H*(I<sub>t</sub>, t)</span><span class="v">${at.rec.H.toFixed(2)}</span></div>
+              <div class="iiStat"><span class="k">actuated now</span><span class="v">${at.rec.n_act}</span></div>
+              <div class="iiStat"><span class="k">entered / left</span><span class="v">${entered} / ${left}</span></div>
+              <div class="iiStat"><span class="k">Q<sub>clump</sub></span><span class="v">${at.rec.q_clump.toFixed(2)}</span></div>
+              ${(ov.struct||ov.exdo) ? `<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:5px;">
+                <div style="font-size:10.5px;color:var(--warn);margin-bottom:3px;">Reference (not inferred)</div>
+                ${ov.struct?`<div class="iiStat"><span class="k">|B<sub>t</sub>| structural</span><span class="v">${at.rec.B_struct.length}</span></div>`:""}
+                ${ov.exdo?`<div class="iiStat"><span class="k">|B<sub>t</sub>| exact-do</span><span class="v">${at.rec.B_do.length}</span></div>`:""}
+                ${(ov.struct&&ov.exdo)?`<div class="iiStat"><span class="k">symmetric difference</span><span class="v">${at.rec.B_symdiff}</span></div>`:""}
+              </div>`:""}`
+            : `
+              <div class="iiStat"><span class="k">|I<sub>t</sub>|</span><span class="v">${at.rec.I_size}</span></div>
+              <div class="iiStat"><span class="k">H*(I<sub>t</sub>, t)</span><span class="v">${at.rec.H.toFixed(2)}</span></div>
+              <div class="iiStat"><span class="k">Q<sub>clump</sub></span><span class="v">${at.rec.q_clump.toFixed(2)}</span></div>
+              <div class="iiStat"><span class="k">components</span><span class="v">${at.rec.n_components}</span></div>
+              <div class="iiStat"><span class="k">H / H at release</span><span class="v">${(at.rec.H / Math.max(1e-9, E.release.H_at_release)).toFixed(2)}</span></div>`}
+          </div>
+          <div class="iiCard">
+            <h4>Target fraction H*(I<sub>t</sub>, t)</h4>
+            <svg class="iiTrace" id="d10Trace" viewBox="0 0 300 92" preserveAspectRatio="none"></svg>
+            <p style="font-size:10.5px;color:var(--muted);margin:4px 0 0;">
+              Left of the divider: control on (${HZ} steps). Right: control off (${E.release_steps} steps).
+              Dotted line = the task threshold H ≥ ${S610.task.h_threshold}.
+              ${S610.no_control?"Faint grey: the same episode with no control.":""}</p>
+          </div>
+        </div>
+      </div>
+      ${iiDetails("Selection rule, provenance & full numbers", dyn610Details())}`;
+
+    // ---- draw the lattice
+    function roleFn(id){
+      let r;
+      if (actSet.has(id)) r = { fill:"var(--actuator)", stroke:"#8a1f1f", strokeWidth:2.2, glow:true };
+      else if (Iset.has(id)) {
+        r = (at.prevI && !prevSet.has(id))
+          ? { fill:"#2ea3a3", stroke:"#1c6e6e", strokeWidth:2.2 }                    // entered
+          : { fill:"var(--core)", stroke:"var(--core-stroke)", strokeWidth:2 };       // remained
+      } else if (at.prevI && prevSet.has(id)) {
+        r = { fill:"var(--exterior)", stroke:"#1c6e6e", strokeWidth:1.8 };            // left
+      } else r = { fill:"var(--exterior)", stroke:"var(--exterior-stroke)", dim:true };
+      if (Bst.has(id)) { r.halo = "var(--warn)"; r.haloWidth = 1.6; r.haloOpacity = 0.85; r.dim = false; }
+      if (Bdo.has(id)) { r.ring = "#4a4a4a"; r.dim = false; }
+      return r;
+    }
+    drawIILattice(document.getElementById("d10Svg"), {
+      lattice: lat, headings: z, roleFn, radius: 4.1, arrowScale: 2.35,
+      onHover: (id, ev) => {
+        const bits = [`<b>Bird ${id}</b>`, `Heading: ${HEAD_ARROWS[z[id]]}`,
+          `In collective: ${Iset.has(id)?"Yes":"No"}`];
+        if (actSet.has(id)) bits.push("Actuated this step");
+        if (Bst.has(id)) bits.push("In structural B<sub>t</sub> (reference)");
+        if (Bdo.has(id)) bits.push("In exact-do interface (reference)");
+        iiShowTooltip(ev, bits.join("<br>"));
+      },
+      onLeave: iiHideTooltip,
+    });
+    const leg = [iiLegendItem(iiDot("var(--core)"), at.phase==="emergence" ? "detected candidate" : "collective I(t)")];
+    if (at.prevI) {
+      leg.push(iiLegendItem(iiDot("#2ea3a3"), "entered this step"));
+      leg.push(iiLegendItem(`<span class="dot" style="background:var(--exterior);border-color:#1c6e6e"></span>`, "left this step"));
+    }
+    if (inControl) leg.push(iiLegendItem(iiDot("var(--actuator)"), "actuated this step"));
+    if (Bst.size) leg.push(iiLegendItem(`<span class="ring" style="border-color:var(--warn)"></span>`, "structural B<sub>t</sub> (reference)"));
+    if (Bdo.size) leg.push(iiLegendItem(`<span class="ring" style="border-color:#4a4a4a"></span>`, "exact-do interface (reference)"));
+    leg.push(iiLegendItem(iiDot("var(--exterior)"), "exterior"));
+    document.getElementById("d10Legend").innerHTML = leg.join("");
+
+    dyn610Trace(t);
+    dyn610Wire(last);
+  }
+
+  // Control and release on one axis, split by a divider: the release half is
+  // shaded and drawn in a second stroke so "held the turn" and "snapped back"
+  // are legible without reading the caption.
+  function dyn610Trace(t){
+    const svg = document.getElementById("d10Trace");
+    if (!svg) return;
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const E = S610.episode, W = 300, H = 92, pad = 6;
+    const ctrl = S610.control.map(r => r.H), rel = S610.release.map(r => r.H);
+    const n = ctrl.length + rel.length;
+    const X = i => pad + (n <= 1 ? 0 : i / (n - 1) * (W - 2 * pad));
+    const Y = v => H - pad - v * (H - 2 * pad);
+    const split = X(ctrl.length - 0.5);
+    svg.appendChild(svgEl("rect", { x: split, y: pad, width: (W - pad) - split, height: H - 2*pad,
+      fill: "#00000008" }));
+    // task threshold
+    svg.appendChild(svgEl("line", { x1: pad, y1: Y(S610.task.h_threshold), x2: W - pad,
+      y2: Y(S610.task.h_threshold), stroke: "var(--muted)", "stroke-width": 1, "stroke-dasharray": "2 3" }));
+    if (S610.no_control) {
+      svg.appendChild(svgEl("polyline", { fill: "none", stroke: "#d6d6d2", "stroke-width": 1,
+        points: S610.no_control.H.map((v,i) => `${X(i)},${Y(v)}`).join(" ") }));
+    }
+    svg.appendChild(svgEl("polyline", { fill: "none", stroke: "var(--accent)", "stroke-width": 2,
+      points: ctrl.map((v,i) => `${X(i)},${Y(v)}`).join(" ") }));
+    svg.appendChild(svgEl("polyline", { fill: "none", stroke: "var(--good)", "stroke-width": 2,
+      points: [`${X(ctrl.length-1)},${Y(ctrl[ctrl.length-1])}`]
+        .concat(rel.map((v,i) => `${X(ctrl.length+i)},${Y(v)}`)).join(" ") }));
+    svg.appendChild(svgEl("line", { x1: split, y1: pad, x2: split, y2: H - pad,
+      stroke: "var(--ink)", "stroke-width": 1 }));
+    const lbl = svgEl("text", { x: split + 3, y: H - pad - 3, "font-size": "8", fill: "var(--muted)" });
+    lbl.textContent = "control off";
+    svg.appendChild(lbl);
+    // playhead, only where the trace has a point for this timestep
+    let idx = null;
+    if (t >= E.t0 && t < E.t0 + E.horizon) idx = t - E.t0;
+    else if (t >= E.t0 + E.horizon) idx = ctrl.length + (t - E.t0 - E.horizon);
+    if (idx !== null) svg.appendChild(svgEl("line", { x1: X(idx), y1: pad, x2: X(idx), y2: H - pad,
+      stroke: "var(--ink)", "stroke-width": 1, "stroke-dasharray": "2 2" }));
+  }
+
+  function dyn610Details(){
+    const E = S610.episode, T = S610.task, P = S610.provenance, EN = S610.envelope;
+    const arms = Object.keys(S610.arm_summary || {});
+    const armRows = arms.map(a => `<tr><td>${DYN610_ARM_LABEL[a] || a}${a===E.arm?" ←":""}</td>
+      <td>${S610.arm_summary[a].final_H.toFixed(3)}</td>
+      <td>${S610.arm_summary[a].mean_actuators.toFixed(1)}</td>
+      <td>${S610.arm_summary[a].task_met?"yes":"no"}</td>
+      <td>${S610.arm_summary[a].identity_valid?"yes":"no"}</td></tr>`).join("");
+    const idn = E.identity || {};
+    const idRows = Object.keys(EN.lower).map(k =>
+      `<tr><td>${k}</td><td>${(idn[k]!==undefined?Number(idn[k]).toFixed(3):"—")}</td><td>≥ ${Number(EN.lower[k]).toFixed(3)}</td></tr>`)
+      .concat(Object.keys(EN.upper).map(k =>
+      `<tr><td>${k}</td><td>${(idn[k]!==undefined?Number(idn[k]).toFixed(3):"—")}</td><td>≤ ${Number(EN.upper[k]).toFixed(3)}</td></tr>`)).join("");
+    return `
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>Which episode, and why.</b>
+        ${P.selection_note} Rule: <i>${P.selection_rule}</i>. Chosen: seed ${E.seed},
+        arm ${DYN610_ARM_LABEL[E.arm] || E.arm}, final H = ${E.final_H.toFixed(3)}.
+        <b>${P.caveat}</b></p>
+      <p style="font-size:11.5px;color:var(--warn);margin:0 0 8px;"><b>Scope.</b> ${T.claim_scope}</p>
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>Task.</b> Frozen cell
+        ${T.cell_key} — actuator fraction ${T.frac}, horizon ${T.horizon}, task threshold
+        H ≥ ${T.h_threshold}; ${T.n_primary} of ${T.n_primary + T.n_excluded} qualifying episodes
+        form the primary stratum (${T.primary_episodes.join(", ")}), selected by ${T.selected_by}.
+        This episode used K = ${E.k_act} actuators per step, |I₀| = ${E.I0_size}.</p>
+      <p style="font-size:11.5px;color:#333;margin:0 0 8px;"><b>Release.</b>
+        H at release ${E.release.H_at_release.toFixed(3)} → ${E.release.H_final.toFixed(3)} after
+        ${E.release_steps} free steps (retention ${E.release.retention.toFixed(2)});
+        final |I| ${E.release.size_final}, Q<sub>clump</sub> ${E.release.q_final.toFixed(2)},
+        components ${E.release.comp_final}. Part K reports retention as a property of the episode,
+        not of the arm.</p>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 8px;">${P.replay_note}</p>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 8px;">${P.detector_note}</p>
+      <p style="font-size:11.5px;color:#333;margin:0 0 4px;"><b>Identity validity, this arm</b>
+        (envelope from ${EN.source}, horizon ${EN.horizon}, per-axis quantile ${EN.quantile}%,
+        joint pass on held-out uncontrolled lineages ${Number(EN.achieved_joint_pass).toFixed(2)}):
+        ${E.score.identity_valid ? "valid" : "INVALID"}${(E.score.failure_modes||[]).length?` — ${E.score.failure_modes.join(", ")}`:""}.</p>
+      <table class="iiTable"><thead><tr><th>axis</th><th>this episode</th><th>bound</th></tr></thead><tbody>${idRows}</tbody></table>
+      <p style="font-size:11.5px;color:#333;margin:10px 0 4px;"><b>All arms, this episode only</b>
+        (fixed-K convention). n = 1: this table ranks nothing.</p>
+      <table class="iiTable"><thead><tr><th>arm</th><th>final H</th><th>mean actuators</th><th>task met</th><th>identity valid</th></tr></thead><tbody>${armRows}</tbody></table>
+      <p style="font-size:11px;color:var(--muted);margin:8px 0 0;">Sources: ${P.sources.join(", ")}.
+        Regime nn ${P.regime.nn}, β ${P.regime.beta}, s ${P.regime.s}.</p>`;
+  }
+
+  function dyn610Wire(last){
+    const st = ii.dynamic;
+    const beats = d10Beats();
+    document.querySelectorAll("[data-d10beat]").forEach(b => b.addEventListener("click", () => {
+      iiStopDynPlayback();
+      const i = parseInt(b.dataset.d10beat, 10);
+      st.beat = i; st.t10 = Math.min(Math.max(beats[i].t, 0), last);
+      renderTabDynamic();
+    }));
+    const bind = (id, key) => { const el = document.getElementById(id);
+      if (el) el.addEventListener("change", e => { st.ov10[key] = e.target.checked; renderTabDynamic(); }); };
+    bind("d10OvB", "struct"); bind("d10OvD", "exdo");
+    const sl = document.getElementById("d10Slider");
+    if (sl) sl.addEventListener("input", e => { iiStopDynPlayback();
+      st.t10 = parseInt(e.target.value, 10); st.beat = d10BeatOf(st.t10, st.beat); renderTabDynamic(); });
+    const go = v => { st.t10 = Math.min(Math.max(v, 0), last); st.beat = d10BeatOf(st.t10, st.beat); };
+    const on = (id, fn) => { const el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
+    on("d10Restart", () => { iiStopDynPlayback(); go(0); renderTabDynamic(); });
+    on("d10Back", () => { iiStopDynPlayback(); go(st.t10 - 1); renderTabDynamic(); });
+    on("d10Fwd", () => { iiStopDynPlayback(); go(st.t10 + 1); renderTabDynamic(); });
+    on("d10Play", () => {
+      if (st.playing10) { iiStopDynPlayback(); renderTabDynamic(); return; }
+      st.playing10 = true;
+      st.timer10 = setInterval(() => { go(st.t10 >= last ? 0 : st.t10 + 1); renderTabDynamic(); }, st.speed10);
+      renderTabDynamic();
+    });
+    const spd = document.getElementById("d10Speed");
+    if (spd) spd.addEventListener("change", e => {
+      st.speed10 = parseInt(e.target.value, 10);
+      if (st.playing10) {                 // live-restart at the new rate rather than waiting for the next play press
+        clearInterval(st.timer10);
+        st.timer10 = setInterval(() => { go(st.t10 >= last ? 0 : st.t10 + 1); renderTabDynamic(); }, st.speed10);
+      }
+    });
   }
 
   // -------------------------------------------------------------- info panel

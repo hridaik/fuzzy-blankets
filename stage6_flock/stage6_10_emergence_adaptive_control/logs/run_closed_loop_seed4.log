@@ -1,5 +1,5 @@
-seed 4    full_model_benchmark   H=0.577 valid=True succ=False A=8.1 [1048s]
-seed 4    adaptive_causal        H=0.190 valid=True succ=False A=2.8 [107s]
+seed 4    full_model_benchmark   H=0.577 valid=True succ=False A=8.1 [1122s]
+seed 4    adaptive_causal        H=0.190 valid=True succ=False A=2.8 [106s]
 seed 4    full_info_heuristic    H=0.229 valid=True succ=False A=2.9 [8s]
 seed 4    frozen_causal          H=0.086 valid=True succ=False A=3.0 [22s]
 seed 4    predictive             H=0.276 valid=True succ=False A=8.1 [5s]

@@ -1,0 +1,83 @@
+================================================================
+STAGE 6.11 -- INDEPENDENT VERIFICATION OF THE SECTION M AUDIT
+Written while implementing moving_flock_611.py, before any 6.11 experiment.
+================================================================
+`logs/moving_model_audit.txt` was read as given and its three findings were
+re-derived from the frozen code rather than accepted. This file records the
+re-derivation, two refinements, and one quantitative confirmation that is
+stronger than the argument the audit itself gives. There is no finding I
+disagree with.
+
+----------------------------------------------------------------
+1. ALIGNMENT -- CONFIRMED, with a routing note
+----------------------------------------------------------------
+The audit cites flock_sim/model.py base_R():
+        R = fc * (UV4 @ UV4.T); np.fill_diagonal(R, vm)      # vm=4, fc=1
+Confirmed. Note for precision: R is not itself a reward over actions. It is
+passed through neighbor_likelihood() = softmax_cols(R, beta) to become
+A[o, s] = P(observe partner heading o | my heading s), which the diagonal makes
+peaked at o = s. Alignment reaches the decision through the Risk term, which
+compares A @ Bu[:, a] against a preference C peaked at the partner's LAST
+OBSERVED heading. The effect is as the audit describes -- match your partners'
+headings -- but "the diagonal rewards adopting the same heading" is a shorthand
+for a likelihood, not a payoff.
+
+----------------------------------------------------------------
+2. SEPARATION -- CONFIRMED, and it is CONDITIONAL, not positional
+----------------------------------------------------------------
+The audit cites SLOT_OVERRIDES setting R[o, s] = -ca. Confirmed; e.g. slot 0
+(partner directly above) overrides (o=1, s=0) = (partner observed heading DOWN,
+my heading UP), i.e. the head-on pair.
+
+REFINEMENT the audit does not state: the penalty is conditional on the
+PARTNER'S HEADING as well as on its octant. A partner directly above me that is
+heading up costs me nothing for heading up; only one that is heading down (into
+me) does. So this is a collision-course term, not an occupancy repulsion. That
+matters for ingredient 3, because it means the octant on its own -- the only
+positional information in the model -- carries no unconditional preference.
+
+----------------------------------------------------------------
+3. POSITIONAL COHESION -- CONFIRMED ABSENT, exactly
+----------------------------------------------------------------
+The audit argues from construction (base_R is built from an inner product of
+HEADING vectors; compute_G weights every live partner identically). Both checks
+reproduce. A sharper numerical statement is available and was measured:
+
+For each Moore slot, take the complete per-edge contribution the simulator adds
+to a bird's G, G_table[slot, a] + Risk_table[slot, a, h], and average it over
+the partner's heading h. The result, to printed precision:
+
+    slot        up        down      left      right
+    top        -4.778    -4.778    -4.778    -4.778
+    down       -4.778    -4.778    -4.778    -4.778
+    left       -4.778    -4.778    -4.778    -4.778
+    right      -4.778    -4.778    -4.778    -4.778
+    topleft    -4.778    -4.778    -4.778    -4.778
+    downright  -4.778    -4.778    -4.778    -4.778
+    downleft   -4.778    -4.778    -4.778    -4.778
+    topright   -4.778    -4.778    -4.778    -4.778
+
+Identical in every cell. Averaged over what the partner is doing, knowing WHERE
+the partner is changes a bird's preference over its four headings by exactly
+nothing. That is the audit's finding, stated as an equality rather than as an
+argument, and it is the gap `cohesion=fc_pos` fills.
+
+REFINEMENT: a weak positional dependence does exist before that average is
+taken. The ambiguity table G_table[slot, a] varies with slot -- for a partner
+at topleft it favours 'up' and 'left' equally, i.e. TOWARD the partner, by
+0.139 in expected-free-energy units (0.043 for the four axis-aligned slots).
+So there is a faint centering pressure in the model already. It is ~40x smaller
+than the risk term's ~5.7 scale it sits beside, and, as the table above shows,
+the Risk term cancels it exactly on average over the partner's heading. It does
+not change the audit's conclusion, but "no term depending on neighbours'
+positions" is true of the NET contribution, not of every table.
+
+----------------------------------------------------------------
+4. THE AUDIT'S HYPOTHESIS ABOUT STAGE 6.9 -- NOT VERIFIED HERE
+----------------------------------------------------------------
+The audit proposes that with alignment as the only binding force, cohesion must
+be bought with interaction range, and range buys saturation. That is a
+hypothesis and is treated as one. `run_model_validation.py` V4 tests its first
+half (does positional cohesion hold a group together at lower realized degree)
+and V3 tests the mechanism the second half assumes. Results, including where
+they do not support the hypothesis, are in logs/model_validation_611.txt.

@@ -1,1 +1,3 @@
 qualifying start states: 12 of 12 seeds
+frac=0.25  T=12  meanH=0.176 sd=0.148 >=hi:0.00 <=lo:0.33 meanA=3.8
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_10_emergence_adaptive_control/data/controllability__main__f0.25_T12.json
