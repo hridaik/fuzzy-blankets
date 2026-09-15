@@ -1,0 +1,72 @@
+{
+ "500": {
+  "n_frames": 108,
+  "qualified_t": 61,
+  "ended_phase": "release",
+  "consistency_mismatches": 0,
+  "n_unusual_transitions": 4,
+  "n_lineage_rebirths": 0,
+  "max_n_components_map": 24,
+  "frac_steps_ncomp_gt1": 1.0,
+  "mean_entropy": 0.9212907518974263,
+  "mean_margin": 0.45473629185280673,
+  "n_steps_with_exact_dup_hypotheses": 92,
+  "n_steps_with_near_dup_hypotheses": 0
+ },
+ "501": {
+  "n_frames": 77,
+  "qualified_t": 30,
+  "ended_phase": "release",
+  "consistency_mismatches": 0,
+  "n_unusual_transitions": 7,
+  "n_lineage_rebirths": 0,
+  "max_n_components_map": 22,
+  "frac_steps_ncomp_gt1": 0.9868421052631579,
+  "mean_entropy": 1.6327990348167631,
+  "mean_margin": 0.06418667077549607,
+  "n_steps_with_exact_dup_hypotheses": 74,
+  "n_steps_with_near_dup_hypotheses": 0
+ },
+ "502": {
+  "n_frames": 77,
+  "qualified_t": 30,
+  "ended_phase": "release",
+  "consistency_mismatches": 0,
+  "n_unusual_transitions": 7,
+  "n_lineage_rebirths": 0,
+  "max_n_components_map": 19,
+  "frac_steps_ncomp_gt1": 1.0,
+  "mean_entropy": 1.3659303091580253,
+  "mean_margin": 0.12495405422729891,
+  "n_steps_with_exact_dup_hypotheses": 51,
+  "n_steps_with_near_dup_hypotheses": 0
+ },
+ "503": {
+  "n_frames": 82,
+  "qualified_t": 35,
+  "ended_phase": "release",
+  "consistency_mismatches": 0,
+  "n_unusual_transitions": 9,
+  "n_lineage_rebirths": 0,
+  "max_n_components_map": 21,
+  "frac_steps_ncomp_gt1": 1.0,
+  "mean_entropy": 1.6193958237837842,
+  "mean_margin": 0.09967212401128951,
+  "n_steps_with_exact_dup_hypotheses": 75,
+  "n_steps_with_near_dup_hypotheses": 0
+ },
+ "504": {
+  "n_frames": 94,
+  "qualified_t": 47,
+  "ended_phase": "release",
+  "consistency_mismatches": 0,
+  "n_unusual_transitions": 2,
+  "n_lineage_rebirths": 0,
+  "max_n_components_map": 15,
+  "frac_steps_ncomp_gt1": 0.956989247311828,
+  "mean_entropy": 0.022309225024109317,
+  "mean_margin": 0.9816256759674667,
+  "n_steps_with_exact_dup_hypotheses": 0,
+  "n_steps_with_near_dup_hypotheses": 0
+ }
+}

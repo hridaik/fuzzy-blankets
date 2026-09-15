@@ -1,0 +1,6 @@
+seed 500: t_start=0, ref_size=23, n_steps=108
+seed 501: t_start=0, ref_size=25, n_steps=77
+seed 502: t_start=0, ref_size=24, n_steps=77
+seed 503: t_start=0, ref_size=25, n_steps=82
+seed 504: t_start=0, ref_size=31, n_steps=94
+wrote real replay results to /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/identity_foundation/phase2_results/real_replay_results.json

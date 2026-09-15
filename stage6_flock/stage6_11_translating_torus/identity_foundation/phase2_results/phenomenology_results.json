@@ -1,0 +1,624 @@
+[
+ {
+  "seed": 500,
+  "n_uncontrolled_frames": 61,
+  "n_labels_total": 28,
+  "n_still_alive": 28,
+  "n_terminated": 18,
+  "lifetimes": {
+   "L1": {
+    "birth_t": 40,
+    "death_t": 43,
+    "lifetime": 3,
+    "max_size": 29
+   },
+   "L2": {
+    "birth_t": 42,
+    "death_t": 43,
+    "lifetime": 1,
+    "max_size": 27
+   },
+   "L3": {
+    "birth_t": 42,
+    "death_t": 49,
+    "lifetime": 7,
+    "max_size": 33
+   },
+   "L4": {
+    "birth_t": 43,
+    "death_t": 49,
+    "lifetime": 6,
+    "max_size": 34
+   },
+   "L5": {
+    "birth_t": 46,
+    "death_t": 57,
+    "lifetime": 11,
+    "max_size": 36
+   },
+   "L6": {
+    "birth_t": 46,
+    "death_t": 57,
+    "lifetime": 11,
+    "max_size": 37
+   },
+   "L7": {
+    "birth_t": 49,
+    "death_t": 52,
+    "lifetime": 3,
+    "max_size": 46
+   },
+   "L8": {
+    "birth_t": 50,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 32
+   },
+   "L9": {
+    "birth_t": 51,
+    "death_t": 52,
+    "lifetime": 1,
+    "max_size": 32
+   },
+   "L10": {
+    "birth_t": 51,
+    "death_t": 52,
+    "lifetime": 1,
+    "max_size": 45
+   },
+   "L11": {
+    "birth_t": 51,
+    "death_t": 52,
+    "lifetime": 1,
+    "max_size": 23
+   },
+   "L12": {
+    "birth_t": 52,
+    "death_t": 54,
+    "lifetime": 2,
+    "max_size": 47
+   },
+   "L13": {
+    "birth_t": 52,
+    "death_t": 55,
+    "lifetime": 3,
+    "max_size": 33
+   },
+   "L14": {
+    "birth_t": 53,
+    "death_t": 54,
+    "lifetime": 1,
+    "max_size": 43
+   },
+   "L15": {
+    "birth_t": 53,
+    "death_t": 55,
+    "lifetime": 2,
+    "max_size": 34
+   },
+   "L16": {
+    "birth_t": 54,
+    "death_t": 56,
+    "lifetime": 2,
+    "max_size": 46
+   },
+   "L17": {
+    "birth_t": 55,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 36
+   },
+   "L18": {
+    "birth_t": 55,
+    "death_t": 56,
+    "lifetime": 1,
+    "max_size": 39
+   },
+   "L19": {
+    "birth_t": 55,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 31
+   },
+   "L20": {
+    "birth_t": 55,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 33
+   },
+   "L21": {
+    "birth_t": 56,
+    "death_t": 60,
+    "lifetime": 4,
+    "max_size": 54
+   },
+   "L22": {
+    "birth_t": 56,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 34
+   },
+   "L23": {
+    "birth_t": 57,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 48
+   },
+   "L24": {
+    "birth_t": 57,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 24
+   },
+   "L25": {
+    "birth_t": 57,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 22
+   },
+   "L26": {
+    "birth_t": 58,
+    "death_t": 60,
+    "lifetime": 2,
+    "max_size": 49
+   },
+   "L27": {
+    "birth_t": 58,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 45
+   },
+   "L28": {
+    "birth_t": 60,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 104
+   }
+  },
+  "event_log": [
+   {
+    "t": 40,
+    "type": "birth",
+    "label": "L1"
+   },
+   {
+    "t": 42,
+    "type": "birth",
+    "label": "L2"
+   },
+   {
+    "t": 42,
+    "type": "birth",
+    "label": "L3"
+   },
+   {
+    "t": 43,
+    "type": "merger",
+    "parents": [
+     "L1",
+     "L2"
+    ],
+    "child": "L4"
+   },
+   {
+    "t": 46,
+    "type": "birth",
+    "label": "L5"
+   },
+   {
+    "t": 46,
+    "type": "birth",
+    "label": "L6"
+   },
+   {
+    "t": 49,
+    "type": "merger",
+    "parents": [
+     "L3",
+     "L4"
+    ],
+    "child": "L7"
+   },
+   {
+    "t": 50,
+    "type": "birth",
+    "label": "L8"
+   },
+   {
+    "t": 51,
+    "type": "birth",
+    "label": "L9"
+   },
+   {
+    "t": 51,
+    "type": "birth",
+    "label": "L10"
+   },
+   {
+    "t": 51,
+    "type": "birth",
+    "label": "L11"
+   },
+   {
+    "t": 52,
+    "type": "merger",
+    "parents": [
+     "L7",
+     "L10"
+    ],
+    "child": "L12"
+   },
+   {
+    "t": 52,
+    "type": "merger",
+    "parents": [
+     "L9",
+     "L11"
+    ],
+    "child": "L13"
+   },
+   {
+    "t": 53,
+    "type": "birth",
+    "label": "L14"
+   },
+   {
+    "t": 53,
+    "type": "birth",
+    "label": "L15"
+   },
+   {
+    "t": 54,
+    "type": "merger",
+    "parents": [
+     "L12",
+     "L14"
+    ],
+    "child": "L16"
+   },
+   {
+    "t": 55,
+    "type": "merger",
+    "parents": [
+     "L13",
+     "L15"
+    ],
+    "child": "L17"
+   },
+   {
+    "t": 55,
+    "type": "birth",
+    "label": "L18"
+   },
+   {
+    "t": 55,
+    "type": "birth",
+    "label": "L19"
+   },
+   {
+    "t": 55,
+    "type": "birth",
+    "label": "L20"
+   },
+   {
+    "t": 56,
+    "type": "merger",
+    "parents": [
+     "L16",
+     "L18"
+    ],
+    "child": "L21"
+   },
+   {
+    "t": 56,
+    "type": "birth",
+    "label": "L22"
+   },
+   {
+    "t": 57,
+    "type": "merger",
+    "parents": [
+     "L5",
+     "L6"
+    ],
+    "child": "L23"
+   },
+   {
+    "t": 57,
+    "type": "birth",
+    "label": "L24"
+   },
+   {
+    "t": 57,
+    "type": "birth",
+    "label": "L25"
+   },
+   {
+    "t": 58,
+    "type": "birth",
+    "label": "L26"
+   },
+   {
+    "t": 58,
+    "type": "birth",
+    "label": "L27"
+   },
+   {
+    "t": 60,
+    "type": "merger",
+    "parents": [
+     "L21",
+     "L26"
+    ],
+    "child": "L28"
+   }
+  ]
+ },
+ {
+  "seed": 501,
+  "n_uncontrolled_frames": 30,
+  "n_labels_total": 0,
+  "n_still_alive": 0,
+  "n_terminated": 0,
+  "lifetimes": {},
+  "event_log": []
+ },
+ {
+  "seed": 502,
+  "n_uncontrolled_frames": 30,
+  "n_labels_total": 2,
+  "n_still_alive": 2,
+  "n_terminated": 0,
+  "lifetimes": {
+   "L1": {
+    "birth_t": 27,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 15
+   },
+   "L2": {
+    "birth_t": 29,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 25
+   }
+  },
+  "event_log": [
+   {
+    "t": 27,
+    "type": "birth",
+    "label": "L1"
+   },
+   {
+    "t": 29,
+    "type": "birth",
+    "label": "L2"
+   }
+  ]
+ },
+ {
+  "seed": 503,
+  "n_uncontrolled_frames": 35,
+  "n_labels_total": 5,
+  "n_still_alive": 5,
+  "n_terminated": 2,
+  "lifetimes": {
+   "L1": {
+    "birth_t": 19,
+    "death_t": 25,
+    "lifetime": 6,
+    "max_size": 38
+   },
+   "L2": {
+    "birth_t": 20,
+    "death_t": 25,
+    "lifetime": 5,
+    "max_size": 37
+   },
+   "L3": {
+    "birth_t": 25,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 46
+   },
+   "L4": {
+    "birth_t": 26,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 46
+   },
+   "L5": {
+    "birth_t": 34,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 17
+   }
+  },
+  "event_log": [
+   {
+    "t": 19,
+    "type": "birth",
+    "label": "L1"
+   },
+   {
+    "t": 20,
+    "type": "birth",
+    "label": "L2"
+   },
+   {
+    "t": 25,
+    "type": "merger",
+    "parents": [
+     "L1",
+     "L2"
+    ],
+    "child": "L3"
+   },
+   {
+    "t": 26,
+    "type": "birth",
+    "label": "L4"
+   },
+   {
+    "t": 34,
+    "type": "birth",
+    "label": "L5"
+   }
+  ]
+ },
+ {
+  "seed": 504,
+  "n_uncontrolled_frames": 47,
+  "n_labels_total": 12,
+  "n_still_alive": 12,
+  "n_terminated": 6,
+  "lifetimes": {
+   "L1": {
+    "birth_t": 24,
+    "death_t": 38,
+    "lifetime": 14,
+    "max_size": 34
+   },
+   "L2": {
+    "birth_t": 33,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 46
+   },
+   "L3": {
+    "birth_t": 35,
+    "death_t": 40,
+    "lifetime": 5,
+    "max_size": 29
+   },
+   "L4": {
+    "birth_t": 35,
+    "death_t": 40,
+    "lifetime": 5,
+    "max_size": 18
+   },
+   "L5": {
+    "birth_t": 36,
+    "death_t": 38,
+    "lifetime": 2,
+    "max_size": 37
+   },
+   "L6": {
+    "birth_t": 38,
+    "death_t": 45,
+    "lifetime": 7,
+    "max_size": 40
+   },
+   "L7": {
+    "birth_t": 39,
+    "death_t": 45,
+    "lifetime": 6,
+    "max_size": 34
+   },
+   "L8": {
+    "birth_t": 40,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 25
+   },
+   "L9": {
+    "birth_t": 40,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 28
+   },
+   "L10": {
+    "birth_t": 42,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 46
+   },
+   "L11": {
+    "birth_t": 45,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 40
+   },
+   "L12": {
+    "birth_t": 46,
+    "death_t": null,
+    "lifetime": null,
+    "max_size": 37
+   }
+  },
+  "event_log": [
+   {
+    "t": 24,
+    "type": "birth",
+    "label": "L1"
+   },
+   {
+    "t": 33,
+    "type": "birth",
+    "label": "L2"
+   },
+   {
+    "t": 35,
+    "type": "birth",
+    "label": "L3"
+   },
+   {
+    "t": 35,
+    "type": "birth",
+    "label": "L4"
+   },
+   {
+    "t": 36,
+    "type": "birth",
+    "label": "L5"
+   },
+   {
+    "t": 38,
+    "type": "merger",
+    "parents": [
+     "L1",
+     "L5"
+    ],
+    "child": "L6"
+   },
+   {
+    "t": 39,
+    "type": "birth",
+    "label": "L7"
+   },
+   {
+    "t": 40,
+    "type": "merger",
+    "parents": [
+     "L3",
+     "L4"
+    ],
+    "child": "L8"
+   },
+   {
+    "t": 40,
+    "type": "birth",
+    "label": "L9"
+   },
+   {
+    "t": 42,
+    "type": "birth",
+    "label": "L10"
+   },
+   {
+    "t": 45,
+    "type": "merger",
+    "parents": [
+     "L6",
+     "L7"
+    ],
+    "child": "L11"
+   },
+   {
+    "t": 46,
+    "type": "birth",
+    "label": "L12"
+   }
+  ]
+ }
+]

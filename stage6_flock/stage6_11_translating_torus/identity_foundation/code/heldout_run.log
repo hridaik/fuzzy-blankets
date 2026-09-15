@@ -1,0 +1,18 @@
+[heldout] two_clumps done, elapsed 111.2s
+[heldout] crossing done, elapsed 244.6s
+[heldout] superposition_two_distinct done, elapsed 362.8s
+[heldout] actual_merger done, elapsed 511.3s
+[heldout] symmetric_split done, elapsed 639.7s
+[heldout] growth done, elapsed 709.9s
+[heldout] contraction done, elapsed 767.9s
+[heldout] torus_seam done, elapsed 830.3s
+[heldout] missed_then_continue done, elapsed 881.0s
+[heldout] rapid_motion done, elapsed 923.8s
+[heldout] full_turnover done, elapsed 998.0s
+[heldout] lookalike_death done, elapsed 1041.5s
+[heldout] density_change done, elapsed 1097.4s
+[heldout] shape_compact done, elapsed 1128.3s
+[heldout] shape_elongated done, elapsed 1184.4s
+[heldout] shape_disconnected done, elapsed 1220.9s
+[heldout] ambiguous_symmetric done, elapsed 1290.8s
+wrote 354 records to /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_11_translating_torus/identity_foundation/phase2_results/heldout_results.json in 1290.8s

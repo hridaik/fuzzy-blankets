@@ -1,0 +1,192 @@
+/* Design tokens: extends the original interactive_demo/app/index.html palette.
+   Core tokens (--bg,--panel,--ink,--muted,--border,--accent,--core*,--shell*,
+   --exterior*,--actuator*,--fiedler,--good,--bad,--warn,--seriesA/B) are
+   copied verbatim so role colors mean the same thing as the v1 demo.
+   New tokens (--predictive,--controlif*,--target,--oracle) fill gaps the v1
+   demo never needed a dedicated color for (see VISUALIZATION_NOTES.md). */
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --ink: #1c1e21; --muted: #6b7280;
+  --border: #e3e3e0; --accent: #2563eb;
+  --core: #6fa3e0; --core-stroke: #1f4e8c;
+  --shell: #f0a868; --shell-stroke: #b5601c;
+  --exterior: #d7d7d3; --exterior-stroke: #aaaaa4;
+  --actuator: #d64545; --actuator-stroke: #8a1f1f;
+  --fiedler: #d4a72c;
+  --good: #1e8f5f; --bad: #c22b2b; --warn: #b5601c;
+  --seriesA: #2563eb; --seriesB: #d64545;
+  /* new, v2-only roles */
+  --predictive: #2a9d8f;      /* predictive/spectral candidate boundary B^pred */
+  --controlif: #7c5cbf; --controlif-stroke: #4d3585;  /* task/control interface B^C */
+  --target: #14802e;          /* target heading -- deliberately distinct from every interface color */
+  --oracle: #4a4a4a;          /* oracle / reference overlay, subordinate, normally off */
+  --recruited: #2ea3a3; --recruited-stroke: #1c6e6e;  /* entered the interior this step (matches v1 demo's "recruited" teal) */
+  --departed: #c77d1e;                                 /* left the interior this step -- deliberately far from --controlif's violet */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 13px; }
+body { padding-inline: 0; }
+button { font-family: inherit; }
+svg text { font-family: inherit; }
+
+#app { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ---------------------------------------------------------------- header */
+header#top { display: flex; align-items: center; gap: 14px; padding: 9px 18px;
+  background: var(--panel); border-bottom: 1px solid var(--border); flex-wrap: nowrap; }
+header#top h1 { font-size: 14.5px; font-weight: 600; margin: 0; white-space: nowrap; flex-shrink: 0; }
+header#top .spacer { flex: 1; min-width: 8px; }
+button.chip { border: 1px solid var(--border); background: var(--panel); color: var(--ink);
+  padding: 5px 10px; border-radius: 6px; font-size: 12px; cursor: pointer; flex-shrink: 0; }
+button.chip:hover { border-color: var(--accent); color: var(--accent); }
+button.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* --------------------------------------------------------------- rail --- */
+#progressRail { display: flex; align-items: center; gap: 0; padding: 7px 18px;
+  background: #fbfbf9; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.railStep { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.railDot { width: 9px; height: 9px; border-radius: 50%; background: var(--exterior);
+  border: 1.5px solid var(--exterior-stroke); flex-shrink: 0; }
+.railLabel { font-size: 10.5px; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap;
+  text-transform: uppercase; padding: 2px 4px; }
+.railStep.active .railDot { background: var(--accent); border-color: var(--accent); }
+.railStep.active .railLabel { color: var(--accent); font-weight: 700; }
+.railStep.done .railDot { background: #dbe9ff; border-color: var(--accent); }
+.railStep.done .railLabel { color: var(--accent); }
+.railArrow { color: var(--border); font-size: 11px; padding: 0 6px; flex-shrink: 0; }
+
+/* --------------------------------------------------------------- tabs --- */
+#tabNav { display: flex; gap: 2px; padding: 0 18px; background: var(--panel);
+  border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tabBtn { border: none; background: none; color: var(--muted); padding: 9px 13px;
+  font-size: 12.5px; font-weight: 600; cursor: pointer; border-bottom: 2.5px solid transparent;
+  white-space: nowrap; }
+.tabBtn:hover { color: var(--ink); }
+.tabBtn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* -------------------------------------------------------------- legend - */
+#legend { display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto; font-size: 10.5px;
+  color: var(--muted); padding: 6px 18px; background: var(--panel); border-bottom: 1px solid var(--border);
+  scrollbar-width: none; }
+#legend::-webkit-scrollbar { display: none; }
+.swatch { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 1.5px solid #0002; }
+.ring { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 2px solid; background: transparent; }
+.tri { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-bottom: 10px solid; display: inline-block; }
+
+/* -------------------------------------------------------------- main --- */
+#main { flex: 1; display: flex; min-width: 0; }
+.tabPanel[hidden] { display: none; }
+.tabPanel { flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 12px 16px; gap: 10px; }
+.qHeader { font-size: 15px; font-weight: 600; margin: 0; }
+.qCaption { font-size: 11.5px; color: var(--muted); margin: 0 0 2px; }
+.panelBody { flex: 1; display: flex; gap: 14px; min-height: 0; flex-wrap: wrap; }
+.stageWrap { flex: 2 1 480px; min-width: 320px; display: flex; flex-direction: column; gap: 8px; }
+.sideWrap { flex: 1 1 260px; min-width: 240px; display: flex; flex-direction: column; gap: 10px; }
+
+.card { border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; background: var(--panel); }
+.card h3 { font-size: 11.5px; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
+.card .metric { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; padding: 2px 0; }
+.card .metric b { font-variant-numeric: tabular-nums; }
+
+svg.stageSvg { width: 100%; height: auto; aspect-ratio: 1 / 1; background: #fcfcfb;
+  border: 1px solid var(--border); border-radius: 8px; }
+.scanBadge { position: absolute; top: 10px; left: 10px; font-size: 10.5px; color: var(--muted);
+  background: #fff9; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border); }
+.stageBox { position: relative; }
+
+/* ----------------------------------------------------------- timeline -- */
+/* This single node is physically moved (via JS) into whichever tab's
+   .timelineSlot is active, so controls sit with the visualization -- see
+   Viz.TL.bind in shared.js. Styled like a card since it now lives inline. */
+footer#timeline { display: flex; align-items: center; gap: 8px; padding: 7px 11px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px; }
+footer#timeline[hidden] { display: none; }
+.timelineSlot:empty { display: none; }
+#timelineGraveyard { display: none; }
+.tbtn { border: 1px solid var(--border); background: var(--panel); border-radius: 6px;
+  padding: 4px 9px; font-size: 13px; cursor: pointer; }
+.tbtn:hover { border-color: var(--accent); }
+#timeWrap { flex: 1; position: relative; display: flex; align-items: center; min-width: 80px; }
+#timeSlider { width: 100%; }
+.phaseMarks { position: absolute; inset: 0; pointer-events: none; }
+.phaseMark { position: absolute; top: -3px; width: 2px; height: 8px; background: var(--muted); opacity: 0.55; }
+#tDisplay { font-variant-numeric: tabular-nums; font-size: 12px; min-width: 54px; text-align: right; }
+select.speedSel { border: 1px solid var(--border); border-radius: 6px; font-size: 11.5px; padding: 3px 5px; background: var(--panel); }
+#phaseBadge { font-size: 10.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px;
+  background: #111; color: #fff; letter-spacing: 0.03em; white-space: nowrap; }
+#phaseBadge.control { background: var(--warn); }
+#phaseBadge.release, #phaseBadge.steering { background: var(--good); }
+#phaseBadge.scanning, #phaseBadge.unstructured, #phaseBadge.emergence { background: #6b7280; }
+
+/* ---------------------------------------------------------------- next - */
+.nextRow { display: flex; justify-content: flex-end; padding-top: 2px; }
+.nextBtn { border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 7px;
+  padding: 7px 14px; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.nextBtn:hover { filter: brightness(1.08); }
+
+/* -------------------------------------------------------------- drawer - */
+#provDrawer { position: fixed; top: 0; right: 0; width: min(380px, 92vw); height: 100vh;
+  background: var(--panel); border-left: 1px solid var(--border); box-shadow: -8px 0 24px rgba(0,0,0,.14);
+  transform: translateX(100%); transition: transform .18s ease; z-index: 50; overflow-y: auto; padding: 16px; }
+#provDrawer.open { transform: translateX(0); }
+#provOverlay { position: fixed; inset: 0; background: rgba(0,0,0,.18); z-index: 49; display: none; }
+#provOverlay.open { display: block; }
+#provDrawer h2 { font-size: 14px; margin: 0 0 10px; }
+#provDrawer .provRow { font-size: 11.5px; line-height: 1.55; margin-bottom: 12px; }
+#provDrawer .provRow .k { color: var(--muted); text-transform: uppercase; font-size: 9.5px; letter-spacing: .04em; }
+#provDrawer code { background: #eee; padding: 1px 4px; border-radius: 3px; font-size: 10.5px; }
+#provDrawer .closeBtn { position: absolute; top: 10px; right: 10px; }
+
+/* --------------------------------------------------------------- misc -- */
+.methodSelect { display: flex; gap: 6px; flex-wrap: wrap; }
+.methodChip { border: 1px solid var(--border); background: var(--panel); border-radius: 999px;
+  padding: 5px 11px; font-size: 11.5px; cursor: pointer; }
+.methodChip:hover { border-color: var(--accent); }
+.methodChip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.moreToggle { font-size: 11px; color: var(--accent); cursor: pointer; background: none; border: none; padding: 3px 0; text-align: left; }
+.axisRow { display: flex; gap: 10px; align-items: center; font-size: 11.5px; }
+select.axisSel { border: 1px solid var(--border); border-radius: 6px; padding: 3px 5px; font-size: 11.5px; }
+
+.tooltipBox { position: fixed; pointer-events: none; background: #111; color: #fff; font-size: 11px;
+  padding: 6px 9px; border-radius: 6px; z-index: 100; line-height: 1.5; max-width: 220px; }
+
+.worldPair { display: flex; gap: 10px; flex-wrap: wrap; }
+.worldPair > div { flex: 1 1 240px; min-width: 220px; }
+.frameLabel { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+.narrowToggle { display: none; }
+@media (max-width: 760px) {
+  .narrowToggle { display: flex; gap: 6px; margin-bottom: 6px; }
+  .worldPair > div.hiddenNarrow { display: none; }
+}
+
+.processStrip { display: flex; gap: 4px; font-size: 10.5px; }
+.processStep { padding: 4px 9px; border-radius: 6px; background: #eee; color: var(--muted); white-space: nowrap; }
+.processStep.active { background: var(--accent); color: #fff; font-weight: 700; }
+
+.footnote { font-size: 10px; color: var(--muted); border-left: 2px solid var(--border); padding-left: 8px; margin-top: 6px; }
+
+.targetBadge { display: flex; align-items: center; gap: 8px; }
+.targetBadge .arrow { width: 30px; height: 30px; border-radius: 50%; background: color-mix(in srgb, var(--target) 15%, transparent);
+  display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--target); flex-shrink: 0; }
+.targetBadge .lbl { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+
+.scanCaption { font-size: 10.5px; color: var(--muted); padding: 5px 9px; background: #fbfbf9;
+  border: 1px dashed var(--border); border-radius: 7px; }
+.scanCaption b { color: var(--ink); }
+
+.previewBanner { display: flex; align-items: center; gap: 8px; font-size: 11px; padding: 5px 9px;
+  background: #f4f1fb; border: 1px solid #ddd3f2; border-radius: 7px; }
+.previewBanner button { margin-left: auto; }
+
+.miniThumb:hover { background: #f7f7f5; }
+.miniThumb.active { border-color: var(--accent) !important; background: #eef2ff; }
+
+@media (max-width: 760px) {
+  .panelBody { flex-direction: column; }
+  .worldPair { flex-direction: column; }
+  header#top h1 { font-size: 12.5px; }
+}

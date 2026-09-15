@@ -1,0 +1,4551 @@
+{
+ "500": [
+  {
+   "t": 61,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 62,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 63,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 64,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 65,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 66,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 67,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 68,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 69,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    68,
+    107,
+    125,
+    131,
+    147,
+    173,
+    253,
+    285
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "68": null,
+    "107": null,
+    "125": null,
+    "131": null,
+    "147": null,
+    "173": null,
+    "253": null,
+    "285": null
+   }
+  },
+  {
+   "t": 70,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 71,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 72,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 73,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 74,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 75,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 76,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 77,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 78,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    35,
+    54,
+    125,
+    173,
+    253,
+    285,
+    306
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "35": null,
+    "54": null,
+    "125": null,
+    "173": null,
+    "253": null,
+    "285": null,
+    "306": null
+   }
+  },
+  {
+   "t": 79,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    173,
+    275,
+    304
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 3,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "173": null,
+    "275": 87,
+    "304": null
+   }
+  },
+  {
+   "t": 80,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    173,
+    275,
+    304
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 3,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "173": null,
+    "275": 87,
+    "304": null
+   }
+  },
+  {
+   "t": 81,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    173,
+    275,
+    304
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 3,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "173": null,
+    "275": 87,
+    "304": null
+   }
+  },
+  {
+   "t": 82,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    173,
+    275,
+    304
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 3,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "173": null,
+    "275": 87,
+    "304": null
+   }
+  },
+  {
+   "t": 83,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    173,
+    275,
+    304
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 3,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "173": null,
+    "275": 87,
+    "304": null
+   }
+  },
+  {
+   "t": 84,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 85,
+   "phase": "release",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 86,
+   "phase": "release",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 87,
+   "phase": "release",
+   "interior_size": 34,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 88,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 89,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 90,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 91,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 92,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 93,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 94,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 95,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 96,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 97,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 98,
+   "phase": "release",
+   "interior_size": 39,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 99,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 100,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 101,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 102,
+   "phase": "release",
+   "interior_size": 40,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 103,
+   "phase": "release",
+   "interior_size": 42,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 104,
+   "phase": "release",
+   "interior_size": 42,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 105,
+   "phase": "release",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 106,
+   "phase": "release",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 107,
+   "phase": "release",
+   "interior_size": 40,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  }
+ ],
+ "501": [
+  {
+   "t": 30,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": 33,
+    "9": null,
+    "11": null,
+    "24": 34,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 31,
+   "phase": "control",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": 33,
+    "9": null,
+    "11": null,
+    "24": 34,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 32,
+   "phase": "control",
+   "interior_size": 23,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": 33,
+    "9": null,
+    "11": null,
+    "24": 34,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 33,
+   "phase": "control",
+   "interior_size": 23,
+   "B_D_size": 2,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [
+    8
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 1,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "9": null,
+    "11": null,
+    "24": 34,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 34,
+   "phase": "control",
+   "interior_size": 23,
+   "B_D_size": 5,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [
+    8,
+    24
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 2,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "9": null,
+    "11": null,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 35,
+   "phase": "control",
+   "interior_size": 23,
+   "B_D_size": 6,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [
+    8,
+    24
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 2,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "9": null,
+    "11": null,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 36,
+   "phase": "control",
+   "interior_size": 46,
+   "B_D_size": 2,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": null,
+    "9": null,
+    "11": null,
+    "24": null,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 37,
+   "phase": "control",
+   "interior_size": 40,
+   "B_D_size": 1,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": null,
+    "9": null,
+    "11": null,
+    "24": null,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 38,
+   "phase": "control",
+   "interior_size": 40,
+   "B_D_size": 1,
+   "actuators": [
+    2,
+    8,
+    9,
+    11,
+    24,
+    28,
+    34,
+    80
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "8": null,
+    "9": null,
+    "11": null,
+    "24": null,
+    "28": 64,
+    "34": null,
+    "80": null
+   }
+  },
+  {
+   "t": 39,
+   "phase": "control",
+   "interior_size": 40,
+   "B_D_size": 1,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 40,
+   "phase": "control",
+   "interior_size": 40,
+   "B_D_size": 1,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 41,
+   "phase": "control",
+   "interior_size": 28,
+   "B_D_size": 1,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 42,
+   "phase": "control",
+   "interior_size": 26,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 43,
+   "phase": "control",
+   "interior_size": 26,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 44,
+   "phase": "control",
+   "interior_size": 25,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 45,
+   "phase": "control",
+   "interior_size": 25,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 46,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 47,
+   "phase": "control",
+   "interior_size": 25,
+   "B_D_size": 0,
+   "actuators": [
+    65,
+    2,
+    28,
+    31,
+    34,
+    59,
+    80,
+    92
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "65": 67,
+    "2": 66,
+    "28": 64,
+    "31": null,
+    "34": null,
+    "59": null,
+    "80": null,
+    "92": null
+   }
+  },
+  {
+   "t": 48,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    23,
+    28,
+    34,
+    55,
+    65,
+    72,
+    79
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "23": null,
+    "28": 64,
+    "34": null,
+    "55": null,
+    "65": 67,
+    "72": null,
+    "79": null
+   }
+  },
+  {
+   "t": 49,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    23,
+    28,
+    34,
+    55,
+    65,
+    72,
+    79
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "23": null,
+    "28": 64,
+    "34": null,
+    "55": null,
+    "65": 67,
+    "72": null,
+    "79": null
+   }
+  },
+  {
+   "t": 50,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    23,
+    28,
+    34,
+    55,
+    65,
+    72,
+    79
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "23": null,
+    "28": 64,
+    "34": null,
+    "55": null,
+    "65": 67,
+    "72": null,
+    "79": null
+   }
+  },
+  {
+   "t": 51,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    23,
+    28,
+    34,
+    55,
+    65,
+    72,
+    79
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "23": null,
+    "28": 64,
+    "34": null,
+    "55": null,
+    "65": 67,
+    "72": null,
+    "79": null
+   }
+  },
+  {
+   "t": 52,
+   "phase": "control",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [
+    2,
+    23,
+    28,
+    34,
+    55,
+    65,
+    72,
+    79
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "2": 66,
+    "23": null,
+    "28": 64,
+    "34": null,
+    "55": null,
+    "65": 67,
+    "72": null,
+    "79": null
+   }
+  },
+  {
+   "t": 53,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 54,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 55,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 56,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 57,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 58,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 59,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 60,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 61,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 62,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 63,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 64,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 65,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 8,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 66,
+   "phase": "release",
+   "interior_size": 31,
+   "B_D_size": 10,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 67,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 11,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 68,
+   "phase": "release",
+   "interior_size": 41,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 69,
+   "phase": "release",
+   "interior_size": 41,
+   "B_D_size": 9,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 70,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 71,
+   "phase": "release",
+   "interior_size": 38,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 72,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 73,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 74,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 75,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 76,
+   "phase": "release",
+   "interior_size": 34,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  }
+ ],
+ "502": [
+  {
+   "t": 30,
+   "phase": "control",
+   "interior_size": 21,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": 31,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 31,
+   "phase": "control",
+   "interior_size": 12,
+   "B_D_size": 1,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [
+    234
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 1,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 32,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 33,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 34,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 35,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 36,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 37,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 38,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    378,
+    234,
+    24,
+    60,
+    79,
+    84,
+    99,
+    109
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "378": null,
+    "234": null,
+    "24": null,
+    "60": null,
+    "79": null,
+    "84": null,
+    "99": null,
+    "109": null
+   }
+  },
+  {
+   "t": 39,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 40,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 41,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 42,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 43,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 44,
+   "phase": "control",
+   "interior_size": 20,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 45,
+   "phase": "control",
+   "interior_size": 26,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 46,
+   "phase": "control",
+   "interior_size": 26,
+   "B_D_size": 1,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 47,
+   "phase": "control",
+   "interior_size": 20,
+   "B_D_size": 0,
+   "actuators": [
+    14,
+    212,
+    352,
+    364
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 4,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "14": null,
+    "212": null,
+    "352": null,
+    "364": null
+   }
+  },
+  {
+   "t": 48,
+   "phase": "control",
+   "interior_size": 27,
+   "B_D_size": 0,
+   "actuators": [
+    27,
+    39,
+    55,
+    62,
+    76,
+    109,
+    147,
+    212
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "27": null,
+    "39": null,
+    "55": null,
+    "62": null,
+    "76": null,
+    "109": null,
+    "147": null,
+    "212": null
+   }
+  },
+  {
+   "t": 49,
+   "phase": "control",
+   "interior_size": 27,
+   "B_D_size": 0,
+   "actuators": [
+    27,
+    39,
+    55,
+    62,
+    76,
+    109,
+    147,
+    212
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "27": null,
+    "39": null,
+    "55": null,
+    "62": null,
+    "76": null,
+    "109": null,
+    "147": null,
+    "212": null
+   }
+  },
+  {
+   "t": 50,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    27,
+    39,
+    55,
+    62,
+    76,
+    109,
+    147,
+    212
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "27": null,
+    "39": null,
+    "55": null,
+    "62": null,
+    "76": null,
+    "109": null,
+    "147": null,
+    "212": null
+   }
+  },
+  {
+   "t": 51,
+   "phase": "control",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [
+    27,
+    39,
+    55,
+    62,
+    76,
+    109,
+    147,
+    212
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "27": null,
+    "39": null,
+    "55": null,
+    "62": null,
+    "76": null,
+    "109": null,
+    "147": null,
+    "212": null
+   }
+  },
+  {
+   "t": 52,
+   "phase": "control",
+   "interior_size": 19,
+   "B_D_size": 0,
+   "actuators": [
+    27,
+    39,
+    55,
+    62,
+    76,
+    109,
+    147,
+    212
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "27": null,
+    "39": null,
+    "55": null,
+    "62": null,
+    "76": null,
+    "109": null,
+    "147": null,
+    "212": null
+   }
+  },
+  {
+   "t": 53,
+   "phase": "release",
+   "interior_size": 20,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 54,
+   "phase": "release",
+   "interior_size": 14,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 55,
+   "phase": "release",
+   "interior_size": 14,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 56,
+   "phase": "release",
+   "interior_size": 14,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 57,
+   "phase": "release",
+   "interior_size": 21,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 58,
+   "phase": "release",
+   "interior_size": 20,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 59,
+   "phase": "release",
+   "interior_size": 24,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 60,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 61,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 62,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 63,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 64,
+   "phase": "release",
+   "interior_size": 24,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 65,
+   "phase": "release",
+   "interior_size": 25,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 66,
+   "phase": "release",
+   "interior_size": 27,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 67,
+   "phase": "release",
+   "interior_size": 23,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 68,
+   "phase": "release",
+   "interior_size": 34,
+   "B_D_size": 14,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 69,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 14,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 70,
+   "phase": "release",
+   "interior_size": 22,
+   "B_D_size": 6,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 71,
+   "phase": "release",
+   "interior_size": 27,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 72,
+   "phase": "release",
+   "interior_size": 27,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 73,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 74,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 75,
+   "phase": "release",
+   "interior_size": 27,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 76,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 4,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  }
+ ],
+ "503": [
+  {
+   "t": 35,
+   "phase": "control",
+   "interior_size": 21,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 36,
+   "phase": "control",
+   "interior_size": 21,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 37,
+   "phase": "control",
+   "interior_size": 15,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 38,
+   "phase": "control",
+   "interior_size": 15,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 39,
+   "phase": "control",
+   "interior_size": 15,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 40,
+   "phase": "control",
+   "interior_size": 15,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 41,
+   "phase": "control",
+   "interior_size": 16,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 42,
+   "phase": "control",
+   "interior_size": 16,
+   "B_D_size": 0,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 43,
+   "phase": "control",
+   "interior_size": 42,
+   "B_D_size": 11,
+   "actuators": [
+    8,
+    9,
+    39,
+    46,
+    54,
+    81,
+    93,
+    107
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "8": null,
+    "9": null,
+    "39": null,
+    "46": null,
+    "54": null,
+    "81": null,
+    "93": null,
+    "107": null
+   }
+  },
+  {
+   "t": 44,
+   "phase": "control",
+   "interior_size": 38,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 45,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 46,
+   "phase": "control",
+   "interior_size": 37,
+   "B_D_size": 2,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 47,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 48,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 49,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 50,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 51,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 52,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    290,
+    66,
+    79,
+    222,
+    297,
+    330,
+    384,
+    287
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "290": null,
+    "66": null,
+    "79": null,
+    "222": null,
+    "297": null,
+    "330": null,
+    "384": null,
+    "287": null
+   }
+  },
+  {
+   "t": 53,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    50,
+    152,
+    190,
+    225,
+    232,
+    267,
+    273
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "50": null,
+    "152": null,
+    "190": null,
+    "225": null,
+    "232": null,
+    "267": null,
+    "273": null
+   }
+  },
+  {
+   "t": 54,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    50,
+    152,
+    190,
+    225,
+    232,
+    267,
+    273
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "50": null,
+    "152": null,
+    "190": null,
+    "225": null,
+    "232": null,
+    "267": null,
+    "273": null
+   }
+  },
+  {
+   "t": 55,
+   "phase": "control",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    50,
+    152,
+    190,
+    225,
+    232,
+    267,
+    273
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "50": null,
+    "152": null,
+    "190": null,
+    "225": null,
+    "232": null,
+    "267": null,
+    "273": null
+   }
+  },
+  {
+   "t": 56,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    50,
+    152,
+    190,
+    225,
+    232,
+    267,
+    273
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "50": null,
+    "152": null,
+    "190": null,
+    "225": null,
+    "232": null,
+    "267": null,
+    "273": null
+   }
+  },
+  {
+   "t": 57,
+   "phase": "control",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    50,
+    152,
+    190,
+    225,
+    232,
+    267,
+    273
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "50": null,
+    "152": null,
+    "190": null,
+    "225": null,
+    "232": null,
+    "267": null,
+    "273": null
+   }
+  },
+  {
+   "t": 58,
+   "phase": "release",
+   "interior_size": 32,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 59,
+   "phase": "release",
+   "interior_size": 32,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 60,
+   "phase": "release",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 61,
+   "phase": "release",
+   "interior_size": 32,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 62,
+   "phase": "release",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 63,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 64,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 65,
+   "phase": "release",
+   "interior_size": 26,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 66,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 67,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 68,
+   "phase": "release",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 69,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 70,
+   "phase": "release",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 71,
+   "phase": "release",
+   "interior_size": 31,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 72,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 73,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 74,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 75,
+   "phase": "release",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 76,
+   "phase": "release",
+   "interior_size": 33,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 77,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 78,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 79,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 80,
+   "phase": "release",
+   "interior_size": 36,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 81,
+   "phase": "release",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  }
+ ],
+ "504": [
+  {
+   "t": 47,
+   "phase": "control",
+   "interior_size": 28,
+   "B_D_size": 11,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [
+    278,
+    110,
+    65,
+    99,
+    232
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 5,
+   "non_parent_actuators_first_become_parent_at": {
+    "345": null,
+    "152": null,
+    "43": 48
+   }
+  },
+  {
+   "t": 48,
+   "phase": "control",
+   "interior_size": 27,
+   "B_D_size": 17,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [
+    278,
+    110,
+    65,
+    99,
+    43,
+    232
+   ],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 6,
+   "non_parent_actuators_first_become_parent_at": {
+    "345": null,
+    "152": null
+   }
+  },
+  {
+   "t": 49,
+   "phase": "control",
+   "interior_size": 48,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 50,
+   "phase": "control",
+   "interior_size": 48,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 51,
+   "phase": "control",
+   "interior_size": 48,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 52,
+   "phase": "control",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 53,
+   "phase": "control",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 54,
+   "phase": "control",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 55,
+   "phase": "control",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [
+    278,
+    345,
+    110,
+    65,
+    152,
+    99,
+    43,
+    232
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "278": null,
+    "345": null,
+    "110": null,
+    "65": null,
+    "152": null,
+    "99": null,
+    "43": null,
+    "232": null
+   }
+  },
+  {
+   "t": 56,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 57,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 58,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 59,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 60,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 61,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 62,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 63,
+   "phase": "control",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 64,
+   "phase": "control",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [
+    46,
+    66,
+    87,
+    91,
+    135,
+    148,
+    197,
+    225
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "46": null,
+    "66": null,
+    "87": null,
+    "91": null,
+    "135": null,
+    "148": null,
+    "197": null,
+    "225": null
+   }
+  },
+  {
+   "t": 65,
+   "phase": "control",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [
+    9,
+    46,
+    53,
+    55,
+    64,
+    66,
+    75,
+    87
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "9": null,
+    "46": null,
+    "53": null,
+    "55": null,
+    "64": null,
+    "66": null,
+    "75": null,
+    "87": null
+   }
+  },
+  {
+   "t": 66,
+   "phase": "control",
+   "interior_size": 34,
+   "B_D_size": 0,
+   "actuators": [
+    9,
+    46,
+    53,
+    55,
+    64,
+    66,
+    75,
+    87
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "9": null,
+    "46": null,
+    "53": null,
+    "55": null,
+    "64": null,
+    "66": null,
+    "75": null,
+    "87": null
+   }
+  },
+  {
+   "t": 67,
+   "phase": "control",
+   "interior_size": 35,
+   "B_D_size": 0,
+   "actuators": [
+    9,
+    46,
+    53,
+    55,
+    64,
+    66,
+    75,
+    87
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "9": null,
+    "46": null,
+    "53": null,
+    "55": null,
+    "64": null,
+    "66": null,
+    "75": null,
+    "87": null
+   }
+  },
+  {
+   "t": 68,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [
+    9,
+    46,
+    53,
+    55,
+    64,
+    66,
+    75,
+    87
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "9": null,
+    "46": null,
+    "53": null,
+    "55": null,
+    "64": null,
+    "66": null,
+    "75": null,
+    "87": null
+   }
+  },
+  {
+   "t": 69,
+   "phase": "control",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [
+    9,
+    46,
+    53,
+    55,
+    64,
+    66,
+    75,
+    87
+   ],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 8,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {
+    "9": null,
+    "46": null,
+    "53": null,
+    "55": null,
+    "64": null,
+    "66": null,
+    "75": null,
+    "87": null
+   }
+  },
+  {
+   "t": 70,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 71,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 72,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 73,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 74,
+   "phase": "release",
+   "interior_size": 30,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 75,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 76,
+   "phase": "release",
+   "interior_size": 29,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 77,
+   "phase": "release",
+   "interior_size": 41,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 78,
+   "phase": "release",
+   "interior_size": 43,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 79,
+   "phase": "release",
+   "interior_size": 43,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 80,
+   "phase": "release",
+   "interior_size": 42,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 81,
+   "phase": "release",
+   "interior_size": 45,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 82,
+   "phase": "release",
+   "interior_size": 45,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 83,
+   "phase": "release",
+   "interior_size": 45,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 84,
+   "phase": "release",
+   "interior_size": 45,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 85,
+   "phase": "release",
+   "interior_size": 47,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 86,
+   "phase": "release",
+   "interior_size": 47,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 87,
+   "phase": "release",
+   "interior_size": 47,
+   "B_D_size": 3,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 88,
+   "phase": "release",
+   "interior_size": 46,
+   "B_D_size": 2,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 89,
+   "phase": "release",
+   "interior_size": 45,
+   "B_D_size": 1,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 90,
+   "phase": "release",
+   "interior_size": 26,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 91,
+   "phase": "release",
+   "interior_size": 26,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 92,
+   "phase": "release",
+   "interior_size": 28,
+   "B_D_size": 5,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  },
+  {
+   "t": 93,
+   "phase": "release",
+   "interior_size": 27,
+   "B_D_size": 0,
+   "actuators": [],
+   "actuators_that_are_direct_parents": [],
+   "n_actuators": 0,
+   "n_actuators_direct_parent": 0,
+   "non_parent_actuators_first_become_parent_at": {}
+  }
+ ]
+}
