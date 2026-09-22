@@ -18,6 +18,19 @@ decimals (torus side length 24.0, so this is sub-visual-pixel precision) and
 per-frame records are restricted to the fields the viewer actually renders.
 No interpolation, no invented frames -- one JSON record per recorded
 timestep.
+
+2026-09-21 evidence-recovery audit addition (instrumentation only, no
+tracker/controller change): each frame after the first now also carries a
+`material_retention` block -- R_old, R_new, Jaccard overlap, and
+retained/lost/gained bird-ID counts between this frame's `interior` and the
+PREVIOUS frame's `interior`, computed directly from those two already-present
+membership lists. This is the same quantity, computed the same way, as
+`stage6_11_translating_torus/audit/evidence_recovery_20260921/code/
+derive_material_retention.py`'s `*_displayed` columns (frame-to-frame, not
+the tracker's internal per-branch bookkeeping -- see that script's docstring
+for why the two differ at cross-branch MAP-switch points). No threshold for
+"unusually large" discontinuity is hard-coded; the raw numbers are exposed
+and the UI marks only the unambiguous overlap==0 case.
 """
 import json
 from pathlib import Path
@@ -55,19 +68,42 @@ for seed in SEEDS:
             events.append(e)
 
     frames = []
+    prev_interior = None
     for f in viz["frames"]:
         t = f["t"]
+        interior = f["interior"]
+        retention = None
+        if prev_interior is not None:
+            i_prev, i_cur = set(prev_interior), set(interior)
+            overlap = len(i_prev & i_cur)
+            union = len(i_prev | i_cur)
+            retention = {
+                "R_old": (overlap / len(i_prev)) if i_prev else None,
+                "R_new": (overlap / len(i_cur)) if i_cur else None,
+                "jaccard": (overlap / union) if union else None,
+                "n_retained": overlap,
+                "n_lost": len(i_prev) - overlap,
+                "n_gained": len(i_cur) - overlap,
+                "prev_size": len(i_prev),
+                "cur_size": len(i_cur),
+                "retained_ids": sorted(i_prev & i_cur),
+                "lost_ids": sorted(i_prev - i_cur),
+                "gained_ids": sorted(i_cur - i_prev),
+                "overlap_zero": overlap == 0,
+            }
         frames.append({
             "t": t,
             "r": [[round(x, 3), round(y, 3)] for x, y in f["r"]],
             "z": f["z"],
             "phase": f["phase"],
-            "interior": f["interior"],
+            "interior": interior,
             "actuators": f["actuators"],
             "B_C": bc_by_t.get(t, []),
             "target_heading": f["target_heading"],
             "centre": f["centre"],
+            "material_retention": retention,
         })
+        prev_interior = interior
 
     frac_trace = [{"t": t, "frac": frac} for t, frac in sorted(frac_by_t.items())]
 
@@ -94,6 +130,15 @@ out = {
             "confirmatory control result."
         ),
         "audit_location": "stage6_11_translating_torus/audit/ (FIVE_SEED_CAUSAL_ADJUDICATION.md, RESULTS_6_11B.md) -- cited, not displayed",
+        "material_retention_note": (
+            "Added 2026-09-21 (evidence-recovery audit, Step 1). Each frame's "
+            "material_retention block is R_old/R_new/Jaccard/retained/lost/gained "
+            "between this frame's interior and the previous frame's interior, computed "
+            "directly from the recorded membership lists -- diagnostic instrumentation "
+            "only, no tracker/controller logic changed. No validated 'unusually large "
+            "discontinuity' threshold exists in the repository; only the unambiguous "
+            "overlap==0 case is marked in the UI."
+        ),
     },
     "seed_order": SEEDS,
     "seeds": seeds_out,

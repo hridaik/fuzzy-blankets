@@ -111,6 +111,67 @@
       <div class="metric"><span>phase</span><b>${f.phase}</b></div>
       <div class="metric"><span>B^C / actuators</span><b>${f.B_C.length} / ${f.actuators.length}</b></div>
     `;
+    drawRetention(f);
+    drawForwardTrace(f);
+  }
+
+  /* Step-2 addition (2026-09-21): ForwardMaterialTrace611 comparator panel.
+     Deliberately simple, material-overlap-only audit tracker, frozen from
+     independent uncontrolled-data calibration -- shown alongside v1, never
+     replacing it. When it disagrees with v1's displayed interior, the
+     frame is marked prominently, per the task's explicit instruction not
+     to hide identity disagreement. */
+  function drawForwardTrace(f) {
+    const el = document.getElementById("t6ForwardTrace");
+    const ft = f.forward_material_trace;
+    if (!ft) {
+      el.innerHTML = `<p class="footnote">No forward-material-trace data for this frame (pre-qualification or not yet computed).</p>`;
+      return;
+    }
+    const statusColor = { continuing: "#15803d", unresolved: "#b45309", dead: "#b91c1c" }[ft.status] || "#555";
+    const flags = [];
+    if (ft.split_flag) flags.push(`<span style="color:#b45309;font-weight:600;">SPLIT</span>`);
+    if (ft.merge_flag) flags.push(`<span style="color:#7c3aed;font-weight:600;">MERGE</span>`);
+    const disagree = !ft.v1_vs_trace_agree
+      ? `<div class="metric" style="color:#b91c1c;font-weight:700;">⚠ v1 AND forward-material-trace DISAGREE this frame (overlap=${ft.v1_material_overlap_with_trace ?? "n/a"})</div>`
+      : "";
+    const unresolvedNote = ft.status === "unresolved"
+      ? `<div class="metric" style="color:#b45309;">IDENTITY UNRESOLVED (${ft.steps_unresolved} consecutive step(s) with no qualifying candidate) — membership held, not switched</div>`
+      : (ft.status === "dead" ? `<div class="metric" style="color:#b91c1c;">IDENTITY DEAD — missed-detection horizon exceeded, no re-acquisition</div>` : "");
+    el.innerHTML = `
+      <div class="metric"><span>status</span><b style="color:${statusColor};">${ft.status}${flags.length ? " · " + flags.join(" ") : ""}</b></div>
+      <div class="metric"><span>traced target size</span><b>${ft.n_members}</b></div>
+      <div class="metric"><span>candidates / accepting</span><b>${ft.n_candidates} / ${ft.n_accepting_candidates}</b></div>
+      <div class="metric"><span>frac at target heading (trace)</span><b>${ft.frac_trace_at_target !== null ? (ft.frac_trace_at_target * 100).toFixed(0) + "%" : "—"}</b></div>
+      ${unresolvedNote}
+      ${disagree}
+      <p class="footnote" style="margin-top:4px;"><b>WHY THIS CANDIDATE WAS CHOSEN:</b> ${ft.reason}</p>
+    `;
+  }
+
+  /* Material-retention diagnostic (2026-09-21 evidence-recovery audit
+     addition). R_old is the headline ("material retention from previous
+     target"); R_new/Jaccard/retained/lost/gained are inspectable below it.
+     No validated "unusually large discontinuity" threshold exists in this
+     repository -- only the unambiguous overlap==0 case gets a visual flag. */
+  function drawRetention(f) {
+    const el = document.getElementById("t6Retention");
+    const mr = f.material_retention;
+    if (!mr) {
+      el.innerHTML = `<p class="footnote">No previous frame (t=0) or no interior tracked yet.</p>`;
+      return;
+    }
+    const pct = (x) => (x === null || x === undefined) ? "—" : (x * 100).toFixed(0) + "%";
+    const zeroFlag = mr.overlap_zero
+      ? `<div class="metric" style="color:#b91c1c;font-weight:600;">⚠ zero overlap with previous target — complete material replacement</div>`
+      : "";
+    el.innerHTML = `
+      <div class="metric"><span>R_old (material retention from previous target)</span><b>${pct(mr.R_old)}</b></div>
+      <div class="metric"><span>R_new (inherited fraction of current)</span><b>${pct(mr.R_new)}</b></div>
+      <div class="metric"><span>Jaccard overlap</span><b>${pct(mr.jaccard)}</b></div>
+      <div class="metric"><span>retained / lost / gained</span><b>${mr.n_retained} / ${mr.n_lost} / ${mr.n_gained}</b></div>
+      ${zeroFlag}
+    `;
   }
 
   function drawFracTrace() {
@@ -140,6 +201,15 @@
       const pts = trace.map((p) => `${X(p.t)},${Y(p.frac)}`).join(" ");
       svg.appendChild(Viz.el("polyline", { points: pts, fill: "none", stroke: "var(--seriesA)", "stroke-width": 1.6 }));
     }
+    /* Material-discontinuity markers (2026-09-21 addition): a red tick for
+       every frame whose material_retention.overlap_zero is true -- i.e. the
+       displayed target membership shares NO bird with the previous frame's
+       displayed target membership. Raw series only, no severity judgement. */
+    d.frames.forEach((fr) => {
+      if (fr.material_retention && fr.material_retention.overlap_zero) {
+        svg.appendChild(Viz.el("line", { x1: X(fr.t), y1: padT, x2: X(fr.t), y2: h - padB, stroke: "#b91c1c", "stroke-width": 1.3, opacity: 0.7 }));
+      }
+    });
     svg.appendChild(Viz.el("text", { x: padL, y: 10, "font-size": 8.5, fill: "var(--muted)" })).textContent = "target-heading fraction";
     svg.appendChild(Viz.el("text", { x: w - 8, y: h - 4, "font-size": 8, fill: "var(--muted)", "text-anchor": "end" })).textContent = "control (orange) / release (green) shaded";
   }
@@ -210,6 +280,9 @@
             <span class="lbl">Target heading (once detected)</span>
           </div>
           <div class="card"><h3>Live metrics</h3><div id="t6Metrics"></div></div>
+          <div class="card"><h3>Material retention (vs. previous frame)</h3><div id="t6Retention"></div>
+            <p class="footnote">Diagnostic instrumentation added 2026-09-21, computed directly from the recorded interior membership lists -- no tracker/controller logic changed. Distinct from the tracker's own internal per-branch R_retain/R_purity, which can disagree with this frame-to-frame readout exactly at cross-branch MAP-argmax switches (see stage6_11_translating_torus/audit/evidence_recovery_20260921/).</p>
+          </div>
           <div class="card">
             <p class="footnote">${D.provenance.footnote}</p>
           </div>
