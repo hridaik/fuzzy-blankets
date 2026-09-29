@@ -1,0 +1,8 @@
+{
+  "config": "high_identity_k3",
+  "n_bins": 32,
+  "seed": 0,
+  "out": "/home/hkhurana/work/code/fuzzy-blankets/morphogenesis/m0_reconstruction/data/golden_traces",
+  "n_cells": 8,
+  "m_signals": 4
+}

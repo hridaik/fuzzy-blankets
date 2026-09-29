@@ -1,0 +1,10 @@
+[s612_00_seed61200 / development] done in 310.4s G_sel=0.025619941168691512
+[s612_01_seed61201 / development] done in 311.7s G_sel=0.006973648929836054
+[s612_02_seed61202 / development] done in 319.8s G_sel=0.0930799400913715
+[s612_03_seed61204 / development] done in 309.0s G_sel=0.0004437321201891109
+[s612_04_seed61205 / development] done in 307.6s G_sel=0.007034194854656367
+[s612_05_seed61206 / development] done in 314.5s G_sel=-0.10639928120172945
+[s612_06_seed61207 / holdout] done in 311.3s G_sel=0.0014763374006218147
+[s612_07_seed61208 / holdout] done in 305.7s G_sel=-0.01687401996140718
+[s612_08_seed61209 / holdout] done in 307.5s G_sel=0.018477433129176754
+Phase B/C total wall time: 2797.4s

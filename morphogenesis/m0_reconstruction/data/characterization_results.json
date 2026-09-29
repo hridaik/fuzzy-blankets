@@ -1,0 +1,133 @@
+{
+  "E1_determinism": {
+    "engine": "python (no MATLAB/Octave available)",
+    "bitwise_identical_repeat": true,
+    "note": "solver is a deterministic explicit-Euler gradient scheme with no RNG in the D-step; determinism here establishes only that the Python implementation itself is reproducible, not that it matches spm_ADEM's determinism properties."
+  },
+  "E2_process_noise_sensitivity": {
+    "n_seeds": 10,
+    "requested_n_seeds": 20,
+    "fixed_initial_v0_seed": 0,
+    "hidden_tier_note": "distance-to-template after Hungarian assignment is a HIDDEN-tier reproduction-quality metric here, not a claimed morphology/identity metric.",
+    "mean_hungarian_distance": 0.42610579036817764,
+    "std_hungarian_distance": 0.013151046520605468,
+    "min": 0.40465598951127013,
+    "max": 0.44125202182700907,
+    "process_noise_std_used": 0.00033546262790251185
+  },
+  "E3_initial_condition_sensitivity": {
+    "requested_n_draws_each": 50,
+    "actual_n_draws_each": 10,
+    "paper_matched_sigma": 2.718281828459045,
+    "hardcoded_matched_sigma": 0.125,
+    "paper_matched": {
+      "n_draws": 10,
+      "sigma": 2.718281828459045,
+      "mean_hungarian_distance": 0.47640179535610533,
+      "std_hungarian_distance": 0.1301208630647082,
+      "mean_pairwise_distance_between_final_configs": 5.519570568581958,
+      "two_cluster_split": [
+        4,
+        6
+      ]
+    },
+    "hardcoded_matched": {
+      "n_draws": 10,
+      "sigma": 0.125,
+      "mean_hungarian_distance": 0.2857532800076809,
+      "std_hungarian_distance": 0.08638711014286207,
+      "mean_pairwise_distance_between_final_configs": 5.611029266983203,
+      "two_cluster_split": [
+        6,
+        4
+      ]
+    }
+  },
+  "E4_long_horizon": {
+    "n_bins": 512,
+    "stationarity_window": 32,
+    "criterion": "max per-bin displacement (a_x) AND secretion change (a_s), L2 norm over all cells, below threshold for 32 consecutive bins",
+    "results": {
+      "vanilla8": {
+        "runtime_s": 5.844640254974365,
+        "final_hungarian_distance": 0.17738958015563228,
+        "stationary_from_bin_thr0.001": null,
+        "stationary_from_bin_thr0.0001": null,
+        "still_drifting_at_512": true
+      },
+      "high_identity_k4": {
+        "runtime_s": 5.8272624015808105,
+        "final_hungarian_distance": 0.1757705052329631,
+        "stationary_from_bin_thr0.001": 389,
+        "stationary_from_bin_thr0.0001": null,
+        "still_drifting_at_512": false
+      }
+    }
+  },
+  "E5_timescales": {
+    "n_bins": 512,
+    "peak_change_bin": 12,
+    "e_folding_offset_bins_after_peak": 35,
+    "per_cell_bin_to_concentrated_expectation_gt_0.9": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "hidden_tier": true
+  },
+  "E6_scaling": [
+    {
+      "config": "n8_real_template",
+      "n_cells": 8,
+      "assembly_success": true,
+      "runtime_s_total_32bins": 0.36269497871398926,
+      "runtime_s_per_bin": 0.011334218084812164
+    },
+    {
+      "config": "L4_larger_template",
+      "n_cells": 16,
+      "assembly_success": true,
+      "runtime_s_total_32bins": 0.8330719470977783,
+      "runtime_s_per_bin": 0.026033498346805573
+    },
+    {
+      "config": "synthetic_n24",
+      "n_cells": 24,
+      "assembly_success": true,
+      "runtime_s_total_32bins": 1.390397071838379,
+      "runtime_s_per_bin": 0.04344990849494934
+    },
+    {
+      "config": "synthetic_n32",
+      "n_cells": 32,
+      "assembly_success": true,
+      "runtime_s_total_32bins": 2.0239133834838867,
+      "runtime_s_per_bin": 0.06324729323387146
+    }
+  ],
+  "_reduction_table": [
+    {
+      "task": "E2",
+      "requested": "20 noise seeds",
+      "actual": "10 noise seeds",
+      "reason": "compute/time budget for this pass"
+    },
+    {
+      "task": "E3",
+      "requested": "50+50 initial-condition draws",
+      "actual": "10+10 draws",
+      "reason": "compute/time budget for this pass; E6 not reduced further, E4 horizon not shortened"
+    },
+    {
+      "task": "E4",
+      "requested": "every reproduced config + all E3 runs to >=512 bins",
+      "actual": "2 configs (vanilla8, high_identity_k4) to 512 bins",
+      "reason": "compute/time budget; horizon length itself (512) was NOT reduced"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[sclosure_00_seed64200] n_rollouts=24 avail={'core_member': 28, 'boundary_member': 0, 'live_exterior_parent': 0, 'near_exterior_non_parent': 20} dt=115s (elapsed 115s)
+[sclosure_01_seed64201] n_rollouts=24 avail={'core_member': 34, 'boundary_member': 0, 'live_exterior_parent': 0, 'near_exterior_non_parent': 20} dt=120s (elapsed 235s)
+[sclosure_02_seed64202] n_rollouts=24 avail={'core_member': 28, 'boundary_member': 0, 'live_exterior_parent': 0, 'near_exterior_non_parent': 20} dt=116s (elapsed 351s)
+[sclosure_03_seed64203] n_rollouts=32 avail={'core_member': 35, 'boundary_member': 1, 'live_exterior_parent': 1, 'near_exterior_non_parent': 19} dt=155s (elapsed 506s)
+[sclosure_04_seed64204] n_rollouts=24 avail={'core_member': 41, 'boundary_member': 0, 'live_exterior_parent': 0, 'near_exterior_non_parent': 20} dt=120s (elapsed 626s)
+[sclosure_05_seed64205] n_rollouts=40 avail={'core_member': 22, 'boundary_member': 3, 'live_exterior_parent': 1, 'near_exterior_non_parent': 19} dt=192s (elapsed 818s)
+[sclosure_06_seed64206] n_rollouts=48 avail={'core_member': 21, 'boundary_member': 4, 'live_exterior_parent': 6, 'near_exterior_non_parent': 14} dt=223s (elapsed 1041s)
+[sclosure_07_seed64207] n_rollouts=24 avail={'core_member': 56, 'boundary_member': 0, 'live_exterior_parent': 0, 'near_exterior_non_parent': 20} dt=117s (elapsed 1158s)
+TOTAL wall time: 1157.5s (19.3min), n_rollouts=240

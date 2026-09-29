@@ -283,6 +283,7 @@
           <div class="card"><h3>Material retention (vs. previous frame)</h3><div id="t6Retention"></div>
             <p class="footnote">Diagnostic instrumentation added 2026-09-21, computed directly from the recorded interior membership lists -- no tracker/controller logic changed. Distinct from the tracker's own internal per-branch R_retain/R_purity, which can disagree with this frame-to-frame readout exactly at cross-branch MAP-argmax switches (see stage6_11_translating_torus/audit/evidence_recovery_20260921/).</p>
           </div>
+          <div class="card"><h3>ForwardMaterialTrace611 (audit comparator)</h3><div id="t6ForwardTrace"></div></div>
           <div class="card">
             <p class="footnote">${D.provenance.footnote}</p>
           </div>

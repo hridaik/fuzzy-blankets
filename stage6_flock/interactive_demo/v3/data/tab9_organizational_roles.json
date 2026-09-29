@@ -1,0 +1,1056 @@
+{
+ "closureA": {
+  "class_level_ci": {
+   "core_member": {
+    "state_paired": {
+     "mean": -0.004047217212506609,
+     "lo": -0.015952389413947228,
+     "hi": 0.008245552107581015,
+     "n": 8
+    },
+    "n_states_with_class": 8
+   },
+   "near_exterior_non_parent": {
+    "state_paired": {
+     "mean": -0.002080068019160921,
+     "lo": -0.014817744457350719,
+     "hi": 0.010034736693951371,
+     "n": 8
+    },
+    "n_states_with_class": 8
+   },
+   "boundary_member": {
+    "state_paired": {
+     "mean": -0.014324062185276236,
+     "lo": -0.03753356260381679,
+     "hi": 0.00888543823326432,
+     "n": 3
+    },
+    "n_states_with_class": 3
+   },
+   "live_exterior_parent": {
+    "state_paired": {
+     "mean": -0.007475363083297651,
+     "lo": -0.033613890300882944,
+     "hi": 0.01866316413428764,
+     "n": 3
+    },
+    "n_states_with_class": 3
+   }
+  },
+  "class_level_ci_minus_j": {
+   "core_member": {
+    "mean": -0.0038417832146783993,
+    "lo": -0.015768397105427746,
+    "hi": 0.00846608956559618,
+    "n": 8
+   },
+   "near_exterior_non_parent": {
+    "mean": -0.002080068019160921,
+    "lo": -0.014817744457350719,
+    "hi": 0.010034736693951371,
+    "n": 8
+   },
+   "boundary_member": {
+    "mean": -0.014110422651998598,
+    "lo": -0.03710628353726152,
+    "hi": 0.00888543823326432,
+    "n": 3
+   },
+   "live_exterior_parent": {
+    "mean": -0.007475363083297651,
+    "lo": -0.033613890300882944,
+    "hi": 0.01866316413428764,
+    "n": 3
+   }
+  },
+  "comparisons": {
+   "boundary_vs_core": {
+    "cls_a": "boundary_member",
+    "cls_b": "core_member",
+    "n_states": 3,
+    "states": [
+     "sclosure_03_seed64203",
+     "sclosure_05_seed64205",
+     "sclosure_06_seed64206"
+    ],
+    "mean_diff": 0.002135336632499847,
+    "diff_ci": {
+     "mean": 0.002135336632499847,
+     "lo": -0.010794138821147317,
+     "hi": 0.01506481208614701,
+     "n": 3
+    },
+    "diffs": [
+     0.015933139454272275,
+     -0.022855286906669214,
+     0.01332815734989648
+    ]
+   },
+   "boundary_vs_live_parent": {
+    "cls_a": "boundary_member",
+    "cls_b": "live_exterior_parent",
+    "n_states": 3,
+    "states": [
+     "sclosure_03_seed64203",
+     "sclosure_05_seed64205",
+     "sclosure_06_seed64206"
+    ],
+    "mean_diff": -0.006848699101978584,
+    "diff_ci": {
+     "mean": -0.006848699101978584,
+     "lo": -0.012013005039693098,
+     "hi": -0.0016843931642640693,
+     "n": 3
+    },
+    "diffs": [
+     0.0005508859744057099,
+     -0.0061549514416036274,
+     -0.014942031838737834
+    ]
+   },
+   "live_parent_vs_near_nonparent": {
+    "cls_a": "live_exterior_parent",
+    "cls_b": "near_exterior_non_parent",
+    "n_states": 3,
+    "states": [
+     "sclosure_03_seed64203",
+     "sclosure_05_seed64205",
+     "sclosure_06_seed64206"
+    ],
+    "mean_diff": 0.003139742962460996,
+    "diff_ci": {
+     "mean": 0.003139742962460996,
+     "lo": -0.009678556087357152,
+     "hi": 0.015958042012279145,
+     "n": 3
+    },
+    "diffs": [
+     0.026299543835136777,
+     -0.01215535331431767,
+     -0.004724961633436119
+    ]
+   }
+  },
+  "comparisons_minus_j": {
+   "boundary_vs_core": {
+    "cls_a": "boundary_member",
+    "cls_b": "core_member",
+    "n_states": 3,
+    "states": [
+     "sclosure_03_seed64203",
+     "sclosure_05_seed64205",
+     "sclosure_06_seed64206"
+    ],
+    "mean_diff": 0.0021292562556119218,
+    "diff_ci": {
+     "mean": 0.0021292562556119218,
+     "lo": -0.010469272426033705,
+     "hi": 0.014727784937257548,
+     "n": 3
+    },
+    "diffs": [
+     0.015427598730938083,
+     -0.022367987313998798,
+     0.01332815734989648
+    ]
+   }
+  },
+  "interior_vs_exterior_minus_j": {
+   "n_states": 8,
+   "diff_ci": {
+    "mean": -0.0019511814530516797,
+    "lo": -0.015632413608952928,
+    "hi": 0.011505331216480376,
+    "n": 8
+   },
+   "rows": [
+    {
+     "state_id": "sclosure_03_seed64203",
+     "interior_mean": -0.007713799365469042,
+     "exterior_mean": -0.013700657891974099,
+     "diff": 0.005986858526505057
+    },
+    {
+     "state_id": "sclosure_00_seed64200",
+     "interior_mean": 0.0022911672970673132,
+     "exterior_mean": -0.0009171820765184654,
+     "diff": 0.0032083493735857787
+    },
+    {
+     "state_id": "sclosure_06_seed64206",
+     "interior_mean": 0.00666407867494824,
+     "exterior_mean": 0.030632670005352372,
+     "diff": -0.023968591330404132
+    },
+    {
+     "state_id": "sclosure_05_seed64205",
+     "interior_mean": -0.04447543164889288,
+     "exterior_mean": -0.044067715806962726,
+     "diff": -0.00040771584193015353
+    },
+    {
+     "state_id": "sclosure_02_seed64202",
+     "interior_mean": 0.004855019493177387,
+     "exterior_mean": 0.0,
+     "diff": 0.004855019493177387
+    },
+    {
+     "state_id": "sclosure_01_seed64201",
+     "interior_mean": 0.03803799567574239,
+     "exterior_mean": 0.0,
+     "diff": 0.03803799567574239
+    },
+    {
+     "state_id": "sclosure_07_seed64207",
+     "interior_mean": 0.0010162015558492976,
+     "exterior_mean": -0.0013831861056288312,
+     "diff": 0.0023993876614781286
+    },
+    {
+     "state_id": "sclosure_04_seed64204",
+     "interior_mean": -0.02821561301643202,
+     "exterior_mean": 0.01750514216613587,
+     "diff": -0.04572075518256789
+    }
+   ]
+  }
+ },
+ "class_availability": {
+  "sclosure_00_seed64200": {
+   "core_member": 28,
+   "boundary_member": 0,
+   "live_exterior_parent": 0,
+   "near_exterior_non_parent": 20
+  },
+  "sclosure_01_seed64201": {
+   "core_member": 34,
+   "boundary_member": 0,
+   "live_exterior_parent": 0,
+   "near_exterior_non_parent": 20
+  },
+  "sclosure_02_seed64202": {
+   "core_member": 28,
+   "boundary_member": 0,
+   "live_exterior_parent": 0,
+   "near_exterior_non_parent": 20
+  },
+  "sclosure_03_seed64203": {
+   "core_member": 35,
+   "boundary_member": 1,
+   "live_exterior_parent": 1,
+   "near_exterior_non_parent": 19
+  },
+  "sclosure_04_seed64204": {
+   "core_member": 41,
+   "boundary_member": 0,
+   "live_exterior_parent": 0,
+   "near_exterior_non_parent": 20
+  },
+  "sclosure_05_seed64205": {
+   "core_member": 22,
+   "boundary_member": 3,
+   "live_exterior_parent": 1,
+   "near_exterior_non_parent": 19
+  },
+  "sclosure_06_seed64206": {
+   "core_member": 21,
+   "boundary_member": 4,
+   "live_exterior_parent": 6,
+   "near_exterior_non_parent": 14
+  },
+  "sclosure_07_seed64207": {
+   "core_member": 56,
+   "boundary_member": 0,
+   "live_exterior_parent": 0,
+   "near_exterior_non_parent": 20
+  }
+ },
+ "actuator_summary": [
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "core_member",
+   "actuator": 360,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.004433196224946556,
+   "mean_delta_J_assoc": 0.004433196224946556,
+   "mean_delta_J_conservative_minus_j": 0.004433196224946556,
+   "mean_delta_J_assoc_minus_j": 0.004433196224946556,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "core_member",
+   "actuator": 389,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.00865049719213673,
+   "mean_delta_J_assoc": 0.00865049719213673,
+   "mean_delta_J_conservative_minus_j": 0.00865049719213673,
+   "mean_delta_J_assoc_minus_j": 0.00865049719213673,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "core_member",
+   "actuator": 392,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.006210191525881345,
+   "mean_delta_J_assoc": -0.006210191525881345,
+   "mean_delta_J_conservative_minus_j": -0.006210191525881345,
+   "mean_delta_J_assoc_minus_j": -0.006210191525881345,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 25,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.000605782085561498,
+   "mean_delta_J_assoc": 0.000605782085561498,
+   "mean_delta_J_conservative_minus_j": 0.000605782085561498,
+   "mean_delta_J_assoc_minus_j": 0.000605782085561498,
+   "n_streams": 4,
+   "static_min_distance": 2.0402156003640326
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 181,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.00728906753582353,
+   "mean_delta_J_assoc": -0.00728906753582353,
+   "mean_delta_J_conservative_minus_j": -0.00728906753582353,
+   "mean_delta_J_assoc_minus_j": -0.00728906753582353,
+   "n_streams": 4,
+   "static_min_distance": 3.912906405855311
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "state_idx": 0,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 313,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.003931739220706637,
+   "mean_delta_J_assoc": 0.003931739220706637,
+   "mean_delta_J_conservative_minus_j": 0.003931739220706637,
+   "mean_delta_J_assoc_minus_j": 0.003931739220706637,
+   "n_streams": 4,
+   "static_min_distance": 3.0585912519167096
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "core_member",
+   "actuator": 98,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "core_member",
+   "actuator": 111,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.10191454697452623,
+   "mean_delta_J_assoc": 0.10191454697452623,
+   "mean_delta_J_conservative_minus_j": 0.10317648702722716,
+   "mean_delta_J_assoc_minus_j": 0.10317648702722716,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "core_member",
+   "actuator": 375,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0109375,
+   "mean_delta_J_assoc": 0.0920777346678087,
+   "mean_delta_J_conservative_minus_j": 0.0109375,
+   "mean_delta_J_assoc_minus_j": 0.0882949357082943,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 66,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": 2.521309962241448
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 100,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.07773439962143427,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.07773439962143427,
+   "n_streams": 4,
+   "static_min_distance": 2.3460680051522993
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "state_idx": 1,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 158,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0019202991703086256,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0019202991703086256,
+   "n_streams": 4,
+   "static_min_distance": 2.290030887164888
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "core_member",
+   "actuator": 223,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": -0.02084347262151898,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": -0.02058507208254569,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "core_member",
+   "actuator": 299,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.014565058479532163,
+   "mean_delta_J_assoc": -0.024373719778255958,
+   "mean_delta_J_conservative_minus_j": 0.014565058479532163,
+   "mean_delta_J_assoc_minus_j": -0.024373719778255958,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "core_member",
+   "actuator": 325,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": -0.01185491838907736,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": -0.015671464868218545,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 270,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.05376159100814353,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.05376159100814353,
+   "n_streams": 4,
+   "static_min_distance": 2.4852280826518225
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 368,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.00014829402405621903,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.00014829402405621903,
+   "n_streams": 4,
+   "static_min_distance": 2.482509069729253
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "state_idx": 2,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 384,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": 2.8636553193208747
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "core_member",
+   "actuator": 66,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.009046418803456448,
+   "mean_delta_J_assoc": 0.019941230578929776,
+   "mean_delta_J_conservative_minus_j": -0.009046418803456448,
+   "mean_delta_J_assoc_minus_j": 0.019941230578929776,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "core_member",
+   "actuator": 234,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.004288625732143782,
+   "mean_delta_J_assoc": 0.004288625732143782,
+   "mean_delta_J_conservative_minus_j": 0.005471828193927233,
+   "mean_delta_J_assoc_minus_j": 0.005471828193927233,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "core_member",
+   "actuator": 238,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.04304162529150417,
+   "mean_delta_J_assoc": -0.005481629816939556,
+   "mean_delta_J_conservative_minus_j": -0.04270820558328503,
+   "mean_delta_J_assoc_minus_j": -0.005148210108720425,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "boundary_member",
+   "actuator": 70,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "live_exterior_parent",
+   "actuator": 216,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.0005508859744057099,
+   "mean_delta_J_assoc": -0.0005508859744057099,
+   "mean_delta_J_conservative_minus_j": -0.0005508859744057099,
+   "mean_delta_J_assoc_minus_j": -0.0005508859744057099,
+   "n_streams": 4,
+   "static_min_distance": 0.3610746930011552
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 174,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.03982985574491045,
+   "mean_delta_J_assoc": -0.022432802584023456,
+   "mean_delta_J_conservative_minus_j": -0.03982985574491045,
+   "mean_delta_J_assoc_minus_j": -0.022432802584023456,
+   "n_streams": 4,
+   "static_min_distance": 1.953459537328197
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 306,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": 2.0248494544621045
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "state_idx": 3,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 331,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.040721433683717015,
+   "mean_delta_J_assoc": -0.010959184444398643,
+   "mean_delta_J_conservative_minus_j": -0.040721433683717015,
+   "mean_delta_J_assoc_minus_j": -0.010959184444398643,
+   "n_streams": 4,
+   "static_min_distance": 1.4749940772402688
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "core_member",
+   "actuator": 16,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.10104938073687218,
+   "mean_delta_J_assoc": -0.12070512976172033,
+   "mean_delta_J_conservative_minus_j": -0.10104938073687218,
+   "mean_delta_J_assoc_minus_j": -0.12167905875984289,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "core_member",
+   "actuator": 123,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.1078126737086744,
+   "mean_delta_J_assoc": 0.07951103801374602,
+   "mean_delta_J_conservative_minus_j": 0.10896099244420243,
+   "mean_delta_J_assoc_minus_j": 0.08065935674927406,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "core_member",
+   "actuator": 304,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.09275462929468976,
+   "mean_delta_J_assoc": -0.0678508215803704,
+   "mean_delta_J_conservative_minus_j": -0.09255845075662632,
+   "mean_delta_J_assoc_minus_j": -0.0664947205839678,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 91,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.002367109634551501,
+   "mean_delta_J_assoc": 0.002367109634551501,
+   "mean_delta_J_conservative_minus_j": 0.002367109634551501,
+   "mean_delta_J_assoc_minus_j": 0.002367109634551501,
+   "n_streams": 4,
+   "static_min_distance": 2.7578148356072743
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 135,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.027473313903118607,
+   "mean_delta_J_assoc": 0.019231632593420013,
+   "mean_delta_J_conservative_minus_j": 0.027473313903118607,
+   "mean_delta_J_assoc_minus_j": 0.019231632593420013,
+   "n_streams": 4,
+   "static_min_distance": 2.9258359732344554
+  },
+  {
+   "state_id": "sclosure_04_seed64204",
+   "state_idx": 4,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 185,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.02267500296073751,
+   "mean_delta_J_assoc": -0.005626632734190869,
+   "mean_delta_J_conservative_minus_j": 0.02267500296073751,
+   "mean_delta_J_assoc_minus_j": -0.005626632734190869,
+   "n_streams": 4,
+   "static_min_distance": 2.7995866734655777
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "core_member",
+   "actuator": 17,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.03341312056294637,
+   "mean_delta_J_assoc": -0.0011118327546258862,
+   "mean_delta_J_conservative_minus_j": -0.03341312056294637,
+   "mean_delta_J_assoc_minus_j": -0.0011118327546258862,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "core_member",
+   "actuator": 48,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.027961395396564694,
+   "mean_delta_J_assoc": 0.01492105561467578,
+   "mean_delta_J_conservative_minus_j": -0.027961395396564694,
+   "mean_delta_J_assoc_minus_j": 0.013939873931967562,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "core_member",
+   "actuator": 259,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.03896065503765686,
+   "mean_delta_J_assoc": 0.011389349133524714,
+   "mean_delta_J_conservative_minus_j": -0.03849979801616937,
+   "mean_delta_J_assoc_minus_j": 0.011850206155012201,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "boundary_member",
+   "actuator": 56,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.05637639879936927,
+   "mean_delta_J_assoc": -0.027835026128335418,
+   "mean_delta_J_conservative_minus_j": -0.055696636277394004,
+   "mean_delta_J_assoc_minus_j": -0.025960247597844283,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "boundary_member",
+   "actuator": 79,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.05451333492939385,
+   "mean_delta_J_assoc": 0.015764136269944138,
+   "mean_delta_J_conservative_minus_j": -0.05380196188753347,
+   "mean_delta_J_assoc_minus_j": 0.018173104310683273,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "boundary_member",
+   "actuator": 232,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": -0.05801129798841244,
+   "mean_delta_J_assoc": -0.024743282655536554,
+   "mean_delta_J_conservative_minus_j": -0.05747967775274934,
+   "mean_delta_J_assoc_minus_j": -0.024211662419873457,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "live_exterior_parent",
+   "actuator": 213,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.05014539246412156,
+   "mean_delta_J_assoc": -0.014080690946213812,
+   "mean_delta_J_conservative_minus_j": -0.05014539246412156,
+   "mean_delta_J_assoc_minus_j": -0.014080690946213812,
+   "n_streams": 4,
+   "static_min_distance": 0.0894792644236319
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 5,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.049705715294497126,
+   "mean_delta_J_assoc": -0.000621624334378186,
+   "mean_delta_J_conservative_minus_j": -0.049705715294497126,
+   "mean_delta_J_assoc_minus_j": -0.000621624334378186,
+   "n_streams": 4,
+   "static_min_distance": 1.3771385848455553
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 142,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.0010560195793901453,
+   "mean_delta_J_assoc": -0.001973995571232935,
+   "mean_delta_J_conservative_minus_j": -0.0010560195793901453,
+   "mean_delta_J_assoc_minus_j": -0.001973995571232935,
+   "n_streams": 4,
+   "static_min_distance": 1.2863948432822623
+  },
+  {
+   "state_id": "sclosure_05_seed64205",
+   "state_idx": 5,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 203,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.06320838257552439,
+   "mean_delta_J_assoc": 0.0009617861687646785,
+   "mean_delta_J_conservative_minus_j": -0.06320838257552439,
+   "mean_delta_J_assoc_minus_j": 0.0009617861687646785,
+   "n_streams": 4,
+   "static_min_distance": 1.7977845741490075
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "core_member",
+   "actuator": 105,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.38378836917640496,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.3907669138841829,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "core_member",
+   "actuator": 242,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.11894248188405798,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.11894248188405798,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "core_member",
+   "actuator": 351,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.14586600734698563,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.14586600734698563,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "boundary_member",
+   "actuator": 44,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.08575489384662321,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.08583322513493757,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "boundary_member",
+   "actuator": 54,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.03998447204968944,
+   "mean_delta_J_assoc": 0.015710617942754364,
+   "mean_delta_J_conservative_minus_j": 0.03998447204968944,
+   "mean_delta_J_assoc_minus_j": 0.016992015109985395,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "boundary_member",
+   "actuator": 216,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": -0.0007973212331764991,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": -0.0007973212331764991,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "live_exterior_parent",
+   "actuator": 75,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.1399497322755683,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.1399497322755683,
+   "n_streams": 4,
+   "static_min_distance": 0.4793520838046143
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "live_exterior_parent",
+   "actuator": 305,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.19739142112455724,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.19739142112455724,
+   "n_streams": 4,
+   "static_min_distance": 0.3971633988624487
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "live_exterior_parent",
+   "actuator": 346,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.08481056756590294,
+   "mean_delta_J_assoc": 0.0818109232115043,
+   "mean_delta_J_conservative_minus_j": 0.08481056756590294,
+   "mean_delta_J_assoc_minus_j": 0.0818109232115043,
+   "n_streams": 4,
+   "static_min_distance": 0.042702886817861184
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 272,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.008898040352641466,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.008898040352641466,
+   "n_streams": 4,
+   "static_min_distance": 1.7797057039799238
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 300,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.05159679831051918,
+   "mean_delta_J_assoc": 0.09249101828513775,
+   "mean_delta_J_conservative_minus_j": 0.05159679831051918,
+   "mean_delta_J_assoc_minus_j": 0.09249101828513775,
+   "n_streams": 4,
+   "static_min_distance": 1.5234651906038255
+  },
+  {
+   "state_id": "sclosure_06_seed64206",
+   "state_idx": 6,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 338,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.04738865415569213,
+   "mean_delta_J_assoc": 0.22636944589929095,
+   "mean_delta_J_conservative_minus_j": 0.04738865415569213,
+   "mean_delta_J_assoc_minus_j": 0.22636944589929095,
+   "n_streams": 4,
+   "static_min_distance": 1.7234720666656398
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "core_member",
+   "actuator": 28,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0012706154850897862,
+   "mean_delta_J_assoc": 0.0012706154850897862,
+   "mean_delta_J_conservative_minus_j": 0.0016171149151843383,
+   "mean_delta_J_assoc_minus_j": 0.0016171149151843383,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "core_member",
+   "actuator": 156,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0007157448761817772,
+   "mean_delta_J_assoc": 0.0007157448761817772,
+   "mean_delta_J_conservative_minus_j": 0.0007157448761817772,
+   "mean_delta_J_assoc_minus_j": 0.0007157448761817772,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "core_member",
+   "actuator": 216,
+   "is_interior_actuator": true,
+   "mean_delta_J_conservative": 0.0007157448761817772,
+   "mean_delta_J_assoc": 0.0007157448761817772,
+   "mean_delta_J_conservative_minus_j": 0.0007157448761817772,
+   "mean_delta_J_assoc_minus_j": 0.0007157448761817772,
+   "n_streams": 4,
+   "static_min_distance": null
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 52,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0,
+   "mean_delta_J_assoc": 0.0,
+   "mean_delta_J_conservative_minus_j": 0.0,
+   "mean_delta_J_assoc_minus_j": 0.0,
+   "n_streams": 4,
+   "static_min_distance": 2.239548327721037
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 148,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": -0.007242874282569214,
+   "mean_delta_J_assoc": -0.007242874282569214,
+   "mean_delta_J_conservative_minus_j": -0.007242874282569214,
+   "mean_delta_J_assoc_minus_j": -0.007242874282569214,
+   "n_streams": 4,
+   "static_min_distance": 2.8194424359931016
+  },
+  {
+   "state_id": "sclosure_07_seed64207",
+   "state_idx": 7,
+   "actuator_class": "near_exterior_non_parent",
+   "actuator": 162,
+   "is_interior_actuator": false,
+   "mean_delta_J_conservative": 0.0030933159656827223,
+   "mean_delta_J_assoc": 0.0030933159656827223,
+   "mean_delta_J_conservative_minus_j": 0.0030933159656827223,
+   "mean_delta_J_assoc_minus_j": 0.0030933159656827223,
+   "n_streams": 4,
+   "static_min_distance": 1.5413157412631386
+  }
+ ],
+ "n_rollouts": 240,
+ "provenance": {
+  "source": "final_translating_flock_closure/data/closureAB_*.json + closure_analysis_summary.json",
+  "method": "final_translating_flock_closure/EXPERIMENT_PROTOCOL.md, ORGANIZATIONAL_ROLE_RESULTS.md"
+ }
+}

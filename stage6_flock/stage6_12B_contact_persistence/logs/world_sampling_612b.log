@@ -1,0 +1,7 @@
+seed=62200: QUALIFIED (11.2s)
+seed=62201: QUALIFIED (17.1s)
+seed=62202: QUALIFIED (6.8s)
+seed=62203: QUALIFIED (10.2s)
+seed=62204: QUALIFIED (3.9s)
+Sampled 5 states from 5 seeds in 49.1s
+wrote /home/hkhurana/work/code/fuzzy-blankets/stage6_flock/stage6_12B_contact_persistence/data/state_manifest_612b.json

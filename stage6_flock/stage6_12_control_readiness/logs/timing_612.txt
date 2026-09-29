@@ -1,0 +1,10 @@
+seed=61200 status=QUALIFIED dt=8.60s
+seed=61201 status=QUALIFIED dt=4.99s
+seed=61202 status=QUALIFIED dt=4.14s
+seed=61203 status=no-qualify dt=23.37s
+seed=61204 status=QUALIFIED dt=8.95s
+seed=61205 status=QUALIFIED dt=6.00s
+seed=61206 status=QUALIFIED dt=3.94s
+seed=61207 status=QUALIFIED dt=6.40s
+seed=61208 status=QUALIFIED dt=5.28s
+seed=61209 status=QUALIFIED dt=5.37s
