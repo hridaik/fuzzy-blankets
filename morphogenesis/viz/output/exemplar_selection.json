@@ -1,0 +1,11 @@
+{
+  "rule": "median, best, worst by type-constrained Hungarian distance to template (hidden-tier metric), plus 2 uniformly random picks",
+  "seed": 0,
+  "best": "friston_intracellular_x0.5_captionreading_N512",
+  "worst": "friston_signal2_x0.25_N512",
+  "median": "friston_signal3_x0.25_N32",
+  "random": [
+    "kuchling_rescue_cell3_N32",
+    "kuchling_head_rampw8_N32"
+  ]
+}

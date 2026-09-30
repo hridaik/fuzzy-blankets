@@ -1,0 +1,428 @@
+{
+  "total_wall_s": 836.4197494983673,
+  "n_jobs": 31,
+  "results": [
+    {
+      "out_name": "kuchling_anomalous_cell0_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          0
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 1.8002569675445557,
+      "status": "error",
+      "error": "Octave failed (exit 1):\n\noctave: X11 DISPLAY environment variable not set\noctave: disabling GUI features\nerror: a(_,0): subscripts must be either integers 1 to (2^63)-1 or logicals\nerror: called from\n    dem_morphogenesis_Gg_perturbed at line 42 column 13\n    dem_setup_perturbed at line 61 column 1\n    run_perturbed at line 20 column 1\n"
+    },
+    {
+      "out_name": "kuchling_anomalous_cell0_N512.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          0
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 1.7578728199005127,
+      "status": "error",
+      "error": "Octave failed (exit 1):\n\noctave: X11 DISPLAY environment variable not set\noctave: disabling GUI features\nerror: a(_,0): subscripts must be either integers 1 to (2^63)-1 or logicals\nerror: called from\n    dem_morphogenesis_Gg_perturbed at line 42 column 13\n    dem_setup_perturbed at line 61 column 1\n    run_perturbed at line 20 column 1\n"
+    },
+    {
+      "out_name": "kuchling_tail_N32.mat",
+      "kind": "kuchling_tail",
+      "params": {
+        "cells": [],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 18.421184539794922,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_head_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 18.661985635757446,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell0_N32.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          0
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 18.80175805091858,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_anomalous_cell3_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          3
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.953821897506714,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell3_N32.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          3
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 18.218782901763916,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_head_N512.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 269.2407991886139,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_tail_N512.mat",
+      "kind": "kuchling_tail",
+      "params": {
+        "cells": [],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 270.9971435070038,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_anomalous_cell7_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          7
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.801726818084717,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_anomalous_cell3_N512.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          3
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 266.48486280441284,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell0_N512.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          0
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 271.3886969089508,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell7_N32.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          7
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.868581771850586,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_exogenous_x0.5_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "position_all",
+        "friston_factor": 0.5,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.254868030548096,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_verticalgrad_x2_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "position_row1",
+        "friston_factor": 2.0,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 18.098753213882446,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell3_N512.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          3
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 271.3882381916046,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_intracellular_x2_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "secretion",
+        "friston_factor": 2.0,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.810142993927002,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_anomalous_cell7_N512.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [
+          7
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 259.98831963539124,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_intracellular_x0.5_captionreading_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "secretion",
+        "friston_factor": 0.5,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.74205231666565,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_rescue_cell7_N512.mat",
+      "kind": "kuchling_rescue",
+      "params": {
+        "cells": [
+          7
+        ],
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 265.0412323474884,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_exogenous_x0.5_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "position_all",
+        "friston_factor": 0.5,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 259.8917701244354,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_signal2_x0.25_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "sig2",
+        "friston_factor": 0.25,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.960368633270264,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_verticalgrad_x2_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "position_row1",
+        "friston_factor": 2.0,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 263.035436630249,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_signal3_x0.25_N32.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "sig3",
+        "friston_factor": 0.25,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.479380130767822,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_head_rampw1_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [],
+        "ramp_w": 1,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.52494478225708,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_intracellular_x2_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "secretion",
+        "friston_factor": 2.0,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 264.045681476593,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_head_rampw4_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [],
+        "ramp_w": 4,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.2272527217865,
+      "status": "ok"
+    },
+    {
+      "out_name": "kuchling_head_rampw8_N32.mat",
+      "kind": "kuchling_head",
+      "params": {
+        "cells": [],
+        "ramp_w": 8,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 32,
+      "elapsed": 17.49435782432556,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_intracellular_x0.5_captionreading_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "secretion",
+        "friston_factor": 0.5,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 250.42934226989746,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_signal2_x0.25_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "sig2",
+        "friston_factor": 0.25,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 251.03328037261963,
+      "status": "ok"
+    },
+    {
+      "out_name": "friston_signal3_x0.25_N512.mat",
+      "kind": "friston_scale",
+      "params": {
+        "cells": [],
+        "friston_channel": "sig3",
+        "friston_factor": 0.25,
+        "ramp_w": 0,
+        "ramp_onset_bin": 1
+      },
+      "n_bins": 512,
+      "elapsed": 247.84867119789124,
+      "status": "ok"
+    }
+  ]
+}

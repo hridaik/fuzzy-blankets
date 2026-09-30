@@ -1,0 +1,261 @@
+"""morphogenesis/viz/build_viewer.py — self-contained HTML viewer builder.
+
+Reusable by all later stages of the morphogenesis programme (not just M0c).
+Produces fully self-contained HTML (inline JS/CSS, no network/CDN calls,
+opens by double-click). Two tiers:
+  - OBSERVABLE: positions, secretion, ligand (if provided), intervention log
+    (opaque IDs only). Physically contains NO hidden-tier arrays.
+  - AUDIT: everything OBSERVABLE has, PLUS target positions, softmax
+    identity-belief heatmap, prediction errors, free energy.
+
+Data is embedded as a plain JSON literal (NOT gzip-compressed) -- simpler
+and more robust than shipping a hand-rolled in-browser decompressor with no
+CDN dependency allowed; declared and downsampled (see _downsample) to stay
+under the 20MB per-file limit, per the ground rules.
+"""
+import json
+import os
+import numpy as np
+
+MAX_BYTES = 20 * 1024 * 1024
+DEFAULT_MAX_FRAMES = 600
+
+
+def downsample_trailing_time_axis(arr: np.ndarray, max_frames: int = DEFAULT_MAX_FRAMES):
+    """arr: (N, ...) with time as axis 0. Returns (arr_downsampled, stride)."""
+    n = arr.shape[0]
+    if n <= max_frames:
+        return arr, 1
+    stride = int(np.ceil(n / max_frames))
+    return arr[::stride], stride
+
+
+TEMPLATE = r"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>__TITLE__</title>
+<style>
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; background:#111; color:#eee; margin:0; padding:12px; }
+  #banner { padding:8px 12px; margin-bottom:10px; border-radius:6px; font-weight:bold; }
+  .banner-unvalidated { background:#5c1a1a; color:#ffd0d0; }
+  .banner-validated { background:#1a3d1a; color:#d0ffd0; }
+  .banner-partial { background:#5c4a1a; color:#ffedd0; }
+  #header-info { font-size:12px; color:#aaa; margin-bottom:10px; white-space:pre-wrap; }
+  .panels { display:flex; flex-wrap:wrap; gap:12px; }
+  .rollout-block { border:1px solid #333; border-radius:6px; padding:8px; }
+  canvas { background:#000; border:1px solid #444; }
+  .controls { margin:8px 0; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  button, select, input[type=range] { background:#222; color:#eee; border:1px solid #555; border-radius:4px; padding:4px 8px; }
+  #scrubber { width:400px; }
+  .ts-panel { width:320px; height:120px; background:#000; border:1px solid #444; }
+  label { font-size:12px; color:#ccc; }
+  h3 { margin:4px 0; font-size:13px; color:#ccc; }
+</style>
+</head>
+<body>
+<div id="banner" class="__BANNER_CLASS__">__BANNER_TEXT__</div>
+<div id="header-info">__HEADER_INFO__</div>
+<div class="controls">
+  <button id="playpause">Play</button>
+  <button id="stepback">step back</button>
+  <button id="stepfwd">step fwd</button>
+  <label>speed <select id="speed">
+    <option value="4">0.25x</option><option value="2">0.5x</option>
+    <option value="1" selected>1x</option><option value="0.5">2x</option><option value="0.25">4x</option>
+  </select></label>
+  <label>bin <span id="bin-label">1</span>/<span id="bin-max"></span></label>
+  <input type="range" id="scrubber" min="0" max="0" value="0">
+  <label><input type="checkbox" id="trails"> trails</label>
+  <label><input type="checkbox" id="heatmap"> ligand heatmap (sig <select id="heatmap-sig"><option value="1">2</option><option value="2">3</option><option value="3">4</option></select>)</label>
+</div>
+<div class="panels" id="panels"></div>
+
+<script id="rollout-data" type="application/json">__DATA_JSON__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('rollout-data').textContent);
+const IS_AUDIT = __IS_AUDIT__;
+const rollouts = DATA.rollouts;
+const nBins = Math.max(...rollouts.map(r => r.a_x.length));
+document.getElementById('bin-max').textContent = nBins;
+document.getElementById('scrubber').max = nBins - 1;
+
+let curBin = 0, playing = false, speedDiv = 1, lastTs = 0;
+
+const panelsDiv = document.getElementById('panels');
+const canvases = [];
+const tsCanvases = [];
+rollouts.forEach((r, idx) => {
+  const block = document.createElement('div');
+  block.className = 'rollout-block';
+  block.innerHTML = '<h3>' + r.label + '</h3>' +
+    '<canvas width="320" height="320" id="arena' + idx + '"></canvas>' +
+    '<canvas class="ts-panel" width="320" height="120" id="ts' + idx + '"></canvas>';
+  panelsDiv.appendChild(block);
+  canvases.push(document.getElementById('arena' + idx));
+  tsCanvases.push(document.getElementById('ts' + idx));
+});
+
+function cellColor(sig234) {
+  const r = Math.max(0, Math.min(1, sig234[0]));
+  const g = Math.max(0, Math.min(1, sig234[1]));
+  const b = Math.max(0, Math.min(1, sig234[2]));
+  return 'rgb(' + Math.round(r*255) + ',' + Math.round(g*255) + ',' + Math.round(b*255) + ')';
+}
+
+function drawArena(idx, bin) {
+  const r = rollouts[idx];
+  const b = Math.min(bin, r.a_x.length - 1);
+  const cv = canvases[idx];
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#000'; ctx.fillRect(0,0,cv.width,cv.height);
+  const scale = 40, cx = cv.width/2, cy = cv.height/2;
+
+  if (document.getElementById('heatmap').checked && r.ligand) {
+    const sigIdx = parseInt(document.getElementById('heatmap-sig').value);
+    const grid = r.ligand[b][sigIdx];
+    const gN = Math.round(Math.sqrt(grid.length));
+    const cell = cv.width / gN;
+    let maxv = 1e-6;
+    for (const v of grid) if (v > maxv) maxv = v;
+    for (let i=0;i<grid.length;i++) {
+      const gx = i % gN, gy = Math.floor(i / gN);
+      const v = Math.max(0, Math.min(1, grid[i]/maxv));
+      ctx.fillStyle = 'rgba(255,' + Math.round(255*(1-v)) + ',0,' + (0.5*v) + ')';
+      ctx.fillRect(gx*cell, gy*cell, cell, cell);
+    }
+  }
+
+  if (document.getElementById('trails').checked) {
+    ctx.strokeStyle = 'rgba(150,150,150,0.3)';
+    const nCells = r.a_x[0][0].length;
+    for (let c=0; c<nCells; c++) {
+      ctx.beginPath();
+      for (let t=0; t<=b; t++) {
+        const x = cx + r.a_x[t][0][c]*scale, y = cy + r.a_x[t][1][c]*scale;
+        if (t===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  if (IS_AUDIT && r.target_x) {
+    ctx.strokeStyle = '#888';
+    for (let c=0; c<r.target_x[0].length; c++) {
+      const x = cx + r.target_x[0][c]*scale, y = cy + r.target_x[1][c]*scale;
+      ctx.beginPath();
+      for (let k=0;k<5;k++) {
+        const ang = Math.PI/2 + k*2*Math.PI/5;
+        const px = x + 6*Math.cos(ang), py = y - 6*Math.sin(ang);
+        if (k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+      }
+      ctx.closePath(); ctx.stroke();
+    }
+  }
+
+  const nCells = r.a_x[b][0].length;
+  for (let c=0; c<nCells; c++) {
+    const x = cx + r.a_x[b][0][c]*scale, y = cy + r.a_x[b][1][c]*scale;
+    const s = r.a_s[b];
+    const sig234 = [s[1][c], s[2][c], s[3][c]];
+    ctx.fillStyle = cellColor(sig234);
+    ctx.beginPath(); ctx.arc(x, y, 6, 0, 2*Math.PI); ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth=0.5; ctx.stroke();
+  }
+}
+
+function drawTimeSeries(idx, bin) {
+  const r = rollouts[idx];
+  const cv = tsCanvases[idx];
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#000'; ctx.fillRect(0,0,cv.width,cv.height);
+  const nT = r.a_x.length;
+  const nCells = r.a_x[0][0].length;
+  ctx.strokeStyle = '#4af'; ctx.beginPath();
+  for (let t=0;t<nT;t++) {
+    let sec = 0;
+    for (let c=0;c<nCells;c++) { for (let ch=0; ch<4; ch++) sec += r.a_s[t][ch][c]; }
+    sec /= (nCells*4);
+    const x = t/(nT-1)*cv.width, y = cv.height - sec*cv.height*0.4 - 10;
+    if (t===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  ctx.strokeStyle = '#fa4'; ctx.beginPath();
+  for (let t=1;t<nT;t++) {
+    let spd = 0;
+    for (let c=0;c<nCells;c++) {
+      const dx = r.a_x[t][0][c]-r.a_x[t-1][0][c], dy = r.a_x[t][1][c]-r.a_x[t-1][1][c];
+      spd += Math.sqrt(dx*dx+dy*dy);
+    }
+    spd /= nCells;
+    const x = t/(nT-1)*cv.width, y = cv.height - spd*cv.height*4 - 10;
+    if (t===1) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  const cx = Math.min(bin, nT-1)/(nT-1)*cv.width;
+  ctx.strokeStyle = '#fff'; ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,cv.height); ctx.stroke();
+  ctx.fillStyle='#4af'; ctx.font='10px sans-serif'; ctx.fillText('secretion (mean)', 4, 12);
+  ctx.fillStyle='#fa4'; ctx.fillText('speed (mean)', 4, 24);
+}
+
+function render() {
+  document.getElementById('bin-label').textContent = curBin+1;
+  document.getElementById('scrubber').value = curBin;
+  rollouts.forEach((r, idx) => { drawArena(idx, curBin); drawTimeSeries(idx, curBin); });
+}
+
+document.getElementById('scrubber').addEventListener('input', (e) => { curBin = parseInt(e.target.value); render(); });
+document.getElementById('stepfwd').addEventListener('click', () => { curBin = Math.min(nBins-1, curBin+1); render(); });
+document.getElementById('stepback').addEventListener('click', () => { curBin = Math.max(0, curBin-1); render(); });
+document.getElementById('trails').addEventListener('change', render);
+document.getElementById('heatmap').addEventListener('change', render);
+document.getElementById('heatmap-sig').addEventListener('change', render);
+document.getElementById('speed').addEventListener('change', (e) => { speedDiv = parseFloat(e.target.value); });
+document.getElementById('playpause').addEventListener('click', (e) => {
+  playing = !playing; e.target.textContent = playing ? 'Pause' : 'Play';
+  if (playing) requestAnimationFrame(tick);
+});
+function tick(ts) {
+  if (!playing) return;
+  if (ts - lastTs > 100*speedDiv) { curBin = (curBin+1) % nBins; render(); lastTs = ts; }
+  requestAnimationFrame(tick);
+}
+render();
+</script>
+</body>
+</html>
+"""
+
+
+def rollout_to_json_dict(label, a_x, a_s, target_x=None, ligand=None, max_frames=DEFAULT_MAX_FRAMES):
+    """a_x, a_s: (N, 2 or m, n) arrays (time axis first). Downsamples if N>max_frames."""
+    a_x, stride = downsample_trailing_time_axis(a_x, max_frames)
+    a_s, _ = downsample_trailing_time_axis(a_s, max_frames)
+    d = {"label": label + (f" [downsampled x{stride}]" if stride > 1 else ""),
+         "a_x": a_x.tolist(), "a_s": a_s.tolist()}
+    if target_x is not None:
+        d["target_x"] = target_x.tolist()
+    if ligand is not None:
+        ligand_ds, _ = downsample_trailing_time_axis(ligand, max_frames)
+        d["ligand"] = ligand_ds.tolist()
+    return d
+
+
+def build_html(rollout_dicts, title, banner_text, banner_class, header_info,
+                is_audit, out_path):
+    data = {"rollouts": rollout_dicts}
+    data_json = json.dumps(data)
+    html = (TEMPLATE
+            .replace("__TITLE__", title)
+            .replace("__BANNER_CLASS__", banner_class)
+            .replace("__BANNER_TEXT__", banner_text)
+            .replace("__HEADER_INFO__", header_info)
+            .replace("__DATA_JSON__", data_json)
+            .replace("__IS_AUDIT__", "true" if is_audit else "false"))
+    with open(out_path, "w") as f:
+        f.write(html)
+    size = os.path.getsize(out_path)
+    if size >= MAX_BYTES:
+        raise ValueError(f"{out_path} is {size} bytes, exceeds 20MB limit -- "
+                          f"reduce max_frames or number of rollouts")
+    return size
