@@ -28,3 +28,8 @@ stage6_flock/**/data/controllability__main__*.json
 # / run_predictive_boundary_611.py to reproduce) -- kept off git like other stages' raw dumps.
 stage6_flock/stage6_11_translating_torus/data/observational_corpus_611__*.npz
 stage6_flock/stage6_11_translating_torus/data/pretrained_relational_model_611.pkl
+
+# morphogenesis: raw simulation dumps (~3.4 GB of .mat/.npz) -- too large to push to GitHub
+# over HTTPS (HTTP 500). Regenerate via the run_*.py scripts in each stage's code/ dir.
+morphogenesis/m1_dynamics_census/data/
+morphogenesis/m2a_audit_and_library/data/

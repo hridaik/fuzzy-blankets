@@ -1,0 +1,18 @@
+{
+ "frozen": "2026-10-01, after R1 canonical census (60 individuals), before any R2/R3 analysis",
+ "tau_pair": 0.17001961689591394,
+ "tau_pos": 0.17001961689591394,
+ "basis": "0.25 x minimum nearest-neighbour spacing of the empirical reference phenotype (primary_0000 canonical adult state; min NN 0.680, mean NN 0.880)",
+ "tau_eff": 0.05,
+ "stationarity": {
+  "thr": 1e-06,
+  "win": 32,
+  "fixed": "lag-1 speed",
+  "cycle2": "lag-2 speed (added after the W pilot found a period-2 cycle)"
+ },
+ "tau_bel": "RETIRED",
+ "sensitivity": [
+  0.5,
+  2.0
+ ]
+}

@@ -85,16 +85,47 @@ let curBin = 0, playing = false, speedDiv = 1, lastTs = 0;
 const panelsDiv = document.getElementById('panels');
 const canvases = [];
 const tsCanvases = [];
+const imgCanvases = [];
 rollouts.forEach((r, idx) => {
   const block = document.createElement('div');
   block.className = 'rollout-block';
-  block.innerHTML = '<h3>' + r.label + '</h3>' +
-    '<canvas width="320" height="320" id="arena' + idx + '"></canvas>' +
-    '<canvas class="ts-panel" width="320" height="120" id="ts' + idx + '"></canvas>';
+  let html = '<h3>' + r.label + '</h3>' +
+    '<canvas width="320" height="320" id="arena' + idx + '"></canvas>';
+  if (r.images) {
+    const iw = r.images[0][0].length, ih = r.images[0].length;
+    html += '<canvas width="' + iw + '" height="' + ih + '" id="img' + idx +
+      '" style="image-rendering:pixelated;width:192px;height:192px;"></canvas>';
+  }
+  html += '<canvas class="ts-panel" width="320" height="120" id="ts' + idx + '"></canvas>';
+  block.innerHTML = html;
   panelsDiv.appendChild(block);
   canvases.push(document.getElementById('arena' + idx));
   tsCanvases.push(document.getElementById('ts' + idx));
+  imgCanvases.push(r.images ? document.getElementById('img' + idx) : null);
 });
+
+function drawImagePanel(idx, bin) {
+  const r = rollouts[idx];
+  if (!r.images || !imgCanvases[idx]) return;
+  const frames = r.images;
+  const fi = Math.min(Math.floor(bin / (r.image_stride || 1)), frames.length - 1);
+  const frame = frames[fi];  // [H][W][C] uint8, C=4 (O3a) or 2 (O3b)
+  const H = frame.length, W = frame[0].length, C = frame[0][0].length;
+  const cv = imgCanvases[idx];
+  const ctx = cv.getContext('2d');
+  const imgData = ctx.createImageData(W, H);
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const px = frame[y][x];
+      const o = (y * W + x) * 4;
+      imgData.data[o] = C >= 1 ? px[0] : 0;
+      imgData.data[o + 1] = C >= 2 ? px[1] : 0;
+      imgData.data[o + 2] = C >= 3 ? px[2] : 0;
+      imgData.data[o + 3] = 255;
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
 
 function cellColor(sig234) {
   const r = Math.max(0, Math.min(1, sig234[0]));
@@ -201,7 +232,7 @@ function drawTimeSeries(idx, bin) {
 function render() {
   document.getElementById('bin-label').textContent = curBin+1;
   document.getElementById('scrubber').value = curBin;
-  rollouts.forEach((r, idx) => { drawArena(idx, curBin); drawTimeSeries(idx, curBin); });
+  rollouts.forEach((r, idx) => { drawArena(idx, curBin); drawTimeSeries(idx, curBin); drawImagePanel(idx, curBin); });
 }
 
 document.getElementById('scrubber').addEventListener('input', (e) => { curBin = parseInt(e.target.value); render(); });
@@ -239,6 +270,16 @@ def rollout_to_json_dict(label, a_x, a_s, target_x=None, ligand=None, max_frames
         ligand_ds, _ = downsample_trailing_time_axis(ligand, max_frames)
         d["ligand"] = ligand_ds.tolist()
     return d
+
+
+def add_image_panel(rollout_dict, images, image_stride=1):
+    """images: (n_frames, H, W, C) uint8 array (O3a: C=4, O3b: C=2), e.g.
+    from observation_ladder.render_O3a/b. image_stride: how many arena bins
+    each image frame covers (since O-ladder frames are FRAME_STRIDE-subsampled
+    relative to the raw per-bin arena trace)."""
+    rollout_dict["images"] = images.tolist()
+    rollout_dict["image_stride"] = image_stride
+    return rollout_dict
 
 
 def build_html(rollout_dicts, title, banner_text, banner_class, header_info,

@@ -1,0 +1,121 @@
+--- ../m0b_reference_port/sources/spm12/spm_ADEM.m	2026-09-29 19:09:23.014104585 +0200
++++ oracle/spm_ADEM_m2a.m	2026-10-02 10:33:01.450935462 +0200
+@@ -1,4 +1,8 @@
+-function [DEM] = spm_ADEM(DEM)
++function [DEM] = spm_ADEM_m2a(DEM)
++% M2A COPY of SPM12 spm_ADEM.m. The ONLY changes (marked 'M2A'): (1) optional DEM.cont = saved state of a
++% previous segment (qu, pu, action history, absolute-bin offset, optional full-horizon noise);
++% (2) export of the final state as DEM.cont_out. With DEM.cont absent the numerics are those of spm_ADEM
++% (checked bit-for-bit in tests). See CONTINUATION.md and oracle/spm_ADEM_m2a.diff.
+ % Dynamic expectation maximisation:  Active inversion
+ % FORMAT DEM   = spm_ADEM(DEM)
+ %
+@@ -138,6 +142,8 @@
+  
+ % check model, data, priors and unpack
+ %--------------------------------------------------------------------------
++cont  = []; if isfield(DEM,'cont'), cont = DEM.cont; end   % M2A
++prec  = []; if isfield(DEM,'prec'), prec = DEM.prec; end   % M2A: optional time-varying sensory-precision schedule
+ DEM   = spm_ADEM_set(DEM);
+ M     = DEM.M;
+ G     = DEM.G;
+@@ -354,6 +360,12 @@
+ qu.a{1}   = spm_vec({G.a});
+ pu.x{1}   = spm_vec({G.x});
+ pu.v{1}   = spm_vec({G.v});
++
++% M2A: continuation -- restore ALL D-step state (generalised coordinates of x,v,a and of the process x,v)
++Ahist = zeros(na,0); zoff = 0;
++if ~isempty(cont) && isfield(cont,'qu')
++    qu = cont.qu; pu = cont.pu; Ahist = cont.Ahist;
++end
+  
+  
+ % derivatives for Jacobian of D-step
+@@ -393,6 +405,9 @@
+ Z      = spm_cat(z(:));
+ W      = spm_cat(w(:));
+ A      = spm_cat(a(:));
++if ~isempty(cont) && isfield(cont,'Zfull')      % M2A: full-horizon noise, absolute-bin indexing
++    Z = cont.Zfull; W = cont.Wfull; zoff = cont.b0;
++end
+  
+ % Iterate DEM
+ %==========================================================================
+@@ -445,14 +460,15 @@
+         
+         % pass action to pu.a (external states)
+         %==================================================================
+-        try, A = spm_cat({qU.a qu.a}); end
++        try, Acur = spm_cat({qU.a qu.a}); catch, Acur = spm_cat({qu.a}); end   % M2A
++        A = [Ahist Acur];
+         
+         % derivatives of responses and random fluctuations
+         %------------------------------------------------------------------
+-        pu.z = spm_DEM_embed(Z,n,iY);
+-        pu.w = spm_DEM_embed(W,n,iY);
+-        pu.a = spm_DEM_embed(A,n,iY);
+-        qu.u = spm_DEM_embed(U,n,iY);
++        pu.z = spm_DEM_embed(Z,n,(iY + zoff)*dt,dt);
++        pu.w = spm_DEM_embed(W,n,(iY + zoff)*dt,dt);
++        pu.a = spm_DEM_embed(A,n,(iY + size(Ahist,2))*dt,dt);
++        qu.u = spm_DEM_embed(U,n,iY*dt,dt);
+         
+         
+         % evaluate generative process
+@@ -479,7 +495,15 @@
+         
+         % conditional covariance [of states {u}]
+         %------------------------------------------------------------------
+-        qu.c   = spm_inv(dE.du'*iS*dE.du + Pu);
++        % M2A: time-varying sensory precision (Pio-Lopez-type manipulation, switched on/off): scale the level-1 block of iS
++        iSt = iS;
++        if ~isempty(prec)
++            F0 = 1; if isfield(prec,'F0'); F0 = prec.F0; end
++            fprec = F0 + m2a_onoff(prec.t_off + iY, prec.onset, prec.off, prec.w)*(prec.F - F0);
++            isens = reshape(bsxfun(@plus,(0:(n-1))*(ny + nv),(1:ny)'),[],1);   % E is ordered [(y;v) per embedding order ; x]
++            iSt(isens,isens) = fprec*iS(isens,isens);
++        end
++        qu.c   = spm_inv(dE.du'*iSt*dE.du + Pu);
+         pu.c   = spm_inv(dE.du'*iP*dE.du + Pu);
+         Hqu.c  = Hqu.c + spm_logdet(qu.c);
+         
+@@ -537,17 +561,17 @@
+         
+         % first-order derivatives
+         %------------------------------------------------------------------
+-        dVdu  = -dE.du'*iS*E - Pu*spm_vec({qu.x{1:n} qu.v{1:d}}) - dWdu/2;
++        dVdu  = -dE.du'*iSt*E - Pu*spm_vec({qu.x{1:n} qu.v{1:d}}) - dWdu/2;
+         dVda  = -dE.da'*iG*E - Pa*spm_vec( qu.a{1:1});
+         
+         
+         % and second-order derivatives
+         %------------------------------------------------------------------
+-        dVduu = -dE.du'*iS*dE.du - Pu - dWduu/2 ;
++        dVduu = -dE.du'*iSt*dE.du - Pu - dWduu/2 ;
+         dVdaa = -dE.da'*iG*dE.da - Pa;
+-        dVduv = -dE.du'*iS*dE.dv;
+-        dVduc = -dE.du'*iS*dE.dc;
+-        dVdua = -dE.du'*iS*dE.da;
++        dVduv = -dE.du'*iSt*dE.dv;
++        dVduc = -dE.du'*iSt*dE.dc;
++        dVdua = -dE.du'*iSt*dE.da;
+         dVdav = -dE.da'*iG*dE.dv;
+         dVdau = -dE.da'*iG*dE.du;
+         dVdac = -dE.da'*iG*dE.dc;
+@@ -633,6 +657,7 @@
+         end
+         
+     end % sequence (nY)
++    cont_out.qu = qu; cont_out.pu = pu; cont_out.Ahist = spm_cat({qU(nY).a});   % M2A: state for the next segment
+  
+     % augment with priors
+     %----------------------------------------------------------------------
+@@ -863,6 +888,7 @@
+ DEM.U  = U;                   % causes
+ DEM.Y  = PU.v{1};             % response
+ 
++DEM.cont_out = cont_out;       % M2A
+ DEM.pU = PU;                  % prior moments of model-states
+ DEM.qU = QU;                  % conditional moments of model-states
+ DEM.qP = qP;                  % conditional moments of model-parameters
