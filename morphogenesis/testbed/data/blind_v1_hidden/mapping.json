@@ -1,0 +1,322 @@
+{
+ "strain": {
+  "L": "S2",
+  "R": "S1"
+ },
+ "scenarios": {
+  "replace1": "P2",
+  "replace6": "P1",
+  "extrude": "P3",
+  "cut": "P6",
+  "fuse_LL": "P4",
+  "fuse_LR": "P5"
+ },
+ "channel_perm": [
+  2,
+  1,
+  3,
+  0
+ ],
+ "groups": {
+  "G001": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 300
+  },
+  "G002": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 301
+  },
+  "G003": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 302
+  },
+  "G004": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 303
+  },
+  "G005": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 304
+  },
+  "G006": {
+   "scn": "cut",
+   "kind": "L",
+   "seed": 305
+  },
+  "G007": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 300
+  },
+  "G008": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 301
+  },
+  "G009": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 302
+  },
+  "G010": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 303
+  },
+  "G011": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 304
+  },
+  "G012": {
+   "scn": "cut",
+   "kind": "R",
+   "seed": 305
+  },
+  "G013": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 300
+  },
+  "G014": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 301
+  },
+  "G015": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 302
+  },
+  "G016": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 303
+  },
+  "G017": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 304
+  },
+  "G018": {
+   "scn": "extrude",
+   "kind": "L",
+   "seed": 305
+  },
+  "G019": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 300
+  },
+  "G020": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 301
+  },
+  "G021": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 302
+  },
+  "G022": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 303
+  },
+  "G023": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 304
+  },
+  "G024": {
+   "scn": "extrude",
+   "kind": "R",
+   "seed": 305
+  },
+  "G025": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 300
+  },
+  "G026": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 301
+  },
+  "G027": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 302
+  },
+  "G028": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 303
+  },
+  "G029": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 304
+  },
+  "G030": {
+   "scn": "fuse_LL",
+   "kind": "L",
+   "seed": 305
+  },
+  "G031": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 300
+  },
+  "G032": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 301
+  },
+  "G033": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 302
+  },
+  "G034": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 303
+  },
+  "G035": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 304
+  },
+  "G036": {
+   "scn": "fuse_LR",
+   "kind": "L",
+   "seed": 305
+  },
+  "G037": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 300
+  },
+  "G038": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 301
+  },
+  "G039": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 302
+  },
+  "G040": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 303
+  },
+  "G041": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 304
+  },
+  "G042": {
+   "scn": "replace1",
+   "kind": "L",
+   "seed": 305
+  },
+  "G043": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 300
+  },
+  "G044": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 301
+  },
+  "G045": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 302
+  },
+  "G046": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 303
+  },
+  "G047": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 304
+  },
+  "G048": {
+   "scn": "replace1",
+   "kind": "R",
+   "seed": 305
+  },
+  "G049": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 300
+  },
+  "G050": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 301
+  },
+  "G051": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 302
+  },
+  "G052": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 303
+  },
+  "G053": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 304
+  },
+  "G054": {
+   "scn": "replace6",
+   "kind": "L",
+   "seed": 305
+  },
+  "G055": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 300
+  },
+  "G056": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 301
+  },
+  "G057": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 302
+  },
+  "G058": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 303
+  },
+  "G059": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 304
+  },
+  "G060": {
+   "scn": "replace6",
+   "kind": "R",
+   "seed": 305
+  }
+ }
+}

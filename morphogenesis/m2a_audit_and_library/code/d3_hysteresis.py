@@ -15,6 +15,7 @@ STARTS = {"c0": ("primary_0000", "census", "primary_0000_A"), "c1": ("secondary_
 def levels(f):
     c = FAM[f]; n = int(round((c["hi"] - c["lo"]) / c["step"]))
     up = [round(c["lo"] + k * c["step"], 6) for k in range(n + 1)]
+    if c["kind"] == "eps": up = [x for x in up if x <= 0.5 + 1e-9 or abs(round(x * 10) - x * 10) < 1e-6]   # DECLARED cut: 0.05 to 0.5, then 0.1 (COMPUTE_PLAN update 3)
     return up + up[-2::-1]            # up to hi, then back down to lo
 
 def step_job(fam, start, k, lev_prev, lev, prev_cont, b0, ind):
@@ -43,6 +44,7 @@ def step_job(fam, start, k, lev_prev, lev, prev_cont, b0, ind):
 def chain(fam, start):
     nm, st, fn = STARTS[start]; ind = Ind("primary" if nm.startswith("primary") else "secondary", int(nm.split("_")[1]))
     cont = path(st, fn); b = int(np.ravel(load(cont)["b_end"])[0]); lev = levels(fam); recs = []
+    if start == "c1" and fam == "DH": lev = [x for x in lev[:lev.index(max(lev))] if x <= 0.5 + 1e-9]   # class-1 eps chains: up-sweep to 0.5 only (merge verification vs c0)
     ref0 = load_ref(); ref1 = state(load(path("census", "secondary_0005_A")))[:2]
     prev = FAM[fam]["lo"]
     for k, L in enumerate(lev):

@@ -1,0 +1,1 @@
+Counter({('both', 'LR', 'L'): 8, ('both', 'RL', 'R'): 8, ('T3side->T2', 'LR', 'L'): 6, ('T3side->T2', 'RL', 'R'): 6, ('T3side->T2', 'LR', 'DEFECT'): 6, ('T3side->T2', 'RL', 'DEFECT'): 6, ('T2side->T3', 'LR', 'L'): 6, ('T2side->T3', 'RL', 'R'): 6, ('T2side->T3', 'LR', 'DEFECT'): 6, ('T2side->T3', 'RL', 'DEFECT'): 6, ('both', 'LR', 'DEFECT'): 4, ('both', 'RL', 'DEFECT'): 4})

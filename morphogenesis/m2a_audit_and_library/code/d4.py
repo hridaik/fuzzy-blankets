@@ -20,7 +20,7 @@ def base_info():
     if "b" in _cache: return _cache["b"]
     A = load(BASE["cont"]); b0 = int(np.ravel(A["b_end"])[0]); pos, sec, _ = state(A); sl, _ = slot_assignment(pos, sec)
     ex1 = state(load(path("census", "secondary_0005_A")))[:2]
-    _cache["b"] = dict(b0=b0, pos=pos, sec=sec, slots=sl, ex1=ex1, cell_of_slot={int(s): int(c) for c, s in enumerate(sl)}); return _cache["b"]
+    _cache["b"] = dict(v0=np.ravel(load(path("d1","J_class0"))["x0"])[:64], b0=b0, pos=pos, sec=sec, slots=sl, ex1=ex1, cell_of_slot={int(s): int(c) for c, s in enumerate(sl)}); return _cache["b"]
 
 def classify(m, b_start):
     B = base_info(); st = stationarity(m, offset=b_start)
@@ -45,6 +45,8 @@ def evaluate(spec, amp, tag):
         kick = dict(type="pos", dpos=amp * np.asarray(spec["u"]).reshape(2, 8, order="F"))
     elif spec["kind"] == "pulse":
         cells = spec["cells"]; ev = [dict(type=spec["type"], cells=cells, ch=spec["ch"], amp=amp, onset=b0 + 2, w=PULSE_W)]
+    elif spec["kind"] == "bodyv":      # belief-space displacement (hidden directions): qu.v{1} += amp*u, higher orders zeroed
+        kick = dict(type="belief", v=np.asarray(B["v0"]) + amp * np.asarray(spec["u"]))
     else: raise ValueError(spec["kind"])
     cont = BASE["cont"]; segs = []; b = b0
     for j in range(MAXSEG):
@@ -58,7 +60,7 @@ def evaluate(spec, amp, tag):
 
 def find(spec, a_min, a_max):
     """Coarse log grid, then log-bisection of each threshold. Returns dict with thresholds and all evaluations."""
-    grid = [a_min * (a_max / a_min) ** (k / (GRID_N - 1)) for k in range(GRID_N)]
+    gn = spec.get("grid_n", GRID_N); grid = [a_min * (a_max / a_min) ** (k / (gn - 1)) for k in range(gn)]
     ev = {}
     def E(a):
         a = float(f"{a:.6g}")

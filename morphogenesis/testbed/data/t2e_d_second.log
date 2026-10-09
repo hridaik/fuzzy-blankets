@@ -1,0 +1,62 @@
+[ens] 5/54 18s
+[ens] 10/54 27s
+[ens] 15/54 28s
+[ens] 20/54 36s
+[ens] 25/54 43s
+[ens] 30/54 46s
+[ens] 35/54 54s
+[ens] 40/54 56s
+[ens] 45/54 64s
+[ens] 50/54 70s
+[pulse] 4/42 12s
+[pulse] 8/42 13s
+[pulse] 12/42 17s
+[pulse] 16/42 18s
+[pulse] 20/42 22s
+[pulse] 24/42 23s
+[pulse] 28/42 27s
+[pulse] 32/42 28s
+[pulse] 36/42 32s
+[pulse] 40/42 32s
+{'center_slot': 0, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'L', 'dL': 0.022, 'dR': 0.687, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'L', 'dL': 0.008, 'dR': 0.673, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'L', 'dL': 0.049, 'dR': 0.712, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'L', 'dL': 0.026, 'dR': 0.686, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 2.863, 'dR': 3.121, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 15.654, 'dR': 15.646, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 0.929, 'dR': 1.427, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 11.22, 'dR': 11.189, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'L', 'dL': 0.032, 'dR': 0.694, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 30.445, 'dR': 30.445, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 50.564, 'dR': 50.564, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 84.789, 'dR': 84.789, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 30.116, 'dR': 30.116, 'n_cells': 4}
+{'center_slot': 0, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 16.898, 'dR': 16.898, 'n_cells': 4}
+{'center_slot': 9, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 6.881, 'dR': 6.686, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'L', 'dL': 0.013, 'dR': 0.678, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 3.605, 'dR': 3.425, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 2.022, 'dR': 1.826, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 8.137, 'dR': 8.263, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 3.202, 'dR': 3.202, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 31.975, 'dR': 32.014, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 18.384, 'dR': 18.384, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 48.8, 'dR': 48.794, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 58.76, 'dR': 58.76, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 22.971, 'dR': 22.875, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 35.308, 'dR': 35.308, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 42.858, 'dR': 42.834, 'n_cells': 9}
+{'center_slot': 9, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 28.577, 'dR': 28.577, 'n_cells': 9}
+{'center_slot': 13, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'L', 'dL': 0.03, 'dR': 0.694, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 0.5, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'L', 'dL': 0.017, 'dR': 0.681, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 7.635, 'dR': 7.569, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 1, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 4.252, 'dR': 4.349, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 8.467, 'dR': 8.497, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 2, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 4.408, 'dR': 4.467, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 24.59, 'dR': 24.588, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 4, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 22.312, 'dR': 22.312, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 46.869, 'dR': 46.875, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 8, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 41.298, 'dR': 41.488, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 16.63, 'dR': 16.49, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 16, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 81.588, 'dR': 81.588, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 2, 'start': 'L', 'label': 'defect', 'dL': 18.293, 'dR': 18.351, 'n_cells': 6}
+{'center_slot': 13, 'radius': 1.6, 'amp': 32, 'dur': 20.0, 'ch': 3, 'start': 'L', 'label': 'defect', 'dL': 18.427, 'dR': 18.427, 'n_cells': 6}

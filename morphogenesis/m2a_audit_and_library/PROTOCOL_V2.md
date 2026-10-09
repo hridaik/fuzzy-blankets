@@ -14,7 +14,7 @@ Canonical data have zero process noise (`G(1).V = exp(16)`; SPM's `spm_DEM_z` re
 |---|---|---|
 | NOISE-L1 | exp(10.6) | 0.97%, 0.98%, 0.98% |
 | NOISE-L2 | exp(8.4) | 2.92%, 2.95%, 2.93% |
-| NOISE-L3 | exp(6.0) | 9.69%, 9.81% (third seed pending in `NOISE.md`) |
+| NOISE-L3 | exp(6.0) | 9.69%, 9.81% in two pilot seeds; 9.8% in the 6000-bin runs (NOISE.md) |
 Reduction control: precision exp(16) is bit-identical to canonical (max abs 0.0 in positions and secretion). Noise data are always flagged and never mixed with canonical data.
 
 ## Declared constants

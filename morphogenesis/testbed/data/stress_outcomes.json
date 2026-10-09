@@ -1,0 +1,65 @@
+{
+ "cut|L|event": {
+  "DEFECT": 6
+ },
+ "cut|L|twin": {
+  "L": 6
+ },
+ "cut|R|event": {
+  "DEFECT": 6
+ },
+ "cut|R|twin": {
+  "R": 6
+ },
+ "extrude|L|event": {
+  "DEFECT": 6
+ },
+ "extrude|L|twin": {
+  "L": 6
+ },
+ "extrude|R|event": {
+  "DEFECT": 6
+ },
+ "extrude|R|twin": {
+  "R": 6
+ },
+ "fuse_LL|L|event": {
+  "two-body": 5,
+  "merged": 1
+ },
+ "fuse_LL|L|twin": {
+  "two-body": 6
+ },
+ "fuse_LR|L|event": {
+  "two-body": 6
+ },
+ "fuse_LR|L|twin": {
+  "two-body": 6
+ },
+ "replace1|L|event": {
+  "DEFECT": 3,
+  "L": 3
+ },
+ "replace1|L|twin": {
+  "L": 6
+ },
+ "replace1|R|event": {
+  "DEFECT": 3,
+  "R": 3
+ },
+ "replace1|R|twin": {
+  "R": 6
+ },
+ "replace6|L|event": {
+  "DEFECT": 6
+ },
+ "replace6|L|twin": {
+  "L": 6
+ },
+ "replace6|R|event": {
+  "DEFECT": 6
+ },
+ "replace6|R|twin": {
+  "R": 6
+ }
+}

@@ -103,3 +103,20 @@ rd = rollout_to_json_dict("my run", a_x, a_s, target_x=target_x)  # a_x,a_s: (N,
 build_html([rd], "My Viewer", "VALIDATED: ...", "banner-validated",
            "config=...\nengine=...\nseed=...", is_audit=True, out_path="out.html")
 ```
+
+## M2a addendum (protocol v2)
+
+Added by stage M2a; M1's `build_viewer.py` is untouched. New files: `build_viewer_m2a.py` (patched template: caption, AUDIT-only labels and arrows), `build_index_m2a.py` (idempotent: appends an M2a section to `index.html`). Builders live in `m2a_audit_and_library/code/build_m2a_viewer.py` and `viewer_common.py`.
+
+55 entries, each in an OBSERVABLE and an AUDIT build (`output/m2a/{observable,audit}/`; `entries.json`, `exemplar_selection.json` record the selection rule):
+
+- class-1 exemplars (3); sustained double-head cycle (5); R2 ADULT synced triples DH / DT / AN / SHAM_DH (5 each);
+- D3 hysteresis sweeps, up and down synced (PREC, DH, DT from class 0 and 1);
+- D4 near-threshold pairs, below/above synced (FATE-SWAP and SHAPE-SWITCH examples across actuator classes);
+- D5 edge state;
+- AUDIT only: class-0/class-1 eigenmode visualisations (5 modes each); the role-map overlay.
+
+OBSERVABLE builds carry no role labels (checked by grep for the word "role" in the output). **Not verified:** no node or browser was available in the session, so the viewer JavaScript was checked structurally only (builds complete, files well-formed); nobody has opened these pages.
+
+## Testbed extension (T1/T2, added by the testbed stage)
+`build_viewer_testbed.py` (new, does not touch the earlier builders) reads the continuous-time engine's rollouts for any n: arena coloured by cell type, optional memory-ligand heatmap (computed client-side from per-cell secretion), intervention disc, AUDIT-only template overlay / plan-belief ring / role / free energy (physically absent from OBSERVABLE builds, tested), synced compare mode (one slider drives all panels). Exemplars: `testbed/code/viz_exemplars.py` → `viz/output/testbed/{audit,observable}/`, index `testbed_index.html`, linked from `index.html`. Exemplar rule: fixed seeds, no outcome-based selection. **Not opened in a browser** (none available); structural checks only.

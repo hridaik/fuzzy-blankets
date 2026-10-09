@@ -1,0 +1,22 @@
+{
+ "L": {
+  "kind": "L",
+  "n_neutral": 2,
+  "n_unstable": 79,
+  "n_stable": 639,
+  "slowest_stable": -8.128493130266736e-06,
+  "mean_pos_var_per_coord": 0.06315518270761786,
+  "mean_pos_var_fastmodes": 0.0027603156839923018,
+  "mean_c_var": 0.00010189465628489166
+ },
+ "R": {
+  "kind": "R",
+  "n_neutral": 2,
+  "n_unstable": 62,
+  "n_stable": 656,
+  "slowest_stable": -6.621947499651169e-06,
+  "mean_pos_var_per_coord": 0.6700800809040878,
+  "mean_pos_var_fastmodes": 0.0012471806902094307,
+  "mean_c_var": 0.00010216766262443137
+ }
+}

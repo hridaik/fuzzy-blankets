@@ -1,0 +1,1 @@
+{"scn": "cut", "arm": "sham", "kind": "R", "seed": 300, "group": "G007", "events": [{"t": 10050.0, "kind": "sham_surgery"}], "pose": {"angle": 2.918336378301229, "shift": [1.0030695094245212, 0.2543602477313627]}, "run": "run_4070"}

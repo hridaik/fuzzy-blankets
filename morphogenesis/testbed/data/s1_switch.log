@@ -1,0 +1,4 @@
+lp -8 smu 0.0 flips 0 defect frames 25 / 1200 frac in start 0.979
+lp -8 smu 0.03 flips 0 defect frames 472 / 1200 frac in start 0.607
+lp -8 smu 0.1 flips 0 defect frames 813 / 1200 frac in start 0.323
+lp -8 smu 0.3 flips 0 defect frames 1112 / 1200 frac in start 0.073

@@ -1,0 +1,14 @@
+{
+ "L": {
+  "n_frames": 4,
+  "corr_influence_vs_kernel_weight_frame0": 0.9641551813073107,
+  "median_influence_over_nearest10pct": 2.3044188412709885,
+  "median_influence_beyond_5": 0.02521503508492435
+ },
+ "R": {
+  "n_frames": 4,
+  "corr_influence_vs_kernel_weight_frame0": 0.9630966572072281,
+  "median_influence_over_nearest10pct": 2.27821093843943,
+  "median_influence_beyond_5": 0.02625967158865914
+ }
+}

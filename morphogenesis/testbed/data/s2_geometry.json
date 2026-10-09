@@ -1,0 +1,60 @@
+{
+ "position_only_rigid_distance_reflection_allowed": 0.0,
+ "position_only_rigid_distance_proper_rotations_only": 0.0,
+ "typed_rigid_distance_proper_rotations_only": 0.6666666666666666,
+ "type_free_assignment": {
+  "mean_move": 0.0,
+  "max_move": 0.0,
+  "n_type_changes": 8,
+  "n_cells_moving_gt_0p1": 0
+ },
+ "type_preserving_assignment": {
+  "mean_move": 0.6666666666666666,
+  "max_move": 3.0,
+  "n_type_changes": 0,
+  "n_cells_moving_gt_0p1": 8
+ },
+ "position_set_mirror_symmetric": true,
+ "type_changing_cells": {
+  "slots": [
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "y_of_slots": [
+   -0.5,
+   0.5,
+   -0.5,
+   0.5,
+   -1.5,
+   1.5,
+   -1.5,
+   1.5
+  ],
+  "types_from": [
+   2,
+   3,
+   2,
+   3,
+   2,
+   3,
+   2,
+   3
+  ],
+  "types_to": [
+   3,
+   2,
+   3,
+   2,
+   3,
+   2,
+   3,
+   2
+  ]
+ }
+}

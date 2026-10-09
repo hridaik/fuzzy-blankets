@@ -1,11 +1,20 @@
-# OPEN_QUESTIONS.md (M2a, Part 0 only)
+# OPEN_QUESTIONS.md (M2a, after the redirect; protocol v2)
 
-1. **AN re-run approval** (AUDIT_M1.md): re-run the 80 AN runs with a real single-cell target? Until then M1's AN rows should be treated as DH replicates.
-2. **Ramp protocol for Parts 1–2.** The census phenotype is the fixed point at s(t=1)=0.865, reached by ramp tracking. Freeze the ramp at 0.865 (autonomous fixed point; linear-response operator well defined) or use the absolute-bin ramp (closer to M1, but "return to stationarity" is then ramp-limited)? PROVISIONAL recommendation: frozen for S_FP, absolute-bin for S_DEV.
-3. **Zero process noise.** `G(1).V=exp(16)` makes the engine deterministic. Keep it (matches published code) or add declared process noise so the blind package has intrinsic variability? Changes what the blind analysis can learn.
-4. **Role assignment as an outcome.** Role relabelling after perturbation is common (155/180 withdrawal, 58/60 sham) and invisible to d_pair. Should Part 1 classes include it? (I would add it.)
-5. **M1 kick/ADULT protocol** restarts the ramp at s≈0 and uses one distinct base state across individuals. Whether to keep this for comparability or replace with in-run, ramp-continuous kicks (needs the state restored with abs ramp).
-6. **Residual near-miss 0.05–0.10 beyond belief-weighting** (0.5) not analysed. PROVISIONAL.
-7. Why Part 0's absolute-ramp d_target (0.277 at bin 2048) is still above M1's per-cell threshold was not tested at larger N (ramp saturates at s→1). NOT DONE.
-8. 16-cell cost and early-stopping behaviour not piloted. NOT DONE.
-9. Viewer exemplars for the Part 0 controls (Part 4) NOT DONE; only static figure `figures/part0_merge_and_stationarity.png`.
+Items 1–9 of the v1-era list are resolved or superseded: AN re-run done (WITHDRAWAL_V2, REANALYSIS a); ramp protocol decided (absolute-bin clock, PROTOCOL_V2); zero noise kept as canonical with a flagged noise extension (NOISE.md); role assignment is part of the outcome taxonomy; viewer built.
+
+## Decisions for you
+1. **Proposed status entry** (README.md): apply or edit. Not applied.
+2. **Is class 1 a "defect" for the programme's purposes?** The headline "no durable shape change without an organisational defect" depends on class 1 being a defect (duplicated role, vacant role, undifferentiated cell). That is my classification from the argmax-slot and belief-maximum audit (REANALYSIS e), not a property read from the model. If you consider an 8-cell body with a duplicated role a legitimate alternative shape, the answer to the first headline question flips to "yes, rarely".
+3. **Package scope.** The package contains canonical zero-noise data plus flagged noisy segments (NL1–NL3) and 60 16-cell segments. Say whether the noisy/16-cell segments should stay in the first blind release or be a separate package.
+4. **Hold-out design.** Hold-outs are by individual (30 of 150), by condition (23) and by region centre (4). Region centres are discs of one radius that overlap neighbours; if a stricter spatial hold-out is wanted the discs should be thinned.
+
+## Open scientific questions (NOT DONE unless stated)
+5. **D2 (period-2 cycle: model or scheme).** UNRESOLVED. The engine cannot be sub-stepped (diverges for any perturbation, positions ~1e32 at 2 sub-steps), so the finer-integration test was not run. Evidence available: the Jacobian has an eigenvalue −1.54 at the sustained-DH cycle point and the monodromy radius 0.823 (SKELETON.md); this shows the cycle is a period-doubling of the discrete one-bin map, which is what a scheme artefact would also look like. A different integrator for the same model is the only decisive test.
+6. **Mechanism of the 29 non-monotone D4 windows** (MINIMAL_PERTURBATIONS.md). Not investigated; the displacement class used a 4-point grid and probably misses more.
+7. **D4 from class 1** (minimal interventions from the defective body) and **above the brackets** (displacement > 10, pulses > 50): not run. The six SHAPE-SWITCH thresholds are all for class 0 → class 1; no reverse (class 1 → class 0) threshold by bisection, although the D3 DT loop repairs class 1 (HYSTERESIS.md).
+8. **D3 class-1 DH down-sweep** was not run (INFERRED from the class-0 chain after the collapse at ε = 0.05).
+9. **Why role 7 / the tail end is privileged** (MINIMAL_PERTURBATIONS.md): described, not explained. The D1 modes are 96–100 % belief-carried; no mode-to-role map was computed.
+10. **Hysteresis in the class-0 DH/DT loops ends with permuted roles and unchanged shape**: is that a fate memory (a durable role change in the sense of the programme) or an artefact of the matching procedure on a body with near-degenerate slots? Roles were assigned by the Hungarian slot match; no independent check.
+11. **Fate of the single anomalous cell:** the answer in README rests on 20 individuals collapsing to 8 role cases (one mature state). Other base states (class 1) were not tested.
+12. **Viewer pages were never opened** (no browser or node in the session): structure and file builds are checked; rendering is not.
+13. **Noise:** one realisation per (individual, level); DH-ADULT relabelling flips from 0/20 noise-free to 10/10 at 1 % noise. Unknown how the D4 thresholds move under noise.

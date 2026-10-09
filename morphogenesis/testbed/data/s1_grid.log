@@ -1,0 +1,12 @@
+ls 3.0 lp -5 success 0 /16 minorbit 0.815 rate -0.0003206660289727637 n_unst 2 dt 0.0093
+ls 3.0 lp -6 success 2 /16 minorbit 0.79 rate -0.0002999623892038731 n_unst 3 dt 0.0093
+ls 3.0 lp -7 success 2 /16 minorbit 0.77 rate -0.0006639740551973397 n_unst 1 dt 0.0093
+ls 3.0 lp -8 success 15 /16 minorbit 0.427 rate -0.0003850437768678756 n_unst 1 dt 0.0093
+ls 4.0 lp -5 success 0 /16 minorbit 0.888 rate -1.507094563818936e-05 n_unst 6 dt 0.0034
+ls 4.0 lp -6 success 1 /16 minorbit 0.788 rate -0.0007934388952008967 n_unst 2 dt 0.0034
+ls 4.0 lp -7 success 15 /16 minorbit 0.697 rate -0.0005870719172280277 n_unst 1 dt 0.0034
+ls 4.0 lp -8 success 14 /16 minorbit 0.469 rate -0.0003246473300921632 n_unst 1 dt 0.0034
+ls 5.0 lp -5 success 0 /16 minorbit 0.954 rate -1.1496713933634184e-05 n_unst 11 dt 0.0013
+ls 5.0 lp -6 success 9 /16 minorbit 0.563 rate -9.708618049699756e-05 n_unst 1 dt 0.0013
+ls 5.0 lp -7 success 14 /16 minorbit 0.533 rate -0.00044558515446522216 n_unst 1 dt 0.0013
+ls 5.0 lp -8 success 14 /16 minorbit 0.531 rate -0.00025558397262986866 n_unst 1 dt 0.0013

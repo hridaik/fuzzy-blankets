@@ -1,0 +1,101 @@
+{
+ "class1": {
+  "rule": "all class-1 individuals of the census (3) shown; metric = final free energy J (audit)",
+  "J": {
+   "secondary_0005": 353.1349922057067,
+   "secondary_0012": 353.1349919962436,
+   "secondary_0013": 353.1347108621655
+  },
+  "batch": [
+   "secondary_0005",
+   "secondary_0012",
+   "secondary_0013"
+  ]
+ },
+ "sustained_DH": {
+  "seed": 101,
+  "median": "primary_0018",
+  "best": "primary_0017",
+  "worst": "primary_0011",
+  "random": [
+   "primary_0004",
+   "primary_0019"
+  ],
+  "n_batch": 20,
+  "metric": "last-bin lag-1 position change (cycle amplitude), best = largest"
+ },
+ "triples_DH": {
+  "seed": 204,
+  "median": "primary_0011",
+  "best": "primary_0007",
+  "worst": "primary_0008",
+  "random": [
+   "primary_0014",
+   "primary_0012"
+  ],
+  "n_batch": 20,
+  "metric": "cells changing role + 1e-3 x d_pair to the unperturbed twin (hidden-tier)"
+ },
+ "triples_DT": {
+  "seed": 204,
+  "median": "primary_0005",
+  "best": "primary_0006",
+  "worst": "primary_0010",
+  "random": [
+   "primary_0014",
+   "primary_0012"
+  ],
+  "n_batch": 20,
+  "metric": "cells changing role + 1e-3 x d_pair to the unperturbed twin (hidden-tier)"
+ },
+ "triples_AN": {
+  "seed": 204,
+  "median": "primary_0017",
+  "best": "primary_0005",
+  "worst": "primary_0018",
+  "random": [
+   "primary_0012",
+   "primary_0010"
+  ],
+  "n_batch": 20,
+  "metric": "cells changing role + 1e-3 x d_pair to the unperturbed twin (hidden-tier)"
+ },
+ "triples_SHAM_DH": {
+  "seed": 209,
+  "median": "primary_0013",
+  "best": "primary_0001",
+  "worst": "primary_0017",
+  "random": [
+   "primary_0012",
+   "primary_0005"
+  ],
+  "n_batch": 20,
+  "metric": "cells changing role + 1e-3 x d_pair to the unperturbed twin (hidden-tier)"
+ },
+ "d4_switch": {
+  "seed": 309,
+  "median": "disp1_r7_t45",
+  "best": "disp1_r7_t22",
+  "worst": "global_l4",
+  "random": [
+   "body_eig2",
+   "disp1_r7_t315"
+  ],
+  "n_batch": 6,
+  "metric": "SHAPE-SWITCH threshold amplitude (hidden-tier), best = smallest",
+  "n_directions": 6
+ },
+ "d4_swap": {
+  "seed": 307,
+  "median": "body_rand13",
+  "best": "disp1_r0_t180",
+  "worst": "region_g2_l2",
+  "random": [
+   "pulsec_r2_l4",
+   "region_g7_l3"
+  ],
+  "n_batch": 124,
+  "metric": "FATE-SWAP threshold amplitude (hidden-tier), best = smallest",
+  "n_directions": 124
+ }
+}

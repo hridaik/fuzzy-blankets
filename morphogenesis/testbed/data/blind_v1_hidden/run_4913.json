@@ -1,0 +1,1 @@
+{"scn": "replace1", "arm": "sham", "kind": "R", "seed": 304, "group": "G047", "events": [{"t": 10050.0, "kind": "sham_surgery"}], "pose": {"angle": 0.4482640066706458, "shift": [2.309462823946589, -2.1108237176875733]}, "run": "run_4913"}

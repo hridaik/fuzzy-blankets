@@ -1,0 +1,42 @@
+{
+ "L_cal": {
+  "n_bodies": 16,
+  "n_samples": 1024,
+  "lag1_autocorr_at_spacing": 0.9771372288502025,
+  "lag1_sd": 0.009710970740858884,
+  "var_per_coord_mean": 20.871416987869942,
+  "n_eff_approx": 11.841098996961136
+ },
+ "L_val": {
+  "n_bodies": 8,
+  "n_samples": 512,
+  "lag1_autocorr_at_spacing": 0.9732763211281801,
+  "lag1_sd": 0.005251406969594231,
+  "var_per_coord_mean": 10.141054196398755,
+  "n_eff_approx": 6.933911604710839
+ },
+ "R_cal": {
+  "n_bodies": 16,
+  "n_samples": 1024,
+  "lag1_autocorr_at_spacing": 0.9779485922169604,
+  "lag1_sd": 0.006000293190501822,
+  "var_per_coord_mean": 24.064236866022103,
+  "n_eff_approx": 11.416192341239418
+ },
+ "R_val": {
+  "n_bodies": 8,
+  "n_samples": 512,
+  "lag1_autocorr_at_spacing": 0.9767762073237028,
+  "lag1_sd": 0.0038374878954784987,
+  "var_per_coord_mean": 12.6349255077794,
+  "n_eff_approx": 6.015138085035148
+ },
+ "lna_fast_modes_var_per_coord": {
+  "L": 0.0027603156839923018,
+  "R": 0.0012471806902094307
+ },
+ "lna_all_stable_var_per_coord": {
+  "L": 0.06315518270761786,
+  "R": 0.6700800809040878
+ }
+}

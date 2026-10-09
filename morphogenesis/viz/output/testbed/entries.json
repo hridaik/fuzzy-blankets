@@ -1,0 +1,242 @@
+[
+ {
+  "name": "t14_oracle_vs_engine_primary_0000",
+  "tier": "audit",
+  "title": "T1.4 oracle vs engine, primary_0000",
+  "path": "output/testbed/audit/t14_oracle_vs_engine_primary_0000.html"
+ },
+ {
+  "name": "t14_oracle_vs_engine_primary_0000",
+  "tier": "observable",
+  "title": "T1.4 oracle vs engine, primary_0000",
+  "path": "output/testbed/observable/t14_oracle_vs_engine_primary_0000.html"
+ },
+ {
+  "name": "t14_oracle_vs_engine_secondary_0005",
+  "tier": "audit",
+  "title": "T1.4 oracle vs engine, secondary_0005",
+  "path": "output/testbed/audit/t14_oracle_vs_engine_secondary_0005.html"
+ },
+ {
+  "name": "t14_oracle_vs_engine_secondary_0005",
+  "tier": "observable",
+  "title": "T1.4 oracle vs engine, secondary_0005",
+  "path": "output/testbed/observable/t14_oracle_vs_engine_secondary_0005.html"
+ },
+ {
+  "name": "t2a_vanilla8_pos_on_vs_off",
+  "tier": "audit",
+  "title": "T2a vanilla 8-cell: positional ON vs OFF",
+  "path": "output/testbed/audit/t2a_vanilla8_pos_on_vs_off.html"
+ },
+ {
+  "name": "t2a_vanilla8_pos_on_vs_off",
+  "tier": "observable",
+  "title": "T2a vanilla 8-cell: positional ON vs OFF",
+  "path": "output/testbed/observable/t2a_vanilla8_pos_on_vs_off.html"
+ },
+ {
+  "name": "t2a_bodyA_nearuniform_vs_seeded",
+  "tier": "audit",
+  "title": "T2a 24-cell body A, relational: near-uniform vs seeded start",
+  "path": "output/testbed/audit/t2a_bodyA_nearuniform_vs_seeded.html"
+ },
+ {
+  "name": "t2a_bodyA_nearuniform_vs_seeded",
+  "tier": "observable",
+  "title": "T2a 24-cell body A, relational: near-uniform vs seeded start",
+  "path": "output/testbed/observable/t2a_bodyA_nearuniform_vs_seeded.html"
+ },
+ {
+  "name": "t2c_adults_A_and_B",
+  "tier": "audit",
+  "title": "T2c plan A and plan B adults (separate K=1 models)",
+  "path": "output/testbed/audit/t2c_adults_A_and_B.html"
+ },
+ {
+  "name": "t2c_adults_A_and_B",
+  "tier": "observable",
+  "title": "T2c plan A and plan B adults (separate K=1 models)",
+  "path": "output/testbed/observable/t2c_adults_A_and_B.html"
+ },
+ {
+  "name": "t2c_memory_B_decays",
+  "tier": "audit",
+  "title": "T2c memory model: A start vs B start (no bistability found)",
+  "path": "output/testbed/audit/t2c_memory_B_decays.html"
+ },
+ {
+  "name": "t2c_memory_B_decays",
+  "tier": "observable",
+  "title": "T2c memory model: A start vs B start (no bistability found)",
+  "path": "output/testbed/observable/t2c_memory_B_decays.html"
+ },
+ {
+  "name": "t2d_mirror_forms",
+  "tier": "audit",
+  "title": "T2d chiral body: both mirror forms are stable",
+  "path": "output/testbed/audit/t2d_mirror_forms.html"
+ },
+ {
+  "name": "t2d_mirror_forms",
+  "tier": "observable",
+  "title": "T2d chiral body: both mirror forms are stable",
+  "path": "output/testbed/observable/t2d_mirror_forms.html"
+ },
+ {
+  "name": "t2d_pulse_vs_sham",
+  "tier": "audit",
+  "title": "T2d disc pulse (head tip, signal 4, 20 time units): sham vs sub-threshold vs disruptive",
+  "path": "output/testbed/audit/t2d_pulse_vs_sham.html"
+ },
+ {
+  "name": "t2d_pulse_vs_sham",
+  "tier": "observable",
+  "title": "T2d disc pulse (head tip, signal 4, 20 time units): sham vs sub-threshold vs disruptive",
+  "path": "output/testbed/observable/t2d_pulse_vs_sham.html"
+ },
+ {
+  "name": "natural_ensemble_noise",
+  "tier": "audit",
+  "title": "Natural (unperturbed) ensemble under operating noise",
+  "path": "output/testbed/audit/natural_ensemble_noise.html"
+ },
+ {
+  "name": "natural_ensemble_noise",
+  "tier": "observable",
+  "title": "Natural (unperturbed) ensemble under operating noise",
+  "path": "output/testbed/observable/natural_ensemble_noise.html"
+ },
+ {
+  "name": "v1_s1_operating_point",
+  "tier": "audit",
+  "title": "S1 operating point: both forms under operating noise",
+  "path": "output/testbed/audit/v1_s1_operating_point.html"
+ },
+ {
+  "name": "v1_s1_operating_point",
+  "tier": "observable",
+  "title": "S1 operating point: both forms under operating noise",
+  "path": "output/testbed/observable/v1_s1_operating_point.html"
+ },
+ {
+  "name": "v1_s2_correspondence",
+  "tier": "audit",
+  "title": "S2: the two forms have the same position set and differ by an exchange of the types of 8 cells",
+  "path": "output/testbed/audit/v1_s2_correspondence.html"
+ },
+ {
+  "name": "v1_s2_correspondence",
+  "tier": "observable",
+  "title": "S2: the two forms have the same position set and differ by an exchange of the types of 8 cells",
+  "path": "output/testbed/observable/v1_s2_correspondence.html"
+ },
+ {
+  "name": "v1_s4_switch_vs_wrong_location_vs_sham",
+  "tier": "audit",
+  "title": "S4 fate-bias light: treated vs matched-dose wrong location vs sham (synced)",
+  "path": "output/testbed/audit/v1_s4_switch_vs_wrong_location_vs_sham.html"
+ },
+ {
+  "name": "v1_s4_switch_vs_wrong_location_vs_sham",
+  "tier": "observable",
+  "title": "S4 fate-bias light: treated vs matched-dose wrong location vs sham (synced)",
+  "path": "output/testbed/observable/v1_s4_switch_vs_wrong_location_vs_sham.html"
+ },
+ {
+  "name": "v1_s3_physical_vs_sham",
+  "tier": "audit",
+  "title": "S3 physical actuator (secretion) vs sham",
+  "path": "output/testbed/audit/v1_s3_physical_vs_sham.html"
+ },
+ {
+  "name": "v1_s3_physical_vs_sham",
+  "tier": "observable",
+  "title": "S3 physical actuator (secretion) vs sham",
+  "path": "output/testbed/observable/v1_s3_physical_vs_sham.html"
+ },
+ {
+  "name": "v1_i2a_replacement",
+  "tier": "audit",
+  "title": "I2(a) single replacement (cell 3 -> naive cell, new id)",
+  "path": "output/testbed/audit/v1_i2a_replacement.html"
+ },
+ {
+  "name": "v1_i2a_replacement",
+  "tier": "observable",
+  "title": "I2(a) single replacement (cell 3 -> naive cell, new id)",
+  "path": "output/testbed/observable/v1_i2a_replacement.html"
+ },
+ {
+  "name": "v1_i2b_serial_replacement",
+  "tier": "audit",
+  "title": "I2(b) Ship of Theseus: all 24 cells replaced serially",
+  "path": "output/testbed/audit/v1_i2b_serial_replacement.html"
+ },
+ {
+  "name": "v1_i2b_serial_replacement",
+  "tier": "observable",
+  "title": "I2(b) Ship of Theseus: all 24 cells replaced serially",
+  "path": "output/testbed/observable/v1_i2b_serial_replacement.html"
+ },
+ {
+  "name": "v1_i2c_extrusion",
+  "tier": "audit",
+  "title": "I2(c) extrusion of one cell (8 units outward)",
+  "path": "output/testbed/audit/v1_i2c_extrusion.html"
+ },
+ {
+  "name": "v1_i2c_extrusion",
+  "tier": "observable",
+  "title": "I2(c) extrusion of one cell (8 units outward)",
+  "path": "output/testbed/observable/v1_i2c_extrusion.html"
+ },
+ {
+  "name": "v1_i2d_cut",
+  "tier": "audit",
+  "title": "I2(d) cut: the two body halves moved 7 units apart",
+  "path": "output/testbed/audit/v1_i2d_cut.html"
+ },
+ {
+  "name": "v1_i2d_cut",
+  "tier": "observable",
+  "title": "I2(d) cut: the two body halves moved 7 units apart",
+  "path": "output/testbed/observable/v1_i2d_cut.html"
+ },
+ {
+  "name": "v1_i2e_fusion_LL",
+  "tier": "audit",
+  "title": "I2(e) fusion LL",
+  "path": "output/testbed/audit/v1_i2e_fusion_LL.html"
+ },
+ {
+  "name": "v1_i2e_fusion_LL",
+  "tier": "observable",
+  "title": "I2(e) fusion LL",
+  "path": "output/testbed/observable/v1_i2e_fusion_LL.html"
+ },
+ {
+  "name": "v1_i2e_fusion_LR",
+  "tier": "audit",
+  "title": "I2(e) fusion LR",
+  "path": "output/testbed/audit/v1_i2e_fusion_LR.html"
+ },
+ {
+  "name": "v1_i2e_fusion_LR",
+  "tier": "observable",
+  "title": "I2(e) fusion LR",
+  "path": "output/testbed/observable/v1_i2e_fusion_LR.html"
+ },
+ {
+  "name": "v1_natural_O1_vs_O3",
+  "tier": "audit",
+  "title": "Natural member: O1 tracked cells vs O3 image",
+  "path": "output/testbed/audit/v1_natural_O1_vs_O3.html"
+ },
+ {
+  "name": "v1_natural_O1_vs_O3",
+  "tier": "observable",
+  "title": "Natural member: O1 tracked cells vs O3 image",
+  "path": "output/testbed/observable/v1_natural_O1_vs_O3.html"
+ }
+]
