@@ -1,0 +1,1 @@
+{"meta": {"state": "a", "kind": "bath", "channel": null, "centre": 12, "disc_xy0": [-2.0430724716573527, 2.240589439509341], "radius": 1.5, "acts": [{"type": "bath", "ligand_index": 0, "amp": 0.3, "t_on": 10, "t_off": 60, "ramp": 5}], "family": "decoy"}, "events": [], "pose": {"angle": 3.5039984230305783, "shift": [-2.2330259506242465, 0.7250220865182833]}, "private": {}}

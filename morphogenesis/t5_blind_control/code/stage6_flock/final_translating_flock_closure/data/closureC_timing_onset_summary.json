@@ -1,0 +1,248 @@
+[
+ {
+  "state_id": "sclosure_00_seed64200",
+  "onset_offset": 0,
+  "status": "ok",
+  "n_target": 28,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_00_seed64200",
+  "onset_offset": 4,
+  "status": "ok",
+  "n_target": 28,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_00_seed64200",
+  "onset_offset": 8,
+  "status": "ok",
+  "n_target": 28,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_00_seed64200",
+  "onset_offset": 12,
+  "status": "ok",
+  "n_target": 28,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_01_seed64201",
+  "onset_offset": 0,
+  "status": "ok",
+  "n_target": 34,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_01_seed64201",
+  "onset_offset": 4,
+  "status": "ok",
+  "n_target": 33,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_01_seed64201",
+  "onset_offset": 8,
+  "status": "ok",
+  "n_target": 34,
+  "class_availability": {
+   "live_exterior_parent": 20,
+   "boundary_member": 17
+  },
+  "class_sampled": {
+   "live_exterior_parent": [
+    186,
+    247
+   ],
+   "boundary_member": [
+    202,
+    257
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_01_seed64201",
+  "onset_offset": 12,
+  "status": "ok",
+  "n_target": 25,
+  "class_availability": {
+   "live_exterior_parent": 20,
+   "boundary_member": 25
+  },
+  "class_sampled": {
+   "live_exterior_parent": [
+    42,
+    107
+   ],
+   "boundary_member": [
+    117,
+    212
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_02_seed64202",
+  "onset_offset": 0,
+  "status": "ok",
+  "n_target": 28,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_02_seed64202",
+  "onset_offset": 4,
+  "status": "ok",
+  "n_target": 23,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_02_seed64202",
+  "onset_offset": 8,
+  "status": "ok",
+  "n_target": 22,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 0
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": []
+  }
+ },
+ {
+  "state_id": "sclosure_02_seed64202",
+  "onset_offset": 12,
+  "status": "ok",
+  "n_target": 22,
+  "class_availability": {
+   "live_exterior_parent": 10,
+   "boundary_member": 17
+  },
+  "class_sampled": {
+   "live_exterior_parent": [
+    225,
+    231
+   ],
+   "boundary_member": [
+    11,
+    175
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_03_seed64203",
+  "onset_offset": 0,
+  "status": "ok",
+  "n_target": 36,
+  "class_availability": {
+   "live_exterior_parent": 1,
+   "boundary_member": 1
+  },
+  "class_sampled": {
+   "live_exterior_parent": [
+    216
+   ],
+   "boundary_member": [
+    70
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_03_seed64203",
+  "onset_offset": 4,
+  "status": "ok",
+  "n_target": 38,
+  "class_availability": {
+   "live_exterior_parent": 0,
+   "boundary_member": 1
+  },
+  "class_sampled": {
+   "live_exterior_parent": [],
+   "boundary_member": [
+    285
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_03_seed64203",
+  "onset_offset": 8,
+  "status": "ok",
+  "n_target": 37,
+  "class_availability": {
+   "live_exterior_parent": 4,
+   "boundary_member": 11
+  },
+  "class_sampled": {
+   "live_exterior_parent": [
+    204,
+    356
+   ],
+   "boundary_member": [
+    62,
+    217
+   ]
+  }
+ },
+ {
+  "state_id": "sclosure_03_seed64203",
+  "onset_offset": 12,
+  "status": "target_unavailable",
+  "n_target": 22
+ }
+]

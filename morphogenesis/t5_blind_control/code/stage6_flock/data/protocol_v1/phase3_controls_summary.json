@@ -1,0 +1,61 @@
+{
+  "far_bird": 0,
+  "T_u": 20,
+  "T_r": 20,
+  "n_replicates": 50,
+  "arms": {
+    "baseline_no_control": {
+      "name": "baseline_no_control",
+      "actuators": null,
+      "n": 50,
+      "mean_Hstar_end": 0.0,
+      "p_success": 0.0,
+      "p_success_and_integrity": 0.0,
+      "mean_Hstar_release": 0.0,
+      "mean_min_coherence": 0.5630000000000001
+    },
+    "positive_control_full_core": {
+      "name": "positive_control_full_core",
+      "actuators": [
+        7,
+        8,
+        9,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        28,
+        29,
+        36,
+        37,
+        38,
+        39,
+        47,
+        48,
+        49,
+        58,
+        59
+      ],
+      "n": 50,
+      "mean_Hstar_end": 1.0,
+      "p_success": 1.0,
+      "p_success_and_integrity": 1.0,
+      "mean_Hstar_release": 0.594,
+      "mean_min_coherence": 1.0
+    },
+    "negative_control_far_single_bird": {
+      "name": "negative_control_far_single_bird",
+      "actuators": [
+        0
+      ],
+      "n": 50,
+      "mean_Hstar_end": 0.0,
+      "p_success": 0.0,
+      "p_success_and_integrity": 0.0,
+      "mean_Hstar_release": 0.0,
+      "mean_min_coherence": 0.5630000000000001
+    }
+  }
+}

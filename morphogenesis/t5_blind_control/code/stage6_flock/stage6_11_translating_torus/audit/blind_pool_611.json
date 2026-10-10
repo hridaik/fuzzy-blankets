@@ -1,0 +1,934 @@
+{
+ "summary": {
+  "radius_rule_calibration": {
+   "grid": {
+    "5": 0.0,
+    "10": 6.0,
+    "20": 60.5,
+    "40": 267.5,
+    "60": 310.0,
+    "80": 310.5,
+    "100": 310.5
+   },
+   "chosen_k": 10,
+   "chosen_k_median_pool_size": 6.0,
+   "target_median": 20,
+   "n_snapshots": 108
+  },
+  "n_snapshots": 36,
+  "mean_max_attainable_recall": {
+   "nearest_M12": 0.9907407407407407,
+   "nearest_M20": 1.0,
+   "nearest_M30": 1.0,
+   "oracle_3R_reproduction": 1.0
+  },
+  "mean_pool_size": {
+   "nearest_M12": 12.0,
+   "nearest_M20": 20.0,
+   "nearest_M30": 30.0,
+   "oracle_3R": 17.416666666666668
+  }
+ },
+ "reports": [
+  {
+   "n_exterior": 325,
+   "n_true_direct_parents_total": 18,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 12,
+    "max_attainable_recall": 0.6666666666666666
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 18,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 18,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 52,
+    "n_true_parents_in_pool": 18,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep0_t90"
+  },
+  {
+   "n_exterior": 331,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 11,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep1_t90"
+  },
+  {
+   "n_exterior": 292,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 1,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep2_t90"
+  },
+  {
+   "n_exterior": 314,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 2,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep3_t90"
+  },
+  {
+   "n_exterior": 310,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 19,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep4_t90"
+  },
+  {
+   "n_exterior": 300,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 1,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "dev_val_ep5_t90"
+  },
+  {
+   "n_exterior": 367,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 10,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t61"
+  },
+  {
+   "n_exterior": 367,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 13,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t65"
+  },
+  {
+   "n_exterior": 370,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 10,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t69"
+  },
+  {
+   "n_exterior": 370,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 7,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t73"
+  },
+  {
+   "n_exterior": 370,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 4,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t77"
+  },
+  {
+   "n_exterior": 370,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 2,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed500_t81"
+  },
+  {
+   "n_exterior": 370,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 36,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t30"
+  },
+  {
+   "n_exterior": 377,
+   "n_true_direct_parents_total": 5,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 5,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 5,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 5,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 33,
+    "n_true_parents_in_pool": 5,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t34"
+  },
+  {
+   "n_exterior": 360,
+   "n_true_direct_parents_total": 1,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 29,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t38"
+  },
+  {
+   "n_exterior": 374,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 36,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t42"
+  },
+  {
+   "n_exterior": 371,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 27,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t46"
+  },
+  {
+   "n_exterior": 371,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 36,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed501_t50"
+  },
+  {
+   "n_exterior": 379,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 18,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t30"
+  },
+  {
+   "n_exterior": 366,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 7,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t34"
+  },
+  {
+   "n_exterior": 362,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 5,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t38"
+  },
+  {
+   "n_exterior": 362,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 11,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t42"
+  },
+  {
+   "n_exterior": 374,
+   "n_true_direct_parents_total": 1,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 28,
+    "n_true_parents_in_pool": 1,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t46"
+  },
+  {
+   "n_exterior": 367,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 17,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed502_t50"
+  },
+  {
+   "n_exterior": 379,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 23,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t35"
+  },
+  {
+   "n_exterior": 385,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 17,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t39"
+  },
+  {
+   "n_exterior": 358,
+   "n_true_direct_parents_total": 11,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 47,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t43"
+  },
+  {
+   "n_exterior": 369,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 6,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t47"
+  },
+  {
+   "n_exterior": 367,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 6,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t51"
+  },
+  {
+   "n_exterior": 367,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 17,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed503_t55"
+  },
+  {
+   "n_exterior": 372,
+   "n_true_direct_parents_total": 11,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 22,
+    "n_true_parents_in_pool": 11,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t47"
+  },
+  {
+   "n_exterior": 352,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 6,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t51"
+  },
+  {
+   "n_exterior": 359,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 18,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t55"
+  },
+  {
+   "n_exterior": 366,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 7,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t59"
+  },
+  {
+   "n_exterior": 365,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 15,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t63"
+  },
+  {
+   "n_exterior": 365,
+   "n_true_direct_parents_total": 0,
+   "nearest_M12": {
+    "n_pool": 12,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M20": {
+    "n_pool": 20,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "nearest_M30": {
+    "n_pool": 30,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "oracle_near_exterior_3R_reproduction_only": {
+    "n_pool": 28,
+    "n_true_parents_in_pool": 0,
+    "max_attainable_recall": 1.0
+   },
+   "source": "seed504_t67"
+  }
+ ]
+}

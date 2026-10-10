@@ -1,0 +1,25 @@
+{
+ "natural": {
+  "links": 43680,
+  "correct": 43678,
+  "accuracy": 0.9999542124542125
+ },
+ "ops": {
+  "links": 462650,
+  "correct": 458906,
+  "accuracy": 0.9919074894628769,
+  "near_op": {
+   "links": 2874,
+   "accuracy": 0.9213639526791928
+  },
+  "far_op": {
+   "links": 459776,
+   "accuracy": 0.9923484479398663
+  }
+ },
+ "light": {
+  "links": 208896,
+  "correct": 208138,
+  "accuracy": 0.996371400122549
+ }
+}

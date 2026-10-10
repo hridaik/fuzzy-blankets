@@ -1,0 +1,3 @@
+{
+ "note": "Phase B/C (search + holdout confirmation) rollouts did not persist per-rollout V/split/merge/unresolved fields (run_phaseBC_612.py calls run_one(..., with_mechanism=False) and only keeps mean_J per set) -- J_conservative CANNOT be reconstructed for Phase B/C from existing data alone. holdout_S_star['identity_valid_fraction'] IS available (mean V across holdout streams) and is reported as-is; it uses the ORIGINAL (non-conservative) V. This is flagged, not silently patched -- a genuine limitation of Part I's no-new-simulation constraint, resolved instead by Stage 6.12B's fresh rollouts."
+}

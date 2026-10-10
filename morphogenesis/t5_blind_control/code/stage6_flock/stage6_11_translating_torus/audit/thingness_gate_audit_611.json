@@ -1,0 +1,120 @@
+{
+ "calibrated_thresholds": {
+  "C_min": 0.8146515362301716,
+  "G_min": 0.0,
+  "L_max": Infinity,
+  "D_min": 1.0,
+  "Q_min": 1.0,
+  "size_frac_range": [
+   0.03,
+   0.55
+  ],
+  "dwell_min": 30,
+  "percentile": 25.0
+ },
+ "n_dev_records": 1350,
+ "dev_pass_rates_sanity_check": {
+  "C": 0.7496296296296296,
+  "D": 0.9748148148148148,
+  "Q": 0.9348148148148148,
+  "one_dominant_component": 0.0014814814814814814,
+  "size_frac_in_range": 1.0
+ },
+ "dev_n_components_percentiles": {
+  "p50": 13.0,
+  "p90": 24.0
+ },
+ "per_seed": {
+  "500": {
+   "qualified_t": 61,
+   "n_steps": 107,
+   "frac_steps_passing_full_gate": 0.0,
+   "qualification_moment_passes_gate": false,
+   "qualification_moment_checks": {
+    "C": false,
+    "G": null,
+    "L": null,
+    "D": true,
+    "Q": true,
+    "one_dominant_component": false,
+    "moderate_population_fraction": true,
+    "dwell": true
+   },
+   "qualification_moment_f_main": 0.5757575757575758,
+   "mean_f_main": 0.5891070759778104
+  },
+  "501": {
+   "qualified_t": 30,
+   "n_steps": 76,
+   "frac_steps_passing_full_gate": 0.013157894736842105,
+   "qualification_moment_passes_gate": false,
+   "qualification_moment_checks": {
+    "C": false,
+    "G": null,
+    "L": null,
+    "D": true,
+    "Q": true,
+    "one_dominant_component": false,
+    "moderate_population_fraction": true,
+    "dwell": true
+   },
+   "qualification_moment_f_main": 0.4,
+   "mean_f_main": 0.5776424836794738
+  },
+  "502": {
+   "qualified_t": 30,
+   "n_steps": 76,
+   "frac_steps_passing_full_gate": 0.0,
+   "qualification_moment_passes_gate": false,
+   "qualification_moment_checks": {
+    "C": false,
+    "G": null,
+    "L": null,
+    "D": true,
+    "Q": true,
+    "one_dominant_component": false,
+    "moderate_population_fraction": true,
+    "dwell": true
+   },
+   "qualification_moment_f_main": 0.5238095238095238,
+   "mean_f_main": 0.48887210799452346
+  },
+  "503": {
+   "qualified_t": 35,
+   "n_steps": 81,
+   "frac_steps_passing_full_gate": 0.0,
+   "qualification_moment_passes_gate": false,
+   "qualification_moment_checks": {
+    "C": false,
+    "G": null,
+    "L": null,
+    "D": true,
+    "Q": true,
+    "one_dominant_component": false,
+    "moderate_population_fraction": true,
+    "dwell": true
+   },
+   "qualification_moment_f_main": 0.6190476190476191,
+   "mean_f_main": 0.5062130208701222
+  },
+  "504": {
+   "qualified_t": 47,
+   "n_steps": 93,
+   "frac_steps_passing_full_gate": 0.043010752688172046,
+   "qualification_moment_passes_gate": false,
+   "qualification_moment_checks": {
+    "C": false,
+    "G": null,
+    "L": null,
+    "D": true,
+    "Q": true,
+    "one_dominant_component": false,
+    "moderate_population_fraction": true,
+    "dwell": true
+   },
+   "qualification_moment_f_main": 0.8571428571428571,
+   "mean_f_main": 0.699461756136603
+  }
+ },
+ "note": "G and L are never computed by the online pipeline (confirmed in METHODS_AUDIT_6_11.md); reported here as None throughout, which passes_gate treats as not-yet-evaluated, not failing."
+}

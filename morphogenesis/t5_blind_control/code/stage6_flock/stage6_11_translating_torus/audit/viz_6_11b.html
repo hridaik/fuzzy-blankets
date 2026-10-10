@@ -1,0 +1,450 @@
+<title>Stage 6.11B Instrument Panel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#0b0e14; --surface:#12161f; --surface-2:#1a2029; --surface-3:#212936;
+  --border:#262c3a; --border-soft:#1c2230;
+  --text:#e6e9f0; --text-dim:#8892a6; --text-faint:#5b6373;
+  --accent-old:#e8934a; --accent-old-dim:#e8934a33;
+  --accent-new:#4ac9c0; --accent-new-dim:#4ac9c033;
+  --good:#57b96f; --bad:#e0596b; --warn:#e0b84a;
+  --canvas-bg:#080a10; --canvas-grid:#1a2029;
+  --focus:#4ac9c0;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f4f7; --surface:#ffffff; --surface-2:#eceef2; --surface-3:#e3e6ec;
+    --border:#d8dbe3; --border-soft:#e5e7ed;
+    --text:#161a24; --text-dim:#5b6373; --text-faint:#8892a6;
+    --accent-old:#c9701f; --accent-old-dim:#c9701f22;
+    --accent-new:#157b73; --accent-new-dim:#157b7322;
+    --good:#2f8a49; --bad:#c53a4d; --warn:#a97a10;
+    --canvas-bg:#e9ebef; --canvas-grid:#d8dbe3;
+    --focus:#157b73;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f3f4f7; --surface:#ffffff; --surface-2:#eceef2; --surface-3:#e3e6ec;
+  --border:#d8dbe3; --border-soft:#e5e7ed;
+  --text:#161a24; --text-dim:#5b6373; --text-faint:#8892a6;
+  --accent-old:#c9701f; --accent-old-dim:#c9701f22;
+  --accent-new:#157b73; --accent-new-dim:#157b7322;
+  --good:#2f8a49; --bad:#c53a4d; --warn:#a97a10;
+  --canvas-bg:#e9ebef; --canvas-grid:#d8dbe3;
+  --focus:#157b73;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  padding:16px; display:flex; flex-direction:column; gap:12px;
+  min-height:100vh;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+h1{font-size:15px; font-weight:600; margin:0; letter-spacing:.2px}
+.sub{font-size:11px; color:var(--text-dim); margin-top:2px}
+.topbar{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  padding-bottom:10px; border-bottom:1px solid var(--border);
+}
+.seedtabs{display:flex; gap:4px; flex-wrap:wrap}
+.seedtab{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; padding:6px 12px;
+  background:var(--surface); border:1px solid var(--border); border-radius:6px;
+  color:var(--text-dim); cursor:pointer; user-select:none;
+}
+.seedtab[aria-pressed="true"]{border-color:var(--focus); color:var(--text); background:var(--surface-2)}
+.seedtab .flag{color:var(--bad); margin-left:5px}
+.legend{display:flex; gap:14px; font-size:11px; color:var(--text-dim); align-items:center; flex-wrap:wrap}
+.legend .sw{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:-1px}
+.main{display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap}
+.panel{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+}
+.canvaswrap{flex:1 1 560px; min-width:320px; padding:12px; display:flex; flex-direction:column; gap:8px;}
+.canvasrow{display:flex; gap:8px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+.frametoggle{display:flex; gap:4px}
+.btn{
+  font-family:"IBM Plex Sans"; font-size:11.5px; padding:5px 10px; border-radius:6px;
+  border:1px solid var(--border); background:var(--surface-2); color:var(--text-dim); cursor:pointer;
+}
+.btn[aria-pressed="true"]{color:var(--text); border-color:var(--focus)}
+.btn:hover{color:var(--text)}
+canvas{width:min(100%, 56vh); aspect-ratio:1/1; background:var(--canvas-bg); border-radius:8px; display:block; border:1px solid var(--border-soft); margin:0 auto}
+.playbar{display:flex; align-items:center; gap:8px}
+.playbtn{
+  width:30px; height:30px; border-radius:50%; border:1px solid var(--border); background:var(--surface-2);
+  color:var(--text); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; flex:none;
+}
+input[type=range]{flex:1; accent-color:var(--focus)}
+.tline{position:relative; height:20px}
+.tline .band{position:absolute; top:6px; height:8px; border-radius:2px}
+.tline .band.u{background:var(--surface-3)}
+.tline .band.c{background:var(--accent-old-dim); border:1px solid var(--accent-old)}
+.tline .band.r{background:var(--accent-new-dim); border:1px solid var(--accent-new)}
+.tline .flagmark{position:absolute; top:0; width:2px; height:20px; background:var(--bad)}
+.tval{font-size:11px; color:var(--text-dim); display:flex; justify-content:space-between}
+.side{flex:0 0 300px; display:flex; flex-direction:column; gap:10px; min-width:260px}
+.group{padding:12px 14px}
+.grouptitle{font-size:10.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--text-faint); margin:0 0 9px; font-weight:600}
+.row{display:flex; justify-content:space-between; align-items:baseline; padding:3.5px 0; font-size:12.5px; border-bottom:1px solid var(--border-soft)}
+.row:last-child{border-bottom:none}
+.row .k{color:var(--text-dim)}
+.row .v{font-family:"IBM Plex Mono",monospace; font-size:12px}
+.v.old{color:var(--accent-old)}
+.v.new{color:var(--accent-new)}
+.pair{display:flex; gap:8px}
+.pair .v{flex:1; text-align:right}
+.badge{display:inline-block; font-size:10px; padding:1px 6px; border-radius:10px; font-family:"IBM Plex Mono",monospace}
+.badge.agree{background:var(--good); color:#08150c}
+.badge.disagree{background:var(--bad); color:#1a0508}
+.note{font-size:11px; color:var(--text-dim); line-height:1.5; margin-top:2px}
+.hoverbox{
+  position:absolute; background:var(--surface-2); border:1px solid var(--border); border-radius:8px;
+  padding:8px 10px; font-size:11px; color:var(--text); pointer-events:none; display:none; z-index:5;
+  font-family:"IBM Plex Mono",monospace; max-width:220px; line-height:1.5;
+}
+.footer{font-size:10.5px; color:var(--text-faint); text-align:center; padding-top:4px}
+</style>
+
+<div class="topbar">
+  <div>
+    <h1>Stage 6.11B — Lineage Instrument Panel</h1>
+    <div class="sub">Original tracker (v1) vs. present-state-coalesced comparator (v2), replayed on the recorded ground-truth trajectory. No control decision reads this page.</div>
+  </div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--accent-old)"></span>v1 interior</span>
+    <span><span class="sw" style="background:var(--accent-new)"></span>v2 interior</span>
+    <span><span class="sw" style="background:var(--bad)"></span>flagged transition</span>
+  </div>
+</div>
+
+<div class="seedtabs" id="seedtabs"></div>
+
+<div class="main">
+  <div class="panel canvaswrap">
+    <div class="canvasrow">
+      <div class="frametoggle" id="frametoggle">
+        <div class="btn" data-frame="world" aria-pressed="true">World frame</div>
+        <div class="btn" data-frame="comoving" aria-pressed="false">Co-moving frame</div>
+      </div>
+      <div class="frametoggle" id="showtoggle">
+        <div class="btn" data-show="both" aria-pressed="true">v1 + v2</div>
+        <div class="btn" data-show="v1" aria-pressed="false">v1 only</div>
+        <div class="btn" data-show="v2" aria-pressed="false">v2 only</div>
+      </div>
+    </div>
+    <div style="position:relative">
+      <canvas id="cv" width="640" height="640"></canvas>
+      <div class="hoverbox" id="hoverbox"></div>
+    </div>
+    <div class="playbar">
+      <div class="playbtn" id="playbtn">&#9654;</div>
+      <input type="range" id="scrub" min="0" max="0" value="0" step="1">
+      <span class="mono" id="tlabel" style="font-size:11px; color:var(--text-dim); min-width:56px; text-align:right">t=0</span>
+    </div>
+    <div class="tline" id="tline"></div>
+    <div class="tval"><span id="phaselabel">uncontrolled</span><span id="speedlabel"></span></div>
+  </div>
+
+  <div class="side">
+    <div class="panel group">
+      <div class="grouptitle">Identity</div>
+      <div class="row pair"><span class="k">Interior size</span><span class="v old" id="s-v1size">—</span><span class="v new" id="s-v2size">—</span></div>
+      <div class="row pair"><span class="k">MAP belief</span><span class="v old" id="s-v1prob">—</span><span class="v new" id="s-v2prob">—</span></div>
+      <div class="row"><span class="k">v2 second-best (est.)</span><span class="v new" id="s-v2margin">—</span></div>
+      <div class="row"><span class="k">v2 entropy</span><span class="v new" id="s-v2ent">—</span></div>
+      <div class="row"><span class="k">v2 dwell</span><span class="v new" id="s-v2dwell">—</span></div>
+      <div class="row"><span class="k">Member overlap (v1∩v2)</span><span class="v" id="s-overlap">—</span></div>
+    </div>
+
+    <div class="panel group">
+      <div class="grouptitle">Spatial integrity &amp; thingness</div>
+      <div class="row"><span class="k">C (coherence)</span><span class="v" id="s-C">—</span></div>
+      <div class="row"><span class="k">D (exterior contrast)</span><span class="v" id="s-D">—</span></div>
+      <div class="row"><span class="k">Q (compactness)</span><span class="v" id="s-Q">—</span></div>
+      <div class="row"><span class="k">Components (local_scale radius)</span><span class="v" id="s-nc">—</span></div>
+      <div class="row"><span class="k">f_main (largest component)</span><span class="v" id="s-fmain">—</span></div>
+      <div class="note" id="s-thingnote"></div>
+    </div>
+
+    <div class="panel group">
+      <div class="grouptitle">Control</div>
+      <div class="row"><span class="k">Phase</span><span class="v" id="s-phase">—</span></div>
+      <div class="row"><span class="k">Target heading</span><span class="v" id="s-target">—</span></div>
+      <div class="row"><span class="k">Actuators (this frame)</span><span class="v" id="s-actuators">—</span></div>
+    </div>
+
+    <div class="panel group" id="flagpanel" style="display:none">
+      <div class="grouptitle">Flagged transition</div>
+      <div class="note" id="flagnote"></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer mono">audit/viz_6_11b.html — data: viz_v2_bundle_611.json (v1/v2 replay), branch_adjudication_611 (adjudication summary) — Stage 6.11B, additive/read-only</div>
+
+<script>
+const DATA = /*__DATA__*/{};
+const UV4 = [[0,1],[0,-1],[-1,0],[1,0]]; // up,down,left,right — matches flock_sim.model.UV4
+const HEADING_NAME = ["up","down","left","right"]; // UV4 lattice directions, not compass directions
+const SEEDS = Object.keys(DATA).map(Number).sort((a,b)=>a-b);
+
+let curSeed = SEEDS[0];
+let curFrame = 0;
+let frameMode = "world"; // world | comoving
+let showMode = "both"; // both | v1 | v2
+let playing = false;
+let rafId = null;
+
+const FLAGGED = {500:[20,21]}; // seed 500 t=20->21, the flagship jump documented in LINEAGE_FORENSICS_6_11.md
+
+function seedTabs(){
+  const el = document.getElementById("seedtabs");
+  el.innerHTML = "";
+  SEEDS.forEach(s=>{
+    const b = document.createElement("div");
+    b.className = "seedtab"; b.dataset.seed = s;
+    b.setAttribute("aria-pressed", s===curSeed ? "true":"false");
+    b.innerHTML = "seed " + s + (FLAGGED[s] ? '<span class="flag" title="flagged transition present">&#9679;</span>' : "");
+    b.onclick = ()=>{ curSeed = s; curFrame = 0; refreshAll(); };
+    el.appendChild(b);
+  });
+}
+
+function frames(){ return DATA[curSeed].frames; }
+function L(){ return DATA[curSeed].L; }
+
+function setupScrub(){
+  const scrub = document.getElementById("scrub");
+  scrub.max = frames().length - 1;
+  scrub.value = curFrame;
+  scrub.oninput = ()=>{ curFrame = +scrub.value; draw(); };
+}
+
+function buildTimeline(){
+  const tl = document.getElementById("tline");
+  tl.innerHTML = "";
+  const fr = frames();
+  const n = fr.length;
+  let lastPhase = null, startIdx = 0;
+  const phaseKey = {u:"u", c:"c", r:"r"};
+  for(let i=0;i<=n;i++){
+    const p = i<n ? fr[i].phase : null;
+    if(p !== lastPhase){
+      if(lastPhase !== null){
+        const band = document.createElement("div");
+        band.className = "band " + phaseKey[lastPhase];
+        band.style.left = (startIdx/n*100)+"%";
+        band.style.width = ((i-startIdx)/n*100)+"%";
+        tl.appendChild(band);
+      }
+      lastPhase = p; startIdx = i;
+    }
+  }
+  (FLAGGED[curSeed]||[]).forEach(t=>{
+    const idx = fr.findIndex(f=>f.t===t);
+    if(idx>=0){
+      const m = document.createElement("div");
+      m.className = "flagmark";
+      m.style.left = (idx/n*100)+"%";
+      m.title = "flagged transition t="+t;
+      tl.appendChild(m);
+    }
+  });
+}
+
+function torusDelta(a, b, l){ let d = a-b; d = ((d + l/2) % l + l) % l - l/2; return d; }
+
+function centroidOf(members, r, l){
+  if(!members.length) return [l/2,l/2];
+  const ref = r[members[0]];
+  let sx=0, sy=0;
+  members.forEach(i=>{ sx += torusDelta(r[i][0], ref[0], l); sy += torusDelta(r[i][1], ref[1], l); });
+  return [ (ref[0] + sx/members.length + l)%l, (ref[1] + sy/members.length + l)%l ];
+}
+
+function draw(){
+  const fr = frames()[curFrame];
+  const cv = document.getElementById("cv");
+  const ctx = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  const l = L();
+  ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--canvas-bg");
+  ctx.fillRect(0,0,W,H);
+
+  let originX=0, originY=0;
+  if(frameMode==="comoving"){
+    const anchor = (fr.v2 && fr.v2.length) ? fr.v2 : (fr.v1 || []);
+    const c = centroidOf(anchor.length?anchor:[0], fr.r, l);
+    originX = c[0]; originY = c[1];
+  }
+
+  function toPx(pt){
+    let dx = frameMode==="comoving" ? torusDelta(pt[0], originX, l) : pt[0];
+    let dy = frameMode==="comoving" ? torusDelta(pt[1], originY, l) : pt[1];
+    if(frameMode==="world"){ dx = pt[0]; dy = pt[1]; }
+    const span = frameMode==="comoving" ? l*0.5 : l;
+    const cx = frameMode==="comoving" ? W/2 + (dx/ (l/2)) * (W*0.42) : (dx/l)*W;
+    const cy = frameMode==="comoving" ? H/2 + (dy/ (l/2)) * (H*0.42) : (dy/l)*H;
+    return [cx, cy];
+  }
+
+  // grid
+  ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--canvas-grid");
+  ctx.lineWidth = 1;
+  for(let g=1; g<4; g++){
+    ctx.beginPath(); ctx.moveTo(g*W/4,0); ctx.lineTo(g*W/4,H); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0,g*H/4); ctx.lineTo(W,g*H/4); ctx.stroke();
+  }
+
+  const v1set = new Set(fr.v1||[]);
+  const v2set = new Set(fr.v2||[]);
+  const actuatorSet = new Set(fr.actuators||[]);
+
+  fr.r.forEach((pt,i)=>{
+    const inV1 = v1set.has(i), inV2 = v2set.has(i);
+    if(!inV1 && !inV2 && !actuatorSet.has(i)){
+      ctx.fillStyle = "rgba(140,150,170,0.35)";
+      const [x,y] = toPx(pt);
+      ctx.beginPath(); ctx.arc(x,y,1.6,0,7); ctx.fill();
+    }
+  });
+  fr.r.forEach((pt,i)=>{
+    const inV1 = v1set.has(i), inV2 = v2set.has(i);
+    if(actuatorSet.has(i)){
+      const [x,y] = toPx(pt);
+      ctx.strokeStyle = "#e0b84a"; ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.arc(x,y,4.2,0,7); ctx.stroke();
+    }
+    if((showMode==="both"||showMode==="v1") && inV1){
+      const [x,y] = toPx(pt);
+      ctx.fillStyle = "#e8934a"; ctx.globalAlpha = inV2 ? 1 : 0.9;
+      ctx.beginPath(); ctx.arc(x - (inV2?1.2:0), y, 2.6, 0, 7); ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+    if((showMode==="both"||showMode==="v2") && inV2){
+      const [x,y] = toPx(pt);
+      ctx.fillStyle = "#4ac9c0";
+      ctx.beginPath(); ctx.arc(x + (inV1?1.2:0), y, 2.6, 0, 7); ctx.fill();
+    }
+  });
+
+  document.getElementById("tlabel").textContent = "t="+fr.t;
+  document.getElementById("scrub").value = curFrame;
+  updateSidePanel(fr);
+}
+
+function fmt(x, d=3){ return (x===null||x===undefined) ? "—" : (typeof x==="number" ? x.toFixed(d) : x); }
+
+function updateSidePanel(fr){
+  document.getElementById("s-v1size").textContent = (fr.v1||[]).length;
+  document.getElementById("s-v2size").textContent = (fr.v2||[]).length;
+  document.getElementById("s-v1prob").textContent = fmt(fr.p1);
+  document.getElementById("s-v2prob").textContent = fmt(fr.p2);
+  document.getElementById("s-v2margin").textContent = fr.mar2!=null ? fmt(fr.p2 - fr.mar2,3)+" (runner-up est.)" : "—";
+  document.getElementById("s-v2ent").textContent = fmt(fr.ent2);
+  document.getElementById("s-v2dwell").textContent = fr.dw2 ?? "—";
+  const ov = fr.ov;
+  const ovEl = document.getElementById("s-overlap");
+  ovEl.innerHTML = (ov==null) ? "—" : ov + ' <span class="badge '+(ov>0?"agree":"disagree")+'">'+(ov>0?"SHARED":"DISJOINT")+'</span>';
+
+  document.getElementById("s-C").textContent = fmt(fr.C);
+  document.getElementById("s-D").textContent = fmt(fr.D);
+  document.getElementById("s-Q").textContent = fmt(fr.Q);
+  document.getElementById("s-nc").textContent = fr.nc ?? "—";
+  document.getElementById("s-fmain").textContent = fmt(fr.fm);
+  document.getElementById("s-thingnote").textContent = (fr.nc && fr.nc>1)
+    ? "Fragmented at the gate's own local_scale radius. THINGNESS_GATE_AUDIT.md: this is ~10-17x smaller than the detector's own affinity cutoff — see the audit for why one_dominant_component is near-unsatisfiable at this radius."
+    : "";
+
+  const phaseNames = {u:"uncontrolled", c:"control", r:"release"};
+  document.getElementById("s-phase").textContent = phaseNames[fr.phase] || fr.phase;
+  document.getElementById("phaselabel").textContent = phaseNames[fr.phase] || fr.phase;
+  document.getElementById("s-target").textContent = fr.target_heading!=null ? HEADING_NAME[fr.target_heading] : "—";
+  document.getElementById("s-actuators").textContent = (fr.actuators&&fr.actuators.length) ? fr.actuators.length+" birds" : "none";
+
+  const flagPanel = document.getElementById("flagpanel");
+  const flags = FLAGGED[curSeed]||[];
+  if(flags.includes(fr.t)){
+    flagPanel.style.display = "";
+    document.getElementById("flagnote").textContent =
+      "t="+fr.t+": flagged in LINEAGE_FORENSICS_6_11.md. Watch v1 (amber) vs v2 (teal) — v1's displayed MAP switches to a disjoint object here; v2 has been tracking that same object continuously since several steps earlier (see dwell, which does not reset).";
+  } else {
+    flagPanel.style.display = "none";
+  }
+}
+
+function refreshAll(){
+  seedTabs();
+  setupScrub();
+  buildTimeline();
+  draw();
+}
+
+document.getElementById("frametoggle").onclick = (e)=>{
+  const b = e.target.closest(".btn"); if(!b) return;
+  frameMode = b.dataset.frame;
+  [...document.getElementById("frametoggle").children].forEach(c=>c.setAttribute("aria-pressed", c===b));
+  draw();
+};
+document.getElementById("showtoggle").onclick = (e)=>{
+  const b = e.target.closest(".btn"); if(!b) return;
+  showMode = b.dataset.show;
+  [...document.getElementById("showtoggle").children].forEach(c=>c.setAttribute("aria-pressed", c===b));
+  draw();
+};
+
+document.getElementById("playbtn").onclick = ()=>{
+  playing = !playing;
+  document.getElementById("playbtn").innerHTML = playing ? "&#10073;&#10073;" : "&#9654;";
+  if(playing) tick();
+};
+let lastTick = 0;
+function tick(ts){
+  if(!playing) return;
+  if(!lastTick || ts-lastTick > 90){
+    lastTick = ts;
+    curFrame = (curFrame+1) % frames().length;
+    draw();
+  }
+  rafId = requestAnimationFrame(tick);
+}
+
+const cvEl = document.getElementById("cv");
+cvEl.addEventListener("mousemove", (e)=>{
+  const box = document.getElementById("hoverbox");
+  const fr = frames()[curFrame];
+  const rect = cvEl.getBoundingClientRect();
+  const mx = (e.clientX-rect.left) / rect.width * cvEl.width;
+  const my = (e.clientY-rect.top) / rect.height * cvEl.height;
+  let best=-1, bestD=14;
+  const l = L();
+  let originX=0, originY=0;
+  if(frameMode==="comoving"){
+    const anchor = (fr.v2 && fr.v2.length) ? fr.v2 : (fr.v1 || []);
+    const c = centroidOf(anchor.length?anchor:[0], fr.r, l);
+    originX=c[0]; originY=c[1];
+  }
+  fr.r.forEach((pt,i)=>{
+    let dx = frameMode==="comoving" ? torusDelta(pt[0],originX,l) : pt[0];
+    let dy = frameMode==="comoving" ? torusDelta(pt[1],originY,l) : pt[1];
+    const x = frameMode==="comoving" ? cvEl.width/2 + (dx/(l/2))*(cvEl.width*0.42) : (pt[0]/l)*cvEl.width;
+    const y = frameMode==="comoving" ? cvEl.height/2 + (dy/(l/2))*(cvEl.height*0.42) : (pt[1]/l)*cvEl.height;
+    const d = Math.hypot(x-mx,y-my);
+    if(d<bestD){ bestD=d; best=i; }
+  });
+  if(best>=0){
+    const inV1 = (fr.v1||[]).includes(best), inV2 = (fr.v2||[]).includes(best);
+    box.style.display = "block";
+    box.style.left = (e.clientX - rect.left + 12) + "px";
+    box.style.top = (e.clientY - rect.top - 10) + "px";
+    box.innerHTML = "bird "+best+"<br>v1 member: "+(inV1?"yes":"no")+"<br>v2 member: "+(inV2?"yes":"no");
+  } else {
+    box.style.display = "none";
+  }
+});
+cvEl.addEventListener("mouseleave", ()=>{ document.getElementById("hoverbox").style.display="none"; });
+
+refreshAll();
+</script>

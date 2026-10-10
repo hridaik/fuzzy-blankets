@@ -1,0 +1,229 @@
+{
+ "B_D0": [
+  5,
+  6,
+  15,
+  25,
+  35,
+  45,
+  46,
+  56,
+  57,
+  67,
+  68,
+  69
+ ],
+ "n_replicates": 30,
+ "exhaustive_k1_3": {
+  "1": {
+   "best_actuators": [
+    67
+   ],
+   "mean_Hstar_end": 0.046666666666666676,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.76,
+   "mean_lineage_end": 0.5366666666666667
+  },
+  "2": {
+   "best_actuators": [
+    57,
+    67
+   ],
+   "mean_Hstar_end": 0.13499999999999998,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.6316666666666666,
+   "mean_lineage_end": 0.5549999999999999
+  },
+  "3": {
+   "best_actuators": [
+    46,
+    56,
+    68
+   ],
+   "mean_Hstar_end": 0.23,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.6566666666666666,
+   "mean_lineage_end": 0.6383333333333333
+  }
+ },
+ "greedy_history": [
+  {
+   "k": 3,
+   "actuators": [
+    46,
+    56,
+    68
+   ],
+   "mean_Hstar_end": 0.23,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.6566666666666666,
+   "mean_lineage_end": 0.6383333333333333
+  },
+  {
+   "k": 4,
+   "actuators": [
+    46,
+    56,
+    68,
+    69
+   ],
+   "mean_Hstar_end": 0.275,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.6066666666666667,
+   "mean_lineage_end": 0.5916666666666667
+  },
+  {
+   "k": 5,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35
+   ],
+   "mean_Hstar_end": 0.31,
+   "p_success": 0.03333333333333333,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.6816666666666668,
+   "mean_lineage_end": 0.7883333333333333
+  },
+  {
+   "k": 6,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25
+   ],
+   "mean_Hstar_end": 0.4666666666666667,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5650000000000001,
+   "mean_lineage_end": 0.7216666666666668
+  },
+  {
+   "k": 7,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6
+   ],
+   "mean_Hstar_end": 0.6516666666666667,
+   "p_success": 0.26666666666666666,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5433333333333333,
+   "mean_lineage_end": 0.6833333333333331
+  },
+  {
+   "k": 8,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6,
+    15
+   ],
+   "mean_Hstar_end": 0.8699999999999999,
+   "p_success": 0.7,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5233333333333333,
+   "mean_lineage_end": 0.49000000000000005
+  },
+  {
+   "k": 9,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6,
+    15,
+    67
+   ],
+   "mean_Hstar_end": 0.945,
+   "p_success": 0.9,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.515,
+   "mean_lineage_end": 0.44333333333333336
+  },
+  {
+   "k": 10,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6,
+    15,
+    67,
+    45
+   ],
+   "mean_Hstar_end": 0.9733333333333333,
+   "p_success": 0.9666666666666667,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5150000000000001,
+   "mean_lineage_end": 0.39166666666666666
+  },
+  {
+   "k": 11,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6,
+    15,
+    67,
+    45,
+    5
+   ],
+   "mean_Hstar_end": 0.9733333333333333,
+   "p_success": 0.9666666666666667,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5116666666666667,
+   "mean_lineage_end": 0.3866666666666666
+  },
+  {
+   "k": 12,
+   "actuators": [
+    46,
+    56,
+    68,
+    69,
+    35,
+    25,
+    6,
+    15,
+    67,
+    45,
+    5,
+    57
+   ],
+   "mean_Hstar_end": 0.9733333333333333,
+   "p_success": 0.9666666666666667,
+   "p_success_and_integrity": 0.0,
+   "mean_min_coherence": 0.5116666666666667,
+   "mean_lineage_end": 0.36500000000000005
+  }
+ ]
+}

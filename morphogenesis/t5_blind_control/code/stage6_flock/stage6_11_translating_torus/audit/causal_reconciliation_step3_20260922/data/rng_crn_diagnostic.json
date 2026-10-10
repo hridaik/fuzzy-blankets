@@ -1,0 +1,44 @@
+{
+  "demo_1_forcing_alone": {
+    "claim": "forcing alone (no auxiliary rng-consuming decision code) does not desync the shared rng stream",
+    "n_steps": 10,
+    "n_forced_birds": 40,
+    "canary_after_unforced": [
+      0.46385275373679147,
+      0.999779858909572,
+      0.5355742066797049,
+      0.8488722853642092,
+      0.556873886576654
+    ],
+    "canary_after_forced": [
+      0.46385275373679147,
+      0.999779858909572,
+      0.5355742066797049,
+      0.8488722853642092,
+      0.556873886576654
+    ],
+    "stream_positions_identical": true,
+    "interpretation": "CONFIRMED: forced_actions changes WHICH action executes for forced birds, but consumes the identical number/order/shape of RNG draws, so the underlying generator's stream position after n_steps is unaffected by forcing itself."
+  },
+  "demo_2_auxiliary_code_desyncs": {
+    "claim": "auxiliary decision-machinery rng consumption (phase-conditional, NOT forced_actions itself) desyncs the shared physics stream, even though NO bird was ever forced in either branch",
+    "n_steps": 10,
+    "aux_draws_per_control_step": 37,
+    "z_trajectories_identical": false,
+    "fraction_birds_with_differing_heading_at_end": 0.7375,
+    "interpretation": "CONFIRMED: with forced_actions=None in BOTH branches (so no bird's action is ever overridden), the only difference is that branch B's rng object additionally consumes 37 draws per step (standing in for the real PB.rows_for_targets/PR.probe_sources calls that run_online_control_611.py's control phase makes on the SAME shared `rng` object). This alone is sufficient to make the two branches' physics trajectories diverge, because every subsequent rng.random(N) call inside sample_categorical_rows draws from a different position in the underlying bit stream. Therefore: SAME TOP-LEVEL SEED IS NOT SUFFICIENT for valid common random numbers between a no-control and a with-control branch of run_online_control_611.py's actual production loop, because the control decision machinery and the physics step share one rng object."
+  },
+  "demo_3_dedicated_stream_fixes_it": {
+    "claim": "a dedicated physics-only rng stream, never touched by decision-making code, keeps branches' physics draws aligned regardless of how much (or how differently) their decision machinery consumes",
+    "n_steps": 10,
+    "z_trajectories_identical": true,
+    "interpretation": "CONFIRMED: with physics routed through its own dedicated generator that decision code never touches, branch B's extra/different decision-side consumption has NO effect on the physics trajectory -- both branches' z arrays are bit-identical after n_steps with forced_actions=None in both. This is the audit-only harness pattern used for Task F1's schedule-effect comparison."
+  },
+  "demo_4_exact_replay_required": {
+    "claim": "exact historical reproduction requires replaying EVERY shared-stream draw production makes, not just the physics-update calls",
+    "n_steps": 15,
+    "naive_harness_matches_production": false,
+    "exact_replay_harness_matches_production": true,
+    "interpretation": "CONFIRMED: the naive harness (physics calls only, omitting the buffer-sampling draw) diverges from a genuine production trajectory, while replaying the exact call sequence (including the physics-irrelevant buffer draw) reproduces it exactly. Trigger-state reproduction scripts in this directory therefore replay production's exact call pattern, not a hand-simplified equivalent."
+  }
+}

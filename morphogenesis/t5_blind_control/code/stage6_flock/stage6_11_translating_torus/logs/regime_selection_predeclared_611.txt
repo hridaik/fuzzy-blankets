@@ -1,0 +1,198 @@
+STAGE 6.11 -- SECTION O/P REGIME-SELECTION CRITERIA (PREDECLARED)
+====================================================================
+Written before `run_phase_scan_611.py` is executed and before any scan
+output is read. Follows the Stage 6.8 (`mesoscopic_criteria_predeclared.txt`)
+and Stage 6.9 (`translation_gate_criteria_predeclared.txt`) convention: these
+thresholds are committed to text, in git history, before results exist, and
+are not to be edited after the scan is read except to add a clearly-labelled
+POST-HOC ADDENDUM (as Stage 6.9's file does), never a silent change.
+
+This is a WORLD-SELECTION criterion (task brief item 2). It is computed by
+privileged evaluation-side code (`phase_metrics_611.py`) that reads true
+positions and headings directly. It is NEVER available to the online blind
+observer, and is not re-derived or re-used once Section T control begins.
+
+--------------------------------------------------------------------
+1. TIMEBASE
+--------------------------------------------------------------------
+Every primary uncontrolled episode starts from RANDOM positions
+(uniform on the torus) and RANDOM headings (uniform over the 4 cardinal
+states) -- `MovingFlock611.run()`'s own default init, unchanged.
+
+  nt        = 240 steps per episode
+  burn_in   = 60 steps (diagnostics computed on steps [60, 240) only, to
+              let transients from the random initial condition settle)
+  measured  = 180 steps per episode
+
+--------------------------------------------------------------------
+2. OPERATIONAL "GLOBAL COLLAPSE" DIAGNOSTIC
+--------------------------------------------------------------------
+Primary definition (task brief item 2's stated default):
+
+  An episode exhibits a GLOBAL COLLAPSE EVENT iff there exists a run of
+  >= MIN_RUN consecutive measured steps with BOTH
+      global polarization        P(t) > POL_THRESH
+      largest coherent fraction  F(t) > FRAC_THRESH
+  simultaneously.
+
+  Primary cutoffs:   POL_THRESH = 0.90, FRAC_THRESH = 0.80, MIN_RUN = 20
+
+  P(t)  = | mean_i UV4[z_i(t)] |                       (phase_metrics_611.polarization)
+  F(t)  = max component size / N, from coherent_components() with
+          heading_match=True and component radius = the cell's own
+          interaction radius R (the natural physical clustering scale;
+          NOT re-tuned per cell after seeing results -- "radius = R" is
+          fixed as the rule, not the number).
+
+SENSITIVITY GRID (reported alongside the primary number, not used to
+select the regime): the same collapse indicator recomputed at
+  loose:  (POL_THRESH=0.85, FRAC_THRESH=0.75, MIN_RUN=15)
+  strict: (POL_THRESH=0.95, FRAC_THRESH=0.85, MIN_RUN=25)
+
+Global-collapse PROBABILITY for a (regime, seed set) = fraction of episodes
+in that set containing >= 1 collapse event (episode-level indicator, not
+fraction of time -- matches item 2's "global-collapse probability ... on
+independent long held-out episodes" reading, and the Stage 6.9 gate's
+per-episode pass/fail convention).
+
+--------------------------------------------------------------------
+3. "PERSISTENT LOCAL COLLECTIVE" -- WORLD-SELECTION PROXY
+--------------------------------------------------------------------
+This is a coarse, privileged, world-selection-only proxy for "translating
+collective" -- NOT the blind detector's candidate, NOT the thingness gate
+(item 10), which are both defined later using only observables. It exists
+solely to screen (R, v, cohesion, density) cells before any inference code
+is written.
+
+A tracked domain (`phase_metrics_611.track_domains`, min_size=3,
+min_jaccard=0.3, component radius = R as above) QUALIFIES as a persistent
+local collective within an episode iff, over its tracked lifetime:
+
+  duration        >= 30 measured steps
+  size fraction   in [0.05, 0.50] of N on >= 80% of its tracked steps
+                  (moderate population fraction, never the whole flock)
+  net centroid displacement over its lifetime >= 3 * R
+                  (translates several interaction-length scales, torus
+                  minimum-image displacement)
+
+An episode QUALIFIES as showing spontaneous mesoscopic structure iff it
+contains >= 1 qualifying domain.
+
+--------------------------------------------------------------------
+4. WORLD-SELECTION RULE (Section O -> P)
+--------------------------------------------------------------------
+Two-stage screen, dev seeds only for stage (a); an independent held-out
+seed set for stage (b). No physical parameter is chosen using any inference
+or control result -- only the diagnostics in sections 2-3 above.
+
+  (a) COARSE DEV SCREEN: grid over (R, v, cohesion) at fixed
+      N=400, L=24.0, beta=0.4, s=0.75 (the Stage 6.10 reference point,
+      task brief item 3), social="raw" (Section N found "normalized" does
+      not separate decision gain from degree -- see model_validation_611.json
+      V3 -- so it is dropped from the primary screen and kept only as a
+      labelled comparator if the raw-sum screen fails everywhere).
+      Dev seeds: {0, 1, 2, 3} (4 episodes per cell).
+
+      A cell is a WORLD-SELECTION CANDIDATE iff, on the dev seeds:
+        mesoscopic episode fraction  >= 0.20   (Stage 6.9's own
+                                                 GATE_MIN_PASS_RATE convention)
+        AND global-collapse probability (primary cutoffs) <= 0.05
+
+  (b) HELD-OUT CONFIRMATION: for the candidate cell(s) surviving (a) --
+      ranked by mesoscopic episode fraction, ties broken toward lower
+      realized policy-saturation fraction -- run an independent seed set
+      {100..119} (20 episodes) at nt=240 and recompute both criteria.
+      The regime is SELECTED only if both hold on this held-out set too.
+      If none survive (b), the next-ranked candidate from (a) is tried;
+      if none survive at all, Section O's stop condition applies: "stop;
+      report no viable regime" (per PLAN.md's order-of-work table), and
+      Section O2 (density/domain-size sweep) or the finite-attention-cap
+      modelling rung (task brief item 3, third rung of the ladder) is
+      tried next, in that order, before declaring the world-selection
+      question unresolved.
+
+Density/domain-size (task brief item 2's "vary ... density/domain size")
+is swept in a follow-up Section O2 only around the surviving candidate(s)
+from (a)-(b) -- not crossed with the full (R,v,cohesion) grid, to keep
+compute bounded -- and is reported as a robustness check, not used to
+re-select R/v/cohesion after the fact.
+
+--------------------------------------------------------------------
+5. WHAT THIS FILE DOES NOT DECIDE
+--------------------------------------------------------------------
+Thingness thresholds (C, G, L, D, Q -- item 10), the predictive/causal
+interface (items 6-7, 11), and control feasibility (items 13, T) are never
+touched by this file and are calibrated separately, later, on their own
+predeclared dev-only criteria, per PLAN.md's Section V rule 5 ("do not
+select the physical regime using blind-estimator performance") and rule 6
+("do not tune thingness thresholds on control success").
+
+====================================================================
+ADDENDUM (post-hoc, dated at execution -- Stage 6.9's convention: the
+predeclaration text above is left unedited; this is appended, not merged in)
+====================================================================
+
+RESULT OF SECTION O/P (`data/phase_scan_611__stage_a.json`,
+`phase_scan_611__stage_b_*.json`):
+
+Coarse dev screen (36 cells, R in {0.7,0.9,1.1,1.3} x v in {0.14,0.28,0.42}
+x cohesion in {0.0,1.0,2.0}, 4 dev seeds, beta=0.4 s=0.75, social=raw):
+GLOBAL COLLAPSE PROBABILITY WAS 0.00 IN EVERY SINGLE CELL, at all three
+sensitivity settings (loose/primary/strict). The directed-FOV restriction
+(always on, inherited from Stage 6.8) appears sufficient on its own to keep
+this torus model away from global synchronization at these R/v/N/L scales
+and this episode length (nt=240) -- consistent with Stage 6.8's own finding
+that FOV, not gating, was the ingredient that produced a mesoscopic (not
+global) fixed-lattice regime. Because collapse probability was never the
+binding constraint, cell selection reduced to the mesoscopic-episode-
+fraction criterion, and 21 of 36 cells qualified as world-selection
+candidates.
+
+Two candidates were carried to held-out confirmation (seeds 100-119, n=20),
+both surviving:
+
+  (a) R=1.1, v=0.14, cohesion=0.0  (PLAN.md Section N's "raw" comparator, no
+      cohesion needed at this radius): meso_frac=0.95, collapse_p=0.00 (all
+      three cutoffs), mean policy saturation=0.047.
+  (b) R=0.9, v=0.28, cohesion=1.0  (the EXACT Stage 6.9 spec R/v pair, whose
+      translation gate failed 0/40 without cohesion): meso_frac=1.00,
+      collapse_p=0.00 (all three cutoffs), mean policy saturation=0.538.
+
+Both were run to completion for robustness rather than stopping at the first
+confirmed candidate as section 4(b) describes sequentially; neither run's
+outcome was used to alter R, v or cohesion after the fact -- both were fixed
+by the predeclared screen before either held-out run started.
+
+SELECTED PRIMARY REGIME, by the predeclared rule (rank by mesoscopic episode
+fraction, `1.00 > 0.95`):
+
+    R = 0.9, v = 0.28, cohesion (fc_pos) = 1.0, social = "raw",
+    N = 400, L = 24.0, beta = 0.4, s = 0.75 (precB=11.25, precC=2.25)
+
+This is the direct repair of Stage 6.9's exact failed operating point: same
+R, same v, same N, same L, same (beta, s); the only change is switching on
+the positional-cohesion term this stage's Section M/N work added. It
+converts a 0/40 translation-gate failure into a 20/20 held-out mesoscopic
+confirmation without raising R (so it does not reproduce Stage 6.9's
+saturation trap by construction) -- but its own realized policy saturation
+(53.8%) is non-trivial and is flagged here, before any prediction or
+causal-probing code is written, as a risk to causal-interface identifiability
+(Stage 6.9's R=1.6 failure was saturation at 77%, not 53.8%, but the same
+mechanism). Regime (a), R=1.1/v=0.14/cohesion=0.0, is retained as a
+VALIDATED SECONDARY/ROBUSTNESS regime (saturation 4.7%) -- to be used as a
+disclosed comparator, and switched to as primary only if the causal-probing
+step (item 11) demonstrates the primary regime's interface is not
+identifiable, never on the basis of control-task success (Section V rule 5).
+
+Sections Q (nucleation cue) and R (driven benchmark) of PLAN.md are SKIPPED:
+`MovingFlock611.run()`'s own unstructured-random-start default already
+produces qualifying mesoscopic domains at 95-100% episode frequency, so no
+brief cue or continuous drive is needed to reach reasonable emergence
+frequency. Section P (natural-emergence gate) is therefore satisfied by the
+same screen as Section O, since both use the same unstructured start.
+
+Section O2 (density/domain-size sweep) and the finite-attention-cap modelling
+rung (task brief item 3's third rung) are consequently NOT NEEDED -- the
+first rung of the modelling ladder (current moving model, already
+FOV-restricted, at the Stage 6.10 precision regime) is sufficient once the
+Section M/N cohesion addition is switched on.

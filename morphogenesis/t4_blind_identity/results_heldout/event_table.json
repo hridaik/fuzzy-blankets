@@ -1,0 +1,2176 @@
+{
+ "O1": {
+  "N0|untreated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 200,
+   "median_delay_from_onset": {}
+  },
+  "N0|untreated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 60,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P01|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0
+   }
+  },
+  "P01|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0
+   }
+  },
+  "P01|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "MERGE": 85.0
+   }
+  },
+  "P02|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "MERGE": 25.0
+   }
+  },
+  "P02|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 1.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "EXTRUSION": 5.0,
+    "ARRIVAL": 25.0
+   }
+  },
+  "P03|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 1.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "EXTRUSION": 5.0,
+    "ARRIVAL": 10.0
+   }
+  },
+  "P03|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.5,
+   "ARRIVAL": 0.5,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.5,
+   "ARRIVAL": 0.5,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P07|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|treated|heldout": {
+   "SPLIT": 0.667,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P09|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 295.0,
+    "ARRIVAL": 5.0,
+    "LOSS": 5.0
+   }
+  },
+  "P09|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 5.0,
+    "LOSS": 5.0
+   }
+  },
+  "P09|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "Xbath|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_high|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_low|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmig|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 6.0
+   }
+  },
+  "Xpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xrg|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xsec|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 22.0
+   }
+  }
+ },
+ "O2": {
+  "N0|untreated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.005,
+   "LOSS": 0.005,
+   "n_runs": 200,
+   "median_delay_from_onset": {}
+  },
+  "N0|untreated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 60,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P01|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "ARRIVAL": 5.0,
+    "LOSS": 5.0
+   }
+  },
+  "P01|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "ARRIVAL": 5.0,
+    "LOSS": 5.0
+   }
+  },
+  "P01|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.5,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 165.0,
+    "MERGE": 85.0,
+    "EXTRUSION": 5.0,
+    "ARRIVAL": 10.0,
+    "LOSS": 5.0
+   }
+  },
+  "P02|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 1.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "MERGE": 25.0,
+    "EXTRUSION": 5.0,
+    "ARRIVAL": 10.0,
+    "LOSS": 5.0
+   }
+  },
+  "P02|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "ARRIVAL": 25.0,
+    "LOSS": 5.0
+   }
+  },
+  "P03|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 10.0,
+    "LOSS": 5.0
+   }
+  },
+  "P03|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.5,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.5,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P07|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|treated|heldout": {
+   "SPLIT": 0.667,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P09|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 295.0,
+    "ARRIVAL": 155.0,
+    "LOSS": 155.0
+   }
+  },
+  "P09|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 105.0,
+    "LOSS": 105.0
+   }
+  },
+  "P09|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "Xbath|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_high|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_low|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmig|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 6.0
+   }
+  },
+  "Xpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xrg|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xsec|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 22.0
+   }
+  }
+ },
+ "O3b": {
+  "N0|untreated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.01,
+   "n_runs": 200,
+   "median_delay_from_onset": {}
+  },
+  "N0|untreated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 60,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P01|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "LOSS": 5.0
+   }
+  },
+  "P01|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "LOSS": 5.0
+   }
+  },
+  "P01|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P01|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P02|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "MERGE": 120.0,
+    "ARRIVAL": 55.0,
+    "LOSS": 5.0
+   }
+  },
+  "P02|treated|heldout": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "SPLIT": 5.0,
+    "MERGE": 25.0,
+    "ARRIVAL": 25.0,
+    "LOSS": 5.0
+   }
+  },
+  "P02|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P02|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P03|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "MERGE": 35.0,
+    "ARRIVAL": 20.0,
+    "LOSS": 30.0
+   }
+  },
+  "P03|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {
+    "ARRIVAL": 5.0
+   }
+  },
+  "P03|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P03|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.5,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 1.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P04|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P05|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|dev": {
+   "SPLIT": 0.5,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.5,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P06|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P07|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.667,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.667,
+   "LOSS": 1.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P07|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.333,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 1.0,
+   "LOSS": 1.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P08|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 1,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P09|treated|dev": {
+   "SPLIT": 1.0,
+   "MERGE": 0.5,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.5,
+   "LOSS": 1.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {
+    "SPLIT": 325.0,
+    "MERGE": 445.0,
+    "ARRIVAL": 445.0,
+    "LOSS": 325.0
+   }
+  },
+  "P09|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "P09|untreated_control|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 4,
+   "median_delay_from_onset": {}
+  },
+  "P09|untreated_control|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T3b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4a|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|sham_treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 3,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 11,
+   "median_delay_from_onset": {}
+  },
+  "T4b|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 13,
+   "median_delay_from_onset": {}
+  },
+  "Xbath|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_high|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmbath_low|treated|heldout": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmig|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xmpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xpipette|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xrg|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  },
+  "Xsec|treated|dev": {
+   "SPLIT": 0.0,
+   "MERGE": 0.0,
+   "EXTRUSION": 0.0,
+   "ARRIVAL": 0.0,
+   "LOSS": 0.0,
+   "n_runs": 2,
+   "median_delay_from_onset": {}
+  }
+ }
+}

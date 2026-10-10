@@ -1,0 +1,33 @@
+{
+ "version": "ctrl_v2",
+ "baseline_tu": 20.0,
+ "dt_obs": 1.0,
+ "actuator": {
+  "S+": "L4",
+  "S-": "L3"
+ },
+ "p": 0.0,
+ "q": 0.0,
+ "radius": 1.5,
+ "dur": 20.0,
+ "ramp": 5.0,
+ "amp0": 1.0,
+ "amp_max": 6.0,
+ "target_dev": 1.0,
+ "esc_min": 1.15,
+ "esc_max": 2.5,
+ "wait": 8.0,
+ "wait_max": 30.0,
+ "commit_dev": 0.95,
+ "rising_min": 0.3,
+ "uncommit_after": 60.0,
+ "uncommit_dev": 0.3,
+ "hold": 120.0,
+ "hold_tail": 40.0,
+ "max_pulses": 5,
+ "max_dose": 1500.0,
+ "max_time": 330.0,
+ "t_act_end": 170.0,
+ "use_cue": false,
+ "abort_persist": 3
+}

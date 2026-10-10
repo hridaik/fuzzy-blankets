@@ -1,0 +1,148 @@
+{
+ "K_VALUES": [
+  1,
+  2,
+  4,
+  8,
+  12,
+  16,
+  20
+ ],
+ "n_replicates": 50,
+ "rows": [
+  {
+   "k": 1,
+   "actuators_by_degree": [
+    18
+   ],
+   "mean_Hstar_end_by_degree": 0.079,
+   "mean_Hstar_release_by_degree": 0.0,
+   "mean_Hstar_end_random": 0.06050000000000001,
+   "mean_Hstar_release_random": 0.0,
+   "std_Hstar_end_random": 0.004000000000000003
+  },
+  {
+   "k": 2,
+   "actuators_by_degree": [
+    18,
+    38
+   ],
+   "mean_Hstar_end_by_degree": 0.30499999999999994,
+   "mean_Hstar_release_by_degree": 0.0,
+   "mean_Hstar_end_random": 0.1285,
+   "mean_Hstar_release_random": 0.0,
+   "std_Hstar_end_random": 0.028705400188814633
+  },
+  {
+   "k": 4,
+   "actuators_by_degree": [
+    18,
+    38,
+    28,
+    27
+   ],
+   "mean_Hstar_end_by_degree": 0.551,
+   "mean_Hstar_release_by_degree": 0.03,
+   "mean_Hstar_end_random": 0.6395,
+   "mean_Hstar_release_random": 0.06799999999999999,
+   "std_Hstar_end_random": 0.08340263784797212
+  },
+  {
+   "k": 8,
+   "actuators_by_degree": [
+    18,
+    38,
+    28,
+    27,
+    37,
+    17,
+    48,
+    8
+   ],
+   "mean_Hstar_end_by_degree": 0.7310000000000001,
+   "mean_Hstar_release_by_degree": 0.055999999999999994,
+   "mean_Hstar_end_random": 0.8615,
+   "mean_Hstar_release_random": 0.227,
+   "std_Hstar_end_random": 0.06266179059043873
+  },
+  {
+   "k": 12,
+   "actuators_by_degree": [
+    18,
+    38,
+    28,
+    27,
+    37,
+    17,
+    48,
+    8,
+    39,
+    29,
+    47,
+    26
+   ],
+   "mean_Hstar_end_by_degree": 0.9059999999999999,
+   "mean_Hstar_release_by_degree": 0.19399999999999998,
+   "mean_Hstar_end_random": 0.962,
+   "mean_Hstar_release_random": 0.3835,
+   "std_Hstar_end_random": 0.026239283526803867
+  },
+  {
+   "k": 16,
+   "actuators_by_degree": [
+    18,
+    38,
+    28,
+    27,
+    37,
+    17,
+    48,
+    8,
+    39,
+    29,
+    47,
+    26,
+    49,
+    19,
+    7,
+    16
+   ],
+   "mean_Hstar_end_by_degree": 0.922,
+   "mean_Hstar_release_by_degree": 0.285,
+   "mean_Hstar_end_random": 1.0,
+   "mean_Hstar_release_random": 0.5334999999999999,
+   "std_Hstar_end_random": 0.0
+  },
+  {
+   "k": 20,
+   "actuators_by_degree": [
+    18,
+    38,
+    28,
+    27,
+    37,
+    17,
+    48,
+    8,
+    39,
+    29,
+    47,
+    26,
+    49,
+    19,
+    7,
+    16,
+    58,
+    36,
+    9,
+    59
+   ],
+   "mean_Hstar_end_by_degree": 1.0,
+   "mean_Hstar_release_by_degree": 0.594,
+   "mean_Hstar_end_random": 1.0,
+   "mean_Hstar_release_random": 0.5349999999999999,
+   "std_Hstar_end_random": 0.0
+  }
+ ],
+ "interpretation_note": "Diagnostic only; forcing I0 members is inadmissible for the actual external-only steering task. Used solely to characterize whether the established core exhibits a sharp cascade threshold or a gradual/sublinear response to internal forcing, which bears on whether sparse EXTERIOR actuation is fighting an intrinsically bistable/absorbing consensus."
+}

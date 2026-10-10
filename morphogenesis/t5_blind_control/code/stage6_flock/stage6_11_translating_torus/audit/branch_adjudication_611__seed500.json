@@ -1,0 +1,207 @@
+{
+ "seed": 500,
+ "t0": 61,
+ "target_heading": 1,
+ "blind_pool_size": 12,
+ "oracle_pool_size": 10,
+ "n_true_direct_parents": 0,
+ "branches": {
+  "no_control": {
+   "meta": {},
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.04477611940298507,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.10256410256410256,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.06060606060606061,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.1,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 47,
+    "interior_size_end_release": 67
+   }
+  },
+  "original_reproduced": {
+   "meta": {},
+   "readouts": {
+    "v1_end_control": 0.3611111111111111,
+    "v1_end_release": 0.05405405405405406,
+    "v2_end_control": 0.3611111111111111,
+    "v2_end_release": 0.05405405405405406,
+    "original_material_end_control": 0.2727272727272727,
+    "original_material_end_release": 0.21212121212121213,
+    "field_direction_end_control": 0.35135135135135137,
+    "field_direction_end_release": 0.03333333333333333,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 36,
+    "interior_size_end_release": 37
+   }
+  },
+  "old_set_one_shot": {
+   "meta": {
+    "S": [
+     68,
+     107,
+     125,
+     131,
+     147,
+     173,
+     253,
+     285
+    ],
+    "B_causal": []
+   },
+   "readouts": {
+    "v1_end_control": 0.02564102564102564,
+    "v1_end_release": 0.0,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.021739130434782608,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.030303030303030304,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.024390243902439025,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 39,
+    "interior_size_end_release": 62
+   }
+  },
+  "old_set_held_actual_duration": {
+   "meta": {
+    "S": [
+     68,
+     107,
+     125,
+     131,
+     147,
+     173,
+     253,
+     285
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.027777777777777776,
+    "v1_end_release": 0.023809523809523808,
+    "v2_end_control": 0.027777777777777776,
+    "v2_end_release": 0.023809523809523808,
+    "original_material_end_control": 0.030303030303030304,
+    "original_material_end_release": 0.030303030303030304,
+    "field_direction_end_control": 0.027777777777777776,
+    "field_direction_end_release": 0.02631578947368421,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 36,
+    "interior_size_end_release": 42
+   }
+  },
+  "matched_random_blind_exterior": {
+   "meta": {
+    "S": [
+     68,
+     125,
+     131,
+     147,
+     285,
+     292,
+     328,
+     340
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.02702702702702703,
+    "v1_end_release": 0.023809523809523808,
+    "v2_end_control": 0.02702702702702703,
+    "v2_end_release": 0.023809523809523808,
+    "original_material_end_control": 0.030303030303030304,
+    "original_material_end_release": 0.030303030303030304,
+    "field_direction_end_control": 0.02702702702702703,
+    "field_direction_end_release": 0.02631578947368421,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 37,
+    "interior_size_end_release": 42
+   }
+  },
+  "repaired_blind_authority": {
+   "meta": {
+    "S": [],
+    "abstained": true,
+    "n_scored": 12
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.04477611940298507,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.10256410256410256,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.06060606060606061,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.1,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 47,
+    "interior_size_end_release": 67
+   }
+  },
+  "repaired_direct_causal_restricted": {
+   "meta": {
+    "S": [],
+    "abstained": true,
+    "blind_B_causal_pool_size": 0
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.04477611940298507,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.10256410256410256,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.06060606060606061,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.1,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 47,
+    "interior_size_end_release": 67
+   }
+  },
+  "exact_direct_interface_repaired": {
+   "meta": {
+    "S": [],
+    "abstained": true,
+    "n_true_parents": 0
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.04477611940298507,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.10256410256410256,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.06060606060606061,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.1,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 47,
+    "interior_size_end_release": 67
+   }
+  },
+  "beam_search_benchmark": {
+   "meta": {
+    "S": [],
+    "A": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.04477611940298507,
+    "v2_end_control": 0.02564102564102564,
+    "v2_end_release": 0.10256410256410256,
+    "original_material_end_control": 0.06060606060606061,
+    "original_material_end_release": 0.06060606060606061,
+    "field_direction_end_control": 0.02564102564102564,
+    "field_direction_end_release": 0.1,
+    "frac_at_target_start": 0.12121212121212122,
+    "interior_size_end_control": 47,
+    "interior_size_end_release": 67
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+# ANTICIPATION (Part F): which observables lead the detected state change
+
+Observational only. Levels analysed separately. Unit: founder lineages of non-natural runs (treated, twin, sham) in which the online estimator declares a change (first change record; includes OOD departures, hence also drifting twins); dev: 87 / 82 / 66 / 84 change lineages (O1 / O2 / O3a / O3b), held-out: 52 / 50 / 35 / 68 (changes inside the first 3 baseline frames are excluded). Cluster = triplet group or body.
+Procedure (`scripts/analysis_anticipation.py`, frozen): for each descriptor feature (46 at O1, 36 at O2, 26 at O3a, 31 at O3b) the score is |x_t - median(first 3 frames)| / sigma_j, where sigma_j is the robust sd of pre-onset frame differences within the same sampling class (label-free); threshold theta_j = 95 % quantile of the per-run maximum score in change-free twin/sham development runs (false alarm 5 % per run). A feature "leads" if it crosses theta_j before the declared change time (lead = t_change - t_cross > 0, in time units). Skill = hit rate (lead > 0) minus the mean hit rate under 200 random re-placements of the change time within the run (time-shifted null), run-cluster bootstrap CI. Thresholds were fixed on development and applied unchanged to held-out.
+
+## Results
+| level | dev: best nominal feature (skill [95 % CI], median lead) | dev: features with CI > 0 | held-out: best nominal (skill [CI], lead) | held-out: features with CI > 0 |
+|---|---|---|---|---|
+| O1 | c3 dipole 0.052 [-0.019, 0.118], 50 | 0 / 46 | c4_mean 0.045 [0.034, 0.055], 14 | 1 / 46 |
+| O2 | c1 dipole 0.069 [0.010, 0.124], 72 | 1 / 36 | c0 dipole 0.041 [0.005, 0.068], 13 | 3 / 36 |
+| O3a | c2 mean 0.099 [-0.010, 0.201], 90 | 0 / 26 | n_comp 0.018 [0.004, 0.036], 103 | 1 / 26 |
+| O3b | c0 slope 0.016 [-0.067, 0.110], 140 | 0 / 31 | skew_p 0.005 [0, 0.017], - | 0 / 31 |
+**Result: NEGATIVE.** No observable anticipates the detected state change with held-out skill above about 0.05 (hit rates 0.4-0.9 are almost entirely accounted for by the null: whatever crosses early in a run also crosses before a randomly placed time). The single-feature leads of 45-130 time units in development have CIs that include zero and do not replicate in held-out (the held-out nominal winners, c4_mean at O1 and c0 dipole at O2, were not development winners; their leads of 12-14 time units equal the sampling resolution of the fast runs, i.e. they cross within a frame of the detection). The detected change is itself computed from the same descriptors with a causal 100-time-unit median window, so "leads" by less than that window cannot be distinguished from detection latency. Per-feature tables: `calibration/anticipation_dev.json`, `results_heldout/anticipation_heldout.json`, `outputs/GLOBAL_SUMMARY.json`.
+Limitations: change-time reference is an estimator output, not an event; no mechanism claims; small cluster counts for held-out conditions.

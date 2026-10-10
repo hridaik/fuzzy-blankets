@@ -1,0 +1,302 @@
+{
+ "closureC": {
+  "per_state": [
+   {
+    "state_id": "sclosure_01_seed64201",
+    "onset_means": {
+     "8": 0.0,
+     "12": 0.0
+    },
+    "onset_range": 0.0,
+    "mean_within_onset_actuator_spread": 0.0,
+    "between_onset_ge_within_actuator": false
+   },
+   {
+    "state_id": "sclosure_02_seed64202",
+    "onset_means": {
+     "12": 0.010811534043441937
+    },
+    "onset_range": 0.0,
+    "mean_within_onset_actuator_spread": 0.029357247284878863,
+    "between_onset_ge_within_actuator": false
+   },
+   {
+    "state_id": "sclosure_03_seed64203",
+    "onset_means": {
+     "0": 0.007013562756250437,
+     "4": -0.005050420022405418,
+     "8": -0.0027156847818275453
+    },
+    "onset_range": 0.012063982778655856,
+    "mean_within_onset_actuator_spread": 0.003312724468902811,
+    "between_onset_ge_within_actuator": true
+   }
+  ],
+  "onset_range_ci": {
+   "mean": 0.004021327592885285,
+   "lo": 0.0,
+   "hi": 0.00804265518577057,
+   "n": 3
+  },
+  "within_onset_spread_ci": {
+   "mean": 0.010889990584593891,
+   "lo": 0.0011042414896342704,
+   "hi": 0.020675739679553513,
+   "n": 3
+  },
+  "n_states_onset_dominates": 1
+ },
+ "onset_summary": [
+  {
+   "state_id": "sclosure_00_seed64200",
+   "onset_offset": 0,
+   "status": "ok",
+   "n_target": 28,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "onset_offset": 4,
+   "status": "ok",
+   "n_target": 28,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "onset_offset": 8,
+   "status": "ok",
+   "n_target": 28,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_00_seed64200",
+   "onset_offset": 12,
+   "status": "ok",
+   "n_target": 28,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "onset_offset": 0,
+   "status": "ok",
+   "n_target": 34,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "onset_offset": 4,
+   "status": "ok",
+   "n_target": 33,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "onset_offset": 8,
+   "status": "ok",
+   "n_target": 34,
+   "class_availability": {
+    "live_exterior_parent": 20,
+    "boundary_member": 17
+   },
+   "class_sampled": {
+    "live_exterior_parent": [
+     186,
+     247
+    ],
+    "boundary_member": [
+     202,
+     257
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_01_seed64201",
+   "onset_offset": 12,
+   "status": "ok",
+   "n_target": 25,
+   "class_availability": {
+    "live_exterior_parent": 20,
+    "boundary_member": 25
+   },
+   "class_sampled": {
+    "live_exterior_parent": [
+     42,
+     107
+    ],
+    "boundary_member": [
+     117,
+     212
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "onset_offset": 0,
+   "status": "ok",
+   "n_target": 28,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "onset_offset": 4,
+   "status": "ok",
+   "n_target": 23,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "onset_offset": 8,
+   "status": "ok",
+   "n_target": 22,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 0
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": []
+   }
+  },
+  {
+   "state_id": "sclosure_02_seed64202",
+   "onset_offset": 12,
+   "status": "ok",
+   "n_target": 22,
+   "class_availability": {
+    "live_exterior_parent": 10,
+    "boundary_member": 17
+   },
+   "class_sampled": {
+    "live_exterior_parent": [
+     225,
+     231
+    ],
+    "boundary_member": [
+     11,
+     175
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "onset_offset": 0,
+   "status": "ok",
+   "n_target": 36,
+   "class_availability": {
+    "live_exterior_parent": 1,
+    "boundary_member": 1
+   },
+   "class_sampled": {
+    "live_exterior_parent": [
+     216
+    ],
+    "boundary_member": [
+     70
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "onset_offset": 4,
+   "status": "ok",
+   "n_target": 38,
+   "class_availability": {
+    "live_exterior_parent": 0,
+    "boundary_member": 1
+   },
+   "class_sampled": {
+    "live_exterior_parent": [],
+    "boundary_member": [
+     285
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "onset_offset": 8,
+   "status": "ok",
+   "n_target": 37,
+   "class_availability": {
+    "live_exterior_parent": 4,
+    "boundary_member": 11
+   },
+   "class_sampled": {
+    "live_exterior_parent": [
+     204,
+     356
+    ],
+    "boundary_member": [
+     62,
+     217
+    ]
+   }
+  },
+  {
+   "state_id": "sclosure_03_seed64203",
+   "onset_offset": 12,
+   "status": "target_unavailable",
+   "n_target": 22
+  }
+ ],
+ "n_rollouts": 57,
+ "provenance": {
+  "source": "final_translating_flock_closure/data/closureC_timing_*.json + closure_analysis_summary.json",
+  "method": "final_translating_flock_closure/EXPERIMENT_PROTOCOL.md, TIMING_SUSCEPTIBILITY.md"
+ }
+}

@@ -1,0 +1,12 @@
+Pre-registration pilot (6 seeds x nt=80, L0/L1 fixed Moore graph, rho=15, omega=3).
+Purpose: confirm the predeclared beta grid {0.25..1.5} spans order and disorder.
+Used for NOTHING else. Run before PLAN.md was written.
+
+beta= 0.10 mean_pol=0.087 sd=0.003 frac>0.9=0.000
+beta= 0.25 mean_pol=0.230 sd=0.090 frac>0.9=0.000
+beta= 0.50 mean_pol=0.769 sd=0.303 frac>0.9=0.602
+beta= 0.75 mean_pol=0.947 sd=0.074 frac>0.9=0.829
+beta= 1.00 mean_pol=0.926 sd=0.075 frac>0.9=0.707
+beta= 1.25 mean_pol=0.932 sd=0.069 frac>0.9=0.744
+beta= 1.50 mean_pol=0.950 sd=0.052 frac>0.9=0.797
+beta= 2.00 mean_pol=0.800 sd=0.318 frac>0.9=0.630

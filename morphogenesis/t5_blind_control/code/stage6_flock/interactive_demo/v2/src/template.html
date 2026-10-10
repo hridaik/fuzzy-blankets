@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 6 — Interactive Demo v2: Observe, Infer, Probe, Control, Adapt, Move</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <h1>Stage 6 Flock — Interactive Walkthrough v2</h1>
+    <div class="spacer"></div>
+    <button class="chip" id="dataDrawerBtn">Data &amp; caveats</button>
+  </header>
+
+  <div id="progressRail"></div>
+  <nav id="tabNav"></nav>
+  <div id="legend"></div>
+
+  <main id="main" tabindex="0">
+    <section class="tabPanel" id="panel-tab1"></section>
+    <section class="tabPanel" id="panel-tab2" hidden></section>
+    <section class="tabPanel" id="panel-tab3" hidden></section>
+    <section class="tabPanel" id="panel-tab4" hidden></section>
+    <section class="tabPanel" id="panel-tab5" hidden></section>
+    <section class="tabPanel" id="panel-tab6" hidden></section>
+  </main>
+  <div id="nextRowContainer" style="padding: 0 16px;"></div>
+  <div id="timelineGraveyard" hidden></div>
+
+  <footer id="timeline" hidden>
+    <button class="tbtn" id="restartBtn" title="Reset">&#9198;</button>
+    <button class="tbtn" id="stepBackBtn" title="Step back (&#8592;)">&#9664;</button>
+    <button class="tbtn" id="playBtn" title="Play / Pause (Space)">&#9654;</button>
+    <button class="tbtn" id="stepFwdBtn" title="Step forward (&#8594;)">&#9654;|</button>
+    <div id="timeWrap">
+      <input type="range" id="timeSlider" min="0" max="1" value="0" step="1">
+      <div class="phaseMarks" id="phaseMarks"></div>
+    </div>
+    <span id="tDisplay">t = 0</span>
+    <select class="speedSel" id="speedSel">
+      <option value="0.5">0.5x</option>
+      <option value="1" selected>1x</option>
+      <option value="2">2x</option>
+      <option value="4">4x</option>
+    </select>
+    <span id="phaseBadge"></span>
+  </footer>
+</div>
+
+<div id="provOverlay"></div>
+<aside id="provDrawer">
+  <button class="chip closeBtn" id="provCloseBtn">Close</button>
+  <h2>Data &amp; caveats</h2>
+  <div id="provBody"></div>
+</aside>
+
+<script>
+/*__DATA__*/
+</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

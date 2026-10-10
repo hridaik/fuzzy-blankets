@@ -1,0 +1,242 @@
+{
+ "seed": 504,
+ "t0": 47,
+ "target_heading": 3,
+ "blind_pool_size": 12,
+ "oracle_pool_size": 22,
+ "n_true_direct_parents": 11,
+ "branches": {
+  "no_control": {
+   "meta": {},
+   "readouts": {
+    "v1_end_control": 0.04081632653061224,
+    "v1_end_release": 0.03125,
+    "v2_end_control": 0.04081632653061224,
+    "v2_end_release": 0.03125,
+    "original_material_end_control": 0.10714285714285714,
+    "original_material_end_release": 0.0,
+    "field_direction_end_control": 0.04081632653061224,
+    "field_direction_end_release": 0.0273972602739726,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 49,
+    "interior_size_end_release": 64
+   }
+  },
+  "original_reproduced": {
+   "meta": {},
+   "readouts": {
+    "v1_end_control": 0.7575757575757576,
+    "v1_end_release": 0.13793103448275862,
+    "v2_end_control": 0.7575757575757576,
+    "v2_end_release": 0.13793103448275862,
+    "original_material_end_control": 0.4642857142857143,
+    "original_material_end_release": 0.07142857142857142,
+    "field_direction_end_control": 0.7575757575757576,
+    "field_direction_end_release": 0.09523809523809523,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 33,
+    "interior_size_end_release": 29
+   }
+  },
+  "old_set_one_shot": {
+   "meta": {
+    "S": [
+     110,
+     312,
+     14,
+     65,
+     243,
+     102,
+     99,
+     278
+    ],
+    "B_causal": [
+     14,
+     65,
+     90,
+     99,
+     110,
+     129,
+     199,
+     232,
+     243,
+     278,
+     312
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.029411764705882353,
+    "v1_end_release": 0.07692307692307693,
+    "v2_end_control": 0.029411764705882353,
+    "v2_end_release": 0.07692307692307693,
+    "original_material_end_control": 0.07142857142857142,
+    "original_material_end_release": 0.03571428571428571,
+    "field_direction_end_control": 0.029411764705882353,
+    "field_direction_end_release": 0.0625,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 34,
+    "interior_size_end_release": 52
+   }
+  },
+  "old_set_held_actual_duration": {
+   "meta": {
+    "S": [
+     110,
+     312,
+     14,
+     65,
+     243,
+     102,
+     99,
+     278
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.029411764705882353,
+    "v1_end_release": 0.07692307692307693,
+    "v2_end_control": 0.029411764705882353,
+    "v2_end_release": 0.07692307692307693,
+    "original_material_end_control": 0.07142857142857142,
+    "original_material_end_release": 0.07142857142857142,
+    "field_direction_end_control": 0.029411764705882353,
+    "field_direction_end_release": 0.0625,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 34,
+    "interior_size_end_release": 52
+   }
+  },
+  "matched_random_blind_exterior": {
+   "meta": {
+    "S": [
+     14,
+     43,
+     90,
+     99,
+     110,
+     199,
+     232,
+     243
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.05084745762711865,
+    "v2_end_control": 0.0,
+    "v2_end_release": 0.05084745762711865,
+    "original_material_end_control": 0.07142857142857142,
+    "original_material_end_release": 0.0,
+    "field_direction_end_control": 0.0,
+    "field_direction_end_release": 0.045454545454545456,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 41,
+    "interior_size_end_release": 59
+   }
+  },
+  "repaired_blind_authority": {
+   "meta": {
+    "S": [
+     99,
+     312,
+     243,
+     65
+    ],
+    "abstained": false,
+    "n_scored": 12
+   },
+   "readouts": {
+    "v1_end_control": 0.0967741935483871,
+    "v1_end_release": 0.06382978723404255,
+    "v2_end_control": 0.0967741935483871,
+    "v2_end_release": 0.06382978723404255,
+    "original_material_end_control": 0.39285714285714285,
+    "original_material_end_release": 0.21428571428571427,
+    "field_direction_end_control": 0.0967741935483871,
+    "field_direction_end_release": 0.05454545454545454,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 31,
+    "interior_size_end_release": 47
+   }
+  },
+  "repaired_direct_causal_restricted": {
+   "meta": {
+    "S": [
+     65,
+     99,
+     278,
+     110,
+     243
+    ],
+    "abstained": false,
+    "blind_B_causal_pool_size": 11
+   },
+   "readouts": {
+    "v1_end_control": 0.02631578947368421,
+    "v1_end_release": 0.05454545454545454,
+    "v2_end_control": 0.02631578947368421,
+    "v2_end_release": 0.05454545454545454,
+    "original_material_end_control": 0.07142857142857142,
+    "original_material_end_release": 0.03571428571428571,
+    "field_direction_end_control": 0.02631578947368421,
+    "field_direction_end_release": 0.046875,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 38,
+    "interior_size_end_release": 55
+   }
+  },
+  "exact_direct_interface_repaired": {
+   "meta": {
+    "S": [
+     232,
+     99,
+     65,
+     243,
+     312,
+     278,
+     14
+    ],
+    "abstained": false,
+    "n_true_parents": 11
+   },
+   "readouts": {
+    "v1_end_control": 0.0,
+    "v1_end_release": 0.019230769230769232,
+    "v2_end_control": 0.0,
+    "v2_end_release": 0.019230769230769232,
+    "original_material_end_control": 0.10714285714285714,
+    "original_material_end_release": 0.07142857142857142,
+    "field_direction_end_control": 0.0,
+    "field_direction_end_release": 0.028169014084507043,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 39,
+    "interior_size_end_release": 52
+   }
+  },
+  "beam_search_benchmark": {
+   "meta": {
+    "S": [
+     65,
+     243,
+     278
+    ],
+    "A": 0.052380952380952375,
+    "ci": [
+     0.030952380952380946,
+     0.07857142857142857
+    ]
+   },
+   "readouts": {
+    "v1_end_control": 0.047619047619047616,
+    "v1_end_release": 0.06,
+    "v2_end_control": 0.047619047619047616,
+    "v2_end_release": 0.06,
+    "original_material_end_control": 0.14285714285714285,
+    "original_material_end_release": 0.07142857142857142,
+    "field_direction_end_control": 0.047619047619047616,
+    "field_direction_end_release": 0.047619047619047616,
+    "frac_at_target_start": 0.10714285714285714,
+    "interior_size_end_control": 42,
+    "interior_size_end_release": 50
+   }
+  }
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "O1": {
+  "chosen": "sens",
+  "k": 3,
+  "stability": 0.9996679156406185,
+  "table": [
+   {
+    "family": "pattern",
+    "k": 3,
+    "stability": 0.8616286726810496,
+    "val_ll_gain_mean": 2.1917580079127923,
+    "val_ll_gain_median": 2.629812846001667,
+    "val_frac_frames_improved": 0.935
+   },
+   {
+    "family": "inv",
+    "k": 3,
+    "stability": 0.9635665426394051,
+    "val_ll_gain_mean": 1.5958283667506077,
+    "val_ll_gain_median": 1.8351531075421343,
+    "val_frac_frames_improved": 0.94875
+   },
+   {
+    "family": "sens",
+    "k": 3,
+    "stability": 0.9996679156406185,
+    "val_ll_gain_mean": 2.605620466328836,
+    "val_ll_gain_median": 3.040981689107608,
+    "val_frac_frames_improved": 0.965
+   }
+  ]
+ },
+ "O2": {
+  "chosen": "sens",
+  "k": 4,
+  "stability": 0.9740784585094563,
+  "table": [
+   {
+    "family": "pattern",
+    "k": 4,
+    "stability": 0.8830419317783772,
+    "val_ll_gain_mean": 1.363487188226351,
+    "val_ll_gain_median": 1.8336929766113803,
+    "val_frac_frames_improved": 0.91
+   },
+   {
+    "family": "inv",
+    "k": 1,
+    "stability": 1.0,
+    "val_ll_gain_mean": 0.0,
+    "val_ll_gain_median": 0.0,
+    "val_frac_frames_improved": 0.0
+   },
+   {
+    "family": "sens",
+    "k": 4,
+    "stability": 0.9740784585094563,
+    "val_ll_gain_mean": 2.627920714642222,
+    "val_ll_gain_median": 3.080636203495071,
+    "val_frac_frames_improved": 0.96625
+   }
+  ]
+ },
+ "O3a": {
+  "chosen": "sens",
+  "k": 2,
+  "stability": 0.9659870229907151,
+  "table": [
+   {
+    "family": "pattern",
+    "k": 1,
+    "stability": 1.0,
+    "val_ll_gain_mean": 0.0,
+    "val_ll_gain_median": 0.0,
+    "val_frac_frames_improved": 0.0
+   },
+   {
+    "family": "inv",
+    "k": 1,
+    "stability": 1.0,
+    "val_ll_gain_mean": 0.0,
+    "val_ll_gain_median": 0.0,
+    "val_frac_frames_improved": 0.0
+   },
+   {
+    "family": "sens",
+    "k": 2,
+    "stability": 0.9659870229907151,
+    "val_ll_gain_mean": -0.13982567697888015,
+    "val_ll_gain_median": 0.49608923803801086,
+    "val_frac_frames_improved": 0.80625
+   }
+  ]
+ },
+ "O3b": {
+  "chosen": "sens",
+  "k": 2,
+  "stability": 1.0,
+  "table": [
+   {
+    "family": "pattern",
+    "k": 2,
+    "stability": 0.9847425739544721,
+    "val_ll_gain_mean": 1.4479902981860029,
+    "val_ll_gain_median": 2.6115318398418537,
+    "val_frac_frames_improved": 0.97
+   },
+   {
+    "family": "inv",
+    "k": 3,
+    "stability": 0.873434472114395,
+    "val_ll_gain_mean": 3.1147615058669818,
+    "val_ll_gain_median": 2.74579769586565,
+    "val_frac_frames_improved": 0.9425
+   },
+   {
+    "family": "sens",
+    "k": 2,
+    "stability": 1.0,
+    "val_ll_gain_mean": 1.2549637729788765,
+    "val_ll_gain_median": 2.2927335449051656,
+    "val_frac_frames_improved": 0.95875
+   }
+  ]
+ }
+}

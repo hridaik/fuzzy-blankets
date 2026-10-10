@@ -1,0 +1,30 @@
+{
+ "translation_histogram_identical": true,
+ "translation_pool_identical": true,
+ "translation_predict_proba_max_abs_diff": 0.0,
+ "translation_candidate_partition_identical": true,
+ "translation_field_rho_max_abs_diff": 3.552713678800501e-14,
+ "translation_field_m_max_abs_diff": 8.382183835919932e-15,
+ "translation_d_norm_rel_diff": 0.0,
+ "translation_boundary_B_identical": true,
+ "translation_boundary_loss_abs_diff": 0.0,
+ "permutation_histogram_identical_for_same_physical_bird": true,
+ "permutation_predict_proba_max_abs_diff": 0.0,
+ "permutation_candidate_membership_identical_as_physical_ids": false,
+ "permutation_boundary_B_identical_as_physical_ids": true,
+ "translation_lineage_R_F_input_distance_abs_diff": 5.551115123125783e-17,
+ "translation_lineage_dice_retention_trivially_identical": true,
+ "rotation90_histogram_identical_no_relabel_of_model_strata": false,
+ "rotation90_candidate_sizes": [
+  97,
+  44,
+  43,
+  38,
+  26,
+  24,
+  21,
+  19,
+  17
+ ],
+ "rotation90_note": "Affinity/detection depends on torus distance (rotation-covariant) and per-step heading AGREEMENT (rotation-invariant under the consistent relabelling above), so candidate PARTITION structure is expected to be preserved; but the relational predictor's category index bakes in absolute heading identity (0..3), so raw category histograms/logits are NOT claimed invariant under 90-degree rotation without also relabelling the per-stratum coefficient sets. General continuous rotation is not claimed or testable: headings are constrained to the 4-state UV4 lattice."
+}

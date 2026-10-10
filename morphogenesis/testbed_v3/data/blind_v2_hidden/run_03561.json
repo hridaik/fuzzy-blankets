@@ -1,0 +1,1 @@
+{"meta": {"state": "b", "kind": "mbath_low", "channel": null, "centre": 12, "disc_xy0": [3.6406913322504786, 3.3720621046277994], "radius": 1.5, "acts": [{"type": "mbath", "ligand_index": 0, "amp": 0.4, "t_on": 10, "t_off": 160.0, "ramp": 5}], "family": "decoy"}, "events": [], "pose": {"angle": 2.9926728355071472, "shift": [2.8611886488689775, 1.86711924826528]}, "private": {}}

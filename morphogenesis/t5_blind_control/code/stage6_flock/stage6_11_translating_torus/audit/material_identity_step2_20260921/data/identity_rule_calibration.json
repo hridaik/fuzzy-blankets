@@ -1,0 +1,641 @@
+{
+  "purpose": "Step-2 identity-rule calibration, independent of seeds 500-504",
+  "calibration_source": "data/observational_corpus_611__val.npz (12 uncontrolled episodes, seeds 236-247)",
+  "n_positives": 17970,
+  "n_negatives": 17970,
+  "rule_family_results": {
+    "A": [
+      {
+        "threshold": 0.1,
+        "tpr_natural_continuation_accepted": 0.9963272120200334,
+        "fpr_unrelated_accepted": 0.4987757373400111,
+        "youden_j": 0.49755147468002225
+      },
+      {
+        "threshold": 0.15,
+        "tpr_natural_continuation_accepted": 0.9959933222036728,
+        "fpr_unrelated_accepted": 0.2910962715637173,
+        "youden_j": 0.7048970506399554
+      },
+      {
+        "threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9948803561491375,
+        "fpr_unrelated_accepted": 0.15882025598219254,
+        "youden_j": 0.836060100166945
+      },
+      {
+        "threshold": 0.25,
+        "tpr_natural_continuation_accepted": 0.994045631608236,
+        "fpr_unrelated_accepted": 0.07395659432387312,
+        "youden_j": 0.9200890372843629
+      },
+      {
+        "threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9930996104618809,
+        "fpr_unrelated_accepted": 0.028491930996104618,
+        "youden_j": 0.9646076794657763
+      },
+      {
+        "threshold": 0.35,
+        "tpr_natural_continuation_accepted": 0.9922092376182526,
+        "fpr_unrelated_accepted": 0.010740122426266,
+        "youden_j": 0.9814691151919867
+      },
+      {
+        "threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9915414579855314,
+        "fpr_unrelated_accepted": 0.004173622704507512,
+        "youden_j": 0.9873678352810239
+      },
+      {
+        "threshold": 0.45,
+        "tpr_natural_continuation_accepted": 0.9904841402337229,
+        "fpr_unrelated_accepted": 0.001001669449081803,
+        "youden_j": 0.9894824707846411
+      },
+      {
+        "threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9884251530328325,
+        "fpr_unrelated_accepted": 0.00044518642181413465,
+        "youden_j": 0.9879799666110184
+      },
+      {
+        "threshold": 0.55,
+        "tpr_natural_continuation_accepted": 0.9830829159710629,
+        "fpr_unrelated_accepted": 0.00011129660545353366,
+        "youden_j": 0.9829716193656094
+      },
+      {
+        "threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9794101279910963,
+        "fpr_unrelated_accepted": 5.564830272676683e-05,
+        "youden_j": 0.9793544796883695
+      },
+      {
+        "threshold": 0.65,
+        "tpr_natural_continuation_accepted": 0.974457429048414,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.974457429048414
+      },
+      {
+        "threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9693934335002783,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9693934335002783
+      },
+      {
+        "threshold": 0.75,
+        "tpr_natural_continuation_accepted": 0.9635503617139677,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9635503617139677
+      },
+      {
+        "threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9548692264885921,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9548692264885921
+      }
+    ],
+    "B": [
+      {
+        "threshold": 0.1,
+        "tpr_natural_continuation_accepted": 0.9924318308291598,
+        "fpr_unrelated_accepted": 0.09794101279910963,
+        "youden_j": 0.8944908180300501
+      },
+      {
+        "threshold": 0.15,
+        "tpr_natural_continuation_accepted": 0.9912075681691709,
+        "fpr_unrelated_accepted": 0.009682804674457429,
+        "youden_j": 0.9815247634947134
+      },
+      {
+        "threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9897607122982749,
+        "fpr_unrelated_accepted": 0.0001669449081803005,
+        "youden_j": 0.9895937673900946
+      },
+      {
+        "threshold": 0.25,
+        "tpr_natural_continuation_accepted": 0.9877017250973845,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9877017250973845
+      },
+      {
+        "threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.985920979410128,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.985920979410128
+      },
+      {
+        "threshold": 0.35,
+        "tpr_natural_continuation_accepted": 0.9828603227601558,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9828603227601558
+      },
+      {
+        "threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9797440178074569,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9797440178074569
+      },
+      {
+        "threshold": 0.45,
+        "tpr_natural_continuation_accepted": 0.9759042849193099,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9759042849193099
+      },
+      {
+        "threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9705620478575403,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9705620478575403
+      },
+      {
+        "threshold": 0.55,
+        "tpr_natural_continuation_accepted": 0.9623260990539788,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9623260990539788
+      },
+      {
+        "threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9552031163049527,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9552031163049527
+      },
+      {
+        "threshold": 0.65,
+        "tpr_natural_continuation_accepted": 0.9456872565386756,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9456872565386756
+      },
+      {
+        "threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9368948247078465,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9368948247078465
+      },
+      {
+        "threshold": 0.75,
+        "tpr_natural_continuation_accepted": 0.9251530328324986,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9251530328324986
+      },
+      {
+        "threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9095715080690039,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9095715080690039
+      }
+    ],
+    "D": [
+      {
+        "threshold": 0.1,
+        "tpr_natural_continuation_accepted": 0.9946577629382304,
+        "fpr_unrelated_accepted": 0.4575403450194769,
+        "youden_j": 0.5371174179187534
+      },
+      {
+        "threshold": 0.15,
+        "tpr_natural_continuation_accepted": 0.9929883138564274,
+        "fpr_unrelated_accepted": 0.19454646633277686,
+        "youden_j": 0.7984418475236505
+      },
+      {
+        "threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9923205342237061,
+        "fpr_unrelated_accepted": 0.06010016694490818,
+        "youden_j": 0.932220367278798
+      },
+      {
+        "threshold": 0.25,
+        "tpr_natural_continuation_accepted": 0.9913188647746244,
+        "fpr_unrelated_accepted": 0.014079020589872008,
+        "youden_j": 0.9772398441847524
+      },
+      {
+        "threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9906510851419031,
+        "fpr_unrelated_accepted": 0.0012799109627156372,
+        "youden_j": 0.9893711741791875
+      },
+      {
+        "threshold": 0.35,
+        "tpr_natural_continuation_accepted": 0.9889816360601001,
+        "fpr_unrelated_accepted": 5.564830272676683e-05,
+        "youden_j": 0.9889259877573734
+      },
+      {
+        "threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9877017250973845,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9877017250973845
+      },
+      {
+        "threshold": 0.45,
+        "tpr_natural_continuation_accepted": 0.986143572621035,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.986143572621035
+      },
+      {
+        "threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9841958820255983,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9841958820255983
+      },
+      {
+        "threshold": 0.55,
+        "tpr_natural_continuation_accepted": 0.9809682804674458,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9809682804674458
+      },
+      {
+        "threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9782415136338342,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9782415136338342
+      },
+      {
+        "threshold": 0.65,
+        "tpr_natural_continuation_accepted": 0.9724540901502504,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9724540901502504
+      },
+      {
+        "threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9641624930439622,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9641624930439622
+      },
+      {
+        "threshold": 0.75,
+        "tpr_natural_continuation_accepted": 0.9552031163049527,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9552031163049527
+      },
+      {
+        "threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9432943795214246,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9432943795214246
+      }
+    ],
+    "C": [
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9908736783528103,
+        "fpr_unrelated_accepted": 0.02932665553700612,
+        "youden_j": 0.9615470228158042
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9870339454646633,
+        "fpr_unrelated_accepted": 0.004785754034501948,
+        "youden_j": 0.9822481914301613
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9817473567056205,
+        "fpr_unrelated_accepted": 0.0003895381190873678,
+        "youden_j": 0.9813578185865331
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9753478018920423,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9753478018920423
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9664440734557596,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9664440734557596
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9563717306622148,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9563717306622148
+      },
+      {
+        "r_old_threshold": 0.2,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9417362270450751,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9417362270450751
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9907623817473568,
+        "fpr_unrelated_accepted": 0.004507512520868113,
+        "youden_j": 0.9862548692264886
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9869782971619365,
+        "fpr_unrelated_accepted": 0.00022259321090706732,
+        "youden_j": 0.9867557039510294
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9817473567056205,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9817473567056205
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9753478018920423,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9753478018920423
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9664440734557596,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9664440734557596
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9563717306622148,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9563717306622148
+      },
+      {
+        "r_old_threshold": 0.3,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9417362270450751,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9417362270450751
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9901502504173623,
+        "fpr_unrelated_accepted": 0.0005564830272676684,
+        "youden_j": 0.9895937673900946
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9865331107401224,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9865331107401224
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9814134668892599,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9814134668892599
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9750139120756817,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9750139120756817
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9661658319421258,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9661658319421258
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9560934891485809,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9560934891485809
+      },
+      {
+        "r_old_threshold": 0.4,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9415136338341681,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9415136338341681
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9873121869782971,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9873121869782971
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9841402337228714,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9841402337228714
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9791875347801892,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9791875347801892
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.973010573177518,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.973010573177518
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9642737896494157,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9642737896494157
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9543127434613244,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9543127434613244
+      },
+      {
+        "r_old_threshold": 0.5,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9398998330550918,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9398998330550918
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9788536449638287,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9788536449638287
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9764607679465777,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9764607679465777
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9717306622148024,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9717306622148024
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9658319421257652,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9658319421257652
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9573177518085698,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9573177518085698
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9474123539232053,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9474123539232053
+      },
+      {
+        "r_old_threshold": 0.6,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9333889816360601,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9333889816360601
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.968948247078464,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.968948247078464
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.9669449081803005,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9669449081803005
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9628269337785198,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9628269337785198
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9572621035058431,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9572621035058431
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9490818030050083,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9490818030050083
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.939398998330551,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.939398998330551
+      },
+      {
+        "r_old_threshold": 0.7,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9256538675570395,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9256538675570395
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.2,
+        "tpr_natural_continuation_accepted": 0.9545353366722314,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9545353366722314
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.3,
+        "tpr_natural_continuation_accepted": 0.952754590984975,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.952754590984975
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.4,
+        "tpr_natural_continuation_accepted": 0.9489705063995548,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9489705063995548
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.5,
+        "tpr_natural_continuation_accepted": 0.9436282693377852,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9436282693377852
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.6,
+        "tpr_natural_continuation_accepted": 0.9360601001669449,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9360601001669449
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.7,
+        "tpr_natural_continuation_accepted": 0.9267111853088481,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9267111853088481
+      },
+      {
+        "r_old_threshold": 0.8,
+        "r_new_threshold": 0.8,
+        "tpr_natural_continuation_accepted": 0.9134668892598776,
+        "fpr_unrelated_accepted": 0.0,
+        "youden_j": 0.9134668892598776
+      }
+    ]
+  },
+  "frozen_rule": {
+    "letter": "B",
+    "params": {
+      "min_jaccard": 0.3
+    },
+    "selection_rationale": "Rule B (max-Jaccard, single threshold) selected over A (R_old alone) and D (Dice alone) because it reaches FPR=0 (zero cross-episode unrelated-flock acceptances) at a lower/earlier threshold (0.25-0.30) than A (needs ~0.65) while matching D closely, giving Rule B the widest stable FPR=0 plateau (threshold in [0.25, 0.80]) of the three single-parameter rules at comparable TPR. Rule C (two-sided R_old/R_new) does not separate the calibration distributions any more cleanly than Rule B despite needing two parameters (best C: J=0.9896 at R_old>=0.4,R_new>=0.2, vs Rule B: J=0.9896 at a single threshold=0.20, J=0.9878 at threshold=0.30) -- the extra parameter buys no calibration-data benefit, so the simpler single-parameter rule is preferred per the task instruction to prefer the simplest robust rule. Threshold=0.30 (not the argmax-J value of 0.20-0.25) is chosen deliberately inside the wide, flat FPR=0 plateau (0.25-0.80) rather than at its edge, for stability against small calibration-sample resampling variance -- NOT chosen by looking at seeds 500-504. Coincidentally equals v1 LineageTracker611.RETENTION_MIN (lineage_611.py:39) -- noted as a sanity cross-check on scale, not as the reason for the choice (this calibration never reads that constant).",
+    "missed_detection_horizon": 3,
+    "split_min_share": 0.3,
+    "merge_max_r_new": 0.4,
+    "merge_min_size_ratio": 1.8,
+    "split_merge_threshold_status": "DIAGNOSTIC ONLY -- not independently calibrated with the same rigor as the primary continuation threshold (task brief S7 explicitly permits this for Step 2)."
+  }
+}

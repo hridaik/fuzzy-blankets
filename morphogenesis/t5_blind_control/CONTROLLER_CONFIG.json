@@ -1,0 +1,53 @@
+{
+ "abort_persist": 3,
+ "actuator": {
+  "S+": "L4",
+  "S-": "L3"
+ },
+ "amp0": 1.6,
+ "amp_max": 6.0,
+ "baseline_tu": 20.0,
+ "chain": true,
+ "chain_growth": 1.1,
+ "commit_dev": 0.62,
+ "dt_obs": 1.0,
+ "dur": 10.0,
+ "episode_limits": {
+  "max_dose": 1500.0,
+  "max_pulses": 8,
+  "max_time": 330.0
+ },
+ "esc_max": 1.5,
+ "esc_min": 1.0,
+ "eval": {
+  "max_dishes": 75,
+  "per_direction": 30
+ },
+ "fixed": {
+  "amp": 2.0,
+  "dur": 20.0,
+  "note": "smallest single-pulse amplitude with >=90% dev-panel success (11/11 excl. one natural V_body false alarm); applied without adaptation",
+  "p": 0.0,
+  "q": 0.0,
+  "radius": 1.5,
+  "ramp": 5.0
+ },
+ "hold": 120.0,
+ "hold_tail": 40.0,
+ "max_dose": 1500.0,
+ "max_pulses": 8,
+ "max_time": 330.0,
+ "p": 0.0,
+ "q": 0.0,
+ "radius": 1.5,
+ "ramp": 2.5,
+ "rising_min": 0.3,
+ "t_act_end": 170.0,
+ "target_dev": 1.0,
+ "uncommit_after": 60.0,
+ "uncommit_dev": 0.3,
+ "use_cue": false,
+ "version": "ctrl_v3b_frozen",
+ "wait": 3.0,
+ "wait_max": 3.0
+}

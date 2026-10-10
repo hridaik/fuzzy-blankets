@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collective memory demo</title>
+<!-- CONTAINS HIDDEN INFORMATION (true states, beliefs, mechanisms). Never give this folder to a blind session. -->
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#222; --mute:#666; --line:#D9D9D2; --panel:#FFFFFF;
+  --head:#D55E00; --trunk:#0072B2; --limb:#009E73; --tail:#E69F00;
+  --sa:#56B4E9; --sb:#CC79A7; --rep:#F0E442; --band:#E8E8E8; --mid:#DDDDDD;
+  --side:236px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body{display:flex;overflow:hidden}
+#side{width:var(--side);flex:none;border-right:1px solid var(--line);background:#F4F4EF;overflow-y:auto;padding:10px 0 20px;transition:margin-left .15s}
+body.side-collapsed #side{margin-left:calc(-1 * var(--side))}
+body.presenter #side{display:none}
+#side h1{font-size:15px;margin:4px 14px 8px;line-height:1.25}
+#side .act{margin:12px 14px 3px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);font-weight:700}
+#side a{display:block;padding:5px 14px 5px 22px;font-size:14px;color:var(--ink);text-decoration:none;border-left:3px solid transparent;line-height:1.25}
+#side a:hover{background:#ECECE6}
+#side a.cur{background:#E4E4DC;border-left-color:var(--ink);font-weight:700}
+#side a .no{display:inline-block;width:2.2em;color:var(--mute);font-weight:400}
+#main{flex:1;min-width:0;display:flex;flex-direction:column;height:100vh}
+#top{display:flex;align-items:center;gap:8px;padding:8px 16px;border-bottom:1px solid var(--line);flex:none}
+#top h2{margin:0;font-size:18px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#top h2 small{font-weight:400;color:var(--mute);margin-right:8px}
+.btn{font:inherit;font-size:13px;border:1px solid #BDBDB4;background:#fff;border-radius:5px;padding:4px 9px;cursor:pointer;color:var(--ink)}
+.btn:hover{background:#F0F0EA}
+.btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#scroll{flex:1;min-height:0;overflow-y:auto;position:relative}
+#stagewrap{position:relative;padding:6px 16px 0}
+#legend{display:flex;flex-wrap:wrap;gap:6px 14px;min-height:26px;font-size:13px;align-items:center;margin-bottom:4px}
+.chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.chip i{display:inline-block;width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.35)}
+.chip i.ring{background:transparent;border:3px solid var(--rep);outline:1px solid #222;width:15px;height:15px}
+.chip i.sq{border-radius:2px}
+.chip i.dash{border-radius:0;border:0;border-top:2px dashed #222;height:0;width:18px;background:none}
+.chip i.solid{border-radius:0;border:0;border-top:2px solid #222;height:0;width:18px;background:none}
+.chip i.band{border-radius:2px;background:var(--band);border:1px solid #ccc}
+#ctrls{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;min-height:30px;margin:2px 0 6px;font-size:14px}
+#ctrls label{display:inline-flex;align-items:center;gap:6px}
+#ctrls input[type=range]{width:170px}
+#vis{position:relative;display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;align-items:flex-start}
+.pw{position:relative;display:flex;flex-direction:column;align-items:center}
+.pw .ptitle{font-size:14px;font-weight:700;margin:0 0 3px;text-align:center;max-width:100%}
+.pw .psub{font-size:13px;color:var(--mute);margin-top:3px;text-align:center}
+.pw canvas{background:var(--panel);border:1px solid var(--line);border-radius:6px;display:block}
+.pw.dim canvas{opacity:.55}
+.badge{display:inline-block;margin:2px 3px 0;padding:2px 7px;border-radius:11px;font-size:12.5px;font-weight:700;border:1.5px solid}
+.badge.ok{color:#1b6b3a;border-color:#1b6b3a;background:#E8F4EC}
+.badge.bad{color:#9b1c1c;border-color:#9b1c1c;background:#FBEAEA}
+.badge.neu{color:#444;border-color:#999;background:#F0F0EA}
+#callouts{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:20}
+#callouts svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible}
+#bubble{position:absolute;max-width:250px;background:#FFFBE6;border:1.5px solid #222;border-radius:8px;padding:8px 11px;font-size:15px;line-height:1.3;box-shadow:0 2px 8px rgba(0,0,0,.18);display:none}
+#bubble small{display:block;color:var(--mute);margin-top:4px;font-size:12px}
+#below{padding:6px 16px 8px;flex:none;border-top:1px solid var(--line);background:var(--bg)}
+#caption{font-size:16.5px;line-height:1.42;margin:2px 0 4px;max-width:1100px}
+#hint{font-size:15px;color:#444;margin:2px 0 3px;max-width:1100px}
+#takeaway{font-size:18px;font-weight:700;margin:2px 0 4px;max-width:1100px}
+#srcbar{font-size:13px}
+#srcbar a{color:#0b4f8a;cursor:pointer;text-decoration:underline}
+#sources{display:none;font-size:13px;color:#333;background:#F1F1EA;border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin:4px 0;max-width:1100px}
+#sources code{font-size:12px;background:#E8E8E0;padding:0 3px;border-radius:3px}
+#playbar{display:flex;align-items:center;gap:10px;padding:6px 16px 8px;flex:none;border-top:1px solid var(--line);background:#F7F7F2}
+#scrubwrap{position:relative;flex:1;height:26px}
+#scrub{width:100%;margin:0;position:absolute;top:2px}
+#ticks{position:absolute;left:7px;right:7px;top:18px;height:8px;pointer-events:none}
+#ticks i{position:absolute;width:2px;height:8px;background:#C0392B;margin-left:-1px}
+#tlabel{font-variant-numeric:tabular-nums;font-size:14px;min-width:150px;text-align:right}
+#notes{display:none;position:absolute;right:16px;top:44px;width:340px;max-height:60%;overflow:auto;background:#fff;border:1.5px solid #222;border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.4;z-index:30;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+#notes h4{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:6px 12px;border-radius:6px;font-size:14px;display:none;z-index:50}
+body.presenter #caption{font-size:21px}
+body.presenter #takeaway{font-size:24px}
+body.presenter #hint{font-size:18px}
+body.presenter #top h2{font-size:22px}
+.seg{display:inline-flex;border:1px solid #BDBDB4;border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13.5px;border:0;border-right:1px solid #BDBDB4;background:#fff;padding:5px 10px;cursor:pointer;color:var(--ink)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--ink);color:#fff}
+.ph{border:2px dashed #C0392B;color:#C0392B;padding:8px;border-radius:6px;font-size:14px;background:#FFF5F3}
+.truthtag{display:none;position:absolute;right:6px;top:6px;background:#222;color:#fff;font-size:11px;padding:1px 6px;border-radius:9px}
+body.truth .truthtag{display:block}
+@media (max-width:1100px){:root{--side:200px}}
+</style>
+</head>
+<body>
+<aside id="side"></aside>
+<div id="main">
+  <div id="top">
+    <button class="btn" id="bSide" title="collapse / expand the sidebar">☰</button>
+    <h2 id="title"></h2>
+    <button class="btn" id="bT" title="show the hidden truth (T)">Hidden truth (T)</button>
+    <button class="btn" id="bExport" title="save PNGs of this chapter's scripted pause points">Export key frames</button>
+    <button class="btn" id="bNotes" title="speaker notes (N)">Notes (N)</button>
+    <button class="btn" id="bPres" title="presenter mode (F)">Presenter (F)</button>
+  </div>
+  <div id="scroll">
+    <div id="stagewrap">
+      <div id="legend"></div>
+      <div id="ctrls"></div>
+      <div id="vis"></div>
+      <div id="callouts"><svg id="leader"></svg><div id="bubble"></div></div>
+    </div>
+    <div id="notes"></div>
+  </div>
+  <div id="below">
+    <div id="caption"></div>
+    <div id="hint"></div>
+    <div id="takeaway"></div>
+    <div id="srcbar"><a id="srcToggle">Sources</a> <span id="srcShort"></span></div>
+    <div id="sources"></div>
+  </div>
+  <div id="playbar">
+    <button class="btn" id="bPlay" style="min-width:64px">▶ Play</button>
+    <button class="btn" id="bRestart" title="restart">⏮</button>
+    <div id="scrubwrap"><input type="range" id="scrub" min="0" max="1000" value="0"><div id="ticks"></div></div>
+    <div class="seg" id="speeds"><button data-s="0.5">0.5x</button><button data-s="1" class="on">1x</button><button data-s="2">2x</button></div>
+    <div id="tlabel"></div>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="js/copy.js"></script>
+<script src="js/draw.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ch1.js"></script>
+<script src="js/ch2.js"></script>
+<script src="js/ch3.js"></script>
+<script src="js/ch4.js"></script>
+<script src="js/ch5.js"></script>
+<script src="js/appendix.js"></script>
+<script>Demo.start();</script>
+</body>
+</html>

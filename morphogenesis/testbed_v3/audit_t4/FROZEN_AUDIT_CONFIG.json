@@ -1,0 +1,14 @@
+{
+ "created_before_scoring": true,
+ "sealed": "audit outputs live only in testbed_v3/audit_t4/; nothing is written into t4_blind_identity/ or any blind package; not to be shared with blind sessions",
+ "event_match_window_frame_intervals": 2.0,
+ "r_link": 1.6, "m_min": 3,
+ "true_state": {"a_if_mean_rho_above": 0.5, "mixed_if_fraction_cells_a_between": [0.1, 0.9], "complete_if": "typed shape label L (distance < 0.4) AND orbit-complete AND one component (24-cell organisms only)"},
+ "true_switch": "mean rho of the dish crosses 1/2 and ends (last 20 % of frames) on the other side; time = first crossing; reporter flip = first frame the mean reporter level on the other body row exceeds that on the starting row",
+ "geometric_truth_natural_envelope_quantile": 0.95,
+ "body_frame": "e1 = head->tail = R(true alignment) (1,0); e2 = +y of the template = structural limb side = R (0,1); alignment by proper Procrustes of true positions on the template places assigned by argmax place belief",
+ "column_map_unsealed": "package column j shows hidden quantity col_perm[j] of [c0 c1 c2 c3 dA dB e]",
+ "latency_window_tu": 100,
+ "twin_drift_ood": "analyst label -1 at the last frame of a twin/sham/untreated_control run",
+ "verdict_scale": ["WORKED", "PARTLY", "FAILED", "NOT TESTABLE"]
+}

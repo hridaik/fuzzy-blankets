@@ -1,0 +1,2 @@
+/home/hkhurana/work/code/fuzzy-blankets/morphogenesis/testbed_v3/code/world3.py:84: RuntimeWarning: overflow encountered in exp
+  if s[0] == 'disc': v = 1 / (1 + np.exp(-(s[3] - np.linalg.norm(X - np.array(s[1:3]), axis=1)) / 0.15))

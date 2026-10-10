@@ -1,0 +1,559 @@
+{
+ "shortlist": [
+  67,
+  57,
+  76,
+  77,
+  86,
+  68,
+  66,
+  87,
+  15,
+  46
+ ],
+ "T_u": 20,
+ "T_r": 20,
+ "n_replicates": 50,
+ "results": {
+  "67_57": {
+   "pair": [
+    67,
+    57
+   ],
+   "mean_Hstar_end": 0.14900000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.017,
+   "mean_min_coherence": 0.627,
+   "mean_lineage_end": 0.5260000000000001
+  },
+  "67_76": {
+   "pair": [
+    67,
+    76
+   ],
+   "mean_Hstar_end": 0.081,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.028000000000000004,
+   "mean_min_coherence": 0.713,
+   "mean_lineage_end": 0.37499999999999994
+  },
+  "67_77": {
+   "pair": [
+    67,
+    77
+   ],
+   "mean_Hstar_end": 0.08500000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.006999999999999999,
+   "mean_min_coherence": 0.71,
+   "mean_lineage_end": 0.42200000000000004
+  },
+  "67_86": {
+   "pair": [
+    67,
+    86
+   ],
+   "mean_Hstar_end": 0.08500000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.028999999999999998,
+   "mean_min_coherence": 0.7140000000000001,
+   "mean_lineage_end": 0.451
+  },
+  "67_68": {
+   "pair": [
+    67,
+    68
+   ],
+   "mean_Hstar_end": 0.10200000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.006999999999999999,
+   "mean_min_coherence": 0.655,
+   "mean_lineage_end": 0.5120000000000001
+  },
+  "67_66": {
+   "pair": [
+    67,
+    66
+   ],
+   "mean_Hstar_end": 0.083,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.046,
+   "mean_min_coherence": 0.7630000000000001,
+   "mean_lineage_end": 0.4650000000000001
+  },
+  "67_87": {
+   "pair": [
+    67,
+    87
+   ],
+   "mean_Hstar_end": 0.08500000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.006,
+   "mean_min_coherence": 0.7070000000000001,
+   "mean_lineage_end": 0.387
+  },
+  "67_15": {
+   "pair": [
+    67,
+    15
+   ],
+   "mean_Hstar_end": 0.052000000000000005,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.008,
+   "mean_min_coherence": 0.825,
+   "mean_lineage_end": 0.545
+  },
+  "67_46": {
+   "pair": [
+    67,
+    46
+   ],
+   "mean_Hstar_end": 0.09100000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.024000000000000004,
+   "mean_min_coherence": 0.811,
+   "mean_lineage_end": 0.622
+  },
+  "57_76": {
+   "pair": [
+    57,
+    76
+   ],
+   "mean_Hstar_end": 0.12500000000000003,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.048,
+   "mean_min_coherence": 0.625,
+   "mean_lineage_end": 0.45300000000000007
+  },
+  "57_77": {
+   "pair": [
+    57,
+    77
+   ],
+   "mean_Hstar_end": 0.15600000000000003,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.022000000000000002,
+   "mean_min_coherence": 0.618,
+   "mean_lineage_end": 0.456
+  },
+  "57_86": {
+   "pair": [
+    57,
+    86
+   ],
+   "mean_Hstar_end": 0.139,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.044,
+   "mean_min_coherence": 0.631,
+   "mean_lineage_end": 0.4690000000000001
+  },
+  "57_68": {
+   "pair": [
+    57,
+    68
+   ],
+   "mean_Hstar_end": 0.13,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.011,
+   "mean_min_coherence": 0.6469999999999999,
+   "mean_lineage_end": 0.6439999999999999
+  },
+  "57_66": {
+   "pair": [
+    57,
+    66
+   ],
+   "mean_Hstar_end": 0.09500000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.03900000000000001,
+   "mean_min_coherence": 0.648,
+   "mean_lineage_end": 0.532
+  },
+  "57_87": {
+   "pair": [
+    57,
+    87
+   ],
+   "mean_Hstar_end": 0.14300000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.013999999999999999,
+   "mean_min_coherence": 0.637,
+   "mean_lineage_end": 0.502
+  },
+  "57_15": {
+   "pair": [
+    57,
+    15
+   ],
+   "mean_Hstar_end": 0.027000000000000003,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.005,
+   "mean_min_coherence": 0.777,
+   "mean_lineage_end": 0.681
+  },
+  "57_46": {
+   "pair": [
+    57,
+    46
+   ],
+   "mean_Hstar_end": 0.051,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.013999999999999999,
+   "mean_min_coherence": 0.79,
+   "mean_lineage_end": 0.648
+  },
+  "76_77": {
+   "pair": [
+    76,
+    77
+   ],
+   "mean_Hstar_end": 0.07200000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.017,
+   "mean_min_coherence": 0.7269999999999999,
+   "mean_lineage_end": 0.3459999999999999
+  },
+  "76_86": {
+   "pair": [
+    76,
+    86
+   ],
+   "mean_Hstar_end": 0.06999999999999999,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.012999999999999998,
+   "mean_min_coherence": 0.7090000000000001,
+   "mean_lineage_end": 0.298
+  },
+  "76_68": {
+   "pair": [
+    76,
+    68
+   ],
+   "mean_Hstar_end": 0.10100000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.018,
+   "mean_min_coherence": 0.667,
+   "mean_lineage_end": 0.434
+  },
+  "76_66": {
+   "pair": [
+    76,
+    66
+   ],
+   "mean_Hstar_end": 0.07400000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.057999999999999996,
+   "mean_min_coherence": 0.748,
+   "mean_lineage_end": 0.27499999999999997
+  },
+  "76_87": {
+   "pair": [
+    76,
+    87
+   ],
+   "mean_Hstar_end": 0.075,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.01,
+   "mean_min_coherence": 0.6970000000000002,
+   "mean_lineage_end": 0.4049999999999999
+  },
+  "76_15": {
+   "pair": [
+    76,
+    15
+   ],
+   "mean_Hstar_end": 0.03,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.008,
+   "mean_min_coherence": 0.7340000000000001,
+   "mean_lineage_end": 0.39099999999999996
+  },
+  "76_46": {
+   "pair": [
+    76,
+    46
+   ],
+   "mean_Hstar_end": 0.07400000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.053,
+   "mean_min_coherence": 0.7560000000000001,
+   "mean_lineage_end": 0.4759999999999999
+  },
+  "77_86": {
+   "pair": [
+    77,
+    86
+   ],
+   "mean_Hstar_end": 0.037,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0030000000000000005,
+   "mean_min_coherence": 0.7230000000000001,
+   "mean_lineage_end": 0.41600000000000004
+  },
+  "77_68": {
+   "pair": [
+    77,
+    68
+   ],
+   "mean_Hstar_end": 0.042,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.6849999999999998,
+   "mean_lineage_end": 0.569
+  },
+  "77_66": {
+   "pair": [
+    77,
+    66
+   ],
+   "mean_Hstar_end": 0.09100000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.05799999999999999,
+   "mean_min_coherence": 0.76,
+   "mean_lineage_end": 0.43799999999999994
+  },
+  "77_87": {
+   "pair": [
+    77,
+    87
+   ],
+   "mean_Hstar_end": 0.022000000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.7200000000000002,
+   "mean_lineage_end": 0.49
+  },
+  "77_15": {
+   "pair": [
+    77,
+    15
+   ],
+   "mean_Hstar_end": 0.025999999999999995,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0030000000000000005,
+   "mean_min_coherence": 0.806,
+   "mean_lineage_end": 0.5409999999999999
+  },
+  "77_46": {
+   "pair": [
+    77,
+    46
+   ],
+   "mean_Hstar_end": 0.04299999999999999,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.004,
+   "mean_min_coherence": 0.8589999999999999,
+   "mean_lineage_end": 0.49199999999999994
+  },
+  "86_68": {
+   "pair": [
+    86,
+    68
+   ],
+   "mean_Hstar_end": 0.055,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.004,
+   "mean_min_coherence": 0.659,
+   "mean_lineage_end": 0.49199999999999994
+  },
+  "86_66": {
+   "pair": [
+    86,
+    66
+   ],
+   "mean_Hstar_end": 0.06,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.044000000000000004,
+   "mean_min_coherence": 0.7639999999999999,
+   "mean_lineage_end": 0.276
+  },
+  "86_87": {
+   "pair": [
+    86,
+    87
+   ],
+   "mean_Hstar_end": 0.027999999999999997,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.005,
+   "mean_min_coherence": 0.7170000000000001,
+   "mean_lineage_end": 0.5050000000000001
+  },
+  "86_15": {
+   "pair": [
+    86,
+    15
+   ],
+   "mean_Hstar_end": 0.021,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0030000000000000005,
+   "mean_min_coherence": 0.7689999999999999,
+   "mean_lineage_end": 0.519
+  },
+  "86_46": {
+   "pair": [
+    86,
+    46
+   ],
+   "mean_Hstar_end": 0.022000000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.018,
+   "mean_min_coherence": 0.8340000000000001,
+   "mean_lineage_end": 0.43699999999999994
+  },
+  "68_66": {
+   "pair": [
+    68,
+    66
+   ],
+   "mean_Hstar_end": 0.11800000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.03900000000000001,
+   "mean_min_coherence": 0.677,
+   "mean_lineage_end": 0.45699999999999996
+  },
+  "68_87": {
+   "pair": [
+    68,
+    87
+   ],
+   "mean_Hstar_end": 0.03200000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.691,
+   "mean_lineage_end": 0.626
+  },
+  "68_15": {
+   "pair": [
+    68,
+    15
+   ],
+   "mean_Hstar_end": 0.023000000000000003,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.79,
+   "mean_lineage_end": 0.6800000000000002
+  },
+  "68_46": {
+   "pair": [
+    68,
+    46
+   ],
+   "mean_Hstar_end": 0.03900000000000001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.01,
+   "mean_min_coherence": 0.8329999999999999,
+   "mean_lineage_end": 0.757
+  },
+  "66_87": {
+   "pair": [
+    66,
+    87
+   ],
+   "mean_Hstar_end": 0.074,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.056999999999999995,
+   "mean_min_coherence": 0.7669999999999999,
+   "mean_lineage_end": 0.409
+  },
+  "66_15": {
+   "pair": [
+    66,
+    15
+   ],
+   "mean_Hstar_end": 0.012999999999999998,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.012000000000000002,
+   "mean_min_coherence": 0.7269999999999999,
+   "mean_lineage_end": 0.5589999999999999
+  },
+  "66_46": {
+   "pair": [
+    66,
+    46
+   ],
+   "mean_Hstar_end": 0.051,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.027999999999999997,
+   "mean_min_coherence": 0.768,
+   "mean_lineage_end": 0.5830000000000001
+  },
+  "87_15": {
+   "pair": [
+    87,
+    15
+   ],
+   "mean_Hstar_end": 0.008,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.001,
+   "mean_min_coherence": 0.7759999999999999,
+   "mean_lineage_end": 0.58
+  },
+  "87_46": {
+   "pair": [
+    87,
+    46
+   ],
+   "mean_Hstar_end": 0.012000000000000002,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.8760000000000001,
+   "mean_lineage_end": 0.503
+  },
+  "15_46": {
+   "pair": [
+    15,
+    46
+   ],
+   "mean_Hstar_end": 0.001,
+   "p_success": 0.0,
+   "p_success_and_integrity": 0.0,
+   "mean_Hstar_release": 0.0,
+   "mean_min_coherence": 0.774,
+   "mean_lineage_end": 0.7069999999999999
+  }
+ }
+}

@@ -1,0 +1,171 @@
+{
+  "purpose": "Material-retention (R_old/R_new/Jaccard) derivation for stage 6.11 evidence-recovery audit",
+  "git_commit": "940a5f672bc9b8302c0436e5a531cea6ae1f6ce1",
+  "invocation": "derive_material_retention.py",
+  "upstream_sources": [
+    "audit/lineage_forensics_611__seed{500..504}__hypotheses.csv (R_retain_step/R_purity_step, from the real, verified lineage_611.LineageTracker611 replay)",
+    "data/viz_bundle_611__seed{500..504}.json (raw recorded interior membership, cross-check ground truth)",
+    "audit/lineage_forensics_611__seed{500..504}__transitions.json (existing flagged-transition set)"
+  ],
+  "seeds": [
+    500,
+    501,
+    502,
+    503,
+    504
+  ],
+  "note": "No lineage, controller, or world-dynamics code was modified or re-run. This script only re-expresses already-verified quantities and adds Jaccard/retained/lost/gained, which the upstream CSVs do not carry directly.",
+  "seed_summaries": [
+    {
+      "seed": 500,
+      "n_rows": 107,
+      "n_displayed_vs_branch_internal_disagreements": 2,
+      "disagreements": [
+        {
+          "t": 21,
+          "branch_internal_overlap": 32,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 39,
+          "branch_internal_overlap": 32,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        }
+      ],
+      "flagged_transitions_t": [
+        4,
+        21,
+        27,
+        39
+      ]
+    },
+    {
+      "seed": 501,
+      "n_rows": 76,
+      "n_displayed_vs_branch_internal_disagreements": 4,
+      "disagreements": [
+        {
+          "t": 11,
+          "branch_internal_overlap": 41,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 12,
+          "branch_internal_overlap": 43,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 17,
+          "branch_internal_overlap": 29,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 32,
+          "branch_internal_overlap": 27,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        }
+      ],
+      "flagged_transitions_t": [
+        2,
+        3,
+        11,
+        12,
+        17,
+        32,
+        36
+      ]
+    },
+    {
+      "seed": 502,
+      "n_rows": 76,
+      "n_displayed_vs_branch_internal_disagreements": 3,
+      "disagreements": [
+        {
+          "t": 32,
+          "branch_internal_overlap": 12,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 52,
+          "branch_internal_overlap": 36,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 68,
+          "branch_internal_overlap": 23,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        }
+      ],
+      "flagged_transitions_t": [
+        2,
+        5,
+        20,
+        26,
+        32,
+        52,
+        68
+      ]
+    },
+    {
+      "seed": 503,
+      "n_rows": 81,
+      "n_displayed_vs_branch_internal_disagreements": 4,
+      "disagreements": [
+        {
+          "t": 9,
+          "branch_internal_overlap": 22,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 11,
+          "branch_internal_overlap": 37,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 35,
+          "branch_internal_overlap": 35,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        },
+        {
+          "t": 47,
+          "branch_internal_overlap": 37,
+          "displayed_overlap": 0,
+          "flagged_by_lineage_forensics": true
+        }
+      ],
+      "flagged_transitions_t": [
+        3,
+        7,
+        8,
+        9,
+        10,
+        11,
+        35,
+        43,
+        47
+      ]
+    },
+    {
+      "seed": 504,
+      "n_rows": 93,
+      "n_displayed_vs_branch_internal_disagreements": 0,
+      "disagreements": [],
+      "flagged_transitions_t": [
+        2,
+        33
+      ]
+    }
+  ]
+}

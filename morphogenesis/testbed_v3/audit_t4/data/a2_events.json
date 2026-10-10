@@ -1,0 +1,1086 @@
+{
+ "flags": {
+  "O1|natural|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|natural|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|natural|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|natural|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|natural|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|natural|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|natural|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|natural|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|natural|ARRIVAL": {
+   "flags": 1,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|natural|LOSS": {
+   "flags": 1,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|natural|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|natural|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|natural|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|natural|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|natural|LOSS": {
+   "flags": 11,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|natural|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|natural|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|natural|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|natural|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|natural|LOSS": {
+   "flags": 13,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_treated|SPLIT": {
+   "flags": 66,
+   "supported": 62,
+   "precision": 0.9393939393939394,
+   "true_events": 72,
+   "recall": 0.8611111111111112,
+   "timing_err_median": 0.0
+  },
+  "O1|ops_treated|MERGE": {
+   "flags": 34,
+   "supported": 32,
+   "precision": 0.9411764705882353,
+   "true_events": 40,
+   "recall": 0.8,
+   "timing_err_median": 0.0
+  },
+  "O1|ops_treated|EXTRUSION": {
+   "flags": 8,
+   "supported": 8,
+   "precision": 1.0,
+   "true_events": 10,
+   "recall": 0.8,
+   "timing_err_median": 0.0
+  },
+  "O1|ops_treated|ARRIVAL": {
+   "flags": 26,
+   "supported": 26,
+   "precision": 1.0,
+   "true_events": 28,
+   "recall": 0.9285714285714286,
+   "timing_err_median": 0.0
+  },
+  "O1|ops_treated|LOSS": {
+   "flags": 18,
+   "supported": 18,
+   "precision": 1.0,
+   "true_events": 18,
+   "recall": 1.0,
+   "timing_err_median": 0.0
+  },
+  "O2|ops_treated|SPLIT": {
+   "flags": 59,
+   "supported": 55,
+   "precision": 0.9322033898305084,
+   "true_events": 72,
+   "recall": 0.7638888888888888,
+   "timing_err_median": 0.0
+  },
+  "O2|ops_treated|MERGE": {
+   "flags": 35,
+   "supported": 33,
+   "precision": 0.9428571428571428,
+   "true_events": 40,
+   "recall": 0.825,
+   "timing_err_median": 0.0
+  },
+  "O2|ops_treated|EXTRUSION": {
+   "flags": 8,
+   "supported": 2,
+   "precision": 0.25,
+   "true_events": 10,
+   "recall": 0.2,
+   "timing_err_median": 0.0
+  },
+  "O2|ops_treated|ARRIVAL": {
+   "flags": 201,
+   "supported": 20,
+   "precision": 0.09950248756218906,
+   "true_events": 28,
+   "recall": 0.7142857142857143,
+   "timing_err_median": 0.0
+  },
+  "O2|ops_treated|LOSS": {
+   "flags": 244,
+   "supported": 10,
+   "precision": 0.040983606557377046,
+   "true_events": 18,
+   "recall": 0.5555555555555556,
+   "timing_err_median": 0.0
+  },
+  "O3a|ops_treated|SPLIT": {
+   "flags": 17,
+   "supported": 5,
+   "precision": 0.29411764705882354,
+   "true_events": 72,
+   "recall": 0.06944444444444445,
+   "timing_err_median": 0.0
+  },
+  "O3a|ops_treated|MERGE": {
+   "flags": 15,
+   "supported": 4,
+   "precision": 0.26666666666666666,
+   "true_events": 40,
+   "recall": 0.1,
+   "timing_err_median": 0.0
+  },
+  "O3a|ops_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 10,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3a|ops_treated|ARRIVAL": {
+   "flags": 63,
+   "supported": 6,
+   "precision": 0.09523809523809523,
+   "true_events": 28,
+   "recall": 0.21428571428571427,
+   "timing_err_median": -5.0
+  },
+  "O3a|ops_treated|LOSS": {
+   "flags": 81,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 18,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3b|ops_treated|SPLIT": {
+   "flags": 22,
+   "supported": 9,
+   "precision": 0.4090909090909091,
+   "true_events": 72,
+   "recall": 0.125,
+   "timing_err_median": 0.0
+  },
+  "O3b|ops_treated|MERGE": {
+   "flags": 18,
+   "supported": 6,
+   "precision": 0.3333333333333333,
+   "true_events": 40,
+   "recall": 0.15,
+   "timing_err_median": 0.0
+  },
+  "O3b|ops_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 10,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3b|ops_treated|ARRIVAL": {
+   "flags": 67,
+   "supported": 6,
+   "precision": 0.08955223880597014,
+   "true_events": 28,
+   "recall": 0.21428571428571427,
+   "timing_err_median": -5.0
+  },
+  "O3b|ops_treated|LOSS": {
+   "flags": 87,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 18,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O1|ops_untreated_control|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_untreated_control|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_untreated_control|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_untreated_control|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_untreated_control|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_untreated_control|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_untreated_control|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_untreated_control|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_untreated_control|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_untreated_control|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_untreated_control|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_untreated_control|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_untreated_control|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_untreated_control|ARRIVAL": {
+   "flags": 4,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_untreated_control|LOSS": {
+   "flags": 3,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_untreated_control|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_untreated_control|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_untreated_control|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_untreated_control|ARRIVAL": {
+   "flags": 2,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_untreated_control|LOSS": {
+   "flags": 4,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_sham_treated|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_sham_treated|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_sham_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_sham_treated|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|ops_sham_treated|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_sham_treated|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_sham_treated|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_sham_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_sham_treated|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|ops_sham_treated|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_sham_treated|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_sham_treated|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_sham_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_sham_treated|ARRIVAL": {
+   "flags": 5,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|ops_sham_treated|LOSS": {
+   "flags": 3,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_sham_treated|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_sham_treated|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_sham_treated|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_sham_treated|ARRIVAL": {
+   "flags": 5,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|ops_sham_treated|LOSS": {
+   "flags": 1,
+   "supported": 0,
+   "precision": 0.0,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|switch|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|switch|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|switch|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|switch|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|switch|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|switch|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|switch|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|switch|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|switch|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|switch|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|switch|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|switch|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|switch|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|switch|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|switch|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|switch|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|switch|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|switch|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|switch|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|switch|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|decoy|SPLIT": {
+   "flags": 2,
+   "supported": 2,
+   "precision": 1.0,
+   "true_events": 2,
+   "recall": 1.0,
+   "timing_err_median": 0.0
+  },
+  "O1|decoy|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|decoy|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O1|decoy|ARRIVAL": {
+   "flags": 2,
+   "supported": 2,
+   "precision": 1.0,
+   "true_events": 2,
+   "recall": 1.0,
+   "timing_err_median": -2.0
+  },
+  "O1|decoy|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|decoy|SPLIT": {
+   "flags": 2,
+   "supported": 2,
+   "precision": 1.0,
+   "true_events": 2,
+   "recall": 1.0,
+   "timing_err_median": 0.0
+  },
+  "O2|decoy|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|decoy|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O2|decoy|ARRIVAL": {
+   "flags": 2,
+   "supported": 2,
+   "precision": 1.0,
+   "true_events": 2,
+   "recall": 1.0,
+   "timing_err_median": -2.0
+  },
+  "O2|decoy|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|decoy|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 2,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3a|decoy|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|decoy|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3a|decoy|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 2,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3a|decoy|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|decoy|SPLIT": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 2,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3b|decoy|MERGE": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|decoy|EXTRUSION": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  },
+  "O3b|decoy|ARRIVAL": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 2,
+   "recall": 0.0,
+   "timing_err_median": null
+  },
+  "O3b|decoy|LOSS": {
+   "flags": 0,
+   "supported": 0,
+   "precision": null,
+   "true_events": 0,
+   "recall": null,
+   "timing_err_median": null
+  }
+ },
+ "operations": {
+  "O1|cutx|SPLIT": {
+   "n": 6,
+   "hit": 6,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O2|cutx|SPLIT": {
+   "n": 6,
+   "hit": 6,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O3a|cutx|SPLIT": {
+   "n": 6,
+   "hit": 1,
+   "recall": 0.16666666666666666,
+   "delay_median": 5.0
+  },
+  "O3b|cutx|SPLIT": {
+   "n": 6,
+   "hit": 2,
+   "recall": 0.3333333333333333,
+   "delay_median": 5.0
+  },
+  "O1|cuty|SPLIT": {
+   "n": 6,
+   "hit": 6,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O2|cuty|SPLIT": {
+   "n": 6,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3a|cuty|SPLIT": {
+   "n": 6,
+   "hit": 4,
+   "recall": 0.6666666666666666,
+   "delay_median": 5.0
+  },
+  "O3b|cuty|SPLIT": {
+   "n": 6,
+   "hit": 4,
+   "recall": 0.6666666666666666,
+   "delay_median": 5.0
+  },
+  "O1|extrude|EXTRUSION": {
+   "n": 6,
+   "hit": 6,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O2|extrude|EXTRUSION": {
+   "n": 6,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3a|extrude|EXTRUSION": {
+   "n": 6,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3b|extrude|EXTRUSION": {
+   "n": 6,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O1|replace3|ARRIVAL": {
+   "n": 18,
+   "hit": 18,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O1|replace3|LOSS": {
+   "n": 18,
+   "hit": 18,
+   "recall": 1.0,
+   "delay_median": 5.0
+  },
+  "O2|replace3|ARRIVAL": {
+   "n": 18,
+   "hit": 10,
+   "recall": 0.5555555555555556,
+   "delay_median": 5.0
+  },
+  "O2|replace3|LOSS": {
+   "n": 18,
+   "hit": 10,
+   "recall": 0.5555555555555556,
+   "delay_median": 5.0
+  },
+  "O3a|replace3|ARRIVAL": {
+   "n": 18,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3a|replace3|LOSS": {
+   "n": 18,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3b|replace3|ARRIVAL": {
+   "n": 18,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  },
+  "O3b|replace3|LOSS": {
+   "n": 18,
+   "hit": 0,
+   "recall": 0.0,
+   "delay_median": null
+  }
+ }
+}

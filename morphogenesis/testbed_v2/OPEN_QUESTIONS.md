@@ -1,0 +1,9 @@
+# OPEN_QUESTIONS.md — testbed v2
+
+1. **G3 is negative at these precisions. Is there ANY parameter set with a movement-free switch?** The needed ingredient is a weaker morphological restoring force on the 8 body-row cells relative to the memory evidence. Candidates NOT tried: π_c, π_λ ≪ e with β_E ≫ 4 (outside the declared β range), a smaller template chirality (fewer body-row differences), an actuator acting directly on l (fate bias), or a light acting on receptor gain of the memory channel (the `rg` actuator exists but was not scanned).
+2. **The design rule is wrong in its w = 1 assumption.** Is the intended model one where an isolated cell expects Ψ* = D* (not w_k D*)? If Ψ*_k = D* for every place the isolated cell would have G₁ exactly as in the rule; the body's gain would change as well (not derived). Not tested.
+3. The slowest G1 mode (0.0089) is a near-degenerate twin exchange. A template whose mirror twins are better separated (e.g. a one-sided cue) would remove it.
+4. Body-row types hold the form; the memory ligand only holds the handedness of 14–18 cells that carry no morphology. Does the programme want a collective memory whose *only* carrier is the ligand? That requires G_mem ≥ G_morph, i.e. an isolated-cell-safe memory with G_mem > 6.6 (k_hβπ_ψ w̄² ≫ ...), incompatible with G_iso < 4r by the ratio G_iso(w_max)/G = 1.57 (MEMORY.md).
+5. Cut along the body axis (±y) disintegrates both fragments (ballistic dispersal); is that a model artefact of the unbounded position gradient away from the kernel range (cells beyond ≈ 5 units feel no force)? Not tested with a confinement.
+6. Fusion: bodies placed ≥ 8 apart do not touch; closer or rotated placements are open.
+7. v1's G1(d) repair targets (≥ 20/24, ≥ 3/4) are missed (14/24, 0/4): improvement of identity repair would need re-specification of crispness vs plasticity (β_E, k_μ larger ranges).

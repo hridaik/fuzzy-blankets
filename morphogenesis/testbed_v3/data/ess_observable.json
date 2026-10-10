@@ -1,0 +1,102 @@
+{
+ "development": {
+  "shape_logratio": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 1329.301693872884,
+   "ess_per_run_median": 51.186310799664966
+  },
+  "level_mean_c0": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 20340.752444588485,
+   "ess_per_run_median": 859.2135648614617
+  },
+  "level_mean_c1": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 113369.41281237797,
+   "ess_per_run_median": 4766.677404995523
+  },
+  "level_mean_c2": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 110644.84852139011,
+   "ess_per_run_median": 4618.103404055653
+  },
+  "level_mean_c3": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 115453.61554175496,
+   "ess_per_run_median": 4981.371270013468
+  },
+  "level_mean_c4": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 13384.961773327443,
+   "ess_per_run_median": 536.1133628185594
+  },
+  "level_mean_c5": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 13622.531402796909,
+   "ess_per_run_median": 566.7304488697122
+  },
+  "level_mean_c6": {
+   "runs": 24,
+   "frames": 134400,
+   "ess_total": 104650.44258050632,
+   "ess_per_run_median": 4530.30867449932
+  }
+ },
+ "heldout_bodies": {
+  "shape_logratio": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 498.35658410244025,
+   "ess_per_run_median": 41.05452308579047
+  },
+  "level_mean_c0": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 9283.094563562287,
+   "ess_per_run_median": 749.2303858537274
+  },
+  "level_mean_c1": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 56230.48296541726,
+   "ess_per_run_median": 4607.911691480993
+  },
+  "level_mean_c2": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 57036.154729326176,
+   "ess_per_run_median": 4847.61646138074
+  },
+  "level_mean_c3": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 60216.93905843319,
+   "ess_per_run_median": 4985.133606624118
+  },
+  "level_mean_c4": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 6607.632910092538,
+   "ess_per_run_median": 585.4171964446166
+  },
+  "level_mean_c5": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 6606.103728310863,
+   "ess_per_run_median": 511.84349689698297
+  },
+  "level_mean_c6": {
+   "runs": 12,
+   "frames": 67200,
+   "ess_total": 54911.296780345794,
+   "ess_per_run_median": 4506.999530582374
+  }
+ }
+}

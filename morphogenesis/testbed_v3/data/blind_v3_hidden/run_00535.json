@@ -1,0 +1,1 @@
+{"meta": {"family": "stress", "scn": "extrude", "arm": "event", "state": "a", "seed": 2701}, "events": [{"t": 10150.0, "kind": "extrude", "index": 2, "cell_id": 2, "vec": [-4.012673200295201, 6.920870883612312]}], "pose": {"angle": 2.4350006023449646, "shift": [0.5698443257319692, 1.4952156525365128]}, "private": {}}

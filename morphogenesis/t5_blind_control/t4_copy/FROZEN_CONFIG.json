@@ -1,0 +1,399 @@
+{
+ "created": "2026-10-09T22:50:30",
+ "code_sha256": "87dafdfc57bc32023b42e2660f702e17f8e644b7754ee52d9e827d64459bea2e",
+ "files_hashed": [
+  "calibration/antic_thresholds.json",
+  "calibration/anticipation_dev.json",
+  "calibration/consistency_dev.json",
+  "calibration/envelope.json",
+  "calibration/geometry.json",
+  "calibration/info_dev.json",
+  "calibration/pairs_dev.json",
+  "calibration/state_models.pkl",
+  "calibration/states_inv.json",
+  "calibration/states_means.json",
+  "calibration/states_noC45.json",
+  "calibration/states_pattern.json",
+  "calibration/states_report.json",
+  "calibration/states_selection.json",
+  "calibration/states_sens.json",
+  "scripts/analysis_anticipation.py",
+  "scripts/analysis_info.py",
+  "scripts/analysis_pairs.py",
+  "scripts/build_viewer.py",
+  "scripts/calibrate_envelope.py",
+  "scripts/calibrate_geometry.py",
+  "scripts/consistency.py",
+  "scripts/discover_states.py",
+  "scripts/eval_celltrack.py",
+  "scripts/freeze.py",
+  "scripts/screenshots.py",
+  "scripts/select_state_models.py",
+  "scripts/stage1.py",
+  "scripts/stage2.py",
+  "scripts/states_report.py",
+  "scripts/test_celltrack_o1.py",
+  "scripts/test_orgtrack_o1.py",
+  "scripts/test_segment.py",
+  "scripts/test_segment2.py",
+  "t4/__init__.py",
+  "t4/celltrack.py",
+  "t4/describe.py",
+  "t4/geom.py",
+  "t4/io.py",
+  "t4/layers.py",
+  "t4/louvain.py",
+  "t4/o3.py",
+  "t4/orgtrack.py",
+  "t4/outputs.py",
+  "t4/pipeline.py",
+  "t4/segment.py",
+  "t4/states.py",
+  "t4/summ.py",
+  "t4/viewer_template.html",
+  "tests/test_t4.py"
+ ],
+ "geometry": {
+  "n_cal": 100,
+  "n_val": 100,
+  "r_link": 1.6,
+  "r_hold": 2.08,
+  "r_coh": 1.42,
+  "val_dish_exceed_rate_at_r_link": 0.0,
+  "cal_dish_exceed_rate_at_r_link": 0.0,
+  "m_min": 3,
+  "margin": 0.15,
+  "s_eff": 1.4,
+  "s_eff_scan": {
+   "0.9": 0.9543386446175729,
+   "1.0": 0.9627633152052794,
+   "1.1": 0.9687999838788549,
+   "1.2": 0.9727227876247522,
+   "1.3": 0.9747761781715908,
+   "1.4": 0.9751757189874485,
+   "1.5": 0.9741113109134748,
+   "1.6": 0.9717508148835278
+  },
+  "mass_per_cell": 8.150007776472421,
+  "mass_per_cell_sd": 0.43546513339508625,
+  "mass_per_cell_by_frame": [
+   8.306391244125916,
+   8.276404764726612,
+   8.228748398812604,
+   8.153599946540272,
+   8.137619755286869,
+   8.07795803148656,
+   8.036641034032801,
+   7.982699036767736
+  ],
+  "fg_sigma_mult": 4.0,
+  "rl_iters": 10,
+  "o3_cal_single_component_rate": 1.0,
+  "o3_sign_S0": 0.5
+ },
+ "cell_tracker": {
+  "sigma_d": 0.3,
+  "gate": 20.0,
+  "fingerprint": "type channels raw/0.15 + log(c6)/0.08",
+  "block_vote_grid": 0.4,
+  "block_vote_min": 3
+ },
+ "organism_tracker": {
+  "min_cells_declared": "geometry.m_min",
+  "margin": "geometry.margin",
+  "hysteresis_r_hold": "geometry.r_hold"
+ },
+ "o3": {
+  "window": "[-fov,fov]^2, pixel centres",
+  "kernel_sd": "geometry.s_eff",
+  "fg": "smoothed(0.5px) c6 > far-field mean + 4*sd",
+  "min_pixels": "ceil(m_min/px^2)",
+  "count": "mass/mass_per_cell",
+  "pseudo_cells": "Richardson-Lucy(10 it) + weighted k-means",
+  "sign": "c6-centroid minus c2-centroid along e1, S0=geometry.o3_sign_S0"
+ },
+ "envelope": {
+  "O1": {
+   "alpha": 0.005557486794839136,
+   "bounds": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 1.468896754874274,
+    "shape": 0.049267404906071115,
+    "pattern": 1.5269170169112638
+   },
+   "cal_pass": 0.9,
+   "val_pass": 0.97,
+   "val_pass_ci": [
+    0.93,
+    1.0
+   ],
+   "axis_fail_cal": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.02,
+    "shape": 0.04,
+    "pattern": 0.04
+   },
+   "axis_fail_val": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.0,
+    "shape": 0.03,
+    "pattern": 0.01
+   },
+   "n_cal": 100,
+   "n_val": 100
+  },
+  "O2": {
+   "alpha": 0.005557486794839136,
+   "bounds": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 1.468896754874274,
+    "shape": 0.04926740490607115,
+    "pattern": 1.5682850802327741
+   },
+   "cal_pass": 0.9,
+   "val_pass": 0.93,
+   "val_pass_ci": [
+    0.88,
+    0.98
+   ],
+   "axis_fail_cal": {
+    "material": 0.01,
+    "count": 0.0,
+    "cohesion": 0.02,
+    "shape": 0.04,
+    "pattern": 0.04
+   },
+   "axis_fail_val": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.0,
+    "shape": 0.03,
+    "pattern": 0.05
+   },
+   "n_cal": 100,
+   "n_val": 100
+  },
+  "O3a": {
+   "alpha": 0.004122865272382191,
+   "bounds": {
+    "material": 0.5290540687747408,
+    "count": 0.19853522902570817,
+    "cohesion": 8.148919772347863,
+    "shape": 1.0821248984441134,
+    "pattern": 2.2421419127170723
+   },
+   "cal_pass": 0.9,
+   "val_pass": 0.9,
+   "val_pass_ci": [
+    0.84,
+    0.95
+   ],
+   "axis_fail_cal": {
+    "material": 0.03,
+    "count": 0.03,
+    "cohesion": 0.03,
+    "shape": 0.03,
+    "pattern": 0.03
+   },
+   "axis_fail_val": {
+    "material": 0.02,
+    "count": 0.02,
+    "cohesion": 0.06,
+    "shape": 0.03,
+    "pattern": 0.04
+   },
+   "n_cal": 100,
+   "n_val": 100
+  },
+  "O3b": {
+   "alpha": 0.005557486794839136,
+   "bounds": {
+    "material": 0.5111560606874851,
+    "count": 0.19465614895188774,
+    "cohesion": 8.165203899405363,
+    "shape": 1.0255396627059883,
+    "pattern": 2.2603108436676194
+   },
+   "cal_pass": 0.9,
+   "val_pass": 0.9,
+   "val_pass_ci": [
+    0.84,
+    0.95
+   ],
+   "axis_fail_cal": {
+    "material": 0.04,
+    "count": 0.04,
+    "cohesion": 0.04,
+    "shape": 0.02,
+    "pattern": 0.03
+   },
+   "axis_fail_val": {
+    "material": 0.02,
+    "count": 0.02,
+    "cohesion": 0.04,
+    "shape": 0.05,
+    "pattern": 0.03
+   },
+   "n_cal": 100,
+   "n_val": 100
+  }
+ },
+ "envelope_pattern_sd_file": "calibration/envelope.json",
+ "smoothing_window": 100.0,
+ "min_state_n": 12,
+ "state_stay_per_100": 0.95,
+ "change_posterior": 0.9,
+ "ood_quantile": 0.005,
+ "states": {
+  "O1": {
+   "chosen": "sens",
+   "k": 3,
+   "stability": 0.9996679156406185,
+   "table": [
+    {
+     "family": "pattern",
+     "k": 3,
+     "stability": 0.8616286726810496,
+     "val_ll_gain_mean": 2.1917580079127923,
+     "val_ll_gain_median": 2.629812846001667,
+     "val_frac_frames_improved": 0.935
+    },
+    {
+     "family": "inv",
+     "k": 3,
+     "stability": 0.9635665426394051,
+     "val_ll_gain_mean": 1.5958283667506077,
+     "val_ll_gain_median": 1.8351531075421343,
+     "val_frac_frames_improved": 0.94875
+    },
+    {
+     "family": "sens",
+     "k": 3,
+     "stability": 0.9996679156406185,
+     "val_ll_gain_mean": 2.605620466328836,
+     "val_ll_gain_median": 3.040981689107608,
+     "val_frac_frames_improved": 0.965
+    }
+   ]
+  },
+  "O2": {
+   "chosen": "sens",
+   "k": 4,
+   "stability": 0.9740784585094563,
+   "table": [
+    {
+     "family": "pattern",
+     "k": 4,
+     "stability": 0.8830419317783772,
+     "val_ll_gain_mean": 1.363487188226351,
+     "val_ll_gain_median": 1.8336929766113803,
+     "val_frac_frames_improved": 0.91
+    },
+    {
+     "family": "inv",
+     "k": 1,
+     "stability": 1.0,
+     "val_ll_gain_mean": 0.0,
+     "val_ll_gain_median": 0.0,
+     "val_frac_frames_improved": 0.0
+    },
+    {
+     "family": "sens",
+     "k": 4,
+     "stability": 0.9740784585094563,
+     "val_ll_gain_mean": 2.627920714642222,
+     "val_ll_gain_median": 3.080636203495071,
+     "val_frac_frames_improved": 0.96625
+    }
+   ]
+  },
+  "O3a": {
+   "chosen": "sens",
+   "k": 2,
+   "stability": 0.9659870229907151,
+   "table": [
+    {
+     "family": "pattern",
+     "k": 1,
+     "stability": 1.0,
+     "val_ll_gain_mean": 0.0,
+     "val_ll_gain_median": 0.0,
+     "val_frac_frames_improved": 0.0
+    },
+    {
+     "family": "inv",
+     "k": 1,
+     "stability": 1.0,
+     "val_ll_gain_mean": 0.0,
+     "val_ll_gain_median": 0.0,
+     "val_frac_frames_improved": 0.0
+    },
+    {
+     "family": "sens",
+     "k": 2,
+     "stability": 0.9659870229907151,
+     "val_ll_gain_mean": -0.13982567697888015,
+     "val_ll_gain_median": 0.49608923803801086,
+     "val_frac_frames_improved": 0.80625
+    }
+   ]
+  },
+  "O3b": {
+   "chosen": "sens",
+   "k": 2,
+   "stability": 1.0,
+   "table": [
+    {
+     "family": "pattern",
+     "k": 2,
+     "stability": 0.9847425739544721,
+     "val_ll_gain_mean": 1.4479902981860029,
+     "val_ll_gain_median": 2.6115318398418537,
+     "val_frac_frames_improved": 0.97
+    },
+    {
+     "family": "inv",
+     "k": 3,
+     "stability": 0.873434472114395,
+     "val_ll_gain_mean": 3.1147615058669818,
+     "val_ll_gain_median": 2.74579769586565,
+     "val_frac_frames_improved": 0.9425
+    },
+    {
+     "family": "sens",
+     "k": 2,
+     "stability": 1.0,
+     "val_ll_gain_mean": 1.2549637729788765,
+     "val_ll_gain_median": 2.2927335449051656,
+     "val_frac_frames_improved": 0.95875
+    }
+   ]
+  }
+ },
+ "state_selection_rule": "family: highest half-split ARI at its k* among {pattern,inv,sens} with k*>=2, ARI>=0.8, median validation loglik gain>0; k*: see scripts/discover_states.py",
+ "anticipation": {
+  "file": "calibration/antic_thresholds.json",
+  "FA": 0.05,
+  "BASE": 3,
+  "NSHIFT": 200
+ },
+ "info_theory": {
+  "shrinkage": 0.2,
+  "ridge": 1.0,
+  "n_perm_leak": 1000,
+  "n_perm_g3": 200,
+  "folds": 5,
+  "variables": "7 channels x 3 body-frame terciles",
+  "seed": 11
+ },
+ "exemplar_seed": 20260101,
+ "splits": {
+  "calibration": "natural development dishes with body_id even",
+  "validation": "natural development dishes with body_id odd",
+  "heldout": "all runs whose manifest split != development"
+ }
+}

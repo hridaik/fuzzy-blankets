@@ -1,0 +1,132 @@
+{
+ "sclosure_00_seed64200": {
+  "core_member": [
+   360,
+   389,
+   392
+  ],
+  "boundary_member": [],
+  "live_exterior_parent": [],
+  "near_exterior_non_parent": [
+   25,
+   181,
+   313
+  ]
+ },
+ "sclosure_01_seed64201": {
+  "core_member": [
+   98,
+   111,
+   375
+  ],
+  "boundary_member": [],
+  "live_exterior_parent": [],
+  "near_exterior_non_parent": [
+   66,
+   100,
+   158
+  ]
+ },
+ "sclosure_02_seed64202": {
+  "core_member": [
+   223,
+   299,
+   325
+  ],
+  "boundary_member": [],
+  "live_exterior_parent": [],
+  "near_exterior_non_parent": [
+   270,
+   368,
+   384
+  ]
+ },
+ "sclosure_03_seed64203": {
+  "core_member": [
+   66,
+   234,
+   238
+  ],
+  "boundary_member": [
+   70
+  ],
+  "live_exterior_parent": [
+   216
+  ],
+  "near_exterior_non_parent": [
+   174,
+   306,
+   331
+  ]
+ },
+ "sclosure_04_seed64204": {
+  "core_member": [
+   16,
+   123,
+   304
+  ],
+  "boundary_member": [],
+  "live_exterior_parent": [],
+  "near_exterior_non_parent": [
+   91,
+   135,
+   185
+  ]
+ },
+ "sclosure_05_seed64205": {
+  "core_member": [
+   17,
+   48,
+   259
+  ],
+  "boundary_member": [
+   56,
+   79,
+   232
+  ],
+  "live_exterior_parent": [
+   213
+  ],
+  "near_exterior_non_parent": [
+   5,
+   142,
+   203
+  ]
+ },
+ "sclosure_06_seed64206": {
+  "core_member": [
+   105,
+   242,
+   351
+  ],
+  "boundary_member": [
+   44,
+   54,
+   216
+  ],
+  "live_exterior_parent": [
+   75,
+   305,
+   346
+  ],
+  "near_exterior_non_parent": [
+   272,
+   300,
+   338
+  ]
+ },
+ "sclosure_07_seed64207": {
+  "core_member": [
+   28,
+   156,
+   216
+  ],
+  "boundary_member": [],
+  "live_exterior_parent": [],
+  "near_exterior_non_parent": [
+   52,
+   148,
+   162
+  ]
+ }
+}

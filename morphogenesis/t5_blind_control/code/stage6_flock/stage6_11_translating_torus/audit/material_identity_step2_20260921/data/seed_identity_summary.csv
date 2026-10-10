@@ -1,0 +1,6 @@
+seed,qualify_t,identity_status,v1_vs_trace_disagreement_frames,first_permanent_divergence_t,reconverges,physical_turn_in_material_target,v1_displayed_turn,intervention_effect_evidence,actuator_selectivity_evidence
+500,61,identity-valid throughout,0/47,none,n/a,not demonstrated,not demonstrated,not demonstrated (zero true causal parents at trigger),not demonstrated
+501,30,identity-valid throughout (transient 4-step v1 detour self-corrects),4/47,t=32 (TRANSIENT),yes at t=36,demonstrated (0.23->0.97),demonstrated (0.23->0.97; matches trace),not evaluated in this pass,not evaluated in this pass
+502,30,identity-invalid from t=32 onward,45/47,t=32 (PERMANENT),no,not demonstrated (0.19->0.10),demonstrated (0.19->0.75; on unrelated population),not demonstrated (independently confirms Step-1 withdrawal),not demonstrated
+503,35,identity-valid but splits at t=47; v1 follows the other branch,35/47,t=47 (PERMANENT split),no,modest rise only (0.05->0.35),demonstrated (0.05->0.86; on the other branch of the split),not established for the material-continuing target,not established
+504,47,identity-valid throughout,0/47,none,n/a,not demonstrated,not demonstrated,short-horizon authority demonstrated but no persistent turn,demonstrated in narrow sense (strongest measured authority used) but no persistent effect

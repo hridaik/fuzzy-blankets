@@ -1,0 +1,423 @@
+{
+ "tau_max": 6,
+ "n_traj": 40,
+ "n_mc": 24,
+ "sample_stride": 2,
+ "flocks": [
+  {
+   "seed": 2,
+   "size_I0": 20,
+   "size_B_D0": 12,
+   "size_B_F0": 2,
+   "B_D0": [
+    5,
+    6,
+    15,
+    25,
+    35,
+    45,
+    46,
+    56,
+    57,
+    67,
+    68,
+    69
+   ],
+   "B_F0": [
+    5,
+    46
+   ],
+   "predictive_permeability_B_D0": {
+    "1": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.13069232860388824,
+     "mean_logloss_B": 0.12291150867581335,
+     "excess_logloss": -0.007780819928074889
+    },
+    "2": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.21465876417278074,
+     "mean_logloss_B": 0.2360398189516475,
+     "excess_logloss": 0.02138105477886676
+    },
+    "3": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2434508322149902,
+     "mean_logloss_B": 0.2522024071581869,
+     "excess_logloss": 0.008751574943196727
+    },
+    "4": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.31113901174027025,
+     "mean_logloss_B": 0.3477426937340594,
+     "excess_logloss": 0.03660368199378916
+    },
+    "5": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.31452601187693846,
+     "mean_logloss_B": 0.3164892780446522,
+     "excess_logloss": 0.001963266167713751
+    },
+    "6": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.3760711233609541,
+     "mean_logloss_B": 0.3918878836443167,
+     "excess_logloss": 0.015816760283362596
+    }
+   },
+   "predictive_permeability_B_F0": {
+    "1": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.12700440746845096,
+     "mean_logloss_B": 0.1412024205705503,
+     "excess_logloss": 0.014198013102099338
+    },
+    "2": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.22928498908290493,
+     "mean_logloss_B": 0.24955782672873741,
+     "excess_logloss": 0.020272837645832487
+    },
+    "3": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2386602626298259,
+     "mean_logloss_B": 0.28483883313258307,
+     "excess_logloss": 0.04617857050275717
+    },
+    "4": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.3062235903377004,
+     "mean_logloss_B": 0.3131838238246896,
+     "excess_logloss": 0.006960233486989209
+    },
+    "5": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.29511146402432287,
+     "mean_logloss_B": 0.3349525324620858,
+     "excess_logloss": 0.039841068437762917
+    },
+    "6": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.37657996590059495,
+     "mean_logloss_B": 0.35677633017148863,
+     "excess_logloss": -0.019803635729106317
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "size_I0": 19,
+   "size_B_D0": 14,
+   "size_B_F0": 1,
+   "B_D0": [
+    36,
+    37,
+    38,
+    39,
+    46,
+    55,
+    56,
+    65,
+    75,
+    78,
+    79,
+    85,
+    95,
+    96
+   ],
+   "B_F0": [
+    62
+   ],
+   "predictive_permeability_B_D0": {
+    "1": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.030509474060774852,
+     "mean_logloss_B": 0.04298521098479821,
+     "excess_logloss": 0.012475736924023359
+    },
+    "2": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.03937766055866332,
+     "mean_logloss_B": 0.08495191756377934,
+     "excess_logloss": 0.045574257005116026
+    },
+    "3": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.05161164852856963,
+     "mean_logloss_B": 0.12829801623892664,
+     "excess_logloss": 0.07668636771035701
+    },
+    "4": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.044772279946205355,
+     "mean_logloss_B": 0.11901455670623931,
+     "excess_logloss": 0.07424227676003395
+    },
+    "5": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.06283761281347758,
+     "mean_logloss_B": 0.17415282140301375,
+     "excess_logloss": 0.11131520858953617
+    },
+    "6": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.06907547586390171,
+     "mean_logloss_B": 0.16535631722351743,
+     "excess_logloss": 0.09628084135961572
+    }
+   },
+   "predictive_permeability_B_F0": {
+    "1": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.05492832417618679,
+     "mean_logloss_B": 0.13274210653830573,
+     "excess_logloss": 0.07781378236211894
+    },
+    "2": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.0430496836531955,
+     "mean_logloss_B": 0.13775301746930388,
+     "excess_logloss": 0.09470333381610838
+    },
+    "3": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.059851888969796416,
+     "mean_logloss_B": 0.219031290100654,
+     "excess_logloss": 0.1591794011308576
+    },
+    "4": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.06607632472879249,
+     "mean_logloss_B": 0.1925160903145319,
+     "excess_logloss": 0.1264397655857394
+    },
+    "5": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.08075085219404117,
+     "mean_logloss_B": 0.20968977007849615,
+     "excess_logloss": 0.128938917884455
+    },
+    "6": {
+     "n_samples": 6080,
+     "mean_logloss_full": 0.07943299499083951,
+     "mean_logloss_B": 0.18942563229656478,
+     "excess_logloss": 0.10999263730572527
+    }
+   }
+  },
+  {
+   "seed": 8,
+   "size_I0": 20,
+   "size_B_D0": 13,
+   "size_B_F0": 9,
+   "B_D0": [
+    4,
+    14,
+    24,
+    25,
+    35,
+    41,
+    44,
+    45,
+    50,
+    51,
+    52,
+    53,
+    54
+   ],
+   "B_F0": [
+    4,
+    14,
+    24,
+    40,
+    41,
+    44,
+    55,
+    65,
+    99
+   ],
+   "predictive_permeability_B_D0": {
+    "1": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.13598500666583532,
+     "mean_logloss_B": 0.13319492567986801,
+     "excess_logloss": -0.002790080985967308
+    },
+    "2": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.18464857428603124,
+     "mean_logloss_B": 0.21129924421528887,
+     "excess_logloss": 0.02665066992925763
+    },
+    "3": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.19849949126423985,
+     "mean_logloss_B": 0.23736769165205232,
+     "excess_logloss": 0.03886820038781247
+    },
+    "4": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.22281022002378542,
+     "mean_logloss_B": 0.2574901657322845,
+     "excess_logloss": 0.03467994570849908
+    },
+    "5": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2936171675038743,
+     "mean_logloss_B": 0.29000215763285203,
+     "excess_logloss": -0.0036150098710222567
+    },
+    "6": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2930792481052684,
+     "mean_logloss_B": 0.31900584588200587,
+     "excess_logloss": 0.025926597776737448
+    }
+   },
+   "predictive_permeability_B_F0": {
+    "1": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.12066091527570048,
+     "mean_logloss_B": 0.15594259531829913,
+     "excess_logloss": 0.03528168004259864
+    },
+    "2": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.18126370357254218,
+     "mean_logloss_B": 0.1953129402696252,
+     "excess_logloss": 0.014049236697083023
+    },
+    "3": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.20114339911999266,
+     "mean_logloss_B": 0.22624311662509683,
+     "excess_logloss": 0.025099717505104174
+    },
+    "4": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.22313029609628476,
+     "mean_logloss_B": 0.2671230619750007,
+     "excess_logloss": 0.04399276587871592
+    },
+    "5": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2611526678863871,
+     "mean_logloss_B": 0.2674714811874065,
+     "excess_logloss": 0.00631881330101941
+    },
+    "6": {
+     "n_samples": 6400,
+     "mean_logloss_full": 0.2934423642548205,
+     "mean_logloss_B": 0.2815553219465761,
+     "excess_logloss": -0.011887042308244389
+    }
+   }
+  },
+  {
+   "seed": 13,
+   "size_I0": 14,
+   "size_B_D0": 17,
+   "size_B_F0": 3,
+   "B_D0": [
+    50,
+    51,
+    52,
+    62,
+    63,
+    64,
+    65,
+    66,
+    70,
+    71,
+    76,
+    85,
+    86,
+    91,
+    92,
+    94,
+    96
+   ],
+   "B_F0": [
+    40,
+    64,
+    76
+   ],
+   "predictive_permeability_B_D0": {
+    "1": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.07682266686110492,
+     "mean_logloss_B": 0.08652454921365133,
+     "excess_logloss": 0.009701882352546404
+    },
+    "2": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.10825168537072492,
+     "mean_logloss_B": 0.1636337393783116,
+     "excess_logloss": 0.05538205400758668
+    },
+    "3": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.18162007657228857,
+     "mean_logloss_B": 0.25747811796061065,
+     "excess_logloss": 0.07585804138832208
+    },
+    "4": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.1788745493059248,
+     "mean_logloss_B": 0.28307852886160045,
+     "excess_logloss": 0.10420397955567565
+    },
+    "5": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.2404270853791747,
+     "mean_logloss_B": 0.3883389248949779,
+     "excess_logloss": 0.1479118395158032
+    },
+    "6": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.31621190947101074,
+     "mean_logloss_B": 0.3415398939497662,
+     "excess_logloss": 0.02532798447875545
+    }
+   },
+   "predictive_permeability_B_F0": {
+    "1": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.06020172054981964,
+     "mean_logloss_B": 0.4136009629806596,
+     "excess_logloss": 0.35339924243084
+    },
+    "2": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.11967336269680154,
+     "mean_logloss_B": 0.217754287289907,
+     "excess_logloss": 0.09808092459310547
+    },
+    "3": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.16019891918052098,
+     "mean_logloss_B": 0.3455940431241309,
+     "excess_logloss": 0.1853951239436099
+    },
+    "4": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.1421810137588378,
+     "mean_logloss_B": 0.2831062682724688,
+     "excess_logloss": 0.14092525451363103
+    },
+    "5": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.20465143201764513,
+     "mean_logloss_B": 0.3959502918097687,
+     "excess_logloss": 0.19129885979212358
+    },
+    "6": {
+     "n_samples": 4480,
+     "mean_logloss_full": 0.2390342922748905,
+     "mean_logloss_B": 0.3770649873114488,
+     "excess_logloss": 0.13803069503655827
+    }
+   }
+  }
+ ]
+}

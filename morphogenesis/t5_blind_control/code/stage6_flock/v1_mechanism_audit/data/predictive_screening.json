@@ -1,0 +1,25 @@
+{
+ "n_samples": 8000,
+ "n_traj": 40,
+ "sample_times": [
+  0,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14,
+  16,
+  18
+ ],
+ "n_mc": 24,
+ "structural_check_neighbors_subset_I0_union_BD0": true,
+ "frac_BD_predictions_exactly_matching_full": 1.0,
+ "mean_logloss_full": 0.07792810122516736,
+ "mean_logloss_BD": 0.07792810122516736,
+ "mean_logloss_BF": 0.10969298316841752,
+ "excess_logloss_BD_minus_full": 0.0,
+ "excess_logloss_BF_minus_full": 0.03176488194325017,
+ "interpretation": "excess_logloss_BD_minus_full should be exactly 0 (up to floating point) because B^D_0 provably contains every input to every I0 bird's update. excess_logloss_BF_minus_full > 0 indicates the Fiedler boundary omits real predictive information about I0's next state that the true dynamical shell captures completely."
+}

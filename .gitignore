@@ -31,5 +31,64 @@ stage6_flock/stage6_11_translating_torus/data/pretrained_relational_model_611.pk
 
 # morphogenesis: raw simulation dumps (~3.4 GB of .mat/.npz) -- too large to push to GitHub
 # over HTTPS (HTTP 500). Regenerate via the run_*.py scripts in each stage's code/ dir.
-morphogenesis/m1_dynamics_census/data/
-morphogenesis/m2a_audit_and_library/data/
+morphogenesis/m1_dynamics_census/data/**
+!morphogenesis/m1_dynamics_census/data/**/
+!morphogenesis/m1_dynamics_census/data/**/*.md
+!morphogenesis/m1_dynamics_census/data/**/manifest*.json
+morphogenesis/m2a_audit_and_library/data/**
+!morphogenesis/m2a_audit_and_library/data/**/
+!morphogenesis/m2a_audit_and_library/data/**/*.md
+!morphogenesis/m2a_audit_and_library/data/**/manifest*.json
+
+# Local environments and downloaded packages (use environment.yml instead).
+.venv/
+venv/
+node_modules/
+*.whl
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Bulk simulation arrays and fitted-model caches. Keep JSON/CSV summaries,
+# split manifests, dictionaries, protocols and source code versioned.
+/morphogenesis/**/*.npz
+/morphogenesis/**/*.npy
+/morphogenesis/**/*.pkl
+/morphogenesis/**/*.mat
+/stage6_flock/**/*.npz
+/stage6_flock/**/*.npy
+/stage6_flock/**/*.pkl
+
+# Reference-library assets and reconstruction test fixtures are inputs,
+# not generated output; keep them available to the reference/oracle tests.
+!/morphogenesis/*/sources/**/*.mat
+!/morphogenesis/m0_reconstruction/data/golden_traces/**
+
+# Generated interactive pages embed large copies of trajectory data.
+# Keep their HTML/JS source outside build/output/viewer/figures directories.
+/morphogenesis/viz/output/**/*.html
+/morphogenesis/**/viewer/**/*.html
+/morphogenesis/**/viewer_pkg3/**/*.html
+/morphogenesis/**/figures/**/*.html
+/morphogenesis/**/build/**/*.html
+/stage6_flock/**/figures/**/*.html
+/stage6_flock/**/build/**/*.html
+
+# Generated recordings and execution logs; retain screenshots/static figures
+# and provenance files such as logs/*.sha256.
+/morphogenesis/**/*.mp4
+/stage6_flock/**/*.mp4
+*.log
+
+# Large per-run JSON dumps from the original and copied flock pipelines.
+# Apply the existing seed/controllability exclusions to embedded copies too.
+**/stage6_flock/**/data/*_seed*.json
+**/stage6_flock/**/data/controllability__main__*.json
+**/stage6_flock/**/data/phase_scan_611__*.json
+**/stage6_flock/**/data/hard_negatives_*.json
+
+# Per-seed trajectories and live-control episode transcripts.
+**/stage6_flock/**/data/seed*.json
+/morphogenesis/t5_blind_control/episodes/ep_*.json
+/morphogenesis/t5_blind_control/episodes_heldout/ep_*.json

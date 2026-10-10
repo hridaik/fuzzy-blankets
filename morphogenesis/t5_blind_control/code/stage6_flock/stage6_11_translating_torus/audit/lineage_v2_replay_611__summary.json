@@ -1,0 +1,27 @@
+{
+ "500": {
+  "v1_qualified_t": 61,
+  "v2_qualified_t": null,
+  "n_frames": 108
+ },
+ "501": {
+  "v1_qualified_t": 30,
+  "v2_qualified_t": null,
+  "n_frames": 77
+ },
+ "502": {
+  "v1_qualified_t": 30,
+  "v2_qualified_t": null,
+  "n_frames": 77
+ },
+ "503": {
+  "v1_qualified_t": 35,
+  "v2_qualified_t": null,
+  "n_frames": 82
+ },
+ "504": {
+  "v1_qualified_t": 47,
+  "v2_qualified_t": null,
+  "n_frames": 94
+ }
+}

@@ -1,0 +1,1 @@
+{"meta": {"family": "stress", "scn": "fuse|b|0.0,3.0", "arm": "event", "state": "a", "seed": 2702}, "events": [{"t": 10000.0, "kind": "fuse", "n1": 24, "n2": 24, "offset": [0.0, 3.0], "angle": 0.0}], "pose": {"angle": 3.48521070177335, "shift": [1.4442605071793917, -2.2485812282592916]}, "private": {}}

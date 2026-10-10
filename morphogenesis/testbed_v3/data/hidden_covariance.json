@@ -1,0 +1,36 @@
+{
+ "a": {
+  "n_neutral": 27,
+  "n_nonneutral": 789,
+  "max_re_nonneutral": -0.008911494679713578,
+  "slowest_nonneutral": 0.008911494679713578,
+  "cov_eig_min": 2.0165997769708826e-06,
+  "cov_eig_max": 0.8744739756176705,
+  "n_negative_eigs": 0,
+  "cond": 433637.8420765326,
+  "l_std_lna_median": 0.4006132265214142,
+  "l_std_lna_range": [
+   0.4004941752733658,
+   0.40106052343321985
+  ],
+  "x_std_median": 0.017809569706217214,
+  "e_std_median": 0.022360679774997897
+ },
+ "b": {
+  "n_neutral": 27,
+  "n_nonneutral": 789,
+  "max_re_nonneutral": -0.00891149467971437,
+  "slowest_nonneutral": 0.00891149467971437,
+  "cov_eig_min": 2.01659977696703e-06,
+  "cov_eig_max": 0.874473975617655,
+  "n_negative_eigs": 0,
+  "cond": 433637.84207735345,
+  "l_std_lna_median": 0.40061322652141396,
+  "l_std_lna_range": [
+   0.40049417527336784,
+   0.40106052343322013
+  ],
+  "x_std_median": 0.017809569706166248,
+  "e_std_median": 0.022360679774997897
+ }
+}

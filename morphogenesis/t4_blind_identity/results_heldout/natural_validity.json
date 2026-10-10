@@ -1,0 +1,368 @@
+{
+ "dev_calibration": {
+  "O1": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "state_change_any": [
+    0.02,
+    0.0,
+    0.05
+   ],
+   "ood_at_end": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis_fail": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.02,
+    "shape": 0.04,
+    "pattern": 0.04
+   }
+  },
+  "O2": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "state_change_any": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "ood_at_end": [
+    0.03,
+    0.0,
+    0.07
+   ],
+   "axis_fail": {
+    "material": 0.01,
+    "count": 0.0,
+    "cohesion": 0.02,
+    "shape": 0.04,
+    "pattern": 0.04
+   }
+  },
+  "O3a": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "state_change_any": [
+    0.05,
+    0.01,
+    0.09
+   ],
+   "ood_at_end": [
+    0.02,
+    0.0,
+    0.05
+   ],
+   "axis_fail": {
+    "material": 0.03,
+    "count": 0.03,
+    "cohesion": 0.03,
+    "shape": 0.03,
+    "pattern": 0.03
+   }
+  },
+  "O3b": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "state_change_any": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "ood_at_end": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "axis_fail": {
+    "material": 0.04,
+    "count": 0.04,
+    "cohesion": 0.04,
+    "shape": 0.02,
+    "pattern": 0.03
+   }
+  }
+ },
+ "dev_validation": {
+  "O1": {
+   "n": 100,
+   "V": [
+    0.97,
+    0.93,
+    1.0
+   ],
+   "V_conservative": [
+    0.97,
+    0.94,
+    1.0
+   ],
+   "state_change_any": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "ood_at_end": [
+    0.02,
+    0.0,
+    0.05
+   ],
+   "axis_fail": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.0,
+    "shape": 0.03,
+    "pattern": 0.01
+   }
+  },
+  "O2": {
+   "n": 100,
+   "V": [
+    0.93,
+    0.88,
+    0.97
+   ],
+   "V_conservative": [
+    0.93,
+    0.88,
+    0.97
+   ],
+   "state_change_any": [
+    0.03,
+    0.0,
+    0.07
+   ],
+   "ood_at_end": [
+    0.02,
+    0.0,
+    0.05
+   ],
+   "axis_fail": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.0,
+    "shape": 0.03,
+    "pattern": 0.05
+   }
+  },
+  "O3a": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "state_change_any": [
+    0.1,
+    0.05,
+    0.16
+   ],
+   "ood_at_end": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis_fail": {
+    "material": 0.02,
+    "count": 0.02,
+    "cohesion": 0.06,
+    "shape": 0.03,
+    "pattern": 0.04
+   }
+  },
+  "O3b": {
+   "n": 100,
+   "V": [
+    0.9,
+    0.84,
+    0.96
+   ],
+   "V_conservative": [
+    0.9,
+    0.84,
+    0.95
+   ],
+   "state_change_any": [
+    0.03,
+    0.0,
+    0.07
+   ],
+   "ood_at_end": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis_fail": {
+    "material": 0.02,
+    "count": 0.02,
+    "cohesion": 0.04,
+    "shape": 0.05,
+    "pattern": 0.03
+   }
+  }
+ },
+ "heldout_natural": {
+  "O1": {
+   "n": 60,
+   "V": [
+    0.9,
+    0.817,
+    0.967
+   ],
+   "V_conservative": [
+    0.9,
+    0.817,
+    0.967
+   ],
+   "state_change_any": [
+    0.05,
+    0.0,
+    0.117
+   ],
+   "ood_at_end": [
+    0.033,
+    0.0,
+    0.083
+   ],
+   "axis_fail": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.033,
+    "shape": 0.05,
+    "pattern": 0.017
+   }
+  },
+  "O2": {
+   "n": 60,
+   "V": [
+    0.85,
+    0.75,
+    0.933
+   ],
+   "V_conservative": [
+    0.85,
+    0.75,
+    0.933
+   ],
+   "state_change_any": [
+    0.017,
+    0.0,
+    0.05
+   ],
+   "ood_at_end": [
+    0.033,
+    0.0,
+    0.083
+   ],
+   "axis_fail": {
+    "material": 0.0,
+    "count": 0.0,
+    "cohesion": 0.033,
+    "shape": 0.05,
+    "pattern": 0.1
+   }
+  },
+  "O3a": {
+   "n": 60,
+   "V": [
+    0.933,
+    0.867,
+    0.983
+   ],
+   "V_conservative": [
+    0.933,
+    0.867,
+    0.983
+   ],
+   "state_change_any": [
+    0.033,
+    0.0,
+    0.083
+   ],
+   "ood_at_end": [
+    0.017,
+    0.0,
+    0.05
+   ],
+   "axis_fail": {
+    "material": 0.033,
+    "count": 0.033,
+    "cohesion": 0.017,
+    "shape": 0.033,
+    "pattern": 0.033
+   }
+  },
+  "O3b": {
+   "n": 60,
+   "V": [
+    0.867,
+    0.767,
+    0.95
+   ],
+   "V_conservative": [
+    0.867,
+    0.767,
+    0.95
+   ],
+   "state_change_any": [
+    0.017,
+    0.0,
+    0.05
+   ],
+   "ood_at_end": [
+    0.017,
+    0.0,
+    0.05
+   ],
+   "axis_fail": {
+    "material": 0.033,
+    "count": 0.05,
+    "cohesion": 0.05,
+    "shape": 0.0,
+    "pattern": 0.05
+   }
+  }
+ }
+}

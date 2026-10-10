@@ -1,0 +1,65 @@
+{
+ "0.14": {
+  "n_episodes": 4,
+  "zero_adapt_mean_logloss": 0.7598268032298511,
+  "online_adapt_mean_logloss": 0.8192267605964363,
+  "candidate_stability_mean_jaccard": 0.712220732034525,
+  "bpred_mean_final_loss": 0.8625645627910494,
+  "bpred_mean_interior_only_loss": 0.8816854406251843,
+  "bpred_mean_B_size": 2.5,
+  "zero_adapt_per_episode": [
+   0.7466304104108976,
+   0.7696077159305305,
+   0.7749030924008896,
+   0.7481659941770867
+  ],
+  "online_adapt_per_episode": [
+   0.8063934681649626,
+   0.8334271671632577,
+   0.8263210852266165,
+   0.8107653218309084
+  ]
+ },
+ "0.28": {
+  "n_episodes": 4,
+  "zero_adapt_mean_logloss": 0.4672803017932865,
+  "online_adapt_mean_logloss": 0.5193279878685129,
+  "candidate_stability_mean_jaccard": 0.9546999115746051,
+  "bpred_mean_final_loss": 0.542575280355122,
+  "bpred_mean_interior_only_loss": 0.5494690320406485,
+  "bpred_mean_B_size": 0.25,
+  "zero_adapt_per_episode": [
+   0.39741085718554,
+   0.5325042442596446,
+   0.4763261422709641,
+   0.46287996345699733
+  ],
+  "online_adapt_per_episode": [
+   0.4558261992083404,
+   0.5936949538440295,
+   0.5240943711957594,
+   0.5036964272259224
+  ]
+ },
+ "0.42": {
+  "n_episodes": 4,
+  "zero_adapt_mean_logloss": 0.7221705117114812,
+  "online_adapt_mean_logloss": 0.7629621512501933,
+  "candidate_stability_mean_jaccard": 0.6723046859784177,
+  "bpred_mean_final_loss": 0.7241558015958114,
+  "bpred_mean_interior_only_loss": 0.7604496542068264,
+  "bpred_mean_B_size": 6.25,
+  "zero_adapt_per_episode": [
+   0.663888288493391,
+   0.6979835440174265,
+   0.76010136718744,
+   0.766708847147667
+  ],
+  "online_adapt_per_episode": [
+   0.702596999095003,
+   0.740174891969639,
+   0.8005392717818861,
+   0.808537442154245
+  ]
+ }
+}

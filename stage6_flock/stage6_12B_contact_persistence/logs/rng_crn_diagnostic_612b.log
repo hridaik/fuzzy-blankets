@@ -1,5 +1,0 @@
-PASS: determinism -- identical physics_seed + identical design_rng seed -> identical rollout
-PASS: different design_rng seed -> different actuator picks (design RNG is genuinely driving selection, independent of physics_seed which was held fixed)
-PASS: no-control and forced-strategy rollouts both run successfully from the same physics_seed (no-control J_assoc=0.000, nearest-strategy J_assoc=0.000)
-
-All Stage 6.12B CRN diagnostics passed.

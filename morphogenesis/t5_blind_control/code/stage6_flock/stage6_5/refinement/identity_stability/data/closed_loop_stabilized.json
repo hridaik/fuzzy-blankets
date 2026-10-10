@@ -1,0 +1,530 @@
+{
+ "flocks": [
+  2,
+  3,
+  4
+ ],
+ "n_rep": 30,
+ "lambda_T": 0.1,
+ "representations": [
+  "M",
+  "L_reg",
+  "F_guard",
+  "F"
+ ],
+ "results": [
+  {
+   "seed": 2,
+   "summary": {
+    "M": {
+     "nominal_p_success": 0.9333333333333333,
+     "identity_valid_p_success": 0.9333333333333333,
+     "p_collapsed": 0.0,
+     "mean_final_size": 20.0,
+     "mean_final_retention": 1.0,
+     "mean_n_actuators": 12.0,
+     "mean_membership_turnover": 0.0,
+     "mean_actuator_turnover": 0.0,
+     "mean_persistence": 1.0
+    },
+    "L_reg": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 0.0,
+     "p_collapsed": 1.0,
+     "mean_final_size": 19.766666666666666,
+     "mean_final_retention": 0.9866666666666666,
+     "mean_n_actuators": 12.076666666666666,
+     "mean_membership_turnover": 0.3,
+     "mean_actuator_turnover": 0.6666666666666666,
+     "mean_persistence": 1.0
+    },
+    "F_guard": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 0.06666666666666667,
+     "p_collapsed": 1.0,
+     "mean_final_size": 9.233333333333333,
+     "mean_final_retention": 0.4616666666666666,
+     "mean_n_actuators": 8.631666666666668,
+     "mean_membership_turnover": 10.766666666666667,
+     "mean_actuator_turnover": 28.266666666666666,
+     "mean_persistence": 0.9666666666666667
+    },
+    "F": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 1.0,
+     "p_collapsed": 0.0,
+     "mean_final_size": 1.9333333333333333,
+     "mean_final_retention": 0.09666666666666668,
+     "mean_n_actuators": 7.1816666666666675,
+     "mean_membership_turnover": 18.333333333333332,
+     "mean_actuator_turnover": 44.166666666666664,
+     "mean_persistence": 1.0
+    }
+   },
+   "pathwise": {
+    "M": {
+     "mean_leakage": 0.00839775704648932,
+     "max_leakage": 0.04509814066377847,
+     "boundary_sizes": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "L_reg": {
+     "mean_leakage": 0.00627231078204935,
+     "max_leakage": 0.03323412220559954,
+     "boundary_sizes": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F_guard": {
+     "mean_leakage": 0.019364435194819247,
+     "max_leakage": 0.07933460135616024,
+     "boundary_sizes": [
+      12,
+      12,
+      8,
+      9,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "boundary_turnover": [
+      0,
+      2,
+      16,
+      3,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F": {
+     "mean_leakage": 0.016560930963215263,
+     "max_leakage": 0.10790578876100379,
+     "boundary_sizes": [
+      12,
+      12,
+      9,
+      7,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      15,
+      10,
+      12,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "summary": {
+    "M": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 1.0,
+     "p_collapsed": 0.0,
+     "mean_final_size": 19.0,
+     "mean_final_retention": 1.0,
+     "mean_n_actuators": 7.0,
+     "mean_membership_turnover": 0.0,
+     "mean_actuator_turnover": 0.0,
+     "mean_persistence": 1.0
+    },
+    "L_reg": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 0.4,
+     "p_collapsed": 0.6,
+     "mean_final_size": 18.9,
+     "mean_final_retention": 0.992982456140351,
+     "mean_n_actuators": 6.893333333333333,
+     "mean_membership_turnover": 0.16666666666666666,
+     "mean_actuator_turnover": 0.5,
+     "mean_persistence": 1.0
+    },
+    "F_guard": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 0.0,
+     "p_collapsed": 1.0,
+     "mean_final_size": 14.9,
+     "mean_final_retention": 0.7614035087719299,
+     "mean_n_actuators": 5.596666666666667,
+     "mean_membership_turnover": 9.966666666666667,
+     "mean_actuator_turnover": 15.933333333333334,
+     "mean_persistence": 1.0
+    },
+    "F": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 1.0,
+     "p_collapsed": 0.0,
+     "mean_final_size": 2.2333333333333334,
+     "mean_final_retention": 0.11403508771929823,
+     "mean_n_actuators": 4.163333333333333,
+     "mean_membership_turnover": 23.966666666666665,
+     "mean_actuator_turnover": 31.666666666666668,
+     "mean_persistence": 1.0
+    }
+   },
+   "pathwise": {
+    "M": {
+     "mean_leakage": 0.010338233747720084,
+     "max_leakage": 0.051118957237404276,
+     "boundary_sizes": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "L_reg": {
+     "mean_leakage": 0.0060091385305451215,
+     "max_leakage": 0.050468195512079504,
+     "boundary_sizes": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F_guard": {
+     "mean_leakage": 0.010697794393493167,
+     "max_leakage": 0.06329358666017247,
+     "boundary_sizes": [
+      14,
+      15,
+      14,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "boundary_turnover": [
+      0,
+      3,
+      15,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F": {
+     "mean_leakage": 0.017787990455943703,
+     "max_leakage": 0.08431479605300271,
+     "boundary_sizes": [
+      14,
+      15,
+      14,
+      12,
+      10,
+      8,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "boundary_turnover": [
+      0,
+      3,
+      3,
+      8,
+      14,
+      8,
+      6,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "seed": 4,
+   "summary": {
+    "M": {
+     "nominal_p_success": 0.1,
+     "identity_valid_p_success": 0.1,
+     "p_collapsed": 0.0,
+     "mean_final_size": 20.0,
+     "mean_final_retention": 1.0,
+     "mean_n_actuators": 8.0,
+     "mean_membership_turnover": 0.0,
+     "mean_actuator_turnover": 0.0,
+     "mean_persistence": 0.5
+    },
+    "L_reg": {
+     "nominal_p_success": 0.36666666666666664,
+     "identity_valid_p_success": 0.0,
+     "p_collapsed": 1.0,
+     "mean_final_size": 19.466666666666665,
+     "mean_final_retention": 0.9716666666666666,
+     "mean_n_actuators": 9.020000000000001,
+     "mean_membership_turnover": 0.6666666666666666,
+     "mean_actuator_turnover": 3.933333333333333,
+     "mean_persistence": 0.8666666666666667
+    },
+    "F_guard": {
+     "nominal_p_success": 1.0,
+     "identity_valid_p_success": 0.3,
+     "p_collapsed": 0.9666666666666667,
+     "mean_final_size": 8.933333333333334,
+     "mean_final_retention": 0.4466666666666666,
+     "mean_n_actuators": 7.956666666666666,
+     "mean_membership_turnover": 11.066666666666666,
+     "mean_actuator_turnover": 27.1,
+     "mean_persistence": 1.0
+    },
+    "F": {
+     "nominal_p_success": 0.9666666666666667,
+     "identity_valid_p_success": 0.9666666666666667,
+     "p_collapsed": 0.0,
+     "mean_final_size": 1.8,
+     "mean_final_retention": 0.09,
+     "mean_n_actuators": 6.633333333333334,
+     "mean_membership_turnover": 18.5,
+     "mean_actuator_turnover": 41.766666666666666,
+     "mean_persistence": 1.0
+    }
+   },
+   "pathwise": {
+    "M": {
+     "mean_leakage": 0.04262194284460701,
+     "max_leakage": 0.08678843834169314,
+     "boundary_sizes": [
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "L_reg": {
+     "mean_leakage": 0.02726359530381076,
+     "max_leakage": 0.08428714931906575,
+     "boundary_sizes": [
+      17,
+      17,
+      17,
+      17,
+      17,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+     ],
+     "boundary_turnover": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F_guard": {
+     "mean_leakage": 0.024707233848782283,
+     "max_leakage": 0.10471656532700935,
+     "boundary_sizes": [
+      17,
+      10,
+      9,
+      7,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "boundary_turnover": [
+      0,
+      11,
+      7,
+      12,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "F": {
+     "mean_leakage": 0.02344875914694796,
+     "max_leakage": 0.13898754209686762,
+     "boundary_sizes": [
+      17,
+      10,
+      9,
+      8,
+      5,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "boundary_turnover": [
+      0,
+      11,
+      11,
+      7,
+      11,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   }
+  }
+ ]
+}

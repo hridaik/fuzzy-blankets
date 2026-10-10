@@ -1,0 +1,25 @@
+{
+ "created_before_scoring": true,
+ "sealed": "contains hidden information; never give to a blind session; nothing is written into t4_blind_identity/, t5_blind_control/ or testbed_blind_v*",
+ "true_state": {"rule": "sign of the dish mean rho (rho = sigmoid(l)); a (= monitor S+, ligand A high, reporter on +y row) if mean rho > 0.5, else b (= S-)", "mixed_if_fraction_cells_a_between": [0.1, 0.9]},
+ "true_switch": {"rule": "mean rho on the target side from its first crossing of 1/2 to the last recorded step (persists)", "persist_tail_tu": 40, "tail_margin_rho": 0.25},
+ "true_success": "true switch persisted AND last 40 tu all steps on the target side with |mean rho - 1/2| >= 0.25 AND t_end >= t_last_end + 120 AND true body intact",
+ "true_body_intact": {
+   "member_set": "all 24 cells alive and cell_id unchanged in every step",
+   "events": "hidden operation/event list empty",
+   "positions_vs_twin": "max over steps and cells |X_arm - X_twin| <= 1e-6 (treated arms, same seed; tested on the common time range)",
+   "true_geometry": "frozen monitor definitions on NOISE-FREE true positions: n = 24, one component at r_link 1.6, MST max edge <= 1.4000375542542158, |s/s_base - 1| <= 0.048752959641831656 (s1) and 0.06642307685996329 (s2), baseline = median of the first 10 one-tu frames (as the live monitor), no latching (instantaneous) and latching reported separately"
+ },
+ "monitor_verdicts_scored": ["success", "V_body", "V_body_conservative", "abort_identity", "state_sure_target_last40"],
+ "r_link": 1.6,
+ "regret": {
+   "deterministic": "noise-free engine restarted from the noisy dish state at the first-action time (t = 20 tu, CRN key = seed); amplitudes of the protocol multiplied by a common scale s; switch = mean rho on the target side at last-pulse-end + 100 tu; log-bisection, 14 steps on [0.05, 20] (relative resolution < 0.5 %)",
+   "protocols": ["ctrl_train (actual pulse times, relative amplitudes and discs of the controller)", "ctrl_single (one 10-tu pulse, ramp 2.5, at the controller's first disc)", "fixed (dev-learned: 20 tu, ramp 5, centre disc, scaled amplitude)", "whole_train (controller's pulse times and amplitudes on the whole dish)", "random_train (the random arm's actual discs)"],
+   "dose": "amplitude x duration x cells in mask at call (nominal plateau), as the server",
+   "noisy": {"crn_keys": [10001,10002,10003,10004,10005,10006,10007,10008,10009,10010], "per_key": "bisection (5 steps) on the scale within [0.6, 1.5] x deterministic threshold (widened x2 if not bracketed), switch = mean rho on target side at last-pulse-end + 100 tu", "threshold_50pct": "median over keys of the per-key threshold scale", "protocols": ["ctrl_train", "fixed", "whole_train"]}
+ },
+ "ho_dishes": "60 evaluated dishes (seeds with a controller run that is not quota_skip / baseline_not_clean) + the 2 baseline_not_clean dishes for the false-alarm analysis",
+ "bootstrap": {"dish_clustered": true, "n": 5000, "seed": 12345},
+ "verdict_scale": ["WORKED", "PARTLY", "FAILED", "NOT TESTABLE"],
+ "tolerances": {"offline_vs_live_state_identity": 0.0}
+}

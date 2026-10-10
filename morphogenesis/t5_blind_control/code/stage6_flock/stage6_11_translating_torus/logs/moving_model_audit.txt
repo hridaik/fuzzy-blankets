@@ -1,0 +1,170 @@
+================================================================
+STAGE 6.11 SECTION M -- AUDIT OF THE MOVING MODEL, BEFORE CHANGES
+2026-09-09
+================================================================
+Subject: stage6_9_translating_collective/code/moving_flock.py, whose physics is
+inherited entirely from flock_sim/model.py (base_R / neighbor_R / SLOT_OVERRIDES).
+
+The brief requires checking whether EFFECTIVE versions of the three generic
+moving-flock ingredients already exist, and forbids adding duplicates.
+
+----------------------------------------------------------------
+INGREDIENT 1 -- ALIGNMENT / HEADING MATCHING          ** PRESENT **
+----------------------------------------------------------------
+flock_sim/model.py:76 base_R()
+        R = fc * (UV4 @ UV4.T)
+        np.fill_diagonal(R, vm)          # vm = 4.0
+
+The diagonal rewards adopting the same heading as the neighbour, at a strength
+(vm = 4.0) four times the off-diagonal scale (fc = 1.0). This is velocity
+matching. Nothing to add.
+
+----------------------------------------------------------------
+INGREDIENT 2 -- COLLISION AVOIDANCE / SEPARATION      ** PRESENT **
+----------------------------------------------------------------
+flock_sim/model.py:84 neighbor_R(), via SLOT_OVERRIDES
+        R[o, s] = -ca                    # ca = 2.0
+
+For each of the 8 neighbour directions, specific (neighbour-direction,
+own-heading) pairs are penalised: heading into an occupied direction costs -ca.
+moving_flock.py generalises this to continuous positions by assigning each
+partner to the Moore SLOT whose octant it falls in (OCTANT_TO_SLOT), so a bird
+approaching head-on still incurs the same penalty. Nothing to add.
+
+----------------------------------------------------------------
+INGREDIENT 3 -- CENTERING / COHESION                  ** PARTIAL **
+----------------------------------------------------------------
+What exists: the off-diagonal fc * dot(own heading, neighbour heading) term.
+What does NOT exist: any term that depends on the neighbour's POSITION relative
+to the bird, i.e. anything pulling a bird toward the local centre of mass.
+
+Evidence that cohesion is heading-based only:
+  * base_R is built from UV4 @ UV4.T -- an inner product of HEADING unit
+    vectors. No position enters it.
+  * moving_flock.compute_G weights every live partner identically; the only
+    positional information used is the OCTANT (which slot), consumed by the
+    collision term. There is no distance weighting and no centroid term.
+  * Consequently a bird with all its neighbours to its north has no preference
+    to move north; it only prefers to match their headings and to avoid heading
+    into whichever octants they occupy.
+
+WHY THIS WAS INVISIBLE UNTIL NOW
+On the fixed lattice (Stages 6-6.8, 6.10) positions never change, so a
+positional cohesion term would have no effect and its absence cannot be
+detected. It becomes load-bearing only once birds translate.
+
+LIKELY CONNECTION TO THE STAGE 6.9 FAILURE
+Stage 6.9 obtained a trackable translating collective only at R = 1.6, where
+realized in-degree was 21.2 against a Moore scale of 8 -- roughly 3x
+over-connection -- and that same over-connection produced 77% policy saturation
+and a 1-of-47 causal interface. With alignment as the ONLY force holding a group
+together spatially, cohesion has to be bought with interaction range, and range
+buys saturation. That is a plausible mechanism for "you can have a trackable
+translating collective or an inferable interface, but not both", and it is a
+hypothesis this stage can test, not a conclusion.
+
+----------------------------------------------------------------
+DECISION (recorded before any 6.11 experiment)
+----------------------------------------------------------------
+Ingredients 1 and 2 are present and are NOT duplicated.
+
+Ingredient 3 is genuinely absent in its positional form. Section M permits
+adding a genuinely absent ingredient once. It will be added as an explicitly
+labelled, separately switchable term with the raw model retained as comparator,
+in the same manner as the Section N degree normalisation -- i.e. as a MODELLING
+ASSUMPTION, declared here in advance, not as a fix introduced after seeing a
+result.
+
+It is NOT added in order to make any trajectory work. The test of whether it
+was the right call is Section O's uncontrolled (R, v) scan: if positional
+cohesion holds a collective together at LOWER realized degree, then range and
+decision gain have been successfully separated, which is the stated purpose of
+Sections M-N. If it does not, that is reported and the term is kept off.
+
+No parameter of it may be tuned on control success (Section V rule 6/7).
+
+================================================================
+ADDENDUM 1 -- 2026-09-09: the audit's HYPOTHESIS WAS NOT SUPPORTED
+Measured in logs/model_validation_611.txt / data/model_validation_611.json.
+================================================================
+This addendum corrects the section headed "LIKELY CONNECTION TO THE STAGE 6.9
+FAILURE" above. That paragraph proposed a causal chain:
+
+    no positional cohesion  ->  cohesion must be bought with interaction range
+                            ->  range raises realized degree
+                            ->  degree raises policy saturation
+                            ->  saturation destroys the causal interface.
+
+Two of those links are now measured, and BOTH fail.
+
+LINK "cohesion term reduces the range needed to bind" -- NOT SUPPORTED.
+  Sweep: compact-disc start, N=200, L=24, R in {0.4..1.2} x fc_pos in {0..4},
+  5 seeds. The largest improvement in radius of gyration at fixed R for
+  fc_pos <= 2 is 0.50, against an across-seed sd of 0.09-1.32 (SE up to 0.59):
+  every effect is inside noise, and the sign is inconsistent across cells
+  (d_rg = +0.30 at R=0.4/fc=2, -0.16 at R=0.5/fc=2). Spatial binding is set by
+  R alone -- the group disperses for R <= 0.5 and binds for R >= 0.9, with or
+  without the term. At fc_pos = 4 the term is actively HARMFUL: it overrides
+  alignment, the group loses its common heading, and realized degree collapses.
+  With 5 seeds this is "not detected at this power", not "no effect" -- but the
+  audit's chain cannot be asserted on it.
+
+LINK "degree raises decision gain, so normalizing degree lowers saturation"
+  -- NOT SUPPORTED, and the reason is structural.
+  Section N's degree normalization is a per-bird SCALAR rescale of G. But
+  `flock_sim.active_inference.policy_posterior` re-initializes W = 0 every
+  timestep for every bird and refits W = alpha / (spm_beta - sum(u*G)). In the
+  large-|G| regime where saturation lives, the c in W*(cG) cancels between
+  numerator and denominator, so the model ALREADY self-normalizes magnitude.
+  Measured: across realized degree 5.1 -> 25.8, mean max(u_t) spans 0.1095 raw
+  vs 0.1094 normalized -- indistinguishable. Degree sharpens the SHAPE of G
+  across the four actions; a scalar cannot touch shape.
+  At the Stage 6.9 operating degree, normalization with k_ref = 8 makes exact
+  saturation WORSE (0.635 -> 0.772), by equalizing per-bird |G| and pushing
+  low-degree birds into saturation faster than it pulls high-degree birds out.
+
+WHAT IS ACTUALLY TRUE, and it was not predicted here
+  The positional cohesion term does collapse saturation -- but by the mechanism
+  the audit did not consider, and while moving degree in the OPPOSITE direction
+  from the audit's chain. At matched R AND matched radius of gyration (R = 0.9:
+  Rg 3.85 -> 3.86), realized degree RISES 21.7 -> 25.8 while exact saturation
+  falls 0.842 -> 0.087. A more connected flock that is far less saturated is
+  the exact opposite of "range buys saturation".
+  Mechanism: cohesion adds a bearing-dependent contribution that differs across
+  the four candidate headings, so it changes the SHAPE of G rather than its
+  magnitude -- which is the thing precision self-tuning cannot normalize away.
+
+STATUS OF THE THREE INGREDIENT FINDINGS
+  Unchanged and independently re-derived (logs/audit_verification_611.txt),
+  with two refinements to my wording:
+   * Separation is CONDITIONAL, not positional: the -ca override fires on
+     (partner octant, partner heading, own heading) triples -- head-on collision
+     courses -- not on mere occupancy as I wrote.
+   * Ingredient 3's absence is EXACT and stronger than my argument: averaging
+     the full per-edge contribution over the partner's heading gives -4.778 in
+     all 32 (slot, action) cells. Knowing WHERE a partner is changes preferences
+     by exactly nothing. A weak positional dependence exists in the ambiguity
+     table alone and is exactly cancelled by the risk term.
+
+CONSEQUENCE FOR THE STAGE 6.11 PLAN
+  Sections M and N remain implemented and switchable, but their JUSTIFICATION
+  changes, and PLAN.md must not be read as if normalization solves saturation:
+   * Section N is retained as a labelled modelling variant. It must NOT be
+     described as a fix for Stage 6.9's saturation. It compresses the saturation
+     STATISTIC (span 0.243 -> 0.095 at k_ref=8, -> 0.000 at k_ref=1) without
+     changing the decision shape.
+   * The positional cohesion term is now the more interesting object, for a
+     reason nobody planned: it is a candidate route to a translating collective
+     that is cohesive AND unsaturated, i.e. one whose causal interface may be
+     inferable. Stage 6.9 could not have both. That is a HYPOTHESIS for Section
+     O's uncontrolled (R, v, fc_pos) scan to test, exactly as this one was --
+     and this addendum is what happens when such a hypothesis is wrong.
+  No parameter here was chosen against any control or inference outcome; none
+  exists yet for Stage 6.11.
+
+OPEN, carried into Section O
+  * k_ref is consequential for the saturation statistic (8 makes it worse, 1
+    takes it to zero) but not for decision shape. Section O must DECLARE the
+    choice in advance rather than inherit a default.
+  * The cohesion x normalization interaction on spatial binding is unmeasured.
+  * V4's Rg null is at 5 seeds; power is low.

@@ -1,0 +1,48 @@
+{
+ "candidate_size": 75,
+ "B": [],
+ "K": 0,
+ "complexity_curve_trace": [
+  {
+   "step": 0,
+   "added": null,
+   "mean_logloss": 0.13147943271488408
+  },
+  {
+   "step": 1,
+   "added": null,
+   "mean_logloss": 0.13147943271488408,
+   "stop_reason": "tol_or_no_gain"
+  }
+ ],
+ "full_pool_loss": 0.028253546488805455,
+ "interior_only_loss": 0.13147943271488408,
+ "final_loss": 0.13147943271488408,
+ "single_source_certification_reproduction": {
+  "B": [],
+  "base_test_logloss": 0.41920010749157116,
+  "L_challenge_point": 0.004242036761953142,
+  "L_challenge_upper": 0.005390403436757063,
+  "delta": 0.01,
+  "alpha": 0.05,
+  "n_boot": 300,
+  "predictively_sufficient_rel_challenger_class": true,
+  "n_exterior_challengers_tested": 325,
+  "wording": "predictively sufficient relative to the single-source challenger class -- NOT a conditional-independence claim"
+ },
+ "pair_block_challenger": {
+  "base_test_logloss": 0.4479086471980145,
+  "L_challenge_point": 0.0057974510416986666,
+  "L_challenge_upper": 0.0070137458691060806,
+  "n_pairs_tested": 190
+ },
+ "multivariate_residual_challenger": {
+  "cv_mean_logloss_base_features": 0.384351147519266,
+  "cv_mean_logloss_augmented": 0.38455785503122925,
+  "gap": -0.00020670751196322223,
+  "n_top_indicator_sources": 15,
+  "n_interaction_terms": 10,
+  "n_rows_used": 4800
+ },
+ "delta": 0.01
+}

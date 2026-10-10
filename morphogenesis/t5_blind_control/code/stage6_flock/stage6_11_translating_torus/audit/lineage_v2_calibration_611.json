@@ -1,0 +1,75 @@
+{
+ "a": 11.870393215092983,
+ "b": -7.548703380210431,
+ "n_good": 1768,
+ "n_bad": 1736,
+ "n_train": 2452,
+ "n_test": 1052,
+ "held_out_brier_score": 0.0123111938673506,
+ "reliability_curve": [
+  {
+   "bin": 0,
+   "mean_predicted": 0.013194529737578039,
+   "empirical_frac_good": 0.0,
+   "n": 479
+  },
+  {
+   "bin": 1,
+   "mean_predicted": 0.1373838830419986,
+   "empirical_frac_good": 0.0,
+   "n": 23
+  },
+  {
+   "bin": 2,
+   "mean_predicted": 0.247727798060471,
+   "empirical_frac_good": 0.0,
+   "n": 2
+  },
+  {
+   "bin": 3,
+   "mean_predicted": 0.3548793422785725,
+   "empirical_frac_good": 1.0,
+   "n": 3
+  },
+  {
+   "bin": 4,
+   "mean_predicted": 0.45447636203904485,
+   "empirical_frac_good": 0.0,
+   "n": 1
+  },
+  {
+   "bin": 6,
+   "mean_predicted": 0.6817926911951697,
+   "empirical_frac_good": 1.0,
+   "n": 3
+  },
+  {
+   "bin": 7,
+   "mean_predicted": 0.7208243285630959,
+   "empirical_frac_good": 1.0,
+   "n": 3
+  },
+  {
+   "bin": 8,
+   "mean_predicted": 0.8649433293666616,
+   "empirical_frac_good": 0.7,
+   "n": 10
+  },
+  {
+   "bin": 9,
+   "mean_predicted": 0.9773013529504938,
+   "empirical_frac_good": 0.9848484848484849,
+   "n": 528
+  }
+ ],
+ "good_score_percentiles": {
+  "p5": 0.8560382340192642,
+  "p50": 0.9668374595474105,
+  "p95": 0.9931920634402722
+ },
+ "bad_score_percentiles": {
+  "p5": 0.01450156698049259,
+  "p50": 0.2224085022586212,
+  "p95": 0.47013967418452085
+ }
+}

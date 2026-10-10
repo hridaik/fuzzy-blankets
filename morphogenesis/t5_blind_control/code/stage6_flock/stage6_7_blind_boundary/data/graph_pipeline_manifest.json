@@ -1,0 +1,98 @@
+{
+ "manifest": [
+  {
+   "seed": 2,
+   "condition": "no_control",
+   "status": "ok",
+   "elapsed_seconds": 146.37628030776978
+  },
+  {
+   "seed": 2,
+   "condition": "shell_only",
+   "status": "ok",
+   "elapsed_seconds": 121.34574723243713
+  },
+  {
+   "seed": 2,
+   "condition": "same_direction",
+   "status": "ok",
+   "elapsed_seconds": 120.91671705245972
+  },
+  {
+   "seed": 2,
+   "condition": "opposite",
+   "status": "ok",
+   "elapsed_seconds": 152.16980409622192
+  },
+  {
+   "seed": 2,
+   "condition": "disordered",
+   "status": "ok",
+   "elapsed_seconds": 146.05040884017944
+  },
+  {
+   "seed": 3,
+   "condition": "no_control",
+   "status": "ok",
+   "elapsed_seconds": 406.8274266719818
+  },
+  {
+   "seed": 3,
+   "condition": "shell_only",
+   "status": "ok",
+   "elapsed_seconds": 110.25023460388184
+  },
+  {
+   "seed": 3,
+   "condition": "same_direction",
+   "status": "ok",
+   "elapsed_seconds": 73.48812651634216
+  },
+  {
+   "seed": 3,
+   "condition": "opposite",
+   "status": "ok",
+   "elapsed_seconds": 60.77362275123596
+  },
+  {
+   "seed": 3,
+   "condition": "disordered",
+   "status": "ok",
+   "elapsed_seconds": 293.20667028427124
+  },
+  {
+   "seed": 4,
+   "condition": "no_control",
+   "status": "ok",
+   "elapsed_seconds": 321.848552942276
+  },
+  {
+   "seed": 4,
+   "condition": "shell_only",
+   "status": "ok",
+   "elapsed_seconds": 271.357120513916
+  },
+  {
+   "seed": 4,
+   "condition": "same_direction",
+   "status": "ok",
+   "elapsed_seconds": 263.71169805526733
+  },
+  {
+   "seed": 4,
+   "condition": "opposite",
+   "status": "ok",
+   "elapsed_seconds": 158.6740436553955
+  },
+  {
+   "seed": 4,
+   "condition": "disordered",
+   "status": "ok",
+   "elapsed_seconds": 324.69046115875244
+  }
+ ],
+ "total_elapsed_seconds": 2974.735865354538,
+ "n_jobs": 8,
+ "n_boot": 30,
+ "shortlist_k": 25
+}

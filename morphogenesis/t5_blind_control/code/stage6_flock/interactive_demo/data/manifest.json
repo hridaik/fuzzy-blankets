@@ -1,0 +1,316 @@
+{
+ "protocol_version": "V3 (protocol_v3.yaml, sha256 6907b889c320ccec49b5c5ee0f7bde2ed9cb291c8a8e3d7feadf65a87b4b09ba)",
+ "primary_flock_id": "seed16",
+ "canonical_flock_id": "seed2",
+ "primary_methods": [
+  {
+   "id": "no_control",
+   "label": "No Control",
+   "subtitle": "Natural dynamics, no intervention",
+   "short": "No Control",
+   "diagnostic": false
+  },
+  {
+   "id": "random_exterior",
+   "label": "Random Exterior",
+   "subtitle": "Generic external forcing (wrong pool)",
+   "short": "Random Exterior",
+   "diagnostic": false
+  },
+  {
+   "id": "fiedler_boundary",
+   "label": "Fiedler Boundary",
+   "subtitle": "Spectral separator, not the true interface",
+   "short": "Fiedler Boundary",
+   "diagnostic": false
+  },
+  {
+   "id": "connected_patch",
+   "label": "Connected Shell Patch",
+   "subtitle": "Correct interface, concentrated support",
+   "short": "Connected Patch",
+   "diagnostic": false
+  },
+  {
+   "id": "distributed_shell",
+   "label": "Distributed Shell Sample",
+   "subtitle": "Correct interface, random distribution",
+   "short": "Distributed Shell",
+   "diagnostic": false
+  },
+  {
+   "id": "v2_conservative_shell",
+   "label": "V2 Conservative Shell",
+   "subtitle": "Large-budget policy (V2, frozen)",
+   "short": "V2 Conservative",
+   "diagnostic": false
+  },
+  {
+   "id": "sparse_interface_multicover",
+   "label": "Sparse Interface Multicover",
+   "subtitle": "Our refined controller (V3)",
+   "short": "Our Method",
+   "diagnostic": false
+  },
+  {
+   "id": "full_dynamical_shell",
+   "label": "Full Dynamical Shell",
+   "subtitle": "Maximal admissible interface control",
+   "short": "Full Shell",
+   "diagnostic": false
+  },
+  {
+   "id": "direct_core_diagnostic",
+   "label": "Direct Core Forcing",
+   "subtitle": "Diagnostic only -- bypasses the interface",
+   "short": "Direct Core",
+   "diagnostic": true
+  }
+ ],
+ "primary_targets": {
+  "cw": 3,
+  "ccw": 2,
+  "opposite": 1
+ },
+ "primary_initial_heading": 0,
+ "primary_scenarios": [
+  {
+   "scenario_id": "seed16__no_control__cw",
+   "method_id": "no_control",
+   "target_id": "cw",
+   "method_label": "No Control",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__no_control__ccw",
+   "method_id": "no_control",
+   "target_id": "ccw",
+   "method_label": "No Control",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__no_control__opposite",
+   "method_id": "no_control",
+   "target_id": "opposite",
+   "method_label": "No Control",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__random_exterior__cw",
+   "method_id": "random_exterior",
+   "target_id": "cw",
+   "method_label": "Random Exterior",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__random_exterior__ccw",
+   "method_id": "random_exterior",
+   "target_id": "ccw",
+   "method_label": "Random Exterior",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__random_exterior__opposite",
+   "method_id": "random_exterior",
+   "target_id": "opposite",
+   "method_label": "Random Exterior",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__fiedler_boundary__cw",
+   "method_id": "fiedler_boundary",
+   "target_id": "cw",
+   "method_label": "Fiedler Boundary",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__fiedler_boundary__ccw",
+   "method_id": "fiedler_boundary",
+   "target_id": "ccw",
+   "method_label": "Fiedler Boundary",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__fiedler_boundary__opposite",
+   "method_id": "fiedler_boundary",
+   "target_id": "opposite",
+   "method_label": "Fiedler Boundary",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__connected_patch__cw",
+   "method_id": "connected_patch",
+   "target_id": "cw",
+   "method_label": "Connected Shell Patch",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__connected_patch__ccw",
+   "method_id": "connected_patch",
+   "target_id": "ccw",
+   "method_label": "Connected Shell Patch",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__connected_patch__opposite",
+   "method_id": "connected_patch",
+   "target_id": "opposite",
+   "method_label": "Connected Shell Patch",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__distributed_shell__cw",
+   "method_id": "distributed_shell",
+   "target_id": "cw",
+   "method_label": "Distributed Shell Sample",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__distributed_shell__ccw",
+   "method_id": "distributed_shell",
+   "target_id": "ccw",
+   "method_label": "Distributed Shell Sample",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__distributed_shell__opposite",
+   "method_id": "distributed_shell",
+   "target_id": "opposite",
+   "method_label": "Distributed Shell Sample",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__v2_conservative_shell__cw",
+   "method_id": "v2_conservative_shell",
+   "target_id": "cw",
+   "method_label": "V2 Conservative Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__v2_conservative_shell__ccw",
+   "method_id": "v2_conservative_shell",
+   "target_id": "ccw",
+   "method_label": "V2 Conservative Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__v2_conservative_shell__opposite",
+   "method_id": "v2_conservative_shell",
+   "target_id": "opposite",
+   "method_label": "V2 Conservative Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__sparse_interface_multicover__cw",
+   "method_id": "sparse_interface_multicover",
+   "target_id": "cw",
+   "method_label": "Sparse Interface Multicover",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__sparse_interface_multicover__ccw",
+   "method_id": "sparse_interface_multicover",
+   "target_id": "ccw",
+   "method_label": "Sparse Interface Multicover",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__sparse_interface_multicover__opposite",
+   "method_id": "sparse_interface_multicover",
+   "target_id": "opposite",
+   "method_label": "Sparse Interface Multicover",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__full_dynamical_shell__cw",
+   "method_id": "full_dynamical_shell",
+   "target_id": "cw",
+   "method_label": "Full Dynamical Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__full_dynamical_shell__ccw",
+   "method_id": "full_dynamical_shell",
+   "target_id": "ccw",
+   "method_label": "Full Dynamical Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__full_dynamical_shell__opposite",
+   "method_id": "full_dynamical_shell",
+   "target_id": "opposite",
+   "method_label": "Full Dynamical Shell",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed16__direct_core_diagnostic__cw",
+   "method_id": "direct_core_diagnostic",
+   "target_id": "cw",
+   "method_label": "Direct Core Forcing",
+   "diagnostic_only": true
+  },
+  {
+   "scenario_id": "seed16__direct_core_diagnostic__ccw",
+   "method_id": "direct_core_diagnostic",
+   "target_id": "ccw",
+   "method_label": "Direct Core Forcing",
+   "diagnostic_only": true
+  },
+  {
+   "scenario_id": "seed16__direct_core_diagnostic__opposite",
+   "method_id": "direct_core_diagnostic",
+   "target_id": "opposite",
+   "method_label": "Direct Core Forcing",
+   "diagnostic_only": true
+  }
+ ],
+ "canonical_methods": [
+  {
+   "id": "no_control",
+   "label": "No Control",
+   "subtitle": "Natural dynamics, no intervention",
+   "short": "No Control",
+   "diagnostic": false
+  },
+  {
+   "id": "v1_best_pair",
+   "label": "V1 Best Pair (global search)",
+   "subtitle": "Sparse global actuator search (V1, frozen)",
+   "short": "V1 Best Pair",
+   "diagnostic": false
+  },
+  {
+   "id": "sparse_interface_multicover",
+   "label": "Sparse Interface Multicover",
+   "subtitle": "Our refined controller (V3)",
+   "short": "Our Method",
+   "diagnostic": false
+  }
+ ],
+ "canonical_target": 0,
+ "canonical_initial_heading": 2,
+ "canonical_scenarios": [
+  {
+   "scenario_id": "seed2__no_control__cw",
+   "method_id": "no_control",
+   "target_id": "cw",
+   "method_label": "No Control",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed2__v1_best_pair__cw",
+   "method_id": "v1_best_pair",
+   "target_id": "cw",
+   "method_label": "V1 Best Pair (global search)",
+   "diagnostic_only": false
+  },
+  {
+   "scenario_id": "seed2__sparse_interface_multicover__cw",
+   "method_id": "sparse_interface_multicover",
+   "target_id": "cw",
+   "method_label": "Sparse Interface Multicover",
+   "diagnostic_only": false
+  }
+ ],
+ "default_scenario_id": "seed16__sparse_interface_multicover__cw"
+}

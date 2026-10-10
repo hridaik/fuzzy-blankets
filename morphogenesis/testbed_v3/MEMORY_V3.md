@@ -1,0 +1,33 @@
+# MEMORY_V3.md — gates H0, H1, H2 (memory theory T1–T5)
+
+Labels: ESTABLISHED / PROVISIONAL / NOT DONE. Code `code/engine3.py`, `h1.py`, `h2.py`, `h2d.py`, `theory3.py`; data `data/h1_*.json`, `h2*.json`, `h2d_groups.json`, `h2e_durability.json`. Parameters as declared: r = 0.05, g = 0.6 (g/4r = 3), σ_h = 0.4 (chosen below), σ_d = σ_e = 0.02, structural noise 0.02, dt = 0.0125.
+
+## H0 — implementation (ESTABLISHED; `tests/test_v3.py`, 6 pass, plus v2 tests 5 and v1 tests 9 pass in place)
+* **T4 decoupling**: 20 random memory interventions (memory light, memory pipette, memory bath, l kicks) vs sham, deterministic AND CRN-noisy (σ_h = 0.4, all noises on): structure (x, c, μ) differs from the sham twin by exactly 0.0 in all 40 runs. Memory variables do change (checked: the intervention acts on l). Prerequisite found: sham and intervention runs must share the same traced program (full control-tuple signature), otherwise XLA constant-folding changes structural rounding by ~1e−16 (ENGINE_SPEC_V3.md).
+* Reporter target equals the formula ρΣ_{S+}q + (1−ρ)Σ_{S−}q to 1e−12 on 10 random states. Isolated cell: f = ½ exactly. Structure drift identical (0.0) when l, d, e are replaced by arbitrary values. Mean-field fixed point of the full body ⟨l⟩ = 2.292 vs theory.
+## H1 — structure re-check (ESTABLISHED)
+Seeded starts at the v2 G1 point: **16/16 complete, minimum orbit belief 0.980**, max typed distance 0.30. Durability (code-path check): 3 seeds × 20,000 time units with noise: 0/3 dissolved, final typed distance 0.04, minimum orbit belief 0.98 (numbers match v2 G1 seeds 0–2: v2 final 0.040/0.042/0.040, v3 0.041/0.042/0.040). v2 result cited: 0/10 dissolutions in 20,000 tu (CATEGORICAL.md in testbed_v2).
+
+## H2 — memory theory
+Mean field (theory3.py): l* = 2 arccosh√(g/4r) = **2.292** (ρ = 0.908), ΔU = 0.2592, bistable since g/4r = 3; W_i = Σ_{j≠i}w_ij ranges 1.60–3.91 over places (mean 2.86); predicted bath critical value (mean W) **B_c = 0.636** (per-place 0.357–0.870).
+| check | prediction | result | verdict |
+|---|---|---|---|
+| (a) T1 isolated cell (and 2 cells 40 apart) from l = ±3 | linear rate 2r = 0.1 | rate **0.1003**, 0.1003 (N = 1, 2; both signs) fitted on 0.01 < \|l\| < 0.5; l → 1e−5 at 120 tu | ✓ (0.3 %) |
+| (b) T2 body in state a / b | l* = ±2.292 | mean l = **±2.2920**; per-cell spread 3.8e−4 (edge W < 2.2: 2.29174; centre W > 3.5: 2.29209) — the ratiometric signal makes l* independent of the cell's connectivity to O(ε/W); ⟨e*⟩ on the lit row 0.908 (off row 0.092) | ✓ (heterogeneity ≈ 0, as the theory implies) |
+| (c) T3 bath sweep (quasi-static, 80 tu per step, from a: 0 → +1.2 → 0 → −1.2 → 0) | jump near B_c = 0.636; stays in b on the way back; symmetric jump at −B_c | a→b jump between **B = 0.6 and 0.7** (mean ρ 0.745 → 0.088; 8 % of cells already flipped at 0.6); stays in b all the way back to B = 0 (⟨ρ⟩ 0.092 at B = 0); continued with the A-bath: b→a jump between **−0.6 and −0.7**; stays in a back to 0 | ✓ hysteresis loop; jump within 10 % of B_c (declared tolerance ±30 %) |
+| (d) finite groups | lifetime grows ~ exp(N·2ΔU/σ_h²) (T5) | see below | PARTIAL |
+| (e) durability, σ_h = 0.4 | 0 spontaneous switches | **0/20** runs (2 states × 10 seeds × 20,000 tu): mean l over all checkpoints stays in [1.93, 2.38] (state a) / [−2.45, −1.86] (b); structure complete and form L at every checkpoint (max typed distance 0.34) | ✓ |
+σ_h pilot (3,000 tu, whole body, noise on): std of l_i (median over cells; min over cells): σ_h 0.2: 0.207 (0.192); 0.3: 0.315 (0.292); **0.4: 0.430 (0.398)**; 0.5: 0.558; 0.7: 0.880. Declared criterion read strictly (every cell ≥ 0.3) → **σ_h = 0.4**.
+**Gate H2: PASSED** ((a), (b), (c), (e) within tolerance; (d) reported).
+### (d) Quorum curve (12 replicates per cell; T_max 10,000 tu; lifetime = first time mean l ≤ 0 from state a; MLE = total exposure / events)
+| σ_h | N = 2 | 4 | 8 | 12 | 24 |
+|---|---|---|---|---|---|
+| 0.4 (declared) | 1/12 events (MLE 1.2e5) | 0/12 | 0/12 | 0/12 | 0/12 |
+| 0.7 | **238** | **742** | **2,173** | **5,852** | 0/12 in 10⁴ |
+| 1.0 | 81 | 102 | 100 | 135 | 148 |
+Groups = the N places nearest to a central place, cut out of the settled body; they stay cohesive (largest nearest-neighbour distance 0.13 / 0.42 / 0.62 / 0.71 / 1.06 for N = 2…24), so the lifetimes are memory physics, not dispersal. At σ_h = 0.7 ln τ rises linearly with N: slope **0.31 per cell**, against the collective Kramers exponent 2ΔU/σ_h² = **1.06 per cell** (a factor ≈ 3.4 shallower). At σ_h = 1.0 the first-sign-change criterion is dominated by transient single-cell noise (mean of N cells fluctuates with sd ≈ σ/√N around a shallow well) and the lifetime saturates at ≈ 100 for all N — the criterion is too weak there. So **T5 holds in form (lifetime exponential in N, quorum effect measured) but not in the exponent**: the barrier per cell is ≈ 30 % of N·ΔU (PROVISIONAL explanation: with a kernel range of ~2 cell spacings a nucleus smaller than the whole group can flip and then spread, so the effective barrier is below N·ΔU; not tested).
+### T5 for the whole body (N = 24, σ_h = 0.4)
+Kramers (collective) exponent 2·24·ΔU/σ_h² = 77.7 → τ ~ e^{78} (≈ 10³³ tu). Empirical-slope extrapolation (slope 0.31/cell at σ 0.7, scaled by (0.7/0.4)² ≈ 3.06 → 0.94/cell → e^{22.6} ≈ 6.5·10⁹ tu × prefactor). Observed: 0 switches in 4·10⁵ body-time units. The two estimates differ by 20 orders of magnitude; both are ≫ 4·10⁵. PROVISIONAL (extrapolations).
+
+## Linear-noise stationary covariance at both states (hidden truth; `code/hidden3.py`, `data/hidden_covariance.json`, `data/hidden_influence_{a,b}.npz`)
+Both fixed points are linearly stable with **27 neutral modes** (3 rigid-body motions + 24 place-logit means) and **789 stable non-neutral modes**; slowest non-neutral rate 0.00891 (the twin-exchange mode of v2 G1; unchanged because structure is the same module). Stationary covariance (ordered real Schur decomposition, Lyapunov equation on the closed non-neutral block, noise 0.02/σ_h = 0.4 as declared): positive definite on the 789-dimensional quotient, eigenvalues 2.0·10⁻⁶ … 0.874, **condition number 4.3·10⁵** (identical for states a and b by symmetry). LNA sd of l_i = **0.4006** (range 0.4005–0.4011) — the simulated pilot median was 0.43 (σ_h = 0.4); x sd 0.018; reporter sd 0.022. (An earlier eigenmode-based attempt gave negative traces: the Jacobian is strongly non-normal and its eigenvector matrix is ill-conditioned; superseded by the Schur construction.) Influence matrices: `influence[i,j]` = Frobenius norm of the Jacobian block ∂f_i/∂state_j (i ≠ j), `dl_dcell[i,j]` = ‖∂ṫl_i/∂state_j‖, at the settled adult (seed 0), for both states.

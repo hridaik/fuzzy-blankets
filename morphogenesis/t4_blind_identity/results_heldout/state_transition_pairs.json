@@ -1,0 +1,54 @@
+{
+ "development|O1": {
+  "n_triplets": 24,
+  "treated_minus_twin": [
+   1.96,
+   0.67,
+   3.38
+  ],
+  "sham_minus_twin": [
+   -0.08,
+   -0.25,
+   0.0
+  ]
+ },
+ "development|O2": {
+  "n_triplets": 24,
+  "treated_minus_twin": [
+   0.25,
+   -0.83,
+   1.29
+  ],
+  "sham_minus_twin": [
+   -0.42,
+   -1.0,
+   0.0
+  ]
+ },
+ "heldout|O1": {
+  "n_triplets": 15,
+  "treated_minus_twin": [
+   1.13,
+   0.67,
+   1.87
+  ],
+  "sham_minus_twin": [
+   0.13,
+   0.0,
+   0.4
+  ]
+ },
+ "heldout|O2": {
+  "n_triplets": 15,
+  "treated_minus_twin": [
+   0.87,
+   0.33,
+   1.53
+  ],
+  "sham_minus_twin": [
+   -0.13,
+   -0.4,
+   0.0
+  ]
+ }
+}

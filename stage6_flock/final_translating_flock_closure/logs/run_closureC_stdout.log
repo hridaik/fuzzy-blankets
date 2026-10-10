@@ -1,5 +1,0 @@
-[sclosure_00_seed64200] n_rollouts=0 dt=54s (elapsed 54s)
-[sclosure_01_seed64201] n_rollouts=24 dt=161s (elapsed 214s)
-[sclosure_02_seed64202] n_rollouts=12 dt=104s (elapsed 319s)
-[sclosure_03_seed64203] n_rollouts=21 dt=136s (elapsed 454s)
-TOTAL wall time: 454.4s (7.6min), n_rollouts=57

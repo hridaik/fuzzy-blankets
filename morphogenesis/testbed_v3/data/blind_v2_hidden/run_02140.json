@@ -1,0 +1,1 @@
+{"meta": {"family": "stress", "scn": "extrude", "arm": "sham", "state": "a", "seed": 702}, "events": [{"t": 10150.0, "kind": "sham_tweezers"}], "pose": {"angle": 3.0569870759018403, "shift": [0.3587039759867485, -0.8331488012985515]}, "private": {}}

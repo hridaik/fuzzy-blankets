@@ -1,0 +1,99 @@
+{
+  "rule": "B_max_jaccard(min=0.3)",
+  "frozen_rule_spec": {
+    "min_jaccard": 0.3
+  },
+  "all_passed_or_expected": true,
+  "results": [
+    {
+      "test": "test_A_stable_continuation",
+      "passed": true,
+      "detail": "statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing']",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_B_gradual_turnover",
+      "passed": true,
+      "detail": "statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing']; cumulative overlap with t=0 cohort at t=19: 0.00 (expected low)",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_C_abrupt_replacement",
+      "passed": true,
+      "detail": "t=1 status=unresolved (must not be 'continuing' onto the unrelated set)",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_D_toroidal_crossing",
+      "passed": true,
+      "detail": "membership identical to origin at every step; statuses=['continuing', 'continuing', 'continuing']",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_E_temporary_missed_detection",
+      "passed": true,
+      "detail": "statuses=['continuing', 'unresolved', 'unresolved', 'continuing']",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_F_split",
+      "passed": true,
+      "detail": "t=1 split_flag=True, status=continuing, chosen_size=22",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_G_merge",
+      "passed": false,
+      "detail": "t=1 merge_flag=False, status=unresolved, R_old/R_new of winner in metrics",
+      "expected_to_fail": true
+    },
+    {
+      "test": "test_H_two_flocks_passing_near",
+      "passed": true,
+      "detail": "statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing']; ever touched b=False",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_I_similar_size_zero_overlap",
+      "passed": true,
+      "detail": "t=1 status=unresolved (same size 50/50, jaccard=0.0)",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_J_turnover_with_distractor",
+      "passed": true,
+      "detail": "statuses all continuing=True; final overlap w/ t=0 cohort=0.00 (expected low, ordinary turnover)",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_K_partial_merge_dilution",
+      "passed": true,
+      "detail": "t=1 status=unresolved (EXPECTED 'unresolved' -- same disclosed Jaccard-dilution limitation as test G; jaccard=0.167<0.30)",
+      "expected_to_fail": true
+    },
+    {
+      "test": "test_L_two_way_split_persistence",
+      "passed": true,
+      "detail": "split_step: split_flag=True, chosen_size=22; later statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing']",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_M_split_then_remerge",
+      "passed": true,
+      "detail": "split_flag=True; followed_daughter_size=22; remerge status=continuing, merge_flag=True, followed_daughter_subset_of_remerged=True",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_N_temporary_over_segmentation",
+      "passed": true,
+      "detail": "frag statuses/split_flags=[('continuing', True), ('continuing', False), ('continuing', False)] (split_flag expected True only at first fragmentation, not re-fired while locked onto one fragment); refuse status=continuing, merge_flag=False",
+      "expected_to_fail": false
+    },
+    {
+      "test": "test_O_repeated_missed_detections_near_horizon",
+      "passed": true,
+      "detail": "recover-branch: statuses=['continuing', 'unresolved', 'unresolved', 'unresolved', 'continuing'] (recovers exactly at horizon+1) | die-branch: statuses=['continuing', 'unresolved', 'unresolved', 'unresolved', 'dead'] (dies on 4th consecutive miss, horizon=3)",
+      "expected_to_fail": false
+    }
+  ]
+}

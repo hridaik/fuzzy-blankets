@@ -1,0 +1,296 @@
+==========================================================================
+STAGE 6.11 -- MODEL VALIDATION FOR moving_flock_611
+Sections M (positional cohesion) and N (degree-normalized social evidence)
+No inference, detection or control experiment is run here.
+==========================================================================
+
+==========================================================================
+V1. DEFAULT-PATH EQUIVALENCE WITH STAGE 6.9 (bit-for-bit)
+==========================================================================
+Both new terms off. Same seed, same N/L/R/v. Exact array equality is
+required; a tolerance would hide exactly the drift this check exists for.
+
+  N= 120 L= 14.0 R=1.60 v=0.50 seed=0  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 120 L= 14.0 R=1.60 v=0.50 seed=1  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 120 L= 14.0 R=1.60 v=0.50 seed=2  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=0.90 v=0.28 seed=0  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=0.90 v=0.28 seed=1  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=0.90 v=0.28 seed=2  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=1.60 v=0.50 seed=0  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=1.60 v=0.50 seed=1  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+  N= 400 L= 24.0 R=1.60 v=0.50 seed=2  headings equal: True   positions equal: True   max|dr| = 0.0e+00
+
+  VERDICT: EXACT on all 9 runs (120 steps each).
+  Mechanism: with social='raw' and cohesion=0 no additional floating-point
+  operation is executed and the RNG is consumed in the same order, so this
+  is equality by construction rather than by luck.
+
+==========================================================================
+V2. SECTION N VERIFICATION -- SCALE PRESERVATION AT THE ORIGINAL DEGREE
+==========================================================================
+Section N, verbatim: 'at the original local degree, the normalized variant
+must approximately preserve the existing operating scale. Recorded as a
+numeric check, not asserted.'
+
+Configurations: Stage 6.9's spec model (R=0.9, v=0.28, N=400, L=24), 3 seeds,
+t = 120..200 every 20 steps (15 configurations). The evidence rule is varied
+on the SAME configurations, so degree is identical across rows.
+
+  variant                 degree  mean max u   entropy  sat (u=1.0)  med(1-max u)
+  raw                      10.22      0.9112    0.1638        0.635     3.181e-12
+  normalized(k_ref=8)      10.22      0.9113    0.1630        0.771     0.000e+00
+  normalized(k_ref=1)      10.22      0.9089    0.1743        0.000     1.305e-04
+
+  Operating scale preserved at degree 10.22?
+    mean max u : 0.9112 -> 0.9113 (+0.01%)
+    entropy    : 0.1638 -> 0.1630 (-0.50%)
+    saturation : 0.635 -> 0.771 (+0.137 absolute)
+
+  READING. With k_ref = 8 the decision shape is preserved to well under a
+  percent, which is what section N asked for. The SATURATION FRACTION is not
+  preserved and moves in the unhelpful direction: normalizing equalizes the
+  per-bird magnitude of G, which pushes low-degree birds UP into exact
+  saturation faster than it pulls high-degree birds out. k_ref = 1 (the bare
+  mean, section N's formula with no rescaling) preserves the decision shape
+  just as well and removes exact saturation entirely -- reported here as a
+  measurement; k_ref is NOT being re-chosen on it, and no downstream result
+  exists that it could be chosen against.
+
+==========================================================================
+V3. DOES NORMALIZATION DECOUPLE DECISION GAIN FROM DEGREE?
+==========================================================================
+Claim under test: 'normalization makes decision gain roughly independent of
+degree.' Two measurements.
+
+V3a. MATCHED CONFIGURATIONS, R varied in the evidence rule only. Same birds,
+     same headings; only how many of them are inside R changes.
+
+      R  degree |                        raw |        normalized(k_ref=8) |        normalized(k_ref=1)
+                |     max u    sat   entropy |     max u    sat   entropy |     max u    sat   entropy
+   0.50    5.06 |   0.8478  0.470   0.2814 |   0.8479  0.730   0.2807 |   0.8463  0.000   0.2878
+   0.70    7.73 |   0.8857  0.576   0.2111 |   0.8859  0.760   0.2102 |   0.8836  0.000   0.2201
+   0.90   10.22 |   0.9112  0.635   0.1638 |   0.9113  0.771   0.1630 |   0.9089  0.000   0.1743
+   1.20   13.63 |   0.9267  0.676   0.1352 |   0.9267  0.766   0.1345 |   0.9235  0.000   0.1484
+   1.60   17.67 |   0.9391  0.704   0.1123 |   0.9392  0.757   0.1115 |   0.9344  0.000   0.1301
+   2.00   21.27 |   0.9488  0.712   0.0949 |   0.9489  0.732   0.0936 |   0.9417  0.000   0.1201
+   2.60   25.84 |   0.9573  0.688   0.0813 |   0.9573  0.677   0.0802 |   0.9455  0.000   0.1217
+
+  raw                    max u spans 0.1095 across degree 5.1->25.8; sat spans 0.243
+  normalized(k_ref=8)    max u spans 0.1094 across degree 5.1->25.8; sat spans 0.095
+  normalized(k_ref=1)    max u spans 0.0991 across degree 5.1->25.8; sat spans 0.000
+
+V3b. SELF-CONSISTENT DYNAMICS: each variant runs its own trajectory at each R,
+     v held at 0.28 so that R alone moves the degree.
+
+      R |                          raw |          normalized(k_ref=8) |          normalized(k_ref=1)
+        |        degree   max u    sat |        degree   max u    sat |        degree   max u    sat
+   0.60 |     0.53   0.4631    0.019 |     0.41   0.4690    0.269 |     0.35   0.4548    0.000
+   0.90 |     9.72   0.8979    0.599 |     9.49   0.8766    0.733 |     7.66   0.7751    0.000
+   1.20 |    13.25   0.9584    0.735 |    14.71   0.9642    0.869 |    15.65   0.9427    0.000
+   1.60 |    17.22   0.9879    0.846 |    17.73   0.9857    0.914 |    16.18   0.9831    0.000
+   2.00 |    12.16   0.9981    0.852 |    16.17   0.9976    0.975 |    16.72   0.9911    0.000
+
+V3c. WHY. `policy_posterior` self-tunes its precision, W = alpha / (spm_beta -
+     u.G), refitted from W = 0 every step. For |u.G| >> spm_beta that makes
+     W ~ 1/|G|, so W*G -- the only thing the softmax sees -- is already
+     approximately invariant to multiplying G by a constant. Scaling a
+     synthetic G by c and reading back mean max u:
+       c =  0.125   mean max u = 0.5894
+       c =  0.250   mean max u = 0.6736
+       c =  0.500   mean max u = 0.7261
+       c =  1.000   mean max u = 0.7553
+       c =  2.000   mean max u = 0.7707
+       c =  4.000   mean max u = 0.7786
+       c =  8.000   mean max u = 0.7826
+
+  READING -- THE CLAIM DOES NOT HOLD, AND THE REASON IS NOT THE NORMALIZATION.
+  A per-bird scalar is the wrong instrument here: the quantity that sharpens
+  with degree is not the magnitude of G but the shape of the gap between the
+  best action and the rest, and W*G is nearly blind to magnitude. Raw and
+  normalized(k_ref=8) track each other to within a few thousandths of max u
+  at every degree measured. Degree normalization is therefore retained as an
+  available, explicitly labelled modelling variant, but it should NOT be
+  described as a fix for the Stage 6.9 saturation, because it is not one.
+
+  One thing a scalar DOES move is exact saturation, which is a property of the
+  absolute size of W*G rather than of its shape: k_ref = 1 takes the fraction
+  of birds at max u == 1.0 to zero while leaving mean max u ~ 0.95, i.e. the
+  same decisions with a representable residual instead of an underflowed one.
+  Whether that matters for interface recovery is a question for a later stage;
+  this stage runs no inference and makes no claim about it.
+
+==========================================================================
+V4. DOES POSITIONAL COHESION HOLD A GROUP TOGETHER AT LOWER DEGREE?
+==========================================================================
+Audit hypothesis (logs/moving_model_audit.txt): with alignment as the only
+force binding a group spatially, cohesion has to be bought with interaction
+range, and range buys saturation. If positional cohesion holds a collective
+together at LOWER realized degree, range and decision gain have been
+separated. Test: compact start, then let it go.
+
+Protocol. N=200 on L=24, initial uniform disc of radius 3.0 at the box centre,
+random headings, 200 steps, statistics averaged over t=100..200, 5 seeds per
+cell. social='raw' throughout, so this isolates the cohesion term. fc_pos and
+R are swept over a fixed grid declared before the runs and reported whole.
+
+  Rg  = torus radius of gyration (RMS distance from the circular-mean centre).
+        A disc of radius 3.0 starts at Rg = 2.12; birds spread uniformly over
+        the box sit near 9.8. LOWER IS MORE COHESIVE.
+  nn  = mean nearest-neighbour distance.  deg = mean live in-degree.
+  sat = fraction of birds with max u == 1.0.
+
+      R  fc_pos     deg      Rg  Rg_end     nn    sat
+   0.40    0.00    0.60    6.58    6.83   0.67  0.037
+   0.40    0.50    2.28    6.50    6.43   0.60  0.203
+   0.40    1.00    2.41    6.83    6.74   0.62  0.078
+   0.40    2.00    1.36    6.88    7.02   0.61  0.061
+   0.40    4.00    0.38    5.21    5.59   0.52  0.019
+
+   0.50    0.00    4.81    6.27    6.13   0.54  0.346
+   0.50    0.50    6.93    6.15    5.83   0.44  0.490
+   0.50    1.00    6.25    6.59    6.30   0.47  0.228
+   0.50    2.00    6.53    6.11    5.68   0.45  0.094
+   0.50    4.00    0.58    5.86    6.33   0.51  0.029
+
+   0.70    0.00   15.35    5.26    6.31   0.29  0.722
+   0.70    0.50   13.42    4.96    5.49   0.26  0.674
+   0.70    1.00   15.55    5.05    5.50   0.23  0.331
+   0.70    2.00   13.72    5.15    4.61   0.26  0.108
+   0.70    4.00    1.62    6.81    7.26   0.42  0.055
+
+   0.90    0.00   21.66    3.85    3.71   0.22  0.842
+   0.90    0.50   22.19    3.94    4.18   0.18  0.684
+   0.90    1.00   18.32    3.82    3.96   0.19  0.319
+   0.90    2.00   25.75    3.86    3.10   0.20  0.087
+   0.90    4.00   11.05    5.94    6.78   0.24  0.051
+
+   1.20    0.00   34.04    2.48    2.02   0.13  0.930
+   1.20    0.50   27.45    2.98    3.48   0.17  0.685
+   1.20    1.00   33.31    2.37    2.54   0.14  0.317
+   1.20    2.00   47.38    2.42    2.13   0.13  0.070
+   1.20    4.00   11.48    5.91    6.30   0.20  0.052
+
+  THE HYPOTHESIS, STATED AS A COMPARISON. Cohesion buys spatial
+  binding independently of range only if some cohesion-on cell is TIGHTER
+  than the best cohesion-off cell while sitting at LOWER realized degree.
+
+  Most cohesive cell WITHOUT the term : Rg = 2.48 at degree 34.04   (R = 1.2)
+  Cells WITH the term that are tighter AND at lower degree: 1 of 20
+      R= 1.2 fc_pos= 1.0   Rg = 2.37 at degree 33.31
+
+  MATCHED-R VIEW: what fc_pos changes when the range is held fixed.
+      R  fc_pos      dRg    d deg    d sat
+   0.40    0.50    -0.08    +1.68   +0.166
+   0.40    1.00    +0.25    +1.81   +0.042
+   0.40    2.00    +0.30    +0.76   +0.024
+   0.40    4.00    -1.37    -0.22   -0.018
+
+   0.50    0.50    -0.12    +2.12   +0.145
+   0.50    1.00    +0.31    +1.44   -0.118
+   0.50    2.00    -0.16    +1.72   -0.252
+   0.50    4.00    -0.42    -4.23   -0.317
+
+   0.70    0.50    -0.30    -1.94   -0.048
+   0.70    1.00    -0.21    +0.20   -0.391
+   0.70    2.00    -0.11    -1.64   -0.614
+   0.70    4.00    +1.55   -13.73   -0.667
+
+   0.90    0.50    +0.08    +0.53   -0.158
+   0.90    1.00    -0.03    -3.34   -0.522
+   0.90    2.00    +0.01    +4.09   -0.754
+   0.90    4.00    +2.09   -10.61   -0.791
+
+   1.20    0.50    +0.50    -6.59   -0.246
+   1.20    1.00    -0.11    -0.73   -0.613
+   1.20    2.00    -0.06   +13.34   -0.861
+   1.20    4.00    +3.43   -22.56   -0.878
+
+  READING -- THE AUDIT'S HYPOTHESIS IS NOT SUPPORTED BY THIS SWEEP.
+  For fc_pos <= 2, the largest change in Rg at fixed R is 0.50. Each cell
+  mean is over 5 seeds whose across-seed sd runs 0.09-1.32 (median 0.54),
+  i.e. a standard error on the cell mean of up to 0.59. Every cohesion effect on Rg
+  is inside that. The group's fate is set by R alone: it disperses to Rg ~ 6
+  for R <= 0.5 with or without cohesion, and binds for R >= 0.9 with or without
+  it. fc_pos = 4 is actively harmful -- it overrides the alignment term, the
+  group loses its common heading and comes apart, and realized degree
+  collapses. The one cell that formally satisfies the hypothesis (R=1.2,
+  fc_pos=1.0) improves Rg by 0.11 and degree by 0.73 against that standard error;
+  it is not evidence.
+
+  So the term is honest about what it is: a genuinely missing generic
+  ingredient, added once and recorded, which does NOT rescue the Stage 6.9
+  range-versus-degree trade-off. Section M's audit proposed that trade-off as
+  a hypothesis and it is reported here as refuted for this statistic. The term
+  stays OFF by default and no parameter of it has been chosen on any outcome.
+
+  ONE UNANTICIPATED EFFECT, reported because it is large and reproducible
+  across the sweep rather than because it was looked for. At matched R AND
+  matched Rg -- i.e. the same range holding the group equally tightly --
+  turning cohesion on collapses the exact-saturation fraction:
+
+      R |    fc_pos=0: Rg  deg   sat |    fc_pos=2: Rg  deg   sat
+   0.40 |      6.58   0.60  0.037        |      6.88   1.36  0.061
+   0.50 |      6.27   4.81  0.346        |      6.11   6.53  0.094
+   0.70 |      5.26  15.35  0.722        |      5.15  13.72  0.108
+   0.90 |      3.85  21.66  0.842        |      3.86  25.75  0.087
+   1.20 |      2.48  34.04  0.930        |      2.42  47.38  0.070
+
+  At R = 0.9 the two cells have Rg 3.85 vs 3.86 and degree 21.7 vs 25.8 -- the
+  cohesion-on cell is if anything MORE connected -- yet saturation falls from
+  0.84 to 0.09. Section N tried to reach that by rescaling G and could not
+  (V3); the cohesion term reaches it by changing G's SHAPE, adding a
+  per-partner contribution whose direction is the bearing rather than the
+  consensus heading, which narrows the gap between the best action and the
+  rest. This is a measurement on uncontrolled runs, not a mechanism claim and
+  not a control or inference result; nothing downstream has been run that it
+  could have been tuned for. Whether a non-saturated policy actually restores
+  a recoverable causal interface is exactly the question Stage 6.9 left open,
+  and it belongs to a later section of this stage, not to this file.
+
+==========================================================================
+V5. NO TRAJECTORY ENGINEERING
+==========================================================================
+Three exact symmetries are checked directly on G. Together they say the new
+terms cannot express a preferred direction, a preferred bird, or a preferred
+place -- there is no argument slot in either of them for one.
+
+  variant                      rot 90 dev   relabel dev   translate dev
+  raw / no cohesion              1.42e-14      7.11e-15        0.00e+00
+  normalized                     2.84e-14      1.42e-14        0.00e+00
+  cohesion=1                     1.42e-14      7.11e-15        2.13e-14
+  normalized + cohesion=1        4.26e-14      1.42e-14        1.36e-13
+
+  All deviations are at floating-point accumulation noise (~1e-14), so:
+   * rotating the world 90 degrees only permutes G's columns -- no term
+     prefers north, east, or the direction of any Stage 6.9/6.10 result;
+   * relabelling the birds only permutes G's rows -- no term reads an index,
+     a group label, or a membership set;
+   * translating the world leaves G unchanged -- no term reads an absolute
+     position or a target location.
+
+  By construction as well as by measurement: `_accumulate_G` sees only the
+  live edge list, the relative displacements and the partners' headings. It
+  is given no time index, so neither term can act as a schedule or a cue, and
+  the cohesion direction is the mean unit bearing to whoever happens to be in
+  range. Section Q's Eulerian nucleation field, if it is ever needed, is a
+  separate mechanism and is not implemented here.
+
+==========================================================================
+SUMMARY
+==========================================================================
+  V1 default equivalence ... EXACT
+  V2 scale preservation .... mean max u 0.9112 -> 0.9113 at degree 10.22: PRESERVED. saturation 0.635 -> 0.771: NOT preserved.
+  V3 degree decoupling ..... NOT ACHIEVED. policy_posterior's precision
+     self-tuning already renormalizes the magnitude of G, so a per-bird
+     scalar leaves decision gain essentially where it was.
+  V4 cohesion .............. HYPOTHESIS NOT SUPPORTED. 1 of 20 cohesion-on cells are
+     tighter than the best cohesion-off cell (Rg 2.48 at degree 34.04) at lower
+     degree, and that cell's margin is inside the across-seed error. Spatial
+     binding is set by R, with or without the term. Separately and not
+     hypothesized: at matched R and matched Rg the term collapses exact
+     saturation (R=0.9: 0.842 -> 0.087) by changing G's shape, which is what
+     section N's rescaling could not do.
+  V5 no trajectory engineering ... rotation, relabelling and translation
+     symmetries hold to ~1e-14 for both new terms.
+
+  wall clock: 340 s

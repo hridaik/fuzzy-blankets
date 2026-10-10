@@ -1,5 +1,0 @@
-PASS: identical physics_seed with no forcing -> bit-identical trajectory (determinism check)
-PASS: identical physics_seed with identical forcing -> bit-identical trajectory
-PASS: one-step CRN pairing -- non-forced birds' z(t=1) identical between no-forcing and forced branches
-
-All CRN diagnostics passed.

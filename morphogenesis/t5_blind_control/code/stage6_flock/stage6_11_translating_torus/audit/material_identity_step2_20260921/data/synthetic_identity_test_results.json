@@ -1,0 +1,411 @@
+{
+  "rule": "B_max_jaccard(min=0.3)",
+  "frozen_rule_spec": {
+    "letter": "B",
+    "params": {
+      "min_jaccard": 0.3
+    },
+    "selection_rationale": "Rule B (max-Jaccard, single threshold) selected over A (R_old alone) and D (Dice alone) because it reaches FPR=0 (zero cross-episode unrelated-flock acceptances) at a lower/earlier threshold (0.25-0.30) than A (needs ~0.65) while matching D closely, giving Rule B the widest stable FPR=0 plateau (threshold in [0.25, 0.80]) of the three single-parameter rules at comparable TPR. Rule C (two-sided R_old/R_new) does not separate the calibration distributions any more cleanly than Rule B despite needing two parameters (best C: J=0.9896 at R_old>=0.4,R_new>=0.2, vs Rule B: J=0.9896 at a single threshold=0.20, J=0.9878 at threshold=0.30) -- the extra parameter buys no calibration-data benefit, so the simpler single-parameter rule is preferred per the task instruction to prefer the simplest robust rule. Threshold=0.30 (not the argmax-J value of 0.20-0.25) is chosen deliberately inside the wide, flat FPR=0 plateau (0.25-0.80) rather than at its edge, for stability against small calibration-sample resampling variance -- NOT chosen by looking at seeds 500-504. Coincidentally equals v1 LineageTracker611.RETENTION_MIN (lineage_611.py:39) -- noted as a sanity cross-check on scale, not as the reason for the choice (this calibration never reads that constant).",
+    "missed_detection_horizon": 3,
+    "split_min_share": 0.3,
+    "merge_max_r_new": 0.4,
+    "merge_min_size_ratio": 1.8,
+    "split_merge_threshold_status": "DIAGNOSTIC ONLY -- not independently calibrated with the same rigor as the primary continuation threshold (task brief S7 explicitly permits this for Step 2)."
+  },
+  "all_passed": false,
+  "results": [
+    {
+      "test": "test_A_stable_continuation",
+      "passed": true,
+      "detail": "statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing']",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 2,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 3,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 4,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 5,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 6,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 7,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 8,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        },
+        {
+          "t": 9,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        }
+      ]
+    },
+    {
+      "test": "test_B_gradual_turnover",
+      "passed": true,
+      "detail": "statuses=['continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing', 'continuing']; cumulative overlap with t=0 cohort at t=19: 0.00 (expected low)",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 2,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 3,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 4,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 5,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 6,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 7,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 8,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 9,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 10,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 11,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 12,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 13,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 14,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 15,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 16,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 17,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 18,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        },
+        {
+          "t": 19,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=36, R_old=0.900, R_new=0.900, jaccard=0.818)",
+          "n_accepted": 40
+        }
+      ]
+    },
+    {
+      "test": "test_C_abrupt_replacement",
+      "passed": true,
+      "detail": "t=1 status=unresolved (must not be 'continuing' onto the unrelated set)",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "unresolved",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "no candidate passed B_max_jaccard(min=0.3) this step (1/3 consecutive); holding last accepted membership, NOT switching",
+          "n_accepted": 40
+        }
+      ]
+    },
+    {
+      "test": "test_D_toroidal_crossing",
+      "passed": true,
+      "detail": "membership identical to origin at every step; statuses=['continuing', 'continuing', 'continuing']",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=40, R_old=1.000, R_new=1.000, jaccard=1.000)",
+          "n_accepted": 40
+        },
+        {
+          "t": 2,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=40, R_old=1.000, R_new=1.000, jaccard=1.000)",
+          "n_accepted": 40
+        }
+      ]
+    },
+    {
+      "test": "test_E_temporary_missed_detection",
+      "passed": true,
+      "detail": "statuses=['continuing', 'unresolved', 'unresolved', 'continuing']",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "unresolved",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "no candidate passed B_max_jaccard(min=0.3) this step (1/3 consecutive); holding last accepted membership, NOT switching",
+          "n_accepted": 40
+        },
+        {
+          "t": 2,
+          "status": "unresolved",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "no candidate passed B_max_jaccard(min=0.3) this step (2/3 consecutive); holding last accepted membership, NOT switching",
+          "n_accepted": 40
+        },
+        {
+          "t": 3,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=38, R_old=0.950, R_new=0.950, jaccard=0.905)",
+          "n_accepted": 40
+        }
+      ]
+    },
+    {
+      "test": "test_F_split",
+      "passed": true,
+      "detail": "t=1 split_flag=True, status=continuing, chosen_size=22",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "continuing",
+          "split_flag": true,
+          "merge_flag": false,
+          "reason": "B_max_jaccard(min=0.3) accepted candidate 0 (retained=22, R_old=0.550, R_new=1.000, jaccard=0.550); 2 candidates passed the gate; chose max absolute retained count; SPLIT FLAG: 2 distinct candidates each retain >= 30% of the previous target",
+          "n_accepted": 22
+        }
+      ]
+    },
+    {
+      "test": "test_G_merge",
+      "passed": false,
+      "detail": "t=1 merge_flag=False, status=unresolved, R_old/R_new of winner in metrics",
+      "decisions": [
+        {
+          "t": 0,
+          "status": "continuing",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "seed target at qualification",
+          "n_accepted": 40
+        },
+        {
+          "t": 1,
+          "status": "unresolved",
+          "split_flag": false,
+          "merge_flag": false,
+          "reason": "no candidate passed B_max_jaccard(min=0.3) this step (1/3 consecutive); holding last accepted membership, NOT switching",
+          "n_accepted": 40
+        }
+      ]
+    }
+  ]
+}

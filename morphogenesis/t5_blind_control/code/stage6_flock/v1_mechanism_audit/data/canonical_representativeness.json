@@ -1,0 +1,1641 @@
+{
+ "n_population": 161,
+ "canonical": {
+  "seed": 2,
+  "t0": 41,
+  "size": 20,
+  "eigengap": 1.3876066697119231,
+  "coherence": 1.0,
+  "lambda2": 12.471958289176193,
+  "lambda3": 13.859564958888116,
+  "size_boundary": 2
+ },
+ "population_medians": {
+  "t0": 8.0,
+  "size": 20.0,
+  "size_boundary": 3.0,
+  "coherence": 1.0,
+  "lambda2": 20.555907380792135,
+  "eigengap": 9.731648197354044
+ },
+ "canonical_percentile_rank": {
+  "t0": 94.40993788819875,
+  "size": 100.0,
+  "size_boundary": 49.68944099378882,
+  "coherence": 100.0,
+  "lambda2": 24.22360248447205,
+  "eigengap": 1.2422360248447204
+ },
+ "population": [
+  {
+   "seed": 2,
+   "t0": 41,
+   "size": 20,
+   "eigengap": 1.3876066697119231,
+   "coherence": 1.0,
+   "lambda2": 12.471958289176193,
+   "lambda3": 13.859564958888116,
+   "size_boundary": 2
+  },
+  {
+   "seed": 3,
+   "t0": 8,
+   "size": 19,
+   "eigengap": 9.731648197354044,
+   "coherence": 1.0,
+   "lambda2": 13.742690862682863,
+   "lambda3": 23.474339060036908,
+   "size_boundary": 1
+  },
+  {
+   "seed": 4,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 10.347710055447283,
+   "coherence": 0.9,
+   "lambda2": 30.72198062143764,
+   "lambda3": 41.069690676884925,
+   "size_boundary": 5
+  },
+  {
+   "seed": 8,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 10.424477473000238,
+   "coherence": 0.9,
+   "lambda2": 45.503606102626634,
+   "lambda3": 55.92808357562687,
+   "size_boundary": 9
+  },
+  {
+   "seed": 9,
+   "t0": 27,
+   "size": 19,
+   "eigengap": 132.46634983814312,
+   "coherence": 1.0,
+   "lambda2": 18.53365016185654,
+   "lambda3": 150.99999999999966,
+   "size_boundary": 0
+  },
+  {
+   "seed": 10,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 20.94143974732267,
+   "coherence": 1.0,
+   "lambda2": 47.024078087459706,
+   "lambda3": 67.96551783478237,
+   "size_boundary": 11
+  },
+  {
+   "seed": 11,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 12.84332777592628,
+   "coherence": 0.95,
+   "lambda2": 16.61922778034258,
+   "lambda3": 29.46255555626886,
+   "size_boundary": 53
+  },
+  {
+   "seed": 13,
+   "t0": 10,
+   "size": 14,
+   "eigengap": 15.533940378210502,
+   "coherence": 1.0,
+   "lambda2": 14.450498237295761,
+   "lambda3": 29.984438615506264,
+   "size_boundary": 3
+  },
+  {
+   "seed": 14,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 1.1236182192247526,
+   "coherence": 1.0,
+   "lambda2": 49.15748483748181,
+   "lambda3": 50.28110305670656,
+   "size_boundary": 4
+  },
+  {
+   "seed": 16,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 9.095933255806838,
+   "coherence": 1.0,
+   "lambda2": 16.75512745022556,
+   "lambda3": 25.8510607060324,
+   "size_boundary": 15
+  },
+  {
+   "seed": 17,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 8.959395021279953,
+   "coherence": 1.0,
+   "lambda2": 17.998866234911954,
+   "lambda3": 26.958261256191907,
+   "size_boundary": 0
+  },
+  {
+   "seed": 18,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 11.256129055085797,
+   "coherence": 1.0,
+   "lambda2": 25.252640669912193,
+   "lambda3": 36.50876972499799,
+   "size_boundary": 1
+  },
+  {
+   "seed": 20,
+   "t0": 12,
+   "size": 20,
+   "eigengap": 3.999910337620694,
+   "coherence": 0.95,
+   "lambda2": 9.253207441113467,
+   "lambda3": 13.253117778734161,
+   "size_boundary": 1
+  },
+  {
+   "seed": 21,
+   "t0": 18,
+   "size": 17,
+   "eigengap": 6.252469200429129,
+   "coherence": 1.0,
+   "lambda2": 5.903882691130859,
+   "lambda3": 12.156351891559988,
+   "size_boundary": 1
+  },
+  {
+   "seed": 22,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 11.98158675606637,
+   "coherence": 0.95,
+   "lambda2": 57.39951428697601,
+   "lambda3": 69.38110104304238,
+   "size_boundary": 9
+  },
+  {
+   "seed": 24,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 27.649647224654053,
+   "coherence": 0.9,
+   "lambda2": 42.50291431886057,
+   "lambda3": 70.15256154351462,
+   "size_boundary": 5
+  },
+  {
+   "seed": 25,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 5.172667238208021,
+   "coherence": 0.95,
+   "lambda2": 25.720264759773016,
+   "lambda3": 30.892931997981037,
+   "size_boundary": 55
+  },
+  {
+   "seed": 26,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 13.918842893160914,
+   "coherence": 0.9,
+   "lambda2": 33.520432449277806,
+   "lambda3": 47.43927534243872,
+   "size_boundary": 0
+  },
+  {
+   "seed": 32,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 13.913725163520468,
+   "coherence": 1.0,
+   "lambda2": 44.25051541697613,
+   "lambda3": 58.164240580496596,
+   "size_boundary": 1
+  },
+  {
+   "seed": 35,
+   "t0": 43,
+   "size": 14,
+   "eigengap": 51.78393968502459,
+   "coherence": 1.0,
+   "lambda2": 15.216060314975156,
+   "lambda3": 66.99999999999974,
+   "size_boundary": 2
+  },
+  {
+   "seed": 38,
+   "t0": 21,
+   "size": 20,
+   "eigengap": 2.6156516757572827,
+   "coherence": 1.0,
+   "lambda2": 12.633194882176499,
+   "lambda3": 15.248846557933781,
+   "size_boundary": 2
+  },
+  {
+   "seed": 39,
+   "t0": 27,
+   "size": 20,
+   "eigengap": 6.419879813233429,
+   "coherence": 1.0,
+   "lambda2": 12.38812502134357,
+   "lambda3": 18.808004834576998,
+   "size_boundary": 0
+  },
+  {
+   "seed": 40,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 16.863283121679913,
+   "coherence": 0.9,
+   "lambda2": 58.94480480096476,
+   "lambda3": 75.80808792264467,
+   "size_boundary": 6
+  },
+  {
+   "seed": 42,
+   "t0": 15,
+   "size": 20,
+   "eigengap": 4.315914798584068,
+   "coherence": 1.0,
+   "lambda2": 12.666315897066543,
+   "lambda3": 16.98223069565061,
+   "size_boundary": 0
+  },
+  {
+   "seed": 43,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 6.005242855669415,
+   "coherence": 1.0,
+   "lambda2": 39.36038997775877,
+   "lambda3": 45.36563283342819,
+   "size_boundary": 12
+  },
+  {
+   "seed": 47,
+   "t0": 33,
+   "size": 15,
+   "eigengap": 210.54082425445355,
+   "coherence": 1.0,
+   "lambda2": 14.459175745546082,
+   "lambda3": 224.99999999999963,
+   "size_boundary": 0
+  },
+  {
+   "seed": 49,
+   "t0": 7,
+   "size": 19,
+   "eigengap": 4.883144182307898,
+   "coherence": 1.0,
+   "lambda2": 14.202346284642605,
+   "lambda3": 19.085490466950503,
+   "size_boundary": 4
+  },
+  {
+   "seed": 50,
+   "t0": 29,
+   "size": 20,
+   "eigengap": 5.015657471080116,
+   "coherence": 1.0,
+   "lambda2": 9.295761023768836,
+   "lambda3": 14.311418494848953,
+   "size_boundary": 1
+  },
+  {
+   "seed": 51,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 6.280277600735609,
+   "coherence": 0.95,
+   "lambda2": 54.504115476168195,
+   "lambda3": 60.784393076903804,
+   "size_boundary": 1
+  },
+  {
+   "seed": 52,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 109.2782128757225,
+   "coherence": 1.0,
+   "lambda2": 17.7217871242772,
+   "lambda3": 126.9999999999997,
+   "size_boundary": 0
+  },
+  {
+   "seed": 53,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 17.26177428234677,
+   "coherence": 1.0,
+   "lambda2": 42.158690767680525,
+   "lambda3": 59.420465050027296,
+   "size_boundary": 6
+  },
+  {
+   "seed": 55,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 6.418803353078701,
+   "coherence": 0.9,
+   "lambda2": 50.002913099038224,
+   "lambda3": 56.421716452116925,
+   "size_boundary": 68
+  },
+  {
+   "seed": 57,
+   "t0": 12,
+   "size": 15,
+   "eigengap": 54.85957027377094,
+   "coherence": 1.0,
+   "lambda2": 22.157829897015294,
+   "lambda3": 77.01740017078623,
+   "size_boundary": 0
+  },
+  {
+   "seed": 61,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 11.298441636356067,
+   "coherence": 0.95,
+   "lambda2": 52.7866741793222,
+   "lambda3": 64.08511581567826,
+   "size_boundary": 35
+  },
+  {
+   "seed": 62,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 7.052449610615675,
+   "coherence": 0.95,
+   "lambda2": 60.80461794400144,
+   "lambda3": 67.85706755461712,
+   "size_boundary": 46
+  },
+  {
+   "seed": 63,
+   "t0": 22,
+   "size": 20,
+   "eigengap": 4.780266295227806,
+   "coherence": 1.0,
+   "lambda2": 4.77262228041965,
+   "lambda3": 9.552888575647456,
+   "size_boundary": 0
+  },
+  {
+   "seed": 68,
+   "t0": 29,
+   "size": 20,
+   "eigengap": 6.608203590755506,
+   "coherence": 1.0,
+   "lambda2": 8.012168525642958,
+   "lambda3": 14.620372116398464,
+   "size_boundary": 49
+  },
+  {
+   "seed": 69,
+   "t0": 15,
+   "size": 19,
+   "eigengap": 4.02881543361074,
+   "coherence": 1.0,
+   "lambda2": 8.719962440239025,
+   "lambda3": 12.748777873849765,
+   "size_boundary": 64
+  },
+  {
+   "seed": 70,
+   "t0": 28,
+   "size": 19,
+   "eigengap": 217.44409261920748,
+   "coherence": 1.0,
+   "lambda2": 20.555907380792135,
+   "lambda3": 237.9999999999996,
+   "size_boundary": 0
+  },
+  {
+   "seed": 71,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 1.8609523780229225,
+   "coherence": 0.95,
+   "lambda2": 10.96324525453306,
+   "lambda3": 12.824197632555983,
+   "size_boundary": 0
+  },
+  {
+   "seed": 72,
+   "t0": 46,
+   "size": 18,
+   "eigengap": 214.01670934566002,
+   "coherence": 1.0,
+   "lambda2": 15.983290654339632,
+   "lambda3": 229.99999999999966,
+   "size_boundary": 0
+  },
+  {
+   "seed": 73,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 12.473004805047147,
+   "coherence": 1.0,
+   "lambda2": 19.54890354880869,
+   "lambda3": 32.021908353855835,
+   "size_boundary": 0
+  },
+  {
+   "seed": 75,
+   "t0": 12,
+   "size": 20,
+   "eigengap": 219.7586071249336,
+   "coherence": 1.0,
+   "lambda2": 14.241392875066062,
+   "lambda3": 233.99999999999966,
+   "size_boundary": 0
+  },
+  {
+   "seed": 77,
+   "t0": 38,
+   "size": 13,
+   "eigengap": 218.93140564159177,
+   "coherence": 1.0,
+   "lambda2": 17.068594358407864,
+   "lambda3": 235.99999999999963,
+   "size_boundary": 0
+  },
+  {
+   "seed": 78,
+   "t0": 40,
+   "size": 18,
+   "eigengap": 162.41569237161684,
+   "coherence": 1.0,
+   "lambda2": 14.584307628382735,
+   "lambda3": 176.99999999999957,
+   "size_boundary": 0
+  },
+  {
+   "seed": 79,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 11.724102929447128,
+   "coherence": 1.0,
+   "lambda2": 51.64020266525803,
+   "lambda3": 63.36430559470516,
+   "size_boundary": 8
+  },
+  {
+   "seed": 80,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 6.155555176421515,
+   "coherence": 1.0,
+   "lambda2": 49.4824378126875,
+   "lambda3": 55.637992989109016,
+   "size_boundary": 11
+  },
+  {
+   "seed": 83,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 7.784488397437286,
+   "coherence": 0.95,
+   "lambda2": 59.73845651199518,
+   "lambda3": 67.52294490943247,
+   "size_boundary": 7
+  },
+  {
+   "seed": 84,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 4.937470486994828,
+   "coherence": 0.9,
+   "lambda2": 10.936006855273154,
+   "lambda3": 15.873477342267982,
+   "size_boundary": 1
+  },
+  {
+   "seed": 86,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 8.03898142161519,
+   "coherence": 1.0,
+   "lambda2": 27.914835099330816,
+   "lambda3": 35.953816520946006,
+   "size_boundary": 1
+  },
+  {
+   "seed": 89,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 4.740601015254281,
+   "coherence": 0.95,
+   "lambda2": 27.804686045296425,
+   "lambda3": 32.545287060550706,
+   "size_boundary": 1
+  },
+  {
+   "seed": 90,
+   "t0": 21,
+   "size": 19,
+   "eigengap": 4.758724768800251,
+   "coherence": 1.0,
+   "lambda2": 11.249696596172319,
+   "lambda3": 16.00842136497257,
+   "size_boundary": 56
+  },
+  {
+   "seed": 91,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 14.361783391787299,
+   "coherence": 0.95,
+   "lambda2": 30.976110781547128,
+   "lambda3": 45.337894173334426,
+   "size_boundary": 7
+  },
+  {
+   "seed": 92,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 18.620427972549464,
+   "coherence": 0.95,
+   "lambda2": 49.71107183153032,
+   "lambda3": 68.33149980407978,
+   "size_boundary": 11
+  },
+  {
+   "seed": 95,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 18.775986399382937,
+   "coherence": 1.0,
+   "lambda2": 44.99142736390215,
+   "lambda3": 63.767413763285084,
+   "size_boundary": 2
+  },
+  {
+   "seed": 96,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 20.10697116266531,
+   "coherence": 0.95,
+   "lambda2": 32.462059811442245,
+   "lambda3": 52.569030974107555,
+   "size_boundary": 14
+  },
+  {
+   "seed": 97,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 5.076378956613851,
+   "coherence": 1.0,
+   "lambda2": 36.57475044499502,
+   "lambda3": 41.65112940160887,
+   "size_boundary": 4
+  },
+  {
+   "seed": 101,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 21.77392435356777,
+   "coherence": 0.9,
+   "lambda2": 52.43210985227203,
+   "lambda3": 74.2060342058398,
+   "size_boundary": 2
+  },
+  {
+   "seed": 102,
+   "t0": 12,
+   "size": 20,
+   "eigengap": 9.334148864750826,
+   "coherence": 1.0,
+   "lambda2": 9.779080940218982,
+   "lambda3": 19.11322980496981,
+   "size_boundary": 0
+  },
+  {
+   "seed": 105,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 24.363578723001666,
+   "coherence": 1.0,
+   "lambda2": 46.96313836272766,
+   "lambda3": 71.32671708572933,
+   "size_boundary": 6
+  },
+  {
+   "seed": 106,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 17.877180824140215,
+   "coherence": 1.0,
+   "lambda2": 28.220188302456375,
+   "lambda3": 46.09736912659659,
+   "size_boundary": 7
+  },
+  {
+   "seed": 108,
+   "t0": 15,
+   "size": 20,
+   "eigengap": 4.091428458943035,
+   "coherence": 1.0,
+   "lambda2": 9.51266520242193,
+   "lambda3": 13.604093661364965,
+   "size_boundary": 2
+  },
+  {
+   "seed": 110,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 26.46735221198554,
+   "coherence": 1.0,
+   "lambda2": 11.350546019380506,
+   "lambda3": 37.817898231366044,
+   "size_boundary": 1
+  },
+  {
+   "seed": 111,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 20.707068026822814,
+   "coherence": 1.0,
+   "lambda2": 15.517890489385,
+   "lambda3": 36.22495851620781,
+   "size_boundary": 6
+  },
+  {
+   "seed": 115,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 17.557298979938835,
+   "coherence": 0.95,
+   "lambda2": 18.83175219730426,
+   "lambda3": 36.3890511772431,
+   "size_boundary": 7
+  },
+  {
+   "seed": 117,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 6.459858971854747,
+   "coherence": 0.9,
+   "lambda2": 18.179227110105483,
+   "lambda3": 24.63908608196023,
+   "size_boundary": 5
+  },
+  {
+   "seed": 119,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 2.3228720477979294,
+   "coherence": 1.0,
+   "lambda2": 15.728972681654032,
+   "lambda3": 18.05184472945196,
+   "size_boundary": 0
+  },
+  {
+   "seed": 120,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 12.498031498271516,
+   "coherence": 1.0,
+   "lambda2": 17.501968501728513,
+   "lambda3": 30.00000000000003,
+   "size_boundary": 95
+  },
+  {
+   "seed": 123,
+   "t0": 5,
+   "size": 19,
+   "eigengap": 5.382734066115638,
+   "coherence": 1.0,
+   "lambda2": 40.231977088564385,
+   "lambda3": 45.61471115468002,
+   "size_boundary": 6
+  },
+  {
+   "seed": 126,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 15.046113883528704,
+   "coherence": 0.95,
+   "lambda2": 50.80532999504864,
+   "lambda3": 65.85144387857734,
+   "size_boundary": 9
+  },
+  {
+   "seed": 128,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 13.282001808736844,
+   "coherence": 1.0,
+   "lambda2": 19.956354334854588,
+   "lambda3": 33.23835614359143,
+   "size_boundary": 1
+  },
+  {
+   "seed": 131,
+   "t0": 25,
+   "size": 20,
+   "eigengap": 5.240128239548158,
+   "coherence": 0.95,
+   "lambda2": 9.383162334124883,
+   "lambda3": 14.62329057367304,
+   "size_boundary": 1
+  },
+  {
+   "seed": 132,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 7.108779686172959,
+   "coherence": 1.0,
+   "lambda2": 43.794500429228165,
+   "lambda3": 50.903280115401124,
+   "size_boundary": 67
+  },
+  {
+   "seed": 133,
+   "t0": 23,
+   "size": 20,
+   "eigengap": 4.458109114019724,
+   "coherence": 1.0,
+   "lambda2": 11.65257059701058,
+   "lambda3": 16.110679711030304,
+   "size_boundary": 23
+  },
+  {
+   "seed": 135,
+   "t0": 22,
+   "size": 20,
+   "eigengap": 3.2455628102703837,
+   "coherence": 1.0,
+   "lambda2": 7.587627139310131,
+   "lambda3": 10.833189949580515,
+   "size_boundary": 70
+  },
+  {
+   "seed": 137,
+   "t0": 17,
+   "size": 20,
+   "eigengap": 4.353825645734911,
+   "coherence": 0.95,
+   "lambda2": 8.974506669595156,
+   "lambda3": 13.328332315330067,
+   "size_boundary": 1
+  },
+  {
+   "seed": 138,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 14.04272745368987,
+   "coherence": 1.0,
+   "lambda2": 54.014749377291814,
+   "lambda3": 68.05747683098168,
+   "size_boundary": 1
+  },
+  {
+   "seed": 140,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 11.575826767904744,
+   "coherence": 1.0,
+   "lambda2": 30.424173232095285,
+   "lambda3": 42.00000000000003,
+   "size_boundary": 95
+  },
+  {
+   "seed": 145,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 5.382523713548544,
+   "coherence": 1.0,
+   "lambda2": 55.47814607145965,
+   "lambda3": 60.86066978500819,
+   "size_boundary": 28
+  },
+  {
+   "seed": 146,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 1.6695596171190559,
+   "coherence": 0.95,
+   "lambda2": 56.19576049307375,
+   "lambda3": 57.865320110192805,
+   "size_boundary": 57
+  },
+  {
+   "seed": 148,
+   "t0": 19,
+   "size": 19,
+   "eigengap": 165.10065735005526,
+   "coherence": 1.0,
+   "lambda2": 16.92547568756627,
+   "lambda3": 182.02613303762152,
+   "size_boundary": 0
+  },
+  {
+   "seed": 150,
+   "t0": 14,
+   "size": 20,
+   "eigengap": 10.908676071523248,
+   "coherence": 0.95,
+   "lambda2": 12.573377104884747,
+   "lambda3": 23.482053176407994,
+   "size_boundary": 2
+  },
+  {
+   "seed": 151,
+   "t0": 15,
+   "size": 20,
+   "eigengap": 110.47750384567777,
+   "coherence": 1.0,
+   "lambda2": 30.522496154322,
+   "lambda3": 140.99999999999977,
+   "size_boundary": 0
+  },
+  {
+   "seed": 153,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 10.022612240028735,
+   "coherence": 0.9,
+   "lambda2": 34.90910196205515,
+   "lambda3": 44.93171420208389,
+   "size_boundary": 8
+  },
+  {
+   "seed": 154,
+   "t0": 43,
+   "size": 20,
+   "eigengap": 4.664349896882918,
+   "coherence": 1.0,
+   "lambda2": 13.812281474295524,
+   "lambda3": 18.476631371178442,
+   "size_boundary": 1
+  },
+  {
+   "seed": 156,
+   "t0": 17,
+   "size": 18,
+   "eigengap": 8.172182907718748,
+   "coherence": 1.0,
+   "lambda2": 3.876075943183928,
+   "lambda3": 12.048258850902675,
+   "size_boundary": 0
+  },
+  {
+   "seed": 158,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 10.87370140997685,
+   "coherence": 1.0,
+   "lambda2": 26.12629859002318,
+   "lambda3": 37.00000000000003,
+   "size_boundary": 95
+  },
+  {
+   "seed": 159,
+   "t0": 55,
+   "size": 20,
+   "eigengap": 132.41107765208858,
+   "coherence": 1.0,
+   "lambda2": 19.58892234791113,
+   "lambda3": 151.99999999999972,
+   "size_boundary": 0
+  },
+  {
+   "seed": 160,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 8.654268397039747,
+   "coherence": 0.95,
+   "lambda2": 29.241933339510393,
+   "lambda3": 37.89620173655014,
+   "size_boundary": 9
+  },
+  {
+   "seed": 165,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 12.48083675473952,
+   "coherence": 0.95,
+   "lambda2": 49.84947816500279,
+   "lambda3": 62.330314919742314,
+   "size_boundary": 6
+  },
+  {
+   "seed": 166,
+   "t0": 40,
+   "size": 20,
+   "eigengap": 100.69159003725922,
+   "coherence": 0.95,
+   "lambda2": 20.308409962740537,
+   "lambda3": 120.99999999999976,
+   "size_boundary": 0
+  },
+  {
+   "seed": 168,
+   "t0": 47,
+   "size": 18,
+   "eigengap": 199.96350745019546,
+   "coherence": 1.0,
+   "lambda2": 23.0364925498042,
+   "lambda3": 222.99999999999966,
+   "size_boundary": 0
+  },
+  {
+   "seed": 169,
+   "t0": 17,
+   "size": 18,
+   "eigengap": 109.98170305778628,
+   "coherence": 1.0,
+   "lambda2": 27.01829694221335,
+   "lambda3": 136.99999999999963,
+   "size_boundary": 0
+  },
+  {
+   "seed": 170,
+   "t0": 57,
+   "size": 20,
+   "eigengap": 90.96334036283609,
+   "coherence": 1.0,
+   "lambda2": 15.189108323726426,
+   "lambda3": 106.15244868656252,
+   "size_boundary": 0
+  },
+  {
+   "seed": 171,
+   "t0": 23,
+   "size": 17,
+   "eigengap": 5.652906750056527,
+   "coherence": 1.0,
+   "lambda2": 12.109794688717578,
+   "lambda3": 17.762701438774105,
+   "size_boundary": 1
+  },
+  {
+   "seed": 172,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 8.879465560178048,
+   "coherence": 1.0,
+   "lambda2": 55.67219849266064,
+   "lambda3": 64.55166405283869,
+   "size_boundary": 5
+  },
+  {
+   "seed": 175,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 7.733823510404001,
+   "coherence": 0.9,
+   "lambda2": 39.9502611884263,
+   "lambda3": 47.684084698830304,
+   "size_boundary": 2
+  },
+  {
+   "seed": 177,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 17.598652682211686,
+   "coherence": 0.9,
+   "lambda2": 10.879693732967963,
+   "lambda3": 28.478346415179647,
+   "size_boundary": 9
+  },
+  {
+   "seed": 178,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 12.957462049638732,
+   "coherence": 1.0,
+   "lambda2": 29.04253795036117,
+   "lambda3": 41.9999999999999,
+   "size_boundary": 53
+  },
+  {
+   "seed": 179,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 16.4000263740051,
+   "coherence": 0.9,
+   "lambda2": 54.6398871253191,
+   "lambda3": 71.0399134993242,
+   "size_boundary": 3
+  },
+  {
+   "seed": 181,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 4.690003740533292,
+   "coherence": 0.95,
+   "lambda2": 58.07247819521328,
+   "lambda3": 62.76248193574657,
+   "size_boundary": 11
+  },
+  {
+   "seed": 182,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 4.457975735028306,
+   "coherence": 1.0,
+   "lambda2": 49.429671720879284,
+   "lambda3": 53.88764745590759,
+   "size_boundary": 39
+  },
+  {
+   "seed": 183,
+   "t0": 27,
+   "size": 20,
+   "eigengap": 3.298790331911997,
+   "coherence": 1.0,
+   "lambda2": 8.38746720994464,
+   "lambda3": 11.686257541856637,
+   "size_boundary": 54
+  },
+  {
+   "seed": 186,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 4.705274638043512,
+   "coherence": 0.95,
+   "lambda2": 53.491539385606316,
+   "lambda3": 58.19681402364983,
+   "size_boundary": 22
+  },
+  {
+   "seed": 187,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 13.015714788329198,
+   "coherence": 0.95,
+   "lambda2": 49.989489760216514,
+   "lambda3": 63.00520454854571,
+   "size_boundary": 10
+  },
+  {
+   "seed": 190,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 8.768667874599238,
+   "coherence": 0.9,
+   "lambda2": 50.58543713791185,
+   "lambda3": 59.35410501251109,
+   "size_boundary": 49
+  },
+  {
+   "seed": 191,
+   "t0": 13,
+   "size": 20,
+   "eigengap": 3.760226625896209,
+   "coherence": 0.95,
+   "lambda2": 8.693362542456692,
+   "lambda3": 12.4535891683529,
+   "size_boundary": 5
+  },
+  {
+   "seed": 193,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 7.567627273679859,
+   "coherence": 1.0,
+   "lambda2": 11.44856391172826,
+   "lambda3": 19.01619118540812,
+   "size_boundary": 0
+  },
+  {
+   "seed": 197,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 106.07278509176294,
+   "coherence": 1.0,
+   "lambda2": 44.92721490823683,
+   "lambda3": 150.99999999999977,
+   "size_boundary": 0
+  },
+  {
+   "seed": 198,
+   "t0": 12,
+   "size": 18,
+   "eigengap": 37.475039602545436,
+   "coherence": 1.0,
+   "lambda2": 12.007916001715717,
+   "lambda3": 49.48295560426116,
+   "size_boundary": 1
+  },
+  {
+   "seed": 199,
+   "t0": 51,
+   "size": 20,
+   "eigengap": 3.369894929298729,
+   "coherence": 1.0,
+   "lambda2": 12.74121148402707,
+   "lambda3": 16.1111064133258,
+   "size_boundary": 55
+  },
+  {
+   "seed": 200,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 22.368571614078725,
+   "coherence": 0.95,
+   "lambda2": 38.37482178093016,
+   "lambda3": 60.74339339500889,
+   "size_boundary": 4
+  },
+  {
+   "seed": 202,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 8.603255119181028,
+   "coherence": 1.0,
+   "lambda2": 49.531527680330335,
+   "lambda3": 58.13478279951136,
+   "size_boundary": 5
+  },
+  {
+   "seed": 205,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 7.792228981326474,
+   "coherence": 0.95,
+   "lambda2": 53.9606197417914,
+   "lambda3": 61.75284872311787,
+   "size_boundary": 17
+  },
+  {
+   "seed": 208,
+   "t0": 16,
+   "size": 19,
+   "eigengap": 3.124636803361108,
+   "coherence": 1.0,
+   "lambda2": 9.255390659436094,
+   "lambda3": 12.380027462797202,
+   "size_boundary": 44
+  },
+  {
+   "seed": 219,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 32.526025786907354,
+   "coherence": 1.0,
+   "lambda2": 21.30369640091727,
+   "lambda3": 53.82972218782462,
+   "size_boundary": 2
+  },
+  {
+   "seed": 222,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 17.777952186857014,
+   "coherence": 0.95,
+   "lambda2": 38.59309565313471,
+   "lambda3": 56.371047839991725,
+   "size_boundary": 4
+  },
+  {
+   "seed": 227,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 7.385644632762972,
+   "coherence": 1.0,
+   "lambda2": 18.368099932523823,
+   "lambda3": 25.753744565286794,
+   "size_boundary": 11
+  },
+  {
+   "seed": 230,
+   "t0": 16,
+   "size": 20,
+   "eigengap": 10.73152833700913,
+   "coherence": 1.0,
+   "lambda2": 11.106119560809088,
+   "lambda3": 21.83764789781822,
+   "size_boundary": 1
+  },
+  {
+   "seed": 233,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 28.6340069171401,
+   "coherence": 1.0,
+   "lambda2": 19.1577390391027,
+   "lambda3": 47.7917459562428,
+   "size_boundary": 0
+  },
+  {
+   "seed": 237,
+   "t0": 10,
+   "size": 20,
+   "eigengap": 5.303791338264713,
+   "coherence": 1.0,
+   "lambda2": 11.986516109455902,
+   "lambda3": 17.290307447720615,
+   "size_boundary": 0
+  },
+  {
+   "seed": 240,
+   "t0": 4,
+   "size": 19,
+   "eigengap": 2.6690821976387156,
+   "coherence": 1.0,
+   "lambda2": 53.08585522990913,
+   "lambda3": 55.754937427547844,
+   "size_boundary": 7
+  },
+  {
+   "seed": 242,
+   "t0": 26,
+   "size": 20,
+   "eigengap": 4.1062556295726385,
+   "coherence": 1.0,
+   "lambda2": 7.673992286520656,
+   "lambda3": 11.780247916093295,
+   "size_boundary": 0
+  },
+  {
+   "seed": 245,
+   "t0": 26,
+   "size": 20,
+   "eigengap": 6.428559010748714,
+   "coherence": 0.9,
+   "lambda2": 8.394712491339696,
+   "lambda3": 14.82327150208841,
+   "size_boundary": 0
+  },
+  {
+   "seed": 246,
+   "t0": 16,
+   "size": 17,
+   "eigengap": 4.916540534530583,
+   "coherence": 1.0,
+   "lambda2": 9.460980343389904,
+   "lambda3": 14.377520877920487,
+   "size_boundary": 0
+  },
+  {
+   "seed": 247,
+   "t0": 7,
+   "size": 20,
+   "eigengap": 10.428385072527771,
+   "coherence": 1.0,
+   "lambda2": 25.36440961673043,
+   "lambda3": 35.7927946892582,
+   "size_boundary": 24
+  },
+  {
+   "seed": 248,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 9.555603048843516,
+   "coherence": 1.0,
+   "lambda2": 46.51818430737563,
+   "lambda3": 56.07378735621914,
+   "size_boundary": 7
+  },
+  {
+   "seed": 249,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 5.49627485771903,
+   "coherence": 1.0,
+   "lambda2": 47.95999757036202,
+   "lambda3": 53.45627242808105,
+   "size_boundary": 2
+  },
+  {
+   "seed": 250,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 3.6479619097567415,
+   "coherence": 0.95,
+   "lambda2": 20.846620405616825,
+   "lambda3": 24.494582315373567,
+   "size_boundary": 84
+  },
+  {
+   "seed": 251,
+   "t0": 21,
+   "size": 20,
+   "eigengap": 114.35381085971667,
+   "coherence": 1.0,
+   "lambda2": 20.64618914028299,
+   "lambda3": 134.99999999999966,
+   "size_boundary": 0
+  },
+  {
+   "seed": 254,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 7.221710414766619,
+   "coherence": 1.0,
+   "lambda2": 9.215168831177785,
+   "lambda3": 16.436879245944404,
+   "size_boundary": 5
+  },
+  {
+   "seed": 257,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 5.192030426583807,
+   "coherence": 0.9,
+   "lambda2": 9.092628958242615,
+   "lambda3": 14.284659384826423,
+   "size_boundary": 0
+  },
+  {
+   "seed": 259,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 10.708960002061822,
+   "coherence": 0.95,
+   "lambda2": 52.71367719048,
+   "lambda3": 63.42263719254182,
+   "size_boundary": 0
+  },
+  {
+   "seed": 260,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 18.84997444304161,
+   "coherence": 1.0,
+   "lambda2": 42.73089877906875,
+   "lambda3": 61.58087322211036,
+   "size_boundary": 8
+  },
+  {
+   "seed": 262,
+   "t0": 24,
+   "size": 18,
+   "eigengap": 5.4244720381794505,
+   "coherence": 1.0,
+   "lambda2": 10.186323706278046,
+   "lambda3": 15.610795744457496,
+   "size_boundary": 0
+  },
+  {
+   "seed": 263,
+   "t0": 48,
+   "size": 18,
+   "eigengap": 157.61870613303336,
+   "coherence": 1.0,
+   "lambda2": 19.38129386696615,
+   "lambda3": 176.99999999999952,
+   "size_boundary": 0
+  },
+  {
+   "seed": 264,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 13.906846222811197,
+   "coherence": 1.0,
+   "lambda2": 72.55234139616475,
+   "lambda3": 86.45918761897595,
+   "size_boundary": 2
+  },
+  {
+   "seed": 265,
+   "t0": 9,
+   "size": 19,
+   "eigengap": 16.07844158135859,
+   "coherence": 1.0,
+   "lambda2": 14.9433572925692,
+   "lambda3": 31.02179887392779,
+   "size_boundary": 35
+  },
+  {
+   "seed": 266,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 6.525384059339579,
+   "coherence": 1.0,
+   "lambda2": 53.16552494881162,
+   "lambda3": 59.6909090081512,
+   "size_boundary": 2
+  },
+  {
+   "seed": 267,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 1.4406797638718771,
+   "coherence": 1.0,
+   "lambda2": 31.84354457675537,
+   "lambda3": 33.28422434062725,
+   "size_boundary": 1
+  },
+  {
+   "seed": 268,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 9.041017559541679,
+   "coherence": 1.0,
+   "lambda2": 47.25340036769283,
+   "lambda3": 56.294417927234505,
+   "size_boundary": 5
+  },
+  {
+   "seed": 269,
+   "t0": 40,
+   "size": 20,
+   "eigengap": 104.87168598058139,
+   "coherence": 1.0,
+   "lambda2": 18.128314019418358,
+   "lambda3": 122.99999999999974,
+   "size_boundary": 0
+  },
+  {
+   "seed": 272,
+   "t0": 8,
+   "size": 17,
+   "eigengap": 12.303726840381836,
+   "coherence": 1.0,
+   "lambda2": 10.258882950403946,
+   "lambda3": 22.562609790785782,
+   "size_boundary": 6
+  },
+  {
+   "seed": 273,
+   "t0": 5,
+   "size": 20,
+   "eigengap": 36.34933522684498,
+   "coherence": 1.0,
+   "lambda2": 32.255786635437694,
+   "lambda3": 68.60512186228267,
+   "size_boundary": 18
+  },
+  {
+   "seed": 274,
+   "t0": 6,
+   "size": 20,
+   "eigengap": 9.825676752835541,
+   "coherence": 0.9,
+   "lambda2": 38.85046044674751,
+   "lambda3": 48.67613719958305,
+   "size_boundary": 18
+  },
+  {
+   "seed": 277,
+   "t0": 29,
+   "size": 20,
+   "eigengap": 3.6926260982075263,
+   "coherence": 1.0,
+   "lambda2": 13.521644232099511,
+   "lambda3": 17.214270330307038,
+   "size_boundary": 2
+  },
+  {
+   "seed": 278,
+   "t0": 27,
+   "size": 20,
+   "eigengap": 102.12195904535815,
+   "coherence": 1.0,
+   "lambda2": 13.878040954641722,
+   "lambda3": 115.99999999999987,
+   "size_boundary": 0
+  },
+  {
+   "seed": 279,
+   "t0": 52,
+   "size": 20,
+   "eigengap": 4.868335440452448,
+   "coherence": 1.0,
+   "lambda2": 12.098697684669357,
+   "lambda3": 16.967033125121805,
+   "size_boundary": 1
+  },
+  {
+   "seed": 280,
+   "t0": 23,
+   "size": 19,
+   "eigengap": 5.123194003187014,
+   "coherence": 1.0,
+   "lambda2": 7.92049111732254,
+   "lambda3": 13.043685120509554,
+   "size_boundary": 2
+  },
+  {
+   "seed": 282,
+   "t0": 25,
+   "size": 20,
+   "eigengap": 1.651269133931427,
+   "coherence": 1.0,
+   "lambda2": 14.6035794326802,
+   "lambda3": 16.254848566611628,
+   "size_boundary": 5
+  },
+  {
+   "seed": 283,
+   "t0": 11,
+   "size": 20,
+   "eigengap": 10.359036628910406,
+   "coherence": 1.0,
+   "lambda2": 21.609812684228178,
+   "lambda3": 31.968849313138584,
+   "size_boundary": 0
+  },
+  {
+   "seed": 287,
+   "t0": 17,
+   "size": 20,
+   "eigengap": 4.872510525723195,
+   "coherence": 0.95,
+   "lambda2": 13.012027253704312,
+   "lambda3": 17.884537779427507,
+   "size_boundary": 70
+  },
+  {
+   "seed": 291,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 17.02561831989371,
+   "coherence": 0.9,
+   "lambda2": 60.227667297121954,
+   "lambda3": 77.25328561701566,
+   "size_boundary": 13
+  },
+  {
+   "seed": 292,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 11.219057776511782,
+   "coherence": 0.9,
+   "lambda2": 40.99648480169176,
+   "lambda3": 52.21554257820354,
+   "size_boundary": 24
+  },
+  {
+   "seed": 293,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 11.344182931177869,
+   "coherence": 0.9,
+   "lambda2": 52.1382926828968,
+   "lambda3": 63.482475614074666,
+   "size_boundary": 3
+  },
+  {
+   "seed": 294,
+   "t0": 4,
+   "size": 20,
+   "eigengap": 16.953416443787667,
+   "coherence": 1.0,
+   "lambda2": 45.76604379344183,
+   "lambda3": 62.7194602372295,
+   "size_boundary": 2
+  },
+  {
+   "seed": 295,
+   "t0": 8,
+   "size": 20,
+   "eigengap": 1.4732458993609576,
+   "coherence": 0.9,
+   "lambda2": 17.533374849430693,
+   "lambda3": 19.00662074879165,
+   "size_boundary": 3
+  },
+  {
+   "seed": 296,
+   "t0": 27,
+   "size": 20,
+   "eigengap": 4.162681326681987,
+   "coherence": 0.9,
+   "lambda2": 11.932260758180998,
+   "lambda3": 16.094942084862986,
+   "size_boundary": 0
+  },
+  {
+   "seed": 297,
+   "t0": 27,
+   "size": 20,
+   "eigengap": 199.6556504832147,
+   "coherence": 1.0,
+   "lambda2": 17.344349516784924,
+   "lambda3": 216.99999999999963,
+   "size_boundary": 0
+  },
+  {
+   "seed": 298,
+   "t0": 5,
+   "size": 19,
+   "eigengap": 9.673514628282717,
+   "coherence": 1.0,
+   "lambda2": 38.02486727484837,
+   "lambda3": 47.698381903131086,
+   "size_boundary": 19
+  },
+  {
+   "seed": 299,
+   "t0": 9,
+   "size": 20,
+   "eigengap": 2.040674432028485,
+   "coherence": 1.0,
+   "lambda2": 9.383433830723808,
+   "lambda3": 11.424108262752293,
+   "size_boundary": 0
+  }
+ ]
+}

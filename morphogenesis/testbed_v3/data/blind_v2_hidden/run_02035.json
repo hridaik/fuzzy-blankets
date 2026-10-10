@@ -1,0 +1,1 @@
+{"meta": {"family": "stress", "scn": "cuty", "arm": "sham", "state": "b", "seed": 700}, "events": [{"t": 10150.0, "kind": "sham_surgery"}], "pose": {"angle": 2.844080821730401, "shift": [2.6949742526466975, 0.14141010781292795]}, "private": {}}

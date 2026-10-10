@@ -1,0 +1,1 @@
+{"pool": "development", "seed": 5006, "sham": false, "sham_of": null, "state0": "b", "hidden_events": [], "actions": [], "private": {"MA": ["mem", 0], "MB": ["mem", 1], "SEC": ["sec", 0], "RG": ["rg", 0], "MIG": ["mig", 0]}, "freeze_hash": null, "pose": {"angle": 3.286348350363293, "shift": [0.8095484517463705, -2.305216225647867]}}

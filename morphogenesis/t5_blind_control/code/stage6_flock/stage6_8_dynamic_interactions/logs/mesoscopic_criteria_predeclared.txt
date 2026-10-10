@@ -1,0 +1,290 @@
+PREDECLARED MESOSCOPIC CRITERIA -- Stage 6.8
+Written AFTER data/phase_scan.json (primary beta grid + s-grid at beta=1.0) was
+inspected and found to contain NO intermediate regime, and BEFORE the secondary
+(beta, s) cross scan was run. These four criteria operationalize the task
+brief's section-2 wording verbatim and are applied unchanged thereafter.
+
+  brief: "coherent groups form"
+    M1  mean_largest_component            >= 10 birds
+
+  brief: "they persist"
+    M2  mean_component_lifetime           >= 5 steps
+
+  brief: "the entire lattice is not almost always one aligned component"
+    M3a frac_time_largest_ge_90           <= 0.20
+    M3b mean_largest_component            <= 70 birds
+
+  brief: "substantial stochastic variation remains"
+    M4a mean_membership_turnover          >= 0.05
+    M4b mean_heading_entropy              >= 0.40 nats   (of log 4 = 1.386 max)
+
+A grid cell is MESOSCOPIC iff all six hold. If more than one cell qualifies,
+the two most distinct qualifying cells are retained (task brief: "If two
+regimes look equally reasonable, retain both instead of selecting post hoc").
+Ties are broken by distance from the primary grid's frozen L0 point
+(beta=1.0, s=1.0) -- NOT by any downstream inference or control metric, which
+do not exist yet and are not importable from run_phase_scan.py.
+
+--------------------------------------------------------------------------
+ADDENDUM 1, written after data/phase_scan_cross.json, before any further run.
+
+OUTCOME OF THE TWO PREDECLARED SCANS: no cell of the primary beta grid and no
+cell of the 6x5 (beta, s) cross satisfies all six criteria.
+
+  * beta = 0.25 at s <= 1.0 : coherent groups form (largest 17-31, ncomp 8-11,
+    turnover 0.27, H 1.29-1.37) but do NOT persist (lifetime ~1.05 steps) ->
+    fails M2. This is the disordered side of the transition.
+  * every cell with beta >= 0.5, at every s : one aligned component 60-84% of
+    the time (largest 84-94) -> fails M3a and M3b. This is the near-global-
+    consensus side.
+  * the only two cells in between (beta=0.25, s in {1.5, 2.0}) still spend
+    37% / 51% of the time as a single >=90-bird component -> fail M3a/M3b.
+
+The order/disorder transition is SHARP and both predeclared grids bracket it
+without landing inside it.
+
+REFINEMENT SCAN (declared here, before it is run). Same six criteria,
+unchanged. Still uncontrolled phenomenology only; no boundary, causal or
+control metric exists in this codebase yet, and run_phase_scan.py cannot
+import one. The refinement only increases grid RESOLUTION inside the interval
+that the two predeclared scans already bracketed:
+
+    axis A:  beta in {0.30, 0.35, 0.40, 0.45}  at  s in {1.0, 1.25}
+    axis B:  beta = 0.25                       at  s in {1.10, 1.20, 1.30, 1.40}
+
+This is not selection of "the value at which later inference works best" --
+no later-inference quantity is computable at this point in the pipeline. If no
+cell here qualifies either, that is reported as the phase-scan outcome and the
+Stage 6.9 gate fails on criterion 1.
+
+--------------------------------------------------------------------------
+ADDENDUM 2, written after data/phase_scan_fov.json, before the L2 refinement.
+
+L2 (FOV) has a QUALITATIVELY DIFFERENT phase diagram from L1. On the fixed
+graph the largest coherent component was 84-94 birds with 1.2-1.5 components;
+under FOV at the same parameters it is 66-80 birds with 2.2-4.3 components and
+lifetimes of 6-23 steps. The FOV rule is the only source of receiver-heading
+dependence anywhere in this model family (`compute_G` never reads z[i]), and
+it evidently supplies the domain-pinning that L1 lacks.
+
+Still, no L2 cell of the primary or cross grid satisfies all six criteria.
+The BINDING criterion is M3a (frac_time_largest_ge_90 <= 0.20): every cell
+with lifetime >= 5 has glob in [0.31, 0.51], and every cell with glob <= 0.20
+has lifetime <= 1.5. Nearest misses, for the record:
+
+    beta=1.5  s=1.0 : life 16.2, largest 66.2, turn 0.052, H 0.428, glob 0.388
+    beta=0.75 s=2.0 : life 15.6, largest 66.0, turn 0.067, H 0.447, glob 0.339
+    beta=0.5  s=0.5 : glob 0.044, largest 59.9, turn 0.215, H 0.948, life 1.47
+
+The two grids again bracket the transition without landing inside it, exactly
+as at L1. Same remedy as ADDENDUM 1, same six criteria, UNCHANGED thresholds:
+
+    axis A:  beta in {0.55, 0.60, 0.65, 0.70}  at  s in {0.50, 0.60}
+    axis B:  beta = 0.50                       at  s in {0.60, 0.65, 0.70}
+
+No threshold is relaxed to make a cell pass. If none qualifies, the phase-scan
+outcome is "no mesoscopic regime at the frozen criteria", the nearest-miss
+cells are reported as such, and the Stage 6.9 gate is judged on that basis.
+
+--------------------------------------------------------------------------
+ADDENDUM 3, written after the L2 refinement, before any cell was selected.
+
+The L2 refinement (data/phase_scan_fov_refine.json) again yields no qualifying
+cell: across ~70 scanned cells at L1 and L2 the persistence criterion (M2) and
+the non-globality criteria (M3a/M3b) are anti-correlated everywhere.
+
+Inspecting the PER-SEED values behind the seed-averages shows why, and shows
+that the seed-average was the wrong summary: the distribution is strongly
+BIMODAL. At beta=1.0, s=2.0 (L2) the per-seed frac_time_largest_ge_90 values
+are {1.0, .32, .12, .31, 0, 0, .44, 0, .68, 0, .36, .22, 0, .83, .19, .59,
+1.0, 0, 0, .74} -- some realizations lock into a single global component
+(lifetime 81 = the whole measured window), others never do (largest component
+12-52 birds, lifetime 5-26). The across-seed SD of glob (0.34-0.40) is as
+large as its mean. NO SINGLE REALIZATION resembles the seed-average, so a
+seed-averaged criterion describes nothing that actually happens.
+
+CHANGE OF EVALUATION LEVEL (not of thresholds). The six criteria M1, M2, M3a,
+M3b, M4a, M4b are applied UNCHANGED, at the level they were always meant to
+describe -- one uncontrolled realization. A seed is a "mesoscopic episode" iff
+its own trajectory satisfies all six. A cell's score is the FRACTION of its
+seeds that are mesoscopic episodes. Selection rule, declared here:
+
+    choose the cell with the highest mesoscopic-episode fraction;
+    ties broken by distance from the frozen L0 point (beta=1.0, s=1.0);
+    if two cells remain equally reasonable, BOTH are retained and carried
+    through the rest of the stage (task brief section 2).
+
+Downstream inference and control are still not computable at this point and
+are not importable from either scan script. No threshold has been moved.
+
+--------------------------------------------------------------------------
+ADDENDUM 4, written after the episode-level evaluation, before the size scan.
+
+Episode-level result: at L2, ZERO of 20 seeds qualifies in ANY scanned cell.
+The failures are informative rather than marginal:
+
+  * beta=0.25 (all s)  : disordered churn, lifetime ~1  -> fails M2.
+  * many beta>=0.5 seeds: the lattice FREEZES into a static two-heading,
+    zero-polarization configuration (heading entropy exactly ln 2 = 0.693,
+    polarization 0.006-0.04, membership turnover 0.004-0.009, component
+    lifetime 26-80). These are absorbing states, not flocks, and M4a
+    ("substantial stochastic variation remains") correctly rejects them.
+  * the remaining seeds lock into a single global component.
+
+At L1 the best cell (beta=1.25, s=0.5) qualifies on 6/20 seeds, and those are
+FROZEN two-domain configurations (lifetime 62 with almost no turnover), i.e.
+the same absorbing-state artefact one criterion short of being caught.
+
+Before concluding "no mesoscopic regime exists in this model family", the
+obvious confound must be excluded: FINITE SIZE. Every frozen Stage 6-6.7
+result uses nn = 100 on a 10x10 free-boundary lattice with a Moore
+neighbourhood, so each bird interacts with 8% of the entire flock and the
+domain-wall length needed for two coexisting domains is ~10 sites. Mesoscopic
+coexistence may simply not fit. This is a standard finite-size check, not a
+model modification: the dynamics, the FOV rule and all six criteria are
+untouched; only the lattice side length L changes.
+
+SIZE SCAN (declared here, before it is run):
+    nn in {100 (10x10), 225 (15x15), 400 (20x20), 900 (30x30)}
+    beta in {0.5, 0.75, 1.0, 1.5}, s = 1.0, at L2
+    same 20 seeds, same nt, same burn-in, same six criteria, episode level.
+
+If the mesoscopic-episode fraction stays at 0 as nn grows, the conclusion is
+that this model family has no mesoscopic regime and the Stage 6.9 gate fails
+on criterion 1. If it rises with nn, the smallest nn at which it is
+substantial is adopted, and the deviation from the frozen nn=100 convention is
+reported prominently as a scope change (Stage 6-6.7 results remain untouched
+and are NOT re-run at the new size).
+
+--------------------------------------------------------------------------
+ADDENDUM 5, written after data/phase_scan_size.json.
+
+SIZE SCAN RESULT: finite size was a real confound. The mesoscopic-episode
+fraction is 0.00 at every beta for nn=100, rises to 0.10 (nn=225, beta=0.75)
+and 0.15 (nn=400, beta=1.0), and falls back at nn=900. The largest coherent
+component shrinks from 0.74N (nn=100) to 0.58N (nn=900) and the component
+count rises from ~3.5 to ~7, i.e. coexisting domains DO appear once the
+lattice is large enough to hold them -- but component lifetime falls with N
+(3.2 at nn=400, 2.3 at nn=900), so the persistence criterion M2 becomes the
+binding one at large N just as non-globality was at small N.
+
+Since nn is now an axis, one further declared scan at the best size, criteria
+unchanged, same selection rule (highest mesoscopic-episode fraction, ties by
+distance from the frozen L0 point beta=1.0, s=1.0):
+
+    nn = 400, beta in {0.75, 1.0, 1.25, 1.5}, s in {1.0, 1.5, 2.0}
+
+nn is the ONLY deviation from the frozen Stage 6-6.7 convention that this
+stage will make, it is forced by an uncontrolled-phenomenology finding, and it
+is reported as a scope change in PHASE_MAP.md and RESULTS_6_8.md. No frozen
+Stage 6-6.7 result is re-run or restated at the new size.
+
+--------------------------------------------------------------------------
+ADDENDUM 6, written after the first control run, before the arms were compared.
+
+At the Stage-6 actuator budget (K_act = 10, horizon 16) the control task is
+INFEASIBLE at this stage's scale, for a reason that has nothing to do with
+which interface is actuated: Stage 6 steered a 20-bird interior on a 100-bird
+lattice, whereas Stage 6.8's blind detector proposes collectives of 95-145
+birds on a 400-bird lattice. The first run's frozen-causal arm reached
+final_target_fraction = 0.000 with a mean of 4 actuators on a 119-bird
+interior. Comparing five arms that all score zero would measure nothing.
+
+FEASIBILITY CALIBRATION (declared here, before it is run). The horizon and the
+actuator budget are set by asking ONLY whether the task is achievable at all,
+using ONLY the adaptive_oracle arm -- the upper bound, which knows the true
+interface -- on DEVELOPMENT seeds. The other four arms are not run, not
+computed, and not compared during this step; their relative ordering therefore
+cannot influence the choice.
+
+    grid:  K_act in {10, 20, 30},  horizon in {16, 30}
+    rule:  take the SMALLEST (K_act, horizon) at which the oracle arm's mean
+           final target fraction on development seeds exceeds 0.5; if none
+           does, report the task as infeasible at this scale and say so.
+
+q_support is raised from 0.5 to 0.9 of the REACHABLE interior at the same time
+and for the same reason: at 0.5 the multicover stopped after 4 actuators
+having satisfied its own rule, so the budget was never the binding constraint
+and the arms were never actually differentiated.
+
+--------------------------------------------------------------------------
+ADDENDUM 7, written after the feasibility grid, before the arms were compared.
+
+FEASIBILITY RESULT: the task is INFEASIBLE at this stage's scale. The
+adaptive_oracle arm -- which is handed the true causal interface and the exact
+influence matrix, i.e. the upper bound on any inferred method -- reaches a mean
+final target fraction of only 0.13-0.20 at EVERY setting of the predeclared
+grid, and raising the actuator budget from 10 to 20 or the horizon from 16 to
+30 does not help (0.202, 0.182, 0.126, 0.204). No setting reaches the 0.5
+target.
+
+This is a SCALE result, not an interface-inference failure. Stage 6 steered a
+20-bird interior with a 12-bird boundary on a 100-bird lattice (ratio 0.6);
+Stage 6.8's blind detector proposes collectives of 95-145 birds on a 400-bird
+lattice, where an actuator set of 10-30 is 0.1-0.25 of the interface and the
+interior's own consensus is 5-10 hops deep. Sparse boundary steering of a
+20-bird collective does not transfer to a 120-bird one.
+
+DECLARED FALLBACK, so that the five-arm comparison still answers its own
+question ("does an adaptively re-inferred causal interface beat a frozen one?")
+even though the absolute task is out of reach: run all arms at the grid's
+best oracle setting (K_act = 20, horizon = 30), and report
+
+    (a) the absolute levels, labelled as BELOW the feasibility threshold, and
+    (b) the ORDERING of the arms, which is what the section-21 comparison is
+        actually about.
+
+One arm is added at the same time and for the same reason: `no_control`
+(zero actuators), so the floor is measured rather than assumed. Absolute
+success is NOT claimed anywhere for this experiment.
+
+--------------------------------------------------------------------------
+ADDENDUM 8, written before the arm comparison was run to completion.
+
+The control loop re-probes ONLINE at every re-inference step, which at the
+offline pipeline's budget (50 rollouts x 6 repeats x ~45 sources, every 4
+steps) costs ~650,000 simulator rollouts per adaptive episode. The control
+loop is therefore given its own, smaller, separately declared probe budget:
+
+    25 rollouts x 2 repeats, re-inferring every 6 steps
+
+fixed here, applied identically to every arm that probes, and never varied
+between arms. It is a HANDICAP on the two inferred-causal arms relative to
+`adaptive_oracle` (which pays no estimation cost at all), so it cannot flatter
+the method under test.
+
+--------------------------------------------------------------------------
+ADDENDUM 9, written after inspecting the first arms, before the comparison was
+run to completion or interpreted.
+
+Two evaluation flaws were found in the first arm run and fixed. Both were
+found by looking at the arms' own bookkeeping (interior sizes and actuator
+counts), not at which arm won.
+
+1. SCORING SET. Each arm was being scored on the interior IT had re-detected
+   at the final step. Those diverge sharply between arms -- 63, 84, 103 and 153
+   birds on one development seed -- so an arm that merely let the collective
+   drift into an already-aligned region scored well. Task success is now scored
+   on I0, the collective detected at the control start, exactly as Stage 6
+   scored it on its frozen interior. The current-interior score is still
+   recorded as a secondary number.
+
+2. BUDGET MATCHING. The multicover arms stop when their own coverage rule is
+   satisfied, typically at ~10 actuators of a 20 cap, while `random_matched`
+   always spent the full 20 -- i.e. the "matched-budget" control had twice the
+   intervention budget of the method it was controlling for. `adaptive_causal`
+   now runs first and its realized per-step actuator schedule is imposed on
+   `random_matched` and `predictive`.
+
+Both changes tighten the comparison against the method under test.
+
+--------------------------------------------------------------------------
+ADDENDUM 10.
+
+The feasibility grid (ADDENDUM 6/7) was run BEFORE the scoring-set correction
+of ADDENDUM 9, so it scored the oracle arm on the interior that arm had
+re-detected at the final step rather than on I0. For consistency the grid is
+re-run with the corrected metric, unchanged in every other respect: same
+predeclared (K_act, horizon) cells, same 0.5 target, same rule, still the
+adaptive_oracle arm alone on development seeds only. If the re-run selects a
+different cell, the whole arm comparison is re-run at that cell.

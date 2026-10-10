@@ -1,0 +1,176 @@
+PREDECLARED TRANSLATION FEASIBILITY CRITERIA -- Stage 6.9
+Written BEFORE code/run_translation_gate.py was run, and before any Stage 6.9
+number existed. These operationalize task brief section 33 verbatim and are
+applied unchanged thereafter. No steering experiment may run until this gate is
+evaluated.
+
+An EPISODE is one uncontrolled realization. Its single longest tracked
+collective is evaluated (chosen by tracked duration alone -- never by
+displacement, turnover, or any identity score).
+
+  brief: "a detected collective persists for many steps"
+    T1  tracked duration                       >= 40 steps
+
+  brief: "it translates by multiple interaction radii"
+    T2  net centroid displacement              >= 3 * R      (R = 1.6)
+
+  brief: "membership genuinely changes"
+    T3  final material retention R_M           <= 0.70       (>=30% replaced)
+
+  brief: "co-moving functional similarity remains high"
+    T4  mean R_F over the tracked window       >= 0.70
+
+  brief: "the group remains nontrivial and spatially coherent"
+    T5  size within [0.03N, 0.55N] AND <= 2 spatial components,
+        on >= 90% of tracked steps
+
+An episode PASSES iff all five hold. The GATE passes iff the pass rate is
+>= 0.20 over the screened seeds, i.e. the phenomenon is repeatable rather than
+a single lucky realization.
+
+OUTCOMES THAT ARE NOT A PASS, and how each is to be reported:
+  * episodes translate but keep essentially their members (T3 fails, R_M ~ 1):
+    report plainly as MOVING MATERIAL IDENTITY; do NOT claim the
+    constituent-replacement result.
+  * no persistent translating collective emerges at all: STOP. Do not force a
+    prechosen moving cluster and call it emergence.
+  * T4 fails while T1-T3 hold: the collective is being destroyed and replaced
+    rather than transported; report as such.
+
+The parameters (N=400, L=24, R=1.6, v=0.5, beta=1.0, rho=15, omega=3) are
+fixed here. beta/rho/omega are the frozen Stage 6-6.8 values. R and v come from
+the scratch feasibility prototype recorded in PLAN.md, chosen so that the
+expected local degree is on the scale of the Moore model's 8 (4.6 at uniform
+density, ~10.7 realized once the flock clusters) -- NOT chosen by any identity
+or control outcome, none of which existed when they were fixed.
+
+--------------------------------------------------------------------------
+ADDENDUM 1 (Stage 6.9), written after the gate passed and before boundary
+inference was run on real episodes.
+
+GATE OUTCOME: pass rate 0.40 (16/40 episodes), against a 0.20 threshold.
+Per-criterion rates: T1 persistence 1.00, T2 translation 0.90, T3 membership
+change 0.50, T4 co-moving similarity 1.00, T5 coherence 0.95. **T3 is the
+binding criterion**: in half the episodes the same birds simply travel
+together (moving material identity), and those episodes are reported as such,
+not as constituent replacement.
+
+PROBE BUDGET for the moving model, fixed here by a COMPUTE CEILING (~4 minutes
+per timepoint), not by any recovery score:
+
+    60 rollouts per arm, 3 independent CRN repeats per (source, alternative
+    heading), probe candidates within 1.1*R of the collective
+
+The moving flock is far denser than the lattice: a clustered 100-bird group has
+~113 birds inside a 2.6 radius and its true interface |B_t^D| is ~47 of ~63
+nearby exterior birds, against ~20 of ~50 at Stage 6.8. Whatever recall this
+budget buys is reported as-is; the budget is not raised or lowered afterwards
+to improve it.
+
+--------------------------------------------------------------------------
+ADDENDUM 2 (Stage 6.9), written after the first boundary-inference timepoint.
+
+The marginal-KL probe estimator carried over from Stage 6.8 returns ALL-ZERO
+samples on the moving flock, so its bootstrap lower bound is 0 for nearly every
+source and Bhat^causal comes back with one member out of a true interface of
+~47. The cause is visible in the probe's own output, with no reference to any
+oracle quantity: a highly polarized collective has a near-saturated policy
+posterior, so intervening on one of ~10 live in-neighbours shifts an interior
+bird's next-heading MARGINAL by far less than the sampling noise of two
+independent 60-rollout histograms, and every sampled KL rounds to the smoothing
+floor.
+
+The estimator is therefore changed to the statistic the common random numbers
+actually afford -- the PAIRED DISCREPANCY RATE
+
+    Chat^do_{j->i} = (1/n) sum_k 1[ z_i^{do}(k) != z_i^{nat}(k) ]
+
+computed from exactly the same rollouts, exactly the same budget, and exactly
+the same decision rule (bootstrap CI lower bound > 0). It is zero for every
+unaffected bird by construction and strictly positive for an affected one. The
+marginal KL is still computed and stored alongside as `D_do_joint_kl`, so the
+two can be compared.
+
+This was changed for statistical power, on evidence internal to the probe, NOT
+because of any recall figure against B_t^D -- no oracle comparison had been run
+when it was made. Stage 6.8's L2/L3 results are NOT re-run or restated: they
+keep the marginal-KL estimator they were produced with.
+
+--------------------------------------------------------------------------
+ADDENDUM 3 (Stage 6.9) -- CORRECTION to ADDENDUM 2.
+
+ADDENDUM 2 asserted that the paired discrepancy rate would have usable power
+where the marginal-KL estimator did not. **That was wrong, and the measurement
+says so.** On the same candidate, the same budget and the same decision rule:
+
+    marginal KL          : |Bhat^causal| = 1 of |B_t^D| = 47   (precision 1.00)
+    paired discrepancy   : |Bhat^causal| = 1 of |B_t^D| = 47   (precision 1.00)
+
+The two estimators agree exactly. The problem is therefore NOT that the KL
+throws away the pairing; it is that the effect itself is below the resolution
+of any one-step estimator at this budget. A polarized collective's policy
+posterior is near-deterministic, so intervening on one of ~10 live in-neighbours
+almost never flips an interior bird's realized next heading within 60 rollouts,
+and the paired difference is genuinely zero in most rollouts rather than merely
+buried in histogram noise. Detecting it would need on the order of 1/p ~ 10^3
+rollouts per arm, i.e. ~3.4M simulator steps per timepoint.
+
+The paired estimator is KEPT (it is the more natural statistic given common
+random numbers, it is no worse, and it stores the KL alongside for comparison),
+but the claim in ADDENDUM 2 that it fixes the power problem is retracted.
+
+The correct reading is a SCIENTIFIC RESULT, not a defect to be engineered
+around: at this model's internal order, the causal interface of a translating
+collective is IDENTIFIABLE (the exact propagator resolves it) but effectively
+UNESTIMABLE by one-step finite probing at any feasible budget. That is the
+Stage 6.8 identifiability-vs-estimation gap taken to its limit, and it is
+reported as such in RESULTS_6_9.md. No estimator, budget or threshold is
+adjusted afterwards to make the number look better.
+
+--------------------------------------------------------------------------
+ADDENDUM 4 (Stage 6.9) -- MODEL RE-SPECIFICATION. Written after diagnosing the
+degenerate causal interface and BEFORE the replacement (R, v) was chosen.
+
+WHAT WENT WRONG. PROTOCOL_6_9 section 2 records R = 1.6 as giving "expected
+degree 4.6 at uniform density, ~10.7 realized", against the brief's requirement
+that local degree stay "on roughly the same scale as the original Moore model"
+(8 geometric, ~5 live after FOV). Both figures were wrong as a description of
+the steady state: measured directly in the clustered configuration the flock
+actually occupies, the mean live IN-DEGREE is 21.2 -- about 3x the Moore scale
+and 4x the FOV-live scale.
+
+WHAT THAT BROKE. With ~21 contributing neighbours the expected-free-energy gap
+between an interior bird's best and second-best action is ~93, so
+`policy_posterior` saturates: 77% of interior birds have max(ut) == 1.0 to
+double precision. A saturated decision cannot be moved by one neighbour, so the
+one-step causal effect of intervening on almost any exterior source is
+numerically zero. Measured on seed 0, t=60, |I| = 100, |B_t^D| = 47:
+
+    Bhat^causal (finite probe, 60x3)   :  1 of 47
+    B^causal,exact (exact propagator)  :  1 of 47      <-- the same
+    effects above 1e-9                 :  1 of 63 candidates
+
+So the near-empty interface was NOT an estimation failure and NOT an
+identifiability-vs-estimation gap -- it was a direct consequence of a
+mis-specified interaction radius. Reporting it as a scientific finding would
+have been reporting an artefact of my own parameter choice.
+
+THE FIX, and the rule for choosing it, declared here before the numbers are
+seen. Candidate settings pair a smaller R with v scaled to preserve the
+neighbour-crossing time v/R = 0.31:
+
+    (R, v) in { (0.9, 0.28), (1.1, 0.34), (1.3, 0.40) }
+
+    RULE: choose the pair whose MEAN REALIZED LIVE IN-DEGREE, measured in the
+    clustered steady state of uncontrolled runs, is closest to the Moore
+    model's 8. This uses uncontrolled phenomenology only -- no identity score,
+    no interface recovery, no control outcome.
+
+If the translation feasibility gate then FAILS at the chosen setting, that is
+the pilot's outcome and it is reported as such. R is NOT moved back up to
+recover a passing gate: a gate that passes only at a degree 3x the Moore scale
+is a gate passed by a model that violates the stated specification.
+
+Everything downstream of the gate -- the gate itself, boundary inference, the
+guidance experiment -- is re-run at the corrected setting. The Stage 6.9
+results produced at R = 1.6 are superseded, not reported.

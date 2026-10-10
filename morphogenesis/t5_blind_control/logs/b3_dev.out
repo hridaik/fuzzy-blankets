@@ -1,0 +1,19 @@
+5012 ctrl:ctrl_v1 S+ True success 2 410
+5013 ctrl:ctrl_v1 S+ True success 2 392
+5014 ctrl:ctrl_v1 S+ False abort_identity 2 424
+5016 ctrl:ctrl_v1 S+ True success 2 428
+5017 ctrl:ctrl_v1 S+ True success 2 490
+5022 ctrl:ctrl_v1 S+ True success 2 361
+5006 ctrl:ctrl_v1 S- True success 2 420
+5007 ctrl:ctrl_v1 S- True success 2 430
+5008 ctrl:ctrl_v1 S- True success 2 352
+5009 ctrl:ctrl_v1 S- True success 2 369
+5011 ctrl:ctrl_v1 S- True success 2 468
+5015 ctrl:ctrl_v1 S- True success 2 370
+Traceback (most recent call last):
+  File "/home/hkhurana/work/code/fuzzy-blankets/morphogenesis/t5_blind_control/code/b3_dev.py", line 13, in <module>
+    S=replay(d,s,cfg,plan,cfg['baseline_tu']+cfg['dur']+cfg['hold'],st,tag='b3_dev_fixed'); S['arm']=f'fixed:{amp}'; S.pop('actions',None)
+  File "/home/hkhurana/work/code/fuzzy-blankets/morphogenesis/t5_blind_control/code/controller.py", line 97, in replay
+    dose+=r['dose']; ncell.append(r['cells']); last_end=ep.t+a['dur']
+                                  ~^^^^^^^^^
+KeyError: 'cells'

@@ -1,0 +1,2 @@
+# audit_t4 — SEALED. Audit of the blind T4 analysis (t4_blind_identity) against the hidden tier.
+Do not share with any blind session; nothing here was written into t4_blind_identity/ or any blind package. Entry point: `AUDIT_T4.md`. Frozen constants: `FROZEN_AUDIT_CONFIG.json` (+ hash). Code: `code/`; tables: `data/`; sealed viewer: `viewer/` (open the HTML files; screenshots in `viewer/screenshots/`).

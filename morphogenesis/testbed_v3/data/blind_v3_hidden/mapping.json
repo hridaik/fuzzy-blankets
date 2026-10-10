@@ -1,0 +1,3740 @@
+{
+ "col_perm": [
+  6,
+  2,
+  1,
+  3,
+  4,
+  5,
+  0
+ ],
+ "light_labels": {
+  "MA": "L3",
+  "MB": "L4",
+  "SEC": "L2",
+  "RG": "L5",
+  "MIG": "L1"
+ },
+ "reagent": {
+  "0": "R6",
+  "1": "R2",
+  "2": "R5",
+  "3": "R1",
+  "4": "R3",
+  "5": "R4"
+ },
+ "scn_codes": {
+  "cutx": "P01",
+  "cuty": "P02",
+  "extrude": "P03",
+  "fuse|a|0.0,3.0": "P04",
+  "fuse|a|6.0,0.0": "P05",
+  "fuse|b|0.0,3.0": "P06",
+  "fuse|b|5.0,0.0": "P07",
+  "fuse|b|6.0,0.0": "P08",
+  "replace3": "P09"
+ },
+ "o2_cols": [
+  0,
+  1,
+  2,
+  3,
+  6
+ ],
+ "o3a": [
+  6,
+  2,
+  0
+ ],
+ "o3b": [
+  6,
+  2,
+  0,
+  4
+ ],
+ "runs": {
+  "run_00011": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2100,
+   "tag": "cal"
+  },
+  "run_00017": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2101,
+   "tag": "cal"
+  },
+  "run_00025": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2102,
+   "tag": "cal"
+  },
+  "run_00030": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2103,
+   "tag": "cal"
+  },
+  "run_00038": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2104,
+   "tag": "cal"
+  },
+  "run_00044": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2105,
+   "tag": "cal"
+  },
+  "run_00052": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2106,
+   "tag": "cal"
+  },
+  "run_00059": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2107,
+   "tag": "cal"
+  },
+  "run_00067": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2108,
+   "tag": "cal"
+  },
+  "run_00071": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2109,
+   "tag": "cal"
+  },
+  "run_00081": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2110,
+   "tag": "cal"
+  },
+  "run_00089": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2111,
+   "tag": "cal"
+  },
+  "run_00091": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2400,
+   "tag": "val"
+  },
+  "run_00100": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2401,
+   "tag": "val"
+  },
+  "run_00107": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2402,
+   "tag": "val"
+  },
+  "run_00115": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2403,
+   "tag": "val"
+  },
+  "run_00120": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2404,
+   "tag": "val"
+  },
+  "run_00131": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2405,
+   "tag": "val"
+  },
+  "run_00133": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2100,
+   "tag": "cal"
+  },
+  "run_00144": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2101,
+   "tag": "cal"
+  },
+  "run_00148": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2102,
+   "tag": "cal"
+  },
+  "run_00154": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2103,
+   "tag": "cal"
+  },
+  "run_00165": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2104,
+   "tag": "cal"
+  },
+  "run_00170": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2105,
+   "tag": "cal"
+  },
+  "run_00181": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2106,
+   "tag": "cal"
+  },
+  "run_00188": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2107,
+   "tag": "cal"
+  },
+  "run_00193": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2108,
+   "tag": "cal"
+  },
+  "run_00197": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2109,
+   "tag": "cal"
+  },
+  "run_00205": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2110,
+   "tag": "cal"
+  },
+  "run_00216": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2111,
+   "tag": "cal"
+  },
+  "run_00220": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2400,
+   "tag": "val"
+  },
+  "run_00228": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2401,
+   "tag": "val"
+  },
+  "run_00232": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2402,
+   "tag": "val"
+  },
+  "run_00240": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2403,
+   "tag": "val"
+  },
+  "run_00250": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2404,
+   "tag": "val"
+  },
+  "run_00255": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2405,
+   "tag": "val"
+  },
+  "run_00263": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00266": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00278": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00283": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00292": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00299": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00303": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00312": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00316": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00328": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00331": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00340": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00344": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00354": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00363": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00369": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00376": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00380": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00388": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00398": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00404": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00411": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00419": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00423": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00432": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00435": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00445": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00451": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00455": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00464": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00471": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00482": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00488": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00490": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00498": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00508": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00515": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00518": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00526": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00535": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00544": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00547": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00556": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00565": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00572": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00577": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00587": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00592": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_00599": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00602": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00614": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_00616": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00625": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00634": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_00640": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00650": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00657": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00659": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00667": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00673": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00685": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00692": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00696": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00702": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00707": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00718": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00725": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00731": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00739": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00747": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00749": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00759": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00767": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00770": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00777": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00790": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00797": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00800": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00806": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00815": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00820": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00831": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00833": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00842": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00852": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00856": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00862": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00872": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00878": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00885": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00889": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00901": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00908": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00910": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00923": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00927": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00934": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00943": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00951": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_00953": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00963": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00970": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2700
+  },
+  "run_00973": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00984": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00992": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2701
+  },
+  "run_00999": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_01005": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_01010": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 2702
+  },
+  "run_01018": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_01027": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_01033": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2700
+  },
+  "run_01039": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_01049": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_01053": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2701
+  },
+  "run_01061": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_01069": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_01074": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 2702
+  },
+  "run_01083": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 10,
+   "disc_xy0": [
+    1.8503853203535754,
+    -2.562438794333972
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01085": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    -1.6976043258042852,
+    1.658635171978617
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01096": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    2.189960985715778,
+    0.34403186526549656
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01105": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 10,
+   "disc_xy0": [
+    2.572588223878104,
+    -1.5284564113510082
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01106": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    4.827858034096456,
+    -3.144343644119224
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01119": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.7749999999999995,
+   "place": 10,
+   "disc_xy0": [
+    3.1234293264035666,
+    1.1725211063395153
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01126": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    -0.3535722728653999,
+    -2.074106535026053
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01129": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    -0.9674298184911467,
+    0.17850205437124728
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01136": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 11.549999999999999,
+   "place": 10,
+   "disc_xy0": [
+    2.7416850329422324,
+    -0.8647563584112625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01146": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 11.549999999999999,
+   "place": 23,
+   "disc_xy0": [
+    1.444603871391691,
+    -1.5234973353462773
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01149": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 1.1156249999999999,
+   "place": 12,
+   "disc_xy0": [
+    0.5089971832810343,
+    -2.6615385794692346
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01161": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    0.6761352810204271,
+    -2.2035270283312873
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01162": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    2.1125097743739563,
+    2.1599421556869483
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01172": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 2.2312499999999997,
+   "place": 12,
+   "disc_xy0": [
+    -3.0734996224282005,
+    -3.915476086928975
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01177": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 2.2312499999999997,
+   "place": 23,
+   "disc_xy0": [
+    -3.928326497097029,
+    0.27402914666138223
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01189": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 8.924999999999999,
+   "place": 12,
+   "disc_xy0": [
+    2.6164802874662296,
+    1.2841085273878172
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01195": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    1.0127654416495302,
+    -1.2846948225902068
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01198": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    0.692748792539175,
+    -1.7791725847866107
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01208": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 17.849999999999998,
+   "place": 12,
+   "disc_xy0": [
+    2.3945195799660666,
+    -1.1870694981678507
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01213": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 17.849999999999998,
+   "place": 23,
+   "disc_xy0": [
+    -0.507331843378974,
+    -1.1328965409464749
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01221": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 3.5875,
+   "place": 21,
+   "disc_xy0": [
+    -0.9185224564355678,
+    -0.088169052697606
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01231": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    0.3009803847385113,
+    2.0082489643903334
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01233": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    4.2853768891886315,
+    -0.624357593472682
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01240": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 21,
+   "disc_xy0": [
+    0.2303509657138325,
+    -1.054442952302764
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01251": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 7.175,
+   "place": 0,
+   "disc_xy0": [
+    -0.9284241031534979,
+    0.16937625712307325
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01255": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 37.8,
+   "place": 21,
+   "disc_xy0": [
+    -1.0156987835818954,
+    1.8968157466376039
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01262": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    -0.29511560108427237,
+    1.429660343323245
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01268": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    -0.0643368039620742,
+    -4.031191893891433
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01277": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 75.6,
+   "place": 21,
+   "disc_xy0": [
+    4.427212749236832,
+    0.36524564243553614
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01282": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 75.6,
+   "place": 0,
+   "disc_xy0": [
+    1.3995417333576716,
+    -3.757941204703266
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01294": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 9.1,
+   "place": 22,
+   "disc_xy0": [
+    -2.4249797466076903,
+    2.836398496638795
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01301": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    -0.728317985601739,
+    2.1510139934996606
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01307": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    -0.22142447715458544,
+    -5.9833870466965475
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01310": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 18.2,
+   "place": 22,
+   "disc_xy0": [
+    4.127037028479204,
+    -4.0670460243362925
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01321": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 18.2,
+   "place": 0,
+   "disc_xy0": [
+    3.146389080069877,
+    -0.1609929052626267
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01327": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 98.0,
+   "place": 22,
+   "disc_xy0": [
+    -0.8645829152827358,
+    -4.480408156275995
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01333": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -2.912490320197193,
+    -4.4889821460307475
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01342": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -1.3252136896228535,
+    4.552717402113046
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01347": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 196.0,
+   "place": 22,
+   "disc_xy0": [
+    0.28164491978366124,
+    -2.5228460274387814
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01351": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 196.0,
+   "place": 0,
+   "disc_xy0": [
+    -0.9351426471641173,
+    1.8547740013991774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01358": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 5,
+   "disc_xy0": [
+    0.6442683146087578,
+    -0.2433017006414817
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01369": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    3.25080353883285,
+    -3.7472239752612664
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01373": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    -0.2159150830178289,
+    -1.988864179027202
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01383": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 5,
+   "disc_xy0": [
+    2.340925672754236,
+    -0.39580211307759483
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01390": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    1.0452562534287224,
+    -3.3059342205521314
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01398": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 5,
+   "disc_xy0": [
+    -3.557627221100719,
+    0.1841274094689953
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01406": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    1.2586005434956409,
+    -0.3338101275040162
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01411": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    -1.6494188401718244,
+    -1.5869016817560053
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01420": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 14.35,
+   "place": 5,
+   "disc_xy0": [
+    1.0455580538986728,
+    2.9962219264747985
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01421": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 14.35,
+   "place": 23,
+   "disc_xy0": [
+    -6.135212133366718,
+    0.40733499284676933
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01429": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.678125,
+   "place": 8,
+   "disc_xy0": [
+    0.9277863958003156,
+    3.2654869895672904
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01437": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    1.2848849178687467,
+    1.5602825263071125
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01442": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    2.595328683799211,
+    -1.9687169212986586
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01449": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.35625,
+   "place": 8,
+   "disc_xy0": [
+    2.398823017152534,
+    -2.9352079129846596
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01460": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.35625,
+   "place": 23,
+   "disc_xy0": [
+    0.10453099404328636,
+    -3.4222036747844955
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01467": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.25,
+   "place": 8,
+   "disc_xy0": [
+    -2.212405101696086,
+    1.365171489511396
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01473": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    -0.497839652188822,
+    -1.1660808340964082
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01478": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    1.1964903506802615,
+    0.7019033554398784
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01487": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 10.5,
+   "place": 8,
+   "disc_xy0": [
+    -2.427769626554828,
+    3.089351185145779
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01491": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 10.5,
+   "place": 23,
+   "disc_xy0": [
+    -0.25835014989315597,
+    4.64436172465364
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_01501": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 10,
+   "disc_xy0": [
+    -1.643129297281245,
+    2.2375353613656324
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01510": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    1.5730027592400055,
+    0.7208931920174572
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01514": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    -2.9407721280501273,
+    -1.1273992165929405
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01519": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 10,
+   "disc_xy0": [
+    -2.4957480008953628,
+    1.1999836772523278
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01527": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    -2.0448097522574353,
+    -4.912640868255196
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01538": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.7749999999999995,
+   "place": 10,
+   "disc_xy0": [
+    -0.5811931200499745,
+    -0.7616374209879647
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01540": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    2.902401113197539,
+    -1.3501392052315377
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01551": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    2.125474317590914,
+    -2.7659549862860673
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01559": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 11.549999999999999,
+   "place": 10,
+   "disc_xy0": [
+    2.726260046905667,
+    -2.268202117537423
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01562": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 11.549999999999999,
+   "place": 23,
+   "disc_xy0": [
+    2.1598619864442443,
+    -1.7134446353975943
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01572": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 1.1156249999999999,
+   "place": 12,
+   "disc_xy0": [
+    1.7140517831642827,
+    1.1067165381079471
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01576": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    0.9320661599603914,
+    -0.25641548416282456
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01585": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    2.0932787982830963,
+    -3.2710776865820432
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01592": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 2.2312499999999997,
+   "place": 12,
+   "disc_xy0": [
+    -1.4431397854437555,
+    -1.897166113087224
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01596": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 2.2312499999999997,
+   "place": 23,
+   "disc_xy0": [
+    -1.5848824705930882,
+    -3.689432880854625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01607": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 8.924999999999999,
+   "place": 12,
+   "disc_xy0": [
+    -2.1123689451747607,
+    -1.9853224127631097
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01613": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    -0.3797377617577957,
+    -1.578694857160885
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01618": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    -1.267312073391002,
+    2.3403696838508736
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01626": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 17.849999999999998,
+   "place": 12,
+   "disc_xy0": [
+    -1.28441205577395,
+    2.3800810466400675
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01637": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 17.849999999999998,
+   "place": 23,
+   "disc_xy0": [
+    3.2812178169503636,
+    3.516581225847193
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01641": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 3.5875,
+   "place": 21,
+   "disc_xy0": [
+    0.1000377068535867,
+    -0.15875616459459363
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01648": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    -2.329364875204729,
+    2.454318027190535
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01656": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    4.299285417468316,
+    -0.21062492032199853
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01662": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 21,
+   "disc_xy0": [
+    -1.3206461169088883,
+    -5.12617029279591
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01672": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 7.175,
+   "place": 0,
+   "disc_xy0": [
+    -3.116234015252458,
+    0.8124172763655908
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01673": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 37.8,
+   "place": 21,
+   "disc_xy0": [
+    -0.20829533708893333,
+    -0.3979675846955739
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01681": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    0.7837343460745545,
+    -4.829275279997543
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01688": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    5.516447981355291,
+    -3.700392359529791
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01699": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 75.6,
+   "place": 21,
+   "disc_xy0": [
+    1.6908872449018786,
+    -1.2186265993519934
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01703": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 75.6,
+   "place": 0,
+   "disc_xy0": [
+    -3.9145179948350286,
+    3.0667787241579645
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01709": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 9.1,
+   "place": 22,
+   "disc_xy0": [
+    -0.8315335173724905,
+    -3.2497967843212696
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01717": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    5.227375369711681,
+    0.18094868993941166
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01728": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    2.084849532537478,
+    -2.2973736258578343
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01731": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 18.2,
+   "place": 22,
+   "disc_xy0": [
+    3.119723984582359,
+    5.703101098232291
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01736": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 18.2,
+   "place": 0,
+   "disc_xy0": [
+    0.9845592074873988,
+    -0.14630874560930218
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01749": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 98.0,
+   "place": 22,
+   "disc_xy0": [
+    3.156949157580849,
+    1.7598259830510985
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01751": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -6.555603903916195,
+    0.12267595159533984
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01763": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -2.9976082359631406,
+    0.5716355910695265
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01765": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 196.0,
+   "place": 22,
+   "disc_xy0": [
+    -1.9472308509425662,
+    -0.2967813734296567
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01775": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 196.0,
+   "place": 0,
+   "disc_xy0": [
+    -4.724889993418931,
+    -1.4246245756846887
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01781": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 5,
+   "disc_xy0": [
+    2.1242289746473344,
+    1.0710545709632395
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01786": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    2.720729236563195,
+    -1.059764166999229
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01795": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    2.5830848617128233,
+    1.9417452337448426
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01800": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 5,
+   "disc_xy0": [
+    0.3575146141318928,
+    0.352249829927465
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01807": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    -1.3473677785216958,
+    -1.4325507888687776
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01815": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 5,
+   "disc_xy0": [
+    3.8806318250894023,
+    2.9412866501706896
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01822": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    -1.7751666489205558,
+    2.5832909553109102
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01832": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    -0.28408533075270337,
+    0.8931570679022192
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01838": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 14.35,
+   "place": 5,
+   "disc_xy0": [
+    -0.06099586572436744,
+    0.8816079425613956
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01843": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 14.35,
+   "place": 23,
+   "disc_xy0": [
+    -4.3673369610651775,
+    -2.8700785495152203
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01850": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.678125,
+   "place": 8,
+   "disc_xy0": [
+    -0.7991658841726503,
+    3.2066081684667807
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01856": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    0.6467606459056425,
+    -0.4831642778535832
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01864": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    2.4248344075234427,
+    3.045475094363395
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01872": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.35625,
+   "place": 8,
+   "disc_xy0": [
+    1.046938692648075,
+    -0.49901962285534784
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01880": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.35625,
+   "place": 23,
+   "disc_xy0": [
+    -0.9060411847064196,
+    5.815452727765011
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 66.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01887": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.25,
+   "place": 8,
+   "disc_xy0": [
+    1.3857620635133683,
+    1.8505330828954234
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01892": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    3.041316653974781,
+    0.018024337747096553
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01899": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    3.4557554216903004,
+    0.7533803342059311
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01908": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 10.5,
+   "place": 8,
+   "disc_xy0": [
+    2.1725195982811774,
+    1.1269103059720562
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01912": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 10.5,
+   "place": 23,
+   "disc_xy0": [
+    0.19196586542003136,
+    -2.7927203689412794
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 46.666666666666664,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_01924": {
+   "state": "a",
+   "kind": "bath",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    1.126829612173036,
+    -0.8012009090190451
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "bath",
+     "ligand_index": 0,
+     "amp": 0.3,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01928": {
+   "state": "a",
+   "kind": "mbath_high",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.0371429205173577,
+    -2.3638665682030298
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 1,
+     "amp": 1.0,
+     "t_on": 40.0,
+     "t_off": 100.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01935": {
+   "state": "a",
+   "kind": "mbath_low",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    2.3178966394790286,
+    -1.1634918247730763
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 1,
+     "amp": 0.4,
+     "t_on": 40.0,
+     "t_off": 200.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01942": {
+   "state": "a",
+   "kind": "mig",
+   "channel": "MIG",
+   "centre": 12,
+   "disc_xy0": [
+    0.14396834406091796,
+    -1.460832577361956
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "MIG",
+     "amp": 0.5,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01948": {
+   "state": "a",
+   "kind": "mpipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    1.0334984184835114,
+    1.7746749564315434
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mpipette",
+     "pos": [
+      2.582729204971938,
+      1.176728286404485
+     ],
+     "ligand_index": 1,
+     "amp": 6.0,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01957": {
+   "state": "a",
+   "kind": "pipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.3306146944643995,
+    4.045682567334471
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "pipette",
+     "pos": [
+      -3.1554907322777903,
+      2.6044206993030987
+     ],
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01960": {
+   "state": "a",
+   "kind": "rg",
+   "channel": "RG",
+   "centre": 12,
+   "disc_xy0": [
+    0.08639914690932848,
+    1.5857518028895132
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "RG",
+     "amp": 0.3,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01971": {
+   "state": "a",
+   "kind": "sec",
+   "channel": "SEC",
+   "centre": 12,
+   "disc_xy0": [
+    -1.1870843071587243,
+    -1.6755037194097038
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "SEC",
+     "amp": 0.8,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01977": {
+   "state": "b",
+   "kind": "bath",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    1.126829612173036,
+    -0.8012009090190451
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "bath",
+     "ligand_index": 0,
+     "amp": 0.3,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01982": {
+   "state": "b",
+   "kind": "mbath_high",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.0371429205173577,
+    -2.3638665682030298
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 40.0,
+     "t_off": 100.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_01993": {
+   "state": "b",
+   "kind": "mbath_low",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    2.3178966394790286,
+    -1.1634918247730763
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 0,
+     "amp": 0.4,
+     "t_on": 40.0,
+     "t_off": 200.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_02000": {
+   "state": "b",
+   "kind": "mig",
+   "channel": "MIG",
+   "centre": 12,
+   "disc_xy0": [
+    0.14396834406091796,
+    -1.460832577361956
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "MIG",
+     "amp": 0.5,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_02007": {
+   "state": "b",
+   "kind": "mpipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    1.0334984184835114,
+    1.7746749564315434
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mpipette",
+     "pos": [
+      2.582729204971938,
+      1.176728286404485
+     ],
+     "ligand_index": 0,
+     "amp": 6.0,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_02015": {
+   "state": "b",
+   "kind": "pipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.3306146944643995,
+    4.045682567334471
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "pipette",
+     "pos": [
+      -3.1554907322777903,
+      2.6044206993030987
+     ],
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_02016": {
+   "state": "b",
+   "kind": "rg",
+   "channel": "RG",
+   "centre": 12,
+   "disc_xy0": [
+    0.08639914690932848,
+    1.5857518028895132
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "RG",
+     "amp": 0.3,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_02028": {
+   "state": "b",
+   "kind": "sec",
+   "channel": "SEC",
+   "centre": 12,
+   "disc_xy0": [
+    -1.1870843071587243,
+    -1.6755037194097038
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "SEC",
+     "amp": 0.8,
+     "t_on": 40.0,
+     "t_off": 90.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  }
+ }
+}

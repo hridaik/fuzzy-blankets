@@ -1,0 +1,37 @@
+{
+ "grid": [
+  {
+   "k_act": 10,
+   "horizon": 16,
+   "oracle_mean": 0.21423669359647363,
+   "n": 4
+  },
+  {
+   "k_act": 20,
+   "horizon": 16,
+   "oracle_mean": 0.2818912434485883,
+   "n": 4
+  },
+  {
+   "k_act": 10,
+   "horizon": 30,
+   "oracle_mean": 0.25636983612238917,
+   "n": 4
+  },
+  {
+   "k_act": 20,
+   "horizon": 30,
+   "oracle_mean": 0.3272518144768734,
+   "n": 4
+  },
+  {
+   "k_act": 30,
+   "horizon": 30,
+   "oracle_mean": 0.3197330174843922,
+   "n": 4
+  }
+ ],
+ "target": 0.5,
+ "chosen": null,
+ "rule": "smallest (K_act, horizon) whose adaptive_oracle mean exceeds the target; only the oracle arm was run"
+}

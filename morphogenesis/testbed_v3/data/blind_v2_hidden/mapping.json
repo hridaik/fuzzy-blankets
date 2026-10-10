@@ -1,0 +1,5084 @@
+{
+ "col_perm": [
+  6,
+  2,
+  1,
+  3,
+  4,
+  5,
+  0
+ ],
+ "light_labels": {
+  "MA": "L3",
+  "MB": "L4",
+  "SEC": "L2",
+  "RG": "L5",
+  "MIG": "L1"
+ },
+ "reagent": {
+  "0": "R6",
+  "1": "R2",
+  "2": "R5",
+  "3": "R1",
+  "4": "R3",
+  "5": "R4"
+ },
+ "scn_codes": {
+  "cutx": "P01",
+  "cuty": "P02",
+  "extrude": "P03",
+  "fuse|a|0.0,3.0": "P04",
+  "fuse|a|6.0,0.0": "P05",
+  "fuse|b|0.0,3.0": "P06",
+  "fuse|b|5.0,0.0": "P07",
+  "fuse|b|6.0,0.0": "P08",
+  "replace3": "P09"
+ },
+ "o2_cols": [
+  0,
+  1,
+  2,
+  3,
+  6
+ ],
+ "o3a": [
+  6,
+  2,
+  0
+ ],
+ "o3b": [
+  6,
+  2,
+  0,
+  4
+ ],
+ "runs": {
+  "run_00013": {
+   "family": "natural",
+   "state": "a",
+   "seed": 100,
+   "tag": "cal"
+  },
+  "run_00018": {
+   "family": "natural",
+   "state": "a",
+   "seed": 101,
+   "tag": "cal"
+  },
+  "run_00025": {
+   "family": "natural",
+   "state": "a",
+   "seed": 102,
+   "tag": "cal"
+  },
+  "run_00030": {
+   "family": "natural",
+   "state": "a",
+   "seed": 103,
+   "tag": "cal"
+  },
+  "run_00038": {
+   "family": "natural",
+   "state": "a",
+   "seed": 104,
+   "tag": "cal"
+  },
+  "run_00047": {
+   "family": "natural",
+   "state": "a",
+   "seed": 105,
+   "tag": "cal"
+  },
+  "run_00050": {
+   "family": "natural",
+   "state": "a",
+   "seed": 106,
+   "tag": "cal"
+  },
+  "run_00060": {
+   "family": "natural",
+   "state": "a",
+   "seed": 107,
+   "tag": "cal"
+  },
+  "run_00065": {
+   "family": "natural",
+   "state": "a",
+   "seed": 108,
+   "tag": "cal"
+  },
+  "run_00074": {
+   "family": "natural",
+   "state": "a",
+   "seed": 109,
+   "tag": "cal"
+  },
+  "run_00083": {
+   "family": "natural",
+   "state": "a",
+   "seed": 110,
+   "tag": "cal"
+  },
+  "run_00090": {
+   "family": "natural",
+   "state": "a",
+   "seed": 111,
+   "tag": "cal"
+  },
+  "run_00091": {
+   "family": "natural",
+   "state": "a",
+   "seed": 112,
+   "tag": "cal"
+  },
+  "run_00100": {
+   "family": "natural",
+   "state": "a",
+   "seed": 113,
+   "tag": "cal"
+  },
+  "run_00106": {
+   "family": "natural",
+   "state": "a",
+   "seed": 114,
+   "tag": "cal"
+  },
+  "run_00114": {
+   "family": "natural",
+   "state": "a",
+   "seed": 115,
+   "tag": "cal"
+  },
+  "run_00125": {
+   "family": "natural",
+   "state": "a",
+   "seed": 116,
+   "tag": "cal"
+  },
+  "run_00131": {
+   "family": "natural",
+   "state": "a",
+   "seed": 117,
+   "tag": "cal"
+  },
+  "run_00135": {
+   "family": "natural",
+   "state": "a",
+   "seed": 118,
+   "tag": "cal"
+  },
+  "run_00145": {
+   "family": "natural",
+   "state": "a",
+   "seed": 119,
+   "tag": "cal"
+  },
+  "run_00147": {
+   "family": "natural",
+   "state": "a",
+   "seed": 120,
+   "tag": "cal"
+  },
+  "run_00158": {
+   "family": "natural",
+   "state": "a",
+   "seed": 121,
+   "tag": "cal"
+  },
+  "run_00164": {
+   "family": "natural",
+   "state": "a",
+   "seed": 122,
+   "tag": "cal"
+  },
+  "run_00168": {
+   "family": "natural",
+   "state": "a",
+   "seed": 123,
+   "tag": "cal"
+  },
+  "run_00181": {
+   "family": "natural",
+   "state": "a",
+   "seed": 124,
+   "tag": "cal"
+  },
+  "run_00185": {
+   "family": "natural",
+   "state": "a",
+   "seed": 125,
+   "tag": "cal"
+  },
+  "run_00191": {
+   "family": "natural",
+   "state": "a",
+   "seed": 126,
+   "tag": "cal"
+  },
+  "run_00199": {
+   "family": "natural",
+   "state": "a",
+   "seed": 127,
+   "tag": "cal"
+  },
+  "run_00205": {
+   "family": "natural",
+   "state": "a",
+   "seed": 128,
+   "tag": "cal"
+  },
+  "run_00213": {
+   "family": "natural",
+   "state": "a",
+   "seed": 129,
+   "tag": "cal"
+  },
+  "run_00223": {
+   "family": "natural",
+   "state": "a",
+   "seed": 130,
+   "tag": "cal"
+  },
+  "run_00226": {
+   "family": "natural",
+   "state": "a",
+   "seed": 131,
+   "tag": "cal"
+  },
+  "run_00234": {
+   "family": "natural",
+   "state": "a",
+   "seed": 132,
+   "tag": "cal"
+  },
+  "run_00242": {
+   "family": "natural",
+   "state": "a",
+   "seed": 133,
+   "tag": "cal"
+  },
+  "run_00245": {
+   "family": "natural",
+   "state": "a",
+   "seed": 134,
+   "tag": "cal"
+  },
+  "run_00258": {
+   "family": "natural",
+   "state": "a",
+   "seed": 135,
+   "tag": "cal"
+  },
+  "run_00264": {
+   "family": "natural",
+   "state": "a",
+   "seed": 136,
+   "tag": "cal"
+  },
+  "run_00266": {
+   "family": "natural",
+   "state": "a",
+   "seed": 137,
+   "tag": "cal"
+  },
+  "run_00273": {
+   "family": "natural",
+   "state": "a",
+   "seed": 138,
+   "tag": "cal"
+  },
+  "run_00280": {
+   "family": "natural",
+   "state": "a",
+   "seed": 139,
+   "tag": "cal"
+  },
+  "run_00289": {
+   "family": "natural",
+   "state": "a",
+   "seed": 140,
+   "tag": "cal"
+  },
+  "run_00296": {
+   "family": "natural",
+   "state": "a",
+   "seed": 141,
+   "tag": "cal"
+  },
+  "run_00306": {
+   "family": "natural",
+   "state": "a",
+   "seed": 142,
+   "tag": "cal"
+  },
+  "run_00309": {
+   "family": "natural",
+   "state": "a",
+   "seed": 143,
+   "tag": "cal"
+  },
+  "run_00320": {
+   "family": "natural",
+   "state": "a",
+   "seed": 144,
+   "tag": "cal"
+  },
+  "run_00325": {
+   "family": "natural",
+   "state": "a",
+   "seed": 145,
+   "tag": "cal"
+  },
+  "run_00332": {
+   "family": "natural",
+   "state": "a",
+   "seed": 146,
+   "tag": "cal"
+  },
+  "run_00337": {
+   "family": "natural",
+   "state": "a",
+   "seed": 147,
+   "tag": "cal"
+  },
+  "run_00349": {
+   "family": "natural",
+   "state": "a",
+   "seed": 148,
+   "tag": "cal"
+  },
+  "run_00355": {
+   "family": "natural",
+   "state": "a",
+   "seed": 149,
+   "tag": "cal"
+  },
+  "run_00360": {
+   "family": "natural",
+   "state": "a",
+   "seed": 150,
+   "tag": "cal"
+  },
+  "run_00367": {
+   "family": "natural",
+   "state": "a",
+   "seed": 151,
+   "tag": "cal"
+  },
+  "run_00376": {
+   "family": "natural",
+   "state": "a",
+   "seed": 152,
+   "tag": "cal"
+  },
+  "run_00381": {
+   "family": "natural",
+   "state": "a",
+   "seed": 153,
+   "tag": "cal"
+  },
+  "run_00388": {
+   "family": "natural",
+   "state": "a",
+   "seed": 154,
+   "tag": "cal"
+  },
+  "run_00398": {
+   "family": "natural",
+   "state": "a",
+   "seed": 155,
+   "tag": "cal"
+  },
+  "run_00399": {
+   "family": "natural",
+   "state": "a",
+   "seed": 156,
+   "tag": "cal"
+  },
+  "run_00406": {
+   "family": "natural",
+   "state": "a",
+   "seed": 157,
+   "tag": "cal"
+  },
+  "run_00416": {
+   "family": "natural",
+   "state": "a",
+   "seed": 158,
+   "tag": "cal"
+  },
+  "run_00425": {
+   "family": "natural",
+   "state": "a",
+   "seed": 159,
+   "tag": "cal"
+  },
+  "run_00432": {
+   "family": "natural",
+   "state": "a",
+   "seed": 160,
+   "tag": "cal"
+  },
+  "run_00435": {
+   "family": "natural",
+   "state": "a",
+   "seed": 161,
+   "tag": "cal"
+  },
+  "run_00445": {
+   "family": "natural",
+   "state": "a",
+   "seed": 162,
+   "tag": "cal"
+  },
+  "run_00454": {
+   "family": "natural",
+   "state": "a",
+   "seed": 163,
+   "tag": "cal"
+  },
+  "run_00460": {
+   "family": "natural",
+   "state": "a",
+   "seed": 164,
+   "tag": "cal"
+  },
+  "run_00466": {
+   "family": "natural",
+   "state": "a",
+   "seed": 165,
+   "tag": "cal"
+  },
+  "run_00473": {
+   "family": "natural",
+   "state": "a",
+   "seed": 166,
+   "tag": "cal"
+  },
+  "run_00481": {
+   "family": "natural",
+   "state": "a",
+   "seed": 167,
+   "tag": "cal"
+  },
+  "run_00483": {
+   "family": "natural",
+   "state": "a",
+   "seed": 168,
+   "tag": "cal"
+  },
+  "run_00496": {
+   "family": "natural",
+   "state": "a",
+   "seed": 169,
+   "tag": "cal"
+  },
+  "run_00503": {
+   "family": "natural",
+   "state": "a",
+   "seed": 170,
+   "tag": "cal"
+  },
+  "run_00509": {
+   "family": "natural",
+   "state": "a",
+   "seed": 171,
+   "tag": "cal"
+  },
+  "run_00513": {
+   "family": "natural",
+   "state": "a",
+   "seed": 172,
+   "tag": "cal"
+  },
+  "run_00522": {
+   "family": "natural",
+   "state": "a",
+   "seed": 173,
+   "tag": "cal"
+  },
+  "run_00525": {
+   "family": "natural",
+   "state": "a",
+   "seed": 174,
+   "tag": "cal"
+  },
+  "run_00534": {
+   "family": "natural",
+   "state": "a",
+   "seed": 175,
+   "tag": "cal"
+  },
+  "run_00543": {
+   "family": "natural",
+   "state": "a",
+   "seed": 176,
+   "tag": "cal"
+  },
+  "run_00548": {
+   "family": "natural",
+   "state": "a",
+   "seed": 177,
+   "tag": "cal"
+  },
+  "run_00558": {
+   "family": "natural",
+   "state": "a",
+   "seed": 178,
+   "tag": "cal"
+  },
+  "run_00565": {
+   "family": "natural",
+   "state": "a",
+   "seed": 179,
+   "tag": "cal"
+  },
+  "run_00568": {
+   "family": "natural",
+   "state": "a",
+   "seed": 180,
+   "tag": "cal"
+  },
+  "run_00577": {
+   "family": "natural",
+   "state": "a",
+   "seed": 181,
+   "tag": "cal"
+  },
+  "run_00581": {
+   "family": "natural",
+   "state": "a",
+   "seed": 182,
+   "tag": "cal"
+  },
+  "run_00593": {
+   "family": "natural",
+   "state": "a",
+   "seed": 183,
+   "tag": "cal"
+  },
+  "run_00599": {
+   "family": "natural",
+   "state": "a",
+   "seed": 184,
+   "tag": "cal"
+  },
+  "run_00603": {
+   "family": "natural",
+   "state": "a",
+   "seed": 185,
+   "tag": "cal"
+  },
+  "run_00615": {
+   "family": "natural",
+   "state": "a",
+   "seed": 186,
+   "tag": "cal"
+  },
+  "run_00616": {
+   "family": "natural",
+   "state": "a",
+   "seed": 187,
+   "tag": "cal"
+  },
+  "run_00627": {
+   "family": "natural",
+   "state": "a",
+   "seed": 188,
+   "tag": "cal"
+  },
+  "run_00630": {
+   "family": "natural",
+   "state": "a",
+   "seed": 189,
+   "tag": "cal"
+  },
+  "run_00637": {
+   "family": "natural",
+   "state": "a",
+   "seed": 190,
+   "tag": "cal"
+  },
+  "run_00644": {
+   "family": "natural",
+   "state": "a",
+   "seed": 191,
+   "tag": "cal"
+  },
+  "run_00653": {
+   "family": "natural",
+   "state": "a",
+   "seed": 192,
+   "tag": "cal"
+  },
+  "run_00663": {
+   "family": "natural",
+   "state": "a",
+   "seed": 193,
+   "tag": "cal"
+  },
+  "run_00665": {
+   "family": "natural",
+   "state": "a",
+   "seed": 194,
+   "tag": "cal"
+  },
+  "run_00678": {
+   "family": "natural",
+   "state": "a",
+   "seed": 195,
+   "tag": "cal"
+  },
+  "run_00685": {
+   "family": "natural",
+   "state": "a",
+   "seed": 196,
+   "tag": "cal"
+  },
+  "run_00690": {
+   "family": "natural",
+   "state": "a",
+   "seed": 197,
+   "tag": "cal"
+  },
+  "run_00695": {
+   "family": "natural",
+   "state": "a",
+   "seed": 198,
+   "tag": "cal"
+  },
+  "run_00706": {
+   "family": "natural",
+   "state": "a",
+   "seed": 199,
+   "tag": "cal"
+  },
+  "run_00712": {
+   "family": "natural",
+   "state": "a",
+   "seed": 400,
+   "tag": "val"
+  },
+  "run_00714": {
+   "family": "natural",
+   "state": "a",
+   "seed": 401,
+   "tag": "val"
+  },
+  "run_00723": {
+   "family": "natural",
+   "state": "a",
+   "seed": 402,
+   "tag": "val"
+  },
+  "run_00733": {
+   "family": "natural",
+   "state": "a",
+   "seed": 403,
+   "tag": "val"
+  },
+  "run_00741": {
+   "family": "natural",
+   "state": "a",
+   "seed": 404,
+   "tag": "val"
+  },
+  "run_00747": {
+   "family": "natural",
+   "state": "a",
+   "seed": 405,
+   "tag": "val"
+  },
+  "run_00753": {
+   "family": "natural",
+   "state": "a",
+   "seed": 406,
+   "tag": "val"
+  },
+  "run_00757": {
+   "family": "natural",
+   "state": "a",
+   "seed": 407,
+   "tag": "val"
+  },
+  "run_00769": {
+   "family": "natural",
+   "state": "a",
+   "seed": 408,
+   "tag": "val"
+  },
+  "run_00775": {
+   "family": "natural",
+   "state": "a",
+   "seed": 409,
+   "tag": "val"
+  },
+  "run_00778": {
+   "family": "natural",
+   "state": "a",
+   "seed": 410,
+   "tag": "val"
+  },
+  "run_00790": {
+   "family": "natural",
+   "state": "a",
+   "seed": 411,
+   "tag": "val"
+  },
+  "run_00793": {
+   "family": "natural",
+   "state": "a",
+   "seed": 412,
+   "tag": "val"
+  },
+  "run_00802": {
+   "family": "natural",
+   "state": "a",
+   "seed": 413,
+   "tag": "val"
+  },
+  "run_00809": {
+   "family": "natural",
+   "state": "a",
+   "seed": 414,
+   "tag": "val"
+  },
+  "run_00816": {
+   "family": "natural",
+   "state": "a",
+   "seed": 415,
+   "tag": "val"
+  },
+  "run_00824": {
+   "family": "natural",
+   "state": "a",
+   "seed": 416,
+   "tag": "val"
+  },
+  "run_00828": {
+   "family": "natural",
+   "state": "a",
+   "seed": 417,
+   "tag": "val"
+  },
+  "run_00833": {
+   "family": "natural",
+   "state": "a",
+   "seed": 418,
+   "tag": "val"
+  },
+  "run_00846": {
+   "family": "natural",
+   "state": "a",
+   "seed": 419,
+   "tag": "val"
+  },
+  "run_00853": {
+   "family": "natural",
+   "state": "a",
+   "seed": 420,
+   "tag": "val"
+  },
+  "run_00856": {
+   "family": "natural",
+   "state": "a",
+   "seed": 421,
+   "tag": "val"
+  },
+  "run_00863": {
+   "family": "natural",
+   "state": "a",
+   "seed": 422,
+   "tag": "val"
+  },
+  "run_00871": {
+   "family": "natural",
+   "state": "a",
+   "seed": 423,
+   "tag": "val"
+  },
+  "run_00881": {
+   "family": "natural",
+   "state": "a",
+   "seed": 424,
+   "tag": "val"
+  },
+  "run_00885": {
+   "family": "natural",
+   "state": "a",
+   "seed": 425,
+   "tag": "val"
+  },
+  "run_00889": {
+   "family": "natural",
+   "state": "a",
+   "seed": 426,
+   "tag": "val"
+  },
+  "run_00901": {
+   "family": "natural",
+   "state": "a",
+   "seed": 427,
+   "tag": "val"
+  },
+  "run_00904": {
+   "family": "natural",
+   "state": "a",
+   "seed": 428,
+   "tag": "val"
+  },
+  "run_00915": {
+   "family": "natural",
+   "state": "a",
+   "seed": 429,
+   "tag": "val"
+  },
+  "run_00920": {
+   "family": "natural",
+   "state": "b",
+   "seed": 100,
+   "tag": "cal"
+  },
+  "run_00924": {
+   "family": "natural",
+   "state": "b",
+   "seed": 101,
+   "tag": "cal"
+  },
+  "run_00934": {
+   "family": "natural",
+   "state": "b",
+   "seed": 102,
+   "tag": "cal"
+  },
+  "run_00939": {
+   "family": "natural",
+   "state": "b",
+   "seed": 103,
+   "tag": "cal"
+  },
+  "run_00945": {
+   "family": "natural",
+   "state": "b",
+   "seed": 104,
+   "tag": "cal"
+  },
+  "run_00955": {
+   "family": "natural",
+   "state": "b",
+   "seed": 105,
+   "tag": "cal"
+  },
+  "run_00964": {
+   "family": "natural",
+   "state": "b",
+   "seed": 106,
+   "tag": "cal"
+  },
+  "run_00969": {
+   "family": "natural",
+   "state": "b",
+   "seed": 107,
+   "tag": "cal"
+  },
+  "run_00974": {
+   "family": "natural",
+   "state": "b",
+   "seed": 108,
+   "tag": "cal"
+  },
+  "run_00986": {
+   "family": "natural",
+   "state": "b",
+   "seed": 109,
+   "tag": "cal"
+  },
+  "run_00987": {
+   "family": "natural",
+   "state": "b",
+   "seed": 110,
+   "tag": "cal"
+  },
+  "run_00994": {
+   "family": "natural",
+   "state": "b",
+   "seed": 111,
+   "tag": "cal"
+  },
+  "run_01004": {
+   "family": "natural",
+   "state": "b",
+   "seed": 112,
+   "tag": "cal"
+  },
+  "run_01014": {
+   "family": "natural",
+   "state": "b",
+   "seed": 113,
+   "tag": "cal"
+  },
+  "run_01015": {
+   "family": "natural",
+   "state": "b",
+   "seed": 114,
+   "tag": "cal"
+  },
+  "run_01024": {
+   "family": "natural",
+   "state": "b",
+   "seed": 115,
+   "tag": "cal"
+  },
+  "run_01029": {
+   "family": "natural",
+   "state": "b",
+   "seed": 116,
+   "tag": "cal"
+  },
+  "run_01040": {
+   "family": "natural",
+   "state": "b",
+   "seed": 117,
+   "tag": "cal"
+  },
+  "run_01047": {
+   "family": "natural",
+   "state": "b",
+   "seed": 118,
+   "tag": "cal"
+  },
+  "run_01053": {
+   "family": "natural",
+   "state": "b",
+   "seed": 119,
+   "tag": "cal"
+  },
+  "run_01062": {
+   "family": "natural",
+   "state": "b",
+   "seed": 120,
+   "tag": "cal"
+  },
+  "run_01069": {
+   "family": "natural",
+   "state": "b",
+   "seed": 121,
+   "tag": "cal"
+  },
+  "run_01073": {
+   "family": "natural",
+   "state": "b",
+   "seed": 122,
+   "tag": "cal"
+  },
+  "run_01081": {
+   "family": "natural",
+   "state": "b",
+   "seed": 123,
+   "tag": "cal"
+  },
+  "run_01087": {
+   "family": "natural",
+   "state": "b",
+   "seed": 124,
+   "tag": "cal"
+  },
+  "run_01096": {
+   "family": "natural",
+   "state": "b",
+   "seed": 125,
+   "tag": "cal"
+  },
+  "run_01104": {
+   "family": "natural",
+   "state": "b",
+   "seed": 126,
+   "tag": "cal"
+  },
+  "run_01110": {
+   "family": "natural",
+   "state": "b",
+   "seed": 127,
+   "tag": "cal"
+  },
+  "run_01115": {
+   "family": "natural",
+   "state": "b",
+   "seed": 128,
+   "tag": "cal"
+  },
+  "run_01121": {
+   "family": "natural",
+   "state": "b",
+   "seed": 129,
+   "tag": "cal"
+  },
+  "run_01133": {
+   "family": "natural",
+   "state": "b",
+   "seed": 130,
+   "tag": "cal"
+  },
+  "run_01134": {
+   "family": "natural",
+   "state": "b",
+   "seed": 131,
+   "tag": "cal"
+  },
+  "run_01142": {
+   "family": "natural",
+   "state": "b",
+   "seed": 132,
+   "tag": "cal"
+  },
+  "run_01148": {
+   "family": "natural",
+   "state": "b",
+   "seed": 133,
+   "tag": "cal"
+  },
+  "run_01159": {
+   "family": "natural",
+   "state": "b",
+   "seed": 134,
+   "tag": "cal"
+  },
+  "run_01167": {
+   "family": "natural",
+   "state": "b",
+   "seed": 135,
+   "tag": "cal"
+  },
+  "run_01170": {
+   "family": "natural",
+   "state": "b",
+   "seed": 136,
+   "tag": "cal"
+  },
+  "run_01179": {
+   "family": "natural",
+   "state": "b",
+   "seed": 137,
+   "tag": "cal"
+  },
+  "run_01185": {
+   "family": "natural",
+   "state": "b",
+   "seed": 138,
+   "tag": "cal"
+  },
+  "run_01195": {
+   "family": "natural",
+   "state": "b",
+   "seed": 139,
+   "tag": "cal"
+  },
+  "run_01201": {
+   "family": "natural",
+   "state": "b",
+   "seed": 140,
+   "tag": "cal"
+  },
+  "run_01209": {
+   "family": "natural",
+   "state": "b",
+   "seed": 141,
+   "tag": "cal"
+  },
+  "run_01216": {
+   "family": "natural",
+   "state": "b",
+   "seed": 142,
+   "tag": "cal"
+  },
+  "run_01220": {
+   "family": "natural",
+   "state": "b",
+   "seed": 143,
+   "tag": "cal"
+  },
+  "run_01229": {
+   "family": "natural",
+   "state": "b",
+   "seed": 144,
+   "tag": "cal"
+  },
+  "run_01237": {
+   "family": "natural",
+   "state": "b",
+   "seed": 145,
+   "tag": "cal"
+  },
+  "run_01240": {
+   "family": "natural",
+   "state": "b",
+   "seed": 146,
+   "tag": "cal"
+  },
+  "run_01250": {
+   "family": "natural",
+   "state": "b",
+   "seed": 147,
+   "tag": "cal"
+  },
+  "run_01258": {
+   "family": "natural",
+   "state": "b",
+   "seed": 148,
+   "tag": "cal"
+  },
+  "run_01261": {
+   "family": "natural",
+   "state": "b",
+   "seed": 149,
+   "tag": "cal"
+  },
+  "run_01267": {
+   "family": "natural",
+   "state": "b",
+   "seed": 150,
+   "tag": "cal"
+  },
+  "run_01278": {
+   "family": "natural",
+   "state": "b",
+   "seed": 151,
+   "tag": "cal"
+  },
+  "run_01285": {
+   "family": "natural",
+   "state": "b",
+   "seed": 152,
+   "tag": "cal"
+  },
+  "run_01288": {
+   "family": "natural",
+   "state": "b",
+   "seed": 153,
+   "tag": "cal"
+  },
+  "run_01300": {
+   "family": "natural",
+   "state": "b",
+   "seed": 154,
+   "tag": "cal"
+  },
+  "run_01306": {
+   "family": "natural",
+   "state": "b",
+   "seed": 155,
+   "tag": "cal"
+  },
+  "run_01310": {
+   "family": "natural",
+   "state": "b",
+   "seed": 156,
+   "tag": "cal"
+  },
+  "run_01321": {
+   "family": "natural",
+   "state": "b",
+   "seed": 157,
+   "tag": "cal"
+  },
+  "run_01323": {
+   "family": "natural",
+   "state": "b",
+   "seed": 158,
+   "tag": "cal"
+  },
+  "run_01334": {
+   "family": "natural",
+   "state": "b",
+   "seed": 159,
+   "tag": "cal"
+  },
+  "run_01343": {
+   "family": "natural",
+   "state": "b",
+   "seed": 160,
+   "tag": "cal"
+  },
+  "run_01348": {
+   "family": "natural",
+   "state": "b",
+   "seed": 161,
+   "tag": "cal"
+  },
+  "run_01354": {
+   "family": "natural",
+   "state": "b",
+   "seed": 162,
+   "tag": "cal"
+  },
+  "run_01358": {
+   "family": "natural",
+   "state": "b",
+   "seed": 163,
+   "tag": "cal"
+  },
+  "run_01366": {
+   "family": "natural",
+   "state": "b",
+   "seed": 164,
+   "tag": "cal"
+  },
+  "run_01376": {
+   "family": "natural",
+   "state": "b",
+   "seed": 165,
+   "tag": "cal"
+  },
+  "run_01385": {
+   "family": "natural",
+   "state": "b",
+   "seed": 166,
+   "tag": "cal"
+  },
+  "run_01392": {
+   "family": "natural",
+   "state": "b",
+   "seed": 167,
+   "tag": "cal"
+  },
+  "run_01398": {
+   "family": "natural",
+   "state": "b",
+   "seed": 168,
+   "tag": "cal"
+  },
+  "run_01400": {
+   "family": "natural",
+   "state": "b",
+   "seed": 169,
+   "tag": "cal"
+  },
+  "run_01408": {
+   "family": "natural",
+   "state": "b",
+   "seed": 170,
+   "tag": "cal"
+  },
+  "run_01416": {
+   "family": "natural",
+   "state": "b",
+   "seed": 171,
+   "tag": "cal"
+  },
+  "run_01424": {
+   "family": "natural",
+   "state": "b",
+   "seed": 172,
+   "tag": "cal"
+  },
+  "run_01429": {
+   "family": "natural",
+   "state": "b",
+   "seed": 173,
+   "tag": "cal"
+  },
+  "run_01436": {
+   "family": "natural",
+   "state": "b",
+   "seed": 174,
+   "tag": "cal"
+  },
+  "run_01444": {
+   "family": "natural",
+   "state": "b",
+   "seed": 175,
+   "tag": "cal"
+  },
+  "run_01449": {
+   "family": "natural",
+   "state": "b",
+   "seed": 176,
+   "tag": "cal"
+  },
+  "run_01456": {
+   "family": "natural",
+   "state": "b",
+   "seed": 177,
+   "tag": "cal"
+  },
+  "run_01463": {
+   "family": "natural",
+   "state": "b",
+   "seed": 178,
+   "tag": "cal"
+  },
+  "run_01475": {
+   "family": "natural",
+   "state": "b",
+   "seed": 179,
+   "tag": "cal"
+  },
+  "run_01478": {
+   "family": "natural",
+   "state": "b",
+   "seed": 180,
+   "tag": "cal"
+  },
+  "run_01488": {
+   "family": "natural",
+   "state": "b",
+   "seed": 181,
+   "tag": "cal"
+  },
+  "run_01494": {
+   "family": "natural",
+   "state": "b",
+   "seed": 182,
+   "tag": "cal"
+  },
+  "run_01500": {
+   "family": "natural",
+   "state": "b",
+   "seed": 183,
+   "tag": "cal"
+  },
+  "run_01510": {
+   "family": "natural",
+   "state": "b",
+   "seed": 184,
+   "tag": "cal"
+  },
+  "run_01512": {
+   "family": "natural",
+   "state": "b",
+   "seed": 185,
+   "tag": "cal"
+  },
+  "run_01524": {
+   "family": "natural",
+   "state": "b",
+   "seed": 186,
+   "tag": "cal"
+  },
+  "run_01526": {
+   "family": "natural",
+   "state": "b",
+   "seed": 187,
+   "tag": "cal"
+  },
+  "run_01537": {
+   "family": "natural",
+   "state": "b",
+   "seed": 188,
+   "tag": "cal"
+  },
+  "run_01544": {
+   "family": "natural",
+   "state": "b",
+   "seed": 189,
+   "tag": "cal"
+  },
+  "run_01550": {
+   "family": "natural",
+   "state": "b",
+   "seed": 190,
+   "tag": "cal"
+  },
+  "run_01556": {
+   "family": "natural",
+   "state": "b",
+   "seed": 191,
+   "tag": "cal"
+  },
+  "run_01566": {
+   "family": "natural",
+   "state": "b",
+   "seed": 192,
+   "tag": "cal"
+  },
+  "run_01571": {
+   "family": "natural",
+   "state": "b",
+   "seed": 193,
+   "tag": "cal"
+  },
+  "run_01579": {
+   "family": "natural",
+   "state": "b",
+   "seed": 194,
+   "tag": "cal"
+  },
+  "run_01588": {
+   "family": "natural",
+   "state": "b",
+   "seed": 195,
+   "tag": "cal"
+  },
+  "run_01589": {
+   "family": "natural",
+   "state": "b",
+   "seed": 196,
+   "tag": "cal"
+  },
+  "run_01597": {
+   "family": "natural",
+   "state": "b",
+   "seed": 197,
+   "tag": "cal"
+  },
+  "run_01604": {
+   "family": "natural",
+   "state": "b",
+   "seed": 198,
+   "tag": "cal"
+  },
+  "run_01616": {
+   "family": "natural",
+   "state": "b",
+   "seed": 199,
+   "tag": "cal"
+  },
+  "run_01618": {
+   "family": "natural",
+   "state": "b",
+   "seed": 400,
+   "tag": "val"
+  },
+  "run_01625": {
+   "family": "natural",
+   "state": "b",
+   "seed": 401,
+   "tag": "val"
+  },
+  "run_01635": {
+   "family": "natural",
+   "state": "b",
+   "seed": 402,
+   "tag": "val"
+  },
+  "run_01639": {
+   "family": "natural",
+   "state": "b",
+   "seed": 403,
+   "tag": "val"
+  },
+  "run_01649": {
+   "family": "natural",
+   "state": "b",
+   "seed": 404,
+   "tag": "val"
+  },
+  "run_01652": {
+   "family": "natural",
+   "state": "b",
+   "seed": 405,
+   "tag": "val"
+  },
+  "run_01661": {
+   "family": "natural",
+   "state": "b",
+   "seed": 406,
+   "tag": "val"
+  },
+  "run_01672": {
+   "family": "natural",
+   "state": "b",
+   "seed": 407,
+   "tag": "val"
+  },
+  "run_01679": {
+   "family": "natural",
+   "state": "b",
+   "seed": 408,
+   "tag": "val"
+  },
+  "run_01685": {
+   "family": "natural",
+   "state": "b",
+   "seed": 409,
+   "tag": "val"
+  },
+  "run_01687": {
+   "family": "natural",
+   "state": "b",
+   "seed": 410,
+   "tag": "val"
+  },
+  "run_01698": {
+   "family": "natural",
+   "state": "b",
+   "seed": 411,
+   "tag": "val"
+  },
+  "run_01707": {
+   "family": "natural",
+   "state": "b",
+   "seed": 412,
+   "tag": "val"
+  },
+  "run_01713": {
+   "family": "natural",
+   "state": "b",
+   "seed": 413,
+   "tag": "val"
+  },
+  "run_01719": {
+   "family": "natural",
+   "state": "b",
+   "seed": 414,
+   "tag": "val"
+  },
+  "run_01724": {
+   "family": "natural",
+   "state": "b",
+   "seed": 415,
+   "tag": "val"
+  },
+  "run_01731": {
+   "family": "natural",
+   "state": "b",
+   "seed": 416,
+   "tag": "val"
+  },
+  "run_01736": {
+   "family": "natural",
+   "state": "b",
+   "seed": 417,
+   "tag": "val"
+  },
+  "run_01748": {
+   "family": "natural",
+   "state": "b",
+   "seed": 418,
+   "tag": "val"
+  },
+  "run_01755": {
+   "family": "natural",
+   "state": "b",
+   "seed": 419,
+   "tag": "val"
+  },
+  "run_01763": {
+   "family": "natural",
+   "state": "b",
+   "seed": 420,
+   "tag": "val"
+  },
+  "run_01767": {
+   "family": "natural",
+   "state": "b",
+   "seed": 421,
+   "tag": "val"
+  },
+  "run_01772": {
+   "family": "natural",
+   "state": "b",
+   "seed": 422,
+   "tag": "val"
+  },
+  "run_01782": {
+   "family": "natural",
+   "state": "b",
+   "seed": 423,
+   "tag": "val"
+  },
+  "run_01791": {
+   "family": "natural",
+   "state": "b",
+   "seed": 424,
+   "tag": "val"
+  },
+  "run_01792": {
+   "family": "natural",
+   "state": "b",
+   "seed": 425,
+   "tag": "val"
+  },
+  "run_01800": {
+   "family": "natural",
+   "state": "b",
+   "seed": 426,
+   "tag": "val"
+  },
+  "run_01810": {
+   "family": "natural",
+   "state": "b",
+   "seed": 427,
+   "tag": "val"
+  },
+  "run_01816": {
+   "family": "natural",
+   "state": "b",
+   "seed": 428,
+   "tag": "val"
+  },
+  "run_01823": {
+   "family": "natural",
+   "state": "b",
+   "seed": 429,
+   "tag": "val"
+  },
+  "run_01830": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01834": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01843": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01853": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01861": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01863": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01870": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_01878": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_01888": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_01892": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 700
+  },
+  "run_01900": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 700
+  },
+  "run_01908": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 700
+  },
+  "run_01913": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 701
+  },
+  "run_01921": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 701
+  },
+  "run_01925": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 701
+  },
+  "run_01935": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "event",
+   "state": "b",
+   "seed": 702
+  },
+  "run_01941": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "twin",
+   "state": "b",
+   "seed": 702
+  },
+  "run_01950": {
+   "family": "stress",
+   "scn": "cutx",
+   "arm": "sham",
+   "state": "b",
+   "seed": 702
+  },
+  "run_01956": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01964": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01970": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_01976": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01986": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01989": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_01996": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02005": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02009": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02018": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02023": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02035": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02037": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02044": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02052": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02061": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "event",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02065": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "twin",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02076": {
+   "family": "stress",
+   "scn": "cuty",
+   "arm": "sham",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02083": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02090": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02096": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02100": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02112": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02117": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02121": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02133": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02140": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02147": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02150": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02156": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02164": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02173": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02177": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02184": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "event",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02197": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "twin",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02200": {
+   "family": "stress",
+   "scn": "extrude",
+   "arm": "sham",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02208": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02214": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02224": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02230": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02237": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02242": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02251": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02258": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02264": {
+   "family": "stress",
+   "scn": "fuse|a|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02273": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02279": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02286": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02291": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02297": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02309": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02313": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02322": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02326": {
+   "family": "stress",
+   "scn": "fuse|a|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02336": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02343": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02346": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02357": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02361": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02371": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02376": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02383": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02393": {
+   "family": "stress",
+   "scn": "fuse|b|0.0,3.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02394": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02407": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02413": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02415": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02426": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02429": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02441": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02447": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02453": {
+   "family": "stress",
+   "scn": "fuse|b|5.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02461": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02466": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02471": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02482": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02485": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02498": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02502": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02512": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02519": {
+   "family": "stress",
+   "scn": "fuse|b|6.0,0.0",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02524": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02532": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02534": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 700
+  },
+  "run_02546": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02553": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02557": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 701
+  },
+  "run_02566": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02570": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02576": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "a",
+   "seed": 702
+  },
+  "run_02586": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02592": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02597": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 700
+  },
+  "run_02604": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02611": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02618": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 701
+  },
+  "run_02630": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "event",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02636": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "twin",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02644": {
+   "family": "stress",
+   "scn": "replace3",
+   "arm": "sham",
+   "state": "b",
+   "seed": 702
+  },
+  "run_02650": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 10,
+   "disc_xy0": [
+    2.1935469858290633,
+    -3.373506200238526
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02653": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    1.6404924287295661,
+    2.013746110746066
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02662": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    -0.289836657515522,
+    0.1919898247461569
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02670": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 10,
+   "disc_xy0": [
+    0.9231432267429339,
+    1.8836094587186014
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02676": {
+   "state": "a",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    1.6700980706704418,
+    -1.794181239794977
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02682": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.7749999999999995,
+   "place": 10,
+   "disc_xy0": [
+    -0.3074561769115133,
+    0.786864647414955
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02691": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    -0.07565573210467585,
+    0.3168462372503203
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02695": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    3.1239080774310835,
+    -0.8811207709463152
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02706": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 11.549999999999999,
+   "place": 10,
+   "disc_xy0": [
+    0.7190802917362457,
+    -1.8460875247114514
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02711": {
+   "state": "a",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 11.549999999999999,
+   "place": 23,
+   "disc_xy0": [
+    2.1419844825012753,
+    -0.2763770428940071
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02720": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 1.1156249999999999,
+   "place": 12,
+   "disc_xy0": [
+    3.661577909821559,
+    -0.23466206849574256
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02725": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    -1.041434421325949,
+    -1.2043620955819072
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02736": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    1.3384857634210516,
+    3.5217686890198734
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02741": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 2.2312499999999997,
+   "place": 12,
+   "disc_xy0": [
+    -0.2258900547072491,
+    -1.4830263646171453
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02744": {
+   "state": "a",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 2.2312499999999997,
+   "place": 23,
+   "disc_xy0": [
+    -1.1078723044098306,
+    -6.316118342897295
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02756": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 8.924999999999999,
+   "place": 12,
+   "disc_xy0": [
+    1.0309813599181932,
+    -0.06134892332958419
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02763": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    1.0256113928445363,
+    -0.9242267447347489
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02771": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    3.1674480746954385,
+    0.7818023666146479
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02776": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 17.849999999999998,
+   "place": 12,
+   "disc_xy0": [
+    0.44442179393438463,
+    2.171951498702788
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02783": {
+   "state": "a",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 17.849999999999998,
+   "place": 23,
+   "disc_xy0": [
+    -3.6998528585767687,
+    -0.7815402444901586
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02790": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 3.5875,
+   "place": 21,
+   "disc_xy0": [
+    1.3142759205131407,
+    4.727584195406601
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02797": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    1.1507889963586324,
+    -2.6356004765967196
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02805": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    2.016719418321023,
+    -0.2842873816124958
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02809": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 21,
+   "disc_xy0": [
+    4.9627793449513184,
+    -0.036854762123402995
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02815": {
+   "state": "a",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 7.175,
+   "place": 0,
+   "disc_xy0": [
+    0.6285277503710116,
+    0.22229861183415744
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02825": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 37.8,
+   "place": 21,
+   "disc_xy0": [
+    -2.361140066794143,
+    5.313448118078641
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02829": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    -5.399497648442559,
+    0.2072978443005694
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02836": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    0.7234799091586082,
+    1.6009614664235983
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02844": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 75.6,
+   "place": 21,
+   "disc_xy0": [
+    -1.7379182306462972,
+    -4.180074106914972
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02855": {
+   "state": "a",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 75.6,
+   "place": 0,
+   "disc_xy0": [
+    -2.3996816740857914,
+    0.3752043265111885
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02860": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 9.1,
+   "place": 22,
+   "disc_xy0": [
+    -0.5637153627470937,
+    -1.7958553424973278
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02866": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    -1.9445300189417092,
+    -2.5681070323645496
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02873": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    6.297052831469099,
+    1.665337180680169
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02883": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 18.2,
+   "place": 22,
+   "disc_xy0": [
+    -1.6086782266560635,
+    3.0323659214507273
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02885": {
+   "state": "a",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 18.2,
+   "place": 0,
+   "disc_xy0": [
+    3.6126789474992864,
+    -3.6267235572630074
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02897": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 98.0,
+   "place": 22,
+   "disc_xy0": [
+    2.3098366889283892,
+    2.9172773660620788
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02903": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -0.10537692191475667,
+    5.665088372765064
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02909": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    1.7682645048696606,
+    6.493748748391649
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02915": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 196.0,
+   "place": 22,
+   "disc_xy0": [
+    -6.1155548181849015,
+    0.41326082228539907
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02919": {
+   "state": "a",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 196.0,
+   "place": 0,
+   "disc_xy0": [
+    -2.083356188225471,
+    -6.071675975944247
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02932": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 5,
+   "disc_xy0": [
+    0.4721596063744591,
+    0.9992789484295723
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02934": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    -0.45775510833621536,
+    1.8618719325195032
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02944": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    2.3764489018489425,
+    -1.6827135160788194
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02950": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 5,
+   "disc_xy0": [
+    1.1638697975712087,
+    -2.6730264492293467
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02958": {
+   "state": "a",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    -1.4115445683928591,
+    2.278241927253618
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02967": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 5,
+   "disc_xy0": [
+    1.4654205226074233,
+    2.046737361249166
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02968": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    2.126320968159664,
+    -3.9742967647741514
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02981": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    0.9804164512196012,
+    -1.7760900867771414
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02988": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 14.35,
+   "place": 5,
+   "disc_xy0": [
+    -0.631661096389948,
+    -2.2667598723915408
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_02995": {
+   "state": "a",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 14.35,
+   "place": 23,
+   "disc_xy0": [
+    2.2059706971949278,
+    5.479072434092392
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03001": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.678125,
+   "place": 8,
+   "disc_xy0": [
+    -1.1344807590279165,
+    2.2337054437358033
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03007": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    -0.3554871360800539,
+    -0.8222993174653834
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03015": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    -0.39987068965545325,
+    -1.7151735438562126
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03020": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.35625,
+   "place": 8,
+   "disc_xy0": [
+    -1.5840609124067342,
+    -9.804495055559803e-05
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03027": {
+   "state": "a",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.35625,
+   "place": 23,
+   "disc_xy0": [
+    -2.6716115524743547,
+    -0.2764698372425618
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03031": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.25,
+   "place": 8,
+   "disc_xy0": [
+    -2.2346533547313783,
+    -0.9714351447871049
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03040": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    -0.3011411993119948,
+    -0.16981558189812984
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03050": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    -0.7677856121921587,
+    -1.492472394938705
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03058": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 10.5,
+   "place": 8,
+   "disc_xy0": [
+    1.8426975275656152,
+    -2.574833307821959
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03063": {
+   "state": "a",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 10.5,
+   "place": 23,
+   "disc_xy0": [
+    0.07539315116223855,
+    -4.364680411102119
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MB",
+   "family": "switch"
+  },
+  "run_03066": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 10,
+   "disc_xy0": [
+    0.3200226352465956,
+    -2.5187271485112346
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03077": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    1.465150645620815,
+    1.0704869724722688
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03085": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 10,
+   "disc_xy0": [
+    2.827781083632586,
+    -1.2066467116625823
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03089": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 10,
+   "disc_xy0": [
+    -1.0033075830710907,
+    0.5588325679294921
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03100": {
+   "state": "b",
+   "centre": 10,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    -4.444523826504108,
+    1.581188351653402
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03106": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.7749999999999995,
+   "place": 10,
+   "disc_xy0": [
+    -2.734179881991473,
+    -1.1701512366914055
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03114": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    2.642369055928702,
+    -0.44858961619763454
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03120": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 8.25,
+   "place": 10,
+   "disc_xy0": [
+    -2.5666158704180737,
+    1.1188484934237786
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03124": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 11.549999999999999,
+   "place": 10,
+   "disc_xy0": [
+    3.1961661207325767,
+    2.0419582789728596
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03135": {
+   "state": "b",
+   "centre": 10,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 11.549999999999999,
+   "place": 23,
+   "disc_xy0": [
+    -2.547290852963402,
+    2.0477120107005105
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03136": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 1.1156249999999999,
+   "place": 12,
+   "disc_xy0": [
+    -2.0468362663777047,
+    2.628142152044975
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03145": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    -1.973977587975879,
+    2.7332557241274302
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03153": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.59375,
+   "place": 12,
+   "disc_xy0": [
+    2.229835245546867,
+    0.8594375023166528
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03162": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 2.2312499999999997,
+   "place": 12,
+   "disc_xy0": [
+    3.4897046312012696,
+    -2.252015245581531
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03167": {
+   "state": "b",
+   "centre": 12,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 2.2312499999999997,
+   "place": 23,
+   "disc_xy0": [
+    0.4595999209136479,
+    -4.207659491841839
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03172": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 8.924999999999999,
+   "place": 12,
+   "disc_xy0": [
+    -0.5588839358950531,
+    -2.837029402670809
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03184": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    -4.428127994297884,
+    0.46295115923564656
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03188": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 12.75,
+   "place": 12,
+   "disc_xy0": [
+    -3.99128580393178,
+    2.3888897697622817
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03192": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 17.849999999999998,
+   "place": 12,
+   "disc_xy0": [
+    -2.379055077641928,
+    4.571191783078102
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03199": {
+   "state": "b",
+   "centre": 12,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 17.849999999999998,
+   "place": 23,
+   "disc_xy0": [
+    -2.6310468583312994,
+    0.28693397747088945
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03208": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 3.5875,
+   "place": 21,
+   "disc_xy0": [
+    -0.38213192971796195,
+    3.824514369994289
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03215": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    -0.2949961847167435,
+    2.0412300326741146
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03221": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 5.125,
+   "place": 21,
+   "disc_xy0": [
+    -1.4096408746651434,
+    3.4254842147236775
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03229": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 21,
+   "disc_xy0": [
+    -0.6336923223549694,
+    -6.809281950163127
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03235": {
+   "state": "b",
+   "centre": 21,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 7.175,
+   "place": 0,
+   "disc_xy0": [
+    1.9678389332960486,
+    0.015216531028236845
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03245": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 37.8,
+   "place": 21,
+   "disc_xy0": [
+    1.0998037342903013,
+    1.8789915845197012
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03248": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    0.3932946058759431,
+    0.17523227174429135
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03260": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 54.0,
+   "place": 21,
+   "disc_xy0": [
+    2.8417719721626264,
+    -4.668031796839561
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03264": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 75.6,
+   "place": 21,
+   "disc_xy0": [
+    0.8311049423905335,
+    -1.8583992547462
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03273": {
+   "state": "b",
+   "centre": 21,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 75.6,
+   "place": 0,
+   "disc_xy0": [
+    -2.8041501558818003,
+    0.32269444753375964
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03278": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 9.1,
+   "place": 22,
+   "disc_xy0": [
+    -5.63769047098392,
+    -1.47165174854113
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03288": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    0.9993834281107586,
+    -6.058045506422451
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03296": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 13.0,
+   "place": 22,
+   "disc_xy0": [
+    1.7073233742612055,
+    -3.1363923896257937
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03302": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 18.2,
+   "place": 22,
+   "disc_xy0": [
+    3.1619617249474876,
+    2.287979683000692
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03310": {
+   "state": "b",
+   "centre": 22,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 18.2,
+   "place": 0,
+   "disc_xy0": [
+    3.4666154080760267,
+    -2.1584884254492067
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03312": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 98.0,
+   "place": 22,
+   "disc_xy0": [
+    2.4659680571014264,
+    -4.635545856207621
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03323": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -1.3804284672195952,
+    3.708006662671564
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03329": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 140.0,
+   "place": 22,
+   "disc_xy0": [
+    -6.576467059247179,
+    -3.5203115355428385
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03337": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 196.0,
+   "place": 22,
+   "disc_xy0": [
+    -2.2387704800277097,
+    -1.4634317245838016
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03339": {
+   "state": "b",
+   "centre": 22,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 196.0,
+   "place": 0,
+   "disc_xy0": [
+    5.597594292196998,
+    0.0512489184632583
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03352": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.7875,
+   "place": 5,
+   "disc_xy0": [
+    -3.66414061370251,
+    2.899344799360671
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03355": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    1.8741520618445555,
+    -0.4702798073313539
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03366": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 1.125,
+   "place": 5,
+   "disc_xy0": [
+    -2.4491089141915885,
+    -0.20516459180286217
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03368": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.575,
+   "place": 5,
+   "disc_xy0": [
+    3.2987910203782924,
+    2.356882631364029
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03376": {
+   "state": "b",
+   "centre": 5,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.575,
+   "place": 23,
+   "disc_xy0": [
+    3.3793172808613914,
+    -1.3227209179557617
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03387": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 7.175,
+   "place": 5,
+   "disc_xy0": [
+    2.4658292043227164,
+    -0.6430265985001271
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03392": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    0.0803179087362933,
+    0.291596591555396
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03400": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 10.25,
+   "place": 5,
+   "disc_xy0": [
+    -1.4189325052018384,
+    1.2822727845573219
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03406": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 14.35,
+   "place": 5,
+   "disc_xy0": [
+    -2.401108113849701,
+    -2.848446080785311
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03409": {
+   "state": "b",
+   "centre": 5,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 14.35,
+   "place": 23,
+   "disc_xy0": [
+    -0.37911330586764813,
+    -5.5347278284106185
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03421": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 0.678125,
+   "place": 8,
+   "disc_xy0": [
+    -1.2615055965923883,
+    -2.2368830176253556
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03425": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    -2.4407744190840908,
+    -1.4714796602043747
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03433": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 0.96875,
+   "place": 8,
+   "disc_xy0": [
+    3.508393602998887,
+    -2.0520961112978777
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03442": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 1.35625,
+   "place": 8,
+   "disc_xy0": [
+    2.178791651233366,
+    55.43124552974144
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03444": {
+   "state": "b",
+   "centre": 8,
+   "dur": 26.666666666666668,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 1.35625,
+   "place": 23,
+   "disc_xy0": [
+    4.42402336775885,
+    3.6554554957792806
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 36.66666666666667,
+   "ramp": 5.0,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03455": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 0.7,
+   "kind": "on",
+   "amp": 5.25,
+   "place": 8,
+   "disc_xy0": [
+    -0.26028323076792176,
+    -0.06942281814947737
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03461": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "on",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    -3.2983952133755547,
+    -1.4150023598824135
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03469": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.0,
+   "kind": "sham",
+   "amp": 7.5,
+   "place": 8,
+   "disc_xy0": [
+    -1.722433132580651,
+    -2.183807815190457
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03472": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "on",
+   "amp": 10.5,
+   "place": 8,
+   "disc_xy0": [
+    -3.372221934375437,
+    -1.6979229957331368
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03480": {
+   "state": "b",
+   "centre": 8,
+   "dur": 6.666666666666667,
+   "level": 1.4,
+   "kind": "wrong",
+   "amp": 10.5,
+   "place": 23,
+   "disc_xy0": [
+    4.39121625931132,
+    4.22626833743756
+   ],
+   "radius": 1.5,
+   "t_on": 10.0,
+   "t_off": 16.666666666666668,
+   "ramp": 1.6666666666666667,
+   "channel": "MA",
+   "family": "switch"
+  },
+  "run_03487": {
+   "state": "a",
+   "kind": "bath",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.0430724716573527,
+    2.240589439509341
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "bath",
+     "ligand_index": 0,
+     "amp": 0.3,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03493": {
+   "state": "a",
+   "kind": "mbath_high",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.282714826167406,
+    -0.9988871037462872
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 1,
+     "amp": 1.0,
+     "t_on": 10,
+     "t_off": 70,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03500": {
+   "state": "a",
+   "kind": "mbath_low",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.6406913322504786,
+    3.3720621046277994
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 1,
+     "amp": 0.4,
+     "t_on": 10,
+     "t_off": 160.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03512": {
+   "state": "a",
+   "kind": "mig",
+   "channel": "MIG",
+   "centre": 12,
+   "disc_xy0": [
+    4.111112585632548,
+    -0.7173204917537545
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "MIG",
+     "amp": 0.5,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03518": {
+   "state": "a",
+   "kind": "mpipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -0.4804656251851798,
+    4.905068486348534
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mpipette",
+     "pos": [
+      -0.05561718503453494,
+      3.2997149262560654
+     ],
+     "ligand_index": 1,
+     "amp": 6.0,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03523": {
+   "state": "a",
+   "kind": "pipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.186061339916734,
+    0.004190107170728985
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "pipette",
+     "pos": [
+      -0.6468767517015023,
+      0.6275415757666604
+     ],
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03532": {
+   "state": "a",
+   "kind": "rg",
+   "channel": "RG",
+   "centre": 12,
+   "disc_xy0": [
+    -3.6711966090616013,
+    2.2238732837938127
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "RG",
+     "amp": 0.3,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03537": {
+   "state": "a",
+   "kind": "sec",
+   "channel": "SEC",
+   "centre": 12,
+   "disc_xy0": [
+    0.4119580253588777,
+    -0.8556754693038515
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "SEC",
+     "amp": 0.8,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03548": {
+   "state": "b",
+   "kind": "bath",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.0430724716573527,
+    2.240589439509341
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "bath",
+     "ligand_index": 0,
+     "amp": 0.3,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03549": {
+   "state": "b",
+   "kind": "mbath_high",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.282714826167406,
+    -0.9988871037462872
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 10,
+     "t_off": 70,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03561": {
+   "state": "b",
+   "kind": "mbath_low",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    3.6406913322504786,
+    3.3720621046277994
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mbath",
+     "ligand_index": 0,
+     "amp": 0.4,
+     "t_on": 10,
+     "t_off": 160.0,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03565": {
+   "state": "b",
+   "kind": "mig",
+   "channel": "MIG",
+   "centre": 12,
+   "disc_xy0": [
+    4.111112585632548,
+    -0.7173204917537545
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "MIG",
+     "amp": 0.5,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03570": {
+   "state": "b",
+   "kind": "mpipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -0.4804656251851798,
+    4.905068486348534
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "mpipette",
+     "pos": [
+      -0.05561718503453494,
+      3.2997149262560654
+     ],
+     "ligand_index": 0,
+     "amp": 6.0,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03580": {
+   "state": "b",
+   "kind": "pipette",
+   "channel": null,
+   "centre": 12,
+   "disc_xy0": [
+    -2.186061339916734,
+    0.004190107170728985
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "pipette",
+     "pos": [
+      -0.6468767517015023,
+      0.6275415757666604
+     ],
+     "ligand_index": 0,
+     "amp": 1.0,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03586": {
+   "state": "b",
+   "kind": "rg",
+   "channel": "RG",
+   "centre": 12,
+   "disc_xy0": [
+    -3.6711966090616013,
+    2.2238732837938127
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "RG",
+     "amp": 0.3,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  },
+  "run_03595": {
+   "state": "b",
+   "kind": "sec",
+   "channel": "SEC",
+   "centre": 12,
+   "disc_xy0": [
+    0.4119580253588777,
+    -0.8556754693038515
+   ],
+   "radius": 1.5,
+   "acts": [
+    {
+     "type": "light",
+     "channel": "SEC",
+     "amp": 0.8,
+     "t_on": 10,
+     "t_off": 60,
+     "ramp": 5
+    }
+   ],
+   "family": "decoy"
+  }
+ }
+}

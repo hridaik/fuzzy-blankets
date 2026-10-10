@@ -1,0 +1,23 @@
+{
+ "L_reg": {
+  "S_I_min": 0.65,
+  "J_min": 0.9047619047619048,
+  "n_observations_S_I": 305,
+  "n_observations_J": 300,
+  "percentile": 5.0
+ },
+ "F": {
+  "S_I_min": 0.05,
+  "J_min": 0.7823671497584541,
+  "n_observations_S_I": 305,
+  "n_observations_J": 300,
+  "percentile": 5.0
+ },
+ "informative_seeds": [
+  2,
+  3,
+  4,
+  8,
+  9
+ ]
+}

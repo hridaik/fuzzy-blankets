@@ -1,0 +1,162 @@
+{
+ "O1|light/device": {
+  "frames": 8840,
+  "mean_abs_err": 0.0020363650075414783,
+  "p95_abs_err": 0.0,
+  "corr": 0.772620928576982,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O1|natural": {
+  "frames": 2080,
+  "mean_abs_err": 0.0,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O1|ops_sham_treated": {
+  "frames": 2880,
+  "mean_abs_err": 0.0,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O1|ops_treated": {
+  "frames": 2880,
+  "mean_abs_err": 0.001549384496676163,
+  "p95_abs_err": 4.615384615380691e-05,
+  "corr": 0.9972594915501717,
+  "frac_true_below_0p8": 0.6013888888888889,
+  "frac_analyst_below_0p8": 0.6013888888888889
+ },
+ "O1|ops_untreated_control": {
+  "frames": 2880,
+  "mean_abs_err": 0.0,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O2|light/device": {
+  "frames": 8840,
+  "mean_abs_err": 0.0020363650075414783,
+  "p95_abs_err": 0.0,
+  "corr": 0.772620928576982,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O2|natural": {
+  "frames": 2080,
+  "mean_abs_err": 7.692307692307689e-05,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O2|ops_sham_treated": {
+  "frames": 2880,
+  "mean_abs_err": 0.0,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O2|ops_treated": {
+  "frames": 2880,
+  "mean_abs_err": 0.2500124400522318,
+  "p95_abs_err": 0.67,
+  "corr": 0.4335241432088511,
+  "frac_true_below_0p8": 0.6013888888888889,
+  "frac_analyst_below_0p8": 0.4152777777777778
+ },
+ "O2|ops_untreated_control": {
+  "frames": 2880,
+  "mean_abs_err": 0.0,
+  "p95_abs_err": 0.0,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.0
+ },
+ "O3a|light/device": {
+  "frames": 8772,
+  "mean_abs_err": 0.05790215838273294,
+  "p95_abs_err": 0.08834499999999994,
+  "corr": 0.4709776420857473,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.020405836753305973
+ },
+ "O3a|natural": {
+  "frames": 2080,
+  "mean_abs_err": 0.07646423076923077,
+  "p95_abs_err": 0.23551000000000002,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.05432692307692308
+ },
+ "O3a|ops_sham_treated": {
+  "frames": 1440,
+  "mean_abs_err": 0.18107090277777782,
+  "p95_abs_err": 0.6463249999999999,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.25833333333333336
+ },
+ "O3a|ops_treated": {
+  "frames": 1440,
+  "mean_abs_err": 0.20567963319088317,
+  "p95_abs_err": 0.5825549999999998,
+  "corr": 0.35877452384345376,
+  "frac_true_below_0p8": 0.6013888888888889,
+  "frac_analyst_below_0p8": 0.49930555555555556
+ },
+ "O3a|ops_untreated_control": {
+  "frames": 1440,
+  "mean_abs_err": 0.17980458333333335,
+  "p95_abs_err": 0.6444449999999999,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.25763888888888886
+ },
+ "O3b|light/device": {
+  "frames": 8772,
+  "mean_abs_err": 0.05683759309925521,
+  "p95_abs_err": 0.08799999999999997,
+  "corr": 0.4412571491409306,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.01880984952120383
+ },
+ "O3b|natural": {
+  "frames": 2080,
+  "mean_abs_err": 0.07639418269230769,
+  "p95_abs_err": 0.22770500000000002,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.052884615384615384
+ },
+ "O3b|ops_sham_treated": {
+  "frames": 1440,
+  "mean_abs_err": 0.18025534722222222,
+  "p95_abs_err": 0.643415,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.2590277777777778
+ },
+ "O3b|ops_treated": {
+  "frames": 1440,
+  "mean_abs_err": 0.21294473053181384,
+  "p95_abs_err": 0.5882349999999998,
+  "corr": 0.35147596236965994,
+  "frac_true_below_0p8": 0.6013888888888889,
+  "frac_analyst_below_0p8": 0.4965277777777778
+ },
+ "O3b|ops_untreated_control": {
+  "frames": 1440,
+  "mean_abs_err": 0.17802854166666665,
+  "p95_abs_err": 0.6444249999999999,
+  "corr": null,
+  "frac_true_below_0p8": 0.0,
+  "frac_analyst_below_0p8": 0.2534722222222222
+ }
+}
