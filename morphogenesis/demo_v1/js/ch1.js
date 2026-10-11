@@ -24,7 +24,7 @@ function drawBodyField(p,nodes,kind,B,st,k){
     p.field((x,y)=>{const u=Math.min(1,fieldVals(nodes,v,x,y)/ (mx*1.0));const g=Math.round(250-200*u);return [g,g,g,0.15+0.8*u];});}
 }
 function chipsTypes(note){return LEG.types.concat(note?[]:[]);}
-const TYPELEG=[{color:C.head,label:'head'},{color:C.trunk,label:'trunk'},{color:C.limb,label:'limb'},{color:C.tail,label:'tail'}];
+const TYPELEG=LEG.types;
 
 /* ---------------- 1.1 ---------------- */
 Demo.register({id:'1.1',act:1,title:COPY['1.1'].title,

@@ -3,10 +3,10 @@
 function lightWindow(t,ton,toff,ramp){const up=Math.max(0,Math.min(1,(t-ton)/ramp)),dn=Math.max(0,Math.min(1,(toff-t)/ramp)),x=Math.min(up,dn);return 0.5*(1-Math.cos(Math.PI*x));}
 function drawLight(p,xy,r,ph){if(ph<=0.001)return;p.disc(xy[0],xy[1],r,{alpha:0.35*ph,glow:ph});}
 /* outlines drawn from a grouping (the blind analysis' own organism labels): points + labels, or a label mask */
-function groupOutlinePts(p,xy,lab,opt){opt=opt||{};const g={};for(let i=0;i<lab.length;i++){if(lab[i]<0)continue;(g[lab[i]]=g[lab[i]]||[]).push([xy[2*i],xy[2*i+1]]);}
-  Object.keys(g).forEach(k=>{const sub=g[k];if(sub.length<3)return;pointOutline(p,sub,C.ink,opt.w||3.2,1.5);const top=Math.max(...sub.map(q=>q[1])),cx=sub.reduce((a,q)=>a+q[0],0)/sub.length;
+function groupOutlinePts(p,xy,lab,opt){opt=opt||{};const oc=opt.col||C.ink;const g={};for(let i=0;i<lab.length;i++){if(lab[i]<0)continue;(g[lab[i]]=g[lab[i]]||[]).push([xy[2*i],xy[2*i+1]]);}
+  Object.keys(g).forEach(k=>{const sub=g[k];if(sub.length<3)return;pointOutline(p,sub,oc,opt.w||3.2,1.5);const top=Math.max(...sub.map(q=>q[1])),cx=sub.reduce((a,q)=>a+q[0],0)/sub.length;
     if(!opt.nolabel)p.label('organism '+(+k+1),cx,top+1.15,{align:'center',size:13,bold:true,world:true,bg:true});});}
-function groupOutlineMask(p,maskB64cache,N,half,opt){opt=opt||{};const m=maskB64cache;maskOutline(p,m,N,half,C.ink,opt.w||3);
+function groupOutlineMask(p,maskB64cache,N,half,opt){opt=opt||{};const m=maskB64cache;maskOutline(p,m,N,half,opt.col||C.ink,opt.w||3);
   const cs={};const h=2*half/N;for(let i=0;i<N;i++)for(let j=0;j<N;j++){const v=m[i*N+j];if(!v)continue;const o=cs[v]||(cs[v]={x:0,y:0,n:0,top:-1e9});o.x+=-half+(j+.5)*h;o.y+=half-(i+.5)*h;o.n++;o.top=Math.max(o.top,half-i*h);}
   Object.keys(cs).forEach(v=>{const o=cs[v];if(!opt.nolabel)p.label('organism '+v,o.x/o.n,o.top+1.15,{align:'center',size:13,bold:true,world:true,bg:true});});}
 function drawnTag(p){const c=p.ctx;c.save();c.font='italic 12.5px '+FONT;c.fillStyle='rgba(255,255,255,.88)';const t=COPY['3.1'].drawn,w=c.measureText(t).width;c.fillRect(6,6,w+10,19);c.fillStyle=C.ink;c.textAlign='left';c.textBaseline='middle';c.fillText(t,11,16);c.restore();}
@@ -70,11 +70,11 @@ Demo.register({id:'2.2',act:2,title:COPY['2.2'].title,data:['data/c22b.js'],dura
     const D=c.state.D,cl=D[k],i=TOOLS22.indexOf(k);c.state.tool=k;document.querySelectorAll('#sel22 button').forEach((b,j)=>b.classList.toggle('on',j===i));
     const def=Demo.byId['2.2'];def.duration=cl.ts[cl.ts.length-1]-cl.ts[0];def.rate=def.duration/13;
     const t0=cl.ts[0];let tp,anchor;
-    if(k==='cut'){tp=cl.onset+1-t0;anchor=()=>({panel:c.pa,x:(cl.line[0][0]+cl.line[1][0])/2-c.pa.cx,y:(cl.line[0][1]+cl.line[1][1])/2-c.pa.cy});}
-    else if(k==='pull'){tp=cl.onset+1-t0;anchor=()=>{const f=cl.frames[tp],a=cl.XY[tp],j=f.ids.indexOf(cl.cell);return {panel:c.pa,x:a[2*j]-c.pa.cx,y:a[2*j+1]-c.pa.cy};};}
-    else if(k==='replace'){tp=cl.onset+1-t0;anchor=()=>{const f=cl.frames[tp],a=cl.XY[tp],j=f.ids.indexOf(cl.new);return {panel:c.pa,x:a[2*j]-c.pa.cx,y:a[2*j+1]-c.pa.cy};};}
+    if(k==='cut'){tp=cl.onset+1-t0;anchor=()=>({panel:c.pa,x:(cl.line[0][0]+cl.line[1][0])/2,y:(cl.line[0][1]+cl.line[1][1])/2});}
+    else if(k==='pull'){tp=cl.onset+1-t0;anchor=()=>{const f=cl.frames[tp],a=cl.XY[tp],j=f.ids.indexOf(cl.cell);return {panel:c.pa,x:a[2*j],y:a[2*j+1]};};}
+    else if(k==='replace'){tp=cl.onset+1-t0;anchor=()=>{const f=cl.frames[tp],a=cl.XY[tp],j=f.ids.indexOf(cl.new);return {panel:c.pa,x:a[2*j],y:a[2*j+1]};};}
     else if(k==='merge'){tp=3;anchor=()=>({panel:c.pa,x:0,y:0});}
-    else if(k==='light'){tp=cl.t_on+6-t0;anchor=()=>({panel:c.pa,x:cl.disc[0]-c.pa.cx,y:cl.disc[1]-c.pa.cy});}
+    else if(k==='light'){tp=cl.t_on+6-t0;anchor=()=>({panel:c.pa,x:cl.disc[0],y:cl.disc[1]});}
     else{tp=cl.t_on+8-t0;anchor=()=>({panel:c.pa,x:c.pa.fov*0.55,y:c.pa.fov*0.75});}
     def.pauses=[{t:tp,text:COPY['2.2'].texts[i],side:'right',anchor:anchor}];
     c.pa.cx=cl.view.cx;c.pa.cy=cl.view.cy;c.pa.fov=cl.view.fov;c.pa.scale=Math.min(c.pa.w,c.pa.h)/(2*c.pa.fov);
@@ -126,10 +126,10 @@ Demo.register({id:'2.3',act:2,title:COPY['2.3'].title,truthOffered:true,
     const crop=(p,cv,half,px)=>{p.clear('#000');const g=p.ctx;const s0=(half-p.fov)/(2*half)*px,sw=2*p.fov/(2*half)*px;g.save();g.imageSmoothingEnabled=true;g.drawImage(cv,s0,s0,sw,sw,0,0,p.w,p.h);g.restore();p.scaleBar();};
     if(!c.state.ia[k])c.state.ia[k]=img64(D.O3a[k],64,64,3);if(!c.state.ic[k])c.state.ic[k]=img64(D.O3c[k],128,128,1);
     crop(c.p3,c.state.ia[k],12,64);drawLight(c.p3,L.xy,L.r,ph);crop(c.p4,c.state.ic[k],10,128);drawLight(c.p4,L.xy,L.r,ph);
-    if(ol){groupOutlinePts(c.p1,c.state.G1[k],G.O1.lab[k]);groupOutlinePts(c.p2,c.state.G2[k],G.O2.lab[k]);groupOutlineMask(c.p3,c.state.Ma[k],64,12);
+    if(ol){groupOutlinePts(c.p1,c.state.G1[k],G.O1.lab[k]);groupOutlinePts(c.p2,c.state.G2[k],G.O2.lab[k]);groupOutlineMask(c.p3,c.state.Ma[k],64,12,{col:'#fff'});
       // O3c: spots linked by the same rule
       const sp=c.state.Gc[k],lb=G.O3c.lab[k];for(let i=0;i<lb.length;i++){const q=c.p4.w2p(sp[2*i],sp[2*i+1]);c.p4.ctx.save();c.p4.ctx.strokeStyle='#fff';c.p4.ctx.lineWidth=1.6;c.p4.ctx.beginPath();c.p4.ctx.arc(q[0],q[1],5,0,6.3);c.p4.ctx.stroke();c.p4.ctx.restore();}
-      groupOutlinePts(c.p4,sp,lb,{w:3});[c.p1,c.p2,c.p3,c.p4].forEach(drawnTag);}
+      groupOutlinePts(c.p4,sp,lb,{w:3,col:'#fff'});[c.p1,c.p2,c.p3,c.p4].forEach(drawnTag);}
     const p=c.p5;p.clear(truth?'#fff':'#ECECE6');p.scaleBar();const X=c.state.H.X[k],R=c.state.H.rho[k],E=c.state.H.e[k];
     if(truth){for(let i=0;i<24;i++)p.node({x:X[2*i],y:X[2*i+1],fill:rhoColor(R[i]),ring:E[i]>0.5,r:0.4,label:String(D.hid.place[k][i]),lc:C.ink,stroke:TYPEC[D.hid.tmplType[D.hid.place[k][i]]],lw:3});drawLight(p,L.xy,L.r,ph);
       p.setSub('memory (colour), believed position (number, outline = its cell type), yellow marker (ring)');}

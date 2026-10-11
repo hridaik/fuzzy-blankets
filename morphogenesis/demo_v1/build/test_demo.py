@@ -4,9 +4,10 @@ import sys, os, asyncio, json, re
 from playwright.async_api import async_playwright
 DEMO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')); SHOT = DEMO + '/screenshots'
 async def main(W=1600, H=1250):
-    os.makedirs(SHOT, exist_ok=True); report = dict(errors=[], chapters={}, keys={}, export={}, overlap=[])
+    os.makedirs(SHOT, exist_ok=True); report = dict(errors=[], chapters={}, keys={}, export={}, overlap=[], forbidden=[], copy_diff=[])
+    FORB = re.compile(r"V_body|S\+|S−|\bO[123][abc]?\b|\bL[1-5]\b|\bc[0-6]\b|\bT[45]\b|\bv[23]\b|seed|run_|hash|\bstage\b|\bρ\b|\btu\b", re.I)
     async with async_playwright() as p:
-        b = await p.chromium.launch(); ctx = await b.new_context(viewport={'width': W, 'height': H}, accept_downloads=True); pg = await ctx.new_page()
+        b = await p.chromium.launch(); ctx = await b.new_context(viewport={'width': W, 'height': H}, accept_downloads=True); await ctx.add_init_script("window.__ct=new Set();const _f=CanvasRenderingContext2D.prototype.fillText;CanvasRenderingContext2D.prototype.fillText=function(t){window.__ct.add(String(t));return _f.apply(this,arguments);}"); pg = await ctx.new_page()
         pg.on('console', lambda m: report['errors'].append(('console', m.type, m.text)) if m.type in ('error', 'warning') else None); pg.on('pageerror', lambda e: report['errors'].append(('pageerror', str(e))))
         t0 = await pg.evaluate("0"); await pg.goto('file://' + DEMO + '/index.html'); await pg.wait_for_timeout(700)
         ids = await pg.evaluate("()=>Demo.chapters.map(c=>c.id)")
@@ -15,6 +16,12 @@ async def main(W=1600, H=1250):
             info = await pg.evaluate("""()=>{const d=Demo.cur;const cap=document.getElementById('caption');const fs=parseFloat(getComputedStyle(cap).fontSize);const txt=cap.innerText;const sents=txt.split(/(?<=[.!?])\\s+(?=[A-Z“])/).length;
               return {id:d.id,fs:fs,sentences:sents,legend:document.querySelectorAll('#legend .chip').length,pauses:(d.pauses||[]).length,views:(d.views||[]).length,variants:(d.variants||[]).length,truth:!!d.truthOffered,sources:(d.sources||[]).length,take:document.getElementById('takeaway').innerText.length}}""")
             report['chapters'][cid] = info; nvar = info['variants']
+            async def audit(tag):
+                vis = await pg.evaluate("()=>{const sk=['sources','notes','toast'];const t=[];document.querySelectorAll('#side a, #title, #legend, #ctrls, #vis, #below, #bubble, #playbar').forEach(e=>{if(e.closest('#sources')||e.closest('#notes')||e.closest('details'))return;t.push(e.innerText)});return t.join('\\n')+'\\n'+Array.from(window.__ct).join('\\n')}")
+                for m in FORB.finditer(vis): report['forbidden'].append((cid, tag, m.group(0), vis[max(0,m.start()-30):m.end()+30].replace('\n',' ')))
+                dif = await pg.evaluate("()=>{const d=Demo.cur,K=COPY[d.id]||{};const out=[];const n=s=>(s||'').replace(/\\s+/g,' ').trim();if(K.caption!==undefined&&d.id!=='2.2'&&n(document.getElementById('caption').innerText)!==n(K.caption))out.push(['caption']);if(K.takeaway!==undefined&&n(document.getElementById('takeaway').innerText)!==n(K.takeaway))out.push(['takeaway']);return out}")
+                for x in dif: report['copy_diff'].append((cid, tag, x))
+            await audit('')
             async def shots(tag):
                 n = await pg.evaluate("()=>(Demo.cur.pauses||[]).length")
                 for i in range(n):
@@ -31,6 +38,11 @@ async def main(W=1600, H=1250):
                 for i in range(info['views']):
                     await pg.evaluate("(i)=>Demo.showView(i)", i); await pg.wait_for_timeout(250); await pg.screenshot(path=f"{SHOT}/{cid.replace('.','_')}_v{i+1}.png")
             else: await pg.screenshot(path=f"{SHOT}/{cid.replace('.','_')}.png")
+        # bubble copy check
+        for cid in ids:
+            await pg.evaluate("(id)=>{location.hash='#'+id}", cid); await pg.wait_for_timeout(700)
+            r = await pg.evaluate("""()=>{const d=Demo.cur,K=COPY[d.id]||{};const allowed=new Set([].concat(Array.isArray(K.callouts)?K.callouts:Object.values(K.callouts||{}),K.texts||[],K.failure?[K.failure]:[]));const bad=[];(d.pauses||[]).forEach(p=>{if(!allowed.has(p.text))bad.push(p.text)});return bad}""")
+            for x in r: report['copy_diff'].append((cid, 'pause', x))
         # keyboard & modes
         await pg.evaluate("()=>{location.hash='#1.1'}"); await pg.wait_for_timeout(600)
         await pg.keyboard.press('ArrowRight'); await pg.wait_for_timeout(600); report['keys']['arrow_right_hash'] = await pg.evaluate("()=>location.hash")
@@ -39,7 +51,7 @@ async def main(W=1600, H=1250):
         await pg.keyboard.press('f'); await pg.wait_for_timeout(700); report['keys']['presenter_on'] = await pg.evaluate("()=>document.body.classList.contains('presenter')&&getComputedStyle(document.getElementById('side')).display==='none'")
         await pg.screenshot(path=f"{SHOT}/presenter_1_1.png"); await pg.keyboard.press('f'); await pg.wait_for_timeout(500); report['keys']['presenter_off'] = await pg.evaluate("()=>!document.body.classList.contains('presenter')")
         await pg.keyboard.press('n'); await pg.wait_for_timeout(200); report['keys']['notes_visible'] = await pg.evaluate("()=>getComputedStyle(document.getElementById('notes')).display==='block'"); await pg.screenshot(path=f"{SHOT}/notes_1_1.png"); await pg.keyboard.press('n')
-        for cid in ('3.4', '4.3', '4.2', '2.2'):
+        for cid in ('3.4', '4.4', '4.2', '2.3'):
             await pg.evaluate("(id)=>{location.hash='#'+id}", cid); await pg.wait_for_timeout(900); await pg.keyboard.press('t'); await pg.wait_for_timeout(300)
             report['keys']['truth_'+cid] = await pg.evaluate("()=>document.body.classList.contains('truth')"); await pg.screenshot(path=f"{SHOT}/{cid.replace('.','_')}_truth.png"); await pg.keyboard.press('t')
         # export: count downloads per chapter
