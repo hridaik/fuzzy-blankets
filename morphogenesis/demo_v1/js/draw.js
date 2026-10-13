@@ -162,8 +162,8 @@ function flashAt(p,x,y,u,r){const c=p.ctx,q=p.w2p(x,y),R=(r||0.4)*p.scale;c.save
     c.strokeStyle='#fff';c.lineWidth=1.2;c.stroke();}
   c.strokeStyle='#fff';c.lineWidth=5;c.beginPath();c.arc(q[0],q[1],R+3,0,6.3);c.stroke();c.strokeStyle=C.ink;c.lineWidth=1.5;c.stroke();c.restore();}
 /* flip an RGB/grey base64 image into a canvas (rows already top=+y) */
-function imgCanvas(b64,w,h,ch){const u=B64.u8(b64);const cv=document.createElement('canvas');cv.width=w;cv.height=h;const g=cv.getContext('2d'),im=g.createImageData(w,h);
-  for(let i=0;i<w*h;i++){if(ch===3){im.data[4*i]=u[3*i];im.data[4*i+1]=u[3*i+1];im.data[4*i+2]=u[3*i+2];}else{const v=u[i];im.data[4*i]=v;im.data[4*i+1]=v;im.data[4*i+2]=v;}im.data[4*i+3]=255;}
+function imgCanvas(b64,w,h,ch,stretch){const u=B64.u8(b64);let gain=1;if(stretch){const hs=new Uint32Array(256);for(let i=0;i<u.length;i++)hs[u[i]]++;let a=0,q=255;const tot=u.length;for(q=255;q>0;q--){a+=hs[q];if(a>0.0004*tot)break;}gain=Math.min(40,235/Math.max(q,6));}const cv=document.createElement('canvas');cv.width=w;cv.height=h;const g=cv.getContext('2d'),im=g.createImageData(w,h);
+  for(let i=0;i<w*h;i++){if(ch===3){im.data[4*i]=Math.min(255,u[3*i]*gain);im.data[4*i+1]=Math.min(255,u[3*i+1]*gain);im.data[4*i+2]=Math.min(255,u[3*i+2]*gain);}else{const v=Math.min(255,u[i]*gain);im.data[4*i]=v;im.data[4*i+1]=v;im.data[4*i+2]=v;}im.data[4*i+3]=255;}
   g.putImageData(im,0,0);return cv;}
 /* Kabsch (2D rigid, no reflection): map points A -> B, returns function */
 function kabsch2(A,B){const n=A.length;let ax=0,ay=0,bx=0,by=0;A.forEach(p=>{ax+=p[0]/n;ay+=p[1]/n;});B.forEach(p=>{bx+=p[0]/n;by+=p[1]/n;});let sxx=0,sxy=0;

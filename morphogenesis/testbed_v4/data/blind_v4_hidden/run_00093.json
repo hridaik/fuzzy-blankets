@@ -1,0 +1,1 @@
+{"meta": {"family": "natural", "state": "a", "seed": 3000, "tag": "val"}, "events": [], "pose": {"angle": 1.115981856714577, "shift": [2.371382964342062, -2.07537993177032]}, "private": {}, "dish": {"seed": 3000, "kappa_g": 3.9034972752609534, "g": 0.7806994550521907, "gamma_factor": 0.891444444036426}, "variant": "phi04", "tau_J": 0.9331597222222222, "dose": {}}

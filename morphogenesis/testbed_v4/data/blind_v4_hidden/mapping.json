@@ -1,0 +1,5954 @@
+{
+ "col_perm": [
+  6,
+  2,
+  1,
+  3,
+  4,
+  5,
+  0
+ ],
+ "light_labels": {
+  "MA": "L3",
+  "MB": "L4",
+  "SEC": "L2",
+  "RG": "L5",
+  "MIG": "L1"
+ },
+ "reagent": {
+  "0": "R6",
+  "1": "R2",
+  "2": "R5",
+  "3": "R1",
+  "4": "R3",
+  "5": "R4"
+ },
+ "scn_codes": {
+  "cutx": "P01",
+  "cuty": "P02",
+  "extrude": "P03",
+  "fuse|a|6.0,0.0": "P04",
+  "fuse|b|0.0,3.0": "P05",
+  "fuse|b|5.0,0.0": "P06",
+  "fuse|b|6.0,0.0": "P07",
+  "replace3": "P08"
+ },
+ "runs": {
+  "run_00010": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2000,
+   "tag": "cal"
+  },
+  "run_00019": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2002,
+   "tag": "cal"
+  },
+  "run_00023": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2004,
+   "tag": "cal"
+  },
+  "run_00034": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2006,
+   "tag": "cal"
+  },
+  "run_00041": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2008,
+   "tag": "cal"
+  },
+  "run_00044": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2010,
+   "tag": "cal"
+  },
+  "run_00053": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2012,
+   "tag": "cal"
+  },
+  "run_00056": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2014,
+   "tag": "cal"
+  },
+  "run_00067": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2016,
+   "tag": "cal"
+  },
+  "run_00070": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2018,
+   "tag": "cal"
+  },
+  "run_00077": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2020,
+   "tag": "cal"
+  },
+  "run_00086": {
+   "family": "natural",
+   "state": "a",
+   "seed": 2022,
+   "tag": "cal"
+  },
+  "run_00093": {
+   "family": "natural",
+   "state": "a",
+   "seed": 3000,
+   "tag": "val"
+  },
+  "run_00103": {
+   "family": "natural",
+   "state": "a",
+   "seed": 3002,
+   "tag": "val"
+  },
+  "run_00108": {
+   "family": "natural",
+   "state": "a",
+   "seed": 3004,
+   "tag": "val"
+  },
+  "run_00118": {
+   "family": "natural",
+   "state": "a",
+   "seed": 3006,
+   "tag": "val"
+  },
+  "run_00123": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2001,
+   "tag": "cal"
+  },
+  "run_00131": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2003,
+   "tag": "cal"
+  },
+  "run_00135": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2005,
+   "tag": "cal"
+  },
+  "run_00145": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2007,
+   "tag": "cal"
+  },
+  "run_00150": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2009,
+   "tag": "cal"
+  },
+  "run_00156": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2011,
+   "tag": "cal"
+  },
+  "run_00163": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2013,
+   "tag": "cal"
+  },
+  "run_00174": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2015,
+   "tag": "cal"
+  },
+  "run_00177": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2017,
+   "tag": "cal"
+  },
+  "run_00185": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2019,
+   "tag": "cal"
+  },
+  "run_00192": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2021,
+   "tag": "cal"
+  },
+  "run_00196": {
+   "family": "natural",
+   "state": "b",
+   "seed": 2023,
+   "tag": "cal"
+  },
+  "run_00206": {
+   "family": "natural",
+   "state": "b",
+   "seed": 3001,
+   "tag": "val"
+  },
+  "run_00214": {
+   "family": "natural",
+   "state": "b",
+   "seed": 3003,
+   "tag": "val"
+  },
+  "run_00217": {
+   "family": "natural",
+   "state": "b",
+   "seed": 3005,
+   "tag": "val"
+  },
+  "run_00229": {
+   "family": "natural",
+   "state": "b",
+   "seed": 3007,
+   "tag": "val"
+  },
+  "run_00232": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00243": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00248": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00253": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00264": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00268": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00274": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00283": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00293": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00294": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00305": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00312": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cutx"
+  },
+  "run_00316": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00323": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00332": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cutx"
+  },
+  "run_00341": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00346": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00356": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cutx"
+  },
+  "run_00362": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00365": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00371": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00382": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00390": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00397": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00402": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00412": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00416": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00426": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00430": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00437": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4000,
+   "scn": "cuty"
+  },
+  "run_00443": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00449": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00457": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4001,
+   "scn": "cuty"
+  },
+  "run_00463": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00469": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00481": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4002,
+   "scn": "cuty"
+  },
+  "run_00488": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00490": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00502": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00509": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00517": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00521": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00529": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00532": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00542": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00549": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00558": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00564": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4000,
+   "scn": "extrude"
+  },
+  "run_00571": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00578": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00587": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4001,
+   "scn": "extrude"
+  },
+  "run_00589": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00600": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00607": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4002,
+   "scn": "extrude"
+  },
+  "run_00611": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00622": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00627": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00633": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00643": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00645": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00655": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00658": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00665": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|a|6.0,0.0"
+  },
+  "run_00676": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00680": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00689": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00697": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00700": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00711": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00714": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00727": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00729": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|0.0,3.0"
+  },
+  "run_00737": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00747": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00752": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00762": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00766": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00770": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00778": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00788": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00796": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|5.0,0.0"
+  },
+  "run_00798": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00808": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00815": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4100,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00820": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00828": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00837": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4101,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00840": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00853": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00854": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4102,
+   "scn": "fuse|b|6.0,0.0"
+  },
+  "run_00867": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00868": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00881": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00885": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00892": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00896": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00904": {
+   "family": "stress",
+   "arm": "event",
+   "state": "a",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00916": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "a",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00918": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "a",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00924": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00937": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00938": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4000,
+   "scn": "replace3"
+  },
+  "run_00946": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00954": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00961": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4001,
+   "scn": "replace3"
+  },
+  "run_00971": {
+   "family": "stress",
+   "arm": "event",
+   "state": "b",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00973": {
+   "family": "stress",
+   "arm": "twin",
+   "state": "b",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00982": {
+   "family": "stress",
+   "arm": "sham",
+   "state": "b",
+   "seed": 4002,
+   "scn": "replace3"
+  },
+  "run_00988": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_00994": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01003": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01009": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01020": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01024": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01029": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01040": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01049": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MA",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01055": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01061": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01064": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01071": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.429962845960054,
+   "onset": 3.619975230640036,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.4391638006021346,
+    5.761508457368533
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01080": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.429962845960054,
+   "onset": 3.619975230640036,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.4391638006021346,
+    5.761508457368533
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01090": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 5.429962845960054,
+   "onset": 3.619975230640036,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.4391638006021346,
+    5.761508457368533
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01093": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01102": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01108": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01119": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.214159178614736,
+   "onset": 2.142772785743157,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.9597195601712882,
+    -4.442212476147427
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01126": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.214159178614736,
+   "onset": 2.142772785743157,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.9597195601712882,
+    -4.442212476147427
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01131": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.214159178614736,
+   "onset": 2.142772785743157,
+   "mult": 1.5,
+   "disc_xy0": [
+    3.9597195601712882,
+    -4.442212476147427
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01138": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01142": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01149": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01157": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 2.5903393159858776,
+   "onset": 1.7268928773239185,
+   "mult": 1.5,
+   "disc_xy0": [
+    -3.7687871886517974,
+    -3.837437926876401
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01167": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 2.5903393159858776,
+   "onset": 1.7268928773239185,
+   "mult": 1.5,
+   "disc_xy0": [
+    -3.7687871886517974,
+    -3.837437926876401
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01175": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MB",
+   "amp": 2.5903393159858776,
+   "onset": 1.7268928773239185,
+   "mult": 1.5,
+   "disc_xy0": [
+    -3.7687871886517974,
+    -3.837437926876401
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01177": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01189": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01190": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01203": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01207": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01214": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01221": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01231": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01237": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "MIG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01239": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01246": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01255": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01262": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01269": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01275": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01284": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01290": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01300": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "RG",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01305": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01312": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01321": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 230,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 5.59138854712092,
+   "onset": 3.7275923647472804,
+   "mult": 1.5,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 230
+  },
+  "run_01325": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01335": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01339": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 453,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.801020221154751,
+   "onset": 2.534013480769834,
+   "mult": 1.5,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 453
+  },
+  "run_01349": {
+   "family": "damage",
+   "arm": "event",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01354": {
+   "family": "damage",
+   "arm": "twin",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01362": {
+   "family": "damage",
+   "arm": "sham",
+   "state": "a",
+   "seed": 607,
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "light": "SEC",
+   "amp": 3.3018469824101198,
+   "onset": 2.2012313216067465,
+   "mult": 1.5,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "dseed": 607
+  },
+  "run_01371": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 2.4499999999999997,
+   "thr": 1.75,
+   "disc_xy0": [
+    3.7776800215547865,
+    -0.46225208019117103
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01375": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.75,
+   "thr": 1.75,
+   "disc_xy0": [
+    0.4674261175849077,
+    2.9104077675760096
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01379": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 1.2249999999999999,
+   "thr": 1.75,
+   "disc_xy0": [
+    -0.8272975673838284,
+    2.6604794181045253
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01389": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 2.4499999999999997,
+   "thr": 1.75,
+   "disc_xy0": [
+    -1.6884048633737883,
+    -3.3442416383833593
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01394": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 2.4499999999999997,
+   "thr": 1.75,
+   "disc_xy0": [
+    3.6642582258909644,
+    -4.182067228981774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01401": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 11.899999999999999,
+   "thr": 8.5,
+   "disc_xy0": [
+    3.7776800215547865,
+    -0.46225208019117103
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01412": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 8.5,
+   "thr": 8.5,
+   "disc_xy0": [
+    0.4674261175849077,
+    2.9104077675760096
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01420": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 5.949999999999999,
+   "thr": 8.5,
+   "disc_xy0": [
+    -0.8272975673838284,
+    2.6604794181045253
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01423": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 11.899999999999999,
+   "thr": 8.5,
+   "disc_xy0": [
+    -1.6884048633737883,
+    -3.3442416383833593
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01431": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 11.899999999999999,
+   "thr": 8.5,
+   "disc_xy0": [
+    3.6642582258909644,
+    -4.182067228981774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01438": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    1.8944736668809565,
+    -1.1357012807372115
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01447": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.34375,
+   "thr": 1.34375,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01450": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.9406249999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    1.161684259346547,
+    2.870125054682774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01460": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    -2.8968641603409164,
+    -1.7506211918611287
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01465": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    -2.0585479495042445,
+    0.21560141233926888
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01470": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    1.8944736668809565,
+    -1.1357012807372115
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01481": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 6.0,
+   "thr": 6.0,
+   "disc_xy0": [
+    2.3786805809442875,
+    2.32125042332165
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01488": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 4.199999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    1.161684259346547,
+    2.870125054682774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01492": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    -2.8968641603409164,
+    -1.7506211918611287
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01504": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    -2.0585479495042445,
+    0.21560141233926888
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01506": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    3.1066822278638293,
+    -4.525472719150106
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01513": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 11.0,
+   "thr": 11.0,
+   "disc_xy0": [
+    3.4391638006021346,
+    5.761508457368533
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01519": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 7.699999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    0.7843221135056997,
+    6.450292342797449
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01526": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    -5.765380964080931,
+    -3.9258479264019597
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01539": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    0.9410861380484854,
+    -1.7749249855745355
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01544": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    3.1066822278638293,
+    -4.525472719150106
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01548": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 88.0,
+   "thr": 88.0,
+   "disc_xy0": [
+    3.4391638006021346,
+    5.761508457368533
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01554": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 61.599999999999994,
+   "thr": 88.0,
+   "disc_xy0": [
+    0.7843221135056997,
+    6.450292342797449
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01564": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    -5.765380964080931,
+    -3.9258479264019597
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01569": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    0.9410861380484854,
+    -1.7749249855745355
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01576": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 2.2312499999999997,
+   "thr": 1.59375,
+   "disc_xy0": [
+    -0.034662189878229,
+    0.06607784463118449
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01583": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.59375,
+   "thr": 1.59375,
+   "disc_xy0": [
+    1.2782179273879726,
+    -1.3165847002629714
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01589": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 1.1156249999999999,
+   "thr": 1.59375,
+   "disc_xy0": [
+    -3.100183253537815,
+    0.5446963853359872
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01600": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 2.2312499999999997,
+   "thr": 1.59375,
+   "disc_xy0": [
+    -2.4950706356454146,
+    1.076738834483877
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01603": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 2.2312499999999997,
+   "thr": 1.59375,
+   "disc_xy0": [
+    3.8185870197351033,
+    -2.4983815073296625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01615": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 15.049999999999999,
+   "thr": 10.75,
+   "disc_xy0": [
+    -0.034662189878229,
+    0.06607784463118449
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01621": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 10.75,
+   "thr": 10.75,
+   "disc_xy0": [
+    1.2782179273879726,
+    -1.3165847002629714
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01628": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 7.5249999999999995,
+   "thr": 10.75,
+   "disc_xy0": [
+    -3.100183253537815,
+    0.5446963853359872
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01635": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 15.049999999999999,
+   "thr": 10.75,
+   "disc_xy0": [
+    -2.4950706356454146,
+    1.076738834483877
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01638": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 15.049999999999999,
+   "thr": 10.75,
+   "disc_xy0": [
+    3.8185870197351033,
+    -2.4983815073296625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01645": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    1.0735797271942933,
+    1.730950168037222
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01652": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.1875,
+   "thr": 1.1875,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01664": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.8312499999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    -1.1001884215244258,
+    0.5401497470462758
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01672": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    -0.5064401317642623,
+    1.2896912212594056
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01674": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    1.603583685308559,
+    4.370662110851786
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01682": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    1.0735797271942933,
+    1.730950168037222
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01690": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 7.625,
+   "thr": 7.625,
+   "disc_xy0": [
+    0.5837301057349762,
+    -3.1921343971720337
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01697": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 5.3374999999999995,
+   "thr": 7.625,
+   "disc_xy0": [
+    -1.1001884215244258,
+    0.5401497470462758
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01702": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    -0.5064401317642623,
+    1.2896912212594056
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01711": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    1.603583685308559,
+    4.370662110851786
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01719": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    -1.9231904549365741,
+    3.7257856187677625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01727": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 10.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    3.9597195601712882,
+    -4.442212476147427
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01735": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 7.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    -1.0920044726029459,
+    4.140140444670376
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01740": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    -0.8897544279602134,
+    4.86922612824548
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01746": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    2.9431337897635914,
+    1.029164614570439
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01755": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    -1.9231904549365741,
+    3.7257856187677625
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01761": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 104.0,
+   "thr": 104.0,
+   "disc_xy0": [
+    3.9597195601712882,
+    -4.442212476147427
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01769": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 72.8,
+   "thr": 104.0,
+   "disc_xy0": [
+    -1.0920044726029459,
+    4.140140444670376
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01775": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    -0.8897544279602134,
+    4.86922612824548
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01781": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    2.9431337897635914,
+    1.029164614570439
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01790": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.9249999999999998,
+   "thr": 1.375,
+   "disc_xy0": [
+    4.238150652012743,
+    -3.2242622932808445
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01797": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.375,
+   "thr": 1.375,
+   "disc_xy0": [
+    0.277118414376244,
+    -4.605974101292601
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01802": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.9624999999999999,
+   "thr": 1.375,
+   "disc_xy0": [
+    2.1054718270828707,
+    -2.642552783534599
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01811": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.9249999999999998,
+   "thr": 1.375,
+   "disc_xy0": [
+    2.968067657408266,
+    0.7717816220664595
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01817": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.9249999999999998,
+   "thr": 1.375,
+   "disc_xy0": [
+    -2.079037925537355,
+    -1.1049240335770139
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01821": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 18.9,
+   "thr": 13.5,
+   "disc_xy0": [
+    4.238150652012743,
+    -3.2242622932808445
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01829": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 13.5,
+   "thr": 13.5,
+   "disc_xy0": [
+    0.277118414376244,
+    -4.605974101292601
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01835": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 9.45,
+   "thr": 13.5,
+   "disc_xy0": [
+    2.1054718270828707,
+    -2.642552783534599
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01846": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 18.9,
+   "thr": 13.5,
+   "disc_xy0": [
+    2.968067657408266,
+    0.7717816220664595
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_01852": {
+   "state": "a",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 18.9,
+   "thr": 13.5,
+   "disc_xy0": [
+    -2.079037925537355,
+    -1.1049240335770139
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01857": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    2.2469304265623644,
+    -3.0370671711292774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01866": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.03125,
+   "thr": 1.03125,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01872": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.7218749999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    0.10810935329382987,
+    -2.5398729495878904
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01878": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    2.222819707013254,
+    2.6277464634446672
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01888": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    3.4798509342292183,
+    3.498200410185408
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01892": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    2.2469304265623644,
+    -3.0370671711292774
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01903": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 9.75,
+   "thr": 9.75,
+   "disc_xy0": [
+    -0.3508392481423605,
+    -2.707114134342913
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01907": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 6.824999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    0.10810935329382987,
+    -2.5398729495878904
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01916": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    2.222819707013254,
+    2.6277464634446672
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01923": {
+   "state": "a",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    3.4798509342292183,
+    3.498200410185408
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01925": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    1.909979206689544,
+    -6.621263576939961
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01932": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 7.75,
+   "thr": 7.75,
+   "disc_xy0": [
+    -3.7687871886517974,
+    -3.837437926876401
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01940": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 5.425,
+   "thr": 7.75,
+   "disc_xy0": [
+    -0.07671434781024677,
+    -6.135125402408164
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01950": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    -1.1179170074675193,
+    1.286300152733646
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01953": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    0.8728097507702589,
+    1.015593661675103
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_01961": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    1.909979206689544,
+    -6.621263576939961
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01971": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 116.0,
+   "thr": 116.0,
+   "disc_xy0": [
+    -3.7687871886517974,
+    -3.837437926876401
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01978": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 81.19999999999999,
+   "thr": 116.0,
+   "disc_xy0": [
+    -0.07671434781024677,
+    -6.135125402408164
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01987": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    -1.1179170074675193,
+    1.286300152733646
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_01991": {
+   "state": "a",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    0.8728097507702589,
+    1.015593661675103
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MB",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02000": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 2.49375,
+   "thr": 1.78125,
+   "disc_xy0": [
+    3.818841115508506,
+    -0.32624803178946915
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02003": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.78125,
+   "thr": 1.78125,
+   "disc_xy0": [
+    0.32839823244255606,
+    2.8610065530389024
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02014": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 1.246875,
+   "thr": 1.78125,
+   "disc_xy0": [
+    -0.8869911939124222,
+    2.579839064516438
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02017": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 2.49375,
+   "thr": 1.78125,
+   "disc_xy0": [
+    -1.5743780056235757,
+    -3.3143452356250136
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02028": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 2.49375,
+   "thr": 1.78125,
+   "disc_xy0": [
+    3.695368173687839,
+    -4.052782790145988
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02032": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 12.25,
+   "thr": 8.75,
+   "disc_xy0": [
+    3.818841115508506,
+    -0.32624803178946915
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02041": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 8.75,
+   "thr": 8.75,
+   "disc_xy0": [
+    0.32839823244255606,
+    2.8610065530389024
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02046": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 6.125,
+   "thr": 8.75,
+   "disc_xy0": [
+    -0.8869911939124222,
+    2.579839064516438
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02057": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 12.25,
+   "thr": 8.75,
+   "disc_xy0": [
+    -1.5743780056235757,
+    -3.3143452356250136
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02058": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 12.25,
+   "thr": 8.75,
+   "disc_xy0": [
+    3.695368173687839,
+    -4.052782790145988
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02067": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    1.9915657239452704,
+    -1.139306850933217
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02073": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.34375,
+   "thr": 1.34375,
+   "disc_xy0": [
+    2.272534386701956,
+    2.391608413181627
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02083": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.9406249999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    1.0901271793462208,
+    2.881505996948711
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02086": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    -2.8759640138648015,
+    -1.7958348263256
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02099": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.8812499999999999,
+   "thr": 1.34375,
+   "disc_xy0": [
+    -2.290973617799846,
+    -0.021193530872666955
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02106": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    1.9915657239452704,
+    -1.139306850933217
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02108": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 6.0,
+   "thr": 6.0,
+   "disc_xy0": [
+    2.272534386701956,
+    2.391608413181627
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02116": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 4.199999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    1.0901271793462208,
+    2.881505996948711
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02127": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    -2.8759640138648015,
+    -1.7958348263256
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02130": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 8.399999999999999,
+   "thr": 6.0,
+   "disc_xy0": [
+    -2.290973617799846,
+    -0.021193530872666955
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02140": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    3.4550715984040163,
+    -4.428402555747041
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02144": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 11.0,
+   "thr": 11.0,
+   "disc_xy0": [
+    3.1174510384450507,
+    5.891053490848545
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02150": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 7.699999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    0.54712670096813,
+    6.440319068814268
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02157": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    -5.609282750603747,
+    -4.138689641159807
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02163": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 15.399999999999999,
+   "thr": 11.0,
+   "disc_xy0": [
+    0.8271457890354923,
+    -1.8204520905902069
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02174": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    3.4550715984040163,
+    -4.428402555747041
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02180": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 88.0,
+   "thr": 88.0,
+   "disc_xy0": [
+    3.1174510384450507,
+    5.891053490848545
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02186": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 61.599999999999994,
+   "thr": 88.0,
+   "disc_xy0": [
+    0.54712670096813,
+    6.440319068814268
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02197": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    -5.609282750603747,
+    -4.138689641159807
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02202": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 123.19999999999999,
+   "thr": 88.0,
+   "disc_xy0": [
+    0.8271457890354923,
+    -1.8204520905902069
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 230,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02210": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 2.275,
+   "thr": 1.625,
+   "disc_xy0": [
+    -0.3407181479815744,
+    1.49973669365181
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02214": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.625,
+   "thr": 1.625,
+   "disc_xy0": [
+    1.7301566183927624,
+    -2.5573463866005794
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02219": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 1.1375,
+   "thr": 1.625,
+   "disc_xy0": [
+    -2.1585472796673337,
+    1.7484733110714132
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02228": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 2.275,
+   "thr": 1.625,
+   "disc_xy0": [
+    -1.6118661248439587,
+    2.2846649720786574
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02236": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 2.275,
+   "thr": 1.625,
+   "disc_xy0": [
+    1.732893147073661,
+    -2.2485589559874177
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02243": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 15.749999999999998,
+   "thr": 11.25,
+   "disc_xy0": [
+    -0.3407181479815744,
+    1.49973669365181
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02249": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 11.25,
+   "thr": 11.25,
+   "disc_xy0": [
+    1.7301566183927624,
+    -2.5573463866005794
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02256": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 7.874999999999999,
+   "thr": 11.25,
+   "disc_xy0": [
+    -2.1585472796673337,
+    1.7484733110714132
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02263": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 15.749999999999998,
+   "thr": 11.25,
+   "disc_xy0": [
+    -1.6118661248439587,
+    2.2846649720786574
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02272": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 15.749999999999998,
+   "thr": 11.25,
+   "disc_xy0": [
+    1.732893147073661,
+    -2.2485589559874177
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02277": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    1.6161546650125769,
+    1.9128332849768372
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02282": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.1875,
+   "thr": 1.1875,
+   "disc_xy0": [
+    -0.04969089327889897,
+    -3.4695650200411565
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02291": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.8312499999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    -0.7241681439874008,
+    0.354717057228551
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02301": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    -0.08946409134901645,
+    0.9876329568953531
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02306": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.6624999999999999,
+   "thr": 1.1875,
+   "disc_xy0": [
+    4.6660118860285635,
+    4.345894354423655
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02316": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    1.6161546650125769,
+    1.9128332849768372
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02321": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 7.625,
+   "thr": 7.625,
+   "disc_xy0": [
+    -0.04969089327889897,
+    -3.4695650200411565
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02324": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 5.3374999999999995,
+   "thr": 7.625,
+   "disc_xy0": [
+    -0.7241681439874008,
+    0.354717057228551
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02336": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    -0.08946409134901645,
+    0.9876329568953531
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02338": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 10.674999999999999,
+   "thr": 7.625,
+   "disc_xy0": [
+    4.6660118860285635,
+    4.345894354423655
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02349": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    0.8725808006275273,
+    5.435204348366311
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02352": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 10.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    1.5923026469141397,
+    -6.673290541050147
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02359": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 7.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    1.784593112929752,
+    2.93659950145243
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02372": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    2.2451935359809307,
+    3.7279566171862495
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02379": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 14.0,
+   "thr": 10.0,
+   "disc_xy0": [
+    3.43436623897594,
+    0.9631367515061313
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02384": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    0.8725808006275273,
+    5.435204348366311
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02392": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 104.0,
+   "thr": 104.0,
+   "disc_xy0": [
+    1.5923026469141397,
+    -6.673290541050147
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02394": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 72.8,
+   "thr": 104.0,
+   "disc_xy0": [
+    1.784593112929752,
+    2.93659950145243
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02403": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    2.2451935359809307,
+    3.7279566171862495
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02414": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 145.6,
+   "thr": 104.0,
+   "disc_xy0": [
+    3.43436623897594,
+    0.9631367515061313
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 453,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02420": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.9687499999999998,
+   "thr": 1.40625,
+   "disc_xy0": [
+    3.059955014242972,
+    -4.274403482717084
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02426": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.40625,
+   "thr": 1.40625,
+   "disc_xy0": [
+    -1.1760128401252354,
+    -3.6913311155834356
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02432": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.9843749999999999,
+   "thr": 1.40625,
+   "disc_xy0": [
+    0.9005485300881889,
+    -3.674042903977119
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02439": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.9687499999999998,
+   "thr": 1.40625,
+   "disc_xy0": [
+    1.490934503696073,
+    1.3505585879129953
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02448": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.9687499999999998,
+   "thr": 1.40625,
+   "disc_xy0": [
+    -2.3694986082054665,
+    0.8348195201866858
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02450": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 19.95,
+   "thr": 14.25,
+   "disc_xy0": [
+    3.059955014242972,
+    -4.274403482717084
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02458": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 14.25,
+   "thr": 14.25,
+   "disc_xy0": [
+    -1.1760128401252354,
+    -3.6913311155834356
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02470": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 9.975,
+   "thr": 14.25,
+   "disc_xy0": [
+    0.9005485300881889,
+    -3.674042903977119
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02474": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 19.95,
+   "thr": 14.25,
+   "disc_xy0": [
+    1.490934503696073,
+    1.3505585879129953
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 5,
+   "family": "switch"
+  },
+  "run_02480": {
+   "state": "b",
+   "centre": "limb_side",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 19.95,
+   "thr": 14.25,
+   "disc_xy0": [
+    -2.3694986082054665,
+    0.8348195201866858
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02486": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    1.6744003707153676,
+    -2.8321003489067564
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02493": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 1.03125,
+   "thr": 1.03125,
+   "disc_xy0": [
+    -0.38128941221692164,
+    -1.8560069825939354
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02500": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 0.7218749999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    -0.5210209568048717,
+    -2.2672237279866154
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02512": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    2.151630734480757,
+    3.2382769171737222
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02517": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 1.4437499999999999,
+   "thr": 1.03125,
+   "disc_xy0": [
+    4.845676339769548,
+    0.6580414952125906
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02520": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    1.6744003707153676,
+    -2.8321003489067564
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02530": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 9.75,
+   "thr": 9.75,
+   "disc_xy0": [
+    -0.38128941221692164,
+    -1.8560069825939354
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02537": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 6.824999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    -0.5210209568048717,
+    -2.2672237279866154
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02544": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    2.151630734480757,
+    3.2382769171737222
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02550": {
+   "state": "b",
+   "centre": "middle",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 13.649999999999999,
+   "thr": 9.75,
+   "disc_xy0": [
+    4.845676339769548,
+    0.6580414952125906
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02559": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "above",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    -0.921745270143222,
+    -5.3260987072564445
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02564": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "at",
+   "amp": 7.75,
+   "thr": 7.75,
+   "disc_xy0": [
+    -3.6848728515980222,
+    -0.4255048123589704
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02572": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "below",
+   "amp": 5.425,
+   "thr": 7.75,
+   "disc_xy0": [
+    -3.0532954735877778,
+    -4.826048804394125
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02580": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "sham",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    -1.2462622581885512,
+    4.427530132586153
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02584": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 16,
+   "dur": 32.65986323710904,
+   "kind": "wrong",
+   "amp": 10.85,
+   "thr": 7.75,
+   "disc_xy0": [
+    1.249294402805337,
+    0.49668176207712356
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 72.65986323710905,
+   "ramp": 5.0,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  },
+  "run_02592": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "above",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    -0.921745270143222,
+    -5.3260987072564445
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02600": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "at",
+   "amp": 116.0,
+   "thr": 116.0,
+   "disc_xy0": [
+    -3.6848728515980222,
+    -0.4255048123589704
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02607": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "below",
+   "amp": 81.19999999999999,
+   "thr": 116.0,
+   "disc_xy0": [
+    -3.0532954735877778,
+    -4.826048804394125
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02613": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "sham",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    -1.2462622581885512,
+    4.427530132586153
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 4,
+   "family": "switch"
+  },
+  "run_02621": {
+   "state": "b",
+   "centre": "tail_end",
+   "dm": 4,
+   "dur": 8.16496580927726,
+   "kind": "wrong",
+   "amp": 162.39999999999998,
+   "thr": 116.0,
+   "disc_xy0": [
+    1.249294402805337,
+    0.49668176207712356
+   ],
+   "radius": 1.5,
+   "t_on": 40.0,
+   "t_off": 48.16496580927726,
+   "ramp": 2.041241452319315,
+   "channel": "MA",
+   "dseed": 607,
+   "n_lit": 6,
+   "family": "switch"
+  }
+ }
+}

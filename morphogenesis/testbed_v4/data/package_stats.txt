@@ -1,0 +1,13 @@
+('damage', 'event') runs 18 ORGANISM INTACT throughout 0 | state flipped by end 4
+('damage', 'sham') runs 18 ORGANISM INTACT throughout 12 | state flipped by end 0
+('damage', 'twin') runs 18 ORGANISM INTACT throughout 12 | state flipped by end 0
+('natural', 'cal') runs 24 ORGANISM INTACT throughout 22 | state flipped by end 1
+('natural', 'val') runs 8 ORGANISM INTACT throughout 7 | state flipped by end 0
+('stress', 'event') runs 36 ORGANISM INTACT throughout 6 | state flipped by end 3
+('stress', 'sham') runs 36 ORGANISM INTACT throughout 36 | state flipped by end 3
+('stress', 'twin') runs 36 ORGANISM INTACT throughout 36 | state flipped by end 3
+('switch', 'above') runs 36 ORGANISM INTACT throughout 19 | state flipped by end 35
+('switch', 'at') runs 36 ORGANISM INTACT throughout 16 | state flipped by end 33
+('switch', 'below') runs 36 ORGANISM INTACT throughout 20 | state flipped by end 16
+('switch', 'sham') runs 36 ORGANISM INTACT throughout 36 | state flipped by end 0
+('switch', 'wrong') runs 36 ORGANISM INTACT throughout 15 | state flipped by end 17

@@ -1,0 +1,12 @@
+{
+ "tau_J": 0.9331597222222222,
+ "statistic": "min over a 330-tu window of the mean neighbour Jaccard; P1 over windows",
+ "P1_natural": 0.9331597222222222,
+ "P1_clean": 1.0,
+ "n_natural_windows": 576,
+ "n_clean_runs": 120,
+ "natural_min": 0.8860119047619047,
+ "natural_median": 0.9777777777777779,
+ "clean_min": 1.0,
+ "n_pop_switched": 6
+}

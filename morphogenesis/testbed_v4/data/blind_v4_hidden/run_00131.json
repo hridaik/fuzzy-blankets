@@ -1,0 +1,1 @@
+{"meta": {"family": "natural", "state": "b", "seed": 2003, "tag": "cal"}, "events": [], "pose": {"angle": 5.98906786479056, "shift": [0.68225333343984, 0.9223534894639558]}, "private": {}, "dish": {"seed": 2003, "kappa_g": 3.983935111054418, "g": 0.7967870222108836, "gamma_factor": 1.4277359409230943}, "variant": "phi04", "tau_J": 0.9331597222222222, "dose": {}}

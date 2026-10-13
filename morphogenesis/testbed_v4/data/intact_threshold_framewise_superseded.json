@@ -1,0 +1,12 @@
+{
+ "tau_J": 0.982638888888889,
+ "P1_natural": 0.982638888888889,
+ "P1_clean": 1.0,
+ "n_natural_frames": 29600,
+ "n_clean_runs": 120,
+ "natural_min": 0.9256944444444445,
+ "clean_min": 1.0,
+ "natural_median": 1.0,
+ "clean_median": 1.0,
+ "n_pop_switched": 6
+}

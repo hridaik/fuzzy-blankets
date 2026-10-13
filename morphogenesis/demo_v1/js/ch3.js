@@ -28,9 +28,9 @@ Demo.register({id:'3.1',act:3,title:COPY['3.1'].title,data:['data/c31.js'],durat
     // 2 dots
     const p2=P[1],x2=c.state.X2[k];p2.clear();p2.scaleBar();for(let i=0;i<x2.length/2;i++)p2.node({x:x2[2*i],y:x2[2*i+1],fill:'#777',r:0.4});groupOutlinePts(p2,x2,D.O2.lab[k]);drawnTag(p2);
     // 3 glow image
-    const p3=P[2];if(!c.state.ia[k])c.state.ia[k]=imgCanvas(D.O3a.img[k],64,64,3);crop(p3,c.state.ia[k],D.fov,64);groupOutlineMask(p3,c.state.Ma[k],64,D.fov,{col:'#fff'});drawnTag(p3);
+    const p3=P[2];if(!c.state.ia[k])c.state.ia[k]=imgCanvas(D.O3a.img[k],64,64,3,true);crop(p3,c.state.ia[k],D.fov,64);groupOutlineMask(p3,c.state.Ma[k],64,D.fov,{col:'#fff'});drawnTag(p3);
     // 4 cell markers
-    const p4=P[3];if(!c.state.ic[k])c.state.ic[k]=imgCanvas(D.O3c.img[k],128,128,1);crop(p4,c.state.ic[k],D.fovc,128);const sp=c.state.Xc[k];groupOutlinePts(p4,sp,D.O3c.lab[k],{col:'#fff'});drawnTag(p4);
+    const p4=P[3];if(!c.state.ic[k])c.state.ic[k]=imgCanvas(D.O3c.img[k],128,128,1,true);crop(p4,c.state.ic[k],D.fovc,128);const sp=c.state.Xc[k];groupOutlinePts(p4,sp,D.O3c.lab[k],{col:'#fff'});drawnTag(p4);
     p1.setSub('time '+T);
   },
   pauses:[{t:10,text:COPY['3.1'].callouts[0],side:'top',anchor:c=>({panel:c.p[0],x:0,y:-3.6})},

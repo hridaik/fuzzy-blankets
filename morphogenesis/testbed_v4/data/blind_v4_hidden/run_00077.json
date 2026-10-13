@@ -1,0 +1,1 @@
+{"meta": {"family": "natural", "state": "a", "seed": 2020, "tag": "cal"}, "events": [], "pose": {"angle": 6.192997266408752, "shift": [-2.489864302310572, 1.697510059276783]}, "private": {}, "dish": {"seed": 2020, "kappa_g": 2.41004690113789, "g": 0.482009380227578, "gamma_factor": 0.6989268102741228}, "variant": "phi04", "tau_J": 0.9331597222222222, "dose": {}}
